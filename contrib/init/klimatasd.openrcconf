@@ -1,0 +1,26 @@
+# /etc/conf.d/klimatasd: config file for /etc/init.d/klimatasd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/klimatas/klimatas.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/klimatasd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/klimatasd.pid"
+
+# Where to write klimatasd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/klimatasd"
+
+# User and group to own klimatasd process
+#BITCOIND_USER="klimatas"
+#BITCOIND_GROUP="klimatas"
+
+# Path to klimatasd executable
+#BITCOIND_BIN="/usr/bin/klimatasd"
+
+# Nice value to run klimatasd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

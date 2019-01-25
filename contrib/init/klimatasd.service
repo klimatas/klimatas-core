@@ -1,0 +1,26 @@
+[Unit]
+Description=Klimatas's distributed currency daemon
+After=network.target
+
+[Service]
+User=klimatas
+Group=klimatas
+
+Type=forking
+PIDFile=/var/lib/klimatasd/klimatasd.pid
+
+ExecStart=/usr/bin/klimatasd -daemon -pid=/var/lib/klimatasd/klimatasd.pid \
+          -conf=/etc/klimatas/klimatas.conf -datadir=/var/lib/klimatasd
+
+ExecStop=-/usr/bin/klimatas-cli -conf=/etc/klimatas/klimatas.conf \
+         -datadir=/var/lib/klimatasd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
