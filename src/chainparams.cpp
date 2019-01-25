@@ -124,7 +124,7 @@ public:
         nMaxMoneyOut = 50000000 * COIN; //50 mill
         nMinStakeReserve = 100;
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 69120; //48 Hours POW
+        nLastPOWBlock = 2880; //48 Hours POW
         nModifierUpdateBlock = INT_MAX;
         nZerocoinStartHeight = INT_MAX;
         nAccumulatorStartHeight = 1;
@@ -254,7 +254,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Klimatas: 1 day
         nTargetSpacing = 1 * 60;  // Klimatas: 1 minute
-        nLastPOWBlock = 69120;
+        nLastPOWBlock = 2880;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nMasternodeCollateralLimit = 1000; //MN collateral
