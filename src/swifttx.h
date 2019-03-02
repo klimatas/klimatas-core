@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2012 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2019 The CryptoDev developers
+// Copyright (c) 2019 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +20,7 @@
     At 15 signatures, 1/2 of the masternode network can be owned by
     one party without comprimising the security of SwiftX
     (1000/2150.0)**10 = 0.00047382219560689856
-    (1000/2900.0)**10 = 2.37694986110301657e-05
+    (1000/2900.0)**10 = 2.3769498616783657e-05
 
     ### getting 5 of 10 signatures w/ 1000 nodes of 2900
     (1000/2900.0)**5 = 0.004875397277841433
@@ -60,6 +62,9 @@ bool ProcessConsensusVote(CNode* pnode, CConsensusVote& ctx);
 
 // keep transaction locks in memory for an hour
 void CleanTransactionLocksList();
+
+// get the accepted transaction lock signatures
+int GetTransactionLockSignatures(uint256 txHash);
 
 int64_t GetAverageVoteTime();
 
