@@ -56,7 +56,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
     (0, uint256("000005311094a6ffb1c6a91783723875e62a7dc44f3256c02e2c2f1a7bdca254"))
-    (21350, uint256("9772e87bb7a13726f7f7f4819b4eefa0d5f1a223cf82fc781819eab0cc56c520")); 
+    (21350, uint256("9772e87bb7a13726f7f7f4819b4eefa0d5f1a223cf82fc781819eab0cc56c520"))
+    (52472, uint256("a5f7fb79b12058e3901c869faf33ccf6ddc3d08dc4f7626e182d41c26caade75")); 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1549632572, // * UNIX timestamp of last checkpoint block
@@ -155,24 +156,24 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "Klimatas. Disruptive Sustainability"; 
+        const char* pszTimestamp = "Klimatas. Disruptive Sustainability";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN; 
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("047a7df379bd5e6b93b164968c10fcbb141ecb3c6dc1a5e181c2a62328405cf82311dd5b40bf45430320a4f30add05c8e3e16dd56c52d65f7abe475189564bf2b1") << OP_CHECKSIG; 
+        txNew.vout[0].nValue = 50 * COIN;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("047a7df379bd5e6b93b164968c10fcbb141ecb3c6dc1a5e181c2a62328405cf82311dd5b40bf45430320a4f30add05c8e3e16dd56c52d65f7abe475189564bf2b1") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1548334205; 
+        genesis.nTime = 1548334205;
         genesis.nBits = 0x1e0ffff0;
-     	genesis.nNonce = 0x78e1a3; 
+     	genesis.nNonce = 0x78e1a3;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000005311094a6ffb1c6a91783723875e62a7dc44f3256c02e2c2f1a7bdca254")); 
-        assert(genesis.hashMerkleRoot == uint256("0x44b8fec46b91ee153861636785f04d10e4bfd4d8e65544294993975e9a5c78a2")); 
+        assert(hashGenesisBlock == uint256("0x000005311094a6ffb1c6a91783723875e62a7dc44f3256c02e2c2f1a7bdca254"));
+        assert(genesis.hashMerkleRoot == uint256("0x44b8fec46b91ee153861636785f04d10e4bfd4d8e65544294993975e9a5c78a2"));
 
 	vSeeds.push_back(CDNSSeedData("seed1.klimatas.com", "seed1.klimatas.com"));         // Single node address
         vSeeds.push_back(CDNSSeedData("seed2.klimatas.com", "seed2.klimatas.com"));         // Single node address
@@ -271,9 +272,9 @@ public:
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1548334205; 
+        genesis.nTime = 1548334205;
         genesis.nBits = 0x1e0ffff0;
-      	genesis.nNonce = 0x78e1a3; 
+      	genesis.nNonce = 0x78e1a3;
 
 	hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000005311094a6ffb1c6a91783723875e62a7dc44f3256c02e2c2f1a7bdca254"));
@@ -281,8 +282,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("tseed.klimatas.com", "tseed.klimatas.com"));
-        
-        
+
+
 
 	base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 90);
 	base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 73);
@@ -353,9 +354,9 @@ public:
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
 
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1548334205; 
+        genesis.nTime = 1548334205;
         genesis.nBits = 0x1e0ffff0;
-      	genesis.nNonce = 1383794; 
+      	genesis.nNonce = 1383794;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 10500;
