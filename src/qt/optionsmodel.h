@@ -1,4 +1,5 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
+// Copyright (c) 2017-2018 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -39,18 +40,20 @@ public:
         Digits,              // QString
         Theme,               // QString
         Language,            // QString
-
-     //   HideOrphans, //bool
-
         CoinControlFeatures, // bool
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
+        ZeromintEnable,      // bool
+        ZeromintAddresses,   // bool
         ZeromintPercentage,  // int
         ZeromintPrefDenom,   // int
-        AnonymizeKlimatasAmount, //int
+        HideZeroBalances,    // bool
+        HideOrphans,    // bool
+        AnonymizeKtsAmount, //int
         ShowMasternodesTab,  // bool
         Listen,              // bool
+        StakeSplitThreshold, // int
         OptionIDRowCount,
     };
 
@@ -62,6 +65,8 @@ public:
     bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole);
     /** Updates current unit in memory, settings and emits displayUnitChanged(newUnit) signal */
     void setDisplayUnit(const QVariant& value);
+    /* Update StakeSplitThreshold's value in wallet */
+    void setStakeSplitThreshold(int value);
 
     /* Explicit getters */
     bool getMinimizeToTray() { return fMinimizeToTray; }
@@ -85,6 +90,8 @@ private:
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
+    bool fHideZeroBalances;
+    bool fHideOrphans;
     /* settings that were overriden by command-line */
     QString strOverriddenByCommandLine;
 
@@ -93,10 +100,14 @@ private:
 
 signals:
     void displayUnitChanged(int unit);
+    void zeromintEnableChanged(bool);
+    void zeromintAddressesChanged(bool);
     void zeromintPercentageChanged(int);
     void preferredDenomChanged(int);
-    void anonymizeKlimatasAmountChanged(int);
+    void anonymizeKtsAmountChanged(int);
     void coinControlFeaturesChanged(bool);
+    void hideZeroBalancesChanged(bool);
+    void hideOrphansChanged(bool);
 };
 
 #endif // BITCOIN_QT_OPTIONSMODEL_H

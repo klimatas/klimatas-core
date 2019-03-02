@@ -15,7 +15,6 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
-#include <boost/lexical_cast.hpp>
 
 #include <algorithm>
 #include <boost/assign/list_of.hpp>
@@ -431,6 +430,9 @@ bool CObfuscationPool::SetCollateralAddress(std::string strAddress)
 //
 void CObfuscationPool::UnlockCoins()
 {
+    if (!pwalletMain)
+        return;
+
     while (true) {
         TRY_LOCK(pwalletMain->cs_wallet, lockWallet);
         if (!lockWallet) {
@@ -602,7 +604,7 @@ void CObfuscationPool::CheckFinalTransaction()
         // sign a message
 
         int64_t sigTime = GetAdjustedTime();
-        std::string strMessage = txNew.GetHash().ToString() + boost::lexical_cast<std::string>(sigTime);
+        std::string strMessage = txNew.GetHash().ToString() + std::to_string(sigTime);
         std::string strError = "";
         std::vector<unsigned char> vchSig;
         CKey key2;
@@ -777,7 +779,7 @@ void CObfuscationPool::ChargeRandomFees()
 
                 Being that Obfuscation has "no fees" we need to have some kind of cost associated
                 with using it to stop abuse. Otherwise it could serve as an attack vector and
-                allow endless transaction that would bloat Klimatas and make it unusable. To
+                allow endless transaction that would bloat KTS and make it unusable. To
                 stop these kinds of attacks 1 in 10 successful transactions are charged. This
                 adds up to a cost of 0.001 KTS per transaction on average.
             */
@@ -1434,7 +1436,7 @@ bool CObfuscationPool::DoAutomaticDenominating(bool fDryRun)
         // should have some additional amount for them
         nLowestDenom += OBFUSCATION_COLLATERAL * 4;
 
-    CAmount nBalanceNeedsAnonymized = nAnonymizeKlimatasAmount * COIN - pwalletMain->GetAnonymizedBalance();
+    CAmount nBalanceNeedsAnonymized = nAnonymizeKtsAmount * COIN - pwalletMain->GetAnonymizedBalance();
 
     // if balanceNeedsAnonymized is more than pool max, take the pool max
     if (nBalanceNeedsAnonymized > OBFUSCATION_POOL_MAX) nBalanceNeedsAnonymized = OBFUSCATION_POOL_MAX;
@@ -2111,7 +2113,7 @@ bool CObfuScationSigner::IsVinAssociatedWithPubkey(CTxIn& vin, CPubKey& pubkey)
     uint256 hash;
     if (GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         BOOST_FOREACH (CTxOut out, txVin.vout) {
-            if (out.nValue == Params().MasternodeCollateralLimit() * COIN) {
+            if (out.nValue == 1000 * COIN) {
                 if (out.scriptPubKey == payee2) return true;
             }
         }
@@ -2176,7 +2178,7 @@ bool CObfuScationSigner::VerifyMessage(CPubKey pubkey, vector<unsigned char>& vc
 
     if (fDebug && pubkey2.GetID() != pubkey.GetID())
         LogPrintf("CObfuScationSigner::VerifyMessage -- keys don't match: %s %s\n", pubkey2.GetID().ToString(), pubkey.GetID().ToString());
-        
+
     return (pubkey2.GetID() == pubkey.GetID());
 }
 
@@ -2184,7 +2186,7 @@ bool CObfuscationQueue::Sign()
 {
     if (!fMasterNode) return false;
 
-    std::string strMessage = vin.ToString() + boost::lexical_cast<std::string>(nDenom) + boost::lexical_cast<std::string>(time) + boost::lexical_cast<std::string>(ready);
+    std::string strMessage = vin.ToString() + std::to_string(nDenom) + std::to_string(time) + std::to_string(ready);
 
     CKey key2;
     CPubKey pubkey2;
@@ -2224,7 +2226,7 @@ bool CObfuscationQueue::CheckSignature()
     CMasternode* pmn = mnodeman.Find(vin);
 
     if (pmn != NULL) {
-        std::string strMessage = vin.ToString() + boost::lexical_cast<std::string>(nDenom) + boost::lexical_cast<std::string>(time) + boost::lexical_cast<std::string>(ready);
+        std::string strMessage = vin.ToString() + std::to_string(nDenom) + std::to_string(time) + std::to_string(ready);
 
         std::string errorMessage = "";
         if (!obfuScationSigner.VerifyMessage(pmn->pubKeyMasternode, vchSig, strMessage, errorMessage)) {
@@ -2286,7 +2288,7 @@ void ThreadCheckObfuScationPool()
     if (fLiteMode) return; //disable all Obfuscation/Masternode related functionality
 
     // Make this thread recognisable as the wallet flushing thread
-    RenameThread("klimatas-obfuscation");
+    RenameThread("kts-obfuscation");
 
     unsigned int c = 0;
 

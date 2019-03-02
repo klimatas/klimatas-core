@@ -10,7 +10,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/klimatasstrings.cpp"
+OUT_CPP="qt/ktsstrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):
@@ -74,10 +74,10 @@ f.write("""
 #define UNUSED
 #endif
 """)
-f.write('static const char UNUSED *klimatas_strings[] = {\n')
+f.write('static const char UNUSED *kts_strings[] = {\n')
 messages.sort(key=operator.itemgetter(0))
 for (msgid, msgstr) in messages:
     if msgid != EMPTY:
-        f.write('QT_TRANSLATE_NOOP("klimatas-core", %s),\n' % ('\n'.join(msgid)))
+        f.write('QT_TRANSLATE_NOOP("kts-core", %s),\n' % ('\n'.join(msgid)))
 f.write('};\n')
 f.close()

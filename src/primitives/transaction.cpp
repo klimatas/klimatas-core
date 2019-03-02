@@ -1,6 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2019 The CryptoDev developers
+// Copyright (c) 2019 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -54,7 +56,7 @@ std::string CTxIn::ToString() const
     str += prevout.ToString();
     if (prevout.IsNull())
         if(scriptSig.IsZerocoinSpend())
-            str += strprintf(", zerocoinspend %s", HexStr(scriptSig));
+            str += strprintf(", zerocoinspend %s...", HexStr(scriptSig).substr(0, 25));
         else
             str += strprintf(", coinbase %s", HexStr(scriptSig));
     else
@@ -133,12 +135,25 @@ CTransaction& CTransaction::operator=(const CTransaction &tx) {
     return *this;
 }
 
+bool CTransaction::IsCoinStake() const
+{
+    if (vin.empty())
+        return false;
+
+    // ppcoin: the coin stake transaction is marked with the first output empty
+    bool fAllowNull = vin[0].scriptSig.IsZerocoinSpend();
+    if (vin[0].prevout.IsNull() && !fAllowNull)
+        return false;
+
+    return (vin.size() > 0 && vout.size() >= 2 && vout[0].IsEmpty());
+}
+
 CAmount CTransaction::GetValueOut() const
 {
     CAmount nValueOut = 0;
     for (std::vector<CTxOut>::const_iterator it(vout.begin()); it != vout.end(); ++it)
     {
-        // Trttium: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
+        // KTS: previously MoneyRange() was called here. This has been replaced with negative check and boundary wrap check.
         if (it->nValue < 0)
             throw std::runtime_error("CTransaction::GetValueOut() : value out of range : less than 0");
 
@@ -152,7 +167,7 @@ CAmount CTransaction::GetValueOut() const
 
 CAmount CTransaction::GetZerocoinMinted() const
 {
-    for (const CTxOut txOut : vout) {
+    for (const CTxOut& txOut : vout) {
         if(!txOut.scriptPubKey.IsZerocoinMint())
             continue;
 
@@ -164,7 +179,7 @@ CAmount CTransaction::GetZerocoinMinted() const
 
 bool CTransaction::UsesUTXO(const COutPoint out)
 {
-    for (const CTxIn in : vin) {
+    for (const CTxIn& in : vin) {
         if (in.prevout == out)
             return true;
     }
@@ -187,16 +202,11 @@ CAmount CTransaction::GetZerocoinSpent() const
         return 0;
 
     CAmount nValueOut = 0;
-    for (const CTxIn txin : vin) {
+    for (const CTxIn& txin : vin) {
         if(!txin.scriptSig.IsZerocoinSpend())
-            LogPrintf("%s is not zcspend\n", __func__);
+            continue;
 
-        std::vector<char, zero_after_free_allocator<char> > dataTxIn;
-        dataTxIn.insert(dataTxIn.end(), txin.scriptSig.begin() + 4, txin.scriptSig.end());
-
-        CDataStream serializedCoinSpend(dataTxIn, SER_NETWORK, PROTOCOL_VERSION);
-        libzerocoin::CoinSpend spend(Params().Zerocoin_Params(), serializedCoinSpend);
-        nValueOut += libzerocoin::ZerocoinDenominationToAmount(spend.getDenomination());
+        nValueOut += txin.nSequence * COIN;
     }
 
     return nValueOut;
@@ -205,7 +215,7 @@ CAmount CTransaction::GetZerocoinSpent() const
 int CTransaction::GetZerocoinMintCount() const
 {
     int nCount = 0;
-    for (const CTxOut out : vout) {
+    for (const CTxOut& out : vout) {
         if (out.scriptPubKey.IsZerocoinMint())
             nCount++;
     }

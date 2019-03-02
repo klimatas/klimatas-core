@@ -2,7 +2,8 @@ Release Process
 ====================
 
 Before every release candidate:
--
+
+* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/CryptoDev-Project/KTS/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -23,12 +24,12 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/eastcoastcrypto/gitian.sigs.git
-    git clone https://github.com/eastcoastcrypto/trttium-detached-sigs.git
+    git clone https://github.com/CryptoDev-Project/gitian.sigs.git
+    git clone https://github.com/CryptoDev-Project/kts-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/eastcoastcrypto/trttium.git
+    git clone https://github.com/CryptoDev-Project/kts.git
 
-### Trttium maintainers/release engineers, suggestion for writing release notes
+### KTS maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -49,7 +50,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./trttium
+    pushd ./kts
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -83,7 +84,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../trttium/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../kts/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -91,55 +92,55 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url trttium=/path/to/trttium,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url kts=/path/to/kts,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Trttium Core for Linux, Windows, and OS X:
+### Build and sign KTS Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit trttium=v${VERSION} ../trttium/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../trttium/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/trttium-*.tar.gz build/out/src/trttium-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit kts=v${VERSION} ../kts/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../kts/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/kts-*.tar.gz build/out/src/kts-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit trttium=v${VERSION} ../trttium/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../trttium/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/trttium-*-win-unsigned.tar.gz inputs/trttium-win-unsigned.tar.gz
-    mv build/out/trttium-*.zip build/out/trttium-*.exe ../
+    ./bin/gbuild --memory 3000 --commit kts=v${VERSION} ../kts/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../kts/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/kts-*-win-unsigned.tar.gz inputs/kts-win-unsigned.tar.gz
+    mv build/out/kts-*.zip build/out/kts-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit trttium=v${VERSION} ../trttium/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../trttium/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/trttium-*-osx-unsigned.tar.gz inputs/trttium-osx-unsigned.tar.gz
-    mv build/out/trttium-*.tar.gz build/out/trttium-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit kts=v${VERSION} ../kts/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../kts/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/kts-*-osx-unsigned.tar.gz inputs/kts-osx-unsigned.tar.gz
+    mv build/out/kts-*.tar.gz build/out/kts-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit trttium=v${VERSION} ../trttium/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../trttium/contrib/gitian-descriptors/gitian-aarch64.yml
-    mv build/out/trttium-*.tar.gz build/out/src/trttium-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit kts=v${VERSION} ../kts/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../kts/contrib/gitian-descriptors/gitian-aarch64.yml
+    mv build/out/kts-*.tar.gz build/out/src/kts-*.tar.gz ../
     popd
 
 Build output expected:
 
-  1. source tarball (`trttium-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`trttium-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`trttium-${VERSION}-win[32|64]-setup-unsigned.exe`, `trttium-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`trttium-${VERSION}-osx-unsigned.dmg`, `trttium-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`kts-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`kts-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`kts-${VERSION}-win[32|64]-setup-unsigned.exe`, `kts-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`kts-${VERSION}-osx-unsigned.dmg`, `kts-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import trttium/contrib/gitian-keys/*.gpg
+    gpg --import kts/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../trttium/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../trttium/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../trttium/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../trttium/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../kts/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../kts/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../kts/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../kts/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -161,22 +162,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer trttium-osx-unsigned.tar.gz to osx for signing
-    tar xf trttium-osx-unsigned.tar.gz
+    transfer kts-osx-unsigned.tar.gz to osx for signing
+    tar xf kts-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf trttium-win-unsigned.tar.gz
+    tar xf kts-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/trttium-detached-sigs
+    cd ~/kts-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -189,25 +190,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [trttium-detached-sigs](https://github.com/eastcoastcrypto/trttium-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [kts-detached-sigs](https://github.com/CryptoDev-Project/kts-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../trttium/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../trttium/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../trttium/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/trttium-osx-signed.dmg ../trttium-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../kts/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../kts/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../kts/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/kts-osx-signed.dmg ../kts-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../trttium/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../trttium/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../trttium/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/trttium-*win64-setup.exe ../trttium-${VERSION}-win64-setup.exe
-    mv build/out/trttium-*win32-setup.exe ../trttium-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../kts/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../kts/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../kts/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/kts-*win64-setup.exe ../kts-${VERSION}-win64-setup.exe
+    mv build/out/kts-*win32-setup.exe ../kts-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -229,23 +230,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-trttium-${VERSION}-aarch64-linux-gnu.tar.gz
-trttium-${VERSION}-arm-linux-gnueabihf.tar.gz
-trttium-${VERSION}-i686-pc-linux-gnu.tar.gz
-trttium-${VERSION}-x86_64-linux-gnu.tar.gz
-trttium-${VERSION}-osx64.tar.gz
-trttium-${VERSION}-osx.dmg
-trttium-${VERSION}.tar.gz
-trttium-${VERSION}-win32-setup.exe
-trttium-${VERSION}-win32.zip
-trttium-${VERSION}-win64-setup.exe
-trttium-${VERSION}-win64.zip
+kts-${VERSION}-aarch64-linux-gnu.tar.gz
+kts-${VERSION}-arm-linux-gnueabihf.tar.gz
+kts-${VERSION}-i686-pc-linux-gnu.tar.gz
+kts-${VERSION}-x86_64-linux-gnu.tar.gz
+kts-${VERSION}-osx64.tar.gz
+kts-${VERSION}-osx.dmg
+kts-${VERSION}.tar.gz
+kts-${VERSION}-win32-setup.exe
+kts-${VERSION}-win32.zip
+kts-${VERSION}-win64-setup.exe
+kts-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the trttiumcoin.com server*.
+space *do not upload these to the kts.org server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -261,10 +262,10 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - bitcointalk announcement thread
 
-  - Optionally twitter, reddit /r/trttium, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/kts, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/eastcoastcrypto/Trttium/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/CryptoDev-Project/KTS/releases/new) with a link to the archived release notes.
 
   - Celebrate

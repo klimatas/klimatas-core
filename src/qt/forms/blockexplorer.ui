@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../klimatas.qrc"/>
+  <include location="../kts.qrc"/>
  </resources>
  <connections/>
 </ui>
