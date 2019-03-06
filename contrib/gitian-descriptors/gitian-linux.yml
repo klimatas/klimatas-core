@@ -1,5 +1,5 @@
 ---
-name: "kts-linux-1.1"
+name: "kts-linux-1.1.1"
 enable_cache: true
 suites:
 - "bionic"
@@ -32,7 +32,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/CryptoDev-Project/klimatas-core.git"
+- "url": "https://github.com/klimatas/klimatas-core.git"
   "dir": "kts"
 files: []
 script: |

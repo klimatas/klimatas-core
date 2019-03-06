@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/CryptoDev-Project/cdev-detached-sigs.git"
+- "url": "https://github.com/klimatas/cdev-detached-sigs.git"
   "dir": "signature"
 files:
 - "kts-osx-unsigned.tar.gz"
