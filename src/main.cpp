@@ -3161,7 +3161,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     //Check that the block does not overmint
     if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
                 // Do not require verification of block coinbase value amount before this block
-        if (pindex->nHeight >= 59666 || nExpectedMint > pindex->nMint * 2)
+        if (pindex->nHeight >= 58850)
             return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
                                     FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
                          REJECT_INVALID, "bad-cb-amount");
