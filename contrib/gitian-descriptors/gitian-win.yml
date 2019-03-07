@@ -1,5 +1,5 @@
 ---
-name: "kts-win-1.1"
+name: "kts-win-1.1.2"
 enable_cache: true
 suites:
 - "bionic"
@@ -23,7 +23,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/CryptoDev-Project/klimatas-core.git"
+- "url": "https://github.com/klimatas/klimatas-core.git"
   "dir": "kts"
 files: []
 script: |
