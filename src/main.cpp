@@ -1887,28 +1887,52 @@ int64_t GetBlockValue(int nHeight)
     	nSubsidy = 4* COIN;
     } else if (nHeight >= 17280 && nHeight <= 141600) {
     	nSubsidy = 3* COIN;
-    } else if (nHeight >= 141601 && nHeight <= 189600) {
+    } else if (nHeight >= 141601 && nHeight <= 182000) {
     	nSubsidy = 3.5* COIN;
-    } else if (nHeight >= 189601 && nHeight <= 237600) {
+    } else if (nHeight >= 182001 && nHeight <= 220000) {
     	nSubsidy = 4* COIN;
-    } else if (nHeight >= 237601 && nHeight <= 285600) {
+    } else if (nHeight >= 220001 && nHeight <= 260000) {
     	nSubsidy = 4.5* COIN;
-    } else if (nHeight >= 285601 && nHeight <= 333600) {
+    } else if (nHeight >= 260001 && nHeight <= 300000) {
     	nSubsidy = 5* COIN;
-    } else if (nHeight >= 333601 && nHeight <= 381600) {
+    } else if (nHeight >= 300001 && nHeight <= 340000) {
     	nSubsidy = 5.5* COIN;
-    } else if (nHeight >= 381601 && nHeight <= 429600) {
+    } else if (nHeight >= 340001 && nHeight <= 380000) {
     	nSubsidy = 6* COIN;
-    } else if (nHeight >= 429601 && nHeight <= 477600) {
-    	nSubsidy = 5.5* COIN;
-    } else if (nHeight >= 477601 && nHeight <= 525600) {
+    } else if (nHeight >= 380001 && nHeight <= 420000) {
+    	nSubsidy = 6.50* COIN;
+    } else if (nHeight >= 420001 && nHeight <= 460000) {
+    	nSubsidy = 7* COIN;
+    } else if (nHeight >= 460001 && nHeight <= 500000) {
+    	nSubsidy = 7.50* COIN;
+    } else if (nHeight >= 500001 && nHeight <= 600000) {
+    	nSubsidy = 8.5* COIN;
+    } else if (nHeight >= 600001 && nHeight <= 700000) {
+    	nSubsidy = 9.5* COIN;
+    } else if (nHeight >= 700001 && nHeight <= 800000) {
+    	nSubsidy = 10.5* COIN;
+    } else if (nHeight >= 800001 && nHeight <= 900000) {
+    	nSubsidy = 11.5* COIN;
+    } else if (nHeight >= 900001 && nHeight <= 1000000) {
+    	nSubsidy = 12.5* COIN;
+    } else if (nHeight >= 1000001 && nHeight <= 1200000) {
+    	nSubsidy = 9* COIN;
+    } else if (nHeight >= 1200001 && nHeight <= 1400000) {
+    	nSubsidy = 7* COIN;
+    } else if (nHeight >= 1400001 && nHeight <= 1600000) {
     	nSubsidy = 5* COIN;
+    } else if (nHeight >= 1600001 && nHeight <= 2000000) {
+    	nSubsidy = 4* COIN;
+    } else if (nHeight >= 2000001 && nHeight <= 2400000) {
+    	nSubsidy = 3.5* COIN;
+    } else if (nHeight >= 2400001 && nHeight <= 2800000) {
+    	nSubsidy = 3* COIN;
+    } else if (nHeight >= 2800001 && nHeight <= 3200000) {
+    	nSubsidy = 2.5* COIN;
+    } else if (nHeight >= 3200001 && nHeight <= 3600000) {
+    	nSubsidy = 2* COIN;
     } else {
-    	nSubsidy = 5* COIN;
-    }
-
-    for (int i = 3 * 525600; i <= nHeight; i += 525600) {
-	nSubsidy -= nSubsidy * 0.15;
+    	nSubsidy = 1* COIN;
     }
 
     return nSubsidy;
@@ -4593,25 +4617,25 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             // Start at the block we're adding on to
             CBlockIndex *prev = pindexPrev;
 
-            int readBlock = 0;
-            vector<CBigNum> vBlockSerials;
             CBlock bl;
+            if (!ReadBlockFromDisk(bl, prev))
+                return error("%s: previous block %s not on disk", __func__, prev->GetBlockHash().GetHex());
+
+            vector<CBigNum> vBlockSerials;
+            int readBlock = 0;
             // Go backwards on the forked chain up to the split
-            do {
+            while (!chainActive.Contains(prev)) {
+
+                // Increase amount of read blocks
+                readBlock++;
                 // Check if the forked chain is longer than the max reorg limit
-                if(readBlock == Params().MaxReorganizationDepth()){
+                if (readBlock == Params().MaxReorganizationDepth()) {
                     // TODO: Remove this chain from disk.
                     return error("%s: forked chain longer than maximum reorg limit", __func__);
                 }
-
-                if(!ReadBlockFromDisk(bl, prev))
-                    // Previous block not on disk
-                    return error("%s: previous block %s not on disk", __func__, prev->GetBlockHash().GetHex());
-                // Increase amount of read blocks
-                readBlock++;
                 // Loop through every input from said block
-                for (const CTransaction& t : bl.vtx) {
-                    for (const CTxIn& in: t.vin) {
+                for (const CTransaction &t : bl.vtx) {
+                    for (const CTxIn &in: t.vin) {
                         // Loop through every input of the staking tx
                         for (const CTxIn& stakeIn : ktsInputs) {
                             // if it's already spent
@@ -4619,11 +4643,12 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                             // First regular staking check
                             if(hasKTSInputs) {
                                 if (stakeIn.prevout == in.prevout) {
-                                    return state.DoS(100, error("%s: input already spent on a previous block", __func__));
+                                  return state.DoS(100, error("%s: input already spent on a previous block",
+                                                              __func__));
                                 }
 
                                 // Second, if there is zPoS staking then store the serials for later check
-                                if(in.scriptSig.IsZerocoinSpend()){
+                                if(in.scriptSig.IsZerocoinSpend()) {
                                     vBlockSerials.push_back(TxInToZerocoinSpend(in).getCoinSerialNumber());
                                 }
                             }
@@ -4631,9 +4656,13 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                     }
                 }
 
+                // Prev block
                 prev = prev->pprev;
+                if (!ReadBlockFromDisk(bl, prev))
+                    // Previous block not on disk
+                    return error("%s: previous block %s not on disk", __func__, prev->GetBlockHash().GetHex());
 
-            } while (!chainActive.Contains(prev));
+            }
 
             // Split height
             splitHeight = prev->nHeight;
@@ -4696,7 +4725,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 if(coin && !coin->IsAvailable(in.prevout.n)){
                     // If this is not available get the height of the spent and validate it with the forked height
                     // Check if this occurred before the chain split
-                    if(!(isBlockFromFork && coin->nHeight > splitHeight)){
+                    if(!isBlockFromFork){
                         // Coins not available
                         return error("%s: coin stake inputs already spent in main chain", __func__);
                     }
@@ -6801,12 +6830,12 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 int ActiveProtocol()
 {
     // SPORK_14 is used for 70913 (v3.1.0+)
-    if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    //if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     // SPORK_15 was used for 70912 (v3.0.5+), commented out now.
-    //if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
