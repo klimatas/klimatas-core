@@ -3182,13 +3182,29 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     if (block.IsProofOfWork())
         nExpectedMint += nFees;
 
-    //Check that the block does not overmint
-    if (!IsBlockValueValid(block, nExpectedMint, pindex->pprev->nMint)) {
-                // Do not require verification of block coinbase value amount before this block
-        if (pindex->nHeight >= 58800)
+    // Sync fix
+    if(pindex->nHeight > 141600) {
+      if (!IsBlockValueValid(block, nExpectedMint, pindex->pprev->nMint)) {
+        if (pindex->nHeight >= 58800 && pindex->nHeight <= 141600) {
+            return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                                    FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
+                         REJECT_INVALID, "bad-cb-amount");
+        }
+        if (pindex->nHeight > 141600) {
             return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
                                     FormatMoney(pindex->pprev->nMint), FormatMoney(nExpectedMint)),
                          REJECT_INVALID, "bad-cb-amount");
+        }
+      }
+    } else {
+      //Check that the block does not overmint
+      if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
+                  // Do not require verification of block coinbase value amount before this block
+          if (pindex->nHeight >= 58800)
+              return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                                      FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
+                           REJECT_INVALID, "bad-cb-amount");
+      }
     }
 
     // Ensure that accumulator checkpoints are valid and in the same state as this instance of the chain
