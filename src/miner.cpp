@@ -112,10 +112,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
     // Tip
     CBlockIndex* pindexPrev = nullptr;
-    //{   // Don't keep cs_main locked
-    //    LOCK(cs_main);
-    pindexPrev = chainActive.Tip();
-    //}
+    {   // Don't keep cs_main locked
+        LOCK(cs_main);
+        pindexPrev = chainActive.Tip();
+    }
     const int nHeight = pindexPrev->nHeight + 1;
 
     // Make sure to create the correct block version after zerocoin is enabled
@@ -153,7 +153,6 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     if (fProofOfStake) {
         boost::this_thread::interruption_point();
         pblock->nTime = GetAdjustedTime();
-        CBlockIndex* pindexPrev = chainActive.Tip();
         pblock->nBits = GetNextWorkRequired(pindexPrev, pblock);
         CMutableTransaction txCoinStake;
         int64_t nSearchTime = pblock->nTime; // search to current time

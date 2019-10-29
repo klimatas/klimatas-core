@@ -13,6 +13,16 @@ You can download the appropriate release for your operating system at [releases]
 
 You can also build Klimatas core from source yourself. Please use the source code attached to [releases](https://github.com/klimatas/klimatas-core/releases). Code in the repository is still in development.
 
+### Build instructions
+
+```bash
+wget https://github.com/klimatas/klimatas-core/archive/1.2.0.tar.gz
+tar xzvf 1.2.0.tar.gz && cd 1.2.0
+./autogen.sh
+./configure
+make -j2
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
