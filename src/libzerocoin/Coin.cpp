@@ -253,10 +253,16 @@ void PrivateCoin::mintCoinFast(const CoinDenomination denomination) {
 
 int ExtractVersionFromSerial(const CBigNum& bnSerial)
 {
-	//Serial is marked as v2 only if the first byte is 0xF
-	uint256 nMark = bnSerial.getuint256() >> (256 - PrivateCoin::V2_BITSHIFT);
-	if (nMark == 0xf)
-		return PrivateCoin::PUBKEY_VERSION;
+    try {
+        //Serial is marked as v2 only if the first byte is 0xF
+        uint256 nMark = bnSerial.getuint256() >> (256 - PrivateCoin::V2_BITSHIFT);
+        if (nMark == 0xf)
+            return PrivateCoin::PUBKEY_VERSION;
+    } catch (std::range_error &e) {
+        //std::cout << "ExtractVersionFromSerial(): " << e.what() << std::endl;
+        // Only serial version 2 appeared with this range error..
+        return 2;
+    }
 
 	return 1;
 }
@@ -280,9 +286,16 @@ bool IsValidSerial(const ZerocoinParams* params, const CBigNum& bnSerial)
     if (ExtractVersionFromSerial(bnSerial) < PrivateCoin::PUBKEY_VERSION)
         return bnSerial < params->coinCommitmentGroup.groupOrder;
 
-    //If V2, the serial is marked with 0xF in the first 4 bits. This is removed for the actual serial.
-    CBigNum bnAdjustedSerial = GetAdjustedSerial(bnSerial);
-    return bnAdjustedSerial > 0 && bnAdjustedSerial < params->coinCommitmentGroup.groupOrder;
+    // If V2, the serial is marked with 0xF in the first 4 bits. So It's always > groupOrder.
+    // This is removed for the adjusted serial - so it's always < groupOrder.
+    // So we check only the bitsize here.
+    return bnSerial.bitSize() <= 256;
+}
+
+
+bool IsValidCommitmentToCoinRange(const ZerocoinParams* params, const CBigNum& bnCommitment)
+{
+    return bnCommitment > CBigNum(0) && bnCommitment < params->serialNumberSoKCommitmentGroup.modulus;
 }
 
 } /* namespace libzerocoin */

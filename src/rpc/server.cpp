@@ -308,6 +308,7 @@ static const CRPCCommand vRPCCommands[] =
         {"blockchain", "getaccumulatorvalues", &getaccumulatorvalues, true, false, false},
         {"blockchain", "getaccumulatorwitness", &getaccumulatorwitness, true, false, false},
         {"blockchain", "getmintsinblocks", &getmintsinblocks, true, false, false},
+        {"blockchain", "getserials", &getserials, true, false, false},
         {"blockchain", "getblockchaininfo", &getblockchaininfo, true, false, false},
         {"blockchain", "getbestblockhash", &getbestblockhash, true, false, false},
         {"blockchain", "getblockcount", &getblockcount, true, false, false},
@@ -366,7 +367,6 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
         /* KTS features */
-        {"kts", "masternode", &masternode, true, true, false},
         {"kts", "listmasternodes", &listmasternodes, true, true, false},
         {"kts", "getmasternodecount", &getmasternodecount, true, true, false},
         {"kts", "masternodeconnect", &masternodeconnect, true, true, false},
@@ -382,7 +382,6 @@ static const CRPCCommand vRPCCommands[] =
         {"kts", "getmasternodestatus", &getmasternodestatus, true, true, false},
         {"kts", "getmasternodewinners", &getmasternodewinners, true, true, false},
         {"kts", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"kts", "mnbudget", &mnbudget, true, true, false},
         {"kts", "preparebudget", &preparebudget, true, true, false},
         {"kts", "submitbudget", &submitbudget, true, true, false},
         {"kts", "mnbudgetvote", &mnbudgetvote, true, true, false},
@@ -468,7 +467,8 @@ static const CRPCCommand vRPCCommands[] =
         {"zerocoin", "setzktsseed", &setzktsseed, false, false, true},
         {"zerocoin", "generatemintlist", &generatemintlist, false, false, true},
         {"zerocoin", "searchdzkts", &searchdzkts, false, false, true},
-        {"zerocoin", "dzktsstate", &dzktsstate, false, false, true}
+        {"zerocoin", "dzktsstate", &dzktsstate, false, false, true},
+        {"zerocoin", "clearspendcache", &clearspendcache, false, false, true}
 
 #endif // ENABLE_WALLET
 };

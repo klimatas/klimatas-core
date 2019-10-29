@@ -14,7 +14,7 @@
 #include "main.h"
 #include "net.h"
 #include "primitives/transaction.h"
-#include "primitives/deterministicmint.h"
+#include "zkts/deterministicmint.h"
 #include "rpc/server.h"
 #include "script/script.h"
 #include "script/script_error.h"
@@ -760,7 +760,7 @@ UniValue signrawtransaction(const UniValue& params, bool fHelp)
         CTxIn& txin = mergedTx.vin[i];
         const CCoins* coins = view.AccessCoins(txin.prevout.hash);
         if (Params().NetworkID() == CBaseChainParams::REGTEST) {
-            if (mapPrevOut.count(txin.prevout) == 0)
+            if (mapPrevOut.count(txin.prevout) == 0 && (coins == NULL || !coins->IsAvailable(txin.prevout.n)))
             {
                 TxInErrorToJSON(txin, vErrors, "Input not found");
                 continue;
@@ -771,7 +771,7 @@ UniValue signrawtransaction(const UniValue& params, bool fHelp)
                 continue;
             }
         }
-        const CScript& prevPubKey = (Params().NetworkID() == CBaseChainParams::REGTEST ? mapPrevOut[txin.prevout] : coins->vout[txin.prevout.n].scriptPubKey);
+        const CScript& prevPubKey = (Params().NetworkID() == CBaseChainParams::REGTEST && mapPrevOut.count(txin.prevout) != 0 ? mapPrevOut[txin.prevout] : coins->vout[txin.prevout.n].scriptPubKey);
 
         txin.scriptSig.clear();
         // Only sign SIGHASH_SINGLE if there's a corresponding output:
@@ -903,7 +903,7 @@ UniValue getspentzerocoinamount(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter for transaction input");
 
     const CTxIn& input = tx.vin[inputIndex];
-    if (!input.scriptSig.IsZerocoinSpend())
+    if (!input.IsZerocoinSpend())
         return -1;
 
     libzerocoin::CoinSpend spend = TxInToZerocoinSpend(input);
@@ -979,7 +979,7 @@ UniValue createrawzerocoinstake(const UniValue& params, bool fHelp)
     // create the zerocoinspend input
     CTxIn newTxIn;
     // !TODO: mint checks
-    if (!pwalletMain->MintToTxIn(input_mint, 100, hashTxOut, newTxIn, receipt, libzerocoin::SpendType::STAKE))
+    if (!pwalletMain->MintToTxIn(input_mint, hashTxOut, newTxIn, receipt, libzerocoin::SpendType::STAKE))
         throw JSONRPCError(RPC_WALLET_ERROR, "failed to create zc-spend stake input");
 
     coinstake_tx.vin.push_back(newTxIn);

@@ -24,7 +24,8 @@ namespace libzerocoin {
  */
 class AccumulatorProofOfKnowledge {
 public:
-	AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p);
+    AccumulatorProofOfKnowledge(){};
+    AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p);
 
 	/** Generates a proof that a commitment to a coin c was accumulated
 	 * @param p  Cryptographic parameters

@@ -8,7 +8,7 @@
 #include "walletdb.h"
 #include "init.h"
 #include "wallet.h"
-#include "primitives/deterministicmint.h"
+#include "deterministicmint.h"
 #include "zktschain.h"
 
 using namespace libzerocoin;
@@ -229,7 +229,7 @@ void CzKTSWallet::SyncWithChain(bool fGenerateMintPool)
                 bool fFoundMint = false;
                 CBigNum bnValue = 0;
                 for (const CTxOut& out : tx.vout) {
-                    if (!out.scriptPubKey.IsZerocoinMint())
+                    if (!out.IsZerocoinMint())
                         continue;
 
                     PublicCoin pubcoin(Params().Zerocoin_Params(false));

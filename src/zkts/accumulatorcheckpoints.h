@@ -5,8 +5,8 @@
 #ifndef KTS_ACCUMULATORCHECKPOINTS_H
 #define KTS_ACCUMULATORCHECKPOINTS_H
 
-#include <libzerocoin/bignum.h>
-#include <univalue/include/univalue.h>
+#include "../libzerocoin/bignum.h"
+#include "../univalue/include/univalue.h"
 
 namespace AccumulatorCheckpoints
 {

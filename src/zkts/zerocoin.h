@@ -7,6 +7,7 @@
 
 #include <amount.h>
 #include <limits.h>
+#include <chainparams.h>
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
 #include "key.h"
@@ -42,6 +43,7 @@ private:
     CBigNum randomness;
     CBigNum serialNumber;
     uint256 txid;
+    int outputIndex = -1;
     CPrivKey privkey;
     uint8_t version;
     bool isUsed;
@@ -102,6 +104,9 @@ public:
     CPrivKey GetPrivKey() const { return this->privkey; }
     void SetPrivKey(const CPrivKey& privkey) { this->privkey = privkey; }
     bool GetKeyPair(CKey& key) const;
+
+    int GetOutputIndex() { return this->outputIndex; }
+    void SetOutputIndex(int index) { this->outputIndex = index; }
 
     inline bool operator <(const CZerocoinMint& a) const { return GetHeight() < a.GetHeight(); }
 
@@ -218,7 +223,7 @@ public:
     uint256 GetHash() const;
     void SetMintCount(int nMintsAdded) { this->nMintCount = nMintsAdded; }
     int GetMintCount() const { return nMintCount; }
- 
+
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
@@ -247,5 +252,15 @@ public:
     int GetStatus();
     int GetNeededSpends();
 };
+
+/**
+ * Wrapped serials attack inflation, only for mainnet.
+ * FUTURE: Move this to another file..
+ * @param denom
+ * @return
+ */
+int GetWrapppedSerialInflation(libzerocoin::CoinDenomination denom);
+
+int64_t GetWrapppedSerialInflationAmount();
 
 #endif //KTS_ZEROCOIN_H

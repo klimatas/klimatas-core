@@ -22,10 +22,6 @@
 #include "scheduler.h"
 #include "ui_interface.h"
 
-#ifdef ENABLE_WALLET
-#include "wallet.h"
-#endif // ENABLE_WALLET
-
 #ifdef WIN32
 #include <string.h>
 #else
@@ -1561,25 +1557,6 @@ void ThreadMessageHandler()
     }
 }
 
-#ifdef ENABLE_WALLET
-// ppcoin: stake minter thread
-void static ThreadStakeMinter()
-{
-    boost::this_thread::interruption_point();
-    LogPrintf("ThreadStakeMinter started\n");
-    CWallet* pwallet = pwalletMain;
-    try {
-        BitcoinMiner(pwallet, true);
-        boost::this_thread::interruption_point();
-    } catch (std::exception& e) {
-        LogPrintf("ThreadStakeMinter() exception \n");
-    } catch (...) {
-        LogPrintf("ThreadStakeMinter() error \n");
-    }
-    LogPrintf("ThreadStakeMinter exiting,\n");
-}
-#endif // ENABLE_WALLET
-
 bool BindListenPort(const CService& addrBind, string& strError, bool fWhitelisted)
 {
     strError = "";
@@ -1711,8 +1688,7 @@ void static Discover(boost::thread_group& threadGroup)
 #endif
 }
 
-void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
-{
+void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler) {
     uiInterface.InitMessage(_("Loading addresses..."));
     // Load addresses for peers.dat
     int64_t nStart = GetTimeMillis();
@@ -1737,7 +1713,7 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
     srand(time(NULL));
 
     LogPrintf("Loaded %i addresses from peers.dat  %dms\n",
-        addrman.size(), GetTimeMillis() - nStart);
+              addrman.size(), GetTimeMillis() - nStart);
     fAddressesInitialized = true;
 
     if (semOutbound == NULL) {
@@ -1777,12 +1753,6 @@ void StartNode(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // Dump network addresses
     scheduler.scheduleEvery(&DumpData, DUMP_ADDRESSES_INTERVAL);
-
-#ifdef ENABLE_WALLET
-    // ppcoin:mint proof-of-stake blocks in the background
-    if (GetBoolArg("-staking", true) && pwalletMain)
-        threadGroup.create_thread(boost::bind(&TraceThread<void (*)()>, "stakemint", &ThreadStakeMinter));
-#endif // ENABLE_WALLET
 }
 
 bool StopNode()
