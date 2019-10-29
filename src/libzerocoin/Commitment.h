@@ -60,7 +60,8 @@ private:
  */
 class CommitmentProofOfKnowledge {
 public:
-	CommitmentProofOfKnowledge(const IntegerGroupParams* ap, const IntegerGroupParams* bp);
+    CommitmentProofOfKnowledge(){};
+    CommitmentProofOfKnowledge(const IntegerGroupParams* ap, const IntegerGroupParams* bp);
 	/** Generates a proof that two commitments, a and b, open to the same value.
 	 *
 	 * @param ap the IntegerGroup for commitment a

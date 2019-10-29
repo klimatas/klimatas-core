@@ -10,17 +10,18 @@
 #include "base58.h"
 #include "checkpoints.h"
 #include "clientversion.h"
+#include "kernel.h"
 #include "main.h"
 #include "rpc/server.h"
 #include "sync.h"
 #include "txdb.h"
 #include "util.h"
 #include "utilmoneystr.h"
-#include "accumulatormap.h"
-#include "accumulators.h"
+#include "zkts/accumulatormap.h"
+#include "zkts/accumulators.h"
+#include "zkts/zktsmodule.h"
 #include "wallet.h"
-#include "libzerocoin/bignum.h"
-#include "libzerocoin/Coin.h"
+#include "zktschain.h"
 
 #include <stdint.h>
 #include <fstream>
@@ -137,6 +138,7 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
         result.push_back(Pair("nextblockhash", pnext->GetBlockHash().GetHex()));
 
     result.push_back(Pair("modifier", strprintf("%016x", blockindex->nStakeModifier)));
+    result.push_back(Pair("modifierV2", blockindex->nStakeModifierV2.GetHex()));
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
@@ -146,6 +148,32 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
     }
     zktsObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
     result.push_back(Pair("zKTSsupply", zktsObj));
+
+    //////////
+    ////////// Coin stake data ////////////////
+    /////////
+
+    if (block.IsProofOfStake()) {
+        // First grab it
+        uint256 hashProofOfStakeRet;
+        std::unique_ptr <CStakeInput> stake;
+        // Initialize the stake object (we should look for this in some other place and not initialize it every time..)
+        if (!initStakeInput(block, stake, blockindex->nHeight - 1))
+            throw JSONRPCError(RPC_INTERNAL_ERROR, "Cannot initialize stake input");
+
+        unsigned int nTxTime = block.nTime;
+        // todo: Add the debug as param..
+        if (!GetHashProofOfStake(blockindex->pprev, stake.get(), nTxTime, false, hashProofOfStakeRet))
+            throw JSONRPCError(RPC_INTERNAL_ERROR, "Cannot get proof of stake hash");
+
+        UniValue stakeData(UniValue::VOBJ);
+        stakeData.push_back(Pair("CS block from id", stake.get()->GetIndexFrom()->GetBlockHash().GetHex()));
+        stakeData.push_back(Pair("CS block from height", stake.get()->GetIndexFrom()->nHeight));
+        stakeData.push_back(Pair("hashProofOfStake", hashProofOfStakeRet.GetHex()));
+        stakeData.push_back(Pair("stakeModifierHeight", ((stake->IsZKTS()) ? "Not available" : std::to_string(
+                stake->getStakeModifierHeight()))));
+        result.push_back(Pair("Coin Stake", stakeData));
+    }
 
     return result;
 }
@@ -1054,7 +1082,7 @@ UniValue getfeeinfo(const UniValue& params, bool fHelp)
                 continue;
 
             for (unsigned int j = 0; j < tx.vin.size(); j++) {
-                if (tx.vin[j].scriptSig.IsZerocoinSpend()) {
+                if (tx.vin[j].IsZerocoinSpend() || tx.vin[j].IsZerocoinPublicSpend()) {
                     nValueIn += tx.vin[j].nSequence * COIN;
                     continue;
                 }
@@ -1303,7 +1331,7 @@ UniValue getaccumulatorwitness(const UniValue& params, bool fHelp)
     string strFailReason = "";
     int nMintsAdded = 0;
     CZerocoinSpendReceipt receipt;
-    if (!GenerateAccumulatorWitness(pubCoin, accumulator, witness, 100, nMintsAdded, strFailReason)) {
+    if (!GenerateAccumulatorWitness(pubCoin, accumulator, witness, nMintsAdded, strFailReason)) {
         receipt.SetStatus(_(strFailReason.c_str()), ZKTS_FAILED_ACCUMULATOR_INITIALIZATION);
         throw JSONRPCError(RPC_DATABASE_ERROR, receipt.GetStatusMessage());
     }
@@ -1376,4 +1404,123 @@ UniValue getmintsinblocks(const UniValue& params, bool fHelp) {
     obj.push_back(Pair("Number of "+ std::to_string(d) +"-denom mints", num_of_mints));
 
     return obj;
+}
+
+UniValue getserials(const UniValue& params, bool fHelp) {
+    if (fHelp || params.size() < 2 || params.size() > 3)
+        throw runtime_error(
+                "getserials \"hash\"\n"
+                "\nLook the inputs of any tx in a range of blocks and returns the serial numbers for any coinspend.\n"
+
+                "\nArguments:\n"
+                "1. starting_height   (numeric, required) the height of the first block to check\n"
+                "2. range             (numeric, required) the amount of blocks to check\n"
+                "3. fVerbose          (boolean, optional, default=False) return verbose output\n"
+
+                "\nExamples:\n" +
+                HelpExampleCli("getserials", "1254000 1000") +
+                HelpExampleRpc("getserials", "1254000, 1000"));
+
+    LOCK(cs_main);
+
+    int nBestHeight = chainActive.Height();
+
+    int heightStart = params[0].get_int();
+    if (heightStart < Params().Zerocoin_StartHeight())
+        heightStart = Params().Zerocoin_StartHeight();
+
+    int range = params[1].get_int();
+    if (range < 1)
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid block range. Must be strictly positive.");
+
+    int heightEnd = heightStart + range - 1;
+    if (heightEnd > nBestHeight)
+        heightEnd = nBestHeight;
+
+    bool fVerbose = false;
+    if (params.size() > 2) {
+        fVerbose = params[2].get_bool();
+    }
+
+    CBlockIndex* pblockindex = chainActive[heightStart];
+
+    UniValue serialsObj(UniValue::VOBJ);    // for fVerbose
+    UniValue serialsArr(UniValue::VARR);
+
+    while (true) {
+        CBlock block;
+        if (!ReadBlockFromDisk(block, pblockindex))
+            throw JSONRPCError(RPC_INTERNAL_ERROR, "Can't read block from disk");
+
+        // loop through each tx in the block
+        for (const CTransaction& tx : block.vtx) {
+            std::string txid = tx.GetHash().GetHex();
+            // collect the destination (first output) if fVerbose
+            std::string spentTo = "";
+            if (fVerbose) {
+                if (tx.vout[0].IsZerocoinMint()) {
+                    spentTo = "Zerocoin Mint";
+                } else if (tx.vout[0].IsEmpty()) {
+                    spentTo = "Zerocoin Stake";
+                } else {
+                    txnouttype type;
+                    vector<CTxDestination> addresses;
+                    int nRequired;
+                    if (!ExtractDestinations(tx.vout[0].scriptPubKey, type, addresses, nRequired)) {
+                        spentTo = strprintf("type: %d", GetTxnOutputType(type));
+                    } else {
+                        spentTo = CBitcoinAddress(addresses[0]).ToString();
+                    }
+                }
+            }
+            // loop through each input
+            for (const CTxIn& txin : tx.vin) {
+                bool isPublicSpend =  txin.IsZerocoinPublicSpend();
+                if (txin.IsZerocoinSpend() || isPublicSpend) {
+                    std::string serial_str;
+                    int denom;
+                    if (isPublicSpend) {
+                        CTxOut prevOut;
+                        CValidationState state;
+                        if(!GetOutput(txin.prevout.hash, txin.prevout.n, state, prevOut)){
+                            throw JSONRPCError(RPC_INTERNAL_ERROR, "public zerocoin spend prev output not found");
+                        }
+                        libzerocoin::ZerocoinParams *params = Params().Zerocoin_Params(false);
+                        PublicCoinSpend publicSpend(params);
+                        if (!ZKTSModule::parseCoinSpend(txin, tx, prevOut, publicSpend)) {
+                            throw JSONRPCError(RPC_INTERNAL_ERROR, "public zerocoin spend parse failed");
+                        }
+                        serial_str = publicSpend.getCoinSerialNumber().ToString(16);
+                        denom = libzerocoin::ZerocoinDenominationToInt(publicSpend.getDenomination());
+                    } else {
+                        libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txin);
+                        serial_str = spend.getCoinSerialNumber().ToString(16);
+                        denom = libzerocoin::ZerocoinDenominationToInt(spend.getDenomination());
+                    }
+                    if (!fVerbose) {
+                        serialsArr.push_back(serial_str);
+                    } else {
+                        UniValue s(UniValue::VOBJ);
+                        s.push_back(Pair("serial", serial_str));
+                        s.push_back(Pair("denom", denom));
+                        s.push_back(Pair("bitsize", (int)serial_str.size()*4));
+                        s.push_back(Pair("spentTo", spentTo));
+                        s.push_back(Pair("txid", txid));
+                        s.push_back(Pair("blocknum", pblockindex->nHeight));
+                        s.push_back(Pair("blocktime", block.GetBlockTime()));
+                        serialsArr.push_back(s);
+                    }
+
+                }
+
+            } // end for vin in tx
+        } // end for tx in block
+
+        if (pblockindex->nHeight < heightEnd) pblockindex = chainActive.Next(pblockindex);
+        else break;
+
+    } // end for blocks
+
+    return serialsArr;
+
 }

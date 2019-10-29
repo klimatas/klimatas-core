@@ -7,6 +7,7 @@
 
 #include "masternode-payments.h"
 #include "addrman.h"
+#include "chainparams.h"
 #include "masternode-budget.h"
 #include "masternode-sync.h"
 #include "masternodeman.h"
@@ -196,7 +197,7 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
 
     if (!masternodeSync.IsSynced()) { //there is no budget data to use to check anything
         //super blocks will always be on these blocks, max 100 per budgeting
-        if (nHeight % GetBudgetPaymentCycleBlocks() < 100) {
+        if (nHeight % Params().GetBudgetCycleBlocks() < 100) {
             return true;
         } else {
             if (nMinted > nExpectedValue) {
@@ -328,7 +329,20 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
 
             //subtract mn payment from the stake reward
             if (!txNew.vout[1].IsZerocoinMint())
-                txNew.vout[i - 1].nValue -= masternodePayment;
+                if (i == 2) {
+                    // Majority of cases; do it quick and move on
+                    txNew.vout[i - 1].nValue -= masternodePayment;
+                } else if (i > 2) {
+                    // special case, stake is split between (i-1) outputs
+                    unsigned int outputs = i-1;
+                    CAmount mnPaymentSplit = masternodePayment / outputs;
+                    CAmount mnPaymentRemainder = masternodePayment - (mnPaymentSplit * outputs);
+                    for (unsigned int j=1; j<=outputs; j++) {
+                        txNew.vout[j].nValue -= mnPaymentSplit;
+                    }
+                    // in case it's not an even division, take the last bit of dust from the last one
+                    txNew.vout[outputs].nValue -= mnPaymentRemainder;
+                }
         } else {
             txNew.vout.resize(2);
             txNew.vout[1].scriptPubKey = payee;
@@ -549,7 +563,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
         nMasternode_Drift_Count = mnodeman.size() + Params().MasternodeCountDrift();
     }
 
-    CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count, txNew.IsZerocoinSpend());
+    CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count, txNew.HasZerocoinSpendInputs());
 
     //require at least 6 signatures
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments)

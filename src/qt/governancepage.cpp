@@ -6,6 +6,7 @@
 #include "ui_governancepage.h"
 
 #include "activemasternode.h"
+#include "chainparams.h"
 #include "clientmodel.h"
 #include "masternode-budget.h"
 #include "masternode-sync.h"
@@ -107,14 +108,18 @@ void GovernancePage::updateProposalList()
         ++nRow;
     }
 
-    CBlockIndex* pindexPrev = chainActive.Tip();
+    CBlockIndex* pindexPrev;
+    {
+        LOCK(cs_main);
+        pindexPrev = chainActive.Tip();
+    }
     int nNext, nLeft;
     if (!pindexPrev) {
         nNext = 0;
         nLeft = 0;
     }
     else {
-        nNext = pindexPrev->nHeight - pindexPrev->nHeight % GetBudgetPaymentCycleBlocks() + GetBudgetPaymentCycleBlocks();
+        nNext = pindexPrev->nHeight - pindexPrev->nHeight % Params().GetBudgetCycleBlocks() + Params().GetBudgetCycleBlocks();
         nLeft = nNext - pindexPrev->nHeight;
     }
 
@@ -123,7 +128,7 @@ void GovernancePage::updateProposalList()
     ui->time_before_super_value->setText(QString::number(nLeft/60/24));
     ui->alloted_budget_value->setText(QString::number(nTotalAllotted/COIN));
     ui->unallocated_budget_value->setText(QString::number((budget.GetTotalBudget(pindexPrev->nHeight) - nTotalAllotted)/COIN));
-    ui->masternode_count_value->setText(QString::number(mnodeman.stable_size()));
+    ui->masternode_count_value->setText(QString::number(mnodeman.CountEnabled(ActiveProtocol())));
 }
 
 void GovernancePage::setExtendedProposal(CBudgetProposal* proposal)

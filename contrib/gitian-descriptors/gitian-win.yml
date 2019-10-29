@@ -1,5 +1,5 @@
 ---
-name: "kts-win-1.1.2"
+name: "kts-win-1.3.0"
 enable_cache: true
 suites:
 - "bionic"

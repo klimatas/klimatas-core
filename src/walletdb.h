@@ -11,10 +11,10 @@
 #include "db.h"
 #include "key.h"
 #include "keystore.h"
-#include "primitives/zerocoin.h"
+#include "zkts/zerocoin.h"
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Denominations.h"
-#include "zktstracker.h"
+#include "zkts/zktstracker.h"
 
 #include <list>
 #include <stdint.h>
@@ -189,7 +189,12 @@ public:
     bool ReadZKTSCount(uint32_t& nCount);
     std::map<uint256, std::vector<pair<uint256, uint32_t> > > MapMintPool();
     bool WriteMintPoolPair(const uint256& hashMasterSeed, const uint256& hashPubcoin, const uint32_t& nCount);
-
+    void LoadPrecomputes(std::list<std::pair<uint256, CoinWitnessCacheData> >& itemList, std::map<uint256, list<std::pair<uint256, CoinWitnessCacheData> >::iterator>& itemMap);
+    void LoadPrecomputes(set<uint256> setHashes);
+    void EraseAllPrecomputes();
+    bool WritePrecompute(const uint256& hash, const CoinWitnessCacheData& data);
+    bool ReadPrecompute(const uint256& hash, CoinWitnessCacheData& data);
+    bool ErasePrecompute(const uint256& hash);
 
 private:
     CWalletDB(const CWalletDB&);

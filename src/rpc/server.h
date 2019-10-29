@@ -10,7 +10,7 @@
 #define BITCOIN_RPCSERVER_H
 
 #include "amount.h"
-#include "primitives/zerocoin.h"
+#include "zkts/zerocoin.h"
 #include "rpc/protocol.h"
 #include "uint256.h"
 
@@ -181,7 +181,7 @@ extern std::string HelpExampleCli(std::string methodname, std::string args);
 extern std::string HelpExampleRpc(std::string methodname, std::string args);
 
 extern void EnsureWalletIsUnlocked(bool fAllowAnonOnly = false);
-extern UniValue DoZktsSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, const int nSecurityLevel, vector<CZerocoinMint>& vMintsSelected, std::string address_str);
+extern UniValue DoZktsSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool isPublicSpend = true);
 
 extern UniValue getconnectioncount(const UniValue& params, bool fHelp); // in rpc/net.cpp
 extern UniValue getpeerinfo(const UniValue& params, bool fHelp);
@@ -271,6 +271,7 @@ extern UniValue getzktsseed(const UniValue& params, bool fHelp);
 extern UniValue generatemintlist(const UniValue& params, bool fHelp);
 extern UniValue searchdzkts(const UniValue& params, bool fHelp);
 extern UniValue dzktsstate(const UniValue& params, bool fHelp);
+extern UniValue clearspendcache(const UniValue& params, bool fHelp);
 extern UniValue enableautomintaddress(const UniValue& params, bool fHelp);
 extern UniValue createautomintaddress(const UniValue& params, bool fHelp);
 
@@ -308,10 +309,10 @@ extern UniValue reconsiderblock(const UniValue& params, bool fHelp);
 extern UniValue getaccumulatorvalues(const UniValue& params, bool fHelp);
 extern UniValue getaccumulatorwitness(const UniValue& params, bool fHelp);
 extern UniValue getmintsinblocks(const UniValue& params, bool fHelp);
+extern UniValue getserials(const UniValue& params, bool fHelp);
 extern UniValue getchecksumblock(const UniValue& params, bool fHelp);
 
 extern UniValue getpoolinfo(const UniValue& params, bool fHelp); // in rpc/masternode.cpp
-extern UniValue masternode(const UniValue& params, bool fHelp);
 extern UniValue listmasternodes(const UniValue& params, bool fHelp);
 extern UniValue getmasternodecount(const UniValue& params, bool fHelp);
 extern UniValue createmasternodebroadcast(const UniValue& params, bool fHelp);
@@ -328,7 +329,6 @@ extern UniValue getmasternodestatus(const UniValue& params, bool fHelp);
 extern UniValue getmasternodewinners(const UniValue& params, bool fHelp);
 extern UniValue getmasternodescores(const UniValue& params, bool fHelp);
 
-extern UniValue mnbudget(const UniValue& params, bool fHelp); // in rpc/budget.cpp
 extern UniValue preparebudget(const UniValue& params, bool fHelp);
 extern UniValue submitbudget(const UniValue& params, bool fHelp);
 extern UniValue mnbudgetvote(const UniValue& params, bool fHelp);

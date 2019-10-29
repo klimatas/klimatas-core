@@ -2,15 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <primitives/deterministicmint.h>
+#include <zkts/deterministicmint.h>
 #include "zktstracker.h"
 #include "util.h"
 #include "sync.h"
 #include "main.h"
 #include "txdb.h"
 #include "walletdb.h"
-#include "zktswallet.h"
-#include "accumulators.h"
+#include "zkts/accumulators.h"
+#include "zkts/zktswallet.h"
+#include "witness.h"
 
 using namespace std;
 
@@ -105,6 +106,29 @@ bool CzKTSTracker::GetMetaFromStakeHash(const uint256& hashStake, CMintMeta& met
             meta = it.second;
             return true;
         }
+    }
+
+    return false;
+}
+
+CoinWitnessData* CzKTSTracker::GetSpendCache(const uint256& hashStake)
+{
+    AssertLockHeld(cs_spendcache);
+    if (!mapStakeCache.count(hashStake)) {
+        std::unique_ptr<CoinWitnessData> uptr(new CoinWitnessData());
+        mapStakeCache.insert(std::make_pair(hashStake, std::move(uptr)));
+        return mapStakeCache.at(hashStake).get();
+    }
+
+    return mapStakeCache.at(hashStake).get();
+}
+
+bool CzKTSTracker::ClearSpendCache()
+{
+    AssertLockHeld(cs_spendcache);
+    if (!mapStakeCache.empty()) {
+        mapStakeCache.clear();
+        return true;
     }
 
     return false;
@@ -436,7 +460,7 @@ bool CzKTSTracker::UpdateStatusInternal(const std::set<uint256>& setMempool, CMi
     return false;
 }
 
-std::set<CMintMeta> CzKTSTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, bool fUpdateStatus, bool fWrongSeed)
+std::set<CMintMeta> CzKTSTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, bool fUpdateStatus, bool fWrongSeed, bool fExcludeV1)
 {
     CWalletDB walletdb(strWalletFile);
     if (fUpdateStatus) {
@@ -449,6 +473,8 @@ std::set<CMintMeta> CzKTSTracker::ListMints(bool fUnusedOnly, bool fMatureOnly, 
 
         CzKTSWallet* zKTSWallet = new CzKTSWallet(strWalletFile);
         for (auto& dMint : listDeterministicDB) {
+            if (fExcludeV1 && dMint.GetVersion() < 2)
+                continue;
             Add(dMint, false, false, zKTSWallet);
         }
         delete zKTSWallet;

@@ -104,6 +104,17 @@ libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) co
     return &ZCParamsDec;
 }
 
+bool CChainParams::HasStakeMinAgeOrDepth(const int contextHeight, const uint32_t contextTime,
+                                         const int utxoFromBlockHeight, const uint32_t utxoFromBlockTime) const
+{
+    // before stake modifier V2, the age required was 60 * 60 (1 hour) / not required on regtest
+    if (!IsStakeModifierV2(contextHeight))
+        return (NetworkID() == CBaseChainParams::REGTEST || (utxoFromBlockTime + 3600 <= contextTime));
+
+    // after stake modifier V2, we require the utxo to be nStakeMinDepth deep in the chain
+    return (contextHeight - utxoFromBlockHeight >= nStakeMinDepth);
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -129,14 +140,20 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
+        nTargetTimespan = 1 * 60; // KTS: 1 minute
         nTargetSpacing = 1 * 60; // KTS: 1 day
         nTargetSpacing = 1 * 60;  // KTS: 1 minute
         nMaturity = 30;
+        nStakeMinDepth = 600;
+        nFutureTimeDriftPoW = 7200;
+        nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 23000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 2880;
+        nKtsBadBlockTime = 1548517545; // Skip nBit validation of Block 259201 per PR #915
+        nKtsBadBlocknBits = 0x1c6ef294; // Skip nBit validation of Block 259201 per PR #915
         nModifierUpdateBlock = 999999999;
         nZerocoinStartHeight = 999999999;
         nZerocoinStartTime = 1551646601; // October 17, 2017 4:30:00 AM
@@ -147,8 +164,17 @@ public:
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
+        nBlockDoubleAccumulated = 10;
         nEnforceNewSporkKey = 1551387401; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
+        nBlockStakeModifierlV2 = 411600;
+
+        // Public coin spend enforcement
+        nPublicZCSpends = 411600;
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = 1;
+        nSupplyBeforeFakeSerial = 0 * COIN;   // zerocoin supply at block nFakeSerialBlockheightEnd
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -206,6 +232,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
+        nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkKey = "039123aee0c28882e9a1d877adbfa648dd4e828bec109c8576785860aeb1cdda48";
         strSporkKeyOld = "039123aee0c28882e9a1d877adbfa648dd4e828bec109c8576785860aeb1cdda48";
         strObfuscationPoolDummyAddress = "DKv8dUifgBKkWM1nwjad7yNasQ41yA9ntR";
@@ -219,6 +246,7 @@ public:
             "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
             "31438167899885040445364023527381951378636564391212010397122822120720357";
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
+        nMaxZerocoinPublicSpendsPerTransaction = 637; // Assume about 220 bytes each input
         nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
         nRequiredAccumulation = 1;
@@ -227,6 +255,7 @@ public:
         nZerocoinRequiredStakeDepth = 100; //The required confirmations for a zkts to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+        nProposalEstablishmentTime = 60 * 60 * 24; // Proposals must be at least a day old to make it into a budget
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -259,7 +288,11 @@ public:
         nTargetSpacing = 1 * 60; // KTS: 1 day
         nTargetSpacing = 1 * 60;  // KTS: 1 minute
         nLastPOWBlock = 2880;
+        nKtsBadBlockTime = 1489001494; // Skip nBit validation of Block 259201 per PR #915
+        nKtsBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915
         nMaturity = 15;
+        //nStakeMinDepth = 100;
+        nStakeMinDepth = 0;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 50000000 * COIN;
@@ -274,6 +307,14 @@ public:
         nBlockZerocoinV2 = 220; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1551387401; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
+        nBlockStakeModifierlV2 = 411600;
+
+        // Public coin spend enforcement
+        nPublicZCSpends = 225;
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = -1;
+        nSupplyBeforeFakeSerial = 0;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1548334205;
@@ -307,12 +348,14 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
+        nBudgetCycleBlocks = 144; //!< Ten cycles per day on testnet
         strSporkKey = "039123aee0c28882e9a1d877adbfa648dd4e828bec109c8576785860aeb1cdda48";
         strSporkKeyOld = "039123aee0c28882e9a1d877adbfa648dd4e828bec109c8576785860aeb1cdda48";
         strObfuscationPoolDummyAddress = "xp87cG8UEQgzs1Bk67Yk884C7pnQfAeo7q";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet
+        nProposalEstablishmentTime = 60 * 5; // Proposals must be at least 5 mns old to make it into a test budget
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -356,6 +399,13 @@ public:
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint
+        nBlockStakeModifierlV2 = std::numeric_limits<int>::max(); // max integer value (never switch on regtest)
+
+        // Public coin spend enforcement
+        nPublicZCSpends = 225;
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = -1;
 
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1548334205;

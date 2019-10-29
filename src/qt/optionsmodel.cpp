@@ -99,11 +99,6 @@ void OptionsModel::Init()
         settings.setValue("nPreferredDenom", 0);
     nPreferredDenom = settings.value("nPreferredDenom", "0").toLongLong();
 
-    if (!settings.contains("nAnonymizeKtsAmount"))
-        settings.setValue("nAnonymizeKtsAmount", 1000);
-
-    nAnonymizeKtsAmount = settings.value("nAnonymizeKtsAmount").toLongLong();
-
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
 
@@ -274,8 +269,6 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return QVariant(nZeromintPercentage);
         case ZeromintPrefDenom:
             return QVariant(nPreferredDenom);
-        case AnonymizeKtsAmount:
-            return QVariant(nAnonymizeKtsAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -411,11 +404,6 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             fHideOrphans = value.toBool();
             settings.setValue("fHideOrphans", fHideOrphans);
             emit hideOrphansChanged(fHideOrphans);
-            break;
-        case AnonymizeKtsAmount:
-            nAnonymizeKtsAmount = value.toInt();
-            settings.setValue("nAnonymizeKtsAmount", nAnonymizeKtsAmount);
-            emit anonymizeKtsAmountChanged(nAnonymizeKtsAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

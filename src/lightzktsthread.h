@@ -11,7 +11,7 @@
 
 #include <atomic>
 #include "genwit.h"
-#include "accumulators.h"
+#include "zkts/accumulators.h"
 #include "concurrentqueue.h"
 #include "chainparams.h"
 #include <boost/function.hpp>

@@ -9,7 +9,7 @@
 
 #include "wallet.h"
 
-#include "accumulators.h"
+#include "zkts/accumulators.h"
 #include "base58.h"
 #include "checkpoints.h"
 #include "coincontrol.h"
@@ -30,14 +30,16 @@
 
 #include "denomination_functions.h"
 #include "libzerocoin/Denominations.h"
-#include "zktswallet.h"
-#include "primitives/deterministicmint.h"
+#include "zkts/zktswallet.h"
+#include "zkts/zktstracker.h"
+#include "zkts/deterministicmint.h"
 #include <assert.h>
 
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/thread.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <zkts/witness.h>
 
 using namespace std;
 
@@ -51,6 +53,7 @@ bool bSpendZeroConfChange = true;
 bool bdisableSystemnotifications = false; // Those bubbles can be annoying and slow down the UI when you get lots of trx
 bool fSendFreeTransactions = false;
 bool fPayAtLeastCustomFee = true;
+bool fGlobalUnlockSpendCache = false;
 int64_t nStartupTime = GetTime(); //!< Client startup time for use with automint
 
 /**
@@ -388,7 +391,7 @@ set<uint256> CWallet::GetConflicts(const uint256& txid) const
     std::pair<TxSpends::const_iterator, TxSpends::const_iterator> range;
 
     BOOST_FOREACH (const CTxIn& txin, wtx.vin) {
-        if (mapTxSpends.count(txin.prevout) <= 1 || wtx.IsZerocoinSpend())
+        if (mapTxSpends.count(txin.prevout) <= 1 || wtx.HasZerocoinSpendInputs())
             continue; // No conflict if zero or one spends
         range = mapTxSpends.equal_range(txin.prevout);
         for (TxSpends::const_iterator it = range.first; it != range.second; ++it)
@@ -743,7 +746,7 @@ void CWallet::SyncTransaction(const CTransaction& tx, const CBlock* pblock)
     // available of the outputs it spends. So force those to be
     // recomputed, also:
     BOOST_FOREACH (const CTxIn& txin, tx.vin) {
-        if (!tx.IsZerocoinSpend() && mapWallet.count(txin.prevout.hash))
+        if (!txin.IsZerocoinSpend() && mapWallet.count(txin.prevout.hash))
             mapWallet[txin.prevout.hash].MarkDirty();
     }
 }
@@ -968,7 +971,7 @@ int64_t CWalletTx::GetTxTime() const
 int64_t CWalletTx::GetComputedTxTime() const
 {
     LOCK(cs_main);
-    if (IsZerocoinSpend() || IsZerocoinMint()) {
+    if (ContainsZerocoins()) {
         if (IsInMainChain())
             return mapBlockIndex.at(hashBlock)->GetBlockTime();
         else
@@ -1376,6 +1379,7 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
     }
 
     // Sent/received.
+    bool hasZerocoinSpends = HasZerocoinSpendInputs();
     for (unsigned int i = 0; i < vout.size(); ++i) {
         const CTxOut& txout = vout[i];
         isminetype fIsMine = pwallet->IsMine(txout);
@@ -1386,12 +1390,12 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
             // Don't report 'change' txouts
             if (pwallet->IsChange(txout))
                 continue;
-        } else if (!(fIsMine & filter) && !IsZerocoinSpend())
+        } else if (!(fIsMine & filter) && !hasZerocoinSpends)
             continue;
 
         // In either case, we need to get the destination address
         CTxDestination address;
-        if (txout.scriptPubKey.IsZerocoinMint()) {
+        if (txout.IsZerocoinMint()) {
             address = CNoDestination();
         } else if (!ExtractDestination(txout.scriptPubKey, address)) {
             if (!IsCoinStake() && !IsCoinBase()) {
@@ -1658,20 +1662,24 @@ CAmount CWallet::GetBalance() const
     return nTotal;
 }
 
-std::map<libzerocoin::CoinDenomination, int> mapMintMaturity;
-int nLastMaturityCheck = 0;
+//std::map<libzerocoin::CoinDenomination, int> mapMintMaturity;
+//int nLastMaturityCheck = 0;
 CAmount CWallet::GetZerocoinBalance(bool fMatureOnly) const
 {
     if (fMatureOnly) {
-        if (chainActive.Height() > nLastMaturityCheck)
-            mapMintMaturity = GetMintMaturityHeight();
-        nLastMaturityCheck = chainActive.Height();
+        // This code is not removed just for when we back to use zPIV in the future, for now it's useless,
+        // every public coin spend is now spendable without need to have new mints on top.
+
+        //if (chainActive.Height() > nLastMaturityCheck)
+        //    mapMintMaturity = GetMintMaturityHeight();
+        //nLastMaturityCheck = chainActive.Height();
 
         CAmount nBalance = 0;
         vector<CMintMeta> vMints = zktsTracker->GetMints(true);
         for (auto meta : vMints) {
-            if (meta.nHeight >= mapMintMaturity.at(meta.denom) || meta.nHeight >= chainActive.Height() || meta.nHeight == 0)
-                continue;
+            // Every public coin spend is now spendable, no need to mint new coins on top.
+            //if (meta.nHeight >= mapMintMaturity.at(meta.denom) || meta.nHeight >= chainActive.Height() || meta.nHeight == 0)
+            //    continue;
             nBalance += libzerocoin::ZerocoinDenominationToAmount(meta.denom);
         }
         return nBalance;
@@ -1739,123 +1747,6 @@ std::map<libzerocoin::CoinDenomination, CAmount> CWallet::GetMyZerocoinDistribut
             spread.at(mint.denom)++;
     }
     return spread;
-}
-
-
-CAmount CWallet::GetAnonymizableBalance() const
-{
-    if (fLiteMode) return 0;
-
-    CAmount nTotal = 0;
-    {
-        LOCK2(cs_main, cs_wallet);
-        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
-            const CWalletTx* pcoin = &(*it).second;
-
-            if (pcoin->IsTrusted())
-                nTotal += pcoin->GetAnonymizableCredit();
-        }
-    }
-
-    return nTotal;
-}
-
-CAmount CWallet::GetAnonymizedBalance() const
-{
-    if (fLiteMode) return 0;
-
-    CAmount nTotal = 0;
-    {
-        LOCK2(cs_main, cs_wallet);
-        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
-            const CWalletTx* pcoin = &(*it).second;
-
-            if (pcoin->IsTrusted())
-                nTotal += pcoin->GetAnonymizedCredit();
-        }
-    }
-
-    return nTotal;
-}
-
-// Note: calculated including unconfirmed,
-// that's ok as long as we use it for informational purposes only
-double CWallet::GetAverageAnonymizedRounds() const
-{
-    if (fLiteMode) return 0;
-
-    double fTotal = 0;
-    double fCount = 0;
-
-    {
-        LOCK2(cs_main, cs_wallet);
-        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
-            const CWalletTx* pcoin = &(*it).second;
-
-            uint256 hash = (*it).first;
-
-            for (unsigned int i = 0; i < pcoin->vout.size(); i++) {
-                CTxIn vin = CTxIn(hash, i);
-
-                if (IsSpent(hash, i) || IsMine(pcoin->vout[i]) != ISMINE_SPENDABLE || !IsDenominated(vin)) continue;
-
-                int rounds = GetInputObfuscationRounds(vin);
-                fTotal += (float)rounds;
-                fCount += 1;
-            }
-        }
-    }
-
-    if (fCount == 0) return 0;
-
-    return fTotal / fCount;
-}
-
-// Note: calculated including unconfirmed,
-// that's ok as long as we use it for informational purposes only
-CAmount CWallet::GetNormalizedAnonymizedBalance() const
-{
-    if (fLiteMode) return 0;
-
-    CAmount nTotal = 0;
-
-    {
-        LOCK2(cs_main, cs_wallet);
-        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
-            const CWalletTx* pcoin = &(*it).second;
-
-            uint256 hash = (*it).first;
-
-            for (unsigned int i = 0; i < pcoin->vout.size(); i++) {
-                CTxIn vin = CTxIn(hash, i);
-
-                if (IsSpent(hash, i) || IsMine(pcoin->vout[i]) != ISMINE_SPENDABLE || !IsDenominated(vin)) continue;
-                if (pcoin->GetDepthInMainChain() < 0) continue;
-
-                int rounds = GetInputObfuscationRounds(vin);
-                nTotal += pcoin->vout[i].nValue * rounds / nZeromintPercentage;
-            }
-        }
-    }
-
-    return nTotal;
-}
-
-CAmount CWallet::GetDenominatedBalance(bool unconfirmed) const
-{
-    if (fLiteMode) return 0;
-
-    CAmount nTotal = 0;
-    {
-        LOCK2(cs_main, cs_wallet);
-        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
-            const CWalletTx* pcoin = &(*it).second;
-
-            nTotal += pcoin->GetDenominatedCredit(unconfirmed);
-        }
-    }
-
-    return nTotal;
 }
 
 CAmount CWallet::GetUnconfirmedBalance() const
@@ -2110,33 +2001,26 @@ bool less_then_denom(const COutput& out1, const COutput& out2)
     return (!found1 && found2);
 }
 
-bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInputs, CAmount nTargetAmount)
+bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInputs, CAmount nTargetAmount,
+                               int blockHeight, bool fPrecompute)
 {
     LOCK(cs_main);
     //Add KTS
     vector<COutput> vCoins;
     AvailableCoins(vCoins, true, NULL, false, STAKABLE_COINS);
     CAmount nAmountSelected = 0;
-    if (GetBoolArg("-ktsstake", true)) {
+    if (GetBoolArg("-ktsstake", true) && !fPrecompute) {
         for (const COutput &out : vCoins) {
             //make sure not to outrun target amount
             if (nAmountSelected + out.tx->vout[out.i].nValue > nTargetAmount)
                 continue;
 
-            //if zerocoinspend, then use the block time
-            int64_t nTxTime = out.tx->GetTxTime();
-            if (out.tx->IsZerocoinSpend()) {
-                if (!out.tx->IsInMainChain())
-                    continue;
-                nTxTime = mapBlockIndex.at(out.tx->hashBlock)->GetBlockTime();
-            }
-
-            //check for min age
-            if ((GetAdjustedTime() - nTxTime < nStakeMinAge ) && Params().NetworkID() != CBaseChainParams::REGTEST)
+            if (out.tx->vin[0].IsZerocoinSpend() && !out.tx->IsInMainChain())
                 continue;
 
-            //check that it is matured
-            if (out.nDepth < (out.tx->IsCoinStake() ? Params().COINBASE_MATURITY() : 10))
+            CBlockIndex* utxoBlock = mapBlockIndex.at(out.tx->hashBlock);
+            //check for maturity (min age/depth)
+            if (!Params().HasStakeMinAgeOrDepth(blockHeight, GetAdjustedTime(), utxoBlock->nHeight, utxoBlock->GetBlockTime()))
                 continue;
 
             //add to our stake set
@@ -2148,8 +2032,10 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
         }
     }
 
+    /* Disable zPIV Staking
+
     //zKTS
-    if (GetBoolArg("-zktsstake", true) && chainActive.Height() > Params().Zerocoin_Block_V2_Start() && !IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    if ((GetBoolArg("-zktsstake", true) || fPrecompute) && chainActive.Height() > Params().Zerocoin_Block_V2_Start() && !IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         //Only update zKTS set once per update interval
         bool fUpdate = false;
         static int64_t nTimeLastUpdate = 0;
@@ -2177,7 +2063,7 @@ bool CWallet::SelectStakeCoins(std::list<std::unique_ptr<CStakeInput> >& listInp
             }
         }
     }
-
+    */
     return true;
 }
 
@@ -2186,6 +2072,8 @@ bool CWallet::MintableCoins()
     LOCK(cs_main);
     CAmount nBalance = GetBalance();
     CAmount nZktsBalance = GetZerocoinBalance(false);
+
+    int chainHeight = chainActive.Height();
 
     // Regular KTS
     if (nBalance > 0) {
@@ -2197,15 +2085,11 @@ bool CWallet::MintableCoins()
         vector<COutput> vCoins;
         AvailableCoins(vCoins, true);
 
+        int64_t time = GetAdjustedTime();
         for (const COutput& out : vCoins) {
-            int64_t nTxTime = out.tx->GetTxTime();
-            if (out.tx->IsZerocoinSpend()) {
-                if (!out.tx->IsInMainChain())
-                    continue;
-                nTxTime = mapBlockIndex.at(out.tx->hashBlock)->GetBlockTime();
-            }
-
-            if (GetAdjustedTime() - nTxTime > nStakeMinAge)
+            CBlockIndex* utxoBlock = mapBlockIndex.at(out.tx->hashBlock);
+            //check for maturity (min age/depth)
+            if (Params().HasStakeMinAgeOrDepth(chainHeight, time, utxoBlock->nHeight, utxoBlock->nTime))
                 return true;
         }
     }
@@ -2216,7 +2100,7 @@ bool CWallet::MintableCoins()
         for (auto mint : setMints) {
             if (mint.nVersion < CZerocoinMint::STAKABLE_VERSION)
                 continue;
-            if (mint.nHeight > chainActive.Height() - Params().Zerocoin_RequiredStakeDepth())
+            if (mint.nHeight > chainHeight - Params().Zerocoin_RequiredStakeDepth())
                 continue;
            return true;
         }
@@ -2496,48 +2380,6 @@ bool CWallet::SelectCoinsByDenominations(int nDenom, CAmount nValueMin, CAmount 
     return (nValueRet >= nValueMin && fFound10000 && fFound1000 && fFound100 && fFound10 && fFound1 && fFoundDot1);
 }
 
-bool CWallet::SelectCoinsDark(CAmount nValueMin, CAmount nValueMax, std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet, int nObfuscationRoundsMin, int nObfuscationRoundsMax) const
-{
-    CCoinControl* coinControl = NULL;
-
-    setCoinsRet.clear();
-    nValueRet = 0;
-
-    vector<COutput> vCoins;
-    AvailableCoins(vCoins, true, coinControl, false, nObfuscationRoundsMin < 0 ? ONLY_NONDENOMINATED_NOT10000IFMN : ONLY_DENOMINATED);
-
-    set<pair<const CWalletTx*, unsigned int> > setCoinsRet2;
-
-    //order the array so largest nondenom are first, then denominations, then very small inputs.
-    sort(vCoins.rbegin(), vCoins.rend(), CompareByPriority());
-
-    BOOST_FOREACH (const COutput& out, vCoins) {
-        //do not allow inputs less than 1 CENT
-        if (out.tx->vout[out.i].nValue < CENT) continue;
-        //do not allow collaterals to be selected
-        if (IsCollateralAmount(out.tx->vout[out.i].nValue)) continue;
-        if (fMasterNode && out.tx->vout[out.i].nValue == GetMNCollateral(chainActive.Height()) * COIN) continue; //masternode input
-
-        if (nValueRet + out.tx->vout[out.i].nValue <= nValueMax) {
-            CTxIn vin = CTxIn(out.tx->GetHash(), out.i);
-
-            int rounds = GetInputObfuscationRounds(vin);
-            if (rounds >= nObfuscationRoundsMax) continue;
-            if (rounds < nObfuscationRoundsMin) continue;
-
-            vin.prevPubKey = out.tx->vout[out.i].scriptPubKey; // the inputs PubKey
-            nValueRet += out.tx->vout[out.i].nValue;
-            setCoinsRet.push_back(vin);
-            setCoinsRet2.insert(make_pair(out.tx, out.i));
-        }
-    }
-
-    // if it's more than min, we're good to return
-    if (nValueRet >= nValueMin) return true;
-
-    return false;
-}
-
 bool CWallet::SelectCoinsCollateral(std::vector<CTxIn>& setCoinsRet, CAmount& nValueRet) const
 {
     vector<COutput> vCoins;
@@ -2565,33 +2407,6 @@ bool CWallet::SelectCoinsCollateral(std::vector<CTxIn>& setCoinsRet, CAmount& nV
     return false;
 }
 
-int CWallet::CountInputsWithAmount(CAmount nInputAmount)
-{
-    CAmount nTotal = 0;
-    {
-        LOCK(cs_wallet);
-        for (map<uint256, CWalletTx>::const_iterator it = mapWallet.begin(); it != mapWallet.end(); ++it) {
-            const CWalletTx* pcoin = &(*it).second;
-            if (pcoin->IsTrusted()) {
-                int nDepth = pcoin->GetDepthInMainChain(false);
-
-                for (unsigned int i = 0; i < pcoin->vout.size(); i++) {
-                    COutput out = COutput(pcoin, i, nDepth, true);
-                    CTxIn vin = CTxIn(out.tx->GetHash(), out.i);
-
-                    if (out.tx->vout[out.i].nValue != nInputAmount) continue;
-                    if (!IsDenominatedAmount(pcoin->vout[i].nValue)) continue;
-                    if (IsSpent(out.tx->GetHash(), i) || IsMine(pcoin->vout[i]) != ISMINE_SPENDABLE || !IsDenominated(vin)) continue;
-
-                    nTotal++;
-                }
-            }
-        }
-    }
-
-    return nTotal;
-}
-
 bool CWallet::HasCollateralInputs(bool fOnlyConfirmed) const
 {
     vector<COutput> vCoins;
@@ -2607,57 +2422,6 @@ bool CWallet::HasCollateralInputs(bool fOnlyConfirmed) const
 bool CWallet::IsCollateralAmount(CAmount nInputAmount) const
 {
     return nInputAmount != 0 && nInputAmount % OBFUSCATION_COLLATERAL == 0 && nInputAmount < OBFUSCATION_COLLATERAL * 5 && nInputAmount > OBFUSCATION_COLLATERAL;
-}
-
-bool CWallet::CreateCollateralTransaction(CMutableTransaction& txCollateral, std::string& strReason)
-{
-    /*
-        To doublespend a collateral transaction, it will require a fee higher than this. So there's
-        still a significant cost.
-    */
-    CAmount nFeeRet = 1 * COIN;
-
-    txCollateral.vin.clear();
-    txCollateral.vout.clear();
-
-    CReserveKey reservekey(this);
-    CAmount nValueIn2 = 0;
-    std::vector<CTxIn> vCoinsCollateral;
-
-    if (!SelectCoinsCollateral(vCoinsCollateral, nValueIn2)) {
-        strReason = "Error: Obfuscation requires a collateral transaction and could not locate an acceptable input!";
-        return false;
-    }
-
-    // make our change address
-    CScript scriptChange;
-    CPubKey vchPubKey;
-    assert(reservekey.GetReservedKey(vchPubKey)); // should never fail, as we just unlocked
-    scriptChange = GetScriptForDestination(vchPubKey.GetID());
-    reservekey.KeepKey();
-
-    BOOST_FOREACH (CTxIn v, vCoinsCollateral)
-        txCollateral.vin.push_back(v);
-
-    if (nValueIn2 - OBFUSCATION_COLLATERAL - nFeeRet > 0) {
-        //pay collateral charge in fees
-        CTxOut vout3 = CTxOut(nValueIn2 - OBFUSCATION_COLLATERAL, scriptChange);
-        txCollateral.vout.push_back(vout3);
-    }
-
-    int vinNumber = 0;
-    BOOST_FOREACH (CTxIn v, txCollateral.vin) {
-        if (!SignSignature(*this, v.prevPubKey, txCollateral, vinNumber, int(SIGHASH_ALL | SIGHASH_ANYONECANPAY))) {
-            BOOST_FOREACH (CTxIn v, vCoinsCollateral)
-                UnlockCoin(v.prevout);
-
-            strReason = "CObfuscationPool::Sign - Unable to sign collateral transaction! \n";
-            return false;
-        }
-        vinNumber++;
-    }
-
-    return true;
 }
 
 bool CWallet::GetBudgetSystemCollateralTX(CWalletTx& tx, uint256 hash, bool useIX)
@@ -2703,21 +2467,6 @@ bool CWallet::GetBudgetFinalizationCollateralTX(CWalletTx& tx, uint256 hash, boo
         return false;
     }
 
-    return true;
-}
-
-bool CWallet::ConvertList(std::vector<CTxIn> vCoins, std::vector<CAmount>& vecAmounts)
-{
-    BOOST_FOREACH (CTxIn i, vCoins) {
-        if (mapWallet.count(i.prevout.hash)) {
-            CWalletTx& wtx = mapWallet[i.prevout.hash];
-            if (i.prevout.n < wtx.vout.size()) {
-                vecAmounts.push_back(wtx.vout[i.prevout.n].nValue);
-            }
-        } else {
-            LogPrintf("ConvertList -- Couldn't find transaction\n");
-        }
-    }
     return true;
 }
 
@@ -2975,6 +2724,7 @@ bool CWallet::CreateCoinStake(
     // The following split & combine thresholds are important to security
     // Should not be adjusted if you don't understand the consequences
     //int64_t nCombineThreshold = 0;
+    const CBlockIndex* pindexPrev = chainActive.Tip();
     txNew.vin.clear();
     txNew.vout.clear();
 
@@ -2994,21 +2744,19 @@ bool CWallet::CreateCoinStake(
 
     // Get the list of stakable inputs
     std::list<std::unique_ptr<CStakeInput> > listInputs;
-    if (!SelectStakeCoins(listInputs, nBalance - nReserveBalance)) {
+    if (!SelectStakeCoins(listInputs, nBalance - nReserveBalance, pindexPrev->nHeight + 1)) {
         LogPrintf("CreateCoinStake(): selectStakeCoins failed\n");
         return false;
     }
 
     if (listInputs.empty()) {
         LogPrintf("CreateCoinStake(): listInputs empty\n");
+        MilliSleep(50000);
         return false;
     }
 
-    if (GetAdjustedTime() - chainActive.Tip()->GetBlockTime() < 60){
-
-        if(Params().NetworkID() != CBaseChainParams::REGTEST){
-            MilliSleep(10000);
-        }else{
+    if (GetAdjustedTime() - chainActive.Tip()->GetBlockTime() < 60) {
+        if (Params().NetworkID() == CBaseChainParams::REGTEST) {
             MilliSleep(1000);
         }
 
@@ -3017,6 +2765,13 @@ bool CWallet::CreateCoinStake(
     CAmount nCredit;
     CScript scriptPubKeyKernel;
     bool fKernelFound = false;
+    int nAttempts = 0;
+    // Block time.
+    nTxNewTime = GetAdjustedTime();
+    // If the block time is in the future, then starts there.
+    if (pindexPrev->nTime > nTxNewTime) {
+        nTxNewTime = pindexPrev->nTime;
+    }
     for (std::unique_ptr<CStakeInput>& stakeInput : listInputs) {
         nCredit = 0;
         // Make sure the wallet is unlocked and shutdown hasn't been requested
@@ -3024,25 +2779,11 @@ bool CWallet::CreateCoinStake(
             return false;
 
         //make sure that enough time has elapsed between
-        CBlockIndex* pindex = stakeInput->GetIndexFrom();
-        if (!pindex || pindex->nHeight < 1) {
-            LogPrintf("CreateCoinStake(): no pindexfrom\n");
-            continue;
-        }
-
-        // Read block header
-        CBlockHeader block = pindex->GetBlockHeader();
         uint256 hashProofOfStake = 0;
-        nTxNewTime = GetAdjustedTime();
 
+        nAttempts++;
         //iterates each utxo inside of CheckStakeKernelHash()
-        if (Stake(stakeInput.get(), nBits, block.GetBlockTime(), nTxNewTime, hashProofOfStake)) {
-            LOCK(cs_main);
-            //Double check that this will pass time requirements
-            if (nTxNewTime <= chainActive.Tip()->GetMedianTimePast() && Params().NetworkID() != CBaseChainParams::REGTEST) {
-                LogPrintf("CreateCoinStake() : kernel found, but it is too far in the past \n");
-                continue;
-            }
+        if (Stake(pindexPrev, stakeInput.get(), nBits, nTxNewTime, hashProofOfStake)) {
 
             // Found a kernel
             LogPrintf("CreateCoinStake : kernel found\n");
@@ -3064,11 +2805,19 @@ bool CWallet::CreateCoinStake(
             CAmount nMinFee = 0;
             if (!stakeInput->IsZKTS()) {
                 // Set output amount
-                if (txNew.vout.size() == 3) {
-                    txNew.vout[1].nValue = ((nCredit - nMinFee) / 2 / CENT) * CENT;
-                    txNew.vout[2].nValue = nCredit - nMinFee - txNew.vout[1].nValue;
-                } else
-                    txNew.vout[1].nValue = nCredit - nMinFee;
+                unsigned int outputs = txNew.vout.size() - 1;
+                CAmount nRemaining = nCredit - nMinFee;
+                if (outputs > 1) {
+                    // Split the stake across the outputs
+                    CAmount nShare = nRemaining / outputs;
+                    for (int i = 1; i < outputs; i++) {
+                        // loop through all but the last one.
+                        txNew.vout[i].nValue = nShare;
+                        nRemaining -= nShare;
+                    }
+                }
+                // put the remaining on the last output (which all into the first if only one output)
+                txNew.vout[outputs].nValue += nRemaining;
             }
 
             // Limit size
@@ -3079,15 +2828,21 @@ bool CWallet::CreateCoinStake(
             //Masternode payment
             FillBlockPayee(txNew, nMinFee, true, stakeInput->IsZKTS());
 
-            uint256 hashTxOut = txNew.GetHash();
-            CTxIn in;
-            if (!stakeInput->CreateTxIn(this, in, hashTxOut)) {
-                LogPrintf("%s : failed to create TxIn\n", __func__);
-                txNew.vin.clear();
-                txNew.vout.clear();
-                continue;
+            {
+                TRY_LOCK(zktsTracker->cs_spendcache, fLocked);
+                if (!fLocked)
+                    continue;
+
+                uint256 hashTxOut = txNew.GetHash();
+                CTxIn in;
+                if (!stakeInput->CreateTxIn(this, in, hashTxOut)) {
+                    LogPrintf("%s : failed to create TxIn\n", __func__);
+                    txNew.vin.clear();
+                    txNew.vout.clear();
+                    continue;
+                }
+                txNew.vin.emplace_back(in);
             }
-            txNew.vin.emplace_back(in);
 
             //Mark mints as spent
             if (stakeInput->IsZKTS()) {
@@ -3099,9 +2854,8 @@ bool CWallet::CreateCoinStake(
             fKernelFound = true;
             break;
         }
-        if (fKernelFound)
-            break; // if kernel is found stop searching
     }
+    LogPrintf("%s: attempted staking %d times\n", __func__, nAttempts);
     if (!fKernelFound)
         return false;
 
@@ -3162,7 +2916,7 @@ bool CWallet::CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, std:
             AddToWallet(wtxNew);
 
             // Notify that old coins are spent
-            if (!wtxNew.IsZerocoinSpend()) {
+            if (!wtxNew.HasZerocoinSpendInputs()) {
                 set<uint256> updated_hahes;
                 BOOST_FOREACH (const CTxIn& txin, wtxNew.vin) {
                     // notify only once
@@ -3226,23 +2980,6 @@ CAmount CWallet::GetMinimumFee(unsigned int nTxBytes, unsigned int nConfirmTarge
     if (nFeeNeeded > maxTxFee)
         nFeeNeeded = maxTxFee;
     return nFeeNeeded;
-}
-
-CAmount CWallet::GetTotalValue(std::vector<CTxIn> vCoins)
-{
-    CAmount nTotalValue = 0;
-    CWalletTx wtx;
-    BOOST_FOREACH (CTxIn i, vCoins) {
-        if (mapWallet.count(i.prevout.hash)) {
-            CWalletTx& wtx = mapWallet[i.prevout.hash];
-            if (i.prevout.n < wtx.vout.size()) {
-                nTotalValue += wtx.vout[i.prevout.n].nValue;
-            }
-        } else {
-            LogPrintf("GetTotalValue -- Couldn't find transaction\n");
-        }
-    }
-    return nTotalValue;
 }
 
 string CWallet::PrepareObfuscationDenominate(int minRounds, int maxRounds)
@@ -4006,20 +3743,6 @@ bool CWallet::LoadDestData(const CTxDestination& dest, const std::string& key, c
     return true;
 }
 
-bool CWallet::GetDestData(const CTxDestination& dest, const std::string& key, std::string* value) const
-{
-    std::map<CTxDestination, CAddressBookData>::const_iterator i = mapAddressBook.find(dest);
-    if (i != mapAddressBook.end()) {
-        CAddressBookData::StringMap::const_iterator j = i->second.destdata.find(key);
-        if (j != i->second.destdata.end()) {
-            if (value)
-                *value = j->second;
-            return true;
-        }
-    }
-    return false;
-}
-
 void CWallet::InitAutoConvertAddresses()
 {
     CWalletDB walletdb(strWalletFile);
@@ -4180,7 +3903,8 @@ void CWallet::AutoZeromint()
 void CWallet::AutoCombineDust()
 {
     LOCK2(cs_main, cs_wallet);
-    if (chainActive.Tip()->nTime < (GetAdjustedTime() - 300) || IsLocked()) {
+    const CBlockIndex* tip = chainActive.Tip();
+    if (tip->nTime < (GetAdjustedTime() - 300) || IsLocked()) {
         return;
     }
 
@@ -4276,11 +4000,13 @@ bool CWallet::MultiSend()
 {
     LOCK2(cs_main, cs_wallet);
     // Stop the old blocks from sending multisends
-    if (chainActive.Tip()->nTime < (GetAdjustedTime() - 300) || IsLocked()) {
+    const CBlockIndex* tip = chainActive.Tip();
+    int chainTipHeight = tip->nHeight;
+    if (tip->nTime < (GetAdjustedTime() - 300) || IsLocked()) {
         return false;
     }
 
-    if (chainActive.Tip()->nHeight <= nLastMultiSendHeight) {
+    if (chainTipHeight <= nLastMultiSendHeight) {
         LogPrintf("Multisend: lastmultisendheight is higher than current best height\n");
         return false;
     }
@@ -4488,7 +4214,6 @@ int CMerkleTx::GetBlocksToMaturity() const
     return max(0, (Params().COINBASE_MATURITY() + 1) - GetDepthInMainChain());
 }
 
-
 bool CMerkleTx::AcceptToMemoryPool(bool fLimitFree, bool fRejectInsaneFee, bool ignoreFees)
 {
     CValidationState state;
@@ -4669,129 +4394,232 @@ bool CWallet::CreateZerocoinMintTransaction(const CAmount nValue, CMutableTransa
     return true;
 }
 
-bool CWallet::MintToTxIn(CZerocoinMint zerocoinSelected, int nSecurityLevel, const uint256& hashTxOut, CTxIn& newTxIn,
-                         CZerocoinSpendReceipt& receipt, libzerocoin::SpendType spendType, CBlockIndex* pindexCheckpoint)
+bool CWallet::CheckCoinSpend(libzerocoin::CoinSpend& spend, libzerocoin::Accumulator& accumulator, CZerocoinSpendReceipt& receipt)
+{
+    if (!spend.Verify(accumulator)) {
+        receipt.SetStatus(_("The transaction did not verify"), ZKTS_BAD_SERIALIZATION);
+        return error("%s : The transaction did not verify", __func__);
+    }
+
+    if (Params().NetworkID() != CBaseChainParams::REGTEST && IsSerialKnown(spend.getCoinSerialNumber())) {
+        //Tried to spend an already spent zKTS
+        receipt.SetStatus(_("The coin spend has been used"), ZKTS_SPENT_USED_ZKTS);
+        uint256 hashSerial = GetSerialHash(spend.getCoinSerialNumber());
+        if(!zktsTracker->HasSerialHash(hashSerial))
+            return error("%s: serialhash %s not found in tracker", __func__, hashSerial.GetHex());
+
+        CMintMeta meta = zktsTracker->Get(hashSerial);
+        meta.isUsed = true;
+        if (!zktsTracker->UpdateState(meta))
+            LogPrintf("%s: failed to write zerocoinmint\n", __func__);
+
+        return false;
+    }
+
+    return true;
+}
+
+bool CWallet::MintToTxIn(
+        CZerocoinMint mint,
+        const uint256& hashTxOut,
+        CTxIn& newTxIn,
+        CZerocoinSpendReceipt& receipt,
+        libzerocoin::SpendType spendType,
+        CBlockIndex* pindexCheckpoint,
+        bool publicCoinSpend)
+{
+    std::map<CBigNum, CZerocoinMint> mapMints;
+    mapMints.insert(std::make_pair(mint.GetValue(), mint));
+    std::vector<CTxIn> vin;
+    if (publicCoinSpend) {
+        if (MintsToInputVectorPublicSpend(mapMints, hashTxOut, vin, receipt, spendType, pindexCheckpoint)) {
+            newTxIn = vin[0];
+            return true;
+        }
+    } else {
+        if (MintsToInputVector(mapMints, hashTxOut, vin, receipt, spendType, pindexCheckpoint)) {
+            newTxIn = vin[0];
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool CWallet::MintsToInputVector(std::map<CBigNum, CZerocoinMint>& mapMintsSelected, const uint256& hashTxOut, std::vector<CTxIn>& vin,
+                                 CZerocoinSpendReceipt& receipt, libzerocoin::SpendType spendType, CBlockIndex* pindexCheckpoint)
 {
     // Default error status if not changed below
     receipt.SetStatus(_("Transaction Mint Started"), ZKTS_TXMINT_GENERAL);
     libzerocoin::ZerocoinParams* paramsAccumulator = Params().Zerocoin_Params(false);
+    AccumulatorMap mapAccumulators(paramsAccumulator);
+    int64_t nTimeStart = GetTimeMicros();
 
-    bool isV1Coin = libzerocoin::ExtractVersionFromSerial(zerocoinSelected.GetSerialNumber()) < libzerocoin::PrivateCoin::PUBKEY_VERSION;
-    libzerocoin::ZerocoinParams* paramsCoin = Params().Zerocoin_Params(isV1Coin);
-    //LogPrintf("%s: *** using v1 coin params=%b, using v1 acc params=%b\n", __func__, isV1Coin, chainActive.Height() < Params().Zerocoin_Block_V2_Start());
+    int nLockAttempts = 0;
+    while (nLockAttempts < 100) {
+        TRY_LOCK(zktsTracker->cs_spendcache, lockSpendcache);
+        if (!lockSpendcache) {
+            fGlobalUnlockSpendCache = true;
+            MilliSleep(100);
+            ++nLockAttempts;
+            continue;
+        }
 
-    // 2. Get pubcoin from the private coin
-    libzerocoin::CoinDenomination denomination = zerocoinSelected.GetDenomination();
-    libzerocoin::PublicCoin pubCoinSelected(paramsCoin, zerocoinSelected.GetValue(), denomination);
-    //LogPrintf("%s : selected mint %s\n pubcoinhash=%s\n", __func__, zerocoinSelected.ToString(), GetPubCoinHash(zerocoinSelected.GetValue()).GetHex());
-    if (!pubCoinSelected.validate()) {
-        receipt.SetStatus(_("The selected mint coin is an invalid coin"), ZKTS_INVALID_COIN);
-        return error("%s : %s", __func__, receipt.GetStatusMessage());
+        for (auto &it : mapMintsSelected) {
+            CZerocoinMint mint = it.second;
+            CMintMeta meta = zktsTracker->Get(GetSerialHash(mint.GetSerialNumber()));
+            CoinWitnessData *coinWitness = zktsTracker->GetSpendCache(meta.hashStake);
+
+            if (!coinWitness->nHeightAccEnd) {
+                *coinWitness = CoinWitnessData(mint);
+                coinWitness->SetHeightMintAdded(mint.GetHeight());
+            }
+
+            // Generate the witness for each mint being spent
+            if (!GenerateAccumulatorWitness(coinWitness, mapAccumulators, pindexCheckpoint)) {
+                receipt.SetStatus(_("Try to spend with a higher security level to include more coins"),
+                                  ZKTS_FAILED_ACCUMULATOR_INITIALIZATION);
+                return error("%s : %s", __func__, receipt.GetStatusMessage());
+            }
+
+            // Construct the CoinSpend object. This acts like a signature on the transaction.
+            int64_t nTime1 = GetTimeMicros();
+            libzerocoin::ZerocoinParams *paramsCoin = Params().Zerocoin_Params(coinWitness->isV1);
+            libzerocoin::PrivateCoin privateCoin(paramsCoin, coinWitness->denom);
+            privateCoin.setPublicCoin(*coinWitness->coin);
+            privateCoin.setRandomness(mint.GetRandomness());
+            privateCoin.setSerialNumber(mint.GetSerialNumber());
+            int64_t nTime2 = GetTimeMicros();
+            LogPrint("bench", "        - CoinSpend constructed in %.2fms\n", 0.001 * (nTime2 - nTime1));
+
+            //Version 2 zerocoins have a privkey associated with them
+            uint8_t nVersion = mint.GetVersion();
+            privateCoin.setVersion(mint.GetVersion());
+            if (nVersion >= libzerocoin::PrivateCoin::PUBKEY_VERSION) {
+                CKey key;
+                if (!mint.GetKeyPair(key))
+                    return error("%s: failed to set zKTS privkey mint version=%d", __func__, nVersion);
+                privateCoin.setPrivKey(key.GetPrivKey());
+            }
+            int64_t nTime3 = GetTimeMicros();
+            LogPrint("bench", "        - Signing key set in %.2fms\n", 0.001 * (nTime3 - nTime2));
+
+            libzerocoin::Accumulator accumulator = mapAccumulators.GetAccumulator(coinWitness->denom);
+            uint32_t nChecksum = GetChecksum(accumulator.getValue());
+            CBigNum bnValue;
+            if (!GetAccumulatorValueFromChecksum(nChecksum, false, bnValue) || bnValue == 0)
+                return error("%s: could not find checksum used for spend\n", __func__);
+
+            int64_t nTime4 = GetTimeMicros();
+            LogPrint("bench", "        - Accumulator value fetched in %.2fms\n", 0.001 * (nTime4 - nTime3));
+
+            try {
+                libzerocoin::CoinSpend spend(paramsCoin, paramsAccumulator, privateCoin, accumulator, nChecksum,
+                                             *coinWitness->pWitness, hashTxOut, spendType);
+
+                if (!CheckCoinSpend(spend, accumulator, receipt)) {
+                    receipt.SetStatus(_("CoinSpend: failed check"), ZKTS_SPEND_ERROR);
+                    return error("%s : %s", __func__, receipt.GetStatusMessage());
+                }
+
+                vin.emplace_back(CTxIn(spend, coinWitness->denom));
+                CZerocoinSpend zcSpend(spend.getCoinSerialNumber(), 0, mint.GetValue(), mint.GetDenomination(),
+                                       GetChecksum(accumulator.getValue()));
+                zcSpend.SetMintCount(coinWitness->nMintsAdded);
+                receipt.AddSpend(zcSpend);
+
+                int64_t nTime5 = GetTimeMicros();
+                LogPrint("bench", "        - CoinSpend verified in %.2fms\n", 0.001 * (nTime5 - nTime4));
+            } catch (const std::exception &) {
+                receipt.SetStatus(_("CoinSpend: Accumulator witness does not verify"), ZKTS_INVALID_WITNESS);
+                return error("%s : %s", __func__, receipt.GetStatusMessage());
+            }
+        }
+        break;
+    }
+    if (nLockAttempts == 100) {
+        LogPrintf("%s : could not get lock on cs_spendcache\n", __func__);
+        receipt.SetStatus(_("could not get lock on cs_spendcache"), ZKTS_TXMINT_GENERAL);
+        return false;
     }
 
-    // 3. Compute Accumulator and Witness
-    libzerocoin::Accumulator accumulator(paramsAccumulator, pubCoinSelected.getDenomination());
-    libzerocoin::AccumulatorWitness witness(paramsAccumulator, accumulator, pubCoinSelected);
-    string strFailReason = "";
-    int nMintsAdded = 0;
-    if (!GenerateAccumulatorWitness(pubCoinSelected, accumulator, witness, nSecurityLevel, nMintsAdded, strFailReason, pindexCheckpoint)) {
-        receipt.SetStatus(_("Try to spend with a higher security level to include more coins"), ZKTS_FAILED_ACCUMULATOR_INITIALIZATION);
-        return error("%s : %s", __func__, receipt.GetStatusMessage());
+    int64_t nTimeFinished = GetTimeMicros();
+    LogPrint("bench", "    - %s took %.2fms [%.3fms/spend]\n", __func__, 0.001 * (nTimeFinished - nTimeStart), 0.001 * (nTimeFinished - nTimeStart) / mapMintsSelected.size());
+
+    receipt.SetStatus(_("Spend Valid"), ZKTS_SPEND_OKAY); // Everything okay
+
+    return true;
+}
+
+bool CWallet::MintsToInputVectorPublicSpend(std::map<CBigNum, CZerocoinMint>& mapMintsSelected, const uint256& hashTxOut, std::vector<CTxIn>& vin,
+                                            CZerocoinSpendReceipt& receipt, libzerocoin::SpendType spendType, CBlockIndex* pindexCheckpoint)
+{
+    // Default error status if not changed below
+    receipt.SetStatus(_("Transaction Mint Started"), ZKTS_TXMINT_GENERAL);
+
+    int nLockAttempts = 0;
+    while (nLockAttempts < 100) {
+        TRY_LOCK(zktsTracker->cs_spendcache, lockSpendcache);
+        if (!lockSpendcache) {
+            fGlobalUnlockSpendCache = true;
+            MilliSleep(100);
+            ++nLockAttempts;
+            continue;
+        }
+
+        for (auto &it : mapMintsSelected) {
+            CZerocoinMint mint = it.second;
+
+            // Create the simple input and the scriptSig -> Serial + Randomness + Private key signature of both.
+            // As the mint doesn't have the output index search it..
+            CTransaction txMint;
+            uint256 hashBlock;
+            if (!GetTransaction(mint.GetTxHash(), txMint, hashBlock)) {
+                receipt.SetStatus(strprintf(_("Unable to find transaction containing mint %s"), mint.GetTxHash().GetHex()), ZKTS_TXMINT_GENERAL);
+                return false;
+            } else if (mapBlockIndex.count(hashBlock) < 1) {
+                // check that this mint made it into the blockchain
+                receipt.SetStatus(_("Mint did not make it into blockchain"), ZKTS_TXMINT_GENERAL);
+                return false;
+            }
+
+            int outputIndex = -1;
+            for (unsigned long i = 0; i < txMint.vout.size(); ++i) {
+                CTxOut out = txMint.vout[i];
+                if (out.scriptPubKey.IsZerocoinMint()){
+                    libzerocoin::PublicCoin pubcoin(Params().Zerocoin_Params(false));
+                    CValidationState state;
+                    if (!TxOutToPublicCoin(out, pubcoin, state))
+                        return error("%s: extracting pubcoin from txout failed", __func__);
+
+                    if (pubcoin.getValue() == mint.GetValue()){
+                        outputIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            if (outputIndex == -1) {
+                receipt.SetStatus(_("Pubcoin not found in mint tx"), ZKTS_TXMINT_GENERAL);
+                return false;
+            }
+
+            mint.SetOutputIndex(outputIndex);
+            CTxIn in;
+            if(!ZKTSModule::createInput(in, mint, hashTxOut)){
+                receipt.SetStatus(_("Cannot create public spend input"), ZKTS_TXMINT_GENERAL);
+                return false;
+            }
+            vin.emplace_back(in);
+            receipt.AddSpend(CZerocoinSpend(mint.GetSerialNumber(), 0, mint.GetValue(), mint.GetDenomination(), 0));
+        }
+        break;
     }
 
-    // Construct the CoinSpend object. This acts like a signature on the transaction.
-    libzerocoin::PrivateCoin privateCoin(paramsCoin, denomination, false);
-    privateCoin.setPublicCoin(pubCoinSelected);
-    privateCoin.setRandomness(zerocoinSelected.GetRandomness());
-    privateCoin.setSerialNumber(zerocoinSelected.GetSerialNumber());
-
-    //Version 2 zerocoins have a privkey associated with them
-    uint8_t nVersion = zerocoinSelected.GetVersion();
-    privateCoin.setVersion(zerocoinSelected.GetVersion());
-    LogPrintf("%s: privatecoin version=%d\n", __func__, privateCoin.getVersion());
-    if (nVersion >= libzerocoin::PrivateCoin::PUBKEY_VERSION) {
-        CKey key;
-        if (!zerocoinSelected.GetKeyPair(key))
-            return error("%s: failed to set zKTS privkey mint version=%d", __func__, nVersion);
-
-        privateCoin.setPrivKey(key.GetPrivKey());
-    }
-
-
-    uint32_t nChecksum = GetChecksum(accumulator.getValue());
-    CBigNum bnValue;
-    if (!GetAccumulatorValueFromChecksum(nChecksum, false, bnValue) || bnValue == 0)
-        return error("%s: could not find checksum used for spend\n", __func__);
-
-    try {
-        libzerocoin::CoinSpend spend(paramsCoin, paramsAccumulator, privateCoin, accumulator, nChecksum, witness, hashTxOut,
-                                     spendType);
-        LogPrintf("%s\n", spend.ToString());
-
-        if (!spend.Verify(accumulator)) {
-            receipt.SetStatus(_("The new spend coin transaction did not verify"), ZKTS_INVALID_WITNESS);
-            //return false;
-            LogPrintf("** spend.verify failed, trying with different params\n");
-
-            libzerocoin::CoinSpend spend2(Params().Zerocoin_Params(true), paramsAccumulator, privateCoin, accumulator,
-                                          nChecksum, witness, hashTxOut, libzerocoin::SpendType::SPEND);
-            LogPrintf("*** spend2 valid=%d\n", spend2.Verify(accumulator));
-            return error("%s : %s", __func__, receipt.GetStatusMessage());
-        }
-
-        // Deserialize the CoinSpend intro a fresh object
-        CDataStream serializedCoinSpend(SER_NETWORK, PROTOCOL_VERSION);
-        serializedCoinSpend << spend;
-        std::vector<unsigned char> data(serializedCoinSpend.begin(), serializedCoinSpend.end());
-
-        //Add the coin spend into a KTS transaction
-        newTxIn.scriptSig = CScript() << OP_ZEROCOINSPEND << data.size();
-        newTxIn.scriptSig.insert(newTxIn.scriptSig.end(), data.begin(), data.end());
-        newTxIn.prevout.SetNull();
-
-        //use nSequence as a shorthand lookup of denomination
-        //NOTE that this should never be used in place of checking the value in the final blockchain acceptance/verification
-        //of the transaction
-        newTxIn.nSequence = denomination;
-
-        CDataStream serializedCoinSpendChecking(SER_NETWORK, PROTOCOL_VERSION);
-        try {
-            serializedCoinSpendChecking << spend;
-        } catch (...) {
-            receipt.SetStatus(_("Failed to deserialize"), ZKTS_BAD_SERIALIZATION);
-            return error("%s : %s", __func__, receipt.GetStatusMessage());
-        }
-
-        libzerocoin::CoinSpend newSpendChecking(paramsCoin, paramsAccumulator, serializedCoinSpendChecking);
-        if (!newSpendChecking.Verify(accumulator)) {
-            receipt.SetStatus(_("The transaction did not verify"), ZKTS_BAD_SERIALIZATION);
-            return error("%s : %s", __func__, receipt.GetStatusMessage());
-        }
-
-        if (Params().NetworkID() != CBaseChainParams::REGTEST && IsSerialKnown(spend.getCoinSerialNumber())) {
-            //Tried to spend an already spent zKTS
-            receipt.SetStatus(_("The coin spend has been used"), ZKTS_SPENT_USED_ZKTS);
-
-            uint256 hashSerial = GetSerialHash(spend.getCoinSerialNumber());
-            if (!zktsTracker->HasSerialHash(hashSerial))
-                return error("%s: serialhash %s not found in tracker", __func__, hashSerial.GetHex());
-
-            CMintMeta meta = zktsTracker->Get(hashSerial);
-            meta.isUsed = true;
-            if (!zktsTracker->UpdateState(meta))
-                LogPrintf("%s: failed to write zerocoinmint\n", __func__);
-
-            pwalletMain->NotifyZerocoinChanged(pwalletMain, zerocoinSelected.GetValue().GetHex(), "Used", CT_UPDATED);
-            return error("%s : %s", __func__, receipt.GetStatusMessage());
-        }
-
-        uint32_t nAccumulatorChecksum = GetChecksum(accumulator.getValue());
-        CZerocoinSpend zcSpend(spend.getCoinSerialNumber(), 0, zerocoinSelected.GetValue(), zerocoinSelected.GetDenomination(), nAccumulatorChecksum);
-        zcSpend.SetMintCount(nMintsAdded);
-        receipt.AddSpend(zcSpend);
-    } catch (const std::exception&) {
-        receipt.SetStatus(_("CoinSpend: Accumulator witness does not verify"), ZKTS_INVALID_WITNESS);
-        return error("%s : %s", __func__, receipt.GetStatusMessage());
+    if (nLockAttempts == 100) {
+        LogPrintf("%s : could not get lock on cs_spendcache\n", __func__);
+        receipt.SetStatus(_("could not get lock on cs_spendcache"), ZKTS_TXMINT_GENERAL);
+        return false;
     }
 
     receipt.SetStatus(_("Spend Valid"), ZKTS_SPEND_OKAY); // Everything okay
@@ -4799,7 +4627,17 @@ bool CWallet::MintToTxIn(CZerocoinMint zerocoinSelected, int nSecurityLevel, con
     return true;
 }
 
-bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel, CWalletTx& wtxNew, CReserveKey& reserveKey, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vSelectedMints, vector<CDeterministicMint>& vNewMints, bool fMintChange,  bool fMinimizeChange, CBitcoinAddress* address)
+bool CWallet::CreateZerocoinSpendTransaction(
+        CAmount nValue,
+        CWalletTx& wtxNew,
+        CReserveKey& reserveKey,
+        CZerocoinSpendReceipt& receipt,
+        vector<CZerocoinMint>& vSelectedMints,
+        vector<CDeterministicMint>& vNewMints,
+        bool fMintChange,
+        bool fMinimizeChange,
+        CBitcoinAddress* address,
+        bool isPublicSpend)
 {
     // Check available funds
     int nStatus = ZKTS_TRX_FUNDS_PROBLEMS;
@@ -4822,10 +4660,11 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
     CAmount nValueSelected = 0;
     int nCoinsReturned = 0; // Number of coins returned in change from function below (for debug)
     int nNeededSpends = 0;  // Number of spends which would be needed if selection failed
-    const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zKTS transaction
+    const int nMaxSpends = Params().Zerocoin_MaxPublicSpendsPerTransaction(); // Maximum possible spends for one zKTS transaction
     vector<CMintMeta> vMintsToFetch;
     if (vSelectedMints.empty()) {
-        setMints = zktsTracker->ListMints(true, true, true); // need to find mints to spend
+        //  All of the zPIV used in the public coin spend are mature by default (everything is public now.. no need to wait for any accumulation)
+        setMints = zktsTracker->ListMints(true, false, true, true); // need to find mints to spend
         if(setMints.empty()) {
             receipt.SetStatus(_("Failed to find Zerocoins in wallet.dat"), nStatus);
             return false;
@@ -4886,7 +4725,7 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
         uint256 hashBlock;
         bool fArchive = false;
         if (!GetTransaction(mint.GetTxHash(), txMint, hashBlock)) {
-            receipt.SetStatus(_("Unable to find transaction containing mint"), nStatus);
+            receipt.SetStatus(strprintf(_("Unable to find transaction containing mint, txHash: %s"), mint.GetTxHash().GetHex()), nStatus);
             fArchive = true;
         } else if (mapBlockIndex.count(hashBlock) < 1) {
             receipt.SetStatus(_("Mint did not make it into blockchain"), nStatus);
@@ -4914,17 +4753,7 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
         return false;
     }
 
-    for (const auto& mint : vSelectedMints) {
-        if (mint.GetVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
-            if (nSecurityLevel < 100) {
-                nStatus = ZKTS_SPEND_V1_SEC_LEVEL;
-                receipt.SetStatus(_("Version 1 zKTS require a security level of 100 to successfully spend."), nStatus);
-                return false;
-            }
-        }
-    }
-
-    if ((static_cast<int>(vSelectedMints.size()) > Params().Zerocoin_MaxSpendsPerTransaction())) {
+    if (static_cast<int>(vSelectedMints.size()) > nMaxSpends) {
         receipt.SetStatus(_("Failed to find coin set amongst held coins with less than maxNumber of Spends"), nStatus);
         return false;
     }
@@ -4993,14 +4822,31 @@ bool CWallet::CreateZerocoinSpendTransaction(CAmount nValue, int nSecurityLevel,
             //hash with only the output info in it to be used in Signature of Knowledge
             uint256 hashTxOut = txNew.GetHash();
 
-            //add all of the mints to the transaction as inputs
-            for (CZerocoinMint mint : vSelectedMints) {
-                CTxIn newTxIn;
-                if (!MintToTxIn(mint, nSecurityLevel, hashTxOut, newTxIn, receipt, libzerocoin::SpendType::SPEND)) {
-                    return false;
-                }
-                txNew.vin.push_back(newTxIn);
+            //Use the same accumulator checkpoint for each spend
+            int nHeightHighest = 0;
+            for (const CZerocoinMint& mint : vSelectedMints) {
+                if (mint.GetHeight() > nHeightHighest)
+                    nHeightHighest = mint.GetHeight();
             }
+
+            CBlockIndex* pindexCheckpoint = nullptr;
+
+            std::map<CBigNum, CZerocoinMint> mapSelectedMints;
+            for (const CZerocoinMint& mint : vSelectedMints)
+                mapSelectedMints.insert(std::make_pair(mint.GetValue(), mint));
+
+            //add all of the mints to the transaction as inputs
+            std::vector<CTxIn> vin;
+            if (isPublicSpend) {
+                if (!MintsToInputVectorPublicSpend(mapSelectedMints, hashTxOut, vin, receipt,
+                                                   libzerocoin::SpendType::SPEND, pindexCheckpoint))
+                    return false;
+            } else {
+                if (!MintsToInputVector(mapSelectedMints, hashTxOut, vin, receipt,
+                                        libzerocoin::SpendType::SPEND, pindexCheckpoint))
+                    return false;
+            }
+            txNew.vin = vin;
 
             // Limit size
             unsigned int nBytes = ::GetSerializeSize(txNew, SER_NETWORK, PROTOCOL_VERSION);
@@ -5305,7 +5151,7 @@ string CWallet::MintZerocoin(CAmount nValue, CWalletTx& wtxNew, vector<CDetermin
     return "";
 }
 
-bool CWallet::SpendZerocoin(CAmount nAmount, int nSecurityLevel, CWalletTx& wtxNew, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vMintsSelected, bool fMintChange, bool fMinimizeChange, CBitcoinAddress* addressTo)
+bool CWallet::SpendZerocoin(CAmount nAmount, CWalletTx& wtxNew, CZerocoinSpendReceipt& receipt, vector<CZerocoinMint>& vMintsSelected, bool fMintChange, bool fMinimizeChange, CBitcoinAddress* addressTo, bool isPublicSpend)
 {
     // Default: assume something goes wrong. Depending on the problem this gets more specific below
     int nStatus = ZKTS_SPEND_ERROR;
@@ -5317,7 +5163,7 @@ bool CWallet::SpendZerocoin(CAmount nAmount, int nSecurityLevel, CWalletTx& wtxN
 
     CReserveKey reserveKey(this);
     vector<CDeterministicMint> vNewMints;
-    if (!CreateZerocoinSpendTransaction(nAmount, nSecurityLevel, wtxNew, reserveKey, receipt, vMintsSelected, vNewMints, fMintChange, fMinimizeChange, addressTo)) {
+    if (!CreateZerocoinSpendTransaction(nAmount, wtxNew, reserveKey, receipt, vMintsSelected, vNewMints, fMintChange, fMinimizeChange, addressTo, isPublicSpend)) {
         return false;
     }
 
@@ -5458,3 +5304,298 @@ bool CWallet::DatabaseMint(CDeterministicMint& dMint)
     zktsTracker->Add(dMint, true);
     return true;
 }
+
+void ThreadPrecomputeSpends()
+{
+    boost::this_thread::interruption_point();
+    LogPrintf("ThreadPrecomputeSpends started\n");
+    CWallet* pwallet = pwalletMain;
+    try {
+        pwallet->PrecomputeSpends();
+        boost::this_thread::interruption_point();
+    } catch (std::exception& e) {
+        LogPrintf("ThreadPrecomputeSpends() exception: %s \n", e.what());
+    } catch (...) {
+        LogPrintf("ThreadPrecomputeSpends() error \n");
+    }
+    LogPrintf("ThreadPrecomputeSpends exiting,\n");
+}
+
+void CWallet::PrecomputeSpends()
+{
+    // We don't even need to worry about this code.. no zPIV.
+    /*LogPrintf("Precomputer started\n");
+    RenameThread("pivx-precomputer");
+
+    CWalletDB walletdb("precomputes.dat", "cr+");
+
+    // Create LRU Cache
+    std::list<std::pair<uint256, CoinWitnessCacheData> > item_list;
+    std::map<uint256, list<std::pair<uint256, CoinWitnessCacheData> >::iterator> item_map;
+
+    // Dirty cache that needs to be written to disk
+    std::map<uint256, CoinWitnessCacheData> mapDirtyWitnessData;
+
+    // Initialize Variables
+    bool fLoadedPrecomputesFromDB = false;
+    bool fOnFirstLoad = true;
+    int64_t nLastCacheCleanUpTime = GetTime();
+    int64_t nLastCacheWriteDB = nLastCacheCleanUpTime;
+    int nRequiredStakeDepthBuffer = Params().Zerocoin_RequiredStakeDepth() + 10;
+    int nAdjustableCacheLength = GetArg("-precomputecachelength", DEFAULT_PRECOMPUTE_LENGTH);
+
+    // Force the cache length to be divisible by 10
+    if (nAdjustableCacheLength % 10)
+        nAdjustableCacheLength -= nAdjustableCacheLength % 10;
+
+    if (nAdjustableCacheLength < MIN_PRECOMPUTE_LENGTH)
+        nAdjustableCacheLength = MIN_PRECOMPUTE_LENGTH;
+
+    if (nAdjustableCacheLength > MAX_PRECOMPUTE_LENGTH)
+        nAdjustableCacheLength = MAX_PRECOMPUTE_LENGTH;
+
+    while (true) {
+        // Check to see if we need to clear the cache
+        if (fClearSpendCache) {
+            fClearSpendCache = false;
+            item_map.clear();
+            item_list.clear();
+            mapDirtyWitnessData.clear();
+            nLastCacheCleanUpTime = GetTime();
+            nLastCacheWriteDB = nLastCacheCleanUpTime;
+        }
+
+        // Get the list of zPIV inputs
+        std::list <std::unique_ptr<CStakeInput>> listInputs;
+        if (!SelectStakeCoins(listInputs, 0, true)) {
+            MilliSleep(5000);
+            continue;
+        }
+
+        if (listInputs.empty()) {
+            MilliSleep(5000);
+            continue;
+        }
+
+        if (ShutdownRequested())
+            break;
+
+        while (IsLocked())
+            MilliSleep(5000);
+
+        // If we haven't loaded from database yet, load the precomputes from the database
+        if (!fLoadedPrecomputesFromDB) {
+            // Load the precomputes into the LRU cache
+            walletdb.LoadPrecomputes(item_list, item_map);
+            fLoadedPrecomputesFromDB = true;
+            LogPrint("precompute", "%s: Loaded precomputes from database. Size of lru cache: %d\n", __func__,
+                     item_map.size());
+        }
+
+        // Do some precomputing of zerocoin spend knowledge proofs
+        std::set <uint256> setInputHashes;
+        for (std::unique_ptr <CStakeInput>& stakeInput : listInputs) {
+            if (ShutdownRequested() || IsLocked())
+                break;
+
+            CoinWitnessCacheData tempDataHolder;
+
+            {
+                TRY_LOCK(zktsTracker->cs_spendcache, fLocked);
+                if (!fLocked)
+                    continue;
+
+                if (fGlobalUnlockSpendCache) {
+                    break;
+                }
+
+                // When we see a clear spend cache bool set to true, break out of the loop
+                // All cache data will be cleared at the beginning of the while loop above
+                if (fClearSpendCache) {
+                    break;
+                }
+
+                uint256 serialHash = stakeInput->GetSerialHash();
+                setInputHashes.insert(serialHash);
+                CoinWitnessData* witnessData = zktsTracker->GetSpendCache(serialHash);
+
+                // Initialize nHeightStop so it can be set below
+                int nHeightStop = 0;
+
+                if (witnessData->nHeightAccStart) { // Witness is already valid
+                    nHeightStop = std::min(chainActive.Height() - nRequiredStakeDepthBuffer,
+                                           (witnessData->nHeightAccEnd ? witnessData->nHeightAccEnd
+                                                                       : witnessData->nHeightAccStart) +
+                                           nAdjustableCacheLength);
+                } else if (item_map.count(serialHash)) { // Check Database cache
+                    // Get the witness data from the cache
+                    auto it = item_map.find(serialHash);
+                    item_list.splice(item_list.begin(), item_list, it->second);
+
+                    *witnessData = CoinWitnessData(it->second->second);
+
+                    // Set the stop height from the variables received from the database cache
+                    nHeightStop = std::min(chainActive.Height() - nRequiredStakeDepthBuffer,
+                                           (witnessData->nHeightAccEnd ? witnessData->nHeightAccEnd
+                                                                       : witnessData->nHeightAccStart) +
+                                           nAdjustableCacheLength);
+
+                    LogPrint("precompute", "%s: Got Witness Data from lru cache: %s\n", __func__,
+                             witnessData->ToString());
+                } else if (mapDirtyWitnessData.count(serialHash) || walletdb.ReadPrecompute(serialHash, tempDataHolder)) {
+                    if (mapDirtyWitnessData.count(serialHash)) {
+                        // Get the witness data from the dirty cache if it exists
+                        *witnessData = CoinWitnessData(mapDirtyWitnessData.at(serialHash));
+                        LogPrint("precompute", "%s: Got Witness Data from mapDirtyWitnessData: %s\n", __func__,
+                                 witnessData->ToString());
+                    } else {
+                        // Get the witness data from the database
+                        *witnessData = CoinWitnessData(tempDataHolder);
+                        LogPrint("precompute", "%s: Got Witness Data from precompute database: %s\n", __func__,
+                                 witnessData->ToString());
+                    }
+
+                    // Set the stop height from the variables received from the database cache
+                    nHeightStop = std::min(chainActive.Height() - nRequiredStakeDepthBuffer,
+                                           (witnessData->nHeightAccEnd ? witnessData->nHeightAccEnd
+                                                                       : witnessData->nHeightAccStart) +
+                                           nAdjustableCacheLength);
+
+                    // Add the serialHash found into the cache
+                    item_list.push_front(make_pair(serialHash, tempDataHolder));
+                    item_map.insert(make_pair(serialHash, item_list.begin()));
+
+                    // We just added a new hash into our LRU cache, so remove it if we also have it in the dirty map
+                    mapDirtyWitnessData.erase(serialHash);
+
+                    if (item_map.size() > PRECOMPUTE_LRU_CACHE_SIZE) {
+                        auto last_it = item_list.end(); last_it --;
+                        item_map.erase(last_it->first);
+                        CoinWitnessCacheData removedData = item_list.back().second;
+                        mapDirtyWitnessData[serialHash] = removedData;
+                        item_list.pop_back();
+                    }
+                } else { // This has no cache, so initialize it
+                    CZerocoinMint mint;
+                    if (!GetMintFromStakeHash(serialHash, mint))
+                        continue;
+                    *witnessData = CoinWitnessData(mint);
+                    nHeightStop = std::min(chainActive.Height() - nRequiredStakeDepthBuffer,
+                                           mint.GetHeight() + nAdjustableCacheLength);
+                }
+
+                if (nHeightStop - (witnessData->nHeightAccEnd ? witnessData->nHeightAccEnd : witnessData->nHeightAccStart) < 20)
+                    continue;
+
+                CBlockIndex* pindexStop = chainActive[nHeightStop];
+                AccumulatorMap mapAccumulators(Params().Zerocoin_Params(false));
+                LogPrint("precompute","%s: caching mint %s of denom %d start=%d stop=%d end=%s\n", __func__,
+                         witnessData->coin->getValue().GetHex().substr(0, 6),
+                         ZerocoinDenominationToInt(witnessData->denom),
+                         witnessData->nHeightAccStart, nHeightStop, witnessData->nHeightAccEnd);
+
+                if (!GenerateAccumulatorWitness(witnessData, mapAccumulators, pindexStop)) {
+                    LogPrintf("%s: Generate witness failed!\n", __func__);
+
+                    // If we fail this check, we need to make sure we remove this from the LRU cache
+                    auto it = item_map.find(serialHash);
+                    if (it != item_map.end())
+                    {
+                        item_list.erase(it->second);
+                        item_map.erase(it);
+                    }
+                    mapDirtyWitnessData.erase(serialHash);
+                    walletdb.ErasePrecompute(serialHash);
+                    continue;
+                }
+
+
+                CoinWitnessCacheData serialData(witnessData);
+
+                // If the LRU cache already has a entry for it, update the entry and move it to the front of the list
+                auto it = item_map.find(serialHash);
+                if (it != item_map.end()) {
+                    item_list.splice(item_list.begin(), item_list, it->second);
+                    item_list.begin()->second = serialData;
+                } else {
+                    item_list.push_front(make_pair(serialHash, serialData));
+                    item_map.insert(make_pair(serialHash, item_list.begin()));
+                }
+
+                // We just added a new hash into our LRU cache, so remove it if we also have it in the dirty map
+                mapDirtyWitnessData.erase(serialHash);
+
+                // Clean up the LRU cache to the max size
+                while (item_map.size() > PRECOMPUTE_LRU_CACHE_SIZE) {
+                    auto last_it = item_list.end(); last_it --;
+                    item_map.erase(last_it->first);
+                    mapDirtyWitnessData[serialHash] = item_list.back().second;
+                    item_list.pop_back();
+                }
+            }
+            // Sleep for 150ms to allow any potential spend attempt
+            MilliSleep(150);
+        }
+
+        if (fGlobalUnlockSpendCache) {
+            fGlobalUnlockSpendCache = false;
+        }
+
+        // On first load, and every 5 minutes clean up our cache with only valid unspent inputs
+        if (fOnFirstLoad || nLastCacheCleanUpTime < GetTime() - PRECOMPUTE_FLUSH_TIME) {
+            LogPrint("precompute", "%s: Cleaning up precompute cache\n", __func__);
+
+            // We only want to clear the cache if we have calculated new witness data
+            if (setInputHashes.size()) {
+                // Get a list of hashes currently in the database
+                set <uint256> databaseHashes;
+                walletdb.LoadPrecomputes(databaseHashes);
+
+                // Remove old cache data
+                for (auto inputHash : setInputHashes) {
+                    databaseHashes.erase(inputHash);
+                }
+
+                // Erase all old hashes from the database
+                for (auto hash : databaseHashes) {
+                    auto it = item_map.find(hash);
+                    if (it != item_map.end())
+                    {
+                        item_list.erase(it->second);
+                        item_map.erase(it);
+                    }
+                    mapDirtyWitnessData.erase(hash);
+                    walletdb.ErasePrecompute(hash);
+                }
+
+                nLastCacheCleanUpTime = GetTime();
+            }
+        }
+
+        // On first load, and every 5 minutes write the cache to database
+        if (mapDirtyWitnessData.size() > PRECOMPUTE_MAX_DIRTY_CACHE_SIZE || nLastCacheWriteDB < GetTime() - PRECOMPUTE_FLUSH_TIME || ShutdownRequested()) {
+            // Save all cache data that was dirty back into the database
+            for (auto item : mapDirtyWitnessData) {
+                walletdb.WritePrecompute(item.first, item.second);
+            }
+            mapDirtyWitnessData.clear();
+
+            // Save the LRU cache data into the database
+            for (auto item : item_list) {
+                walletdb.WritePrecompute(item.first, item.second);
+            }
+
+            LogPrint("precompute", "%s: Writing precomputes to database. Precomputes size: %d\n", __func__, item_map.size());
+            nLastCacheWriteDB = GetTime();
+        }
+
+        fOnFirstLoad = false;
+
+        if (ShutdownRequested())
+            break;
+
+        LogPrint("precompute", "%s: Finished precompute round...\n\n", __func__);
+        MilliSleep(5000);
+    }*/
+}
+
