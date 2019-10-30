@@ -658,3 +658,6 @@ TRANSLATIONS += src/qt/locale/kts_bg.ts \
                 src/qt/locale/kts_vi.ts \
                 src/qt/locale/kts_zh_CN.ts \
                 src/qt/locale/kts_zh_TW.ts
+
+DISTFILES += \
+    README.md
