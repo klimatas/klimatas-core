@@ -502,7 +502,7 @@ bool CMasternodeBroadcast::CheckSignature() const
             GetOldStrMessage()
     );
 
-    if(!CMessageSigner::VerifyMessage(pubKeyCollateralAddress, vchSig, strMessage, strError) && !CMessageSigner::VerifyMessage(pubKeyCollateralAddress, vchSig, oldStrMessage, strError))
+    if(!CMessageSigner::VerifyMessage(pubKeyCollateralAddress, vchSig, oldStrMessage, strError))
         return error("%s : VerifyMessage (nMessVersion=%d) failed: %s", __func__, nMessVersion, strError);
 
     return true;
