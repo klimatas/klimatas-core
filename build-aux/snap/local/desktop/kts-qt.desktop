@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=KTS Core
+Comment=KTS Core QT main network
+GenericName=KTS Digital Currency QT client main network
+Exec=kts-core.qt %u
+Terminal=false
+Type=Application
+Icon=${SNAP}/share/pixmaps/kts.png
+MimeType=x-scheme-handler/kts;
+Categories=X-Office;X-Finance;
+Keywords=internet;kts;zkts;kts;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0

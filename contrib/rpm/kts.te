@@ -1,0 +1,81 @@
+policy_module(kts, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type kts_t;
+type kts_exec_t;
+init_daemon_domain(kts_t, kts_exec_t)
+
+permissive kts_t;
+
+type kts_initrc_exec_t;
+init_script_file(kts_initrc_exec_t)
+
+type kts_conf_t;
+files_type(kts_conf_t)
+
+type kts_var_lib_t;
+files_type(kts_var_lib_t)
+
+type kts_var_run_t;
+files_type(kts_var_run_t)
+
+type kts_port_t;
+corenet_port(kts_port_t)
+
+########################################
+#
+# kts local policy
+#
+allow kts_t self:process { fork };
+
+allow kts_t self:fifo_file rw_fifo_file_perms;
+allow kts_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(kts_t, kts_conf_t, kts_conf_t)
+manage_files_pattern(kts_t, kts_conf_t, kts_conf_t)
+
+manage_dirs_pattern(kts_t, kts_var_lib_t, kts_var_lib_t)
+manage_files_pattern(kts_t, kts_var_lib_t, kts_var_lib_t)
+files_var_lib_filetrans(kts_t, kts_var_lib_t, { dir file })
+
+manage_dirs_pattern(kts_t, kts_var_run_t, kts_var_run_t)
+manage_files_pattern(kts_t, kts_var_run_t, kts_var_run_t)
+
+sysnet_dns_name_resolve(kts_t)
+corenet_all_recvfrom_unlabeled(kts_t)
+
+allow kts_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(kts_t)
+corenet_tcp_sendrecv_generic_node(kts_t)
+corenet_tcp_sendrecv_all_ports(kts_t)
+corenet_tcp_bind_generic_node(kts_t)
+
+gen_require(`
+    type kts_port_t;
+')
+allow kts_t kts_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type kts_port_t;
+')
+allow kts_t kts_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(kts_t)
+
+files_read_etc_files(kts_t)
+
+miscfiles_read_localization(kts_t)
+
+sysnet_dns_name_resolve(kts_t)
+
+allow kts_t kts_exec_t:file execute_no_trans;
+allow kts_t self:process setsched;
+corecmd_exec_ls(kts_t)
+corenet_tcp_connect_http_port(kts_t)
+dev_read_urand(kts_t)
+fs_getattr_xattr_fs(kts_t)
+kernel_read_system_state(kts_t)

@@ -1,0 +1,6 @@
+usr/local/bin/kts-qt usr/bin
+share/pixmaps/kts32.xpm usr/share/pixmaps
+share/pixmaps/kts16.xpm usr/share/pixmaps
+share/pixmaps/kts128.png usr/share/pixmaps
+debian/kts-qt.desktop usr/share/applications
+debian/kts-qt.protocol usr/share/kde4/services/
