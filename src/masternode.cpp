@@ -502,7 +502,7 @@ bool CMasternodeBroadcast::CheckSignature() const
             GetOldStrMessage()
     );
 
-    if(!CMessageSigner::VerifyMessage(pubKeyCollateralAddress, vchSig, oldStrMessage, strError))
+    if(!CMessageSigner::VerifyMessage(pubKeyCollateralAddress, vchSig, oldStrMessage, strError) && !CMessageSigner::VerifyMessage(pubKeyCollateralAddress, vchSig, strMessage, strError))
         return error("%s : VerifyMessage (nMessVersion=%d) failed: %s", __func__, nMessVersion, strError);
 
     return true;
@@ -573,8 +573,8 @@ bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
     }
 
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
-        if (addr.GetPort() != 51472) return false;
-    } else if (addr.GetPort() == 51472)
+        if (addr.GetPort() != 10300) return false;
+    } else if (addr.GetPort() == 10300)
         return false;
 
     //search existing Masternode list, this is where we update existing Masternodes with new mnb broadcasts
