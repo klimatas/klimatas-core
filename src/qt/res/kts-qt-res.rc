@@ -20,7 +20,7 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "KTS"
-            VALUE "FileDescription",    "KTS Core (OSS GUI client for KTS)"
+            VALUE "FileDescription",    "Klimatas Core (OSS GUI client for KTS)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "kts-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR

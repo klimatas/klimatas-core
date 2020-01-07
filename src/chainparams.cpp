@@ -164,7 +164,7 @@ public:
         nToCheckBlockUpgradeMajority = 1000; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetSpacing = 1 * 60;                        // 1 minute
-        nTargetTimespan =  1 * 60;                      // 40 minutes
+        nTargetTimespan =  60 * 40;                      // 40 minutes
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
         nMaturity = 30;
@@ -205,7 +205,7 @@ public:
         nBlockEnforceNewMessageSignatures = nBlockTimeProtocolV2;
 
         // Blocks v7
-        nBlockLastAccumulatorCheckpoint = 1;
+        nBlockLastAccumulatorCheckpoint = INT_MAX;
         nBlockV7StartHeight = nBlockTimeProtocolV2;
 
         // Fake Serial Attack

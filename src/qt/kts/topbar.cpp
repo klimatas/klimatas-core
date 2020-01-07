@@ -40,7 +40,7 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
     ui->containerTop->setProperty("cssClass", "container-top");
 #endif
 
-    std::initializer_list<QWidget*> lblTitles = {ui->labelTitle1, ui->labelTitle2, ui->labelTitle3, ui->labelTitle4, ui->labelTitle5, ui->labelTitle6};
+    std::initializer_list<QWidget*> lblTitles = {ui->labelTitle1, ui->labelTitle3, ui->labelTitle4};
     setCssProperty(lblTitles, "text-title-topbar");
     QFont font;
     font.setWeight(QFont::Light);
@@ -48,9 +48,9 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
 
     // Amount information top
     ui->widgetTopAmount->setVisible(false);
-    setCssProperty({ui->labelAmountTopKts, ui->labelAmountTopzKts}, "amount-small-topbar");
-    setCssProperty({ui->labelAmountKts, ui->labelAmountzKts}, "amount-topbar");
-    setCssProperty({ui->labelPendingKts, ui->labelPendingzKts, ui->labelImmatureKts, ui->labelImmaturezKts}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountTopKts}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountKts}, "amount-topbar");
+    setCssProperty({ui->labelPendingKts, ui->labelImmatureKts}, "amount-small-topbar");
 
     // Progress Sync
     progressBar = new QProgressBar(ui->layoutSync);
@@ -547,25 +547,17 @@ void TopBar::updateBalances(const CAmount& balance, const CAmount& unconfirmedBa
     //CAmount nTotalBalance = balance + unconfirmedBalance + immatureBalance;
     CAmount ktsAvailableBalance = balance + delegatedBalance - nLockedBalance;
 
-    // zKTS Balance
-    CAmount matureZerocoinBalance = zerocoinBalance - unconfirmedZerocoinBalance - immatureZerocoinBalance;
-
     // Set
     QString totalKts = GUIUtil::formatBalance(ktsAvailableBalance, nDisplayUnit);
-    QString totalzKts = GUIUtil::formatBalance(matureZerocoinBalance, nDisplayUnit, true);
     // Top
     ui->labelAmountTopKts->setText(totalKts);
-    ui->labelAmountTopzKts->setText(totalzKts);
 
     // Expanded
     ui->labelAmountKts->setText(totalKts);
-    ui->labelAmountzKts->setText(totalzKts);
 
     ui->labelPendingKts->setText(GUIUtil::formatBalance(unconfirmedBalance, nDisplayUnit));
-    ui->labelPendingzKts->setText(GUIUtil::formatBalance(unconfirmedZerocoinBalance, nDisplayUnit, true));
 
     ui->labelImmatureKts->setText(GUIUtil::formatBalance(immatureBalance, nDisplayUnit));
-    ui->labelImmaturezKts->setText(GUIUtil::formatBalance(immatureZerocoinBalance, nDisplayUnit, true));
 }
 
 void TopBar::resizeEvent(QResizeEvent *event){

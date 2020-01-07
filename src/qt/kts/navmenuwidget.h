@@ -32,7 +32,6 @@ public slots:
 private slots:
     void onSendClicked();
     void onDashboardClicked();
-    void onPrivacyClicked();
     void onAddressClicked();
     void onMasterNodesClicked();
     void onColdStakingClicked();

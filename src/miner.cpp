@@ -134,7 +134,11 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     if (nHeight >= Params().Block_V7_StartHeight()) {
         pblock->nVersion = 7;       //!> Removes accumulator checkpoints
     } else {
-        pblock->nVersion = 6;       //!> Supports V2 Stake Modifiers.
+        if(Params().IsStakeModifierV2(nHeight)) {
+            pblock->nVersion = 6;       //!> Supports V2 Stake Modifiers.
+        } else {
+            pblock->nVersion = 5;       //!> Supports CLTV activation.
+        }
     }
 
     // -regtest only: allow overriding block.nVersion with
