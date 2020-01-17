@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -44,10 +45,13 @@ SettingsDisplayOptionsWidget::SettingsDisplayOptionsWidget(KTSGUI* _window, QWid
 
     ui->labelTitleUrl->setText(tr("Third party transactions URLs"));
     ui->labelTitleUrl->setProperty("cssClass", "text-main-settings");
+    // TODO: Reconnect this option to an action. Hide it for now
+    ui->labelTitleUrl->hide();
 
     // Switch
     ui->pushButtonSwitchBalance->setText(tr("Hide empty balances"));
     ui->pushButtonSwitchBalance->setProperty("cssClass", "btn-switch");
+    ui->pushButtonSwitchBalance->setVisible(false);
 
     // Combobox
     ui->comboBoxLanguage->setProperty("cssClass", "btn-combo");
@@ -87,6 +91,8 @@ SettingsDisplayOptionsWidget::SettingsDisplayOptionsWidget(KTSGUI* _window, QWid
     // Urls
     ui->lineEditUrl->setPlaceholderText("e.g. https://example.com/tx/%s");
     initCssEditLine(ui->lineEditUrl);
+    // TODO: Reconnect this option to an action. Hide it for now
+    ui->lineEditUrl->hide();
 
     // Buttons
     ui->pushButtonSave->setText(tr("SAVE"));

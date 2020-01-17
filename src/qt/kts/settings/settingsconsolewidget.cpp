@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +17,7 @@
 #include "rpc/server.h"
 #include "util.h"
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif // ENABLE_WALLET
 
 #include <openssl/crypto.h>
@@ -247,16 +248,15 @@ SettingsConsoleWidget::SettingsConsoleWidget(KTSGUI* _window, QWidget *parent) :
     this->setStyleSheet(parent->styleSheet());
 
     // Containers
-    ui->left->setProperty("cssClass", "container");
+    setCssProperty({ui->left, ui->messagesWidget}, "container");
     ui->left->setContentsMargins(10,10,10,10);
-    ui->messagesWidget->setProperty("cssClass", "container");
 
     // Title
     ui->labelTitle->setText(tr("Console"));
     setCssTitleScreen(ui->labelTitle);
 
     // Console container
-    ui->consoleWidget->setProperty("cssClass", "container-square");
+    setCssProperty(ui->consoleWidget, "container-square");
     setShadow(ui->consoleWidget);
 
     // Edit
@@ -368,6 +368,11 @@ void SettingsConsoleWidget::loadClientModel() {
         // clear the lineEdit after activating from QCompleter
         autoCompleter->popup()->installEventFilter(this);
     }
+}
+
+void SettingsConsoleWidget::showEvent(QShowEvent *event)
+{
+    if (ui->lineEdit) ui->lineEdit->setFocus();
 }
 
 static QString categoryClass(int category)

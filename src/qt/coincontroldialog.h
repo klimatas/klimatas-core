@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -48,6 +49,8 @@ public:
 
     void setModel(WalletModel* model);
     void updateDialogLabels();
+    void updateView();
+    void refreshDialog();
 
     // static because also called from sendcoinsdialog
     static void updateLabels(WalletModel*, QDialog*);
@@ -71,7 +74,6 @@ private:
     QAction* unlockAction;
 
     void sortView(int, Qt::SortOrder);
-    void updateView();
 
     enum {
         COLUMN_CHECKBOX,

@@ -1,4 +1,6 @@
 // Copyright (c) 2013 The Bitcoin Core developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,10 +17,11 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
+#include "test/test_bitcoin.h"
+
 #include <fstream>
 
 #include <boost/filesystem/operations.hpp>
-#include <boost/foreach.hpp>
 #include <boost/test/unit_test.hpp>
 
 #if 0
@@ -78,7 +81,7 @@
 }
 #endif
 
-struct ReadAlerts
+struct ReadAlerts : public TestingSetup
 {
     ReadAlerts()
     {
@@ -92,7 +95,7 @@ struct ReadAlerts
                 alerts.push_back(alert);
             }
         }
-        catch (std::exception) { }
+        catch (const std::exception&) { }
     }
     ~ReadAlerts() { }
 
@@ -118,7 +121,7 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
 {
     SetMockTime(11);
 
-    BOOST_FOREACH(const CAlert& alert, alerts)
+    for (const CAlert& alert : alerts)
     {
         BOOST_CHECK(alert.CheckSignature());
     }
@@ -163,7 +166,7 @@ BOOST_AUTO_TEST_CASE(AlertNotify)
 
     mapArgs["-alertnotify"] = std::string("echo %s >> ") + temp.string();
 
-    BOOST_FOREACH(CAlert alert, alerts)
+    for (CAlert alert : alerts)
         alert.ProcessAlert(false);
 
     std::vector<std::string> r = read_lines(temp);

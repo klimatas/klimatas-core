@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,6 +8,7 @@
 
 #include <QDialog>
 #include <QThread>
+#include <QPointer>
 #include <iostream>
 #include <QTimer>
 #include "qt/kts/prunnable.h"
@@ -19,12 +21,14 @@ class Worker : public QObject {
     Q_OBJECT
 public:
     Worker(Runnable* runnable, int type):runnable(runnable), type(type){}
-    ~Worker(){}
+    ~Worker(){
+        runnable = nullptr;
+    }
 public slots:
     void process();
 signals:
     void finished();
-    void error(QString err);
+    void error(QString err, int type);
 
 private:
     Runnable* runnable;

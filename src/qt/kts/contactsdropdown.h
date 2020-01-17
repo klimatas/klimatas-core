@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,13 +32,14 @@ public:
     explicit ContactsDropdown(int minWidth, int minHeight, PWidget *parent = nullptr);
 
     void resizeList(int minWidth, int mintHeight);
-    void setWalletModel(WalletModel* _model, QString type);
+    void setWalletModel(WalletModel* _model, const QString& type);
+    void setType(const QString& type);
     void changeTheme(bool isLightTheme, QString& theme) override;
 signals:
     void contactSelected(QString address, QString label);
 private:
-    FurAbstractListItemDelegate* delegate;
-    AddressTableModel* model;
+    FurAbstractListItemDelegate* delegate = nullptr;
+    AddressTableModel* model = nullptr;
     AddressFilterProxyModel *filter = nullptr;
     QListView *list;
     QFrame *frameList;

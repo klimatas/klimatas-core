@@ -1,3 +1,8 @@
+// Copyright (c) 2018-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include <chainparams.h>
 #include <tinyformat.h>
 #include "witness.h"
@@ -22,12 +27,12 @@ CoinWitnessData::CoinWitnessData()
 std::string CoinWitnessData::ToString()
 {
     return strprintf("Mints Added: %d\n"
-                     "Height Mint added: %d\n"
-                     "Height Checkpoint: %d\n"
-                     "Height Acc Start: %d\n"
-                     "Height Acc End: %d\n"
-                     "Amount: %s\n"
-                     "Demon: %d\n", nMintsAdded, nHeightMintAdded, nHeightCheckpoint, nHeightAccStart, nHeightAccEnd, coin->getValue().GetHex(), coin->getDenomination());
+            "Height Mint added: %d\n"
+            "Height Checkpoint: %d\n"
+            "Height Acc Start: %d\n"
+            "Height Acc End: %d\n"
+            "Amount: %s\n"
+            "Demon: %d\n", nMintsAdded, nHeightMintAdded, nHeightCheckpoint, nHeightAccStart, nHeightAccEnd, coin->getValue().GetHex(), coin->getDenomination());
 }
 
 CoinWitnessData::CoinWitnessData(CZerocoinMint& mint)
@@ -66,6 +71,8 @@ void CoinWitnessData::SetHeightMintAdded(int nHeight)
     nHeightAccStart = nHeight - (nHeight % 10);
 }
 
+
+
 void CoinWitnessCacheData::SetNull()
 {
     nMintsAdded = 0;
@@ -73,9 +80,9 @@ void CoinWitnessCacheData::SetNull()
     nHeightCheckpoint = 0;
     nHeightAccStart = 0;
     nHeightAccEnd = 0;
-    coinAmount = CBigNum(0);
+    coinAmount = BN_ZERO;
     coinDenom = libzerocoin::CoinDenomination::ZQ_ERROR;
-    accumulatorAmount = CBigNum(0);
+    accumulatorAmount = BN_ZERO;
     accumulatorDenom = libzerocoin::CoinDenomination::ZQ_ERROR;
 
 }
@@ -101,3 +108,4 @@ CoinWitnessCacheData::CoinWitnessCacheData(CoinWitnessData* coinWitnessData)
     accumulatorAmount = coinWitnessData->pAccumulator->getValue();
     accumulatorDenom = coinWitnessData->pAccumulator->getDenomination();
 }
+

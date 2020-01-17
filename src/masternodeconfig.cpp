@@ -1,12 +1,12 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The PIVX developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "netbase.h"
 #include "masternodeconfig.h"
 #include "util.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include <base58.h>
 
 CMasternodeConfig masternodeConfig;
@@ -39,9 +39,9 @@ bool CMasternodeConfig::read(std::string& strErr)
     if (!streamConfig.good()) {
         FILE* configFile = fopen(pathMasternodeConfigFile.string().c_str(), "a");
         if (configFile != NULL) {
-            std::string strHeader = "# Klimatas masternode config file\n"
+            std::string strHeader = "# Masternode config file\n"
                                     "# Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index\n"
-                                    "# Example: mn1 127.0.0.2:10300 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0"
+                                    "# Example: mn1 127.0.0.2:51472 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0"
                                     "#\n";
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
@@ -86,14 +86,14 @@ bool CMasternodeConfig::read(std::string& strErr)
             if (port != 10300) {
                 strErr = _("Invalid port detected in masternode.conf") + "\n" +
                          strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                         _("(must be 10300 for mainnet)");
+                         _("(must be 51472 for mainnet)");
                 streamConfig.close();
                 return false;
             }
-        } else if (port == 10300) {
+        } else if (port == 10400) {
             strErr = _("Invalid port detected in masternode.conf") + "\n" +
                      strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                     _("(10300 could be used only on mainnet)");
+                     _("(51472 could be used only on mainnet)");
             streamConfig.close();
             return false;
         }
@@ -106,11 +106,11 @@ bool CMasternodeConfig::read(std::string& strErr)
     return true;
 }
 
-bool CMasternodeConfig::CMasternodeEntry::castOutputIndex(int &n)
+bool CMasternodeConfig::CMasternodeEntry::castOutputIndex(int &n) const
 {
     try {
         n = std::stoi(outputIndex);
-    } catch (const std::exception e) {
+    } catch (const std::exception& e) {
         LogPrintf("%s: %s on getOutputIndex\n", __func__, e.what());
         return false;
     }

@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,7 +22,7 @@
 #include "txdb.h" // for -dbcache defaults
 
 #ifdef ENABLE_WALLET
-#include "wallet.h" // for CWallet::minTxFee
+#include "wallet/wallet.h" // for CWallet::minTxFee
 #endif
 
 #include <boost/thread.hpp>

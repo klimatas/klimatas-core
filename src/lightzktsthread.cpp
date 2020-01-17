@@ -1,7 +1,5 @@
-//
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
@@ -38,11 +36,11 @@ void CLightWorker::ThreadLightZKTSSimplified() {
                     libzerocoin::Accumulator accumulator(params, genWit.getDen(), genWit.getAccWitValue());
                     libzerocoin::PublicCoin temp(params);
                     libzerocoin::AccumulatorWitness witness(params, accumulator, temp);
-                    string strFailReason = "";
+                    std::string strFailReason = "";
                     int nMintsAdded = 0;
                     CZerocoinSpendReceipt receipt;
 
-                    list<CBigNum> ret;
+                    std::list<CBigNum> ret;
                     int heightStop;
 
                     bool res;
@@ -62,7 +60,7 @@ void CLightWorker::ThreadLightZKTSSimplified() {
                                 heightStop
                         );
 
-                    } catch (NotEnoughMintsException e) {
+                    } catch (const NotEnoughMintsException& e) {
                         LogPrintStr(std::string("ThreadLightZKTSSimplified: ") + e.message + "\n");
                         rejectWork(genWit, blockHeight, NOT_ENOUGH_MINTS);
                         continue;
@@ -95,7 +93,7 @@ void CLightWorker::ThreadLightZKTSSimplified() {
                     rejectWork(genWit, blockHeight, NON_DETERMINED);
                 }
             }
-        } catch (std::exception& e) {
+        } catch (const std::exception& e) {
             //std::cout << "exception in light loop, closing it. " << e.what() << std::endl;
             PrintExceptionContinue(&e, "lightzktsthread");
             break;

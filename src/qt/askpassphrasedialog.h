@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -67,7 +68,7 @@ private:
     SecureString newpassCache = "";
 
     void run(int type) override;
-    void onError(int type, QString error) override;
+    void onError(QString error, int type) override;
     QCheckBox *btnWatch;
 
     void initWatch(QWidget *parent);

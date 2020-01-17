@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -108,8 +109,14 @@ SettingsInformationWidget::SettingsInformationWidget(KTSGUI* _window,QWidget *pa
     ui->labelInfoBerkeley->setText(tr("No information"));
 #endif
 
-    connect(ui->pushButtonBackups, &QPushButton::clicked, [](){GUIUtil::showBackups();});
-    connect(ui->pushButtonFile, &QPushButton::clicked, [](){GUIUtil::openConfigfile();});
+    connect(ui->pushButtonBackups, &QPushButton::clicked, [this](){
+        if (!GUIUtil::showBackups())
+            inform(tr("Unable to open backups folder"));
+    });
+    connect(ui->pushButtonFile, &QPushButton::clicked, [this](){
+        if (!GUIUtil::openConfigfile())
+            inform(tr("Unable to open kts.conf with default application"));
+    });
     connect(ui->pushButtonNetworkMonitor, SIGNAL(clicked()), this, SLOT(openNetworkMonitor()));
 }
 

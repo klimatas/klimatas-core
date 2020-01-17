@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,14 +8,14 @@
 #include "QFile"
 
 #include "init.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "networkstyle.h"
 #include "util.h"
 #include "version.h"
 #include "guiutil.h"
 
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif
 
 #include <QCloseEvent>
@@ -23,7 +24,7 @@
 #include <iostream>
 
 Splash::Splash(Qt::WindowFlags f, const NetworkStyle* networkStyle) :
-        QWidget(0, f), ui(new Ui::Splash)
+    QWidget(0, f), ui(new Ui::Splash)
 {
     ui->setupUi(this);
     QString titleText = tr("KTS Core");

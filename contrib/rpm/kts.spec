@@ -24,18 +24,18 @@ URL:		https://kts.org/
 Source0:	https://kts.org/bin/kts-core-%{version}/kts-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/contrib/debian/examples/kts.conf
+Source10:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/contrib/debian/examples/kts.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/doc/man/ktsd.1
-Source21:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/doc/man/kts-cli.1
-Source22:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/doc/man/kts-qt.1
+Source20:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/doc/man/ktsd.1
+Source21:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/doc/man/kts-cli.1
+Source22:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/doc/man/kts-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/contrib/rpm/kts.te
+Source30:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/contrib/rpm/kts.te
 # Source31 - what about kts-tx and bench_kts ???
-Source31:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/contrib/rpm/kts.fc
-Source32:	https://raw.githubusercontent.com/CryptoDev-Project/kts/v%{version}/contrib/rpm/kts.if
+Source31:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/contrib/rpm/kts.fc
+Source32:	https://raw.githubusercontent.com/kts-project/kts/v%{version}/contrib/rpm/kts.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 

@@ -1,2 +1,3 @@
 usr/local/bin/ktsd usr/bin
 usr/local/bin/kts-cli usr/bin
+debian/examples/kts.conf etc/kts

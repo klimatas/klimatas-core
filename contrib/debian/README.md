@@ -14,7 +14,7 @@ To install:
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your ktsqt binary to `/usr/bin`
+the .desktop file or copy or symlink your kts-qt binary to `/usr/bin`
 and the `../../share/pixmaps/kts128.png` to `/usr/share/pixmaps`
 
 kts-qt.protocol (KDE)

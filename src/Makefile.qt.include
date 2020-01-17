@@ -13,6 +13,7 @@ QT_TS = \
   qt/locale/kts_da.ts \
   qt/locale/kts_de.ts \
   qt/locale/kts_en.ts \
+  qt/locale/kts_en_GB.ts \
   qt/locale/kts_en_US.ts \
   qt/locale/kts_eo.ts \
   qt/locale/kts_es.ts \
@@ -43,27 +44,15 @@ QT_TS = \
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
   qt/forms/askpassphrasedialog.ui \
-  qt/forms/bip38tooldialog.ui \
   qt/forms/coincontroldialog.ui \
   qt/forms/blockexplorer.ui \
   qt/forms/editaddressdialog.ui \
   qt/forms/governancepage.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
-  qt/forms/masternodelist.ui \
-  qt/forms/multisenddialog.ui \
-  qt/forms/multisigdialog.ui\
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
-  qt/forms/overviewpage.ui \
-  qt/forms/receivecoinsdialog.ui \
-  qt/forms/privacydialog.ui \
-  qt/forms/receiverequestdialog.ui \
   qt/forms/rpcconsole.ui \
-  qt/forms/sendcoinsdialog.ui \
-  qt/forms/sendcoinsentry.ui \
-  qt/forms/signverifymessagedialog.ui \
-  qt/forms/transactiondescdialog.ui \
   qt/kts/forms/loadingdialog.ui \
   qt/forms/zktscontroldialog.ui \
   qt/kts/forms/snackbar.ui \
@@ -84,6 +73,7 @@ QT_FORMS_UI = \
   qt/kts/forms/mnrow.ui \
   qt/kts/forms/masternodeswidget.ui \
   qt/kts/forms/myaddressrow.ui \
+  qt/kts/forms/csrow.ui \
   qt/kts/forms/sendchangeaddressdialog.ui \
   qt/kts/forms/sendconfirmdialog.ui \
   qt/kts/forms/sendcustomfeedialog.ui \
@@ -99,6 +89,7 @@ QT_FORMS_UI = \
   qt/kts/forms/defaultdialog.ui \
   qt/kts/forms/denomgenerationdialog.ui \
   qt/kts/forms/privacywidget.ui \
+  qt/kts/forms/coldstakingwidget.ui \
   qt/kts/settings/forms/settingsbackupwallet.ui \
   qt/kts/settings/forms/settingsbittoolwidget.ui \
   qt/kts/settings/forms/settingsconsolewidget.ui \
@@ -120,10 +111,8 @@ QT_MOC_CPP = \
   qt/moc_addresstablemodel.cpp \
   qt/moc_askpassphrasedialog.cpp \
   qt/moc_bantablemodel.cpp \
-  qt/moc_bip38tooldialog.cpp \
   qt/moc_bitcoinaddressvalidator.cpp \
   qt/moc_bitcoinamountfield.cpp \
-  qt/moc_bitcoingui.cpp \
   qt/kts/moc_ktsgui.cpp \
   qt/moc_bitcoinunits.cpp \
   qt/moc_blockexplorer.cpp \
@@ -137,38 +126,24 @@ QT_MOC_CPP = \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
   qt/moc_macnotificationhandler.cpp \
-  qt/moc_masternodelist.cpp \
-  qt/moc_multisenddialog.cpp \
-  qt/moc_multisigdialog.cpp\
   qt/moc_notificator.cpp \
   qt/moc_openuridialog.cpp \
   qt/moc_optionsdialog.cpp \
   qt/moc_optionsmodel.cpp \
-  qt/moc_overviewpage.cpp \
   qt/moc_peertablemodel.cpp \
   qt/moc_paymentserver.cpp \
   qt/moc_qvalidatedlineedit.cpp \
   qt/moc_qvaluecombobox.cpp \
-  qt/moc_receivecoinsdialog.cpp \
-  qt/moc_privacydialog.cpp \
   qt/moc_proposalframe.cpp \
-  qt/moc_receiverequestdialog.cpp \
   qt/moc_recentrequeststablemodel.cpp \
   qt/moc_rpcconsole.cpp \
-  qt/moc_sendcoinsdialog.cpp \
-  qt/moc_sendcoinsentry.cpp \
-  qt/moc_signverifymessagedialog.cpp \
   qt/moc_splashscreen.cpp \
   qt/moc_trafficgraphwidget.cpp \
   qt/moc_transactiondesc.cpp \
-  qt/moc_transactiondescdialog.cpp \
   qt/moc_transactionfilterproxy.cpp \
   qt/moc_transactiontablemodel.cpp \
-  qt/moc_transactionview.cpp \
   qt/moc_utilitydialog.cpp \
-  qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp \
   qt/kts/moc_loadingdialog.cpp \
   qt/moc_zktscontroldialog.cpp \
   qt/kts/moc_pwidget.cpp \
@@ -179,6 +154,7 @@ QT_MOC_CPP = \
   qt/kts/moc_furabstractlistitemdelegate.cpp \
   qt/kts/moc_receivedialog.cpp \
   qt/kts/moc_walletpassworddialog.cpp \
+  qt/kts/moc_pfborderimage.cpp \
   qt/kts/moc_topbar.cpp \
   qt/kts/moc_txrow.cpp \
   qt/kts/moc_dashboardwidget.cpp \
@@ -187,11 +163,13 @@ QT_MOC_CPP = \
   qt/kts/moc_contactdropdownrow.cpp \
   qt/kts/moc_mninfodialog.cpp \
   qt/kts/moc_optionbutton.cpp \
+  qt/kts/moc_coldstakingmodel.cpp \
   qt/kts/moc_mnmodel.cpp \
   qt/kts/moc_masternodewizarddialog.cpp \
   qt/kts/moc_mnrow.cpp \
   qt/kts/moc_masternodeswidget.cpp \
   qt/kts/moc_myaddressrow.cpp \
+  qt/kts/moc_csrow.cpp \
   qt/kts/moc_contactsdropdown.cpp \
   qt/kts/moc_sendchangeaddressdialog.cpp \
   qt/kts/moc_sendconfirmdialog.cpp \
@@ -208,6 +186,7 @@ QT_MOC_CPP = \
   qt/kts/moc_defaultdialog.cpp \
   qt/kts/moc_denomgenerationdialog.cpp \
   qt/kts/moc_privacywidget.cpp \
+  qt/kts/moc_coldstakingwidget.cpp \
   qt/kts/settings/moc_settingsbackupwallet.cpp \
   qt/kts/settings/moc_settingsbittoolwidget.cpp \
   qt/kts/settings/moc_settingsconsolewidget.cpp \
@@ -232,8 +211,8 @@ QT_MOC = \
   qt/kts.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
-  qt/overviewpage.moc \
-  qt/rpcconsole.moc
+  qt/rpcconsole.moc \
+  qt/kts/settings/moc_settingsconsolewidget.cpp
 
 QT_QRC_CPP = qt/qrc_kts.cpp
 QT_QRC = qt/kts.qrc
@@ -249,10 +228,8 @@ BITCOIN_QT_H = \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
   qt/bantablemodel.h \
-  qt/bip38tooldialog.h \
   qt/bitcoinaddressvalidator.h \
   qt/bitcoinamountfield.h \
-  qt/bitcoingui.h \
   qt/kts/ktsgui.h \
   qt/bitcoinunits.h \
   qt/blockexplorer.h \
@@ -267,15 +244,11 @@ BITCOIN_QT_H = \
   qt/intro.h \
   qt/macdockiconhandler.h \
   qt/macnotificationhandler.h \
-  qt/masternodelist.h \
-  qt/multisenddialog.h \
-  qt/multisigdialog.h\
   qt/networkstyle.h \
   qt/notificator.h \
   qt/openuridialog.h \
   qt/optionsdialog.h \
   qt/optionsmodel.h \
-  qt/overviewpage.h \
   qt/paymentrequestplus.h \
   qt/paymentserver.h \
   qt/peertablemodel.h \
@@ -283,32 +256,24 @@ BITCOIN_QT_H = \
   qt/proposalframe.h \
   qt/qvalidatedlineedit.h \
   qt/qvaluecombobox.h \
-  qt/receivecoinsdialog.h \
-  qt/privacydialog.h \
-  qt/receiverequestdialog.h \
   qt/recentrequeststablemodel.h \
   qt/rpcconsole.h \
-  qt/sendcoinsdialog.h \
-  qt/sendcoinsentry.h \
-  qt/signverifymessagedialog.h \
   qt/splashscreen.h \
   qt/trafficgraphwidget.h \
   qt/transactiondesc.h \
-  qt/transactiondescdialog.h \
   qt/transactionfilterproxy.h \
   qt/transactionrecord.h \
   qt/transactiontablemodel.h \
-  qt/transactionview.h \
   qt/utilitydialog.h \
-  qt/walletframe.h \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/kts/prunnable.h \
+  qt/kts/pfborderimage.h \
   qt/kts/loadingdialog.h \
-  qt/walletview.h \
   qt/winshutdownmonitor.h \
   qt/zktscontroldialog.h \
   qt/kts/pwidget.h \
+  qt/kts/guitransactionsutils.h \
   qt/kts/snackbar.h \
   qt/kts/navmenuwidget.h \
   qt/kts/lockunlock.h \
@@ -321,6 +286,7 @@ BITCOIN_QT_H = \
   qt/kts/walletpassworddialog.h \
   qt/kts/topbar.h \
   qt/kts/txrow.h \
+  qt/kts/addressholder.h \
   qt/kts/addressfilterproxymodel.h \
   qt/kts/dashboardwidget.h \
   qt/kts/coincontrolktswidget.h \
@@ -328,11 +294,13 @@ BITCOIN_QT_H = \
   qt/kts/contactdropdownrow.h \
   qt/kts/mninfodialog.h \
   qt/kts/optionbutton.h \
+  qt/kts/coldstakingmodel.h \
   qt/kts/mnmodel.h \
   qt/kts/masternodewizarddialog.h \
   qt/kts/mnrow.h \
   qt/kts/masternodeswidget.h \
   qt/kts/myaddressrow.h \
+  qt/kts/csrow.h \
   qt/kts/contactsdropdown.h \
   qt/kts/sendchangeaddressdialog.h \
   qt/kts/sendconfirmdialog.h \
@@ -349,6 +317,7 @@ BITCOIN_QT_H = \
   qt/kts/defaultdialog.h \
   qt/kts/denomgenerationdialog.h \
   qt/kts/privacywidget.h \
+  qt/kts/coldstakingwidget.h \
   qt/kts/settings/settingsbackupwallet.h \
   qt/kts/settings/settingsbittoolwidget.h \
   qt/kts/settings/settingsconsolewidget.h \
@@ -445,6 +414,8 @@ RES_ICONS = \
   qt/kts/res/img/ic-update.svg \
   qt/kts/res/img/bg-multi-number.svg \
   qt/kts/res/img/ic-check-mint-off.svg \
+  qt/kts/res/img/ic-nav-cold-staking.svg \
+  qt/kts/res/img/ic-nav-cold-staking-active.svg \
   qt/kts/res/img/ic-nav-dashboard-active.svg \
   qt/kts/res/img/ic-wallet-status-locked.svg \
   qt/kts/res/img/bg-splash.svg \
@@ -585,6 +556,11 @@ RES_ICONS = \
   qt/kts/res/img/ic-transaction-warning.svg \
   qt/kts/res/img/ic-transaction-mint.svg \
   qt/kts/res/img/ic-transaction-mint-inactive.svg \
+  qt/kts/res/img/ic-check-cold-staking.svg \
+  qt/kts/res/img/ic-check-cold-staking-off.svg \
+  qt/kts/res/img/ic-check-cold-staking-enabled.svg \
+  qt/kts/res/img/dark/ic-transaction-cs-contract.svg \
+  qt/kts/res/img/dark/ic-transaction-cs-contract-inactive.svg \
   qt/kts/res/img/img-qr.svg \
   qt/kts/res/img/ic-check-connect-off.svg \
   qt/kts/res/img/ic-label.svg \
@@ -621,15 +597,26 @@ RES_ICONS = \
   qt/kts/res/img/ic-arrow-drop-up-purple.svg \
   qt/kts/res/img/ic-check-liliac-indeterminate.svg \
   qt/kts/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/kts/res/img/ic-transaction-stake-delegated.svg \
+  qt/kts/res/img/ic-transaction-stake-delegated-inactive.svg \
+  qt/kts/res/img/ic-transaction-stake-hot.svg \
+  qt/kts/res/img/ic-transaction-stake-hot-inactive.svg \
+  qt/kts/res/img/dark/ic-transaction-stake-hot.svg \
+  qt/kts/res/img/dark/ic-transaction-stake-hot-inactive.svg \
+  qt/kts/res/img/dark/ic-transaction-stake-delegated.svg \
+  qt/kts/res/img/dark/ic-transaction-stake-delegated-inactive.svg \
+  qt/kts/res/img/ic-transaction-cs-contract.svg \
+  qt/kts/res/img/ic-transaction-cs-contract-inactive.svg \
   qt/kts/res/img/ic-check-box-indeterminate.svg \
   qt/kts/res/img/ani-loading-dark.gif \
   qt/kts/res/img/ani-loading.gif
+
+
 
 BITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
   qt/bitcoinaddressvalidator.cpp \
   qt/bitcoinamountfield.cpp \
-  qt/bitcoingui.cpp \
   qt/kts/ktsgui.cpp \
   qt/bitcoinunits.cpp \
   qt/blockexplorer.cpp \
@@ -637,7 +624,6 @@ BITCOIN_QT_BASE_CPP = \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \
   qt/intro.cpp \
-  qt/masternodelist.cpp \
   qt/networkstyle.cpp \
   qt/notificator.cpp \
   qt/optionsdialog.cpp \
@@ -657,40 +643,26 @@ BITCOIN_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
-  qt/bip38tooldialog.cpp \
   qt/blockexplorer.cpp \
   qt/coincontroldialog.cpp \
   qt/coincontroltreewidget.cpp \
   qt/editaddressdialog.cpp \
   qt/governancepage.cpp \
-  qt/masternodelist.cpp \
-  qt/multisenddialog.cpp \
-  qt/multisigdialog.cpp\
   qt/openuridialog.cpp \
-  qt/overviewpage.cpp \
   qt/paymentrequestplus.cpp \
   qt/paymentserver.cpp \
-  qt/receivecoinsdialog.cpp \
-  qt/privacydialog.cpp \
   qt/proposalframe.cpp \
-  qt/receiverequestdialog.cpp \
   qt/recentrequeststablemodel.cpp \
-  qt/sendcoinsdialog.cpp \
-  qt/sendcoinsentry.cpp \
-  qt/signverifymessagedialog.cpp \
   qt/transactiondesc.cpp \
-  qt/transactiondescdialog.cpp \
   qt/transactionfilterproxy.cpp \
   qt/transactionrecord.cpp \
   qt/transactiontablemodel.cpp \
-  qt/transactionview.cpp \
-  qt/walletframe.cpp \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
-  qt/walletview.cpp \
   qt/kts/loadingdialog.cpp \
   qt/zktscontroldialog.cpp \
   qt/kts/pwidget.cpp \
+  qt/kts/guitransactionsutils.cpp \
   qt/kts/snackbar.cpp \
   qt/kts/navmenuwidget.cpp \
   qt/kts/lockunlock.cpp \
@@ -702,6 +674,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/kts/walletpassworddialog.cpp \
   qt/kts/topbar.cpp \
   qt/kts/txrow.cpp \
+  qt/kts/addressholder.cpp \
   qt/kts/addressfilterproxymodel.cpp \
   qt/kts/dashboardwidget.cpp \
   qt/kts/coincontrolktswidget.cpp \
@@ -710,11 +683,13 @@ BITCOIN_QT_WALLET_CPP = \
   qt/kts/contactsdropdown.cpp \
   qt/kts/optionbutton.cpp \
   qt/kts/mninfodialog.cpp \
+  qt/kts/coldstakingmodel.cpp \
   qt/kts/mnmodel.cpp \
   qt/kts/masternodewizarddialog.cpp \
   qt/kts/mnrow.cpp \
   qt/kts/masternodeswidget.cpp \
   qt/kts/myaddressrow.cpp \
+  qt/kts/csrow.cpp \
   qt/kts/sendchangeaddressdialog.cpp \
   qt/kts/sendconfirmdialog.cpp \
   qt/kts/sendcustomfeedialog.cpp \
@@ -730,6 +705,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/kts/defaultdialog.cpp \
   qt/kts/denomgenerationdialog.cpp \
   qt/kts/privacywidget.cpp \
+  qt/kts/coldstakingwidget.cpp \
   qt/kts/settings/settingsbackupwallet.cpp \
   qt/kts/settings/settingsbittoolwidget.cpp \
   qt/kts/settings/settingsconsolewidget.cpp \
@@ -745,6 +721,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/kts/settings/settingswidget.cpp \
   qt/kts/welcomecontentwidget.cpp \
   qt/kts/splash.cpp
+
 
 BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
 if TARGET_WINDOWS
@@ -767,10 +744,7 @@ RES_IMAGES = \
   qt/res/images/upArrow_small.png \
   qt/res/images/leftArrow_small_dark.png \
   qt/res/images/rightArrow_small_dark.png \
-  qt/res/images/qtreeview_selected.png \
-  qt/res/images/walletFrame.png \
-  qt/res/images/walletFrame_bg.png \
-  qt/res/images/walletFrame_bg.png
+  qt/res/images/qtreeview_selected.png
 
 RES_CSS = \
   qt/res/css/default.css \

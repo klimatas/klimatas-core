@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2016 The PIVX developers
+// Copyright (c) 2016-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,7 +27,7 @@ void IncrementExtraNonce(CBlock* pblock, CBlockIndex* pindexPrev, unsigned int& 
 void UpdateTime(CBlockHeader* block, const CBlockIndex* pindexPrev);
 
 #ifdef ENABLE_WALLET
-/** Run the miner threads */
+    /** Run the miner threads */
     void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads);
     /** Generate a new block, without valid proof-of-work */
     CBlockTemplate* CreateNewBlockWithKey(CReserveKey& reservekey, CWallet* pwallet);

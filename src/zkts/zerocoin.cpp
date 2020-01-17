@@ -1,9 +1,10 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2018 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <streams.h>
-#include "zkts/zerocoin.h"
+#include "zerocoin.h"
 #include "hash.h"
 #include "util.h"
 #include "utilstrencodings.h"
@@ -77,6 +78,7 @@ int CZerocoinSpendReceipt::GetNeededSpends()
     return nNeededSpends;
 }
 
+
 int GetWrapppedSerialInflation(libzerocoin::CoinDenomination denom){
     if(Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (denom) {
@@ -112,3 +114,4 @@ int64_t GetWrapppedSerialInflationAmount(){
     }
     return amount;
 }
+

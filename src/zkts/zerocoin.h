@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -223,7 +224,7 @@ public:
     uint256 GetHash() const;
     void SetMintCount(int nMintsAdded) { this->nMintCount = nMintsAdded; }
     int GetMintCount() const { return nMintCount; }
-
+ 
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>

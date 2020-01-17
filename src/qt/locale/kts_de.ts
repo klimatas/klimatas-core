@@ -1,5 +1,73 @@
 <TS language="de" version="2.1">
 <context>
+    <name>AddNewAddressDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>My Address</source>
+        <translation>Meine Adresse</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+</context>
+<context>
+    <name>AddNewContactDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Edit Contact</source>
+        <translation>Kontakt bearbeiten</translation>
+    </message>
+    <message>
+        <source>Set a label for the selected address</source>
+        <translation>Der ausgewählten Adresse ein Label zuweisen</translation>
+    </message>
+    <message>
+        <source>Enter a name for the address (e.g Exchange)</source>
+        <translation>Einen Namen für diese Adresse eingeben (z.B. Exchange)</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+    <message>
+        <source>Edit label for the selected address:
+%1</source>
+        <translation>Beschreibung bearbeiten für ausgewählte Adresse:
+%1</translation>
+    </message>
+</context>
+<context>
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
@@ -99,6 +167,21 @@
     </message>
 </context>
 <context>
+    <name>AddressLabelRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Bob Allen</source>
+        <translation>Bob Allen</translation>
+    </message>
+    <message>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
+    </message>
+</context>
+<context>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>
@@ -109,8 +192,123 @@
         <translation>Adresse</translation>
     </message>
     <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(keine Bezeichnung)</translation>
+    </message>
+</context>
+<context>
+    <name>AddressesWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Schicken</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>No active Master Node yet</source>
+        <translation>Keine aktiven Masternodes bis jetzt</translation>
+    </message>
+    <message>
+        <source>Contact name</source>
+        <translation>Kontaktname</translation>
+    </message>
+    <message>
+        <source>Enter address</source>
+        <translation>Adresse einfügen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>Kontakte</translation>
+    </message>
+    <message>
+        <source>You can add a new one in the options menu to the side.</source>
+        <translation>Unter Menü "Optionen" auf der Seite können sie einen Neuen erfassen.</translation>
+    </message>
+    <message>
+        <source>No contacts yet</source>
+        <translation>Noch keine Kontakte</translation>
+    </message>
+    <message>
+        <source>e.g. John Doe</source>
+        <translation>z.B. John Doe</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address</source>
+        <translation>KTS Adresse einfügen</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+    <message>
+        <source>Invalid Contact Address</source>
+        <translation>Ungültige Kontaktadresse</translation>
+    </message>
+    <message>
+        <source>Cannot store your own address as contact</source>
+        <translation>Eigene Adresse nicht als Kontakt speicherbar</translation>
+    </message>
+    <message>
+        <source>Address already stored, label: %1</source>
+        <translation>Adresse schon gespeichert, label: %1</translation>
+    </message>
+    <message>
+        <source>New Contact Stored</source>
+        <translation>Neuer Kontakt gespeichert</translation>
+    </message>
+    <message>
+        <source>Error Storing Contact</source>
+        <translation>Fehler beim Speichern des Kontakts</translation>
+    </message>
+    <message>
+        <source>Contact edited</source>
+        <translation>Kontakt bearbeitet</translation>
+    </message>
+    <message>
+        <source>Contact edit failed</source>
+        <translation>Bearbeitung des Kontakts fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Delete Contact</source>
+        <translation>Lösche Kontakt</translation>
+    </message>
+    <message>
+        <source>You are just about to remove the contact:
+
+%1
+
+Are you sure?</source>
+        <translation>Sie sind dabei folgenden Kontakt zu löschen:
+
+%1
+
+Sind Sie sicher?</translation>
+    </message>
+    <message>
+        <source>Contact Deleted</source>
+        <translation>Kontakt gelöscht</translation>
+    </message>
+    <message>
+        <source>Error deleting a contact</source>
+        <translation>Fehler beim Löschen des Kontakts</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adresse kopiert</translation>
     </message>
 </context>
 <context>
@@ -120,24 +318,12 @@
         <translation>Passphrase Dialog</translation>
     </message>
     <message>
-        <source>Enter passphrase</source>
-        <translation>Passphrase eingeben</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>New passphrase</source>
-        <translation>Neue Passphrase</translation>
-    </message>
-    <message>
-        <source>Repeat new passphrase</source>
-        <translation>Neue Passphrase wiederholen</translation>
-    </message>
-    <message>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Verhindert das einfache Überweisen von Geld, falls das Systemkonto kompromittiert wurde. Bietet keine wirkliche Sicherheit.</translation>
-    </message>
-    <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Nur zur Anonymisierung, automatischen Prägung (automint) und Staking</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -150,6 +336,11 @@
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
         <translation>Dieser Vorgang benötigt ihre Passphrase, um die Wallet zu entsperren.</translation>
+    </message>
+    <message>
+        <source>Unlock wallet
+for staking</source>
+        <translation>Wallet entsperren</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -176,6 +367,14 @@
         <translation>Verschlüsselung der Wallet bestätigen</translation>
     </message>
     <message>
+        <source>ENCRYPT</source>
+        <translation>VERSCHLÜSSELN</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>ABBRECHEN</translation>
+    </message>
+    <message>
         <source>KTS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KTSs from being stolen by malware infecting your computer.</source>
         <translation>Die Anwendung wird nun geschlossen um die Verschlüsselung abzuschließen. Bitte bedenken Sie, dass auch die Verschlüsselung nicht sicher vor Diebstahl ihrer KTSs durch Schadsoftware schützt, die ihren Computer befällt.</translation>
     </message>
@@ -198,6 +397,10 @@
     <message>
         <source>Wallet encryption failed</source>
         <translation>Verschlüsselung der Wallet fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
@@ -240,627 +443,6 @@
     </message>
 </context>
 <context>
-    <name>Bip38ToolDialog</name>
-    <message>
-        <source>BIP 38 Tool</source>
-        <translation>BIP 38 Tool</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Verschlüsselung</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adresse:</translation>
-    </message>
-    <message>
-        <source>Enter a KTS Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Bitte die KTS-Adresse eingeben, welche mittels BIP 38 verschlüsselt werden soll. Bitte ein Passwort in die mittlere Box eintragen. Klicken Sie auf "Verschlüsslen" um den privaten Schlüssel zu generieren.</translation>
-    </message>
-    <message>
-        <source>The KTS address to encrypt</source>
-        <translation>Die zu verschlüsselnde KTS-Adresse</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Bereits verwendete Adresse auswählen</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Adresse aus der Zwischenablage einfügen</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Passphrase: </source>
-        <translation>Passphrase: </translation>
-    </message>
-    <message>
-        <source>Encrypted Key:</source>
-        <translation>Geschützer Schlüssel:</translation>
-    </message>
-    <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopiert die aktuelle Signatur in die Zwischenablage</translation>
-    </message>
-    <message>
-        <source>Encrypt the private key for this KTS address</source>
-        <translation>Den privaten Schlüssel für diese KTS-Adresse verschlüsseln</translation>
-    </message>
-    <message>
-        <source>Reset all fields</source>
-        <translation>Alle Felder zurücksetzen</translation>
-    </message>
-    <message>
-        <source>The encrypted private key</source>
-        <translation>Der verschlüsselte private Schlüssel</translation>
-    </message>
-    <message>
-        <source>Decrypt the entered key using the passphrase</source>
-        <translation>Den eigegebenen Schlüssel mittels Passwort entschlüsseln</translation>
-    </message>
-    <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Verschlüsselt &amp;Schlüssel</translation>
-    </message>
-    <message>
-        <source>Clear &amp;All</source>
-        <translation>&amp;Alles zurücksetzen</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 Entschlüsseln</translation>
-    </message>
-    <message>
-        <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Geben Sie den BIP 38 verschlüsselten privaten Schlüssel ein. Geben Sie die Passphrase in das mittlere Feld ein. Klicken Sie auf 'Entschlüsseln', um den privaten Schlüssel zu berechnen. Nach erfolgreicher Entschlüsselung, wird durch Klicken auf 'Adresse importieren' dieser private Schlüssel der Wallet hinzugefügt.</translation>
-    </message>
-    <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Entschlüsseln &amp;Schlüssel</translation>
-    </message>
-    <message>
-        <source>Decrypted Key:</source>
-        <translation>Entschlüsselter Schlüssel:</translation>
-    </message>
-    <message>
-        <source>Import Address</source>
-        <translation>Adresse importieren</translation>
-    </message>
-    <message>
-        <source>Click "Decrypt Key" to compute key</source>
-        <translation>Klicke "Schlüssel entschlüsseln" um den Schlüssel zu berechnen</translation>
-    </message>
-    <message>
-        <source>The entered passphrase is invalid. </source>
-        <translation>Die eingegebene Passphrase ist ungültig. </translation>
-    </message>
-    <message>
-        <source>Allowed: 0-9,a-z,A-Z,</source>
-        <translation>Zulässig: 0-9,a-z,A-Z,</translation>
-    </message>
-    <message>
-        <source>The entered address is invalid.</source>
-        <translation>Die eingegebene Adresse ist falsch</translation>
-    </message>
-    <message>
-        <source>Please check the address and try again.</source>
-        <translation>Bitte die Adresse prüfen und erneut eingeben</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation>Die eingegebene Adresse passt zu keinem Schlüssel</translation>
-    </message>
-    <message>
-        <source>Wallet unlock was cancelled.</source>
-        <translation>Entsperrung der Wallet wurde abgebrochen.</translation>
-    </message>
-    <message>
-        <source>Private key for the entered address is not available.</source>
-        <translation>Kein privater Schlüssel für die eingegebene Adresse verfügbar</translation>
-    </message>
-    <message>
-        <source>Failed to decrypt.</source>
-        <translation>Entschlüsselung fehlgeschlagen.</translation>
-    </message>
-    <message>
-        <source>Please check the key and passphrase and try again.</source>
-        <translation>Bitte überprüfen Sie den Schlüssel und die Passphrase und versuchen Sie es erneut.</translation>
-    </message>
-    <message>
-        <source>Data Not Valid.</source>
-        <translation>Daten ungültig.</translation>
-    </message>
-    <message>
-        <source>Please try again.</source>
-        <translation>Bitte versuchen Sie es erneut.</translation>
-    </message>
-    <message>
-        <source>Please wait while key is imported</source>
-        <translation>Bitte warten. Schlüssel wird importiert..</translation>
-    </message>
-    <message>
-        <source>Key Already Held By Wallet</source>
-        <translation>Schlüssel bereits in der Wallet vorhanden</translation>
-    </message>
-    <message>
-        <source>Error Adding Key To Wallet</source>
-        <translation>Fehler beim Hinzufügen des Schlüssels zur Wallet</translation>
-    </message>
-    <message>
-        <source>Successfully Added Private Key To Wallet</source>
-        <translation>Privater Schlüssel erfolgreich zur Wallet hinzugefügt</translation>
-    </message>
-</context>
-<context>
-    <name>BitcoinGUI</name>
-    <message>
-        <source>Wallet</source>
-        <translation>Wallet</translation>
-    </message>
-    <message>
-        <source>Node</source>
-        <translation>Node</translation>
-    </message>
-    <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Übersicht</translation>
-    </message>
-    <message>
-        <source>Show general overview of wallet</source>
-        <translation>Gesamtübersicht der Wallet anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Überweisen</translation>
-    </message>
-    <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Empfangen</translation>
-    </message>
-    <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transaktionen</translation>
-    </message>
-    <message>
-        <source>Browse transaction history</source>
-        <translation>Transaktionsverlauf durchsuchen</translation>
-    </message>
-    <message>
-        <source>Privacy Actions for zKTS</source>
-        <translation>Datenschutzmaßnahmen für zKTS</translation>
-    </message>
-    <message>
-        <source>E&amp;xit</source>
-        <translation>&amp;Beenden</translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation>Anwendung beenden</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Über &amp;Qt</translation>
-    </message>
-    <message>
-        <source>Show information about Qt</source>
-        <translation>Informationen über Qt anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Konfiguration...</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Anzeigen / Verstecken</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Das Hauptfenster anzeigen oder verstecken</translation>
-    </message>
-    <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>Wallet &amp;verschlüsseln...</translation>
-    </message>
-    <message>
-        <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Verschlüsselt die zu Ihrer Wallet gehörenden privaten Schlüssel</translation>
-    </message>
-    <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>Wallet &amp;sichern...</translation>
-    </message>
-    <message>
-        <source>Backup wallet to another location</source>
-        <translation>Sicherung der Wallet an einem anderen Ort speichern</translation>
-    </message>
-    <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>Passphrase &amp;ändern...</translation>
-    </message>
-    <message>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Ändert die Passphrase, die für die Verschlüsselung der Wallet benutzt wird</translation>
-    </message>
-    <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>Wallet &amp;entsperren</translation>
-    </message>
-    <message>
-        <source>Unlock wallet</source>
-        <translation>Wallet entsperren</translation>
-    </message>
-    <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>Wallet &amp;sperren</translation>
-    </message>
-    <message>
-        <source>Sign &amp;message...</source>
-        <translation>Nachricht &amp;signieren...</translation>
-    </message>
-    <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Nachricht prüfen...</translation>
-    </message>
-    <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
-    </message>
-    <message>
-        <source>Show diagnostic information</source>
-        <translation>Diagnoseinformation anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debugkonsole</translation>
-    </message>
-    <message>
-        <source>Open debugging console</source>
-        <translation>Debugkonsole öffnen</translation>
-    </message>
-    <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Netzwerkmonitor</translation>
-    </message>
-    <message>
-        <source>Show network monitor</source>
-        <translation>Netzwerkmonitor anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Gegenstellen-Liste</translation>
-    </message>
-    <message>
-        <source>Show peers info</source>
-        <translation>Informationen zu Gegenstellen anzeigen</translation>
-    </message>
-    <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Wallet-&amp;Reparatur</translation>
-    </message>
-    <message>
-        <source>Show wallet repair options</source>
-        <translation>Optionen zur Wallet-Reparatur anzeigen</translation>
-    </message>
-    <message>
-        <source>Open configuration file</source>
-        <translation>Konfigurationsdatei öffnen</translation>
-    </message>
-    <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Automatische &amp;Sicherheitskopien anzeigen</translation>
-    </message>
-    <message>
-        <source>Show automatically created wallet backups</source>
-        <translation>Automatisch erzeugte Wallet-Sicherheitskopien anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Zahlungsadressen...</translation>
-    </message>
-    <message>
-        <source>Show the list of used sending addresses and labels</source>
-        <translation>Liste verwendeter Zahlungsadressen und Bezeichnungen anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Empfangsadressen...</translation>
-    </message>
-    <message>
-        <source>Show the list of used receiving addresses and labels</source>
-        <translation>Liste verwendeter Empfangsadressen und Bezeichnungen anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature creation...</source>
-        <translation>&amp;Mehrfachsignatur erstellen...</translation>
-    </message>
-    <message>
-        <source>Create a new multisignature address and add it to this wallet</source>
-        <translation>Erstelle eine neue mehrfach signierte Adresse und füge sie diesem Wallet hinzu</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature spending...</source>
-        <translation>&amp;Mehrfachsignatur überweisen...</translation>
-    </message>
-    <message>
-        <source>Spend from a multisignature address</source>
-        <translation>Von einer mehrfach signierten Adresse überweisen</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature signing...</source>
-        <translation>&amp;Mehrfachsignatur signieren...</translation>
-    </message>
-    <message>
-        <source>Sign with a multisignature address</source>
-        <translation>Signiere mit einer mehrfach signierten Adresse</translation>
-    </message>
-    <message>
-        <source>Open &amp;URI...</source>
-        <translation>&amp;URI öffnen...</translation>
-    </message>
-    <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Kommandozeilenoptionen</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n Blöcke der Transaktionshistorie bearbeitet.</numerusform><numerusform>%n Blöcke des Transaktionsverlaufs verarbeitet.</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing additional data: %p%</source>
-        <translation>Synchronisiere zusätzliche Daten:  %p%</translation>
-    </message>
-    <message>
-        <source>%1 behind. Scanning block %2</source>
-        <translation>%1 im Rückstand. Scanne Block %2</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
-        <translation>Wallet ist &lt;b&gt;verschlüsselt&lt;/b&gt; und aktuell nur zum Anonymisieren und "staking"&lt;b&gt;entsperrt&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Datei</translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Einstellungen</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Werkzeuge</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Hilfe</translation>
-    </message>
-    <message>
-        <source>Tabs toolbar</source>
-        <translation>Registerkartenleiste</translation>
-    </message>
-    <message>
-        <source>KTS Core</source>
-        <translation>KTS Core</translation>
-    </message>
-    <message>
-        <source>Send coins to a KTS address</source>
-        <translation>An eine KTS-Adresse überweisen</translation>
-    </message>
-    <message>
-        <source>Request payments (generates QR codes and kts: URIs)</source>
-        <translation>Zahlung anfordern (QR-Code Generierung und kts: URIs)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privatsphäre</translation>
-    </message>
-    <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
-    </message>
-    <message>
-        <source>Browse masternodes</source>
-        <translation>Masternodes durchsuchen</translation>
-    </message>
-    <message>
-        <source>&amp;About KTS Core</source>
-        <translation>Über KTS Core</translation>
-    </message>
-    <message>
-        <source>Show information about KTS Core</source>
-        <translation>Zeigt Informationen über KTS Core</translation>
-    </message>
-    <message>
-        <source>Modify configuration options for KTS</source>
-        <translation>Konfiguration von KTS verändern</translation>
-    </message>
-    <message>
-        <source>Sign messages with your KTS addresses to prove you own them</source>
-        <translation>Unterschreibt eine Nachricht mit Ihrer KTS-Adresse und beweist, dass sie Ihnen gehört</translation>
-    </message>
-    <message>
-        <source>Verify messages to ensure they were signed with specified KTS addresses</source>
-        <translation>Überprüft eine Nachricht um zu prüfen ob diese mit einer bestimmten KTS-Adresse signiert wurde</translation>
-    </message>
-    <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 Hilfsprogramm</translation>
-    </message>
-    <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;MultiSend</translation>
-    </message>
-    <message>
-        <source>MultiSend Settings</source>
-        <translation>MultiSend Einstellungen</translation>
-    </message>
-    <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Öffne Wallet &amp;Einstellungsdatei </translation>
-    </message>
-    <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Öffne &amp;Masternode Einstellungsdatei </translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Öffne Masternode Einstellungsdatei</translation>
-    </message>
-    <message>
-        <source>Open a KTS: URI or payment request</source>
-        <translation>Öffne eine KTS: URI oder Zahlungsanfrage</translation>
-    </message>
-    <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Blockchain Betrachter</translation>
-    </message>
-    <message>
-        <source>Block explorer window</source>
-        <translation>Blockchain Betrachter Fenster</translation>
-    </message>
-    <message>
-        <source>Show the KTS Core help message to get a list with possible KTS command-line options</source>
-        <translation>Zeige die KTS-Core Hilfe, um mögliche KTS Kommando-Zeilen-Optionen anzuzeigen</translation>
-    </message>
-    <message>
-        <source>KTS Core client</source>
-        <translation>KTS Core Client</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to KTS network</source>
-        <translation><numerusform>%n aktive Verbindung(en) zum KTS Netzwerk</numerusform><numerusform>%n aktive Verbindung(en) zum KTS Netzwerk</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing with network...</source>
-        <translation>Synchronisiere mit Netzwerk...</translation>
-    </message>
-    <message>
-        <source>Importing blocks from disk...</source>
-        <translation>Importiere Blöcke von Datenträger...</translation>
-    </message>
-    <message>
-        <source>Reindexing blocks on disk...</source>
-        <translation>Reindiziere Blöcke auf Datenträger...</translation>
-    </message>
-    <message>
-        <source>No block source available...</source>
-        <translation>Keine Blockquelle verfügbar...</translation>
-    </message>
-    <message>
-        <source>Up to date</source>
-        <translation>Auf aktuellem Stand</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n Stunden</numerusform><numerusform>%n Stunden</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n Tage</numerusform><numerusform>%n Tage</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n Wochen</numerusform><numerusform>%n Wochen</numerusform></translation>
-    </message>
-    <message>
-        <source>%1 and %2</source>
-        <translation>%1 und %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n Jahre</numerusform><numerusform>%n Jahre</numerusform></translation>
-    </message>
-    <message>
-        <source>Catching up...</source>
-        <translation>Hole auf...</translation>
-    </message>
-    <message>
-        <source>Last received block was generated %1 ago.</source>
-        <translation>Der letzte empfangene Block ist %1 alt.</translation>
-    </message>
-    <message>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation>Transaktionen hiernach werden noch nicht angezeigt.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Fehler</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Warnung</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Hinweis</translation>
-    </message>
-    <message>
-        <source>Sent transaction</source>
-        <translation>Gesendete Transaktion</translation>
-    </message>
-    <message>
-        <source>Incoming transaction</source>
-        <translation>Eingehende Transaktion</translation>
-    </message>
-    <message>
-        <source>Sent MultiSend transaction</source>
-        <translation>Versende MultiSend Transaktion</translation>
-    </message>
-    <message>
-        <source>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</source>
-        <translation>Datum: %1
-Betrag: %2
-Typ: %3
-Adresse: %4</translation>
-    </message>
-    <message>
-        <source>Staking is active
- MultiSend: %1</source>
-        <translation>Staking ist aktiviert
- MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>Active</source>
-        <translation>Aktiv</translation>
-    </message>
-    <message>
-        <source>Not Active</source>
-        <translation>Nicht aktiv</translation>
-    </message>
-    <message>
-        <source>Staking is not active
- MultiSend: %1</source>
-        <translation>Staking ist nicht aktiviert
- MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Automatisches Prägen ist aktiv und eingestellt auf </translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Automatisches Prägen ist deaktiviert</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Wallet ist &lt;b&gt;verschlüsselt&lt;/b&gt; und aktuell &lt;b&gt;entsperrt&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Wallet ist &lt;b&gt;verschlüsselt&lt;/b&gt; und aktuell &lt;b&gt;gesperrt&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
     <name>BlockExplorer</name>
     <message>
         <source>Blockchain Explorer</source>
@@ -892,6 +474,13 @@ Adresse: %4</translation>
     </message>
 </context>
 <context>
+    <name>CSRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    </context>
+<context>
     <name>ClientModel</name>
     <message>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
@@ -913,14 +502,6 @@ Adresse: %4</translation>
         <translation>Byte:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Betrag:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Priorität:</translation>
-    </message>
-    <message>
         <source>Fee:</source>
         <translation>Gebühr:</translation>
     </message>
@@ -933,20 +514,8 @@ Adresse: %4</translation>
         <translation>Abzug:</translation>
     </message>
     <message>
-        <source>After Fee:</source>
-        <translation>Nach Gebühren:</translation>
-    </message>
-    <message>
         <source>Change:</source>
         <translation>Wechselgeld:</translation>
-    </message>
-    <message>
-        <source>(un)select all</source>
-        <translation>(nicht) alle auswählen</translation>
-    </message>
-    <message>
-        <source>toggle lock state</source>
-        <translation>Sperrzustand umschalten</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -965,6 +534,26 @@ Adresse: %4</translation>
         <translation>Betrag</translation>
     </message>
     <message>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>0.00 KTS</source>
+        <translation>0.00 KTS</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Alle anwählen</translation>
+    </message>
+    <message>
         <source>Received with label</source>
         <translation>Empfange mit Bezeichnung</translation>
     </message>
@@ -973,8 +562,12 @@ Adresse: %4</translation>
         <translation>Empfangen mit Adresse</translation>
     </message>
     <message>
-        <source>Type</source>
-        <translation>Art</translation>
+        <source>After Fee: </source>
+        <translation>Nach Gebühren:</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Date</source>
@@ -987,10 +580,6 @@ Adresse: %4</translation>
     <message>
         <source>Confirmed</source>
         <translation>Bestätigt</translation>
-    </message>
-    <message>
-        <source>Priority</source>
-        <translation>Priorität</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -1043,6 +632,10 @@ Adresse: %4</translation>
     <message>
         <source>Copy change</source>
         <translation>Kopiere Wechselgeld</translation>
+    </message>
+    <message>
+        <source>Unselect all</source>
+        <translation>Alle abwählen</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
@@ -1142,6 +735,378 @@ Adresse: %4</translation>
     </message>
 </context>
 <context>
+    <name>CoinControlKtsWidget</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>KTS:</source>
+        <translation>KTS:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Anzahl:</translation>
+    </message>
+    <message>
+        <source>Fee:</source>
+        <translation>Gebühr:</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Betrag</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Betätigungen</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Checkbox</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Byte:</translation>
+    </message>
+    <message>
+        <source>Dust:</source>
+        <translation>Abzug:</translation>
+    </message>
+    <message>
+        <source>Change:</source>
+        <translation>Wechselgeld:</translation>
+    </message>
+    <message>
+        <source>After Fee: </source>
+        <translation>Nach Gebühren:</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>ABBRECHEN</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+</context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>Invalid entry</source>
+        <translation>Ungültige Eingabe</translation>
+    </message>
+    <message>
+        <source>Cannot create transaction.</source>
+        <translation>Die Transaktion kann nicht erzeugt werden.</translation>
+    </message>
+    <message>
+        <source>Address copied to clipboard</source>
+        <translation>Adresse in Zwischenablage kopiert</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adresse kopiert</translation>
+    </message>
+    <message>
+        <source>Address label saved</source>
+        <translation>Adressbezeichnung gespeichert</translation>
+    </message>
+    <message>
+        <source>Error storing address label</source>
+        <translation>Fehler beim Speichern der Adressbezeichnung</translation>
+    </message>
+</context>
+<context>
+    <name>ContactDropdownRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Bob Allen</source>
+        <translation>Bob Allen</translation>
+    </message>
+    <message>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
+    </message>
+</context>
+<context>
+    <name>DashboardWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Transactions</source>
+        <translation>Transaktion</translation>
+    </message>
+    <message>
+        <source>You can see here the history of your account</source>
+        <translation>Hier können sie die Geschichte des Accounts anschauen</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Warnung</translation>
+    </message>
+    <message>
+        <source>No transactions</source>
+        <translation>Keine Transaktionen</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>Staking Rewards</source>
+        <translation>Staking Entschädigung</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>Staking statistics</source>
+        <translation>Staking Statistiken</translation>
+    </message>
+    <message>
+        <source>KTS</source>
+        <translation>KTS</translation>
+    </message>
+    <message>
+        <source>zKTS</source>
+        <translation>zKTS</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Tage</translation>
+    </message>
+    <message>
+        <source>Months</source>
+        <translation>Monate</translation>
+    </message>
+    <message>
+        <source>Years</source>
+        <translation>Jahre</translation>
+    </message>
+    <message>
+        <source>Filter by</source>
+        <translation>Filtern nach</translation>
+    </message>
+    <message>
+        <source>You can view your account's history</source>
+        <translation>Der Link zum Verlauf des Accounts</translation>
+    </message>
+    <message>
+        <source>Amount of KTS and zKTS staked.</source>
+        <translation>Wieviele KTS und z KTS am staken sind.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Empfangen</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Gesendet</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>Erarbeitet</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>Erzeugt</translation>
+    </message>
+    <message>
+        <source>MN reward</source>
+        <translation>MN Vergütung</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>Eigenüberweisung</translation>
+    </message>
+    <message>
+        <source>Please wait until the wallet is fully synced to see your correct balance</source>
+        <translation>Bitte warten bis die Wallet voll synchronisiert ist, um den korrekten Kontostand zu sehen</translation>
+    </message>
+    <message>
+        <source>No transactions yet</source>
+        <translation>Keine Transaktionen</translation>
+    </message>
+    <message>
+        <source>How to get KTS or zKTS</source>
+        <translation>Wie bekommt man KTS oder zKTS</translation>
+    </message>
+    <message>
+        <source>You can verify the staking activity in the status bar at the top right of the wallet.
+It will start automatically as soon as the wallet has enough confirmations on any unspent balances, and the wallet has synced.</source>
+        <translation>In der Statusbar der Wallet oben rechts kannst du sehen, ob staking aktiviert wurde.
+Die staking Aktivität wird automatisch gestartet, sobald die Wallet genügend Konfirmationen für alle nicht ausgegeben Guthaben hat und zudem die Wallet synchronisiert ist.</translation>
+    </message>
+    <message>
+        <source>You have no staking rewards</source>
+        <translation>Sie haben keine Staking-Vergütungen</translation>
+    </message>
+    <message>
+        <source>No charts library</source>
+        <translation>Keine Grafik Bibliothek</translation>
+    </message>
+    <message>
+        <source>Loading chart..</source>
+        <translation>Lade Tabelle..</translation>
+    </message>
+    <message>
+        <source>Error loading chart, invalid show option</source>
+        <translation>Fehler beim Laden der Tabelle, ungültige Anzeigeoption</translation>
+    </message>
+    <message>
+        <source>Error loading chart: %1</source>
+        <translation>Fehler beim Laden der Tabelle: %1</translation>
+    </message>
+</context>
+<context>
+    <name>DefaultDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
+    </message>
+    <message>
+        <source>Text Label</source>
+        <translation>Text Bezeichnung</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+</context>
+<context>
+    <name>DenomGenerationDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
+        <translation>Diese Option schaltet ihre Wallet ganz frei. Jeder der Zugriff hat, kann KTS ausgeben bis die Wallet wieder geschlossen oder gesperrt wird.</translation>
+    </message>
+    <message>
+        <source>5000</source>
+        <translation>5000</translation>
+    </message>
+    <message>
+        <source>100</source>
+        <translation>100</translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation>10</translation>
+    </message>
+    <message>
+        <source>1000</source>
+        <translation>1000</translation>
+    </message>
+    <message>
+        <source>50</source>
+        <translation>50</translation>
+    </message>
+    <message>
+        <source>500</source>
+        <translation>500</translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation>5</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Alle anwählen</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>ABBRECHEN</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+</context>
+<context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
@@ -1197,6 +1162,13 @@ Adresse: %4</translation>
     </message>
 </context>
 <context>
+    <name>ExpandableButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+</context>
+<context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
@@ -1217,6 +1189,45 @@ Adresse: %4</translation>
     <message>
         <source>Cannot create data directory here.</source>
         <translation>Datenverzeichnis kann hier nicht angelegt werden.</translation>
+    </message>
+</context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>GOVERNANCE</source>
+        <translation>KONTROLLE</translation>
+    </message>
+    <message>
+        <source>Update Proposals</source>
+        <translation>Vorschläge aktualisieren</translation>
+    </message>
+    <message>
+        <source>Next super block:</source>
+        <translation>Nächster Superblock:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Blocks to next super block:</source>
+        <translation>Blöcke zum nächsten Superblock:</translation>
+    </message>
+    <message>
+        <source>Days to budget payout (estimate):</source>
+        <translation>Tage zur nächsten Auszahlung ( Schätzung):</translation>
+    </message>
+    <message>
+        <source>Budget left:</source>
+        <translation>Restliches Budget:</translation>
+    </message>
+    <message>
+        <source>Masternodes count:</source>
+        <translation>Anzahl Masternodes:</translation>
     </message>
 </context>
 <context>
@@ -1273,6 +1284,10 @@ Adresse: %4</translation>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>SSL-Wurzelzertifikate für Zahlungsanforderungen festlegen (Standard: Systemstandard)</translation>
     </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
 </context>
 <context>
     <name>Intro</name>
@@ -1297,8 +1312,12 @@ Adresse: %4</translation>
         <translation>Standard-Datenverzeichnis verwenden</translation>
     </message>
     <message>
-        <source>Use a custom data directory:</source>
-        <translation>Ein benutzerdefiniertes Datenverzeichnis verwenden:</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>KTS Core</source>
@@ -1322,21 +1341,86 @@ Adresse: %4</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>LoadingDialog</name>
     <message>
         <source>Form</source>
         <translation>Formular</translation>
     </message>
     <message>
-        <source>MASTERNODES</source>
-        <translation>MASTERNODES</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Hinweis: Der Status Ihrer Masternodes kann in der lokalen Wallet möglicherweise falsch sein.&lt;br /&gt;Warten Sie, bis die Wallet zusätzliche Daten synchronisiert hat. Wenn Ihr Node läuft,&lt;br /&gt;aber trotzdem "MISSING" im Feld "Status" steht, überprüfen Sie den Status von einem anderen Knoten aus.</translation>
+        <source>Loading</source>
+        <translation>Lädt</translation>
     </message>
     <message>
-        <source>Alias</source>
+        <source>.</source>
+        <translation>.</translation>
+    </message>
+</context>
+<context>
+    <name>LockUnlock</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Unlock Wallet</source>
+        <translation>Wallet entsperren</translation>
+    </message>
+    <message>
+        <source>Lock Wallet</source>
+        <translation>Wallet sperren</translation>
+    </message>
+    <message>
+        <source>Staking Only</source>
+        <translation>Nur Staking</translation>
+    </message>
+</context>
+<context>
+    <name>MNRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>user_masternode</source>
+        <translation>Benutzer_masternode</translation>
+    </message>
+    <message>
+        <source>Address: 88.26.164.88:51474</source>
+        <translation>Address: 88.26.164.88:51474</translation>
+    </message>
+    <message>
+        <source>Jan. 19, 2019</source>
+        <translation>Jan. 19, 2019</translation>
+    </message>
+</context>
+<context>
+    <name>MasterNodeWizardDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <source>Intro</source>
+        <translation>Intro</translation>
+    </message>
+    <message>
+        <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
@@ -1344,477 +1428,295 @@ Adresse: %4</translation>
         <translation>Adresse</translation>
     </message>
     <message>
-        <source>Protocol</source>
-        <translation>Protokoll</translation>
+        <source>Create New Master Node Controller</source>
+        <translation>Erstelle einen neuen Master Node Controller</translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation>Status</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 10.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Um einen KTS Masternode zu erstellen benötigen Sie 10'000 KTS (die Einheit von KTS), welche sie dem Netzwerk zur Verfügung stellen (Diese Münzen gehören Ihnen und werden Ihren Besitz nie verlassen). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Sie können den Node zu jeder Zeit deaktivieren und somit die Münzen freischalten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation>Aktiv</translation>
+        <source>Make sure you have this amount of coins.</source>
+        <translation>Stellen Sie sicher, dass Sie die Anzahl Coins besitzen.</translation>
     </message>
     <message>
-        <source>Last Seen (UTC)</source>
-        <translation>Zuletzt gesehen (UTC)</translation>
+        <source>Set Master Node’s Name</source>
+        <translation>Geben Sie dem Master Node einen Namen</translation>
     </message>
     <message>
-        <source>Pubkey</source>
-        <translation>Öffentlicher Schlüssel</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eine Transaktion von 10'000 KTS wird gemacht&lt;/p&gt;&lt;p&gt;auf eine leere Adresse in Ihrer Wallet.&lt;/p&gt;&lt;p&gt;Die Adresse wird beschriftet mit dem Namen des Masternodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>S&amp;tarten</translation>
+        <source>Set Master Node’s IP and port</source>
+        <translation>Setzen Sie die IP und den Port des Masternodes.</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>&amp;Alle starten</translation>
+        <source>Address of the node that must always be online running the actual master node.</source>
+        <translation>Adresse des Nodes, welche immer online sein muss um den Master Node darüber laufen zu lassen.</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Starte nur &amp;MISSING</translation>
+        <source>Enter IP address</source>
+        <translation>IP-Adresse eingeben</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>Stat&amp;us aktualisieren</translation>
+        <source>Enter Port</source>
+        <translation>Port angeben</translation>
     </message>
     <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Status wird automatisch aktualisiert in (Sekunden):</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>0</source>
-        <translation>0</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Starten</translation>
+        <source>e.g user_masternode</source>
+        <translation>z.B Benutzer_masternode</translation>
     </message>
     <message>
-        <source>Confirm masternode start</source>
-        <translation>Masternode start bestätigen</translation>
+        <source>NEXT</source>
+        <translation>NEXT</translation>
     </message>
     <message>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Sind Sie sicher, dass Sie den Masternode %1 starten wollen?</translation>
+        <source>BACK</source>
+        <translation>ZURÜCK</translation>
     </message>
     <message>
-        <source>Confirm all masternodes start</source>
-        <translation>Start aller Masternodes bestätigen</translation>
+        <source>address label cannot be empty</source>
+        <translation>Adressenbeschriftung darf nicht leer sein</translation>
     </message>
     <message>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Sind Sie sicher, dass Sie alle Masternodes starten wollen?</translation>
+        <source>IP or port cannot be empty</source>
+        <translation>IP und port dürfen nicht leer sein</translation>
     </message>
     <message>
-        <source>Command is not available right now</source>
-        <translation>Befehl steht zur Zeit nicht zut verfügung</translation>
+        <source>Invalid port number</source>
+        <translation>Ungültige Portnummer</translation>
     </message>
     <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Sie können diesen Befehlt nicht ausführen, bevor der Masternode synchronisiert ist</translation>
+        <source>Prepare master node failed..</source>
+        <translation>Vorbereitungen für den Masternode sind fehlgeschlagen..</translation>
     </message>
     <message>
-        <source>Confirm missing masternodes start</source>
-        <translation>Start fehlender Masternodes bestätigen</translation>
+        <source>Invalid masternode.conf file</source>
+        <translation>Ungültiges masternode.conf file</translation>
     </message>
     <message>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Sind Sie sicher, dass Sie alle fehlenden Masternodes starten wollen?</translation>
+        <source>Master node created!</source>
+        <translation>Masternode erstellt!</translation>
+    </message>
+    <message>
+        <source>masternode.conf file doesn't exists</source>
+        <translation>masternode.conf File existiert nicht</translation>
+    </message>
+    <message>
+        <source>The recipient address is not valid, please recheck.</source>
+        <translation>Die Adresse des Empfängers ist nicht gültig, bitte erneut prüfen.</translation>
+    </message>
+    <message>
+        <source>The amount to pay must be larger than 0.</source>
+        <translation>Der zu zahlende Betrag muss größer als 0 sein.</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation>Der Betrag übersteigt ihr Guthaben.</translation>
+    </message>
+    <message>
+        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
+        <translation>Die Gesamtsumme überschreitet Ihr Guthaben, sobald die Transaktionsgebühr von %1 enthalten ist.</translation>
+    </message>
+    <message>
+        <source>Duplicate address found, can only send to each address once per send operation.</source>
+        <translation>Doppelte Adresse gefunden. Es kann nur einmal pro Sendeoperation an jede Adresse gesendet werden.</translation>
+    </message>
+    <message>
+        <source>Transaction creation failed!</source>
+        <translation>Transaktionserstellung fehlgeschlagen!</translation>
+    </message>
+    <message>
+        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>Die Transaktion wurde abgelehnt! Dies könnte passieren, wenn einige der Coins in deiner Wallet schon ausgegeben wurden. Zum Beispiel wenn du eine Kopie der wallet.dat benutzt hättest und Coins in der Kopie verbracht wurden.  Hier aber noch nicht als verbraucht markiert wurden.</translation>
+    </message>
+    <message>
+        <source>Error: The wallet was unlocked only to anonymize coins.</source>
+        <translation>Fehler: Die Wallet wurde nur zum Anonymisieren von Coins freigeschaltet.</translation>
+    </message>
+    <message>
+        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
+        <translation>Eine Gebühr %1 mal höher als %2 pro kB gilt als wahnsinnig hohe Gebühr.</translation>
+    </message>
+    <message>
+        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <translation>Fehler: Die Wallet wurde nur zum Anonymisieren von Coins freigeschaltet. Freischaltung aufgehoben.</translation>
     </message>
 </context>
 <context>
-    <name>MultiSendDialog</name>
+    <name>MasterNodesWidget</name>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>Enter whole numbers 1 - 100</source>
-        <translation>Gebe Ganzzahlen zwischen 1 - 100 ein</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Enter Address to Send to</source>
-        <translation>Zieladresse eingeben</translation>
+        <source>No active Master Node yet</source>
+        <translation>Keine aktiven Masternodes bis jetzt</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other KTS addresses after it matures.
-To Add: enter percentage to give and KTS address to add to the MultiSend vector.
-To Delete: Enter address to delete and press delete.
-MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend ermöglicht es automatisch bis zu 100% Ihrer Stake- oder Masternode-Belohnung zu einer Liste von anderen KTS-Adressen zu senden.
-Zum hinzufügen: Gebe den Prozentsätze ein, um die KTS-Adressen des MultiSend-Vektor hinzuzufügen.
-Zum entfernen: Gebe die zu löschende Adresse ein und drücke löschen.
-MultiSend wird nicht aktiviert bis Sie auf Aktivieren geklickt haben.</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>Add to MultiSend Vector</source>
-        <translation>Füge zum MultiSend-Vektor hinzu</translation>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation>Hinzufügen</translation>
+        <source>Create Masternode Controller</source>
+        <translation>Masternode Controller erstellen</translation>
     </message>
     <message>
-        <source>Deactivate MultiSend</source>
-        <translation>Deaktiviere MultiSend</translation>
+        <source>No active Masternode yet</source>
+        <translation>Keine aktiven Masternodes bis jetzt</translation>
     </message>
     <message>
-        <source>Deactivate</source>
-        <translation>Deaktivieren</translation>
-    </message>
-    <message>
-        <source>Choose an address from the address book</source>
-        <translation>Wähle eine Adresse aus dem Adressbuch</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Percentage of stake to send</source>
-        <translation>Prozentsatz des Staken zum senden</translation>
-    </message>
-    <message>
-        <source>Percentage:</source>
-        <translation>Prozent:</translation>
-    </message>
-    <message>
-        <source>Address to send portion of stake to</source>
-        <translation>Adresse an die der Staking-Anteil gesendet wird</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adresse:</translation>
-    </message>
-    <message>
-        <source>Label:</source>
-        <translation>Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Adressbezeichnung eingeben, diese wird zusammen mit der Adresse dem Adressbuch hinzugefügt</translation>
-    </message>
-    <message>
-        <source>Delete Address From MultiSend Vector</source>
-        <translation>Lösche Adresse von MultiSend-Vektor</translation>
+        <source>Start</source>
+        <translation>Start</translation>
     </message>
     <message>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <source>Activate MultiSend</source>
-        <translation>Aktiviere MultiSend</translation>
+        <source>Info</source>
+        <translation>Info</translation>
     </message>
     <message>
-        <source>Activate</source>
-        <translation>Aktivieren</translation>
+        <source>Start Masternode</source>
+        <translation>Starte Masternode</translation>
     </message>
     <message>
-        <source>View MultiSend Vector</source>
-        <translation>Zeige MultiSend-Vektor</translation>
-    </message>
-    <message>
-        <source>View MultiSend</source>
-        <translation>Zeige MultiSend</translation>
-    </message>
-    <message>
-        <source>Send For Stakes</source>
-        <translation>For Staker versenden</translation>
-    </message>
-    <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Für Masternode Rewards versenden</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(keine Bezeichnung)</translation>
-    </message>
-    <message>
-        <source>The entered address:
+        <source>Are you sure you want to start masternode %1?
 </source>
-        <translation>Die eingegebene Adresse:
+        <translation>Sind Sie sicher, dass Sie den Masternode starten wollen %1?
 </translation>
     </message>
     <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>ist ungültig.
-Bitte Adresse überprüfen und nochmals versuchen.</translation>
+        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
+Please wait few more minutes.</source>
+        <translation>Masternode kann nicht gestartet werden, die Sicherungstransaktion wurde vom Netzwerk noch nicht akzeptiert.
+Bitte warte einige Minuten.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
+        <source>You are just about to export the required data to run a Masternode
+on a remote server to your clipboard.
+
+
+You will only have to paste the data in the kts.conf file
+of your remote server and start it, then start the Masternode using
+this controller wallet (select the Masternode in the list and press "start").
 </source>
-        <translation>Die Gesamtzahl des MultiSend Vektors ist über 100% des Stake Rewards
+        <translation>Sie sind dabei die erforderlichen Daten,
+um einen Masternode auf einem externen Server laufen zu lassen,
+in die Zwischenablage zu kopieren.
+
+
+SIe müssen lediglich die Daten in das kts.conf-File ihres externen Servers einfügen,
+die Kts-wallet starten, um dann von der Kontrollwallet aus
+ihren Masternode zu starten.
 </translation>
     </message>
     <message>
-        <source>Please Enter 1 - 100 for percent.</source>
-        <translation>Bitte eine Zahl zwischen 1-100 in Prozent eingeben.</translation>
+        <source>Masternode exported!, check your clipboard</source>
+        <translation>Masternode exportiert!, Befindet sich in der Zwischenablage</translation>
     </message>
     <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Gespeichert den MultiSend im Speicher, aber Fehler beim Speichern von Eigenschaften in der Datenbank
-</translation>
+        <source>Delete Masternode</source>
+        <translation>Lösche Masternode</translation>
     </message>
     <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor
-</translation>
+        <source>You are just about to delete Masternode:
+%1
+
+Are you sure?</source>
+        <translation>Sie sind dabei folgednen Masternode zu löschen:
+%1
+
+Sind sie sicher?</translation>
     </message>
     <message>
-        <source>Removed </source>
-        <translation>Gelöscht</translation>
+        <source>Invalid masternode.conf file</source>
+        <translation>Ungültiges masternode.conf file</translation>
     </message>
     <message>
-        <source>Could not locate address
-</source>
-        <translation>Konnte Adresse nicht ermitteln
-</translation>
+        <source>masternode.conf file doesn't exists</source>
+        <translation>masternode.conf File existiert nicht</translation>
+    </message>
+    <message>
+        <source>Not enough balance to create a masternode, 10,000 KTS required.</source>
+        <translation>Nicht genügend Guthaben um einen Masternode zu erstellen, 10'000 KTS werden benötigt.</translation>
+    </message>
+    <message>
+        <source>Error creating masternode</source>
+        <translation>Fehler beim Erstellen des Masternodes</translation>
     </message>
 </context>
 <context>
-    <name>MultisigDialog</name>
+    <name>MnInfoDialog</name>
     <message>
-        <source>Multisignature Address Interactions</source>
-        <translation>Mehrfachsignatur- und Adressinteraktionen</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>Create MultiSignature &amp;Address</source>
-        <translation>Erstelle Mehrfachsignatur $Address</translation>
+        <source>Master Node Information</source>
+        <translation>Masternode Inormationen</translation>
     </message>
     <message>
-        <source>How many people must sign to verify a transaction</source>
-        <translation>Wie viele Personen müssen diese Transaktion signieren um Sie zu verifizieren?</translation>
+        <source>Public Key:</source>
+        <translation>Öffentlicher Schlüssel:</translation>
     </message>
     <message>
-        <source>Enter the minimum number of signatures required to sign transactions</source>
-        <translation>Anzahl der minimal benötigten Signierungen um Transaktionen zu signieren.</translation>
+        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
+        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
     </message>
     <message>
-        <source>Address Label:</source>
-        <translation>Adressbezeichnung:</translation>
+        <source>Address: </source>
+        <translation>IP-Adresse:</translation>
     </message>
     <message>
-        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
-        <translation>Berechtige eine weitere Adresse, eine Signatur zur Verifikation einer Transaktion von einer mehrfach signierten Adresse zu leisten.</translation>
-    </message>
-    <message>
-        <source>&amp;Add Address / Key</source>
-        <translation>&amp;Füge Adresse / Schlüssel hinzu</translation>
-    </message>
-    <message>
-        <source>Local addresses or public keys that can sign:</source>
-        <translation>Lokale Adressen oder öffentliche Schlüssel die Signieren dürfen:</translation>
-    </message>
-    <message>
-        <source>Create a new multisig address</source>
-        <translation>Erstelle eine neue Mehrfachsignatur-Adresse</translation>
-    </message>
-    <message>
-        <source>C&amp;reate</source>
-        <translation>C&amp;reate</translation>
+        <source>127.0.0.2:43223</source>
+        <translation>127.0.0.2:43223</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Status:</translation>
     </message>
+    </context>
+<context>
+    <name>MyAddressRow</name>
     <message>
-        <source>Use below to quickly import an address by its redeem. Don't forget to add a label before clicking import!
-Keep in mind, the wallet will rescan the blockchain to find transactions containing the new address.
-Please be patient after clicking import.</source>
-        <translation>Verwenden Sie unten, um eine Adresse schnell zu importieren, indem Sie sie einlösen. Vergessen Sie nicht, eine Beschriftung hinzuzufügen, bevor Sie auf Importieren klicken! 
-Beachten Sie, dass die Brieftasche die Blockchain erneut scannt, um Transaktionen zu finden, die die neue Adresse enthalten
-Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>&amp;Import Redeem</source>
-        <translation>&amp; Importieren einlösen</translation>
+        <source>Jan. 19, 2019</source>
+        <translation>Jan. 19, 2019</translation>
     </message>
     <message>
-        <source>&amp;Create MultiSignature Tx</source>
-        <translation>&amp;Erstelle eine mehrfach signierte Transaktion </translation>
-    </message>
-    <message>
-        <source>Inputs:</source>
-        <translation>Eingaben:</translation>
-    </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>Coinverwaltung</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Menge ausgewählt:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Betrag:</translation>
-    </message>
-    <message>
-        <source>Add an input to fund the outputs</source>
-        <translation>Füge eine Eingabe hinzu damit die Ausgabe finanziert wird.</translation>
-    </message>
-    <message>
-        <source>Add a Raw Input</source>
-        <translation>Füge eine rohe Eingabe hinzu</translation>
-    </message>
-    <message>
-        <source>Address / Amount:</source>
-        <translation>Adresse / Menge:</translation>
-    </message>
-    <message>
-        <source>Add destinations to send KTS to</source>
-        <translation>Füge Transaktionsziele für KTS-Überweisung hinzu</translation>
-    </message>
-    <message>
-        <source>Add &amp;Destination</source>
-        <translation>Füge &amp;Transaktionsziel hinzu</translation>
-    </message>
-    <message>
-        <source>Create a transaction object using the given inputs to the given outputs</source>
-        <translation>Erstelle eine Transaktion mit den gegeben Eingaben zu den angegebenen Zielen.</translation>
-    </message>
-    <message>
-        <source>Cr&amp;eate</source>
-        <translation>Erzeuge</translation>
-    </message>
-    <message>
-        <source>&amp;Sign MultiSignature Tx</source>
-        <translation>&amp;Signiere mehrfach signierte Transaktion</translation>
-    </message>
-    <message>
-        <source>Transaction Hex:</source>
-        <translation>Transaktionsschlüssel HEX:</translation>
-    </message>
-    <message>
-        <source>Sign the transaction from this wallet or from provided private keys</source>
-        <translation>Signiere eine Transaktion von diesem Wallet oder von bereitgestellten privaten Schlüsseln.</translation>
-    </message>
-    <message>
-        <source>S&amp;ign</source>
-        <translation>Unterschreiben</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; DEAKTIVIERT bis die Transaktion entsprechend oft signiert wurde.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Co&amp;mmit</source>
-        <translation>Co&amp;mmit</translation>
-    </message>
-    <message>
-        <source>Add private keys to sign the transaction with</source>
-        <translation>Füge private Schlüssel zum signieren der Transaktion hinzu</translation>
-    </message>
-    <message>
-        <source>Add Private &amp;Key</source>
-        <translation>Füge privaten &amp;Key hinzu</translation>
-    </message>
-    <message>
-        <source>Sign with only private keys (Not Recommened)</source>
-        <translation>Nur mit privaten Schlüsseln signieren (Nicht empfohlen)</translation>
-    </message>
-    <message>
-        <source>Invalid Tx Hash.</source>
-        <translation>Ungültiger Transaktions-Hash.</translation>
-    </message>
-    <message>
-        <source>Vout position must be positive.</source>
-        <translation>Vout-Position muss positiv sein.</translation>
-    </message>
-    <message>
-        <source>Maximum possible addresses reached. (15)</source>
-        <translation>Maximale Anzahl möglicher Adressen erreicht. (15)</translation>
-    </message>
-    <message>
-        <source>Vout Position: </source>
-        <translation>Vout Position:</translation>
-    </message>
-    <message>
-        <source>Amount: </source>
-        <translation>Menge:</translation>
-    </message>
-    <message>
-        <source>Maximum (15)</source>
-        <translation>Maximum (15)</translation>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
+    <name>NavMenuWidget</name>
     <message>
-        <source>Configure Obfuscation</source>
-        <translation>Verschleierung konfigurieren</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Geringe Privatsphäre</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Hohe Privatsphäre</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximale Privatsphäre</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Bitte den gewünschten Privatsphäre Level auswählen.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 KTS</source>
-        <translation>2 separate Masternodes verwenden um bis zu 10000 KTS zu mixen</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 KTS</source>
-        <translation>8 separate Masternodes verwenden um bis zu 10000 KTS zu mixen</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>16 separate Masternodes verwenden</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 KTS to anonymize 10000 KTS</source>
-        <translation>Diese Option ist die schnellst und kostet ungefähr ~0.025 KTS um 10000 KTS zu anonymisieren </translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 KTS to anonymize 10000 KTS</source>
-        <translation>Diese Option ist angemessen schnell und kostet ungefähr  0.05 KTS um 10000 KTS zu anonymisieren</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Diese Option ist die langsamste und sicherste Option. Die Verwendung maximaler Anonymisierung kostet</translation>
-    </message>
-    <message>
-        <source>0.1 KTS per 10000 KTS you anonymize.</source>
-        <translation>0.1 KTS per 10000 KTS die anonymisiert werden.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Verschleierungskonfiguration</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Verschleierung erfolgreich auf normal gesetzt (%1 und 2 Runden). Sie können dies jederzeit in den KTSs Konfigurationen ändern.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Verschleierung erfolgreich auf hohen gesetzt (%1 und 8 Runden). Sie können dies jederzeit in den KTSs Konfigurationen ändern.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Verschleierung erfolgreich auf maximal gesetzt (%1 und 16 Runden). Sie können dies jederzeit in den KTSs Konfigurationen ändern.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1826,8 +1728,16 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
         <translation>Zahlungsanfrage von URI oder Datei öffnen</translation>
     </message>
     <message>
-        <source>URI:</source>
-        <translation>URI:</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Select payment request file</source>
@@ -1836,6 +1746,17 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
     <message>
         <source>Select payment request file to open</source>
         <translation>Datei für Zahlungsanfrage öffnen</translation>
+    </message>
+    </context>
+<context>
+    <name>OptionButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
 </context>
 <context>
@@ -1930,9 +1851,9 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</source>
+https://www.transifex.com/kts-project/kts-project-translations</source>
         <translation>Sprache fehlt oder ist unvollständig? Helfe mit und trage zur Übersetzung bei unter:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</translation>
+https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1945,6 +1866,14 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     <message>
         <source>Enable zKTS Automint</source>
         <translation>Aktivieren Sie zKTS Automint</translation>
+    </message>
+    <message>
+        <source>Enable automatic zKTS minting from specific addresses</source>
+        <translation>Automatisches zKTS Minting von spezifischen Adressen erlauben</translation>
+    </message>
+    <message>
+        <source>Enable Automint Addresses</source>
+        <translation>Automint Adressen aktivieren</translation>
     </message>
     <message>
         <source>Percentage of incoming KTS which get automatically converted to zKTS via Zerocoin Protocol (min: 10%)</source>
@@ -2019,8 +1948,8 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
         <translation>Benutzeroberfläche Motiv:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Einheit des Betrags anzeigen in:</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>Einheit des Betrags anzeigen in:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2104,158 +2033,78 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     </message>
 </context>
 <context>
-    <name>OverviewPage</name>
+    <name>KTSGUI</name>
     <message>
-        <source>Form</source>
-        <translation>Formular</translation>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
     </message>
     <message>
-        <source>Available:</source>
-        <translation>Verfügbar:</translation>
+        <source>Wallet</source>
+        <translation>Wallet</translation>
     </message>
     <message>
-        <source>Your current spendable balance</source>
-        <translation>Ihr aktuell verfügbarer Kontostand</translation>
+        <source>Node</source>
+        <translation>Node</translation>
     </message>
     <message>
-        <source>Total Balance, including all unavailable coins.</source>
-        <translation>Gesamtsaldo, einschließlich aller nicht verfügbaren Münzen.</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Anzeigen / Verstecken</translation>
     </message>
     <message>
-        <source>KTS Balance</source>
-        <translation>KTS Bilanzen</translation>
+        <source>Show or hide the main Window</source>
+        <translation>Das Hauptfenster anzeigen oder verstecken</translation>
     </message>
     <message>
-        <source>Pending:</source>
-        <translation>Ausstehend:</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
-        <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Betrag aus unbestätigten Transaktionen, der noch nicht im aktuell verfügbaren Kontostand enthalten ist</translation>
+        <source>Quit application</source>
+        <translation>Anwendung beenden</translation>
     </message>
     <message>
-        <source>Immature:</source>
-        <translation>Unreif:</translation>
+        <source>KTS Core client</source>
+        <translation>KTS Core Client</translation>
     </message>
     <message>
-        <source>Staked or masternode rewards that has not yet matured</source>
-        <translation>Erarbeiteter Betrag der noch nicht gereift ist</translation>
+        <source>Error</source>
+        <translation>Fehler</translation>
     </message>
     <message>
-        <source>Current locked balance in watch-only addresses</source>
-        <translation>Der aktuelle gesperrte Kontostand in Nur-Uhr-Adressen</translation>
+        <source>Warning</source>
+        <translation>Warnung</translation>
     </message>
     <message>
-        <source>Your current KTS balance, unconfirmed and immature transactions included</source>
-        <translation>Ihr aktueller KTS-Saldo, unbestätigte und unreife Transaktionen sind enthalten</translation>
+        <source>Information</source>
+        <translation>Hinweis</translation>
     </message>
     <message>
-        <source>zKTS Balance</source>
-        <translation>zKTS Bilanzen</translation>
+        <source>Sent MultiSend transaction</source>
+        <translation>Versende MultiSend Transaktion</translation>
     </message>
     <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zKTS are spendable.</source>
-        <translation>Ausgereift: Mehr als 20 Bestätigungen und mehr als 1 Prägungen der selben Stückelung nach erfolgter Prägung.
-Diese zKTS sind Verwendbar.</translation>
+        <source>Sent transaction</source>
+        <translation>Gesendete Transaktion</translation>
     </message>
     <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Unbestätigt: Weniger als 20 Bestätigungen
-Unreif: Bestätigt, aber keine Prägung in der selben Stückelung seit erfolgter Prägung</translation>
+        <source>Incoming transaction</source>
+        <translation>Eingehende Transaktion</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem KTS-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
-    </message>
-    <message>
-        <source>OVERVIEW</source>
-        <translation>ÜBERBLICK</translation>
-    </message>
-    <message>
-        <source>Combined Balance (including unconfirmed and immature coins)</source>
-        <translation>Kombinierte Beträge (einschließlich unbestätigte und unreife Coins)</translation>
-    </message>
-    <message>
-        <source>Combined Balance</source>
-        <translation>Kombiniertes Guthaben</translation>
-    </message>
-    <message>
-        <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation>Unbestätigte Transaktionen  zu beobachteten Adressen</translation>
-    </message>
-    <message>
-        <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Erarbeiteter Betrag der beobachteten Adressen der noch nicht gereift ist</translation>
-    </message>
-    <message>
-        <source>Total:</source>
-        <translation>Gesamtbetrag:</translation>
-    </message>
-    <message>
-        <source>Current total balance in watch-only addresses</source>
-        <translation>Kontostand der beobachteten Adressen</translation>
-    </message>
-    <message>
-        <source>Watch-only:</source>
-        <translation>Beobachtet:</translation>
-    </message>
-    <message>
-        <source>Your current balance in watch-only addresses</source>
-        <translation>Aktueller Kontostand der beobachteten Adressen</translation>
-    </message>
-    <message>
-        <source>Spendable:</source>
-        <translation>Verfügbar:</translation>
-    </message>
-    <message>
-        <source>Locked KTS or Masternode collaterals. These are excluded from zKTS minting.</source>
-        <translation>Gesperrte KTS oder Masternode Pfand. Diese sind vom zKTS Prägen ausgeschlossen.</translation>
-    </message>
-    <message>
-        <source>Locked:</source>
-        <translation>Gesperrt:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Unbestätigt:</translation>
-    </message>
-    <message>
-        <source>Your current zKTS balance, unconfirmed and immature zKTS included.</source>
-        <translation>Ihre aktuelle zKTS-Bilanz, unbestätigte und unreife zKTS enthalten.</translation>
-    </message>
-    <message>
-        <source>Recent transactions</source>
-        <translation>Letzte Transaktionen</translation>
-    </message>
-    <message>
-        <source>out of sync</source>
-        <translation>nicht synchron</translation>
-    </message>
-    <message>
-        <source>Current percentage of zKTS.
-If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+        <source>Date: %1
+Amount: %2
+Type: %3
+Address: %4
 </source>
-        <translation>Aktueller Prozentsatz an zKTS.
-Falls das automatische Prägen aktiviert ist, wird sich dieser Prozentsatz um den eingestellten Prozentsatz fürs automatisierte Prägen einpendeln (Standard = 10%).
-</translation>
+        <translation>Datum: %1
+Betrag: %2
+Typ: %3
+Adresse: %4</translation>
     </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Automatisches Prägen ist aktiv und eingestellt auf</translation>
-    </message>
-    <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in kts.conf.</source>
-        <translation>Um das automatische Prägen zu deaktivieren, füge 'enablezeromint=0' in kts.conf ein.</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in kts.conf</source>
-        <translation>Das automatische Prägen ist deaktiviert.
-Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablezeromint=1' in kts.conf</translation>
-    </message>
-</context>
+    </context>
+<context>
+    <name>PWidget</name>
+    </context>
 <context>
     <name>PaymentServer</name>
     <message>
@@ -2363,656 +2212,113 @@ Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablez
     </message>
 </context>
 <context>
-    <name>PrivacyDialog</name>
+    <name>PrivacyWidget</name>
     <message>
-        <source>Zerocoin Actions:</source>
-        <translation>Zerocoin Aktionen:</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Die angezeigte Information ist möglicherweise nicht mehr aktuell. Ihre Wallet synchronisiert sich automatisch mit dem KTS-Netzwerk, nachdem eine Verbindung hergestellt wurde. Aber dieser Vorgang ist noch nicht abgeschlossen.</translation>
-    </message>
-    <message>
-        <source>Mint Zerocoin</source>
-        <translation>Präge Zerocoin</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
-    </message>
-    <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Für das Prägen verfügbar sind Coins, welche bestätigt und nicht gesperrt sind.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Verfügbar für Prägung:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 KTS</source>
-        <translation>0.000 000 00 KTS</translation>
-    </message>
-    <message>
-        <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
-        <translation>Zurücksetzen der Zerocoin-Wallet-DB. Löscht Transaktionen, die es nicht in die Blockchain geschafft haben.</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Zurücksetzen</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Coin-Kontrolle...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Anzahl:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Betrag:</translation>
-    </message>
-    <message>
-        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
-        <translation>Erneutes Scannen der kompletten Blockchain nach Zerocoin Prägungen und deren Meta-Daten</translation>
-    </message>
-    <message>
-        <source>ReScan</source>
-        <translation>Erneut Scannen</translation>
-    </message>
-    <message>
-        <source>Status and/or Mesages from the last Mint Action.</source>
-        <translation>Status und/oder Mitteilungen aus der letzten Prägung</translation>
-    </message>
-    <message>
-        <source>PRIVACY</source>
-        <translation>PRIVATSPHÄRE</translation>
-    </message>
-    <message>
-        <source>Enter an amount of Kts to convert to zKTS</source>
-        <translation>Geben Sie den Betrag ein, den sie von KTS in zKTS umwandeln möchten</translation>
-    </message>
-    <message>
-        <source>zKTS Control</source>
-        <translation>zKTS Control</translation>
-    </message>
-    <message>
-        <source>zKTS Selected:</source>
-        <translation>zKTS ausgewählt:</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Menge ausgewählt:</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</source>
-        <translation>Überweise Zerocoin. Ohne Empfänger-Adresse werden Zahlungen an Sie selbst erstellt.</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin</source>
-        <translation>Überweise Zerocoin</translation>
-    </message>
-    <message>
-        <source>Available (mature and spendable) zKTS for spending</source>
-        <translation>Verfügbare (ausgereifte und aufwendbare) zKTS zum Überweisen</translation>
-    </message>
-    <message>
-        <source>Available Balance:</source>
-        <translation>Verfügbare Bilanz:</translation>
-    </message>
-    <message>
-        <source>Available (mature and spendable) zKTS for spending
-
-zKTS are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Verfügbare (ausgereifte und aufwendbare) zKTS zum Überweisen
-
-zKTS sind ausgereift wenn sie mehr als 20 Bestätigungen und mehr als 2 Prägungen in der selben Stückelung nach erfolgter Prägung halten.</translation>
-    </message>
-    <message>
-        <source>0 zKTS</source>
-        <translation>0 zKTS</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Sicherheitsstufe für Zerocoin-Transaktionen. Höher ist besser, benötigt jedoch mehr Zeit und Ressourcen.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Sicherheitsstufe:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Sicherheitsstufe 1 - 100 (Voreinstellung: 42)</translation>
-    </message>
-    <message>
-        <source>Pay &amp;To:</source>
-        <translation>E&amp;mpfänger:</translation>
-    </message>
-    <message>
-        <source>The KTS address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Die KTS-Adresse, an die die Zahlung gesendet wird. Erstellt eine lokale Zahlung an Sie selbst, wenn die Zeile leer ist.</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Bereits verwendete Adresse auswählen</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Adresse aus der Zwischenablage einfügen</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Adressbezeichnung eingeben, um diese in der Liste der bereits verwendeten Adressen zu speichern</translation>
-    </message>
-    <message>
-        <source>A&amp;mount:</source>
-        <translation>Betra&amp;g:</translation>
-    </message>
-    <message>
-        <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation>Wandle Wechselgeld in Zerocoin um (kann zusätzliche Gebühren kosten)</translation>
-    </message>
-    <message>
-        <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
-        <translation>Falls aktiviert, versucht die Wallet, das zurückkehrende Wechselgeld zu minimieren, anstatt die Anzahl der verbrauchten Stückelungen zu minimieren.</translation>
-    </message>
-    <message>
-        <source>Minimize Change</source>
-        <translation>Minimiert Wechselgeld</translation>
-    </message>
-    <message>
-        <source>Information about the available Zerocoin funds.</source>
-        <translation>Informationen über den verfügbaren Zerocoin-Bestand.</translation>
-    </message>
-    <message>
-        <source>Zerocoin Stats:</source>
-        <translation>Zerocoin Statistiken:</translation>
-    </message>
-    <message>
-        <source>Total Balance including unconfirmed and immature zKTS</source>
-        <translation>Totales Guthaben, einschließlich unbestätigter und unreifer zKTS</translation>
-    </message>
-    <message>
-        <source>Total Zerocoin  Balance:</source>
-        <translation>Totales Zerocoin Guthaben:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 1:</source>
-        <translation>Stückelungen mit Wert 1:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 1:</source>
-        <translation>Stücke mit Wert 1:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Unbestätigt: Weniger als 20 Bestätigungen
-Unreif: Bestätigt, aber keine Prägung in der selben Stückelung seit erfolgter Prägung</translation>
-    </message>
-    <message>
-        <source>Show the current status of automatic zKTS minting.
-
-To change the status (restart required):
-- enable: add 'enablezeromint=1' to kts.conf
-- disable: add 'enablezeromint=0' to kts.conf
-
-To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zKTS
-
-</source>
-        <translation>Zeigt den aktuellen Status der automatischen zKTS-Prägung an
-
-Um den Status zu ändern (Neustart erforderlich): 
-- enable: füge 'enablezeromint = 1' zu kts.conf hinzu
-- disable: füge 'enablezeromint = 0' zu kts.conf hinzu
-
-Um den Prozentsatz zu ändern (kein Neustart erforderlich): 
-- Menü Einstellungen-&gt; Optionen-&gt; Prozentsatz der autom. zKTS
-</translation>
-    </message>
-    <message>
-        <source>AutoMint Status</source>
-        <translation>AutoMint-Status</translation>
-    </message>
-    <message>
-        <source>Global Supply:</source>
-        <translation>Globales Angebot:</translation>
-    </message>
-    <message>
-        <source>Denom. 1:</source>
-        <translation>Wertstufe 1:</translation>
-    </message>
-    <message>
-        <source>Denom. 5:</source>
-        <translation>Wertstufe 5:</translation>
-    </message>
-    <message>
-        <source>Denom. 10:</source>
-        <translation>Wertstufe 10:</translation>
-    </message>
-    <message>
-        <source>Denom. 50:</source>
-        <translation>Wertstufe 50:</translation>
-    </message>
-    <message>
-        <source>Denom. 100:</source>
-        <translation>Wertstufe 100:</translation>
-    </message>
-    <message>
-        <source>Denom. 500:</source>
-        <translation>Wertstufe 500:</translation>
-    </message>
-    <message>
-        <source>Denom. 1000:</source>
-        <translation>Wertstufe 1000:</translation>
-    </message>
-    <message>
-        <source>Denom. 5000:</source>
-        <translation>Wertstufe 5000:</translation>
-    </message>
-    <message>
-        <source>0 x</source>
-        <translation>0 x</translation>
-    </message>
-    <message>
-        <source>Denominations with value 5:</source>
-        <translation>Stückelungen mit Wert 5:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 5:</source>
-        <translation>Stücke mit Wert 5:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 10:</source>
-        <translation>Stückelungen mit Wert 10:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 10:</source>
-        <translation>Stücke mit Wert 10:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 50:</source>
-        <translation>Stückelungen mit Wert 50:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 50:</source>
-        <translation>Stücke mit Wert 50:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 100:</source>
-        <translation>Stückelungen mit Wert 100:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 100:</source>
-        <translation>Stücke mit Wert 100:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 500:</source>
-        <translation>Stückelungen mit Wert 500:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 500:</source>
-        <translation>Stücke mit Wert 500:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 1000:</source>
-        <translation>Stückelungen mit Wert 1000:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 1000:</source>
-        <translation>Stücke mit Wert 1000:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 5000:</source>
-        <translation>Stückelungen mit Wert 5000:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 5000:</source>
-        <translation>Stücke mit Wert 5000:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Priorität:</translation>
+        <source>Title</source>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>TextLabel</source>
         <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Gebühr:</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation>Abzug:</translation>
+        <source>No active Master Node yet</source>
+        <translation>Keine aktiven Masternodes bis jetzt</translation>
     </message>
     <message>
-        <source>no</source>
-        <translation>nein</translation>
+        <source>Privacy</source>
+        <translation>Privatsphäre</translation>
     </message>
     <message>
-        <source>Bytes:</source>
-        <translation>Byte:</translation>
+        <source>Convert</source>
+        <translation>Umwandeln</translation>
     </message>
     <message>
-        <source>Insufficient funds!</source>
-        <translation>Unzureichender Kontostand!</translation>
+        <source>Mint</source>
+        <translation>Prägen</translation>
     </message>
     <message>
-        <source>Coins automatically selected</source>
-        <translation>Coins automatisch ausgewählt</translation>
+        <source>No transactions yet</source>
+        <translation>Keine Transaktionen</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>mittel</translation>
+        <source>Mint zKTS</source>
+        <translation>zKTS prägen</translation>
     </message>
     <message>
-        <source>Coin Control Features</source>
-        <translation>"Coin Control"-Funktionen</translation>
+        <source>Enter amount of KTS to mint into zKTS</source>
+        <translation>Gebe eine Anzahl KTS ein, um sie in zKTS zu wechseln</translation>
     </message>
     <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Wenn dies aktivert, und die Wechselgeld-Adresse leer oder ungültig ist, wird das Wechselgeld einer neu erzeugten Adresse gutgeschrieben.</translation>
+        <source>Convert back to KTS</source>
+        <translation>Konvertiere zKTS zurück zu KTS</translation>
     </message>
     <message>
-        <source>Custom change address</source>
-        <translation>Benutzerdefinierte Wechselgeld-Adresse</translation>
+        <source>Zerocoin</source>
+        <translation>Zerocoin</translation>
     </message>
     <message>
-        <source>Amount After Fee:</source>
-        <translation>Betrag nach Gebühr:</translation>
+        <source>zKTS is currently undergoing maintenance</source>
+        <translation>zKTS wird momentan überarbeitet</translation>
     </message>
     <message>
-        <source>Change:</source>
-        <translation>Wechselgeld:</translation>
+        <source>convert</source>
+        <translation>Umwandeln</translation>
     </message>
     <message>
-        <source>out of sync</source>
-        <translation>nicht synchron</translation>
+        <source>mint</source>
+        <translation>Prägen</translation>
     </message>
     <message>
-        <source>Mint Status: Okay</source>
-        <translation>Prägestatus: Okay</translation>
+        <source>Invalid value</source>
+        <translation>Ungültiger Wert</translation>
     </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     <message>
-        <source>Copy quantity</source>
-        <translation>Anzahl kopieren</translation>
+        <source>Open proposal page in browser</source>
+        <translation>Vorschläge-Seite im Browser</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Betrag kopieren</translation>
+        <source>Yes:</source>
+        <translation>Ja:</translation>
     </message>
     <message>
-        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
-Please be patient...</source>
-        <translation>Starten von ResetMintZerocoin: Erneutes Scannen der kompletten Blockchain. Das benötigt, je nach Hardware, bis zu 30 Minuten.
-Bitte haben Sie etwas Geduld...</translation>
+        <source>No:</source>
+        <translation>Nein:</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Zerocoin ausgeben.
-Rechnerisch aufwändig. Kann je nach ausgewähltem Sicherheitsstufe und Ihrer Hardware mehrere Minuten benötigen.
-Bitte haben Sie Geduld...</translation>
+        <source>Open link</source>
+        <translation>Öffentlicher Link</translation>
     </message>
     <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) benötigt.
-Maximal erlaubt:</translation>
+        <source>Copy link</source>
+        <translation>Link kopieren</translation>
     </message>
     <message>
-        <source>zKTS Spend #: </source>
-        <translation>zKTS Ausgeben #:</translation>
+        <source>Wallet Locked</source>
+        <translation>Wallet gesperrt</translation>
     </message>
     <message>
-        <source>zKTS Mint</source>
-        <translation>zKTS Prägen</translation>
+        <source>You must unlock your wallet to vote.</source>
+        <translation>Um wählen zu können, muss dein Wallet entsperrt sein.</translation>
     </message>
     <message>
-        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
-        <translation> &lt;b&gt;enabled&lt;/b&gt;.</translation>
+        <source>Confirm Vote</source>
+        <translation>Bestätige deine Stimmabgabe</translation>
     </message>
     <message>
-        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
-        <translation> &lt;b&gt;disabled&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source> Configured target percentage: &lt;b&gt;</source>
-        <translation>Konfigurierter Zielprozentsatz: &lt;b&gt;</translation>
-    </message>
-    <message>
-        <source>zKTS is currently disabled due to maintenance.</source>
-        <translation>zKTS ist aktuell deaktiviert aufgrund von Wartungsarbeiten.</translation>
-    </message>
-    <message>
-        <source>zKTS is currently undergoing maintenance.</source>
-        <translation>zKTS unterliegt momentan Wartungsarbeiten.</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt;1&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt;5&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt; 10&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt; 50&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt;100&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt;500&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt;1000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation>Denom. mit Wert &lt;b&gt;5000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>AutoMint Status:</source>
-        <translation>AutoMint-Status:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;1&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;5&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;10&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;50&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;100&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;500&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;1000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Fehler: Ihre Wallet ist gesperrt. Bitte geben Sie zuerst ihre Wallet Passphrase ein.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Nachricht: Geben Sie einen Betrag &gt; 0 ein.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Prägung</translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Erfolgreich geprägt</translation>
-    </message>
-    <message>
-        <source> zKTS in </source>
-        <translation> zKTS in </translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
-</source>
-        <translation> ausg. Verwendete Stückelungen:
-</translation>
-    </message>
-    <message>
-        <source>Duration: </source>
-        <translation>Dauer:</translation>
-    </message>
-    <message>
-        <source> sec.
-</source>
-        <translation>ausg.
-</translation>
-    </message>
-    <message>
-        <source>Starting ResetSpentZerocoin: </source>
-        <translation>Starte ResetSpentZerocoin: </translation>
-    </message>
-    <message>
-        <source>No 'Pay To' address provided, creating local payment</source>
-        <translation>Keine "Pay To"-Adresse zur Verfügung. Erstelle lokale Zahlung</translation>
-    </message>
-    <message>
-        <source>Invalid Kts Address</source>
-        <translation>Ungültige KTS-Adresse </translation>
-    </message>
-    <message>
-        <source>Invalid Send Amount</source>
-        <translation>Ungültiger Sendebetrag.</translation>
-    </message>
-    <message>
-        <source>Confirm additional Fees</source>
-        <translation>Zusätzliche Gebühren bestätigen</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Sind Sie sicher, dass Sie senden möchten?&lt;br /&gt;&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source> to address </source>
-        <translation>an Adresse</translation>
-    </message>
-    <message>
-        <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
-        <translation>an eine neu generierte (unbenutzte und daher anonyme) lokale Adresse&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>with Security Level </source>
-        <translation>mit Sicherheitsstufe</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Sende Coins bestätigen</translation>
-    </message>
-    <message>
-        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zKTS benötigen eine Sicherheitsstufe von 100 um erfolgreich ausgegeben werden zu können.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zKTS</source>
-        <translation>zKTS Überweisung fehlgeschlagen</translation>
-    </message>
-    <message>
-        <source>Failed to fetch mint associated with serial hash</source>
-        <translation>Mit Hash verbundene Prägung konnte nicht abgerufen werden</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Zu viele Eingaben (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn) oder reduziere die aufzuwendende Menge.</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin failed with status = </source>
-        <translation>Ausgeben Zerocoin fehlgeschlagen mit Status =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of KTS to convert to zKTS</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
-    </message>
-    <message>
-        <source>denomination: </source>
-        <translation>Stückelung:</translation>
-    </message>
-    <message>
-        <source>serial: </source>
-        <translation>seriell:</translation>
-    </message>
-    <message>
-        <source>Spend is 1 of : </source>
-        <translation>Spend ist 1 von :</translation>
-    </message>
-    <message>
-        <source>value out: </source>
-        <translation>Betrag out:</translation>
-    </message>
-    <message>
-        <source>address: </source>
-        <translation>Adresse:</translation>
-    </message>
-    <message>
-        <source>Sending successful, return code: </source>
-        <translation>Senden erfolgreich, Rückgabecode:</translation>
-    </message>
-    <message>
-        <source>txid: </source>
-        <translation>txid: </translation>
-    </message>
-    <message>
-        <source>fee: </source>
-        <translation>Gebühr:</translation>
+        <source>Vote Results</source>
+        <translation>Abstimmresultate</translation>
     </message>
 </context>
 <context>
@@ -3065,26 +2371,11 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <source>%1 ms</source>
         <translation>%1 Ms</translation>
     </message>
-</context>
-<context>
-    <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>Grafik &amp;speichern...</translation>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
     </message>
-    <message>
-        <source>&amp;Copy Image</source>
-        <translation>Grafik &amp;kopieren</translation>
-    </message>
-    <message>
-        <source>Save QR Code</source>
-        <translation>QR-Code speichern</translation>
-    </message>
-    <message>
-        <source>PNG Image (*.png)</source>
-        <translation>PNG-Grafik (*.png)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>RPCConsole</name>
     <message>
@@ -3134,10 +2425,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Debug log file</source>
         <translation>Debug-Protokolldatei</translation>
-    </message>
-    <message>
-        <source>Using OpenSSL version</source>
-        <translation>Verwendete OpenSSL Version</translation>
     </message>
     <message>
         <source>Build date</source>
@@ -3428,8 +2715,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Synchronisation der Blockchain bestätigen</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Nutze die Pfeiltasten um durch ehemals genutze Konsolenbefehle zu scrollen und &lt;b&gt;Ctrl-L&lt;/b&gt; um das Konsolenfenster zu leeren.</translation>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Verwende die Pfeiltasten um durch den Verlauf zu scrollen und %1 um das Konsolenfester zu löschen.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3485,149 +2772,105 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>ReceiveCoinsDialog</name>
+    <name>ReceiveDialog</name>
     <message>
-        <source>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</source>
-        <translation>Wiederverwendung einer zuvor verwendeten Empfangsadressen.&lt;br&gt;Wiederverwendete Adressen haben Sicherheits- und Datenschutzprobleme.&lt;br&gt;Verwenden Sie diese nicht, es sei denn, dass Sie zuvor eine Zahlungsanforderung generieren.</translation>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
     </message>
     <message>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>&amp;Wiederverwendung einer vorhandenen Empfangsadresse (nicht empfohlen)</translation>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
     </message>
     <message>
-        <source>&amp;Message:</source>
-        <translation>Nachricht:</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>An optional label to associate with the new receiving address.</source>
-        <translation>Ein optionales Etikett, das mit der neuen Empfangsadresse verknüpft werden soll.</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the KTS network.</source>
-        <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird. Hinweis: Die Nachricht wird nicht mit der Zahlung über das KTS-Netzwerk gesendet.</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>RECEIVE</source>
-        <translation>EMPFANGEN</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the KTS network.</source>
-        <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird.&lt;br&gt;Hinweis: Die Nachricht wird nicht mit der Zahlung über das KTS-Netzwerk gesendet.</translation>
-    </message>
-    <message>
-        <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation>Verwenden Sie dieses Formular, um Zahlungen anzufordern. Alle Felder sind &lt;b&gt;optional&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
-        <translation>Einen optionalen Betrag anfordern. Lassen Sie diesen leer oder Null, um einen unbestimmten Betrag anzufordern.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Betrag:</translation>
-    </message>
-    <message>
-        <source>&amp;Request payment</source>
-        <translation>Zahlung anfo&amp;rdern</translation>
-    </message>
-    <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Alle Formularfelder zurücksetzen.</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Clear</translation>
-    </message>
-    <message>
-        <source>Requested payments history</source>
-        <translation>Verlauf der angeforderten Zahlungen</translation>
-    </message>
-    <message>
-        <source>Show the selected request (does the same as double clicking an entry)</source>
-        <translation>Zeige die ausgewählte Anfrage an (entspricht dem Doppelklick auf einen Eintrag)</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Anzeigen</translation>
-    </message>
-    <message>
-        <source>Remove the selected entries from the list</source>
-        <translation>Entferne die ausgewählten Einträge aus der Liste</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Entfernen</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Bezeichnung kopieren</translation>
-    </message>
-    <message>
-        <source>Copy message</source>
-        <translation>Nachricht kopieren</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Betrag kopieren</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
-    <name>ReceiveRequestDialog</name>
+    <name>ReceiveWidget</name>
     <message>
-        <source>QR Code</source>
-        <translation>QR Code</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>&amp;URI kopieren</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>&amp;Adresse kopieren</translation>
+        <source>No address</source>
+        <translation>Keine Adresse</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>Grafik &amp;speichern...</translation>
+        <source>Add Label</source>
+        <translation>Bezeichnung hinzufügen</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
-        <translation>Zahlung an %1 anfordern </translation>
+        <source>Generate Address</source>
+        <translation>Generiere Adresse</translation>
     </message>
     <message>
-        <source>Payment information</source>
-        <translation>Zahlungsinformationen</translation>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
     </message>
     <message>
-        <source>URI</source>
-        <translation>URI</translation>
+        <source>Receive</source>
+        <translation>Empfangen</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adresse</translation>
+        <source>Scan the QR code or copy the address to receive KTS.</source>
+        <translation>QR-Code scannen oder Adresse kopieren um KTS zu erhalten.</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Betrag</translation>
+        <source>No address </source>
+        <translation>Keine Adresse</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Bezeichnung</translation>
+        <source>No available address, try unlocking the wallet</source>
+        <translation>Keine Adresse verfügbar, versuche die Wallet zu entsperren.</translation>
     </message>
     <message>
-        <source>Message</source>
-        <translation>Nachricht</translation>
+        <source>Error generating address</source>
+        <translation>Fehler beim Erstellen der Adresse</translation>
     </message>
     <message>
-        <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>Resultierende URI zu lang. Versuchen sie den Text für Label / Nachricht zu kürzen.</translation>
+        <source>Change Label</source>
+        <translation>Bezeichnung ändern</translation>
     </message>
     <message>
-        <source>Error encoding URI into QR Code.</source>
-        <translation>Fehler bei der Kodierung der URI im QR-Code</translation>
+        <source>Edit Address Label</source>
+        <translation>Adressbezeichnung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Address label saved</source>
+        <translation>Adressbezeichnung gespeichert</translation>
+    </message>
+    <message>
+        <source>Error storing address label</source>
+        <translation>Fehler beim Speichern der Adressbezeichnung</translation>
+    </message>
+    <message>
+        <source>New address created</source>
+        <translation>Neue Adresse erstellen</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adresse kopiert</translation>
+    </message>
+    <message>
+        <source>Address copied to clipboard</source>
+        <translation>Adresse in Zwischenablage kopiert</translation>
     </message>
 </context>
 <context>
@@ -3643,6 +2886,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Message</source>
         <translation>Nachricht</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3662,511 +2909,408 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>SendCoinsDialog</name>
+    <name>RequestDialog</name>
     <message>
-        <source>Send Coins</source>
-        <translation>KTSs überweisen</translation>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
     </message>
     <message>
-        <source>SEND</source>
-        <translation>SENDEN</translation>
+        <source>New Request Payment</source>
+        <translation>Neue Zahlung anfordern</translation>
     </message>
     <message>
-        <source>Coin Control Features</source>
-        <translation>"Coin Control"-Funktionen</translation>
+        <source>Lorem ipsum dolor sit amet, consectur cling elit, sed do </source>
+        <translation>Lorem ipsum dolor sit amet, consectur cling elit, sed do </translation>
     </message>
     <message>
-        <source>Insufficient funds!</source>
-        <translation>Unzureichender Kontostand!</translation>
+        <source>Amount</source>
+        <translation>Betrag</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Anzahl:</translation>
+        <source>KTS</source>
+        <translation>KTS</translation>
     </message>
     <message>
-        <source>Bytes:</source>
-        <translation>Byte:</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Betrag:</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
-        <source>Priority:</source>
-        <translation>Priorität:</translation>
+        <source>COPY ADDRESS</source>
+        <translation>Adresse kopieren</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>mittel</translation>
+        <source>COPY URL</source>
+        <translation>URL kopieren</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Gebühr:</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation>Abzug:</translation>
+        <source>REQUEST</source>
+        <translation>Anfordern</translation>
     </message>
     <message>
-        <source>no</source>
-        <translation>nein</translation>
+        <source>Label</source>
+        <translation>Bezeichnung</translation>
     </message>
     <message>
-        <source>After Fee:</source>
-        <translation>Nach Gebühren:</translation>
+        <source>Description (optional)</source>
+        <translation>Beschreibung (optional)</translation>
     </message>
     <message>
-        <source>Change:</source>
-        <translation>Wechselgeld:</translation>
+        <source>Add description </source>
+        <translation>Beschreibung hinzufügen</translation>
     </message>
     <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Wenn dies aktivert, und die Wechselgeld-Adresse leer oder ungültig ist, wird das Wechselgeld einer neu erzeugten Adresse gutgeschrieben.</translation>
+        <source>Error</source>
+        <translation>Fehler</translation>
     </message>
     <message>
-        <source>Custom change address</source>
-        <translation>Benutzerdefinierte Wechselgeld-Adresse</translation>
+        <source>GENERATE</source>
+        <translation>ERSTELLEN</translation>
+    </message>
+    </context>
+<context>
+    <name>SendChangeAddressDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
     </message>
     <message>
-        <source>Split UTXO</source>
-        <translation>UTXO aufteilen</translation>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
     </message>
     <message>
-        <source># of outputs</source>
-        <translation>Anzahl outputs</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>UTXO Size:</source>
-        <translation>UTXO Größe:</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>0 KTS</source>
-        <translation>0 KTS</translation>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    </context>
+<context>
+    <name>SendCustomFeeDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>Transaction Fee:</source>
-        <translation>Transaktionsgebühr:</translation>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
     </message>
     <message>
-        <source>Choose...</source>
-        <translation>Auswählen...</translation>
-    </message>
-    <message>
-        <source>collapse fee-settings</source>
-        <translation>Gebühreneinstellungen reduzieren</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation>Minimieren</translation>
-    </message>
-    <message>
-        <source>per kilobyte</source>
-        <translation>pro Kilobyte</translation>
-    </message>
-    <message>
-        <source>total at least</source>
-        <translation>Gesamt mindestens</translation>
-    </message>
-    <message>
-        <source>(read the tooltip)</source>
-        <translation>(Kurzinfo lesen)</translation>
-    </message>
-    <message>
-        <source>Custom:</source>
-        <translation>Benutzerdefiniert:</translation>
-    </message>
-    <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>("Intelligente" Gebühren sind noch nicht berechnet. Dies dauert normalerweise ein paar Blöcke...)</translation>
-    </message>
-    <message>
-        <source>SwiftX</source>
-        <translation>Swift Transaktion</translation>
-    </message>
-    <message>
-        <source>Confirmation time:</source>
-        <translation>Bestätigungszeit:</translation>
-    </message>
-    <message>
-        <source>Open Coin Control...</source>
-        <translation>Öffne Coin Kontrolle...</translation>
-    </message>
-    <message>
-        <source>Coins automatically selected</source>
-        <translation>Coins automatisch ausgewählt</translation>
-    </message>
-    <message>
-        <source>If the custom fee is set to 1000 uKTSs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKTSs in fee,&lt;br /&gt;while "at least" pays 1000 uKTSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Wenn die kundenspezifische Gebühr auf 1000 uKTSs eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uKTSs an Gebühren,&lt;br /&gt;während man "mindestens" 1000 uKTSs bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie per Kilobyte.</translation>
-    </message>
-    <message>
-        <source>If the custom fee is set to 1000 uKTSs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKTSs in fee,&lt;br /&gt;while "total at least" pays 1000 uKTSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Wenn die kundenspezifische Gebühr auf 1000 uKTSs eingestellt ist und die Transaktion nur 250 Bytes beträgt, dann zahlt man "pro Kilobyte" nur 250 uKTSs an Gebühren,&lt;br /&gt;während man "insgesamt mindestens" 1000 uKTSs bezahlt. Für Transaktionen, die größer sind als ein Kilobyte, bezahlen sie per Kilobyte.</translation>
-    </message>
-    <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for KTS transactions than the network can process.</source>
-        <translation>Nur die minimale Gebühr zu zahlen ist nur gut, solange es weniger Transaktionsvolumen als Platz in den Blocken gibt.&lt;br /&gt;Aber seien Sie sich bewusst, dass dies in einer niemals bestätigende Transaktion enden kann, sobald die Nachfrage nach KTS-Transaktionen höher ist, als was das Netzwerk verarbeiten kann.</translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>normal</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>schnell</translation>
-    </message>
-    <message>
-        <source>Recommended</source>
+        <source>Recomended</source>
         <translation>Empfohlen</translation>
     </message>
     <message>
-        <source>Send as zero-fee transaction if possible</source>
-        <translation>Sende als gebührenfreie Transaktion, wenn möglich</translation>
+        <source>0.00 KB</source>
+        <translation>0.00 KB</translation>
     </message>
     <message>
-        <source>(confirmation may take longer)</source>
-        <translation>(die Bestätigung kann länger dauern)</translation>
+        <source>Custom</source>
+        <translation>Benutzerdefiniert:</translation>
     </message>
     <message>
-        <source>Confirm the send action</source>
-        <translation>Bestätige die Sendeaktion</translation>
+        <source>Per kilobyte</source>
+        <translation>pro Kilobyte</translation>
     </message>
     <message>
-        <source>S&amp;end</source>
-        <translation>Üb&amp;erweisen</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Alle Formularfelder zurücksetzen.</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>&amp;Alles zurücksetzen</translation>
+        <source>Customize Fee</source>
+        <translation>Benutzerdefinierte Gebühr</translation>
     </message>
     <message>
-        <source>Send to multiple recipients at once</source>
-        <translation>An mehrere Empfänger auf einmal überweisen</translation>
+        <source>Normal</source>
+        <translation>Normal</translation>
     </message>
     <message>
-        <source>Add &amp;Recipient</source>
-        <translation>Empfänge&amp;r hinzufügen</translation>
+        <source>Slow</source>
+        <translation>Langsam</translation>
     </message>
     <message>
-        <source>Anonymized KTS</source>
-        <translation>Anonymisierte KTS</translation>
+        <source>Fast</source>
+        <translation>Schnell</translation>
     </message>
     <message>
-        <source>Balance:</source>
-        <translation>Kontostand:</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Anzahl kopieren</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Betrag kopieren</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Gebühr kopieren</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Kopiere nach Gebühr</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Kopiere Bytes</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Kopiere Priorität</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>Kopiere Abzug</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Kopiere Wechselgeld</translation>
-    </message>
-    <message>
-        <source>The split block tool does not work when sending to outside addresses. Try again.</source>
-        <translation>Das Split-Block-Tool funktioniert nicht beim Senden an externe Adressen. Versuchen Sie es erneut.</translation>
-    </message>
-    <message>
-        <source>The split block tool does not work with multiple addresses. Try again.</source>
-        <translation>Das Split-Block-Tool funktioniert nicht mit mehreren Adressen. Versuchen Sie es erneut.</translation>
-    </message>
-    <message>
-        <source>Warning: Invalid KTS address</source>
-        <translation>Warnung: Ungültige KTS-Adresse</translation>
-    </message>
-    <message>
-        <source>%1 to %2</source>
-        <translation>%1 zu %2</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?</source>
-        <translation>Sind Sie sicher, dass Sie senden möchten?</translation>
-    </message>
-    <message>
-        <source>are added as transaction fee</source>
-        <translation>werden als Transaktionsgebühr hinzugefügt</translation>
-    </message>
-    <message>
-        <source>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</source>
-        <translation>Gesamtbetrag = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Sende Coins bestätigen</translation>
-    </message>
-    <message>
-        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
-        <translation>Eine Gebühr %1 mal höher als %2 pro kB gilt als wahnsinnig hohe Gebühr.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Voraussichtlich beginnt die Betätigung in %n Blöcken.</numerusform><numerusform>Voraussichtlich beginnt die Betätigung in %n Blöcken.</numerusform></translation>
-    </message>
-    <message>
-        <source>The recipient address is not valid, please recheck.</source>
-        <translation>Die Adresse des Empfängers ist nicht gültig, bitte erneut prüfen.</translation>
-    </message>
-    <message>
-        <source>using SwiftX</source>
-        <translation>mit SwiftX</translation>
-    </message>
-    <message>
-        <source> split into %1 outputs using the UTXO splitter.</source>
-        <translation>In %1 Ausgänge mit dem UTXO-Splitter aufgeteilen.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;(%1 von %2 Einträge angezeigt)&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>The amount to pay must be larger than 0.</source>
-        <translation>Der zu zahlende Betrag muss größer als 0 sein.</translation>
-    </message>
-    <message>
-        <source>The amount exceeds your balance.</source>
-        <translation>Der Betrag übersteigt ihr Guthaben.</translation>
-    </message>
-    <message>
-        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>Die Gesamtsumme überschreitet Ihr Guthaben, sobald die Transaktionsgebühr von %1 enthalten ist.</translation>
-    </message>
-    <message>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Doppelte Adresse gefunden. Es kann nur einmal pro Sendeoperation an jede Adresse gesendet werden.</translation>
-    </message>
-    <message>
-        <source>Transaction creation failed!</source>
-        <translation>Transaktionserstellung fehlgeschlagen!</translation>
-    </message>
-    <message>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Die Transaktion wurde abgelehnt! Dies könnte passieren, wenn einige der Coins in deiner Wallet schon ausgegeben wurden. Zum Beispiel wenn du eine Kopie der wallet.dat benutzt hättest und Coins in der Kopie verbracht wurden.  Hier aber noch nicht als verbraucht markiert wurden.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins.</source>
-        <translation>Fehler: Die Wallet wurde nur zum Anonymisieren von Coins freigeschaltet.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
-        <translation>Fehler: Die Wallet wurde nur zum Anonymisieren von Coins freigeschaltet. Freischaltung aufgehoben.</translation>
-    </message>
-    <message>
-        <source>Pay only the minimum fee of %1</source>
-        <translation>Zahle nur die Mindestgebühr von %1</translation>
-    </message>
-    <message>
-        <source>Warning: Unknown change address</source>
-        <translation>Warnung: Unbekannte Wechselgeld-Adresse </translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(keine Bezeichnung)</translation>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
     </message>
 </context>
 <context>
-    <name>SendCoinsEntry</name>
+    <name>SendMultiRow</name>
     <message>
-        <source>This is a normal payment.</source>
-        <translation>Dies ist eine normale Überweisung.</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>E&amp;mpfänger:</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>The KTS address to send the payment to</source>
-        <translation>KTS-Adresse, an die überwiesen werden soll</translation>
+        <source>Add address</source>
+        <translation>Adresse hinzufügen</translation>
     </message>
     <message>
-        <source>Choose previously used address</source>
-        <translation>Bereits verwendete Adresse auswählen</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Adresse aus der Zwischenablage einfügen</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Remove this entry</source>
-        <translation>Diesen Eintrag entfernen</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Adressbezeichnung eingeben, um diese in der Liste der bereits verwendeten Adressen zu speichern</translation>
-    </message>
-    <message>
-        <source>A&amp;mount:</source>
-        <translation>Betra&amp;g:</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Nachricht:</translation>
-    </message>
-    <message>
-        <source>A message that was attached to the KTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KTS network.</source>
-        <translation>Eine an die KTS-URI angefügte Nachricht, die zusammen mit der Transaktion gespeichert wird. Hinweis: Diese Nachricht wird nicht über das KTS-Netzwerk gesendet.</translation>
-    </message>
-    <message>
-        <source>This is an unverified payment request.</source>
-        <translation>Dies ist eine unverifizierte Zahlungsanforderung.</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>Empfänger:</translation>
-    </message>
-    <message>
-        <source>Memo:</source>
-        <translation>Memo:</translation>
-    </message>
-    <message>
-        <source>This is a verified payment request.</source>
-        <translation>Dies ist eine verifizierte Zahlungsanforderung.</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Adressbezeichnung eingeben, diese wird zusammen mit der Adresse dem Adressbuch hinzugefügt</translation>
+        <source>Add description</source>
+        <translation>Beschreibung hinzufügen</translation>
     </message>
 </context>
 <context>
-    <name>ShutdownWindow</name>
+    <name>SendWidget</name>
     <message>
-        <source>KTS Core is shutting down...</source>
-        <translation>KTS Core wird beendet...</translation>
+        <source>Send</source>
+        <translation>Schicken</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
-        <translation>Fahren Sie den Computer nicht herunter, bevor dieses Fenster verschwindet.</translation>
+        <source>You can transfer public coins (KTS) or private coins (zKTS)</source>
+        <translation>Sie können öffentliche Coins (KTS) oder private Coins (zKTS) transferieren</translation>
+    </message>
+    <message>
+        <source>Select coin type to spend</source>
+        <translation>Wähle Coin zum ausgeben</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address or contact label</source>
+        <translation>KTS Adresse oder Kontaktbezeichnung einfügen</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Betrag</translation>
+    </message>
+    <message>
+        <source>Customize fee</source>
+        <translation>Benutzerdefinierte Gebühr</translation>
+    </message>
+    <message>
+        <source>Clear all</source>
+        <translation>Alles löschen</translation>
+    </message>
+    <message>
+        <source>Add recipient</source>
+        <translation>Füge Empfänger hinzu</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Auf Voreinstellungen zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Total to send</source>
+        <translation>Totalbetrag zum Senden</translation>
+    </message>
+    <message>
+        <source>Send KTS</source>
+        <translation>Sende KTS</translation>
+    </message>
+    <message>
+        <source>Send zKTS</source>
+        <translation>Sende zKTS</translation>
+    </message>
+    <message>
+        <source>Customize Fee</source>
+        <translation>Benutzerdefinierte Gebühr</translation>
+    </message>
+    <message>
+        <source>Maximum amount of outputs reached</source>
+        <translation>Maximale Anzahl an Outputs erreicht</translation>
+    </message>
+    <message>
+        <source>Invalid entry, previous entries must be valid before add a new one</source>
+        <translation>Ungültige Eingabe, vorangehende Eingaben müssen gültig sein bevor eine neue angefügt werden kann</translation>
+    </message>
+    <message>
+        <source>Invalid entry</source>
+        <translation>Ungültige Eingabe</translation>
+    </message>
+    <message>
+        <source>No set recipients</source>
+        <translation>Keine Empfänger definiert</translation>
+    </message>
+    <message>
+        <source>Cannot send, wallet locked</source>
+        <translation>Senden nicht möglich, Wallet geschlossen</translation>
+    </message>
+    <message>
+        <source>Cannot create transaction.</source>
+        <translation>Die Transaktion kann nicht erzeugt werden.</translation>
+    </message>
+    <message>
+        <source>Transaction sent</source>
+        <translation>Transaktion geschickt</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin</source>
+        <translation>Überweise Zerocoin</translation>
+    </message>
+    <message>
+        <source>zKTS is currently undergoing maintenance.</source>
+        <translation>zKTS unterliegt momentan Wartungsarbeiten.</translation>
+    </message>
+    <message>
+        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
+        <translation>Version 1 zKTS benötigen eine Sicherheitsstufe von 100 um erfolgreich ausgegeben werden zu können.</translation>
+    </message>
+    <message>
+        <source>Too much inputs (</source>
+        <translation>Zu viele Eingaben (</translation>
+    </message>
+    <message>
+        <source>) needed.
+Maximum allowed: </source>
+        <translation>) benötigt.
+Maximal erlaubt:</translation>
+    </message>
+    <message>
+        <source>
+Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
+        <translation>
+Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn) oder reduziere die aufzuwendende Menge.</translation>
+    </message>
+    <message>
+        <source>Cannot store your own address as contact</source>
+        <translation>Eigene Adresse nicht als Kontakt speicherbar</translation>
+    </message>
+    <message>
+        <source>Update Contact</source>
+        <translation>Kontakt bearbeiten</translation>
+    </message>
+    <message>
+        <source>Create New Contact</source>
+        <translation>Kontakt erstellen</translation>
+    </message>
+    <message>
+        <source>New Contact Stored</source>
+        <translation>Neuer Kontakt gespeichert</translation>
+    </message>
+    <message>
+        <source>Error Storing Contact</source>
+        <translation>Fehler beim Speichern des Kontakts</translation>
     </message>
 </context>
 <context>
-    <name>SignVerifyMessageDialog</name>
+    <name>SettingsBackupWallet</name>
     <message>
-        <source>Signatures - Sign / Verify a Message</source>
-        <translation>Signaturen - Signieren / Überprüfen einer Nachricht</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>&amp;Sign Message</source>
-        <translation>Nachricht &amp;signieren</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Sie können Nachrichten mit Ihren Adressen signieren, um zu beweisen, dass Sie diese besitzen. Seien Sie vorsichtig nichts fragwürdiges zu unterschreiben, da Phishing-Angriffe versuchen können, Sie dazu zu bringen, Ihre Identität zu überschreiben. Unterschreiben Sie nur ganz detaillierte Aussagen, denen Sie zustimmen.</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>The KTS address to sign the message with</source>
-        <translation>KTS Adresse mit welcher die Nachricht signiert werden soll</translation>
+        <source>Backup Wallet </source>
+        <translation>Backup Wallet</translation>
     </message>
     <message>
-        <source>Choose previously used address</source>
-        <translation>Bereits verwendete Adresse auswählen</translation>
+        <source>Change Wallet Passphrase</source>
+        <translation>Wallet Passwort ändern</translation>
     </message>
     <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
+        <source>Where</source>
+        <translation>Wo</translation>
     </message>
     <message>
-        <source>Paste address from clipboard</source>
-        <translation>Adresse aus der Zwischenablage einfügen</translation>
+        <source>Backup</source>
+        <translation>Backup</translation>
     </message>
     <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
+        <source>Change Passphrase</source>
+        <translation>Passwort ändern</translation>
     </message>
     <message>
-        <source>Enter the message you want to sign here</source>
-        <translation>Geben Sie hier die Nachricht ein, die Sie digital unterschreiben möchten</translation>
+        <source>Backup Wallet</source>
+        <translation>Wallet sichern</translation>
     </message>
     <message>
-        <source>Signature</source>
-        <translation>Signatur</translation>
+        <source>Wallet Data (*.dat)</source>
+        <translation>Wallet-Daten (*.dat)</translation>
     </message>
     <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopiert die aktuelle Signatur in die Zwischenablage</translation>
+        <source>Backup created</source>
+        <translation>Backup erstellt</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this KTS address</source>
-        <translation>Signiere die Nachricht um zu Beweisen, dass du diese KTS Adresse besitzt</translation>
+        <source>Backup creation failed</source>
+        <translation>Erstellung des Backups fehlgeschlagen</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsBitToolWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>The KTS address the message was signed with</source>
-        <translation>Die KTS Adresse mit welcher die Nachricht signiert wurde.</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified KTS address</source>
-        <translation>Überprüfen Sie die Nachricht, um sicherzustellen, dass sie mit der angegebenen KTS-Adresse signiert wurde.</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>Sign &amp;Message</source>
-        <translation>Signiere &amp;Nachricht </translation>
+        <source>Import Address</source>
+        <translation>Adresse importieren</translation>
     </message>
     <message>
-        <source>Reset all sign message fields</source>
-        <translation>Setze alle signierten Nachrichten Felder zurück</translation>
+        <source>Clear</source>
+        <translation>Clear</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>&amp;Alles zurücksetzen</translation>
+        <source>Enter a KTS address</source>
+        <translation>KTS Adresse einfügen</translation>
     </message>
     <message>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;Verifiziere Nachricht</translation>
+        <source>Add address</source>
+        <translation>Adresse hinzufügen</translation>
     </message>
     <message>
-        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>Geben Sie die signierte Adresse, die Nachricht (stellen Sie sicher, dass Zeilenumbrüche, Leerzeichen, Tabs usw. genau kopieren) und Signatur unten ein, um die Nachricht zu überprüfen. Seien Sie vorsichtig, nicht mehr in die Signatur hinein zu interpretieren, als das was in der signierten Nachricht selbst angegeben ist, um zu vermeiden, von einem Mann-in-der-Mitte Angriff getroffen zu werden.</translation>
+        <source>Write a message</source>
+        <translation>Nachricht schreiben</translation>
     </message>
     <message>
-        <source>Verify &amp;Message</source>
-        <translation>Verifiziere &amp;Nachricht</translation>
+        <source>Encrypted Key</source>
+        <translation>Verschlüsselter Schlüssel</translation>
     </message>
     <message>
-        <source>Reset all verify message fields</source>
-        <translation>Zurücksetzen aller überprüften Felder.</translation>
+        <source>ENCRYPT</source>
+        <translation>Verschlüsseln</translation>
     </message>
     <message>
-        <source>Click "Sign Message" to generate signature</source>
-        <translation>Klicken Sie auf "signiere Nachricht", um Signatur zu generieren</translation>
+        <source>CLEAR ALL</source>
+        <translation>ALLES LÖSCHEN</translation>
+    </message>
+    <message>
+        <source>CLEAR</source>
+        <translation>LÖSCHEN</translation>
+    </message>
+    <message>
+        <source>The entered passphrase is invalid. </source>
+        <translation>Die eingegebene Passphrase ist ungültig. </translation>
+    </message>
+    <message>
+        <source>Allowed: 0-9,a-z,A-Z,</source>
+        <translation>Zulässig: 0-9,a-z,A-Z,</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -4178,11 +3322,464 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>Die eingegebene Adresse passt nicht zu einem Schlüssel</translation>
+        <translation>Die eingegebene Adresse passt zu keinem Schlüssel</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Wallet-Entsperrung wurde abgebrochen.</translation>
+        <translation>Entsperrung der Wallet wurde abgebrochen.</translation>
+    </message>
+    <message>
+        <source>Private key for the entered address is not available.</source>
+        <translation>Kein privater Schlüssel für die eingegebene Adresse verfügbar</translation>
+    </message>
+    <message>
+        <source>Address encrypted.</source>
+        <translation>Verschlüsselte Adresse.</translation>
+    </message>
+    <message>
+        <source>No addresses available, you can go to the receive screen and add some there!</source>
+        <translation>Keine Adressen verfügbar, Sie können in das Empfangsmenu gehen und neue hinzufügen!</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt.</source>
+        <translation>Entschlüsselung fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>Please check the key and passphrase and try again.</source>
+        <translation>Bitte überprüfen Sie den Schlüssel und die Passphrase und versuchen Sie es erneut.</translation>
+    </message>
+    <message>
+        <source>Data Not Valid.</source>
+        <translation>Daten ungültig.</translation>
+    </message>
+    <message>
+        <source>Please try again.</source>
+        <translation>Bitte versuchen Sie es erneut.</translation>
+    </message>
+    <message>
+        <source>Please wait while key is imported</source>
+        <translation>Bitte warten. Schlüssel wird importiert..</translation>
+    </message>
+    <message>
+        <source>Cannot import address, key already held by the wallet</source>
+        <translation>Adresse kann nicht importiert werden, der Schlüssel ist schon in der Wallet hinterlegt</translation>
+    </message>
+    <message>
+        <source>Error adding key to the wallet</source>
+        <translation>Fehler beim Hinzufügen des Schlüssels zur Wallet</translation>
+    </message>
+    <message>
+        <source>Successfully added ktsate key to the wallet</source>
+        <translation>Privater Schlüssel erfolgreich zur Wallet hinzugefügt</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsConsoleWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>Console</source>
+        <translation>Konsole</translation>
+    </message>
+    <message>
+        <source>Welcome to the KTS RPC console.</source>
+        <translation>Willkommen in der KTS RPC-Konsole.</translation>
+    </message>
+    <message>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Verwende die Pfeiltasten um durch den Verlauf zu scrollen und %1 um das Konsolenfester zu löschen.</translation>
+    </message>
+    <message>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Gebe &lt;b&gt;help&lt;/b&gt; ein, um eine Übersicht der verfügbaren Befehle zu erhalten.</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsDisplayOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Auf Voreinstellungen zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Änderungen verwerfen</translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation>Display</translation>
+    </message>
+    <message>
+        <source>Customize the display view options</source>
+        <translation>Anpassen der Bildschirmdarstellung</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Unit to show amount</source>
+        <translation>Anzeige der Einheit</translation>
+    </message>
+    <message>
+        <source>Decimal digits</source>
+        <translation>Dezimalstellen</translation>
+    </message>
+    <message>
+        <source>Hide empty balances</source>
+        <translation>Leere Salden ausblenden</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standard</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>1) What is KTS?</source>
+        <translation>1) Was ist KTS?</translation>
+    </message>
+    <message>
+        <source>2) Why are my KTS unspendable?</source>
+        <translation>2) Wieso kann ich meine KTS nicht ausgeben?</translation>
+    </message>
+    <message>
+        <source>3) KTS privacy? What is Zerocoin (zKTS)?</source>
+        <translation>3) KTS Privatsphäre? Was ist ein Zercoin (zKTS)?</translation>
+    </message>
+    <message>
+        <source>4) Why are my zKTS unspendable?</source>
+        <translation>4) Wieso kann ich meine zKTS nicht ausgeben?</translation>
+    </message>
+    <message>
+        <source>5) Why did my wallet convert the balance
+    into zKTS automatically?</source>
+        <translation>5) Wieso hat meine Wallet automatisch das Guthaben in zKTS gewechselt?</translation>
+    </message>
+    <message>
+        <source>6) How do I receive KTS/zKTS?</source>
+        <translation>6) Wie empfange ich KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>7) How do I stake KTS/zKTS?</source>
+        <translation>7) Wie stake ich KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>8) Where I should go if I need support?</source>
+        <translation>8) Wo sollte ich hingehen, wenn ich ein Problem habe?</translation>
+    </message>
+    <message>
+        <source>9) What is a Master Node?</source>
+        <translation>9) Was ist ein Masternode?</translation>
+    </message>
+    <message>
+        <source>10) What is a Master Node Controller?</source>
+        <translation>10) Was ist ein Masternode Controller?</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>What is KTS?</source>
+        <translation>Was ist KTS</translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <source>Why are my KTS unspendable?</source>
+        <translation>Wieso kann ich meine KTS nicht ausgeben?</translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <source>KTS privacy? What is Zerocoin (zKTS)?</source>
+        <translation>KTS Privatsphäre? Was ist ein Zercoin (zKTS)?</translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation>4</translation>
+    </message>
+    <message>
+        <source>Why are my zKTS unspendable?</source>
+        <translation>Wieso kann ich meine zKTS nicht ausgeben?</translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation>5</translation>
+    </message>
+    <message>
+        <source>Why did my wallet convert the balance into zKTS automatically?</source>
+        <translation>Wieso hat meine Wallet automatisch das Guthaben in zKTS gewechselt?</translation>
+    </message>
+    <message>
+        <source>How do I receive KTS/zKTS?</source>
+        <translation>Wie empfange ich KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>How do I stake KTS/zKTS?</source>
+        <translation>Wie stake ich KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>Where I should go if I need support?</source>
+        <translation>Wohin kann ich mich wenden, wenn ein Problem auftaucht?</translation>
+    </message>
+    <message>
+        <source>What is a Master Node?</source>
+        <translation>Was ist ein Masternode?</translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation>10</translation>
+    </message>
+    <message>
+        <source>What is a Master Node Controller?</source>
+        <translation>Was ist ein Masternodecontroller?</translation>
+    </message>
+    <message>
+        <source>Frequently Asked Questions</source>
+        <translation>Häufig gestellte Fragen</translation>
+    </message>
+    <message>
+        <source>You can read more here</source>
+        <translation>Hier können Sie mehr lesen</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation>Exit</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsInformationWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>Network Monitor</source>
+        <translation>Netzwerkmonitor</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Hinweis</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Allgemein</translation>
+    </message>
+    <message>
+        <source>Client Version: </source>
+        <translation>Client Version</translation>
+    </message>
+    <message>
+        <source>Using BerkeleyDB version:</source>
+        <translation>Verwendete BerkeleyDB Version:</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Netzwerk</translation>
+    </message>
+    <message>
+        <source>In:</source>
+        <translation>In:</translation>
+    </message>
+    <message>
+        <source>Out:</source>
+        <translation>Out:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMainOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Checkbox</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Auf Voreinstellungen zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Änderungen verwerfen</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMultisendDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMultisendWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>No active Master Node yet</source>
+        <translation>Keine aktiven Masternodes bis jetzt</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Checkbox</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktiv</translation>
+    </message>
+    <message>
+        <source>CLEAR ALL</source>
+        <translation>Alles löschen</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend aktiviert</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend deaktiviert</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSignMessageWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address or contact label</source>
+        <translation>KTS Adresse oder Kontaktbezeichnung einfügen</translation>
+    </message>
+    <message>
+        <source>Add address</source>
+        <translation>Adresse hinzufügen</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nachricht</translation>
+    </message>
+    <message>
+        <source>Write a message</source>
+        <translation>Nachricht schreiben</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>Signatur</translation>
+    </message>
+    <message>
+        <source>CLEAR ALL</source>
+        <translation>Alles löschen</translation>
+    </message>
+    <message>
+        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Sie können Nachrichten mit Ihren Adressen signieren, um zu beweisen, dass Sie diese besitzen. Seien Sie vorsichtig nichts fragwürdiges zu unterschreiben, da Phishing-Angriffe versuchen können, Sie dazu zu bringen, Ihre Identität zu überschreiben. Unterschreiben Sie nur ganz detaillierte Aussagen, denen Sie zustimmen.</translation>
+    </message>
+    <message>
+        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
+        <translation>Geben Sie die signierte Adresse, die Nachricht (stellen Sie sicher, dass Zeilenumbrüche, Leerzeichen, Tabs usw. genau kopieren) und Signatur unten ein, um die Nachricht zu überprüfen. Seien Sie vorsichtig, nicht mehr in die Signatur hinein zu interpretieren, als das was in der signierten Nachricht selbst angegeben ist, um zu vermeiden, von einem Mann-in-der-Mitte Angriff getroffen zu werden.</translation>
+    </message>
+    <message>
+        <source>The entered address is invalid.</source>
+        <translation>Die eingegebene Adresse ist falsch</translation>
+    </message>
+    <message>
+        <source>Please check the address and try again.</source>
+        <translation>Bitte die Adresse prüfen und erneut eingeben</translation>
+    </message>
+    <message>
+        <source>The entered address does not refer to a key.</source>
+        <translation>Die eingegebene Adresse passt zu keinem Schlüssel</translation>
+    </message>
+    <message>
+        <source>Wallet unlock was cancelled.</source>
+        <translation>Entsperrung der Wallet wurde abgebrochen.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
@@ -4216,6 +3813,200 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <source>Message verified.</source>
         <translation>Nachricht überprüft.</translation>
     </message>
+    <message>
+        <source>No addresses available, you can go to the receive screen and add some there!</source>
+        <translation>Keine Adressen verfügbar, Sie können in das Empfangsmenu gehen und neue hinzufügen!</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWalletOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Checkbox</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Auf Voreinstellungen zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Änderungen verwerfen</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Wallet</translation>
+    </message>
+    <message>
+        <source>Stake split threshold:</source>
+        <translation>Staff Split-Schwelle:</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Netzwerk</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Eingehende Verbindungen erlauben</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>SICHERN</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsWalletRepairWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
+        <translation>Versuche, private Schlüssel aus einer beschädigten wallet.dat wiederherzustellen.</translation>
+    </message>
+    <message>
+        <source>Recover transactions from blockchain (drop meta-data).</source>
+        <translation>Wiederherstellung von Transaktionen aus der Blockchain (verwerfe Meta-Daten)</translation>
+    </message>
+    <message>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
+        <translation>Löscht alle lokalen Blockchain-Ordner damit das Wallet sich von Grund auf synchronisiert.</translation>
+    </message>
+    <message>
+        <source>Salvage wallet</source>
+        <translation>Wallet Rettung</translation>
+    </message>
+    <message>
+        <source>Recover transactions 1</source>
+        <translation>Wiederherstellung von Transaktionen 1</translation>
+    </message>
+    <message>
+        <source>Recover transactions 2</source>
+        <translation>Wiederherstellung von Transaktionen 2</translation>
+    </message>
+    <message>
+        <source>Upgrade wallet format</source>
+        <translation>Upgrade Wallet Format</translation>
+    </message>
+    <message>
+        <source>Rebuild index</source>
+        <translation>Index neu aufbauen</translation>
+    </message>
+    <message>
+        <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dieser Vorgang wird Ihren lokalen Blockchain-Ordner löschen und das Wallet wird von Grund auf neu Synchronisieren.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dieser Vorgang wird einige Zeit in Anspruch nehmen und eine menge Daten herunterladen.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Your transactions and funds will be visible again after the download has completed.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Deine Transaktionen und Guthaben werden wieder sichtbar sein nachdem der Download-Prozess abgeschlossen ist.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Do you want to continue?.&lt;br /&gt;</source>
+        <translation>Möchten Sie fortfahren?&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Confirm resync Blockchain</source>
+        <translation>Synchronisation der Blockchain bestätigen</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Wallet</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Optionen</translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation>Display</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Hinweis</translation>
+    </message>
+    <message>
+        <source>Console</source>
+        <translation>Konsole</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Confirm options reset</source>
+        <translation>Zurücksetzen der Optionen bestätigen</translation>
+    </message>
+    <message>
+        <source>Client restart required to activate changes.</source>
+        <translation>Client Neustart erforderlich, um Änderungen zu aktivieren.</translation>
+    </message>
+    <message>
+        <source>Client will be shutdown, do you want to proceed?</source>
+        <translation>Der Client wird heruntergefahren, wollen Sie fortfahren?</translation>
+    </message>
+    </context>
+<context>
+    <name>ShutdownWindow</name>
+    <message>
+        <source>KTS Core is shutting down...</source>
+        <translation>KTS Core wird beendet...</translation>
+    </message>
+    <message>
+        <source>Do not shut down the computer until this window disappears.</source>
+        <translation>Fahren Sie den Computer nicht herunter, bevor dieses Fenster verschwindet.</translation>
+    </message>
+</context>
+<context>
+    <name>SnackBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    </context>
+<context>
+    <name>Splash</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
+    </message>
 </context>
 <context>
     <name>SplashScreen</name>
@@ -4245,6 +4036,36 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
+    <name>TooltipMenu</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+    </context>
+<context>
+    <name>TopBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Error generating address</source>
+        <translation>Fehler beim Erstellen der Adresse</translation>
+    </message>
+    <message>
+        <source>%1 and %2</source>
+        <translation>%1 und %2</translation>
+    </message>
+    </context>
+<context>
     <name>TrafficGraphWidget</name>
     <message>
         <source>KB/s</source>
@@ -4253,10 +4074,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Geöffnet für %n weitere Blöcke</numerusform><numerusform>Geöffnet für %n weitere Blöcke</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Offen bis %1</translation>
@@ -4317,10 +4134,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <source>, has not been successfully broadcast yet</source>
         <translation>, wurde noch nicht erfolgreich übertragen</translation>
     </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, über %n Knoten übertragen</numerusform><numerusform>, über %n Knoten übertragen</numerusform></translation>
-    </message>
     <message>
         <source>Date</source>
         <translation>Datum</translation>
@@ -4360,10 +4173,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Credit</source>
         <translation>Gutschrift</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>reift noch %n weitere Blöcke</numerusform><numerusform>reift noch %n weitere Blöcke</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4410,10 +4219,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Händler</translation>
     </message>
     <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Erzeugte KTSs müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in "nicht angenommen" geändert und Sie werden keine KTSs gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
-    </message>
-    <message>
         <source>Debug information</source>
         <translation>Debuginformationen</translation>
     </message>
@@ -4439,17 +4244,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>TransactionDescDialog</name>
-    <message>
-        <source>Transaction details</source>
-        <translation>Transaktionsdetails</translation>
-    </message>
-    <message>
-        <source>This pane shows a detailed description of the transaction</source>
-        <translation>Dieser Bereich zeigt eine detaillierte Beschreibung der Transaktion an</translation>
-    </message>
-</context>
-<context>
     <name>TransactionTableModel</name>
     <message>
         <source>Date</source>
@@ -4462,10 +4256,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Address</source>
         <translation>Adresse</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Geöffnet für %n weitere Blöcke</numerusform><numerusform>Geöffnet für %n weitere Blöcke</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4560,14 +4350,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Umgewandeltes zKTS zu KTS</translation>
     </message>
     <message>
-        <source>Anonymous (zKTS Transaction)</source>
-        <translation>Anonym (zKTS Transaktion)</translation>
-    </message>
-    <message>
-        <source>Anonymous (zKTS Stake)</source>
-        <translation>Anonym (zKTS Stake)</translation>
-    </message>
-    <message>
         <source>Sent to</source>
         <translation>Überwiesen an</translation>
     </message>
@@ -4621,194 +4403,59 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>TransactionView</name>
+    <name>TxDetailDialog</name>
     <message>
-        <source>All</source>
-        <translation>Alle</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
     <message>
-        <source>Today</source>
-        <translation>Heute</translation>
+        <source>Transaction Details</source>
+        <translation>Transaktionsdetails</translation>
     </message>
     <message>
-        <source>This week</source>
-        <translation>Diese Woche</translation>
+        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
+        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
     </message>
     <message>
-        <source>This month</source>
-        <translation>Diesen Monat</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
-        <source>Last month</source>
-        <translation>Letzten Monat</translation>
+        <source>Fee:</source>
+        <translation>Gebühr:</translation>
     </message>
     <message>
-        <source>This year</source>
-        <translation>Dieses Jahr</translation>
+        <source>Status:</source>
+        <translation>Status:</translation>
     </message>
     <message>
-        <source>Range...</source>
-        <translation>Zeitraum...</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Most Common</source>
-        <translation>Gängigste</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>Received with</source>
-        <translation>Empfangen über</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
-        <source>Sent to</source>
-        <translation>Überwiesen an</translation>
+        <source>SEND</source>
+        <translation>SENDEN</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation>Eigenüberweisung</translation>
-    </message>
-    <message>
-        <source>Mined</source>
-        <translation>Erarbeitet</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Erzeugt</translation>
-    </message>
-    <message>
-        <source>Masternode Reward</source>
-        <translation>Masternode Vergütung</translation>
-    </message>
-    <message>
-        <source>Zerocoin Mint</source>
-        <translation>Zerocoin Prägung</translation>
-    </message>
-    <message>
-        <source>Zerocoin Spend</source>
-        <translation>Zerocoin Ausgabe</translation>
-    </message>
-    <message>
-        <source>Zerocoin Spend to Self</source>
-        <translation>Zerocoin Ausgabe an sich Selbst</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation>Andere</translation>
-    </message>
-    <message>
-        <source>Enter address or label to search</source>
-        <translation>Zu suchende Adresse oder Bezeichnung eingeben</translation>
-    </message>
-    <message>
-        <source>Min amount</source>
-        <translation>Minimaler Betrag</translation>
-    </message>
-    <message>
-        <source>Copy address</source>
-        <translation>Adresse kopieren</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Bezeichnung kopieren</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Betrag kopieren</translation>
-    </message>
-    <message>
-        <source>Copy transaction ID</source>
-        <translation>Transaktions-ID kopieren</translation>
-    </message>
-    <message>
-        <source>Edit label</source>
-        <translation>Bezeichnung bearbeiten</translation>
-    </message>
-    <message>
-        <source>Show transaction details</source>
-        <translation>Transaktionsdetails anzeigen</translation>
-    </message>
-    <message>
-        <source>Export Transaction History</source>
-        <translation>Transaktionsverlauf exportieren</translation>
-    </message>
-    <message>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Kommagetrennte-Datei (*.csv)</translation>
-    </message>
-    <message>
-        <source>Confirmed</source>
-        <translation>Bestätigt</translation>
-    </message>
-    <message>
-        <source>Watch-only</source>
-        <translation>Nur beobachtet</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Art</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Bezeichnung</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adresse</translation>
-    </message>
-    <message>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <source>Exporting Failed</source>
-        <translation>Exportieren fehlgeschlagen</translation>
-    </message>
-    <message>
-        <source>There was an error trying to save the transaction history to %1.</source>
-        <translation>Beim Speichern des Transaktionsverlaufs nach %1 ist ein Fehler aufgetreten.</translation>
-    </message>
-    <message>
-        <source>Exporting Successful</source>
-        <translation>Exportieren erfolgreich</translation>
-    </message>
-    <message>
-        <source>Received KTS from zKTS</source>
-        <translation>Empfangene KTS von zKTS</translation>
-    </message>
-    <message>
-        <source>Zerocoin Spend, Change in zKTS</source>
-        <translation>Zerocoin Überweisung, Wechselgeld in zKTS</translation>
-    </message>
-    <message>
-        <source>The transaction history was successfully saved to %1.</source>
-        <translation>Speichern des Transaktionsverlaufs nach %1 war erfolgreich.</translation>
-    </message>
-    <message>
-        <source>Range:</source>
-        <translation>Zeitraum:</translation>
-    </message>
-    <message>
-        <source>to</source>
-        <translation>bis</translation>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
     </message>
 </context>
 <context>
-    <name>UnitDisplayStatusBarControl</name>
+    <name>TxRow</name>
     <message>
-        <source>Unit to show amounts in. Click to select another unit.</source>
-        <translation>Angezeigte Einheit. Klicken Sie, um eine andere Einheit zu wählen.</translation>
+        <source>Form</source>
+        <translation>Formular</translation>
     </message>
-</context>
-<context>
-    <name>WalletFrame</name>
-    <message>
-        <source>No wallet has been loaded.</source>
-        <translation>Es wurde keine Wallet geladen.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -4821,30 +4468,69 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>WalletView</name>
+    <name>WalletPasswordDialog</name>
     <message>
-        <source>HISTORY</source>
-        <translation>VERLAUF</translation>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Exportieren</translation>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
     </message>
     <message>
-        <source>Export the data in the current tab to a file</source>
-        <translation>Daten der aktuellen Ansicht in eine Datei exportieren</translation>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
     <message>
-        <source>Selected amount:</source>
-        <translation>Ausgewählter Betrag:</translation>
+        <source>CANCEL</source>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>Backup Wallet</source>
-        <translation>Wallet sichern</translation>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeContentWidget</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
     </message>
     <message>
-        <source>Wallet Data (*.dat)</source>
-        <translation>Wallet-Daten (*.dat)</translation>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation>4</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Privacy</source>
+        <translation>Privatsphäre</translation>
+    </message>
+    <message>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standard</translation>
     </message>
 </context>
 <context>
@@ -4854,26 +4540,34 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Wählen Sie die zKTS aus, die Sie ausgeben möchten</translation>
     </message>
     <message>
-        <source>Quantity</source>
-        <translation>Menge</translation>
+        <source>Coin Control</source>
+        <translation>Coinverwaltung</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
+    </message>
+    <message>
+        <source>zKts</source>
+        <translation>zKTS</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Anzahl:</translation>
+    </message>
+    <message>
+        <source>Is Spendable</source>
+        <translation>ist aufwendbar</translation>
     </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
-    </message>
-    <message>
         <source>Select/Deselect All</source>
         <translation>Alle Aus-/Abwählen</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>ist aufwendbar</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>kts-core</name>
     <message>
@@ -4985,10 +4679,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Flusht die Datenbankaktivität vom Speicherpool auf das Festplattenprotokoll alle &lt;n&gt; Megabytes (default: %u)</translation>
     </message>
     <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Gefundene unbestätigte benannte Outputs. Warte auf Bestätigung um fortzufahren.</translation>
-    </message>
-    <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation>Wenn paytxfee nicht gesetzt ist, gebe genügend Gebühr an, sodass die Transaktionsbestätigungen im Durchschnitt innerhalb von n Blöcken beginnen (default: %u)</translation>
     </message>
@@ -5085,12 +4775,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Nicht genügend gestückeltes, verschleiertes Guthaben für diese Transaktion gefunden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
-        <translation>Nicht genügend verschleiertes, nicht gestückeltes Guthaben für diese Transaktion gefunden, die nicht gleich 1000 KTS entsprechen.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
+        <translation>Nicht genügend verschleiertes, nicht gestückeltes Guthaben für diese Transaktion gefunden, die nicht gleich 10000 KTS entsprechen.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
-        <translation>Nicht genügend Guthaben für diese Transaktion gefunden, die nicht gleich 1000 KTS entsprechen.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
+        <translation>Nicht genügend Guthaben für diese Transaktion gefunden, die nicht gleich 10000 KTS entsprechen.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5137,8 +4827,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Sie müssen einen privaten Masternode-Schlüssel in der Konfiguration festlegen. Bitte nutzen Sie die Dokumentation zwecks Hilfe.</translation>
     </message>
     <message>
-        <source>(10300 could be used only on mainnet)</source>
-        <translation>(10300 kann nur im Mainnet verwendet werden)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 kann nur im Mainnet verwendet werden)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5149,8 +4839,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 10300 for mainnet)</source>
-        <translation>(muss im Mainnet 10300 sein)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(muss im Mainnet 51472 sein)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5173,10 +4863,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Erlaube DNS lookups für -addnode, -seednode und -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Eingabe bereits erhalten.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Gegenstellen-Adressen immer per DNS lookup anfragen (Standard: %u)</translation>
     </message>
@@ -5197,18 +4883,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Fehlende Akkus berechnen ...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Kann nicht denominieren: keine kompatiblen Eingänge übrig.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Kann zufällige Masternode nicht finden.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Mixen während der Synchronisierung nicht möglich.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Wallet downgrade nicht möglich</translation>
     </message>
@@ -5223,14 +4897,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Cannot resolve -whitebind address: '%s'</source>
         <translation>Kann -whitebind Adresse nicht auflösen: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot write default address</source>
-        <translation>Standardadresse kann nicht geschrieben werden</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Pfand ungültig.</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5257,8 +4923,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) %i The KTS Core Developers</source>
-        <translation>Copyright (C) %i The KTS Core Developers</translation>
+        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
+        <translation>Copyright (C) 2015-%i The KTS Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5317,14 +4983,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Ermögliche dem Client als Masternode zu fungieren (0-1, Standard: %u)</translation>
     </message>
     <message>
-        <source>Entries are full.</source>
-        <translation>Einträge sind voll.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Fehler beim Verbinden zur Masternode.</translation>
-    </message>
-    <message>
         <source>Error initializing block database</source>
         <translation>Fehler bei der Initialisierung der Block Datenbank</translation>
     </message>
@@ -5357,8 +5015,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Fehler beim Lesen der Datenbank, wird heruntergefahren.</translation>
     </message>
     <message>
-        <source>Error recovering public key.</source>
-        <translation>Fehler bei der Wiederherstellung des öffentlichen Schlüssels.</translation>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fehler beim Schreiben von zerocoinDB auf die Festplatte</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5367,10 +5025,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Fehler: Ein schwerwiegender Fehler ist aufgetreten, schauen Sie für detailiertere Infos ins debug.log </translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Fehler: Kann die gewählte Stückelung nicht auswählen</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5385,16 +5039,16 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Fehler: Wallet verschlossen, Transaktion konnte nicht erstellt werden!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Fehler: Sie haben bereits ausstehende Einträge im Obfuscation-Pool</translation>
-    </message>
-    <message>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation>Fehler beim Berechnen des Akku-Checkpoints</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Abhören jeglicher Ports fehlgeschlagen. Nutzen Sie -listen=0 falls dies erwünscht ist.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Fehler beim Analysieren von host: port string</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5405,20 +5059,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Gebühr (in KTS/kB) die den Transaktionen, die Sie überweisen, hinzugefügt wird (Standard: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Schließe Transaktion ab.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Erzwinge Safe-Mode (Standard: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Genügend Benutzer gefunden, signiere (warte %s)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Genügend Benutzer gefunden, signiere...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5445,14 +5087,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Ip-Adresse in Debug-Ausgabe einbeziehen (Standard: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Inkompatibler Modus.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Inkompatible Version.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Falscher oder kein Genesis-Block gefunden. Falsches Datenverzeichnis für das Netzwerk?</translation>
     </message>
@@ -5463,10 +5097,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Initialization sanity check failed. KTS Core is shutting down.</source>
         <translation>Initialisierung Sanity-Check fehlgeschlagen. KTS Core schaltet ab.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Input ist nicht gültig.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5521,14 +5151,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Ungültiger Port in masternode.conf entdeckt</translation>
     </message>
     <message>
-        <source>Invalid private key.</source>
-        <translation>Ungültiger privater Schlüssel.</translation>
-    </message>
-    <message>
-        <source>Invalid script detected.</source>
-        <translation>Ungültiges Skript entdeckt.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Prozent automatisch geprägter Zerocoins (1-100, Standard: %u)</translation>
     </message>
@@ -5559,7 +5181,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source> mints deleted
 </source>
-        <translation>Prägungen gelöscht 
+        <translation>Prägungen gelöscht
 </translation>
     </message>
     <message>
@@ -5673,10 +5295,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Fehler beim Erstellen von Minze</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Fehler beim Deserialisieren</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Zerocoins in wallet.dat nicht gefunden</translation>
     </message>
@@ -5695,14 +5313,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Halte höchstens &lt;n&gt; unverbindbare Transaktionen im Speicher (Standard: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Nicht genügend Zeit seit der letzten Verschleierung vergangen.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Nicht genügend Zeit seit der letzten erfolgreichen Verschleierung vergangen.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5757,10 +5367,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Location of the auth cookie (default: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Die Sperre ist bereits vorhanden.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Masternodes aus der masternode-Konfigurationsdatei sperren (Standard: %u)</translation>
     </message>
@@ -5777,14 +5383,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Masternode-Optionen:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode-Schlange ist voll.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maximaler Empfangspuffer pro Verbindung &lt;n&gt;*1000 bytes (Standard: %u)</translation>
     </message>
@@ -5797,56 +5395,16 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Mint schaffte es nicht in Blockchain</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Fehlende Information in der Transaktionseingabe.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Mixing im Gange...</translation>
-    </message>
-    <message>
-        <source>Need address because change is not exact</source>
-        <translation>Brauche eine Adresse, weil die Änderung nicht exakt ist</translation>
-    </message>
-    <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>Sie müssen einen Port mittels -whitebind festlegen: '%s'</translation>
-    </message>
-    <message>
-        <source>No Masternodes detected.</source>
-        <translation>Keine Masternodes gefunden.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Keine kompatible Masternode gefunden.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Kein Guthaben entdeckt das gestückelt werden müsste.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Keine passende Stückelung für den Mixing-Prozess gefunden.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
         <translation>Optionen für Knotenrelais:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Nicht Standard-konformer öffentlicher Schlüssel entdeckt.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Nicht kompatibel mit existierenden Transaktionen.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Nicht genügend Datei-Deskriptoren verfügbar.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Nicht in der Masternode-Liste.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5855,18 +5413,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Anzahl an benutzerdefinierter Backups die aufbewahrt werden (Standard: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Verschleierung im Leerlauf</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Verschleierungsanfrage komplett</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Verschleierungsanfrage unvollständig</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5961,10 +5507,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Sende die Transaktion als gebührenfreie Transaktion, falls möglich (Standard: %u)</translation>
     </message>
     <message>
-        <source>Session not complete!</source>
-        <translation>Sitzung unvollständig!</translation>
-    </message>
-    <message>
         <source>Session timed out.</source>
         <translation>Zeitüberschreitung</translation>
     </message>
@@ -6011,10 +5553,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Schrumpfe debug.log Datei beim Client-Start (Standard: 1, falls -debug nicht gesetzt ist)</translation>
-    </message>
-    <message>
-        <source>Signing failed.</source>
-        <translation>Signieren fehlgeschlagen.</translation>
     </message>
     <message>
         <source>Signing timed out.</source>
@@ -6069,18 +5607,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Stoppt den Lauf nach dem Importieren von Blöcken von der Festplatte (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Folgende Einträge werden beim Masternode eingereicht: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Beim Masternode eingereicht, wartet auf mehr Einträge ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Beim Masternode eingereicht, befindet sich in der Warteschlange %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Synchronisierung fehlgeschlagen</translation>
     </message>
@@ -6117,14 +5643,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Die Münzausgabe wurde verwendet</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Die neue Münzausgabe wurde nicht überprüft</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Die ausgewählte Münze ist eine ungültige Münze</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Die Transaktion wurde nicht verifiziert</translation>
     </message>
@@ -6139,10 +5657,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Dies ist für Regressionstest-Tools und Anwendungsentwicklung gedacht.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dies ist keine Masternode.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6177,18 +5691,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Transaktionsbeträge müssen positiv sein</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transaktion erfolgreich erstellt.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transaktionsgebühren sind zu hoch.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transaktion ungültig.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transaktion ist für die Gebührenrichtlinie zu groß</translation>
     </message>
@@ -6197,24 +5699,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Transaktion zu groß</translation>
     </message>
     <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Übertrage fertige Transaktion.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Versuchen Sie, mit einem höheren Sicherheitsniveau auszugeben, um mehr Münzen zu erhalten</translation>
-    </message>
-    <message>
         <source>Trying to spend an already spent serial #, try again.</source>
         <translation>Versuchen Sie, eine bereits ausgegebene Seriennummer auszugeben, versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
         <translation>Kann auf diesem Computer nicht an %s binden (zurückgegebener Fehler: %s)</translation>
-    </message>
-    <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Es konnte keine Transaktion gefunden werden, die mint enthält</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6227,10 +5717,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Unbekannter Netztyp in -onlynet angegeben: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Unbekannter Status: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6261,10 +5747,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Der Betrag ist unterhalb des kleinsten Wertes (=1) an zKTS</translation>
     </message>
     <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Wert höher als der vom Verschleierungspool maximal erlaubte.</translation>
-    </message>
-    <message>
         <source>Verifying blocks...</source>
         <translation>Verifiziere Blöcke...</translation>
     </message>
@@ -6273,16 +5755,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Verifiziere Wallet...</translation>
     </message>
     <message>
-        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zKTS benötigen eine Sicherheitsstufe von 100 um erfolgreich ausgegeben werden zu können.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Wallet %s liegt außerhalb des Datenverzeichnisses %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Wallet gesperrt.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart KTS Core to complete</source>
@@ -6313,24 +5787,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Warnung: Nicht unterstütztes Argument -debugnet wurde ignoriert, nutze stattdessen -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Wird wiederholt...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Du hast nicht genug Zerocoins in deiner Brieftasche</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Sie müssen die Datenbank mithilfe von -reindex neu erstellen, um -txindex zu ändern</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Ihre Eingaben wurden erfolgreich hinzugefügt.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Ihre Transaktion wurde in den Pool aufgenommen!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>
@@ -6351,6 +5813,25 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat beschädigt, Datenrettung fehlgeschlagen</translation>
+    </message>
+</context>
+<context>
+    <name>send</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Schicken</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextEtikett</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druckknopf</translation>
     </message>
 </context>
 </TS>

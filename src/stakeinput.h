@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,11 +25,12 @@ public:
     virtual bool CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut = 0) = 0;
     virtual bool GetTxFrom(CTransaction& tx) = 0;
     virtual CAmount GetValue() = 0;
-    virtual bool CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal) = 0;
+    virtual bool CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal) = 0;
     virtual bool GetModifier(uint64_t& nStakeModifier) = 0;
     virtual bool IsZKTS() = 0;
     virtual CDataStream GetUniqueness() = 0;
     virtual uint256 GetSerialHash() const = 0;
+
     virtual uint64_t getStakeModifierHeight() const {
         return 0;
     }
@@ -62,7 +64,7 @@ public:
     bool GetModifier(uint64_t& nStakeModifier) override;
     CDataStream GetUniqueness() override;
     bool CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut = 0) override;
-    bool CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal) override;
+    bool CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal) override;
     bool MarkSpent(CWallet* pwallet, const uint256& txid);
     bool IsZKTS() override { return true; }
     uint256 GetSerialHash() const override { return hashSerial; }
@@ -84,7 +86,6 @@ private:
 public:
     CKtsStake(){}
 
-
     bool SetInput(CTransaction txPrev, unsigned int n);
 
     CBlockIndex* GetIndexFrom() override;
@@ -93,7 +94,7 @@ public:
     bool GetModifier(uint64_t& nStakeModifier) override;
     CDataStream GetUniqueness() override;
     bool CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut = 0) override;
-    bool CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal) override;
+    bool CreateTxOuts(CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal) override;
     bool IsZKTS() override { return false; }
     uint256 GetSerialHash() const override { return uint256(0); }
 

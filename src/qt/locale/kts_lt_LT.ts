@@ -1,5 +1,19 @@
 <TS language="lt_LT" version="2.1">
 <context>
+    <name>AddNewAddressDialog</name>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    </context>
+<context>
+    <name>AddNewContactDialog</name>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
@@ -99,6 +113,13 @@
     </message>
 </context>
 <context>
+    <name>AddressLabelRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>
@@ -109,10 +130,25 @@
         <translation>Adresas</translation>
     </message>
     <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(nėra etiketės)</translation>
     </message>
 </context>
+<context>
+    <name>AddressesWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
 <context>
     <name>AskPassphraseDialog</name>
     <message>
@@ -120,24 +156,8 @@
         <translation>Slaptafrazės dialogas</translation>
     </message>
     <message>
-        <source>Enter passphrase</source>
-        <translation>Įveskite slaptafrazę</translation>
-    </message>
-    <message>
-        <source>New passphrase</source>
-        <translation>Nauja slaptafrazė</translation>
-    </message>
-    <message>
-        <source>Repeat new passphrase</source>
-        <translation>Pakartokite naują slaptafrazę</translation>
-    </message>
-    <message>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Pašalina nereikšmingą sendmoney, kai OS sąskaita pažeista. Nesuteikia jokio realaus saugumo.</translation>
-    </message>
-    <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Tik dėl anonimizacijos ir "kasimo"</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -240,632 +260,6 @@
     </message>
 </context>
 <context>
-    <name>Bip38ToolDialog</name>
-    <message>
-        <source>BIP 38 Tool</source>
-        <translation>BIP 38 įrankis</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Užšifravimas</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adresas:</translation>
-    </message>
-    <message>
-        <source>Enter a KTS Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Įveskite Kts adresą, kurį norėtumėte užšifruoti naudojant BIP 38. Vidiniame laukelyje įrašykite slaptą frazę. Paspauskite užšifruoti, jei norite gauti užšifruotą privatųjį raktą.</translation>
-    </message>
-    <message>
-        <source>The KTS address to encrypt</source>
-        <translation>KTS adresas, kurį norite užšifruoti</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Pasirinkti prieš tai naudotą adresą</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Įklijuoti adresą</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Passphrase: </source>
-        <translation>Slaptafrazė:</translation>
-    </message>
-    <message>
-        <source>Encrypted Key:</source>
-        <translation>Užšifruotas Raktas:</translation>
-    </message>
-    <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopijuoti dabartinį parašą</translation>
-    </message>
-    <message>
-        <source>Encrypt the private key for this KTS address</source>
-        <translation>Užšifruoti šio KTS adreso privatų raktą</translation>
-    </message>
-    <message>
-        <source>Reset all fields</source>
-        <translation>Atstatyti visus laukelius</translation>
-    </message>
-    <message>
-        <source>The encrypted private key</source>
-        <translation>Užšifruotas privatus raktas</translation>
-    </message>
-    <message>
-        <source>Decrypt the entered key using the passphrase</source>
-        <translation>Iššifruoti įvestą raktą naudojant slaptą frazę</translation>
-    </message>
-    <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Užšifruoti &amp;Raktas</translation>
-    </message>
-    <message>
-        <source>Clear &amp;All</source>
-        <translation>Išvalyti &amp;Viskas</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 Iššifruoti</translation>
-    </message>
-    <message>
-        <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Įveskite BIP 38 užšifruotą privatųjį raktą. Įveskite slaptafrazę viduriniame laukelyje. Paspauskite "Iššifruoti raktą", jei norite apskaičiuoti privatųjį raktą. Kai raktas bus iššifruotas, spustelėjus "Importuoti adresą" šis asmeninis raktas bus pridėtas į piniginę.</translation>
-    </message>
-    <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Iššifruoti &amp;Raktas</translation>
-    </message>
-    <message>
-        <source>Decrypted Key:</source>
-        <translation>Iššifruotas Raktas:</translation>
-    </message>
-    <message>
-        <source>Import Address</source>
-        <translation>Importuoti adresą</translation>
-    </message>
-    <message>
-        <source>Click "Decrypt Key" to compute key</source>
-        <translation>Spustelėkite "Iššifruoti raktą", kad apskaičiuotumėte raktą</translation>
-    </message>
-    <message>
-        <source>The entered passphrase is invalid. </source>
-        <translation>Įvesta slaptafrazė neteisinga.</translation>
-    </message>
-    <message>
-        <source>Allowed: 0-9,a-z,A-Z,</source>
-        <translation>Leidžiama: 0-9, a-z, A-Z,</translation>
-    </message>
-    <message>
-        <source>The entered address is invalid.</source>
-        <translation>Įvestas adresas yra neteisingas.</translation>
-    </message>
-    <message>
-        <source>Please check the address and try again.</source>
-        <translation>Patikrinkite adresą ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation>Įvestas adresas nenurodo rakto.</translation>
-    </message>
-    <message>
-        <source>Wallet unlock was cancelled.</source>
-        <translation>Piniginės atrakinimas buvo atšauktas.</translation>
-    </message>
-    <message>
-        <source>Private key for the entered address is not available.</source>
-        <translation>Privatus raktas nurodytam adresui nėra prieinamas.</translation>
-    </message>
-    <message>
-        <source>Failed to decrypt.</source>
-        <translation>Nepavyko iššifruoti.</translation>
-    </message>
-    <message>
-        <source>Please check the key and passphrase and try again.</source>
-        <translation>Peržiūrėkite raktą ir slaptafrazę ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>Data Not Valid.</source>
-        <translation>Duomenys netinkami.</translation>
-    </message>
-    <message>
-        <source>Please try again.</source>
-        <translation>Bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>Please wait while key is imported</source>
-        <translation>Palaukite kol raktas bus importuotas</translation>
-    </message>
-    <message>
-        <source>Key Already Held By Wallet</source>
-        <translation>Raktas jau yra piniginėje</translation>
-    </message>
-    <message>
-        <source>Error Adding Key To Wallet</source>
-        <translation>Klaida pridedant raktą į piniginę</translation>
-    </message>
-    <message>
-        <source>Successfully Added Private Key To Wallet</source>
-        <translation>Privatus raktas sėkmingai pridėtas į piniginę</translation>
-    </message>
-</context>
-<context>
-    <name>BitcoinGUI</name>
-    <message>
-        <source>Wallet</source>
-        <translation>Piniginė</translation>
-    </message>
-    <message>
-        <source>Node</source>
-        <translation>"Node'as"</translation>
-    </message>
-    <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Peržiūra</translation>
-    </message>
-    <message>
-        <source>Show general overview of wallet</source>
-        <translation>Rodyti bendrą piniginės vaizdą.</translation>
-    </message>
-    <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Siųsti</translation>
-    </message>
-    <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Priimti</translation>
-    </message>
-    <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Pavedimai</translation>
-    </message>
-    <message>
-        <source>Browse transaction history</source>
-        <translation>Naršyti pavedimų istoriją</translation>
-    </message>
-    <message>
-        <source>Privacy Actions for zKTS</source>
-        <translation>zKTS Saugumo Veiksmai </translation>
-    </message>
-    <message>
-        <source>E&amp;xit</source>
-        <translation>&amp;Išeiti</translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation>Uždaryti programą</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Apie &amp;Qt</translation>
-    </message>
-    <message>
-        <source>Show information about Qt</source>
-        <translation>Rodyti informaciją apie Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Nustatymai</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Rodyti / Paslėpti</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Rodyti arba paslėpti pagrindinį langą</translation>
-    </message>
-    <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Užšifruoti Piniginę</translation>
-    </message>
-    <message>
-        <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Užšifruoti privačius raktus, kurie priklauso jūsų piniginei</translation>
-    </message>
-    <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Sukurti atsarginę piniginės kopiją</translation>
-    </message>
-    <message>
-        <source>Backup wallet to another location</source>
-        <translation>&amp;Sukurti atsarginę piniginės kopiją kitoje vietoje</translation>
-    </message>
-    <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Pakeisti slaptafrazę</translation>
-    </message>
-    <message>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Pakeisti slaptafrazę naudojama piniginės šifravimui</translation>
-    </message>
-    <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Atrakinti piniginę</translation>
-    </message>
-    <message>
-        <source>Unlock wallet</source>
-        <translation>Atrakinti piniginę</translation>
-    </message>
-    <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Užrakinti piniginę</translation>
-    </message>
-    <message>
-        <source>Sign &amp;message...</source>
-        <translation>Žinutės &amp;pasirašymas</translation>
-    </message>
-    <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Patvirtinti žinutę</translation>
-    </message>
-    <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Informacija</translation>
-    </message>
-    <message>
-        <source>Show diagnostic information</source>
-        <translation>Rodyti diagnostinę informaciją</translation>
-    </message>
-    <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debug konsolė</translation>
-    </message>
-    <message>
-        <source>Open debugging console</source>
-        <translation>Atidaryti debugging konsolę</translation>
-    </message>
-    <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Tinklo Monitorius</translation>
-    </message>
-    <message>
-        <source>Show network monitor</source>
-        <translation>Rodyti tinklo monitorių</translation>
-    </message>
-    <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;"Peers" sąrašas</translation>
-    </message>
-    <message>
-        <source>Show peers info</source>
-        <translation>Rodyti "peers" informacija</translation>
-    </message>
-    <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Piniginės &amp;Taisymas</translation>
-    </message>
-    <message>
-        <source>Show wallet repair options</source>
-        <translation>Rodyti piniginės taisymo parinktis</translation>
-    </message>
-    <message>
-        <source>Open configuration file</source>
-        <translation>Atidaryti konfiguracijos failą</translation>
-    </message>
-    <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Rodyti Automatines Atsargines Kopijas</translation>
-    </message>
-    <message>
-        <source>Show automatically created wallet backups</source>
-        <translation>Rodyti automatiškai sukurtas piniginės atsargines kopijas</translation>
-    </message>
-    <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Siuntimo adresai...</translation>
-    </message>
-    <message>
-        <source>Show the list of used sending addresses and labels</source>
-        <translation>Rodyti naudotų siuntimo adresų ir etikečių sąrašą</translation>
-    </message>
-    <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Gavimo adresai...</translation>
-    </message>
-    <message>
-        <source>Show the list of used receiving addresses and labels</source>
-        <translation>Rodyti naudotų gavimo adresų ir etikečių sąrašą</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature creation...</source>
-        <translation>&amp;"Daugiaparašo" kūrimas...</translation>
-    </message>
-    <message>
-        <source>Create a new multisignature address and add it to this wallet</source>
-        <translation>Sukurti naują multisignature adresą ir pridėti jį prie šios piniginės</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature spending...</source>
-        <translation>&amp;"Multisignature" išlaidos...</translation>
-    </message>
-    <message>
-        <source>Spend from a multisignature address</source>
-        <translation>Išleisti iš "multisignature" adreso</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature signing...</source>
-        <translation>&amp;"Multisignature" parašas...</translation>
-    </message>
-    <message>
-        <source>Sign with a multisignature address</source>
-        <translation>P</translation>
-    </message>
-    <message>
-        <source>Open &amp;URI...</source>
-        <translation>Atidaryti &amp;URI</translation>
-    </message>
-    <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Komandinės eilutės parinktys</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform><numerusform>Apdorota %n operacijų istorijos blokų.</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing additional data: %p%</source>
-        <translation>Sinchronizuojami papildomi duomenys: %p%</translation>
-    </message>
-    <message>
-        <source>%1 behind. Scanning block %2</source>
-        <translation>%1 atsilieka. Nuskaitomas %2 blokas.</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
-        <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;atrakinta&lt;/b&gt; tik anonimizacijos ir stake'inimo tikslais</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Failas</translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Nustatymai</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Įrankiai</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Pagalba</translation>
-    </message>
-    <message>
-        <source>Tabs toolbar</source>
-        <translation>Skirtukų įrankių juosta</translation>
-    </message>
-    <message>
-        <source>KTS Core</source>
-        <translation>KTS Core</translation>
-    </message>
-    <message>
-        <source>Send coins to a KTS address</source>
-        <translation>Siųsti monetas į KTS adresą</translation>
-    </message>
-    <message>
-        <source>Request payments (generates QR codes and kts: URIs)</source>
-        <translation>Prašyti mokėjimų (sugeneruoja QR kodus ir kts URI)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privatumas</translation>
-    </message>
-    <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternod'ai</translation>
-    </message>
-    <message>
-        <source>Browse masternodes</source>
-        <translation>Naršyti masternod'us</translation>
-    </message>
-    <message>
-        <source>&amp;About KTS Core</source>
-        <translation>&amp;Apie KTS Core</translation>
-    </message>
-    <message>
-        <source>Show information about KTS Core</source>
-        <translation>Rodyti informaciją apie KTS Core</translation>
-    </message>
-    <message>
-        <source>Modify configuration options for KTS</source>
-        <translation>Keisti KTS konfigūravimo parinktis</translation>
-    </message>
-    <message>
-        <source>Sign messages with your KTS addresses to prove you own them</source>
-        <translation>Pasirašykite pranešimus naudodami savo KTS adresus, kad įrodytumėte, kad juos turite</translation>
-    </message>
-    <message>
-        <source>Verify messages to ensure they were signed with specified KTS addresses</source>
-        <translation>Patvirtinkite pranešimus, kad jie būtų pasirašyti su nurodytais KTS adresais</translation>
-    </message>
-    <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 įrankis</translation>
-    </message>
-    <message>
-        <source>Encrypt and decrypt private keys using a passphrase</source>
-        <translation>Užšifruoti ir iššifruoti privačius raktus naudojant slaptafrazę</translation>
-    </message>
-    <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;MultiSend</translation>
-    </message>
-    <message>
-        <source>MultiSend Settings</source>
-        <translation>&amp;MultiSend Nustatymai</translation>
-    </message>
-    <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Atidaryti Piniginės &amp;Konfigūracijos Failą</translation>
-    </message>
-    <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Atidaryti &amp;Masternod'o Konfigūracijos Failą</translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Atidaryti Masternod'o konfigūracijos failą</translation>
-    </message>
-    <message>
-        <source>Open a KTS: URI or payment request</source>
-        <translation>Atidaryti KTS: URI arba mokėjimo prašymą</translation>
-    </message>
-    <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Blockchain naršyklė</translation>
-    </message>
-    <message>
-        <source>Block explorer window</source>
-        <translation>Blokų naršyklės langas</translation>
-    </message>
-    <message>
-        <source>Show the KTS Core help message to get a list with possible KTS command-line options</source>
-        <translation>Rodyti KTS Core žinyną, kad gautumėte sąrašą su galimomis KTS komandinės eilutės parinktimis</translation>
-    </message>
-    <message>
-        <source>KTS Core client</source>
-        <translation>KTS Core piniginė</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to KTS network</source>
-        <translation><numerusform>%n aktyvių prisijungimų KTS tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų KTS tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų KTS tinkle ()</numerusform><numerusform>%n aktyvių prisijungimų KTS tinkle ()</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing with network...</source>
-        <translation>Sinchronizuojama su tinklu ...</translation>
-    </message>
-    <message>
-        <source>Importing blocks from disk...</source>
-        <translation>Importuojami blokai iš disko...</translation>
-    </message>
-    <message>
-        <source>Reindexing blocks on disk...</source>
-        <translation>Tvarkomi blokai diske...</translation>
-    </message>
-    <message>
-        <source>No block source available...</source>
-        <translation>Nėra bloko šaltinio...</translation>
-    </message>
-    <message>
-        <source>Up to date</source>
-        <translation>Atnaujinta</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n valanda</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform><numerusform>%n valandų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n diena</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform><numerusform>%n dienų</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n savaitė</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform><numerusform>%n savaičių</numerusform></translation>
-    </message>
-    <message>
-        <source>%1 and %2</source>
-        <translation>%1 ir %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n metai</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform><numerusform>%n metų</numerusform></translation>
-    </message>
-    <message>
-        <source>Catching up...</source>
-        <translation>Atnaujinama...</translation>
-    </message>
-    <message>
-        <source>Last received block was generated %1 ago.</source>
-        <translation>Paskutinis priimtas blokas buvo sukurtas prieš %1.</translation>
-    </message>
-    <message>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation>Pavedimai po šio dar nėra matomi.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Klaida</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Įspėjimas</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Informacija</translation>
-    </message>
-    <message>
-        <source>Sent transaction</source>
-        <translation>Siųsti pavedimą</translation>
-    </message>
-    <message>
-        <source>Incoming transaction</source>
-        <translation>Gaunamasis pavedimas</translation>
-    </message>
-    <message>
-        <source>Sent MultiSend transaction</source>
-        <translation>Išsiųstas MultiSend pavedimas</translation>
-    </message>
-    <message>
-        <source>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</source>
-        <translation>Data: %1
-Kiekis: %2
-Tipas: %3
-Adresas: %4
-</translation>
-    </message>
-    <message>
-        <source>Staking is active
- MultiSend: %1</source>
-        <translation>Stake'inimas aktyvuotas
-MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>Active</source>
-        <translation>Aktyvuota</translation>
-    </message>
-    <message>
-        <source>Not Active</source>
-        <translation>Neaktyvuota</translation>
-    </message>
-    <message>
-        <source>Staking is not active
- MultiSend: %1</source>
-        <translation>Stake'inimas neaktyvuotas
-MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint šiuo metu įgalintas ir nustatytas</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>AutoMint išjungtas</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;atrakinta&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Piniginė yra &lt;b&gt;užšifruota&lt;/b&gt; ir šiuo metu &lt;b&gt;užrakinta&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
     <name>BlockExplorer</name>
     <message>
         <source>Blockchain Explorer</source>
@@ -897,6 +291,13 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>CSRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
     <name>ClientModel</name>
     <message>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
@@ -918,14 +319,6 @@ MultiSend: %1</translation>
         <translation>Baitai: </translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioritetas:</translation>
-    </message>
-    <message>
         <source>Fee:</source>
         <translation>Mokestis: </translation>
     </message>
@@ -934,20 +327,8 @@ MultiSend: %1</translation>
         <translation>Monetų Pasirinkimas</translation>
     </message>
     <message>
-        <source>After Fee:</source>
-        <translation>Po mokesčių: </translation>
-    </message>
-    <message>
         <source>Change:</source>
         <translation>Grąža: </translation>
-    </message>
-    <message>
-        <source>(un)select all</source>
-        <translation>(at)pažymėti viską</translation>
-    </message>
-    <message>
-        <source>toggle lock state</source>
-        <translation>įjungti užrakinimo būseną</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -966,16 +347,16 @@ MultiSend: %1</translation>
         <translation>Suma</translation>
     </message>
     <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
         <source>Received with label</source>
         <translation>Gauta su etikete</translation>
     </message>
     <message>
         <source>Received with address</source>
         <translation>Gauta su adresu</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tipas</translation>
     </message>
     <message>
         <source>Date</source>
@@ -988,10 +369,6 @@ MultiSend: %1</translation>
     <message>
         <source>Confirmed</source>
         <translation>Patvirtinta</translation>
-    </message>
-    <message>
-        <source>Priority</source>
-        <translation>Prioritetas</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -1139,6 +516,128 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>CoinControlKtsWidget</name>
+    <message>
+        <source>KTS:</source>
+        <translation>KTS:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Kiekis:</translation>
+    </message>
+    <message>
+        <source>Fee:</source>
+        <translation>Mokestis: </translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Suma</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketė</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipas</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Patvirtinimų</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Baitai: </translation>
+    </message>
+    <message>
+        <source>Change:</source>
+        <translation>Grąža: </translation>
+    </message>
+    </context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>ContactDropdownRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
+    <name>DashboardWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Įspėjimas</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>zKTS</source>
+        <translation>zKTS</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Viskas</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Gauta</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Išsiųsta</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>Iškasta</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>Nukalta</translation>
+    </message>
+    </context>
+<context>
+    <name>DefaultDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
+    <name>DenomGenerationDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
@@ -1194,6 +693,13 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>ExpandableButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+</context>
+<context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
@@ -1216,6 +722,17 @@ MultiSend: %1</translation>
         <translation>Sukurti duomenų katalogo čia negalima .</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1270,7 +787,7 @@ MultiSend: %1</translation>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>SSL sertifikatų nustatymas mokėjimo užklausai (numatytasis: -system-)</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>Intro</name>
     <message>
@@ -1294,10 +811,6 @@ MultiSend: %1</translation>
         <translation>Naudoti numatytąjį duomenų katalogą</translation>
     </message>
     <message>
-        <source>Use a custom data directory:</source>
-        <translation>Naudoti pasirinktą duomenų katalogą:</translation>
-    </message>
-    <message>
         <source>KTS Core</source>
         <translation>KTS Core</translation>
     </message>
@@ -1319,481 +832,89 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>LoadingDialog</name>
     <message>
         <source>Form</source>
         <translation>Forma</translation>
     </message>
     <message>
-        <source>MASTERNODES</source>
-        <translation>MASTERNOD'AI</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
+    </context>
+<context>
+    <name>LockUnlock</name>
     <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Pastaba: vietinės piniginės masternod'ų būklė gali būti šiek tiek neteisinga. &lt;br /&gt;Visada palaukite, kol piniginė sinchronizuos papildomus duomenis, o po to dukart patikrinkite iš kito nod'o&lt;br /&gt; jei jūsų nod'as turėtų būti paleistas, bet lauke "Būsena" vis tiek matote "TRŪKSTAMAS".</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
+    </context>
+<context>
+    <name>MNRow</name>
     <message>
-        <source>Alias</source>
-        <translation>Slapyvardis</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
+    <name>MasterNodeWizardDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Pavadinimas</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>Adresas</translation>
     </message>
     <message>
-        <source>Protocol</source>
-        <translation>Protokolas</translation>
+        <source>The amount exceeds your balance.</source>
+        <translation>Ši suma viršija jūsų likutį.</translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation>Statusas</translation>
+        <source>Transaction creation failed!</source>
+        <translation>Mokėjimo kūrimas nepavyko!</translation>
     </message>
-    <message>
-        <source>Active</source>
-        <translation>Aktyvuota</translation>
-    </message>
-    <message>
-        <source>Last Seen (UTC)</source>
-        <translation>Paskutinį kartą matytas (UTC)</translation>
-    </message>
-    <message>
-        <source>Pubkey</source>
-        <translation>Viešas raktas</translation>
-    </message>
-    <message>
-        <source>S&amp;tart alias</source>
-        <translation>&amp;Paleisti slapyvardį</translation>
-    </message>
-    <message>
-        <source>Start &amp;all</source>
-        <translation>Paleisti &amp;visus</translation>
-    </message>
-    <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Paleisti &amp;TRŪKSTAMUS</translation>
-    </message>
-    <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Atnaujinti statusą</translation>
-    </message>
-    <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Būsena bus automatiškai atnaujinta po (sek.):</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Start alias</source>
-        <translation>Paleisti slapyvardį</translation>
-    </message>
-    <message>
-        <source>Confirm masternode start</source>
-        <translation>Patvirtinti masternod'o paleidimą</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Ar tikrai norite paleisti %1 masternodą?</translation>
-    </message>
-    <message>
-        <source>Confirm all masternodes start</source>
-        <translation>Patvirtinti visų masternod'u paleidimą</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Ar tikrai norite paleisti VISUS masternod'us?</translation>
-    </message>
-    <message>
-        <source>Command is not available right now</source>
-        <translation>Komanda šiuo metu negalima</translation>
-    </message>
-    <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Šios komandos negalima naudoti, kol masternod'ų sąrašas nebus susinchronizuotas</translation>
-    </message>
-    <message>
-        <source>Confirm missing masternodes start</source>
-        <translation>Patvirtinti trūkstamų masternod'ų paleidimą</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Ar tikrai norite paleisti visus TRŪKSTAMUS masternod'us?</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>MultiSendDialog</name>
+    <name>MasterNodesWidget</name>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>Enter whole numbers 1 - 100</source>
-        <translation>Įveskite sveikus skaičius 1-100</translation>
-    </message>
-    <message>
-        <source>Enter % to Give (1-100)</source>
-        <translation>Įveskite % kad duotumėte (1-100)</translation>
-    </message>
-    <message>
-        <source>Enter Address to Send to</source>
-        <translation>Įveskite adresą kuriam norite siųsti</translation>
-    </message>
-    <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other KTS addresses after it matures.
-To Add: enter percentage to give and KTS address to add to the MultiSend vector.
-To Delete: Enter address to delete and press delete.
-MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend leidžia automatiškai išsiųsti iki 100% jūsų stake'inimo ar masternod'ų atlygio į kitus KTS adresus.
-Norėdami pridėti: įveskite pateiktą procentą ir KTS adresą, kurį norite pridėti prie MultiSend sąrašo.
-Norėdami ištrinti: įveskite adresą, kurį norite ištrinti, ir paspauskite ištrinti
-MultiSend nebus aktyvuotas, nebent paspausite "Įjungti"</translation>
-    </message>
-    <message>
-        <source>Add to MultiSend Vector</source>
-        <translation>Pridėti į MultiSend sąrašą</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>Pridėti</translation>
-    </message>
-    <message>
-        <source>Deactivate MultiSend</source>
-        <translation>Išjungti MultiSend</translation>
-    </message>
-    <message>
-        <source>Deactivate</source>
-        <translation>Išjungti</translation>
-    </message>
-    <message>
-        <source>Choose an address from the address book</source>
-        <translation>Pasirinkite adresą iš adresų knygos</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Percentage of stake to send</source>
-        <translation>Procentas kurį norite siųsti</translation>
-    </message>
-    <message>
-        <source>Percentage:</source>
-        <translation>Procentas:</translation>
-    </message>
-    <message>
-        <source>Address to send portion of stake to</source>
-        <translation>Adresas kuriam siųsti dalį atlygio:</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adresas:</translation>
-    </message>
-    <message>
-        <source>Label:</source>
-        <translation>Etiketė:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Įveskite pavadinimą šiam adresui kad pridėtumėte jį į savo adresų knygą</translation>
-    </message>
-    <message>
-        <source>Delete Address From MultiSend Vector</source>
-        <translation>Ištrinti Adresą Iš MultiSend Sąrašo</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     <message>
         <source>Delete</source>
         <translation>Ištrinti</translation>
     </message>
-    <message>
-        <source>Activate MultiSend</source>
-        <translation>Įjungti MultiSend</translation>
-    </message>
-    <message>
-        <source>Activate</source>
-        <translation>Įjungti</translation>
-    </message>
-    <message>
-        <source>View MultiSend Vector</source>
-        <translation>Žiūrėti MultiSend sąrašą</translation>
-    </message>
-    <message>
-        <source>View MultiSend</source>
-        <translation>Žiūrėti MultiSend</translation>
-    </message>
-    <message>
-        <source>Send For Stakes</source>
-        <translation>Siųsti Už Stake'inimą</translation>
-    </message>
-    <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Siųsti Už Masternod'ų Atlygį</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(nėra etiketės)</translation>
-    </message>
-    <message>
-        <source>The entered address:
-</source>
-        <translation>Įvestas adresas: 
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>yra netinkamas.
-Patikrinkite adresą ir bandykite dar kartą.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Bendra MultiSend sąrašo suma yra didesnė nei 100% jūsų stake'inimo atlygio
-</translation>
-    </message>
-    <message>
-        <source>Please Enter 1 - 100 for percent.</source>
-        <translation>Įveskite 1-100 procentų</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Sąrašas
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Pašalintas</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nepavyko rasti adreso
-</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>MultisigDialog</name>
+    <name>MnInfoDialog</name>
     <message>
-        <source>Multisignature Address Interactions</source>
-        <translation>Multisignature Adreso Sąveikos</translation>
-    </message>
-    <message>
-        <source>Create MultiSignature &amp;Address</source>
-        <translation>Sukurti MultiSignature &amp;Adresą</translation>
-    </message>
-    <message>
-        <source>How many people must sign to verify a transaction</source>
-        <translation>Kiek žmonių turi pasirašyti, norėdami patvirtinti pavedimą</translation>
-    </message>
-    <message>
-        <source>Enter the minimum number of signatures required to sign transactions</source>
-        <translation>Įveskite minimalų parašų skaičių, reikalingą pasirašyti pavedimams.</translation>
-    </message>
-    <message>
-        <source>Address Label:</source>
-        <translation>Adreso Etiketė:</translation>
-    </message>
-    <message>
-        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
-        <translation>Pridėkite kitą adresą, kuris galėtų pasirašyti, kad patvirtina operaciją iš MultiSignature adreso.</translation>
-    </message>
-    <message>
-        <source>&amp;Add Address / Key</source>
-        <translation>&amp;Pridėti Adresą / Raktą</translation>
-    </message>
-    <message>
-        <source>Local addresses or public keys that can sign:</source>
-        <translation>Vietiniai adresai arba vieši raktai, kurie gali pasirašyti:</translation>
-    </message>
-    <message>
-        <source>Create a new multisig address</source>
-        <translation>Sukurti naują MultiSignature adresą</translation>
-    </message>
-    <message>
-        <source>C&amp;reate</source>
-        <translation>&amp;Sukurti</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Statusas:</translation>
     </message>
-    <message>
-        <source>&amp;Create MultiSignature Tx</source>
-        <translation>&amp;Sukurti MultiSignature Tx</translation>
-    </message>
-    <message>
-        <source>Inputs:</source>
-        <translation>Įvestis:</translation>
-    </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>Monetų Kontrolė</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Pasirinktas Kiekis:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
-    </message>
-    <message>
-        <source>Add a Raw Input</source>
-        <translation>Pridėti Gryną Įvestį</translation>
-    </message>
-    <message>
-        <source>Address / Amount:</source>
-        <translation>Adresas / Suma:</translation>
-    </message>
-    <message>
-        <source>Add destinations to send KTS to</source>
-        <translation>Pridėkite vietas, kurioms norite siųsti KTS</translation>
-    </message>
-    <message>
-        <source>Add &amp;Destination</source>
-        <translation>Pridėti &amp;Vietą</translation>
-    </message>
-    <message>
-        <source>Create a transaction object using the given inputs to the given outputs</source>
-        <translation>&amp;Sukurti pavedimų objektą naudodami nurodytas įvestis ir išvestis.</translation>
-    </message>
-    <message>
-        <source>Cr&amp;eate</source>
-        <translation>&amp;Sukurti</translation>
-    </message>
-    <message>
-        <source>&amp;Sign MultiSignature Tx</source>
-        <translation>&amp;Pasirašyti MultiSignature Pavedimą</translation>
-    </message>
-    <message>
-        <source>Transaction Hex:</source>
-        <translation>Pavedimo Kodas:</translation>
-    </message>
-    <message>
-        <source>Sign the transaction from this wallet or from provided private keys</source>
-        <translation>Pasirašykite pavedima iš šios piniginės arba iš privačių raktų</translation>
-    </message>
-    <message>
-        <source>S&amp;ign</source>
-        <translation>&amp;Pasirašyti</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;IŠJUNGTA, kol sandoris bus patvirtintas pakankamai kartų.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Co&amp;mmit</source>
-        <translation>Sk&amp;irti</translation>
-    </message>
-    <message>
-        <source>Add private keys to sign the transaction with</source>
-        <translation>Pridėti privačius raktus, skirtus pasirašyti operacijoms</translation>
-    </message>
-    <message>
-        <source>Add Private &amp;Key</source>
-        <translation>Pridėti Privatų &amp;Raktą</translation>
-    </message>
-    <message>
-        <source>Sign with only private keys (Not Recommened)</source>
-        <translation>Pasirašyti tik su privačiais raktais (Nerekomenduojama)</translation>
-    </message>
-    <message>
-        <source>Invalid Tx Hash.</source>
-        <translation>Netinkamas Pavedimo Kodas.</translation>
-    </message>
-    <message>
-        <source>Vout position must be positive.</source>
-        <translation>Vout pozicija turi būti teigiama.</translation>
-    </message>
-    <message>
-        <source>Maximum possible addresses reached. (15)</source>
-        <translation>Pasiektas maksimalus galimų adresų skaičius. (15)</translation>
-    </message>
-    <message>
-        <source>Vout Position: </source>
-        <translation>Vout Pozicija:</translation>
-    </message>
-    <message>
-        <source>Amount: </source>
-        <translation>Suma:</translation>
-    </message>
-    <message>
-        <source>Maximum (15)</source>
-        <translation>Maksimalus (15)</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>ObfuscationConfig</name>
+    <name>MyAddressRow</name>
     <message>
-        <source>Configure Obfuscation</source>
-        <translation>Konfigūruoti Obfuscation</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
+    </context>
+<context>
+    <name>NavMenuWidget</name>
     <message>
-        <source>Basic Privacy</source>
-        <translation>Pagrindinis Privatumas</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Aukštas Privatumas</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maksimalus Privatumas</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Pasirinkite privatumo lygmenį.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 KTS</source>
-        <translation>Naudokite 2 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 KTS</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 KTS</source>
-        <translation>Naudokite 8 atskirus masternod'us, kad sumaišytumėte lėšas iki 10 000 KTS</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Naudokite 16 atskirų masternod'ų</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 KTS to anonymize 10000 KTS</source>
-        <translation>Ši parinktis yra greičiausia ir kainuos apie ~0.025 KTS, kad anonimizuotų 10000 KTS</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 KTS to anonymize 10000 KTS</source>
-        <translation>Ši parinktis yra vidutiniškai greita ir kainuoja apie 0,05 KTS, kad anonimizuotų 10000 KTS</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Tai yra lėčiausias ir saugiausias variantas. Maksimalus anonimiškumas kainuos.</translation>
-    </message>
-    <message>
-        <source>0.1 KTS per 10000 KTS you anonymize.</source>
-        <translation>0.1 KTS kas 1000 KTS kuriuos anonimizuosite.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Obfuscation Konfigūracija</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į paprastą (%1 ir 2 raundai). Bet kada galite tai pakeisti, atidarę KTS konfigūracijos ekraną.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į aukštą (%1 ir 8 raundai). Bet kada galite tai pakeisti, atidarę KTS konfigūracijos ekraną.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Obfuscation buvo sėkmingai nustatytas į maksimumą (%1 ir 16 raundai). Bet kada galite tai pakeisti, atidarę KTS konfigūracijos ekraną.</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -1801,8 +922,8 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Atidaryti URI</translation>
     </message>
     <message>
-        <source>URI:</source>
-        <translation>URI:</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     <message>
         <source>Select payment request file</source>
@@ -1811,6 +932,17 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     <message>
         <source>Select payment request file to open</source>
         <translation>Pasirinkite norimą atidaryti mokėjimo užklausą</translation>
+    </message>
+    </context>
+<context>
+    <name>OptionButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
 </context>
 <context>
@@ -1881,9 +1013,9 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</source>
-        <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia: 
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</translation>
+https://www.transifex.com/kts-project/kts-project-translations</source>
+        <translation>Trūksta kalbos arba vertimas nebaigtas? Padėkite prisidėdami prie vertimų čia:
+https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2011,139 +1143,78 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     </message>
 </context>
 <context>
-    <name>OverviewPage</name>
+    <name>KTSGUI</name>
     <message>
-        <source>Form</source>
-        <translation>Forma</translation>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
     </message>
     <message>
-        <source>Available:</source>
-        <translation>Prieinama: </translation>
+        <source>Wallet</source>
+        <translation>Piniginė</translation>
     </message>
     <message>
-        <source>Your current spendable balance</source>
-        <translation>Jūsų dabartinis balansas, kurį galite išleisti</translation>
+        <source>Node</source>
+        <translation>"Node'as"</translation>
     </message>
     <message>
-        <source>Total Balance, including all unavailable coins.</source>
-        <translation>Bendras balansas, įskaitant visas nepasiekiamas monetas.</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Rodyti / Paslėpti</translation>
     </message>
     <message>
-        <source>KTS Balance</source>
-        <translation>KTS Balansas</translation>
+        <source>Show or hide the main Window</source>
+        <translation>Rodyti arba paslėpti pagrindinį langą</translation>
     </message>
     <message>
-        <source>Pending:</source>
-        <translation>Laukiama: </translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Išeiti</translation>
     </message>
     <message>
-        <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Visi pavedimai, kurie dar turi būti patvirtinti ir yra dar nepripažįstami likusiajam balansui</translation>
+        <source>Quit application</source>
+        <translation>Uždaryti programą</translation>
     </message>
     <message>
-        <source>Immature:</source>
-        <translation>Nesubrendęs:</translation>
+        <source>KTS Core client</source>
+        <translation>KTS Core piniginė</translation>
     </message>
     <message>
-        <source>Staked or masternode rewards that has not yet matured</source>
-        <translation>Dar nesubrendęs stake'inimo arba masternod'ų atlygis.</translation>
+        <source>Error</source>
+        <translation>Klaida</translation>
     </message>
     <message>
-        <source>Current locked balance in watch-only addresses</source>
-        <translation>Dabartinis bendras užrakintas balansas tik žiūrėjimo adresuose</translation>
+        <source>Warning</source>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>Your current KTS balance, unconfirmed and immature transactions included</source>
-        <translation>Jūsų dabartinis KTS balansas, įskaitant nepatvirtintus ir nesubrendusius sandorius</translation>
+        <source>Information</source>
+        <translation>Informacija</translation>
     </message>
     <message>
-        <source>zKTS Balance</source>
-        <translation>zKTS Balansas</translation>
+        <source>Sent MultiSend transaction</source>
+        <translation>Išsiųstas MultiSend pavedimas</translation>
     </message>
     <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zKTS are spendable.</source>
-        <translation>Subrendę: daugiau nei 20 patvirtinimų ir daugiau nei 1 konvertacija to pačio nominalo, kai jis jau buvo konvertuotas.
-Šiuos zKTS galima išleisti.</translation>
+        <source>Sent transaction</source>
+        <translation>Siųsti pavedimą</translation>
     </message>
     <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
-Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo po to, kai buvo konvertuotas.</translation>
+        <source>Incoming transaction</source>
+        <translation>Gaunamasis pavedimas</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su KTS tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
+        <source>Date: %1
+Amount: %2
+Type: %3
+Address: %4
+</source>
+        <translation>Data: %1
+Kiekis: %2
+Tipas: %3
+Adresas: %4
+</translation>
     </message>
-    <message>
-        <source>OVERVIEW</source>
-        <translation>APŽVALGA</translation>
-    </message>
-    <message>
-        <source>Combined Balance (including unconfirmed and immature coins)</source>
-        <translation>Kombinuotas balansas (įskaitant nepatvirtintas ir nesubrandintas monetas)</translation>
-    </message>
-    <message>
-        <source>Combined Balance</source>
-        <translation>Kombinuotas balansas</translation>
-    </message>
-    <message>
-        <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation>Nepatvirtinti sandoriai tik žiūrėjimo adresams</translation>
-    </message>
-    <message>
-        <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Stake'inimo ar masternod'ų atlygiai tik žiūrėjimo adresuose, kurie dar nėra subrendę</translation>
-    </message>
-    <message>
-        <source>Total:</source>
-        <translation>Visas:</translation>
-    </message>
-    <message>
-        <source>Current total balance in watch-only addresses</source>
-        <translation>Dabartinis bendras balansas tik žiūrėjimo adresuose</translation>
-    </message>
-    <message>
-        <source>Watch-only:</source>
-        <translation>Tik žiūrėjimo:</translation>
-    </message>
-    <message>
-        <source>Your current balance in watch-only addresses</source>
-        <translation>Dabartinis balansas tik žiūrėjimo adresuose</translation>
-    </message>
-    <message>
-        <source>Spendable:</source>
-        <translation>Prienamas išleidimui:</translation>
-    </message>
-    <message>
-        <source>Locked KTS or Masternode collaterals. These are excluded from zKTS minting.</source>
-        <translation>Užrakinti KTS arba Masternode užstatai. Jie yra neįtraukti į zKTS kalimą.</translation>
-    </message>
-    <message>
-        <source>Locked:</source>
-        <translation>Užrakinta:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Nepatvirtinta:</translation>
-    </message>
-    <message>
-        <source>Recent transactions</source>
-        <translation>Naujausios operacijos</translation>
-    </message>
-    <message>
-        <source>out of sync</source>
-        <translation>nesinchronizuotas</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint šiuo metu įgalintas ir nustatytas</translation>
-    </message>
-    <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in kts.conf.</source>
-        <translation>Norėdami išjungti Automatinį Kalimą pridėkite 'enablezeromint=0' kts.conf faile.</translation>
-    </message>
+    </context>
+<context>
+    <name>PWidget</name>
     </context>
 <context>
     <name>PaymentServer</name>
@@ -2204,446 +1275,19 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
 </context>
 <context>
-    <name>PrivacyDialog</name>
+    <name>PrivacyWidget</name>
     <message>
-        <source>Zerocoin Actions:</source>
-        <translation>Zerocoin Veiksmai:</translation>
-    </message>
-    <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Rodoma informacija gali būti pasenusi. Jūsų piniginė automatiškai sinchronizuojasi su KTS tinklu po ryšio aktyvavimo, tačiau šis procesas dar nebaigtas.</translation>
-    </message>
-    <message>
-        <source>Mint Zerocoin</source>
-        <translation>Konvertuoti į Zerocoin</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
-    </message>
-    <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Galimos konvertavimui monetos, kurios yra patvirtintos ir neužrakintos, arba Masternod'ų užstatai.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Prieinama Konvertavimui:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 KTS</source>
-        <translation>0.000 000 00 KTS</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Atitaisyti</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Monetų Kontrolė...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kiekis:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
-    </message>
-    <message>
-        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
-        <translation>Iš naujo nuskenuokite blockchain'ą Zerocoin konvertacijoms ir jų metaduomenims.</translation>
-    </message>
-    <message>
-        <source>ReScan</source>
-        <translation>Nuskenuoti iš naujo</translation>
-    </message>
-    <message>
-        <source>PRIVACY</source>
-        <translation>PRIVATUMAS</translation>
-    </message>
-    <message>
-        <source>zKTS Control</source>
-        <translation>zKts Kontrolė</translation>
-    </message>
-    <message>
-        <source>zKTS Selected:</source>
-        <translation>Pasirinkta zKTS:</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Pasirinktas Kiekis:</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</source>
-        <translation>Išleisti Zerocoin. Be "Mokėti:" adreso sukuria mokėjimus sau.</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin</source>
-        <translation>Išleisti Zerocoin</translation>
-    </message>
-    <message>
-        <source>Available Balance:</source>
-        <translation>Prieinamas Balansas: </translation>
-    </message>
-    <message>
-        <source>0 zKTS</source>
-        <translation>0 zKTS</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Saugumo Lygmuo:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Saugumo Lygmuo 1 - 100 (numatytas: 42)</translation>
-    </message>
-    <message>
-        <source>Pay &amp;To:</source>
-        <translation>&amp;Mokėti:</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Pasirinkti prieš tai naudotą adresą</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Įklijuoti adresą</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etiketė:</translation>
-    </message>
-    <message>
-        <source>A&amp;mount:</source>
-        <translation>S&amp;uma:</translation>
-    </message>
-    <message>
-        <source>Minimize Change</source>
-        <translation>Sumažinti Grąžą</translation>
-    </message>
-    <message>
-        <source>Zerocoin Stats:</source>
-        <translation>Zerocoin Statistika:</translation>
-    </message>
-    <message>
-        <source>Total Balance including unconfirmed and immature zKTS</source>
-        <translation>Bendras balansas, įskaitant nepatvirtintą ir nesubrendusį zKTS</translation>
-    </message>
-    <message>
-        <source>Total Zerocoin  Balance:</source>
-        <translation>Visas Zerocoin Balansas:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 1:</source>
-        <translation>Nominalai su verte 1:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 1:</source>
-        <translation>Nomin. su verte 1:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Nepatvirtinta: mažiau nei 20 patvirtinimų
-Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominalo po to, kai buvo konvertuota.</translation>
-    </message>
-    <message>
-        <source>Denom. 1:</source>
-        <translation>Nomin.  1:</translation>
-    </message>
-    <message>
-        <source>Denom. 5:</source>
-        <translation>Nomin. 5:</translation>
-    </message>
-    <message>
-        <source>Denom. 10:</source>
-        <translation>Nomin.  10:</translation>
-    </message>
-    <message>
-        <source>Denom. 50:</source>
-        <translation>Nomin. 50:</translation>
-    </message>
-    <message>
-        <source>Denom. 100:</source>
-        <translation>Nomin.  100:</translation>
-    </message>
-    <message>
-        <source>Denom. 500:</source>
-        <translation>Nomin. 500:</translation>
-    </message>
-    <message>
-        <source>Denom. 1000:</source>
-        <translation>Nomin.  1000:</translation>
-    </message>
-    <message>
-        <source>Denom. 5000:</source>
-        <translation>Nomin. 5000:</translation>
-    </message>
-    <message>
-        <source>0 x</source>
-        <translation>0 x</translation>
-    </message>
-    <message>
-        <source>Denominations with value 5:</source>
-        <translation>Nominalai su verte 5:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 5:</source>
-        <translation>Nomin. su verte 5:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 10:</source>
-        <translation>Nominalai su verte 10:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 10:</source>
-        <translation>Nomin. su verte 10:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 50:</source>
-        <translation>Nominalai su verte 50:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 50:</source>
-        <translation>Nomin. su verte 50:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 100:</source>
-        <translation>Nominalai su verte 100:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 100:</source>
-        <translation>Nomin. su verte 100:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 500:</source>
-        <translation>Nominalai su verte 500:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 500:</source>
-        <translation>Nomin. su verte 500:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 1000:</source>
-        <translation>Nominalai su verte 1000:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 1000:</source>
-        <translation>Nomin. su verte 1000:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 5000:</source>
-        <translation>Nominalai su verte 5000:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 5000:</source>
-        <translation>Nomin. su verte 5000:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioritetas:</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>TextLabel</source>
         <translation>Teksto etiketė</translation>
     </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Mokestis: </translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation>ne</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Baitai: </translation>
-    </message>
-    <message>
-        <source>Insufficient funds!</source>
-        <translation>Nepakankamai lėšų!</translation>
-    </message>
-    <message>
-        <source>Coins automatically selected</source>
-        <translation>Monetos pasirinktos automatiškai </translation>
-    </message>
-    <message>
-        <source>medium</source>
-        <translation>vidutinis</translation>
-    </message>
-    <message>
-        <source>Coin Control Features</source>
-        <translation>Monetų Valdymo Funkcijos</translation>
-    </message>
-    <message>
-        <source>Custom change address</source>
-        <translation>Pasirinktinio pakeitimo adresas</translation>
-    </message>
-    <message>
-        <source>Amount After Fee:</source>
-        <translation>Suma Po Mokesčių:</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Grąža: </translation>
-    </message>
-    <message>
-        <source>out of sync</source>
-        <translation>ne sinchronizuotas</translation>
-    </message>
-    <message>
-        <source>Mint Status: Okay</source>
-        <translation>Konvertavimo Statusas: Geras</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopijuoti kiekį</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
-    </message>
-    <message>
-        <source>zKTS Spend #: </source>
-        <translation>zKTS Išleidimas #:</translation>
-    </message>
-    <message>
-        <source>zKTS Mint</source>
-        <translation>zKTS Konvertavimas</translation>
-    </message>
-    <message>
-        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
-        <translation>&lt;b&gt;įjungta&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
-        <translation>&lt;b&gt;išjungta&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;1&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;5&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;10&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;50&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;100&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;500&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;1000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation>Nomin. su verte &lt;b&gt;5000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>AutoMint Status:</source>
-        <translation>Auto-Konvertavimo Statusas:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation>Nomin.  &lt;b&gt;1&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation>Nomin. &lt;b&gt;5&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation>Nomin.  &lt;b&gt;10&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation>Nomin. &lt;b&gt;50&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation>Nomin.  &lt;b&gt;100&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation>Nomin. &lt;b&gt;500&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation>Nomin.  &lt;b&gt;1000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation>Nomin. &lt;b&gt;5000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Klaida: jūsų piniginė užrakinta. Pirmiausia įveskite piniginės slaptažodį.</translation>
-    </message>
-    <message>
-        <source>Invalid Kts Address</source>
-        <translation>Netinkamas Kts Adresas</translation>
-    </message>
-    <message>
-        <source>Invalid Send Amount</source>
-        <translation>Netinkama Siuntimo Suma</translation>
-    </message>
-    <message>
-        <source>Confirm additional Fees</source>
-        <translation>Patvirtinkite papildomus mokesčius</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Ar tikrai norite siųsti?&lt;br /&gt;&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source> to address </source>
-        <translation>į adresą</translation>
-    </message>
-    <message>
-        <source>with Security Level </source>
-        <translation>su Saugumo Lygmeniu</translation>
-    </message>
-    <message>
-        <source>Failed to spend zKTS</source>
-        <translation>Nepavyko išleisti zKTS</translation>
-    </message>
-    <message>
-        <source>serial: </source>
-        <translation>serija:</translation>
-    </message>
-    <message>
-        <source>address: </source>
-        <translation>adresas:</translation>
-    </message>
-    <message>
-        <source>fee: </source>
-        <translation>mokestis: </translation>
-    </message>
-</context>
+    </context>
+<context>
+    <name>ProposalFrame</name>
+    </context>
 <context>
     <name>QObject</name>
     <message>
@@ -2686,26 +1330,11 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
+    <message>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
+    </message>
     </context>
-<context>
-    <name>QRImageWidget</name>
-    <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Išsaugoti Paveikslėlį</translation>
-    </message>
-    <message>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Kopijuoti Paveikslėlį</translation>
-    </message>
-    <message>
-        <source>Save QR Code</source>
-        <translation>Išsaugoti QR Kodą</translation>
-    </message>
-    <message>
-        <source>PNG Image (*.png)</source>
-        <translation>PNG Paveikslėlis (*.png)</translation>
-    </message>
-</context>
 <context>
     <name>RPCConsole</name>
     <message>
@@ -2838,81 +1467,17 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
-    <name>ReceiveCoinsDialog</name>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etiketė:</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Suma:</translation>
-    </message>
-    <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Prašyti mokėjimo</translation>
-    </message>
-    <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Išvalyti visus laukelius.</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Išvalyti</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Rodyti</translation>
-    </message>
-    <message>
-        <source>Remove the selected entries from the list</source>
-        <translation>Pašalinti pasirinktus įrašus iš sąrašo.</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Pašalinti</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Kopijuoti etiketę</translation>
-    </message>
-    <message>
-        <source>Copy message</source>
-        <translation>Kopijuoti žinutę</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
-    </message>
-</context>
+    <name>ReceiveDialog</name>
+    </context>
 <context>
-    <name>ReceiveRequestDialog</name>
+    <name>ReceiveWidget</name>
     <message>
-        <source>QR Code</source>
-        <translation>QR Kodas</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Išsaugoti Paveikslėlį</translation>
-    </message>
-    <message>
-        <source>URI</source>
-        <translation>URI</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adresas</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Suma</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Etiketė</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Žinutė</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     </context>
 <context>
@@ -2928,6 +1493,10 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Message</source>
         <translation>Žinutė</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2947,263 +1516,268 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
 </context>
 <context>
-    <name>SendCoinsDialog</name>
+    <name>RequestDialog</name>
     <message>
-        <source>Send Coins</source>
-        <translation>Siųsti Monetas</translation>
+        <source>Amount</source>
+        <translation>Suma</translation>
     </message>
     <message>
-        <source>Coin Control Features</source>
-        <translation>Monetų Valdymo Funkcijos</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     <message>
-        <source>Insufficient funds!</source>
-        <translation>Nepakankamai lėšų!</translation>
+        <source>Label</source>
+        <translation>Etiketė</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Kiekis:</translation>
+        <source>Error</source>
+        <translation>Klaida</translation>
     </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Baitai: </translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Suma:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioritetas:</translation>
-    </message>
-    <message>
-        <source>medium</source>
-        <translation>vidutinis</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Mokestis: </translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation>ne</translation>
-    </message>
-    <message>
-        <source>After Fee:</source>
-        <translation>Po mokesčių: </translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Grąža: </translation>
-    </message>
-    <message>
-        <source>Custom change address</source>
-        <translation>Pasirinktinio pakeitimo adresas</translation>
-    </message>
-    <message>
-        <source>0 KTS</source>
-        <translation>0 KTS</translation>
-    </message>
-    <message>
-        <source>Transaction Fee:</source>
-        <translation>Pavedimo Mokestis:</translation>
-    </message>
-    <message>
-        <source>Choose...</source>
-        <translation>Pasirinkti...</translation>
-    </message>
-    <message>
-        <source>Minimize</source>
-        <translation>Sumažinti</translation>
-    </message>
-    <message>
-        <source>per kilobyte</source>
-        <translation>kas kilobaitą</translation>
-    </message>
-    <message>
-        <source>SwiftX</source>
-        <translation>SwiftX</translation>
-    </message>
-    <message>
-        <source>Confirmation time:</source>
-        <translation>Patvirtinimo laikas:</translation>
-    </message>
-    <message>
-        <source>Open Coin Control...</source>
-        <translation>Atidaryti Monetų Valdymą...</translation>
-    </message>
-    <message>
-        <source>Coins automatically selected</source>
-        <translation>Monetos pasirinktos automatiškai </translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>normalus</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>greitas</translation>
-    </message>
-    <message>
-        <source>Recommended</source>
-        <translation>Rekomenduojamas</translation>
-    </message>
-    <message>
-        <source>Send as zero-fee transaction if possible</source>
-        <translation> Jei galima, siųsti pavedimą be pavedimo mokesčio</translation>
-    </message>
-    <message>
-        <source>(confirmation may take longer)</source>
-        <translation>(patvirtinimas gali užtrukti ilgiau)</translation>
-    </message>
-    <message>
-        <source>Confirm the send action</source>
-        <translation>Patvirtinti siuntimo veiksmą</translation>
-    </message>
-    <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Išvalyti visus laukelius.</translation>
-    </message>
-    <message>
-        <source>Clear &amp;All</source>
-        <translation>Išvalyti &amp;Viskas</translation>
-    </message>
-    <message>
-        <source>Balance:</source>
-        <translation>Balansas:</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopijuoti kiekį</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Kopijuoti mokestį</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Kopijuoti po mokesčio</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Kopijuoti baitus</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Kopijuoti prioritetą</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Kopijuoti grąžą</translation>
-    </message>
-    <message>
-        <source>The amount exceeds your balance.</source>
-        <translation>Ši suma viršija jūsų likutį.</translation>
-    </message>
-    <message>
-        <source>Transaction creation failed!</source>
-        <translation>Mokėjimo kūrimas nepavyko!</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(nėra etiketės)</translation>
-    </message>
-</context>
-<context>
-    <name>SendCoinsEntry</name>
-    <message>
-        <source>This is a normal payment.</source>
-        <translation>Tai normalus mokėjimas.</translation>
-    </message>
-    <message>
-        <source>Pay &amp;To:</source>
-        <translation>&amp;Mokėti:</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Pasirinkti prieš tai naudotą adresą</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Įklijuoti adresą</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etiketė:</translation>
-    </message>
-    <message>
-        <source>A&amp;mount:</source>
-        <translation>S&amp;uma:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Įveskite pavadinimą šiam adresui kad pridėtumėte jį į savo adresų knygą</translation>
-    </message>
-</context>
-<context>
-    <name>ShutdownWindow</name>
     </context>
 <context>
-    <name>SignVerifyMessageDialog</name>
+    <name>SendChangeAddressDialog</name>
+    </context>
+<context>
+    <name>SendCustomFeeDialog</name>
     <message>
-        <source>The KTS address to sign the message with</source>
-        <translation>KTS adresas, kuriuo pasirašyti žinute</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
+    <name>SendMultiRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>Choose previously used address</source>
-        <translation>Pasirinkti prieš tai naudotą adresą</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>SendWidget</name>
+    <message>
+        <source>Amount</source>
+        <translation>Suma</translation>
     </message>
     <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
+        <source>Spend Zerocoin</source>
+        <translation>Išleisti Zerocoin</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsBackupWallet</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>Paste address from clipboard</source>
-        <translation>Įklijuoti adresą</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsBitToolWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopijuoti dabartinį parašą</translation>
+        <source>Import Address</source>
+        <translation>Importuoti adresą</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this KTS address</source>
-        <translation>Pažymėkite žinutę, kad įrodytumėte, jog jūs šio KTS adreso savininkas</translation>
+        <source>Clear</source>
+        <translation>Išvalyti</translation>
     </message>
     <message>
-        <source>The KTS address the message was signed with</source>
-        <translation>KTS adresas, kurio buvo pasirašyta žinutė</translation>
+        <source>The entered passphrase is invalid. </source>
+        <translation>Įvesta slaptafrazė neteisinga.</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified KTS address</source>
-        <translation>Patikrinkite pranešimą, kad jis būtų pasirašytas su nurodytu KTS adresu</translation>
+        <source>Allowed: 0-9,a-z,A-Z,</source>
+        <translation>Leidžiama: 0-9, a-z, A-Z,</translation>
     </message>
     <message>
-        <source>Reset all sign message fields</source>
-        <translation>Atstatyti visus pažymėtus laukus</translation>
+        <source>The entered address is invalid.</source>
+        <translation>Įvestas adresas yra neteisingas.</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Išvalyti &amp;Viskas</translation>
+        <source>Please check the address and try again.</source>
+        <translation>Patikrinkite adresą ir bandykite dar kartą.</translation>
     </message>
     <message>
-        <source>Reset all verify message fields</source>
-        <translation>Išvalyti visus patvirtinimo pranešimų laukus</translation>
+        <source>The entered address does not refer to a key.</source>
+        <translation>Įvestas adresas nenurodo rakto.</translation>
+    </message>
+    <message>
+        <source>Wallet unlock was cancelled.</source>
+        <translation>Piniginės atrakinimas buvo atšauktas.</translation>
+    </message>
+    <message>
+        <source>Private key for the entered address is not available.</source>
+        <translation>Privatus raktas nurodytam adresui nėra prieinamas.</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt.</source>
+        <translation>Nepavyko iššifruoti.</translation>
+    </message>
+    <message>
+        <source>Please check the key and passphrase and try again.</source>
+        <translation>Peržiūrėkite raktą ir slaptafrazę ir bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Data Not Valid.</source>
+        <translation>Duomenys netinkami.</translation>
+    </message>
+    <message>
+        <source>Please try again.</source>
+        <translation>Bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Please wait while key is imported</source>
+        <translation>Palaukite kol raktas bus importuotas</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsConsoleWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Welcome to the KTS RPC console.</source>
+        <translation>Sveiki atvykę į KTS RPC konsolę.</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsDisplayOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Decimal digits</source>
+        <translation>Dešimtainiai skaitmenys</translation>
+    </message>
+    <message>
+        <source>Hide empty balances</source>
+        <translation>Slėpti tuščius balansus</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>numatytas</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsInformationWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informacija</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Bendras</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Tinklas</translation>
+    </message>
+    <message>
+        <source>In:</source>
+        <translation>Į:</translation>
+    </message>
+    <message>
+        <source>Out:</source>
+        <translation>Iš:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMainOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMultisendDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMultisendWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktyvuota</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsSignMessageWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Išvalyti</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Žinutė</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -3227,10 +1801,122 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
+    <name>SettingsWalletOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Piniginė</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Tinklas</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Leisti įeinančius ryšius</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsWalletRepairWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Piniginė</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Nustatymai</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informacija</translation>
+    </message>
+    <message>
+        <source>Confirm options reset</source>
+        <translation>Patvirtinti nustatymų atstatymą</translation>
+    </message>
+    <message>
+        <source>Client restart required to activate changes.</source>
+        <translation>Reikalingas pakartotinis programos paleidimas norint aktyvuoti pakeitimus.</translation>
+    </message>
+    <message>
+        <source>Client will be shutdown, do you want to proceed?</source>
+        <translation>Programa bus išjungta, ar norite tęsti?</translation>
+    </message>
+    </context>
+<context>
+    <name>ShutdownWindow</name>
+    </context>
+<context>
+    <name>SnackBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    </context>
+<context>
+    <name>Splash</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
+    </message>
+</context>
+<context>
     <name>SplashScreen</name>
     <message>
         <source>KTS Core</source>
         <translation>KTS Core</translation>
+    </message>
+    </context>
+<context>
+    <name>TooltipMenu</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ištrinti</translation>
+    </message>
+    </context>
+<context>
+    <name>TopBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>%1 and %2</source>
+        <translation>%1 ir %2</translation>
     </message>
     </context>
 <context>
@@ -3271,13 +1957,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>netiesa</translation>
     </message>
 </context>
-<context>
-    <name>TransactionDescDialog</name>
-    <message>
-        <source>Transaction details</source>
-        <translation>Pavedimo detalės</translation>
-    </message>
-    </context>
 <context>
     <name>TransactionTableModel</name>
     <message>
@@ -3322,109 +2001,30 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
-    <name>TransactionView</name>
+    <name>TxDetailDialog</name>
     <message>
-        <source>All</source>
-        <translation>Viskas</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>Today</source>
-        <translation>Šiandien</translation>
+        <source>Fee:</source>
+        <translation>Mokestis: </translation>
     </message>
     <message>
-        <source>This week</source>
-        <translation>Šią savaitę</translation>
+        <source>Status:</source>
+        <translation>Statusas:</translation>
     </message>
     <message>
-        <source>This month</source>
-        <translation>Šį mėnesį</translation>
-    </message>
-    <message>
-        <source>Last month</source>
-        <translation>Praeitą mėnesį</translation>
-    </message>
-    <message>
-        <source>This year</source>
-        <translation>Šiais metais</translation>
-    </message>
-    <message>
-        <source>Sent to</source>
-        <translation>Išsiųsta</translation>
-    </message>
-    <message>
-        <source>Mined</source>
-        <translation>Iškasta</translation>
-    </message>
-    <message>
-        <source>Minted</source>
-        <translation>Nukalta</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation>Kita</translation>
-    </message>
-    <message>
-        <source>Copy address</source>
-        <translation>Kopijuoti adresą</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Kopijuoti etiketę</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopijuoti sumą</translation>
-    </message>
-    <message>
-        <source>Copy transaction ID</source>
-        <translation>Kopijuoti pavedimo ID</translation>
-    </message>
-    <message>
-        <source>Show transaction details</source>
-        <translation>Rodyti operacijos detales</translation>
-    </message>
-    <message>
-        <source>Export Transaction History</source>
-        <translation>Eksportuoti Pavedimų Istoriją</translation>
-    </message>
-    <message>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Taškais atskirtas failas (* .csv)</translation>
-    </message>
-    <message>
-        <source>Confirmed</source>
-        <translation>Patvirtinta</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Data</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tipas</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Etiketė</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adresas</translation>
-    </message>
-    <message>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <source>Exporting Failed</source>
-        <translation>Eksportavimas Nepavyko</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     </context>
 <context>
-    <name>UnitDisplayStatusBarControl</name>
-    </context>
-<context>
-    <name>WalletFrame</name>
+    <name>TxRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
     </context>
 <context>
     <name>WalletModel</name>
@@ -3434,29 +2034,36 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     </message>
     </context>
 <context>
-    <name>WalletView</name>
+    <name>WalletPasswordDialog</name>
     <message>
-        <source>HISTORY</source>
-        <translation>ISTORIJA</translation>
-    </message>
-    <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Eksportuoti</translation>
-    </message>
-    <message>
-        <source>Export the data in the current tab to a file</source>
-        <translation>Eksportuoti duomenis dabartiniame skirtuke į failą</translation>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
     </message>
     </context>
 <context>
+    <name>WelcomeContentWidget</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Sveiki</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>numatytas</translation>
+    </message>
+</context>
+<context>
     <name>ZKtsControlDialog</name>
+    <message>
+        <source>Coin Control</source>
+        <translation>Monetų Kontrolė</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Kiekis:</translation>
+    </message>
     <message>
         <source>0</source>
         <translation>0</translation>
-    </message>
-    <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
     </message>
     </context>
 <context>
@@ -3470,16 +2077,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>(numatytas: 1)</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Jau turi tą įvestį.</translation>
-    </message>
-    <message>
         <source>Done loading</source>
         <translation>Krovimas baigtas</translation>
-    </message>
-    <message>
-        <source>Entries are full.</source>
-        <translation>Įvestys pilnos.</translation>
     </message>
     <message>
         <source>Error loading block database</source>
@@ -3510,10 +2109,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida: Įvyko vidinė klaida, dėl išsamesnės informacijos žr. Debug.log</translation>
     </message>
     <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Klaida: Nepavyko pasirinkti esamų nominalo įvesčių</translation>
-    </message>
-    <message>
         <source>Error: Disk space is low!</source>
         <translation>Klaida: Diske mažai vietos!</translation>
     </message>
@@ -3522,28 +2117,12 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Klaida nuskaitant bloką</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Sandoris užbaiginėjamas.</translation>
-    </message>
-    <message>
         <source>Importing...</source>
         <translation>Importuojama...</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Nesuderinamas režimas.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Nesuderinama versija.</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Informacija</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Įvestis neteisinga.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -3558,20 +2137,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Neteisinga suma</translation>
     </message>
     <message>
-        <source>Invalid private key.</source>
-        <translation>Neteisingas privatus raktas.</translation>
-    </message>
-    <message>
-        <source>Invalid script detected.</source>
-        <translation>Aptiktas netinkamas programos kodas.</translation>
-    </message>
-    <message>
         <source>SwiftX options:</source>
         <translation>SwiftX nustatymai:</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Nepavyko deserializuoti</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
@@ -3614,14 +2181,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Masternod'ų nustatymai:</translation>
     </message>
     <message>
-        <source>Masternode:</source>
-        <translation>Masternod'as:</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Nėra Masternod'ų sąraše.</translation>
-    </message>
-    <message>
         <source>Options:</source>
         <translation>Nustatymai:</translation>
     </message>
@@ -3632,10 +2191,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Session timed out.</source>
         <translation>Sesijos laikas baigėsi.</translation>
-    </message>
-    <message>
-        <source>Signing failed.</source>
-        <translation>Prisijungimas nepavyko.</translation>
     </message>
     <message>
         <source>Signing timed out.</source>
@@ -3682,24 +2237,8 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Sandorio sumos turi būti teigiamos</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Sandoris sėkmingai sukurtas.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Sandorio mokesčiai yra per dideli.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Sandoris negalioja.</translation>
-    </message>
-    <message>
         <source>Transaction too large</source>
         <translation>Sandoris per didelis</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Perduodamas galutinis sandoris.</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -3720,10 +2259,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
     <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Piniginė %s yra ne duomenų kataloge %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Piniginė užrakinta.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart KTS Core to complete</source>
@@ -3758,14 +2293,6 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>Neturite pakankamai Zerocoin monetų savo piniginėje</translation>
     </message>
     <message>
-        <source>Your entries added successfully.</source>
-        <translation>Jūsų įrašai sėkmingai pridėti.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Jūsų sandoris buvo priimtas į "baseiną"!</translation>
-    </message>
-    <message>
         <source>Zapping all transactions from wallet...</source>
         <translation>Trinami visi sandoriai iš piniginės...</translation>
     </message>
@@ -3786,4 +2313,15 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos tos pačio nominal
         <translation>wallet.dat sugadintas, surinkimas nepavyko</translation>
     </message>
 </context>
+<context>
+    <name>send</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Teksto etiketė</translation>
+    </message>
+    </context>
 </TS>

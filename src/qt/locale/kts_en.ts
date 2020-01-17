@@ -2,6 +2,89 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en">
 <context>
+    <name>AddNewAddressDialog</name>
+    <message>
+        <location filename="../kts/forms/addnewaddressdialog.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>My Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+63"/>
+        <source>Address</source>
+        <translation type="unfinished">Address</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddNewContactDialog</name>
+    <message>
+        <location filename="../kts/forms/addnewcontactdialog.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+78"/>
+        <location line="+77"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+81"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/addnewcontactdialog.cpp" line="+20"/>
+        <source>Edit Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Set a label for the selected address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enter a name for the address (e.g Exchange)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Edit label for the selected address:
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddressBookPage</name>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+67"/>
@@ -125,9 +208,27 @@
     </message>
 </context>
 <context>
+    <name>AddressLabelRow</name>
+    <message>
+        <location filename="../kts/forms/addresslabelrow.ui" line="+20"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>Bob Allen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+199"/>
+        <location filename="../addresstablemodel.cpp" line="+279"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
@@ -137,75 +238,208 @@
         <translation>Address</translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+0"/>
+        <source>Date</source>
+        <translation type="unfinished">Date</translation>
+    </message>
+    <message>
+        <location line="+48"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
 </context>
 <context>
+    <name>AddressesWidget</name>
+    <message>
+        <location filename="../kts/forms/addresseswidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+57"/>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+154"/>
+        <source>No active Master Node yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+74"/>
+        <location filename="../kts/addresseswidget.cpp" line="+109"/>
+        <source>Contact name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Enter address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/addresseswidget.cpp" line="-28"/>
+        <source>Contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You can add a new one in the options menu to the side.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>No contacts yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>e.g. John Doe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enter a KTS address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+56"/>
+        <source>Invalid Contact Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Cannot store your own address as contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Address already stored, label: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>New Contact Stored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error Storing Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Contact edited</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Contact edit failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Delete Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You are just about to remove the contact:
+
+%1
+
+Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Contact Deleted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error deleting a contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Address copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AskPassphraseDialog</name>
     <message>
-        <location filename="../forms/askpassphrasedialog.ui" line="+26"/>
+        <location filename="../forms/askpassphrasedialog.ui" line="+32"/>
         <source>Passphrase Dialog</source>
         <translation>Passphrase Dialog</translation>
     </message>
     <message>
-        <location line="+30"/>
-        <source>Enter passphrase</source>
-        <translation>Enter passphrase</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>New passphrase</source>
-        <translation>New passphrase</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Repeat new passphrase</source>
-        <translation>Repeat new passphrase</translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>For anonymization, automint, and staking only</source>
+        <location line="+41"/>
+        <location line="+78"/>
+        <location line="+56"/>
+        <location line="+57"/>
+        <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+48"/>
+        <location line="+90"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../askpassphrasedialog.cpp" line="+85"/>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>Encrypt wallet</source>
         <translation>Encrypt wallet</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
+        <location line="+10"/>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
         <translation>This operation needs your wallet passphrase to unlock the wallet.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-4"/>
+        <source>Unlock wallet
+for staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Unlock wallet</source>
         <translation>Unlock wallet</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
         <translation>This operation needs your wallet passphrase to decrypt the wallet.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Decrypt wallet</source>
         <translation>Decrypt wallet</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+4"/>
         <source>Change passphrase</source>
         <translation>Change passphrase</translation>
     </message>
@@ -215,17 +449,27 @@
         <translation>Enter the old and new passphrase to the wallet.</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+61"/>
         <source>Confirm wallet encryption</source>
         <translation>Confirm wallet encryption</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+2"/>
+        <source>ENCRYPT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+144"/>
         <source>KTS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KTSs from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-8"/>
+        <location line="-145"/>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Are you sure you wish to encrypt your wallet?</translation>
     </message>
@@ -235,42 +479,49 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location line="+45"/>
+        <location line="+46"/>
+        <location line="+97"/>
         <source>Wallet encrypted</source>
         <translation>Wallet encrypted</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="+6"/>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
         <translation>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+5"/>
-        <location line="+31"/>
+        <location line="-138"/>
+        <location line="+38"/>
         <location line="+4"/>
+        <location line="+108"/>
         <source>Wallet encryption failed</source>
         <translation>Wallet encryption failed</translation>
     </message>
     <message>
-        <location line="-39"/>
+        <location line="-7"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
         <translation>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location line="+35"/>
+        <location line="-150"/>
+        <location line="+42"/>
         <source>The supplied passphrases do not match.</source>
         <translation>The supplied passphrases do not match.</translation>
     </message>
     <message>
-        <location line="-26"/>
+        <location line="-34"/>
+        <location line="+8"/>
         <source>Wallet unlock failed</source>
         <translation>Wallet unlock failed</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-7"/>
+        <location line="+8"/>
         <location line="+8"/>
         <location line="+13"/>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
@@ -287,8 +538,8 @@
         <translation>Wallet passphrase was successfully changed.</translation>
     </message>
     <message>
-        <location line="+43"/>
-        <location line="+24"/>
+        <location line="+42"/>
+        <location line="+26"/>
         <source>Warning: The Caps Lock key is on!</source>
         <translation>Warning: The Caps Lock key is on!</translation>
     </message>
@@ -304,818 +555,6 @@
         <location line="+0"/>
         <source>Banned Until</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Bip38ToolDialog</name>
-    <message>
-        <location filename="../forms/bip38tooldialog.ui" line="+14"/>
-        <source>BIP 38 Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <location line="+400"/>
-        <source>Address:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-424"/>
-        <source>Enter a KTS Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>The KTS address to encrypt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Choose previously used address</source>
-        <translation type="unfinished">Choose previously used address</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Alt+A</source>
-        <translation type="unfinished">Alt+A</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <location line="+220"/>
-        <source>Paste address from clipboard</source>
-        <translation type="unfinished">Paste address from clipboard</translation>
-    </message>
-    <message>
-        <location line="-210"/>
-        <location line="+220"/>
-        <source>Alt+P</source>
-        <translation type="unfinished">Alt+P</translation>
-    </message>
-    <message>
-        <location line="-200"/>
-        <location line="+220"/>
-        <source>Passphrase: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-193"/>
-        <location line="+149"/>
-        <source>Encrypted Key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-127"/>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation type="unfinished">Copy the current signature to the system clipboard</translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Encrypt the private key for this KTS address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <location line="+171"/>
-        <source>Reset all fields</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-72"/>
-        <source>The encrypted private key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+55"/>
-        <source>Decrypt the entered key using the passphrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-168"/>
-        <source>Encrypt &amp;Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <location line="+171"/>
-        <source>Clear &amp;All</source>
-        <translation type="unfinished">Clear &amp;All</translation>
-    </message>
-    <message>
-        <location line="-112"/>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking &apos;Import Address&apos; will add this private key to the wallet.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+89"/>
-        <source>Decrypt &amp;Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+77"/>
-        <source>Decrypted Key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Import Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../bip38tooldialog.cpp" line="+29"/>
-        <source>Click &quot;Decrypt Key&quot; to compute key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+89"/>
-        <source>The entered passphrase is invalid. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Allowed: 0-9,a-z,A-Z,</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>The entered address is invalid.</source>
-        <translation type="unfinished">The entered address is invalid.</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <location line="+8"/>
-        <source>Please check the address and try again.</source>
-        <translation type="unfinished">Please check the address and try again.</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>The entered address does not refer to a key.</source>
-        <translation type="unfinished">The entered address does not refer to a key.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <location line="+63"/>
-        <source>Wallet unlock was cancelled.</source>
-        <translation type="unfinished">Wallet unlock was cancelled.</translation>
-    </message>
-    <message>
-        <location line="-56"/>
-        <source>Private key for the entered address is not available.</source>
-        <translation type="unfinished">Private key for the entered address is not available.</translation>
-    </message>
-    <message>
-        <location line="+39"/>
-        <source>Failed to decrypt.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Please check the key and passphrase and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>Data Not Valid.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Please try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Please wait while key is imported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Key Already Held By Wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Error Adding Key To Wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Successfully Added Private Key To Wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BitcoinGUI</name>
-    <message>
-        <location filename="../bitcoingui.cpp" line="+122"/>
-        <source>Wallet</source>
-        <translation>Wallet</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Node</source>
-        <translation>Node</translation>
-    </message>
-    <message>
-        <location line="+174"/>
-        <source>&amp;Overview</source>
-        <translation>&amp;Overview</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show general overview of wallet</source>
-        <translation>Show general overview of wallet</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>&amp;Send</source>
-        <translation>&amp;Send</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>&amp;Receive</source>
-        <translation>&amp;Receive</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transactions</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Browse transaction history</source>
-        <translation>Browse transaction history</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Privacy Actions for zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+42"/>
-        <source>E&amp;xit</source>
-        <translation>E&amp;xit</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Quit application</source>
-        <translation>Quit application</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show information about Qt</source>
-        <translation>Show information about Qt</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>&amp;Options...</source>
-        <translation>&amp;Options...</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Show / Hide</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show or hide the main Window</source>
-        <translation>Show or hide the main Window</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Encrypt Wallet...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Encrypt the private keys that belong to your wallet</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Backup Wallet...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Backup wallet to another location</source>
-        <translation>Backup wallet to another location</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Change Passphrase...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Change the passphrase used for wallet encryption</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Unlock Wallet...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Unlock wallet</source>
-        <translation>Unlock wallet</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Lock Wallet</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Sign &amp;message...</source>
-        <translation>Sign &amp;message...</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Verify message...</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>&amp;Information</source>
-        <translation>&amp;Information</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show diagnostic information</source>
-        <translation>Show diagnostic information</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debug console</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Open debugging console</source>
-        <translation>Open debugging console</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Network Monitor</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show network monitor</source>
-        <translation>Show network monitor</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Peers list</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show peers info</source>
-        <translation>Show peers info</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wallet &amp;Repair</source>
-        <translation>Wallet &amp;Repair</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show wallet repair options</source>
-        <translation>Show wallet repair options</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Open configuration file</source>
-        <translation>Open configuration file</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Show Automatic &amp;Backups</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show automatically created wallet backups</source>
-        <translation>Show automatically created wallet backups</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Sending addresses...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show the list of used sending addresses and labels</source>
-        <translation>Show the list of used sending addresses and labels</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Receiving addresses...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show the list of used receiving addresses and labels</source>
-        <translation>Show the list of used receiving addresses and labels</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>&amp;Multisignature creation...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Create a new multisignature address and add it to this wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Multisignature spending...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Spend from a multisignature address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Multisignature signing...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Sign with a multisignature address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Open &amp;URI...</source>
-        <translation>Open &amp;URI...</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Command-line options</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+482"/>
-        <source>Processed %n blocks of transaction history.</source>
-        <translation>
-            <numerusform>Processed %n block of transaction history.</numerusform>
-            <numerusform>Processed %n blocks of transaction history.</numerusform>
-        </translation>
-    </message>
-    <message>
-        <location line="+32"/>
-        <source>Synchronizing additional data: %p%</source>
-        <translation>Synchronizing additional data: %p%</translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>%1 behind. Scanning block %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+233"/>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-762"/>
-        <source>&amp;File</source>
-        <translation>&amp;File</translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <source>&amp;Settings</source>
-        <translation>&amp;Settings</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>&amp;Tools</source>
-        <translation>&amp;Tools</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Tabs toolbar</source>
-        <translation>Tabs toolbar</translation>
-    </message>
-    <message>
-        <location line="-436"/>
-        <location line="+918"/>
-        <source>KTS Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-722"/>
-        <source>Send coins to a KTS address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Request payments (generates QR codes and kts: URIs)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>&amp;Privacy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>&amp;Masternodes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Browse masternodes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>&amp;About KTS Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show information about KTS Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Modify configuration options for KTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Sign messages with your KTS addresses to prove you own them</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified KTS addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;BIP38 tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Encrypt and decrypt private keys using a passphrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;MultiSend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>MultiSend Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Open Masternode configuration file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <source>Open a KTS: URI or payment request</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&amp;Blockchain explorer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Block explorer window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Show the KTS Core help message to get a list with possible KTS command-line options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+233"/>
-        <source>KTS Core client</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+212"/>
-        <source>%n active connection(s) to KTS network</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>Synchronizing with network...</source>
-        <translation>Synchronizing with network...</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Importing blocks from disk...</source>
-        <translation>Importing blocks from disk...</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Reindexing blocks on disk...</source>
-        <translation>Reindexing blocks on disk...</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>No block source available...</source>
-        <translation>No block source available...</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Up to date</source>
-        <translation>Up to date</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+41"/>
-        <source>%n hour(s)</source>
-        <translation>
-            <numerusform>%n hour</numerusform>
-            <numerusform>%n hours</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <location line="+2"/>
-        <source>%n day(s)</source>
-        <translation>
-            <numerusform>%n day</numerusform>
-            <numerusform>%n days</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <location line="+2"/>
-        <location line="+4"/>
-        <source>%n week(s)</source>
-        <translation>
-            <numerusform>%n week</numerusform>
-            <numerusform>%n weeks</numerusform>
-        </translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>%1 and %2</source>
-        <translation>%1 and %2</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+0"/>
-        <source>%n year(s)</source>
-        <translation>
-            <numerusform>%n year</numerusform>
-            <numerusform>%n years</numerusform>
-        </translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Catching up...</source>
-        <translation>Catching up...</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Last received block was generated %1 ago.</source>
-        <translation>Last received block was generated %1 ago.</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation>Transactions after this will not yet be visible.</translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>Error</source>
-        <translation>Error</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning</source>
-        <translation>Warning</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Information</source>
-        <translation>Information</translation>
-    </message>
-    <message>
-        <location line="+69"/>
-        <source>Sent transaction</source>
-        <translation>Sent transaction</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Incoming transaction</source>
-        <translation>Incoming transaction</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Sent MultiSend transaction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</source>
-        <translation>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</translation>
-    </message>
-    <message>
-        <location line="+52"/>
-        <source>Staking is active
- MultiSend: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <location line="+4"/>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-4"/>
-        <location line="+4"/>
-        <source>Not Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Staking is not active
- MultiSend: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>AutoMint is disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -1157,14 +596,47 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>CSRow</name>
+    <message>
+        <location filename="../kts/forms/csrow.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+68"/>
+        <source>Savings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>0,00 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Not Staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/csrow.cpp" line="+27"/>
+        <source>Own delegation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+81"/>
+        <location filename="../clientmodel.cpp" line="+82"/>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+110"/>
         <source>Network Alert</source>
         <translation>Network Alert</translation>
     </message>
@@ -1172,62 +644,37 @@ Address: %4
 <context>
     <name>CoinControlDialog</name>
     <message>
-        <location filename="../forms/coincontroldialog.ui" line="+48"/>
+        <location filename="../forms/coincontroldialog.ui" line="+198"/>
         <source>Quantity:</source>
         <translation>Quantity:</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+333"/>
         <source>Bytes:</source>
         <translation>Bytes:</translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>Amount:</source>
-        <translation>Amount:</translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Priority:</source>
-        <translation>Priority:</translation>
-    </message>
-    <message>
-        <location line="+45"/>
+        <location line="-297"/>
         <source>Fee:</source>
         <translation>Fee:</translation>
     </message>
     <message>
-        <location line="-182"/>
+        <location line="-214"/>
         <source>Coin Selection</source>
         <translation>Coin Selection</translation>
     </message>
     <message>
-        <location line="+214"/>
+        <location line="+531"/>
         <source>Dust:</source>
         <translation>Dust:</translation>
     </message>
     <message>
-        <location line="+48"/>
-        <source>After Fee:</source>
-        <translation>After Fee:</translation>
-    </message>
-    <message>
-        <location line="+32"/>
+        <location line="+20"/>
         <source>Change:</source>
         <translation>Change:</translation>
     </message>
     <message>
-        <location line="+56"/>
-        <source>(un)select all</source>
-        <translation>(un)select all</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>toggle lock state</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
+        <location line="-157"/>
         <source>Tree mode</source>
         <translation>Tree mode</translation>
     </message>
@@ -1237,17 +684,54 @@ Address: %4
         <translation>List mode</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+13"/>
         <source>(1 locked)</source>
         <translation>(1 locked)</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="-278"/>
+        <location line="+322"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-380"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <location line="+72"/>
+        <location line="+357"/>
+        <source>0.00 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-393"/>
+        <location line="+333"/>
+        <location line="+40"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-267"/>
+        <location filename="../coincontroldialog.cpp" line="+163"/>
+        <location line="+93"/>
+        <source>Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Toggle lock state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+125"/>
         <source>Received with label</source>
         <translation>Received with label</translation>
     </message>
@@ -1257,12 +741,17 @@ Address: %4
         <translation>Received with address</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Type</source>
-        <translation type="unfinished">Type</translation>
+        <location line="+97"/>
+        <source>After Fee: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+49"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-141"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -1277,12 +766,7 @@ Address: %4
         <translation>Confirmed</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Priority</source>
-        <translation>Priority</translation>
-    </message>
-    <message>
-        <location filename="../coincontroldialog.cpp" line="+60"/>
+        <location filename="../coincontroldialog.cpp" line="-149"/>
         <source>Copy address</source>
         <translation>Copy address</translation>
     </message>
@@ -1348,12 +832,18 @@ Address: %4
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+147"/>
+        <location line="+20"/>
+        <location line="+97"/>
+        <source>Unselect all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+35"/>
         <source>Please switch to &quot;List mode&quot; to use this function.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+216"/>
+        <location line="+210"/>
         <source>highest</source>
         <translation>highest</translation>
     </message>
@@ -1373,13 +863,12 @@ Address: %4
         <translation>medium-high</translation>
     </message>
     <message>
-        <location filename="../forms/coincontroldialog.ui" line="-334"/>
-        <location filename="../coincontroldialog.cpp" line="+2"/>
+        <location line="+2"/>
         <source>medium</source>
         <translation>medium</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+2"/>
+        <location line="+2"/>
         <source>low-medium</source>
         <translation>low-medium</translation>
     </message>
@@ -1404,23 +893,23 @@ Address: %4
         <translation>(%1 locked)</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+59"/>
         <source>none</source>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+126"/>
+        <location line="+124"/>
         <source>yes</source>
         <translation>yes</translation>
     </message>
     <message>
-        <location filename="../forms/coincontroldialog.ui" line="+80"/>
+        <location filename="../forms/coincontroldialog.ui" line="+51"/>
         <location filename="../coincontroldialog.cpp" line="+0"/>
         <source>no</source>
         <translation>no</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+15"/>
+        <location filename="../coincontroldialog.cpp" line="+14"/>
         <source>This label turns red, if the transaction size is greater than 1000 bytes.</source>
         <translation>This label turns red, if the transaction size is greater than 1000 bytes.</translation>
     </message>
@@ -1456,8 +945,8 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+46"/>
-        <location line="+81"/>
+        <location line="+49"/>
+        <location line="+78"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -1470,6 +959,702 @@ Address: %4
         <location line="+1"/>
         <source>(change)</source>
         <translation>(change)</translation>
+    </message>
+</context>
+<context>
+    <name>CoinControlKtsWidget</name>
+    <message>
+        <location filename="../kts/forms/coincontrolktswidget.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+78"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>KTS:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+36"/>
+        <location line="+36"/>
+        <location line="+143"/>
+        <location line="+20"/>
+        <location line="+20"/>
+        <location line="+20"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-246"/>
+        <source>Quantity:</source>
+        <translation type="unfinished">Quantity:</translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Fee:</source>
+        <translation type="unfinished">Fee:</translation>
+    </message>
+    <message>
+        <location line="+37"/>
+        <source>Amount</source>
+        <translation type="unfinished">Amount</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Label</source>
+        <translation type="unfinished">Label</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Address</source>
+        <translation type="unfinished">Address</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Type</source>
+        <translation type="unfinished">Type</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Date</source>
+        <translation type="unfinished">Date</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Confirmations</source>
+        <translation type="unfinished">Confirmations</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Bytes:</source>
+        <translation type="unfinished">Bytes:</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Dust:</source>
+        <translation type="unfinished">Dust:</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Change:</source>
+        <translation type="unfinished">Change:</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>After Fee: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+65"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <location filename="../kts/forms/coldstakingwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+87"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <location line="+123"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+331"/>
+        <source>Total Staking:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-214"/>
+        <source>Owner Address (optional, if empty a new address will be created)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+191"/>
+        <source>List of delegated balance by address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+168"/>
+        <source>No balance delegated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/coldstakingwidget.cpp" line="+88"/>
+        <source>Cold Staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Staker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>You can delegate your KTSs and let a hot node (24/7 online node)
+stake in your behalf, keeping the keys in a secure place offline.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Add owner address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Delegate or Accept KTS delegation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Delegate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Add the staking address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Delegated balance history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>No delegations yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+124"/>
+        <source>Total Staking: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Error loading delegations: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>No receive addresses available, you can go to the receive screen and create some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+103"/>
+        <source>Cold staking is networkely disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Invalid entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Invalid entry, minimum delegable amount is </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Owner address invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>ALERT!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegating to an external owner address!
+
+The delegated coins will NOT be spendable by this wallet.
+Spending these coins will need to be done from the wallet or
+device containing the owner address.
+
+Do you wish to proceed?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Staking address corresponds to this wallet, change it to an external node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Cannot create transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Coins delegated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>You don&apos;t have any KTS to select.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>URI copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Address copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Stake</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Blacklist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Edit Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy owner
+address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>Address copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Edit Cold Address Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Whitelist failed, please check the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source> staking!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Blacklist failed, please check the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source> blacklisted from staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Owner address copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Edit Owner Address Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Address label saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error storing address label</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContactDropdownRow</name>
+    <message>
+        <location filename="../kts/forms/contactdropdownrow.ui" line="+20"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>Bob Allen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DashboardWidget</name>
+    <message>
+        <location filename="../kts/forms/dashboardwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+79"/>
+        <source>Transactions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>You can see here the history of your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+161"/>
+        <source>Warning</source>
+        <translation type="unfinished">Warning</translation>
+    </message>
+    <message>
+        <location line="+161"/>
+        <source>No transactions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <location filename="../kts/dashboardwidget.cpp" line="+49"/>
+        <source>Staking Rewards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+48"/>
+        <location line="+10"/>
+        <location line="+746"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-668"/>
+        <source>Staking statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+218"/>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <source>Days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Months</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>Years</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Filter by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+214"/>
+        <source>LabelText</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/dashboardwidget.cpp" line="+5"/>
+        <source>You can view your account&apos;s history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Amount of KTS and zKTS staked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>All</source>
+        <translation type="unfinished">All</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Received</source>
+        <translation type="unfinished">Received</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Sent</source>
+        <translation type="unfinished">Sent</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Mined</source>
+        <translation type="unfinished">Mined</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Minted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>MN reward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>To yourself</source>
+        <translation type="unfinished">To yourself</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Cold stakes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Hot stakes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delegations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Please wait until the wallet is fully synced to see your correct balance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>No transactions yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>How to get KTS or zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>You can verify the staking activity in the status bar at the top right of the wallet.
+It will start automatically as soon as the wallet has enough confirmations on any unspent balances, and the wallet has synced.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <location line="+235"/>
+        <source>You have no staking rewards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-233"/>
+        <source>No charts library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+233"/>
+        <source>Loading chart..</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+119"/>
+        <location line="+215"/>
+        <location line="+49"/>
+        <source>Error loading chart, invalid show option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-58"/>
+        <source>Error loading chart, invalid data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+84"/>
+        <source>Error loading chart: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DefaultDialog</name>
+    <message>
+        <location filename="../kts/forms/defaultdialog.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+81"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>Text Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+59"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DenomGenerationDialog</name>
+    <message>
+        <location filename="../kts/forms/denomgenerationdialog.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+81"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+66"/>
+        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>5000</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>1000</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>50</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>500</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Select All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1541,9 +1726,17 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>ExpandableButton</name>
+    <message>
+        <location filename="../kts/forms/expandablebutton.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+</context>
+<context>
     <name>FreespaceChecker</name>
     <message>
-        <location filename="../intro.cpp" line="+70"/>
+        <location filename="../intro.cpp" line="+71"/>
         <source>A new data directory will be created.</source>
         <translation>A new data directory will be created.</translation>
     </message>
@@ -1569,9 +1762,67 @@ Address: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <location filename="../forms/governancepage.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>GOVERNANCE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+141"/>
+        <source>Update Proposals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Next super block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <location line="+14"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-63"/>
+        <source>Blocks to next super block:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Days to budget payout (estimate):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Allotted budget:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Budget left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Masternodes count:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+37"/>
+        <location filename="../utilitydialog.cpp" line="+39"/>
         <source>version</source>
         <translation>version</translation>
     </message>
@@ -1587,7 +1838,7 @@ Address: %4
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+6"/>
         <source>About KTS Core</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1636,6 +1887,11 @@ Address: %4
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>Set SSL root certificates for payment request (default: -system-)</translation>
     </message>
+    <message>
+        <location filename="../forms/helpmessagedialog.ui" line="+239"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Intro</name>
@@ -1645,32 +1901,42 @@ Address: %4
         <translation>Welcome</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+90"/>
         <source>Welcome to KTS Core.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+35"/>
         <source>As this is the first time the program is launched, you can choose where KTS Core will store its data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+18"/>
         <source>KTS Core will download and store a copy of the KTS block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+29"/>
         <source>Use the default data directory</source>
         <translation>Use the default data directory</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Use a custom data directory:</source>
-        <translation>Use a custom data directory:</translation>
+        <location line="+23"/>
+        <source>Use a custom data directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../intro.cpp" line="+77"/>
+        <location line="+251"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../intro.cpp" line="+101"/>
         <source>KTS Core</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1680,7 +1946,7 @@ Address: %4
         <translation>Error: Specified data directory &quot;%1&quot; cannot be created.</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+26"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -1696,655 +1962,513 @@ Address: %4
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>LoadingDialog</name>
     <message>
-        <location filename="../forms/masternodelist.ui" line="+14"/>
+        <location filename="../kts/forms/loadingdialog.ui" line="+14"/>
         <source>Form</source>
         <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+59"/>
-        <source>MASTERNODES</source>
+        <location line="+69"/>
+        <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see &quot;MISSING&quot; in &quot;Status&quot; field.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+71"/>
-        <source>Alias</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Address</source>
-        <translation type="unfinished">Address</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Protocol</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Status</source>
-        <translation type="unfinished">Status</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Last Seen (UTC)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Pubkey</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>S&amp;tart alias</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Start &amp;all</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Start &amp;MISSING</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>&amp;Update status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../masternodelist.cpp" line="+52"/>
-        <source>Start alias</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+189"/>
-        <source>Confirm masternode start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Confirm all masternodes start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Command is not available right now</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>You can&apos;t use this command until masternode list is synced</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Confirm missing masternodes start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MultiSendDialog</name>
-    <message>
-        <location filename="../forms/multisenddialog.ui" line="+17"/>
-        <source>MultiSend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+96"/>
-        <source>Enter whole numbers 1 - 100</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Enter % to Give (1-100)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <source>Enter Address to Send to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-106"/>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other KTS addresses after it matures.
-To Add: enter percentage to give and KTS address to add to the MultiSend vector.
-To Delete: Enter address to delete and press delete.
-MultiSend will not be activated unless you have clicked Activate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+207"/>
-        <source>Add to MultiSend Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Add</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+34"/>
-        <source>Deactivate MultiSend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Deactivate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-128"/>
-        <source>Choose an address from the address book</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Alt+A</source>
-        <translation type="unfinished">Alt+A</translation>
-    </message>
-    <message>
-        <location line="-66"/>
-        <source>Percentage of stake to send</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Percentage:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>Address to send portion of stake to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Address:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+52"/>
-        <source>Label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation type="unfinished">Enter a label for this address to add it to your address book</translation>
-    </message>
-    <message>
-        <location line="+65"/>
-        <source>Delete Address From MultiSend Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Activate MultiSend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Activate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-47"/>
-        <source>View MultiSend Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>View MultiSend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-154"/>
-        <source>Send For Stakes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Send For Masternode Rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../multisenddialog.cpp" line="+64"/>
-        <source>(no label)</source>
-        <translation type="unfinished">(no label)</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>MultiSend Active for Stakes and Masternode Rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>MultiSend Active for Stakes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>MultiSend Active for Masternode Rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>MultiSend Not Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>The entered address: %1 is invalid.
-Please check the address and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>MultiSend Vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>Removed %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Could not locate address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Unable to activate MultiSend, check MultiSend vector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Need to select to send on stake and/or masternode rewards</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>MultiSend activated but writing settings to DB failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>MultiSend activated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>First Address Not Valid</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>MultiSend deactivated but writing settings to DB failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>MultiSend deactivated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-97"/>
-        <source>Please Enter 1 - 100 for percent.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MultisigDialog</name>
-    <message>
-        <location filename="../forms/multisigdialog.ui" line="+20"/>
-        <source>Multisignature Address Interactions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>Create MultiSignature &amp;Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>How many people must sign to verify a transaction</source>
+        <location line="+44"/>
+        <location filename="../kts/loadingdialog.cpp" line="+43"/>
+        <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Enter the minimum number of signatures required to sign transactions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Address Label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>&amp;Add Address / Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+20"/>
-        <source>Local addresses or public keys that can sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+71"/>
-        <source>Create a new multisig address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>C&amp;reate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <location line="+345"/>
-        <location line="+179"/>
-        <source>Status:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-487"/>
-        <source>Use below to quickly import an address by its redeem. Don&apos;t forget to add a label before clicking import!
-Keep in mind, the wallet will rescan the blockchain to find transactions containing the new address.
-Please be patient after clicking import.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>&amp;Import Redeem</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>&amp;Create MultiSignature Tx</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Inputs:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Coin Control</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Quantity Selected:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <location line="+14"/>
-        <source>0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-7"/>
-        <source>Amount:</source>
-        <translation type="unfinished">Amount:</translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>Add an input to fund the outputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Add a Raw Input</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+56"/>
-        <source>Address / Amount:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Add destinations to send KTS to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Add &amp;Destination</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+81"/>
-        <source>Create a transaction object using the given inputs to the given outputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Cr&amp;eate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+76"/>
-        <source>&amp;Sign MultiSignature Tx</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Transaction Hex:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+34"/>
-        <source>Sign the transaction from this wallet or from provided private keys</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>S&amp;ign</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Co&amp;mmit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>Add private keys to sign the transaction with</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Add Private &amp;Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Sign with only private keys (Not Recommened)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../multisigdialog.cpp" line="+299"/>
-        <source>Invalid Tx Hash.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Vout position must be positive.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+535"/>
-        <source>Maximum possible addresses reached. (15)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+110"/>
-        <source>Vout Position: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+57"/>
-        <source>Amount: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>Maximum (15)</source>
+        <source>.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
+    <name>LockUnlock</name>
     <message>
-        <location filename="../forms/obfuscationconfig.ui" line="+14"/>
-        <source>Configure Obfuscation</source>
+        <location filename="../kts/forms/lockunlock.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location filename="../kts/lockunlock.cpp" line="+26"/>
+        <source>Unlock Wallet</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Lock Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Staking Only</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MNRow</name>
+    <message>
+        <location filename="../kts/forms/mnrow.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+69"/>
+        <source>user_masternode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Address: 88.26.164.88:51474</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Jan. 19, 2019</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MasterNodeWizardDialog</name>
+    <message>
+        <location filename="../kts/forms/masternodewizarddialog.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+182"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+101"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+101"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+116"/>
+        <source>Intro</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Name</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Address</source>
+        <translation type="unfinished">Address</translation>
+    </message>
+    <message>
+        <location line="+94"/>
+        <source>Create New Master Node Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 10.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+35"/>
+        <source>Make sure you have this amount of coins.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>Set Master Node’s Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node&apos;s name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Set Master Node’s IP and port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Address of the node that must always be online running the actual master node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Enter IP address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>Enter Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+89"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/masternodewizarddialog.cpp" line="+51"/>
+        <source>e.g user_masternode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>NEXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>BACK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
+        <source>address label cannot be empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>IP or port cannot be empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Invalid port number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Prepare master node failed..</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Invalid masternode.conf file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Error parsing masternode.conf file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Invalid collaterall output index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <source>Master node created!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>masternode.conf file doesn&apos;t exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <source>The recipient address is not valid, please recheck.</source>
+        <translation type="unfinished">The recipient address is not valid, please recheck.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The amount to pay must be larger than 0.</source>
+        <translation type="unfinished">The amount to pay must be larger than 0.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The amount exceeds your balance.</source>
+        <translation type="unfinished">The amount exceeds your balance.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
+        <translation type="unfinished">The total exceeds your balance when the %1 transaction fee is included.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Duplicate address found, can only send to each address once per send operation.</source>
+        <translation type="unfinished">Duplicate address found, can only send to each address once per send operation.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Transaction creation failed!</source>
+        <translation type="unfinished">Transaction creation failed!</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation type="unfinished">The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Error: The wallet was unlocked only to anonymize coins.</source>
+        <translation type="unfinished">Error: The wallet was unlocked only to anonymize coins.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
+        <translation type="unfinished">A fee %1 times higher than %2 per kB is considered an insanely high fee.</translation>
     </message>
     <message>
         <location line="+12"/>
-        <source>Basic Privacy</source>
-        <translation type="unfinished">Basic Privacy</translation>
+        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MasterNodesWidget</name>
+    <message>
+        <location filename="../kts/forms/masternodeswidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>High Privacy</source>
-        <translation type="unfinished">High Privacy</translation>
+        <location line="+54"/>
+        <location line="+7"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>Maximum Privacy</source>
-        <translation type="unfinished">Maximum Privacy</translation>
+        <location line="+154"/>
+        <source>No active Master Node yet</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>Please select a privacy level.</source>
-        <translation type="unfinished">Please select a privacy level.</translation>
+        <location filename="../kts/masternodeswidget.cpp" line="+90"/>
+        <source>Masternodes</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 10000 KTS</source>
+        <location line="+4"/>
+        <source>Full nodes that incentivize node operators to perform the core consensus functions
+and vote on the treasury system receiving a periodic reward.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Create Masternode Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>No active Masternode yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Start Masternode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Are you sure you want to start masternode %1?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
+Please wait few more minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Remote Masternode Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You are just about to export the required data to run a Masternode
+on a remote server to your clipboard.
+
+
+You will only have to paste the data in the kts.conf file
+of your remote server and start it, then start the Masternode using
+this controller wallet (select the Masternode in the list and press &quot;start&quot;).
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Masternode exported!, check your clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Delete Masternode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You are just about to delete Masternode:
+%1
+
+Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Invalid masternode.conf file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Error parsing masternode.conf file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>masternode.conf file doesn&apos;t exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Not enough balance to create a masternode, 10,000 KTS required.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 10000 KTS</source>
+        <source>Error creating masternode</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MnInfoDialog</name>
+    <message>
+        <location filename="../kts/forms/mninfodialog.ui" line="+20"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+84"/>
+        <location filename="../kts/mninfodialog.cpp" line="+20"/>
+        <source>Master Node Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>Use 16 separate masternodes</source>
-        <translation type="unfinished">Use 16 separate masternodes</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 KTS to anonymize 10000 KTS</source>
+        <location line="+163"/>
+        <source>Public Key:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 KTS to anonymize 10000 KTS</source>
+        <location line="+7"/>
+        <location line="+124"/>
+        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation type="unfinished">This is the slowest and most secure option. Using maximum anonymity will cost</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>0.1 KTS per 10000 KTS you anonymize.</source>
+        <location line="-52"/>
+        <source>Address: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../obfuscationconfig.cpp" line="+47"/>
-        <location line="+14"/>
-        <location line="+14"/>
-        <source>Obfuscation Configuration</source>
+        <location line="+7"/>
+        <source>127.0.0.2:43223</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-27"/>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening KTS&apos;s configuration screen.</source>
+        <location line="+38"/>
+        <source>Collaterall tx id:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening KTS&apos;s configuration screen.</source>
+        <location line="+76"/>
+        <source>Output index:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening KTS&apos;s configuration screen.</source>
+        <location line="+7"/>
+        <source>1 Inputs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>MISSING</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Export data to run the Master Node on a remote server</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MyAddressRow</name>
+    <message>
+        <location filename="../kts/forms/myaddressrow.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Savings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Jan. 19, 2019</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NavMenuWidget</name>
+    <message>
+        <location filename="../kts/forms/navmenuwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+276"/>
+        <source>V 1.0.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/navmenuwidget.cpp" line="+22"/>
+        <source>v%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2356,24 +2480,63 @@ Please be patient after clicking import.</source>
         <translation>Open URI</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+45"/>
         <source>Open payment request from URI or file</source>
         <translation>Open payment request from URI or file</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>URI:</source>
-        <translation>URI:</translation>
+        <location line="+26"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+90"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-75"/>
         <source>Select payment request file</source>
         <translation>Select payment request file</translation>
     </message>
     <message>
-        <location filename="../openuridialog.cpp" line="+45"/>
+        <location filename="../openuridialog.cpp" line="+64"/>
         <source>Select payment request file to open</source>
         <translation>Select payment request file to open</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>File not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Parsed data too large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Invalid URI, not starting with &quot;kts&quot; prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OptionButton</name>
+    <message>
+        <location filename="../kts/forms/optionbutton.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+101"/>
+        <location line="+9"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2409,7 +2572,7 @@ Please be patient after clicking import.</source>
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+141"/>
         <source>W&amp;allet</source>
         <translation>W&amp;allet</translation>
     </message>
@@ -2444,7 +2607,7 @@ Please be patient after clicking import.</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="-210"/>
+        <location line="-236"/>
         <source>Automatically start KTS after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2454,7 +2617,7 @@ Please be patient after clicking import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+213"/>
+        <location line="+239"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
@@ -2491,7 +2654,7 @@ Please be patient after clicking import.</source>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</source>
+https://www.transifex.com/kts-project/kts-project-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2500,7 +2663,7 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
         <translation>Map port using &amp;UPnP</translation>
     </message>
     <message>
-        <location line="-169"/>
+        <location line="-187"/>
         <source>Enable automatic minting of KTS units to zKTS</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2510,7 +2673,17 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+7"/>
+        <source>Enable automatic zKTS minting from specific addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Enable Automint Addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
         <source>Percentage of incoming KTS which get automatically converted to zKTS via Zerocoin Protocol (min: 10%)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2531,7 +2704,7 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+40"/>
         <source>Stake split threshold:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2601,12 +2774,12 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
         <translation>User Interface Theme:</translation>
     </message>
     <message>
-        <location line="+21"/>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Unit to show amounts in:</translation>
+        <location line="+27"/>
+        <source>Unit to show amounts in:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+10"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
         <translation>Choose the default subdivision unit to show in the interface and when sending coins.</translation>
     </message>
@@ -2633,12 +2806,12 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
     </message>
     <message>
         <location line="+24"/>
-        <location line="+13"/>
+        <location line="+10"/>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
     </message>
     <message>
-        <location line="-10"/>
+        <location line="-7"/>
         <source>Third party transaction URLs</source>
         <translation>Third party transaction URLs</translation>
     </message>
@@ -2668,7 +2841,7 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+89"/>
+        <location filename="../optionsdialog.cpp" line="+92"/>
         <source>Any</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2683,23 +2856,23 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
         <translation>none</translation>
     </message>
     <message>
-        <location line="+96"/>
+        <location line="+98"/>
         <source>Confirm options reset</source>
         <translation>Confirm options reset</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+30"/>
+        <location line="+29"/>
         <source>Client restart required to activate changes.</source>
         <translation>Client restart required to activate changes.</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-29"/>
         <source>Client will be shutdown, do you want to proceed?</source>
         <translation>Client will be shutdown, do you want to proceed?</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+31"/>
         <source>This change would require a client restart.</source>
         <translation>This change would require a client restart.</translation>
     </message>
@@ -2720,207 +2893,115 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</sour
     </message>
 </context>
 <context>
-    <name>OverviewPage</name>
+    <name>KTSGUI</name>
     <message>
-        <location filename="../forms/overviewpage.ui" line="+20"/>
-        <source>Form</source>
-        <translation>Form</translation>
-    </message>
-    <message>
-        <location line="+297"/>
-        <location line="+192"/>
-        <location line="+403"/>
-        <source>Available:</source>
-        <translation>Available:</translation>
-    </message>
-    <message>
-        <location line="-579"/>
-        <location line="+192"/>
-        <source>Your current spendable balance</source>
-        <translation>Your current spendable balance</translation>
-    </message>
-    <message>
-        <location line="-160"/>
-        <source>Total Balance, including all unavailable coins.</source>
+        <location filename="../kts/ktsgui.cpp" line="+53"/>
+        <location line="+294"/>
+        <location line="+68"/>
+        <source>KTS Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+71"/>
-        <source>KTS Balance</source>
+        <location line="-361"/>
+        <source>Wallet</source>
+        <translation type="unfinished">Wallet</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Node</source>
+        <translation type="unfinished">Node</translation>
+    </message>
+    <message>
+        <location line="+108"/>
+        <source>&amp;Show / Hide</source>
+        <translation type="unfinished">&amp;Show / Hide</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show or hide the main Window</source>
+        <translation type="unfinished">Show or hide the main Window</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>E&amp;xit</source>
+        <translation type="unfinished">E&amp;xit</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Quit application</source>
+        <translation type="unfinished">Quit application</translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>KTS Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+130"/>
-        <source>Pending:</source>
-        <translation>Pending:</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</translation>
-    </message>
-    <message>
-        <location line="+41"/>
-        <location line="+351"/>
-        <source>Immature:</source>
-        <translation>Immature:</translation>
-    </message>
-    <message>
-        <location line="-335"/>
-        <source>Staked or masternode rewards that has not yet matured</source>
-        <translation>Staked or masternode rewards that has not yet matured</translation>
-    </message>
-    <message>
-        <location line="+85"/>
-        <source>Current locked balance in watch-only addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <location line="+19"/>
-        <source>Your current KTS balance, unconfirmed and immature transactions included</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+96"/>
-        <source>zKTS Balance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+53"/>
-        <location line="+17"/>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zKTS are spendable.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <location line="+17"/>
-        <location line="+14"/>
-        <location line="+17"/>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-725"/>
-        <location line="+852"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-999"/>
-        <source>OVERVIEW</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+134"/>
-        <source>Combined Balance (including unconfirmed and immature coins)</source>
-        <translation type="unfinished"></translation>
+        <location line="+155"/>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Combined Balance</source>
+        <source>Warning</source>
+        <translation type="unfinished">Warning</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Information</source>
+        <translation type="unfinished">Information</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>System Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+355"/>
-        <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation>Unconfirmed transactions to watch-only addresses</translation>
-    </message>
-    <message>
-        <location line="+57"/>
-        <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Staked or masternode rewards in watch-only addresses that has not yet matured</translation>
-    </message>
-    <message>
-        <location line="-315"/>
-        <location line="+394"/>
-        <location line="+261"/>
-        <source>Total:</source>
-        <translation>Total:</translation>
-    </message>
-    <message>
-        <location line="-220"/>
-        <source>Current total balance in watch-only addresses</source>
-        <translation>Current total balance in watch-only addresses</translation>
-    </message>
-    <message>
-        <location line="-285"/>
-        <source>Watch-only:</source>
-        <translation>Watch-only:</translation>
-    </message>
-    <message>
-        <location line="+51"/>
-        <source>Your current balance in watch-only addresses</source>
-        <translation>Your current balance in watch-only addresses</translation>
-    </message>
-    <message>
-        <location line="-61"/>
-        <source>Spendable:</source>
-        <translation>Spendable:</translation>
-    </message>
-    <message>
-        <location line="+191"/>
-        <location line="+19"/>
-        <source>Locked KTS or Masternode collaterals. These are excluded from zKTS minting.</source>
+        <location line="+242"/>
+        <source>Sent MultiSend transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-16"/>
-        <source>Locked:</source>
-        <translation type="unfinished"></translation>
+        <location line="+0"/>
+        <source>Sent transaction</source>
+        <translation type="unfinished">Sent transaction</translation>
     </message>
     <message>
-        <location line="+260"/>
-        <source>Unconfirmed:</source>
-        <translation type="unfinished"></translation>
+        <location line="+0"/>
+        <source>Incoming transaction</source>
+        <translation type="unfinished">Incoming transaction</translation>
     </message>
     <message>
-        <location line="+58"/>
-        <location line="+19"/>
-        <source>Your current zKTS balance, unconfirmed and immature zKTS included.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+84"/>
-        <source>Recent transactions</source>
-        <translation>Recent transactions</translation>
-    </message>
-    <message>
-        <location filename="../overviewpage.cpp" line="+132"/>
         <location line="+1"/>
-        <source>out of sync</source>
-        <translation>out of sync</translation>
-    </message>
-    <message>
-        <location line="+111"/>
-        <source>Current percentage of zKTS.
-If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+        <source>Date: %1
+Amount: %2
+Type: %3
+Address: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Date: %1
+Amount: %2
+Type: %3
+Address: %4
+</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>AutoMint is currently enabled and set to </source>
+        <location filename="../kts.cpp" line="+505"/>
+        <source>A fatal error occurred. KTS can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>PWidget</name>
     <message>
-        <location line="+1"/>
-        <source>To disable AutoMint add &apos;enablezeromint=0&apos; in kts.conf.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>AutoMint is currently disabled.
-To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1&apos; in kts.conf</source>
+        <location filename="../kts/pwidget.cpp" line="+94"/>
+        <source>Wallet locked, you need to unlock it to perform this action</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+292"/>
+        <location filename="../paymentserver.cpp" line="+287"/>
         <location line="+205"/>
         <location line="+33"/>
         <location line="+104"/>
@@ -3058,885 +3139,278 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     </message>
 </context>
 <context>
-    <name>PrivacyDialog</name>
+    <name>PrivacyWidget</name>
     <message>
-        <location filename="../forms/privacydialog.ui" line="+184"/>
-        <source>Zerocoin Actions:</source>
-        <translation type="unfinished"></translation>
+        <location filename="../kts/forms/privacywidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+190"/>
-        <location filename="../privacydialog.cpp" line="+172"/>
-        <location line="+112"/>
-        <source>Mint Zerocoin</source>
+        <location line="+62"/>
+        <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+351"/>
-        <location line="+30"/>
-        <source>0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-371"/>
-        <location line="+651"/>
-        <source>zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-644"/>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Available for Minting:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <source>0.000 000 00 KTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Reset</source>
-        <translation type="unfinished">Reset</translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>Coin Control...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+36"/>
-        <source>Quantity:</source>
-        <translation type="unfinished">Quantity:</translation>
-    </message>
-    <message>
-        <location line="+22"/>
-        <source>Amount:</source>
-        <translation type="unfinished">Amount:</translation>
-    </message>
-    <message>
-        <location line="+91"/>
-        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>ReScan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>Status and/or Mesages from the last Mint Action.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-600"/>
-        <source>PRIVACY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+308"/>
-        <location line="+52"/>
-        <source>Enter an amount of Kts to convert to zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+301"/>
-        <source>zKTS Control</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location line="+123"/>
+        <location line="+53"/>
+        <location line="+86"/>
+        <location line="+257"/>
         <location line="+7"/>
-        <source>zKTS Selected:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+30"/>
-        <source>Quantity Selected:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+37"/>
-        <location filename="../privacydialog.cpp" line="+563"/>
-        <source>Spend Zerocoin. Without &apos;Pay To:&apos; address creates payments to yourself.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <location filename="../privacydialog.cpp" line="-514"/>
-        <location line="+4"/>
-        <location line="+12"/>
-        <location line="+84"/>
-        <location line="+32"/>
-        <location line="+11"/>
-        <location line="+4"/>
-        <source>Spend Zerocoin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location line="+14"/>
         <location line="+7"/>
-        <source>Available (mature and spendable) zKTS for spending</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Available Balance:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Available (mature and spendable) zKTS for spending
-
-zKTS are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-548"/>
-        <location line="+49"/>
-        <location line="+504"/>
-        <location line="+421"/>
-        <location line="+544"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <location line="+31"/>
-        <source>0 zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-1190"/>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Security Level:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Pay &amp;To:</source>
-        <translation type="unfinished">Pay &amp;To:</translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>The KTS address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location line="+14"/>
         <location line="+7"/>
-        <source>Choose previously used address</source>
-        <translation type="unfinished">Choose previously used address</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Alt+A</source>
-        <translation type="unfinished">Alt+A</translation>
-    </message>
-    <message>
+        <location line="+14"/>
         <location line="+7"/>
-        <source>Paste address from clipboard</source>
-        <translation type="unfinished">Paste address from clipboard</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Alt+P</source>
-        <translation type="unfinished">Alt+P</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>&amp;Label:</source>
-        <translation type="unfinished">&amp;Label:</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation type="unfinished">Enter a label for this address to add it to the list of used addresses</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>A&amp;mount:</source>
-        <translation type="unfinished">A&amp;mount:</translation>
-    </message>
-    <message>
-        <location line="+63"/>
-        <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location line="+14"/>
         <location line="+7"/>
-        <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Minimize Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+47"/>
-        <source>Information about the available Zerocoin funds.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Zerocoin Stats:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-893"/>
-        <location line="+25"/>
-        <location line="+936"/>
-        <location line="+38"/>
-        <source>Total Balance including unconfirmed and immature zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-996"/>
-        <location line="+961"/>
-        <source>Total Zerocoin  Balance:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+52"/>
-        <source>Denominations with value 1:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 1:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+29"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Show the current status of automatic zKTS minting.
-
-To change the status (restart required):
-- enable: add &apos;enablezeromint=1&apos; to kts.conf
-- disable: add &apos;enablezeromint=0&apos; to kts.conf
-
-To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zKTS
-
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>AutoMint Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-1410"/>
-        <location line="+1459"/>
-        <source>Global Supply:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+37"/>
-        <source>Denom. 1:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 5:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 10:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 50:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 100:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 500:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 1000:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+31"/>
-        <source>Denom. 5000:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-722"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <location line="+53"/>
-        <source>0 x</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-1324"/>
-        <source>Show zKTS denominations list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Show Denominations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+967"/>
-        <source>Denominations with value 5:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 5:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Denominations with value 10:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 10:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Denominations with value 50:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 50:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Denominations with value 100:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 100:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Denominations with value 500:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 500:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Denominations with value 1000:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 1000:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Denominations with value 5000:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Denom. with value 5000:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+443"/>
-        <source>Hide Denominations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+147"/>
-        <source>Priority:</source>
-        <translation type="unfinished">Priority:</translation>
-    </message>
-    <message>
-        <location line="+9"/>
+        <location line="+14"/>
+        <location line="+7"/>
+        <location line="+14"/>
+        <location line="+7"/>
+        <location line="+14"/>
+        <location line="+7"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="-597"/>
+        <location line="+28"/>
+        <location line="+119"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+183"/>
+        <source>No active Master Node yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/privacywidget.cpp" line="+38"/>
+        <source>Privacy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Convert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Mint</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Minting zKTS anonymizes your KTS by removing any
+transaction history, making transactions untraceable </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Mint new zKTS or convert back to KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Last Zerocoin Movements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>No transactions yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+87"/>
+        <source>Mint zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Enter amount of KTS to mint into zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Convert back to KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Enter amount of zKTS to convert back into KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+35"/>
-        <source>Fee:</source>
-        <translation type="unfinished">Fee:</translation>
-    </message>
-    <message>
-        <location line="+38"/>
-        <source>Dust:</source>
-        <translation type="unfinished">Dust:</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>no</source>
-        <translation type="unfinished">no</translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>Bytes:</source>
-        <translation type="unfinished">Bytes:</translation>
-    </message>
-    <message>
-        <location line="+54"/>
-        <source>Insufficient funds!</source>
-        <translation type="unfinished">Insufficient funds!</translation>
-    </message>
-    <message>
-        <location line="+75"/>
-        <location filename="../privacydialog.cpp" line="-438"/>
-        <location line="+1"/>
-        <location line="+545"/>
-        <location line="+1"/>
-        <source>Coins automatically selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+56"/>
-        <source>medium</source>
-        <translation type="unfinished">medium</translation>
-    </message>
-    <message>
-        <location line="+80"/>
-        <source>Coin Control Features</source>
-        <translation type="unfinished">Coin Control Features</translation>
-    </message>
-    <message>
-        <location line="+72"/>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation type="unfinished">If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Custom change address</source>
-        <translation type="unfinished">Custom change address</translation>
-    </message>
-    <message>
-        <location line="+83"/>
-        <source>Amount After Fee:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+40"/>
-        <source>Change:</source>
-        <translation type="unfinished">Change:</translation>
-    </message>
-    <message>
-        <location filename="../privacydialog.cpp" line="-545"/>
-        <source>out of sync</source>
-        <translation type="unfinished">out of sync</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <location line="+129"/>
-        <source>Mint Status: Okay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-123"/>
-        <source>Copy quantity</source>
-        <translation type="unfinished">Copy quantity</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy amount</source>
-        <translation type="unfinished">Copy amount</translation>
-    </message>
-    <message>
-        <location line="+192"/>
-        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
-Please be patient...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+171"/>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+54"/>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+34"/>
-        <source>zKTS Spend #: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>zKTS Mint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+293"/>
-        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source> Configured target percentage: &lt;b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <location line="+4"/>
-        <source>zKTS is currently disabled due to maintenance.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-666"/>
-        <location line="+112"/>
-        <source>zKTS is currently undergoing maintenance.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-221"/>
-        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <location line="+740"/>
-        <source>AutoMint Status:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-737"/>
-        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+103"/>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Minting </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Successfully minted </source>
+        <source>Zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
-        <source> zKTS in </source>
+        <source>zKTS is currently undergoing maintenance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source> sec. Used denominations:
-</source>
+        <location line="+8"/>
+        <source>You need to unlock the wallet to be able to %1 zKTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+35"/>
-        <location line="+15"/>
-        <location line="+260"/>
-        <source>Duration: </source>
+        <location line="+0"/>
+        <source>convert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-275"/>
-        <location line="+15"/>
-        <location line="+260"/>
-        <source> sec.
-</source>
+        <location line="+0"/>
+        <source>mint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-265"/>
-        <source>Starting ResetSpentZerocoin: </source>
+        <location line="+13"/>
+        <source>Invalid value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+68"/>
-        <source>No &apos;Pay To&apos; address provided, creating local payment</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Invalid Kts Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Invalid Send Amount</source>
+        <location line="+18"/>
+        <source>zKTS minted successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+22"/>
-        <source>Confirm additional Fees</source>
+        <source>zKTS converted back to KTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
-        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
+        <location line="+19"/>
+        <source>You don&apos;t have any KTS to select.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source> to address </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>with Security Level </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Confirm send coins</source>
-        <translation type="unfinished">Confirm send coins</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <location line="+32"/>
-        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-31"/>
-        <location line="+32"/>
-        <source>Failed to spend zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-25"/>
-        <source>Failed to fetch mint associated with serial hash</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+33"/>
-        <source>Too much inputs (</source>
+        <location line="+12"/>
+        <source>Rescan Mints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
+        <source>Your zerocoin mints are going to be scanned from the blockchain from scratch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <location line="+4"/>
-        <source>Spend Zerocoin failed with status = </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message numerus="yes">
-        <location line="+362"/>
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of KTS to convert to zKTS</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <location line="-334"/>
-        <source>denomination: </source>
+        <location line="+8"/>
+        <source>Reset Spent Zerocoins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>serial: </source>
+        <source>Your zerocoin spends are going to be scanned from the blockchain from scratch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Spend is 1 of : </source>
+        <location line="+96"/>
+        <source>Total %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ProposalFrame</name>
+    <message>
+        <location filename="../proposalframe.cpp" line="+94"/>
+        <source>Open proposal page in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>value out: </source>
+        <location line="+16"/>
+        <source> remaining payment(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>address: </source>
+        <location line="+14"/>
+        <source>Yes:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Sending successful, return code: </source>
+        <source>Abstain:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>txid: </source>
+        <location line="+10"/>
+        <source>No:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Open link</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>fee: </source>
+        <source>Copy link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>Wallet Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You must unlock your wallet to vote.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Do you want to vote %1 on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>using all your masternodes?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Proposal Hash:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Proposal URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Confirm Vote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+69"/>
+        <source>Vote Results</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../bitcoinunits.cpp" line="+252"/>
+        <location filename="../bitcoinunits.cpp" line="+278"/>
         <source>Amount</source>
         <translation>Amount</translation>
     </message>
     <message>
-        <location filename="../guiutil.cpp" line="+105"/>
+        <location filename="../guiutil.cpp" line="+143"/>
         <source>Enter a KTS address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+773"/>
+        <location line="+783"/>
         <source>%1 d</source>
         <translation>%1 d</translation>
     </message>
@@ -3952,18 +3426,23 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <location line="+40"/>
+        <location line="+43"/>
         <source>%1 s</source>
         <translation>%1 s</translation>
     </message>
     <message>
-        <location line="-25"/>
+        <location line="-28"/>
         <source>NETWORK</source>
         <translation>NETWORK</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>BLOOM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ZK_BLOOM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3986,28 +3465,38 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
-<context>
-    <name>QRImageWidget</name>
     <message>
-        <location filename="../receiverequestdialog.cpp" line="+33"/>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Save Image...</translation>
+        <location filename="../kts.cpp" line="+75"/>
+        <location line="+7"/>
+        <location line="+13"/>
+        <location line="+19"/>
+        <source>KTS Core</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Copy Image</translation>
+        <location line="-38"/>
+        <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+31"/>
-        <source>Save QR Code</source>
-        <translation>Save QR Code</translation>
+        <location line="+7"/>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
-        <source>PNG Image (*.png)</source>
-        <translation>PNG Image (*.png)</translation>
+        <location line="+12"/>
+        <source>Error: Invalid combination of -regtest and -testnet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Error reading masternode configuration file: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+61"/>
+        <source>KTS Core didn&apos;t yet exit safely...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4028,12 +3517,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>General</translation>
     </message>
     <message>
-        <location line="+164"/>
+        <location line="+152"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location line="-157"/>
+        <location line="-145"/>
         <source>Client name</source>
         <translation>Client name</translation>
     </message>
@@ -4041,15 +3530,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+10"/>
         <location line="+23"/>
         <location line="+26"/>
-        <location line="+26"/>
+        <location line="+23"/>
+        <location line="+23"/>
+        <location line="+20"/>
+        <location line="+30"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+36"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <location line="+36"/>
-        <location line="+23"/>
-        <location line="+522"/>
+        <location line="+20"/>
+        <location line="+516"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
@@ -4067,29 +3557,29 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+26"/>
         <location line="+23"/>
         <location line="+78"/>
-        <location line="+26"/>
+        <location line="+29"/>
         <location line="+29"/>
         <location line="+29"/>
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-1147"/>
+        <location line="-1164"/>
         <source>Number of connections</source>
         <translation>Number of connections</translation>
     </message>
     <message>
-        <location line="+134"/>
+        <location line="+148"/>
         <source>&amp;Open</source>
         <translation>&amp;Open</translation>
     </message>
     <message>
-        <location line="-193"/>
+        <location line="-221"/>
         <source>Startup time</source>
         <translation>Startup time</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+43"/>
         <source>Network</source>
         <translation>Network</translation>
     </message>
@@ -4099,52 +3589,57 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Last block time</translation>
     </message>
     <message>
-        <location line="+42"/>
+        <location line="+56"/>
         <source>Debug log file</source>
         <translation>Debug log file</translation>
     </message>
     <message>
-        <location line="-258"/>
-        <source>Using OpenSSL version</source>
-        <translation>Using OpenSSL version</translation>
-    </message>
-    <message>
-        <location line="+52"/>
+        <location line="-234"/>
         <source>Build date</source>
         <translation>Build date</translation>
     </message>
     <message>
-        <location line="+141"/>
+        <location line="+155"/>
         <source>Current number of blocks</source>
         <translation>Current number of blocks</translation>
     </message>
     <message>
-        <location line="-216"/>
+        <location line="-204"/>
         <source>Client version</source>
         <translation>Client version</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+23"/>
         <source>Using BerkeleyDB version</source>
         <translation>Using BerkeleyDB version</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+174"/>
         <source>Block chain</source>
         <translation>Block chain</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+93"/>
         <source>Open the KTS debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-108"/>
+        <location line="-122"/>
         <source>Number of Masternodes</source>
         <translation>Number of Masternodes</translation>
     </message>
     <message>
-        <location line="+122"/>
+        <location line="-73"/>
+        <source>Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+155"/>
+        <source>Last block hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>&amp;Console</source>
         <translation>&amp;Console</translation>
     </message>
@@ -4190,8 +3685,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+59"/>
-        <location filename="../rpcconsole.cpp" line="+329"/>
-        <location line="+727"/>
+        <location filename="../rpcconsole.cpp" line="+326"/>
+        <location line="+730"/>
         <source>Select a peer to view detailed information.</source>
         <translation>Select a peer to view detailed information.</translation>
     </message>
@@ -4301,7 +3796,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+104"/>
         <source>Custom Backup Path:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4316,7 +3811,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+45"/>
         <source>Salvage wallet</source>
         <translation>Salvage wallet</translation>
     </message>
@@ -4396,7 +3891,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Rebuild index</translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-376"/>
+        <location filename="../rpcconsole.cpp" line="-378"/>
         <source>In:</source>
         <translation>In:</translation>
     </message>
@@ -4411,7 +3906,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-218"/>
+        <location line="-219"/>
         <source>&amp;Disconnect Node</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4449,7 +3944,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+95"/>
+        <location line="+96"/>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4489,7 +3984,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+141"/>
+        <location line="+143"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
@@ -4552,213 +4047,144 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ReceiveCoinsDialog</name>
+    <name>ReceiveDialog</name>
     <message>
-        <location filename="../forms/receivecoinsdialog.ui" line="+263"/>
-        <source>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</source>
-        <translation>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</translation>
+        <location filename="../kts/forms/receivedialog.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>R&amp;euse an existing receiving address (not recommended)</translation>
+        <location line="+81"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-30"/>
-        <source>&amp;Message:</source>
-        <translation>&amp;Message:</translation>
+        <location line="+104"/>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-87"/>
+        <location line="+53"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+16"/>
-        <source>An optional label to associate with the new receiving address.</source>
-        <translation>An optional label to associate with the new receiving address.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <location line="+25"/>
-        <source>Your receiving address. You can copy and use it to receive coins on this wallet. A new one will be generated once it is used.</source>
+        <source>OK</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-22"/>
-        <source>&amp;Address:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+32"/>
-        <source>A&amp;mount:</source>
-        <translation type="unfinished">A&amp;mount:</translation>
-    </message>
-    <message>
-        <location line="+26"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the KTS network.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-175"/>
-        <source>RECEIVE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+191"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the KTS network.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-107"/>
-        <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
-    </message>
-    <message>
-        <location line="+52"/>
-        <location line="+22"/>
-        <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
-        <translation>An optional amount to request. Leave this empty or zero to not request a specific amount.</translation>
-    </message>
-    <message>
-        <location line="+62"/>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Request payment</translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <source>Clear all fields of the form.</source>
-        <translation>Clear all fields of the form.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Clear</source>
-        <translation>Clear</translation>
-    </message>
-    <message>
-        <location line="+27"/>
-        <source>Receiving Addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+55"/>
-        <source>Requested payments history</source>
-        <translation>Requested payments history</translation>
-    </message>
-    <message>
-        <location line="+62"/>
-        <source>Show the selected request (does the same as double clicking an entry)</source>
-        <translation>Show the selected request (does the same as double clicking an entry)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Show</source>
-        <translation>Show</translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <source>Remove the selected entries from the list</source>
-        <translation>Remove the selected entries from the list</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Remove</source>
-        <translation>Remove</translation>
-    </message>
-    <message>
-        <location filename="../receivecoinsdialog.cpp" line="+41"/>
-        <source>Copy label</source>
-        <translation>Copy label</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy message</source>
-        <translation>Copy message</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy amount</source>
-        <translation>Copy amount</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy address</source>
-        <translation type="unfinished">Copy address</translation>
     </message>
 </context>
 <context>
-    <name>ReceiveRequestDialog</name>
+    <name>ReceiveWidget</name>
     <message>
-        <location filename="../forms/receiverequestdialog.ui" line="+29"/>
-        <source>QR Code</source>
-        <translation>QR Code</translation>
+        <location filename="../kts/forms/receivewidget.ui" line="+20"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+46"/>
-        <source>Copy &amp;URI</source>
-        <translation>Copy &amp;URI</translation>
+        <location line="+54"/>
+        <location line="+7"/>
+        <location line="+112"/>
+        <location line="+20"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <location filename="../kts/receivewidget.cpp" line="+218"/>
+        <source>No address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <location filename="../kts/receivewidget.cpp" line="-150"/>
+        <source>Add Label</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Copy &amp;Address</source>
-        <translation>Copy &amp;Address</translation>
+        <location filename="../kts/receivewidget.cpp" line="+4"/>
+        <source>Generate Address</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Save Image...</translation>
+        <location filename="../kts/receivewidget.cpp" line="+4"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../receiverequestdialog.cpp" line="+63"/>
-        <source>Request payment to %1</source>
-        <translation>Request payment to %1</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Payment information</source>
-        <translation>Payment information</translation>
+        <location filename="../kts/receivewidget.cpp" line="-32"/>
+        <source>Receive</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>URI</source>
-        <translation>URI</translation>
+        <source>Scan the QR code or copy the address to receive KTS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>No address </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+76"/>
+        <location line="+12"/>
+        <source>No available address, try unlocking the wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-11"/>
+        <location line="+12"/>
+        <source>Error generating address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Change Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
+        <source>Edit Address Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Address label saved</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Address</source>
-        <translation>Address</translation>
+        <source>Error storing address label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>New address created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Address copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>URI copied to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Amount</source>
-        <translation>Amount</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Label</source>
-        <translation>Label</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Message</source>
-        <translation>Message</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>Resulting URI too long, try to reduce the text for label / message.</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Error encoding URI into QR Code.</source>
-        <translation>Error encoding URI into QR Code.</translation>
+        <source>Address copied to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
-        <location filename="../recentrequeststablemodel.cpp" line="+28"/>
+        <location filename="../recentrequeststablemodel.cpp" line="+27"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -4799,541 +4225,2329 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>SendCoinsDialog</name>
+    <name>RequestDialog</name>
     <message>
-        <location filename="../forms/sendcoinsdialog.ui" line="+17"/>
-        <location filename="../sendcoinsdialog.cpp" line="+234"/>
-        <location line="+25"/>
-        <location line="+413"/>
-        <source>Send Coins</source>
-        <translation>Send Coins</translation>
-    </message>
-    <message>
-        <location line="+65"/>
-        <source>SEND</source>
+        <location filename="../kts/forms/requestdialog.ui" line="+14"/>
+        <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+156"/>
-        <source>Coin Control Features</source>
-        <translation>Coin Control Features</translation>
+        <location line="+81"/>
+        <location filename="../kts/requestdialog.cpp" line="+25"/>
+        <source>New Request Payment</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+70"/>
-        <source>Insufficient funds!</source>
-        <translation>Insufficient funds!</translation>
+        <location line="+118"/>
+        <source>Lorem ipsum dolor sit amet, consectur cling elit, sed do </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+89"/>
-        <source>Quantity:</source>
-        <translation>Quantity:</translation>
+        <location line="+43"/>
+        <location filename="../kts/requestdialog.cpp" line="+17"/>
+        <source>Amount</source>
+        <translation type="unfinished">Amount</translation>
     </message>
     <message>
-        <location line="+35"/>
-        <source>Bytes:</source>
-        <translation>Bytes:</translation>
+        <location line="+71"/>
+        <source>KTS</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+48"/>
-        <source>Amount:</source>
-        <translation>Amount:</translation>
+        <location line="+52"/>
+        <location line="+58"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>Priority:</source>
-        <translation>Priority:</translation>
+        <location line="+99"/>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>COPY ADDRESS</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>medium</source>
-        <translation>medium</translation>
-    </message>
-    <message>
-        <location line="+35"/>
-        <source>Fee:</source>
-        <translation>Fee:</translation>
-    </message>
-    <message>
-        <location line="+32"/>
-        <source>Dust:</source>
-        <translation>Dust:</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>no</source>
-        <translation>no</translation>
-    </message>
-    <message>
-        <location line="+35"/>
-        <source>After Fee:</source>
-        <translation>After Fee:</translation>
-    </message>
-    <message>
-        <location line="+32"/>
-        <source>Change:</source>
-        <translation>Change:</translation>
-    </message>
-    <message>
-        <location line="+62"/>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Custom change address</source>
-        <translation>Custom change address</translation>
-    </message>
-    <message>
-        <location line="+76"/>
-        <source>Split UTXO</source>
+        <source>COPY URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
-        <source># of outputs</source>
+        <location line="+57"/>
+        <source>CANCEL</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>UTXO Size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>0 KTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+167"/>
-        <source>SwiftX technology allows for near instant transactions - A flat fee of 0.01 KTS applies</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+176"/>
-        <source>Transaction Fee:</source>
-        <translation>Transaction Fee:</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Choose...</source>
-        <translation>Choose...</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>collapse fee-settings</source>
-        <translation>collapse fee-settings</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Minimize</source>
-        <translation>Minimize</translation>
-    </message>
-    <message>
-        <location line="+135"/>
-        <source>per kilobyte</source>
-        <translation>per kilobyte</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>total at least</source>
-        <translation>total at least</translation>
+        <source>REQUEST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/requestdialog.cpp" line="-14"/>
+        <source>Instead of only sharing a KTS address, you can create a Payment Request message which bundles up more information than is contained in just a KTS address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Label</source>
+        <translation type="unfinished">Label</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Enter a label to be saved within the address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Description (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add description </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>GENERATE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Creates an address to receive coin delegations and be able to stake them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>New Cold Staking Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Amount (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SendChangeAddressDialog</name>
+    <message>
+        <location filename="../kts/forms/sendchangeaddressdialog.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+81"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+72"/>
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+82"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/sendchangeaddressdialog.cpp" line="+21"/>
+        <source>Custom Change Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the &quot;change&quot; KTS address</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SendCustomFeeDialog</name>
+    <message>
+        <location filename="../kts/forms/sendcustomfeedialog.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+81"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+63"/>
+        <source>Customize the transaction fee at your to your liking, depending on the fee value your transaction will be included or not in the blockchain.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+46"/>
-        <source>(read the tooltip)</source>
-        <translation>(read the tooltip)</translation>
-    </message>
-    <message>
-        <location line="-82"/>
-        <source>Custom:</source>
-        <translation>Custom:</translation>
-    </message>
-    <message>
-        <location line="-211"/>
-        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>(Smart fee not initialized yet. This usually takes a few blocks...)</translation>
-    </message>
-    <message>
-        <location line="-101"/>
-        <source>SwiftX</source>
+        <source>Recomended</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Confirmation time:</source>
-        <translation>Confirmation time:</translation>
-    </message>
-    <message>
-        <location line="-750"/>
-        <source>Open Coin Control...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Coins automatically selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1062"/>
-        <source>If the custom fee is set to 1000 uKTSs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uKTSs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 uKTSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>If the custom fee is set to 1000 uKTSs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 uKTSs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 uKTSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <location line="+23"/>
+        <source>0.00 KB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+33"/>
-        <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for KTS transactions than the network can process.</source>
+        <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-374"/>
-        <source>normal</source>
-        <translation>normal</translation>
+        <location line="+26"/>
+        <source>Per kilobyte</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/sendcustomfeedialog.cpp" line="+25"/>
+        <source>Customize Fee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Normal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Slow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Fast</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SendMultiRow</name>
+    <message>
+        <location filename="../kts/forms/sendmultirow.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+264"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/sendmultirow.cpp" line="+22"/>
+        <source>Add address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Add description</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SendWidget</name>
+    <message>
+        <location filename="../kts/send.cpp" line="+44"/>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>You can transfer public coins (KTS) or private coins (zKTS)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Select coin type to spend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Enter a KTS address or contact label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Amount</source>
+        <translation type="unfinished">Amount</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Customize fee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Clear all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add recipient</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>Total to send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <source>Send KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Send zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Total remaining from the selected UTXO</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Total remaining</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>fast</source>
-        <translation>fast</translation>
-    </message>
-    <message>
-        <location line="+360"/>
-        <source>Recommended</source>
+        <location line="+355"/>
+        <source>Customize Fee</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+115"/>
-        <source>Send as zero-fee transaction if possible</source>
-        <translation>Send as zero-fee transaction if possible</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>(confirmation may take longer)</source>
-        <translation>(confirmation may take longer)</translation>
-    </message>
-    <message>
-        <location line="+71"/>
-        <source>Confirm the send action</source>
-        <translation>Confirm the send action</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>S&amp;end</source>
-        <translation>S&amp;end</translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Clear all fields of the form.</source>
-        <translation>Clear all fields of the form.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Send to multiple recipients at once</source>
-        <translation>Send to multiple recipients at once</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Add &amp;Recipient</source>
-        <translation>Add &amp;Recipient</translation>
-    </message>
-    <message>
-        <location line="+35"/>
-        <source>Anonymized KTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Balance:</source>
-        <translation>Balance:</translation>
-    </message>
-    <message>
-        <location filename="../sendcoinsdialog.cpp" line="-590"/>
-        <source>Copy quantity</source>
-        <translation>Copy quantity</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy amount</source>
-        <translation>Copy amount</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy fee</source>
-        <translation>Copy fee</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy after fee</source>
-        <translation>Copy after fee</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy bytes</source>
-        <translation>Copy bytes</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy priority</source>
-        <translation>Copy priority</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy dust</source>
-        <translation>Copy dust</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy change</source>
-        <translation>Copy change</translation>
-    </message>
-    <message>
-        <location line="+146"/>
-        <source>The split block tool does not work when sending to outside addresses. Try again.</source>
+        <location line="-321"/>
+        <source>Maximum amount of outputs reached</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>The split block tool does not work with multiple addresses. Try again.</source>
+        <source>Invalid entry, previous entries must be valid before add a new one</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+653"/>
-        <source>Warning: Invalid KTS address</source>
+        <location line="+26"/>
+        <source>Invalid entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-615"/>
-        <location line="+4"/>
-        <location line="+4"/>
-        <location line="+3"/>
-        <source>%1 to %2</source>
-        <translation>%1 to %2</translation>
+        <location line="+6"/>
+        <source>No set recipients</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+51"/>
-        <source>Are you sure you want to send?</source>
-        <translation>Are you sure you want to send?</translation>
+        <location line="+12"/>
+        <source>Cannot send, wallet locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Cannot create transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>WARNING:
+Transaction spends a cold-stake delegation, voiding it.
+These coins will no longer be cold-staked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Transaction sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <location line="+38"/>
+        <source>Spend Zerocoin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-38"/>
+        <source>zKTS is currently undergoing maintenance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Coin control mint not found</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>are added as transaction fee</source>
-        <translation>are added as transaction fee</translation>
+        <source>Sending %1 to address %2
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Sending %1 to addresses:
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>zKTS transaction sent!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Too much inputs (</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>) needed.
+Maximum allowed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>
+Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Address label update failed for address: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Invalid change address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Invalid URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Invalid address in URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Custom Fee %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>You don&apos;t have any KTS to select.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>You don&apos;t have any zKTS in your balance to select.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+57"/>
+        <source>Save contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Address field is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Invalid address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Cannot store your own address as contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Update Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Create New Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>New Contact Stored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Error Storing Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsBackupWallet</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsbackupwallet.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <location line="+7"/>
+        <location line="+30"/>
+        <location line="+139"/>
+        <location line="+7"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsbackupwallet.cpp" line="+26"/>
+        <source>Backup Wallet </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change Wallet Passphrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Keep your wallet safe doing regular backups, store your backup file externally.
+This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) from another device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
+Remember to write it down and store it safely, otherwise you might lose access to your funds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Where</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+33"/>
+        <source>Set a folder location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-28"/>
+        <source>Backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Change Passphrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Backup Wallet</source>
+        <translation type="unfinished">Backup Wallet</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Wallet Data (*.dat)</source>
+        <translation type="unfinished">Wallet Data (*.dat)</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Backup created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Backup creation failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Please select a folder to export the backup first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsBitToolWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsbittoolwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <location line="+7"/>
+        <location line="+197"/>
+        <location line="+54"/>
+        <location line="+327"/>
+        <location line="+71"/>
+        <location line="+83"/>
+        <location line="+20"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-251"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-173"/>
+        <source>Decrypt Address Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+63"/>
+        <location filename="../kts/settings/settingsbittoolwidget.cpp" line="+74"/>
+        <source>Import Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+75"/>
+        <location line="+339"/>
+        <source>Clear</source>
+        <translation type="unfinished">Clear</translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsbittoolwidget.cpp" line="-39"/>
+        <source>BIP38 Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Encrypt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Decrypt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+54"/>
+        <source>Encrypted key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-52"/>
+        <source>Enter a encrypted key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+37"/>
+        <source>Passphrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-34"/>
+        <source>Enter a passphrase </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Decrypted address result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Decrypted Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>DECRYPT KEY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Enter a KTS address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Add address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Write a message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Encrypted Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>ENCRYPT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>CLEAR ALL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>CLEAR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <source>The entered passphrase is invalid. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Allowed: 0-9,a-z,A-Z,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>The entered address is invalid.</source>
+        <translation type="unfinished">The entered address is invalid.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+8"/>
+        <source>Please check the address and try again.</source>
+        <translation type="unfinished">Please check the address and try again.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The entered address does not refer to a key.</source>
+        <translation type="unfinished">The entered address does not refer to a key.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <location line="+106"/>
+        <source>Wallet unlock was cancelled.</source>
+        <translation type="unfinished">Wallet unlock was cancelled.</translation>
+    </message>
+    <message>
+        <location line="-99"/>
+        <source>Private key for the entered address is not available.</source>
+        <translation type="unfinished">Private key for the entered address is not available.</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Address encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>No addresses available, you can go to the receive screen and add some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+63"/>
+        <source>Failed to decrypt.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Please check the key and passphrase and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Data Not Valid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Please wait while key is imported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Cannot import address, key already held by the wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Error adding key to the wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Successfully added ktsate key to the wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsConsoleWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsconsolewidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsconsolewidget.cpp" line="+254"/>
+        <source>Console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Console input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Command Line Options </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open Debug File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Cannot open debug file.
+Verify that you have installed a predetermined text editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+142"/>
+        <source>Welcome to the KTS RPC console.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation type="unfinished">Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDisplayOptionsWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsdisplayoptionswidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <location line="+7"/>
+        <location line="+32"/>
+        <location line="+56"/>
+        <location line="+56"/>
+        <location line="+94"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+58"/>
+        <location filename="../kts/settings/settingsdisplayoptionswidget.cpp" line="+97"/>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Discard changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsdisplayoptionswidget.cpp" line="-68"/>
+        <source>Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Customize the display view options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Unit to show amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Decimal digits</source>
+        <translation type="unfinished">Decimal digits</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Third party transactions URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Hide empty balances</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>default</source>
+        <translation type="unfinished">default</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Options reset succeed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsfaqwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <location line="+359"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-339"/>
+        <location line="+365"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-280"/>
+        <source>1) What is KTS?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>2) Why are my KTS unspendable?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>3) KTS privacy? What is Zerocoin (zKTS)?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>4) Why are my zKTS unspendable?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>5) Why did my wallet convert the balance
+    into zKTS automatically?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>6) How do I receive KTS/zKTS?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>7) How do I stake KTS/zKTS?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>8) Where I should go if I need support?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>9) What is a Master Node?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>10) What is a Master Node Controller?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+195"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</source>
-        <translation>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</translation>
+        <source>What is KTS?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+19"/>
-        <source>Confirm send coins</source>
-        <translation>Confirm send coins</translation>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           KTS is a form of digital online money using blockchain technology
+                           that can be easily transferred globally, instantly, and with near
+                           zero fees.  KTS incorporates market leading security &amp;
+                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
+                           to implement ZeroCoin(zKTS) and Zerocoin staking.
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           KTS utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of KTS to participate in earning block rewards
+                           while securing the network with full node wallets, as well as to
+                           run Masternodes to create and vote on proposals.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+247"/>
-        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
-        <translation>A fee %1 times higher than %2 per kB is considered an insanely high fee.</translation>
-    </message>
-    <message numerus="yes">
-        <location line="+121"/>
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation>
-            <numerusform>Estimated to begin confirmation within %n block.</numerusform>
-            <numerusform>Estimated to begin confirmation within %n blocks.</numerusform>
-        </translation>
+        <location line="+59"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-152"/>
-        <source>The recipient address is not valid, please recheck.</source>
-        <translation>The recipient address is not valid, please recheck.</translation>
+        <location line="+21"/>
+        <source>Why are my KTS unspendable?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-346"/>
-        <source>using SwiftX</source>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           Newly received KTS requires 6 confirmations on the network
+                           to become eligible for spending which can take ~6 minutes.
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           Your KTS wallet also needs to be completely synchronized
+                           to see and spend balances on the network.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>KTS privacy? What is Zerocoin (zKTS)?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           zKTS is an optional privacy-centric method of coin mixing on the
+                           KTS blockchain. Basically all your transactions cannot be tracked
+                           on to any block explorer. You can read more about the technicals in the
+                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://KTS.org/zkts/&apos;&gt;
+                           &quot;KTS Zerocoin (zKTS) Technical Paper&quot;&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Why are my zKTS unspendable?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           After minting, zKTS will require 20 confirmations as well as 1
+                           additional mint of the same denomination on the network to
+                           become eligible for spending.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Why did my wallet convert the balance into zKTS automatically?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           By default the KTS wallet will convert 10% of your entire KTS
+                           balance to zKTS to assist the network. If you do not wish to
+                           stake zKTS or take advantage of the privacy benefit it brings,
+                           you can disable the automatic minting in your KTS wallet by
+                           going to Settings-&gt;Options and deselecting “Enable zKTS Automint”.
+                           If you are not making use of the KTS-QT or GUI you can simply open
+                           your kts.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
+                           marks and restart your wallet to disable automint.&lt;/p&gt;
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           You can read more about zKTS in the
+                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://KTS.org/zkts/&apos;&gt; &quot;KTS Zerocoin (zKTS) Technical Paper&quot;&lt;/a&gt;.
+                           If you would like to keep and stake your zKTS, please read the &quot;How do I stake&quot;
+                           section of the FAQ below.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+62"/>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <source>How do I receive KTS/zKTS?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           zKTS can be spent and sent to any KTS address. The receiver will
+                           receive standard KTS but the origin of the KTS is anonymized by the zKTS Protocol.
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           If you want more zKTS you will need to mint your balance in the “Privacy” tab.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>How do I stake KTS/zKTS?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           To Stake KTS:
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Make sure your wallet is completely synchronized and you are using the latest release.
+                           &lt;li&gt;
+                           You must have a balance of KTS with a minimum of 101 confirmations.
+                           &lt;li&gt;
+                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
+                           &lt;li&gt;
+                           Once all those steps are followed staking should be enabled.
+                           &lt;li&gt;
+                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state &quot;Staking Enabled&quot; to indicate it is staking.  Using the command line interface (kts-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           To Stake zKTS:
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Make sure your wallet is completely synchronized and you are using the latest release.
+                           &lt;li&gt;
+                           Your newly minted or existing zKTS balance must have a minimum of 200 confirmations.
+                           &lt;li&gt;
+                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
+                           Staking should now be enabled.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+73"/>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Where I should go if I need support?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           We have support channels in most of our official chat groups, for example
+                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://discord.KTS.org&apos;&gt;
+                           #support in our Discord&lt;/a&gt;.
+                           If you prefer to submit a ticket, One can be
+                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://KTS.freshdesk.com&apos;&gt;
+                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+55"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>What is a Master Node?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
+                           A masternode is a computer running a full node KTS core wallet with a
+                           requirement of 10,000 KTS secured collateral to provide extra services
+                           to the network and in return, receive a portion of the block reward
+                           regularly.  These services include:
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+
+                           &lt;ul&gt;
+                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
+                           &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
+                           &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
+                           &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
+                           &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
+                           &lt;/ul&gt;
+
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           For providing such services, masternodes are also paid a certain portion
+                           of reward for each block. This can serve as a passive income to the
+                           masternode owners minus their running cost.
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+
+                           Masternode Perks:
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;Participate in KTS Governance&lt;/li&gt;
+                           &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
+                           &lt;li&gt;Commodity option for future sale&lt;/li&gt;
+                           &lt;li&gt;Help secure the KTS network&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+
+                           Requirements:
+                           &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;10,000 KTS per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
+                           &lt;li&gt;Need dedicated IP address&lt;/li&gt;
+                           &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+87"/>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>What is a Master Node Controller?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the 10,000 KTS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsfaqwidget.cpp" line="+19"/>
+        <source>Frequently Asked Questions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>You can read more here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+65"/>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsInformationWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsinformationwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <location line="+161"/>
+        <location line="+24"/>
+        <location line="+7"/>
+        <location line="+26"/>
+        <location line="+7"/>
+        <location line="+26"/>
+        <location line="+7"/>
+        <location line="+26"/>
+        <location line="+7"/>
+        <location line="+29"/>
+        <location line="+7"/>
+        <location line="+28"/>
+        <location line="+24"/>
+        <location line="+7"/>
+        <location line="+39"/>
+        <location line="+7"/>
+        <location line="+26"/>
+        <location line="+24"/>
+        <location line="+7"/>
+        <location line="+39"/>
+        <location line="+7"/>
+        <location line="+26"/>
+        <location line="+24"/>
+        <location line="+7"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-536"/>
+        <location filename="../kts/settings/settingsinformationwidget.cpp" line="+96"/>
+        <source>Network Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsinformationwidget.cpp" line="-67"/>
+        <source>Information</source>
+        <translation type="unfinished">Information</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>General</source>
+        <translation type="unfinished">General</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Client Version: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>User Agent:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Using BerkeleyDB version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Datadir: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Startup Time:  </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Network</source>
+        <translation type="unfinished">Network</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Number Connections:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Blockchain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Current Number of Blocks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Last Block Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Memory Pool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Current Number of Transactions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Wallet Conf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>No information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Unable to open backups folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Unable to open kts.conf with default application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>In:</source>
+        <translation type="unfinished">In:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Out:</source>
+        <translation type="unfinished">Out:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMainOptionsWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsmainoptionswidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <location line="+7"/>
+        <location line="+77"/>
+        <location line="+50"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Customize the application window options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+30"/>
+        <location line="+23"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <location filename="../kts/settings/settingsmainoptionswidget.cpp" line="+81"/>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Discard changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+38"/>
-        <source> split into %1 outputs using the UTXO splitter.</source>
+        <location filename="../kts/settings/settingsmainoptionswidget.cpp" line="-1"/>
+        <source>SAVE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+89"/>
-        <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location line="+222"/>
-        <source>The amount to pay must be larger than 0.</source>
-        <translation>The amount to pay must be larger than 0.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>The amount exceeds your balance.</source>
-        <translation>The amount exceeds your balance.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>The total exceeds your balance when the %1 transaction fee is included.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Duplicate address found, can only send to each address once per send operation.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Transaction creation failed!</source>
-        <translation>Transaction creation failed!</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</translation>
+        <location filename="../kts/settings/settingsmainoptionswidget.cpp" line="-31"/>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>Error: The wallet was unlocked only to anonymize coins.</source>
-        <translation>Error: The wallet was unlocked only to anonymize coins.</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <source>Size of database cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+86"/>
-        <source>Pay only the minimum fee of %1</source>
-        <translation>Pay only the minimum fee of %1</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Estimated to get 6 confirmations near instantly with &lt;b&gt;SwiftX&lt;/b&gt;!</source>
+        <location line="+3"/>
+        <source>Number of script verification threads</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+158"/>
-        <source>Warning: Unknown change address</source>
-        <translation>Warning: Unknown change address</translation>
+        <location line="+4"/>
+        <source>Start KTS on system login</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>(no label)</source>
-        <translation>(no label)</translation>
+        <location line="+12"/>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Minimize on close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Reset Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You are just about to reset the app&apos;s options to the default values.
+
+Are you sure?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Options reset succeed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SendCoinsEntry</name>
+    <name>SettingsMultisendDialog</name>
     <message>
-        <location filename="../forms/sendcoinsentry.ui" line="+21"/>
-        <source>This is a normal payment.</source>
-        <translation>This is a normal payment.</translation>
+        <location filename="../kts/settings/forms/settingsmultisenddialog.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <source>Pay &amp;To:</source>
-        <translation>Pay &amp;To:</translation>
+        <location line="+81"/>
+        <source>Transaction Details</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>The KTS address to send the payment to</source>
+        <location line="+110"/>
+        <location line="+64"/>
+        <location line="+58"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+71"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsmultisenddialog.cpp" line="+24"/>
+        <source>New recipient for multisend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Label (optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Enter a label to add this address in your address book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Percentage</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMultisendWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingsmultisendwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <location line="+7"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+228"/>
+        <source>No active Master Node yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <location line="+29"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingsmultisendwidget.cpp" line="+156"/>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other KTS addresses after it matures.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Disable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>No active recipient yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Send stakes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Send masternode rewards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>ADD RECIPIENT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>CLEAR ALL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+57"/>
+        <source>Clear succeed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Clear all failed, could not locate address in wallet file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>The entered address: %1 is invalid.
+Please check the address and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Invalid percentage, please enter values from 1 to 100.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Error saving  MultiSend, failed saving properties to the database.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Unable to activate MultiSend, no available recipients</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Unable to activate MultiSend
+Check one or both of the check boxes to send on stake and/or masternode rewards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Choose previously used address</source>
-        <translation>Choose previously used address</translation>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
+        <location line="+2"/>
+        <source>MultiSend activated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>First multiSend address invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>MultiSend deactivated</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSignMessageWidgets</name>
+    <message>
+        <location filename="../kts/settings/forms/settingssignmessagewidgets.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <location line="+7"/>
+        <location line="+194"/>
+        <location line="+59"/>
+        <location line="+80"/>
+        <location line="+23"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>Clear</source>
+        <translation type="unfinished">Clear</translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingssignmessagewidgets.cpp" line="+35"/>
+        <source>Sign/Verify Message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Paste address from clipboard</source>
-        <translation>Paste address from clipboard</translation>
+        <source>Enter a KTS address or contact label</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
+        <location line="+3"/>
+        <source>Add address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Verify</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Select mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Message</source>
+        <translation type="unfinished">Message</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Write a message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <location line="+2"/>
+        <source>Signature</source>
+        <translation type="unfinished">Signature</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+41"/>
+        <source>SIGN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-40"/>
+        <source>CLEAR ALL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
+        <translation type="unfinished">Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>VERIFY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <location line="+55"/>
+        <source>The entered address is invalid.</source>
+        <translation type="unfinished">The entered address is invalid.</translation>
+    </message>
+    <message>
+        <location line="-55"/>
+        <location line="+8"/>
+        <location line="+47"/>
+        <location line="+7"/>
+        <source>Please check the address and try again.</source>
+        <translation type="unfinished">Please check the address and try again.</translation>
+    </message>
+    <message>
+        <location line="-54"/>
+        <location line="+54"/>
+        <source>The entered address does not refer to a key.</source>
+        <translation type="unfinished">The entered address does not refer to a key.</translation>
+    </message>
+    <message>
+        <location line="-47"/>
+        <source>Wallet unlock was cancelled.</source>
+        <translation type="unfinished">Wallet unlock was cancelled.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+524"/>
-        <location line="+536"/>
-        <source>Remove this entry</source>
-        <translation>Remove this entry</translation>
+        <source>Private key for the entered address is not available.</source>
+        <translation type="unfinished">Private key for the entered address is not available.</translation>
     </message>
     <message>
-        <location line="-1044"/>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <location line="+11"/>
+        <source>Message signing failed.</source>
+        <translation type="unfinished">Message signing failed.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Message signed.</source>
+        <translation type="unfinished">Message signed.</translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>The signature could not be decoded.</source>
+        <translation type="unfinished">The signature could not be decoded.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <location line="+12"/>
+        <source>Please check the signature and try again.</source>
+        <translation type="unfinished">Please check the signature and try again.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>The signature did not match the message digest.</source>
+        <translation type="unfinished">The signature did not match the message digest.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Message verification failed.</source>
+        <translation type="unfinished">Message verification failed.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Message verified.</source>
+        <translation type="unfinished">Message verified.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>No addresses available, you can go to the receive screen and add some there!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWalletOptionsWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingswalletoptionswidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <location line="+7"/>
+        <location line="+35"/>
+        <location line="+124"/>
+        <location line="+7"/>
+        <location line="+101"/>
+        <location line="+43"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-222"/>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+129"/>
+        <location line="+7"/>
+        <location line="+7"/>
+        <source>RadioButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+139"/>
+        <location filename="../kts/settings/settingswalletoptionswidget.cpp" line="+69"/>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Discard changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingswalletoptionswidget.cpp" line="-43"/>
+        <source>Wallet</source>
+        <translation type="unfinished">Wallet</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Customize the internal wallet options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Stake split threshold:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Spend unconfirmed change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Network</source>
+        <translation type="unfinished">Network</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Customize the node network options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Proxy IP:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Enter proxy IP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Map port using UPnP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Allow incoming connections</source>
+        <translation type="unfinished">Allow incoming connections</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Options reset succeed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWalletRepairWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingswalletrepairwidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+94"/>
+        <location line="+7"/>
+        <location line="+64"/>
+        <location line="+65"/>
+        <location line="+65"/>
+        <location line="+65"/>
+        <location line="+65"/>
+        <location line="+65"/>
+        <location line="+71"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingswalletrepairwidget.cpp" line="+22"/>
+        <source>Wallet Repair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rescan the blockchain for missing wallet transactions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recover transactions from blockchain (drop meta-data).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rebuild blockchain index from current blk000???.dat files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Salvage wallet</source>
+        <translation type="unfinished">Salvage wallet</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rescan blockchain file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recover transactions 1</source>
+        <translation type="unfinished">Recover transactions 1</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Recover transactions 2</source>
+        <translation type="unfinished">Recover transactions 2</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Upgrade wallet format</source>
+        <translation type="unfinished">Upgrade wallet format</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Rebuild index</source>
+        <translation type="unfinished">Rebuild index</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Delete local blockchain </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+53"/>
+        <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Your transactions and funds will be visible again after the download has completed.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Do you want to continue?.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Confirm resync Blockchain</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWidget</name>
+    <message>
+        <location filename="../kts/settings/forms/settingswidget.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+58"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+155"/>
+        <source>Wallet Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <location line="+267"/>
+        <source>Wallet</source>
+        <translation type="unfinished">Wallet</translation>
+    </message>
+    <message>
+        <location line="-239"/>
+        <source>Multisend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>Sign/Verify Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>BIP38 Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>Options</source>
+        <translation type="unfinished">Options</translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+59"/>
+        <source>Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>Information</source>
+        <translation type="unfinished">Information</translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Console</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Wallet Repair</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+42"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>FAQ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>About KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/settings/settingswidget.cpp" line="+47"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+150"/>
+        <source>Confirm options reset</source>
+        <translation type="unfinished">Confirm options reset</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Client restart required to activate changes.</source>
+        <translation type="unfinished">Client restart required to activate changes.</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Client will be shutdown, do you want to proceed?</source>
+        <translation type="unfinished">Client will be shutdown, do you want to proceed?</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Enter a label for this address to add it to the list of used addresses</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <location line="+521"/>
-        <location line="+536"/>
-        <source>A&amp;mount:</source>
-        <translation>A&amp;mount:</translation>
-    </message>
-    <message>
-        <location line="-1041"/>
-        <source>Message:</source>
-        <translation>Message:</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>A message that was attached to the KTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KTS network.</source>
+        <source>Restart required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+426"/>
-        <source>This is an unverified payment request.</source>
-        <translation>This is an unverified payment request.</translation>
+        <location line="+0"/>
+        <source>Your wallet needs to be restarted to apply the changes
+</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
-        <location line="+532"/>
-        <source>Pay To:</source>
-        <translation>Pay To:</translation>
+        <location line="+0"/>
+        <source>Restart Now</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-498"/>
-        <location line="+536"/>
-        <source>Memo:</source>
-        <translation>Memo:</translation>
+        <location line="+0"/>
+        <source>Restart Later</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-56"/>
-        <source>This is a verified payment request.</source>
-        <translation>This is a verified payment request.</translation>
+        <location line="+17"/>
+        <source>Options will be applied on next wallet restart</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sendcoinsentry.cpp" line="+30"/>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Enter a label for this address to add it to your address book</translation>
+        <location line="+3"/>
+        <source>Options stored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Options store failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+169"/>
+        <source>Discard Unsaved Changes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>You are just about to discard all of your unsaved options.
+
+Are you sure?
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <location filename="../utilitydialog.cpp" line="+75"/>
+        <location filename="../utilitydialog.cpp" line="+70"/>
         <source>KTS Core is shutting down...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5344,185 +6558,34 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>SignVerifyMessageDialog</name>
+    <name>SnackBar</name>
     <message>
-        <location filename="../forms/signverifymessagedialog.ui" line="+14"/>
-        <source>Signatures - Sign / Verify a Message</source>
-        <translation>Signatures - Sign / Verify a Message</translation>
+        <location filename="../kts/forms/snackbar.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+13"/>
-        <source>&amp;Sign Message</source>
-        <translation>&amp;Sign Message</translation>
+        <location line="+51"/>
+        <source>Contact Stored</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Splash</name>
+    <message>
+        <location filename="../kts/forms/splash.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
-        <source>The KTS address to sign the message with</source>
+        <location line="+143"/>
+        <source>Loading…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
-        <location line="+195"/>
-        <source>Choose previously used address</source>
-        <translation>Choose previously used address</translation>
-    </message>
-    <message>
-        <location line="-185"/>
-        <location line="+195"/>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <location line="-188"/>
-        <source>Paste address from clipboard</source>
-        <translation>Paste address from clipboard</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Enter the message you want to sign here</source>
-        <translation>Enter the message you want to sign here</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Signature</source>
-        <translation>Signature</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Copy the current signature to the system clipboard</translation>
-    </message>
-    <message>
-        <location line="+18"/>
-        <source>Sign the message to prove you own this KTS address</source>
+        <location filename="../kts/splash.cpp" line="+29"/>
+        <source>KTS Core</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+103"/>
-        <source>The KTS address the message was signed with</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+34"/>
-        <source>Verify the message to ensure it was signed with the specified KTS address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-134"/>
-        <source>Sign &amp;Message</source>
-        <translation>Sign &amp;Message</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Reset all sign message fields</source>
-        <translation>Reset all sign message fields</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <location line="+137"/>
-        <source>Clear &amp;All</source>
-        <translation>Clear &amp;All</translation>
-    </message>
-    <message>
-        <location line="-78"/>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;Verify Message</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</translation>
-    </message>
-    <message>
-        <location line="+55"/>
-        <source>Verify &amp;Message</source>
-        <translation>Verify &amp;Message</translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Reset all verify message fields</source>
-        <translation>Reset all verify message fields</translation>
-    </message>
-    <message>
-        <location filename="../signverifymessagedialog.cpp" line="+30"/>
-        <source>Click &quot;Sign Message&quot; to generate signature</source>
-        <translation>Click &quot;Sign Message&quot; to generate signature</translation>
-    </message>
-    <message>
-        <location line="+79"/>
-        <location line="+73"/>
-        <source>The entered address is invalid.</source>
-        <translation>The entered address is invalid.</translation>
-    </message>
-    <message>
-        <location line="-73"/>
-        <location line="+7"/>
-        <location line="+66"/>
-        <location line="+7"/>
-        <source>Please check the address and try again.</source>
-        <translation>Please check the address and try again.</translation>
-    </message>
-    <message>
-        <location line="-73"/>
-        <location line="+73"/>
-        <source>The entered address does not refer to a key.</source>
-        <translation>The entered address does not refer to a key.</translation>
-    </message>
-    <message>
-        <location line="-66"/>
-        <source>Wallet unlock was cancelled.</source>
-        <translation>Wallet unlock was cancelled.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Private key for the entered address is not available.</source>
-        <translation>Private key for the entered address is not available.</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Message signing failed.</source>
-        <translation>Message signing failed.</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Message signed.</source>
-        <translation>Message signed.</translation>
-    </message>
-    <message>
-        <location line="+53"/>
-        <source>The signature could not be decoded.</source>
-        <translation>The signature could not be decoded.</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <location line="+12"/>
-        <source>Please check the signature and try again.</source>
-        <translation>Please check the signature and try again.</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>The signature did not match the message digest.</source>
-        <translation>The signature did not match the message digest.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Message verification failed.</source>
-        <translation>Message verification failed.</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Message verified.</source>
-        <translation>Message verified.</translation>
     </message>
 </context>
 <context>
@@ -5559,6 +6622,178 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>TooltipMenu</name>
+    <message>
+        <location filename="../kts/forms/tooltipmenu.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+60"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Last</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TopBar</name>
+    <message>
+        <location filename="../kts/forms/topbar.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+96"/>
+        <location line="+279"/>
+        <source>480.0685 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-210"/>
+        <location line="+321"/>
+        <source>1,000 zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-118"/>
+        <location line="+111"/>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-88"/>
+        <location line="+111"/>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <source>6.943 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <location line="+111"/>
+        <source>Immature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-104"/>
+        <source>10 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>60 zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>10 zKTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/topbar.cpp" line="+240"/>
+        <source>Wallet Unlocked for staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Error generating address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Address Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+73"/>
+        <source>Automint enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Automint disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Staking active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Staking not active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+20"/>
+        <source>%n active connection(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+34"/>
+        <source>Synchronized</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+35"/>
+        <source>%n hour(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n hour</numerusform>
+            <numerusform>%n hours</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location line="+2"/>
+        <source>%n day(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n day</numerusform>
+            <numerusform>%n days</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location line="+2"/>
+        <location line="+5"/>
+        <source>%n week(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n week</numerusform>
+            <numerusform>%n weeks</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="-1"/>
+        <source>%1 and %2</source>
+        <translation type="unfinished">%1 and %2</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+0"/>
+        <source>%n year(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n year</numerusform>
+            <numerusform>%n years</numerusform>
+        </translation>
+    </message>
+</context>
+<context>
     <name>TrafficGraphWidget</name>
     <message>
         <location filename="../trafficgraphwidget.cpp" line="+79"/>
@@ -5569,7 +6804,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 <context>
     <name>TransactionDesc</name>
     <message numerus="yes">
-        <location filename="../transactiondesc.cpp" line="+33"/>
+        <location filename="../transactiondesc.cpp" line="+32"/>
         <source>Open for %n more block(s)</source>
         <translation>
             <numerusform>Open for %n more block</numerusform>
@@ -5583,14 +6818,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+8"/>
-        <location line="+11"/>
-        <location line="+10"/>
-        <location line="+12"/>
         <source>conflicted</source>
         <translation>conflicted</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+31"/>
         <source>%1/offline</source>
         <translation>%1/offline</translation>
     </message>
@@ -5600,13 +6832,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>%1/unconfirmed</translation>
     </message>
     <message>
-        <location line="-10"/>
-        <location line="+12"/>
+        <location line="-7"/>
+        <location line="+9"/>
         <source>%1 confirmations</source>
         <translation>%1 confirmations</translation>
     </message>
     <message>
-        <location line="-37"/>
+        <location line="-28"/>
         <source>%1/offline (verified via SwiftX)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5621,7 +6853,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+4"/>
         <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5636,7 +6868,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+3"/>
         <source>%1/offline (SwiftX verification failed)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5646,7 +6878,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+26"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -5789,12 +7021,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Merchant</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location line="+13"/>
         <source>Debug information</source>
         <translation>Debug information</translation>
     </message>
@@ -5827,22 +7054,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>TransactionDescDialog</name>
-    <message>
-        <location filename="../forms/transactiondescdialog.ui" line="+14"/>
-        <source>Transaction details</source>
-        <translation>Transaction details</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>This pane shows a detailed description of the transaction</source>
-        <translation>This pane shows a detailed description of the transaction</translation>
-    </message>
-</context>
-<context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+215"/>
+        <location filename="../transactiontablemodel.cpp" line="+292"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -5857,7 +7071,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Address</translation>
     </message>
     <message numerus="yes">
-        <location line="+57"/>
+        <location line="+69"/>
         <source>Open for %n more block(s)</source>
         <translation>
             <numerusform>Open for %n more block</numerusform>
@@ -5935,6 +7149,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+2"/>
+        <source>KTS Cold Stake</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>KTS Stake in behalf of</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Stake delegation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+4"/>
         <source>Obfuscation Denominate</source>
         <translation type="unfinished"></translation>
@@ -5980,17 +7209,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+56"/>
-        <source>Anonymous (zKTS Transaction)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Anonymous (zKTS Stake)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-86"/>
+        <location line="-35"/>
         <source>Sent to</source>
         <translation>Sent to</translation>
     </message>
@@ -6005,7 +7224,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Payment to yourself</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+13"/>
         <source>Mined</source>
         <translation>Mined</translation>
     </message>
@@ -6015,17 +7234,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Obfuscated</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+43"/>
         <source>watch-only</source>
         <translation>watch-only</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+23"/>
+        <source>Anonymous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>No information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>(n/a)</source>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+211"/>
+        <location line="+210"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Transaction status. Hover over this field to show number of confirmations.</translation>
     </message>
@@ -6056,249 +7285,191 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>TransactionView</name>
+    <name>TxDetailDialog</name>
     <message>
-        <location filename="../transactionview.cpp" line="+69"/>
-        <location line="+17"/>
-        <source>All</source>
-        <translation>All</translation>
+        <location filename="../kts/forms/sendconfirmdialog.ui" line="+26"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
     <message>
-        <location line="-16"/>
-        <source>Today</source>
-        <translation>Today</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This week</source>
-        <translation>This week</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This month</source>
-        <translation>This month</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Last month</source>
-        <translation>Last month</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This year</source>
-        <translation>This year</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Range...</source>
-        <translation>Range...</translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Most Common</source>
-        <translation>Most Common</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Received with</source>
-        <translation>Received with</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Sent to</source>
-        <translation>Sent to</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>To yourself</source>
-        <translation>To yourself</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Mined</source>
-        <translation>Mined</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Minted</source>
+        <location line="+90"/>
+        <location filename="../kts/sendconfirmdialog.cpp" line="+74"/>
+        <source>Transaction Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Masternode Reward</source>
+        <location line="+163"/>
+        <source>ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+72"/>
+        <source>Sending to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+96"/>
+        <source>Total amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>2 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+47"/>
+        <source>Coin inputs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>1 Inputs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>Previous Transaction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Output Index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Fee:</source>
+        <translation type="unfinished">Fee:</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>0.0001 KTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Change address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Confirmations:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>2 kB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Date:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>May 25, 2017</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Spendable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/sendconfirmdialog.cpp" line="-26"/>
+        <source>Confirm Your Transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Zerocoin Mint</source>
+        <source>SEND</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Zerocoin Spend</source>
+        <location line="+63"/>
+        <source>ID copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Zerocoin Spend to Self</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Other</source>
-        <translation>Other</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Enter address or label to search</source>
-        <translation>Enter address or label to search</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Min amount</source>
-        <translation>Min amount</translation>
-    </message>
-    <message>
-        <location line="+35"/>
-        <source>Copy address</source>
-        <translation>Copy address</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy label</source>
-        <translation>Copy label</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy amount</source>
-        <translation>Copy amount</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copy transaction ID</source>
-        <translation>Copy transaction ID</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Edit label</source>
-        <translation>Edit label</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show transaction details</source>
-        <translation>Show transaction details</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Hide orphan stakes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+228"/>
-        <source>Export Transaction History</source>
-        <translation>Export Transaction History</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Comma separated file (*.csv)</translation>
-    </message>
-    <message>
-        <location line="+11"/>
-        <source>Confirmed</source>
-        <translation>Confirmed</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Watch-only</source>
-        <translation>Watch-only</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Date</source>
-        <translation>Date</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Type</source>
-        <translation>Type</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Label</source>
-        <translation>Label</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Address</source>
-        <translation>Address</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Exporting Failed</source>
-        <translation>Exporting Failed</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>There was an error trying to save the transaction history to %1.</source>
-        <translation>There was an error trying to save the transaction history to %1.</translation>
-    </message>
-    <message>
-        <location line="-4"/>
-        <source>Exporting Successful</source>
-        <translation>Exporting Successful</translation>
-    </message>
-    <message>
-        <location line="-310"/>
-        <source>Received KTS from zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Zerocoin Spend, Change in zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+307"/>
-        <source>The transaction history was successfully saved to %1.</source>
-        <translation>The transaction history was successfully saved to %1.</translation>
-    </message>
-    <message>
-        <location line="+121"/>
-        <source>Range:</source>
-        <translation>Range:</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>to</source>
-        <translation>to</translation>
+        <location line="+91"/>
+        <source>Unknown</source>
+        <translation type="unfinished">Unknown</translation>
     </message>
 </context>
 <context>
-    <name>UnitDisplayStatusBarControl</name>
+    <name>TxRow</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+120"/>
-        <source>Unit to show amounts in. Click to select another unit.</source>
-        <translation>Unit to show amounts in. Click to select another unit.</translation>
+        <location filename="../kts/forms/txrow.ui" line="+20"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
     </message>
-</context>
-<context>
-    <name>WalletFrame</name>
     <message>
-        <location filename="../walletframe.cpp" line="+26"/>
-        <source>No wallet has been loaded.</source>
-        <translation>No wallet has been loaded.</translation>
+        <location line="+93"/>
+        <source>Received from Bob</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>18/05/18</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>+0.000585 KTS</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WalletModel</name>
     <message>
-        <location filename="../walletmodel.cpp" line="+334"/>
+        <location filename="../walletmodel.cpp" line="+434"/>
         <location line="+9"/>
         <location line="+9"/>
         <source>Send Coins</source>
@@ -6312,36 +7483,122 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>WalletView</name>
+    <name>WalletPasswordDialog</name>
     <message>
-        <location filename="../walletview.cpp" line="+63"/>
-        <source>HISTORY</source>
+        <location filename="../kts/forms/walletpassworddialog.ui" line="+14"/>
+        <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
-        <source>&amp;Export</source>
-        <translation>&amp;Export</translation>
+        <location line="+81"/>
+        <location line="+115"/>
+        <location line="+113"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Export the data in the current tab to a file</source>
-        <translation>Export the data in the current tab to a file</translation>
+        <location line="-156"/>
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Selected amount:</source>
-        <translation>Selected amount:</translation>
+        <location line="+222"/>
+        <source>CANCEL</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+257"/>
-        <source>Backup Wallet</source>
-        <translation>Backup Wallet</translation>
+        <location line="+16"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeContentWidget</name>
+    <message>
+        <location filename="../kts/forms/welcomecontentwidget.ui" line="+14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Wallet Data (*.dat)</source>
-        <translation>Wallet Data (*.dat)</translation>
+        <location line="+230"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+86"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+86"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+86"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+114"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Welcome</source>
+        <translation type="unfinished">Welcome</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Privacy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Masternodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+108"/>
+        <source>Select your language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+89"/>
+        <source>Welcome to
+KTS Core Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>KTS is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+93"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - KTS believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+83"/>
+        <source>The masternode network is KTS&apos;s second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-103"/>
+        <source>How KTS respects your privacy?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+80"/>
+        <source>What is a Masternode?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../kts/welcomecontentwidget.cpp" line="+173"/>
+        <source>default</source>
+        <translation type="unfinished">default</translation>
     </message>
 </context>
 <context>
@@ -6352,29 +7609,48 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+28"/>
-        <source>Quantity</source>
+        <location line="+81"/>
+        <source>Coin Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>zKts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+14"/>
+        <source>0.00 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Quantity:</source>
+        <translation type="unfinished">Quantity:</translation>
+    </message>
+    <message>
+        <location line="+135"/>
+        <source>Is Spendable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-128"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-7"/>
-        <source>zKTS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+39"/>
+        <location line="+45"/>
         <source>Select/Deselect All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+74"/>
-        <source>Is Spendable</source>
+        <location filename="../zktscontroldialog.cpp" line="+39"/>
+        <source>Select zKTS Denominations to Spend</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6447,11 +7723,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+5"/>
+        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Enable automatic wallet backups triggered after each zKTS minting (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Enable or disable staking functionality for KTS inputs (0-1, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6517,11 +7803,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation type="unfinished">Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation type="unfinished">If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</translation>
     </message>
@@ -6557,11 +7838,21 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
+        <source>Maximum average size of an index occurrence in the block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation type="unfinished">Maximum size of data in data carrier transactions we relay and mine (default: %u)</translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>Maximum size of the list of indexes in the block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
         <translation type="unfinished">Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</translation>
     </message>
@@ -6607,6 +7898,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
+        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation type="unfinished">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
@@ -6623,6 +7919,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+12"/>
         <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6647,12 +7948,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6672,6 +7973,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
+        <source>Warning: Peers are being disconnected due time differences. Please check that your computer&apos;s date and time are correct! If your clock is wrong KTS Core will not work properly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong KTS Core will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6712,8 +8018,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+3"/>
-        <source>(10300 could be used only on mainnet)</source>
-        <translation type="unfinished">(10300 could be used only on mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation type="unfinished">(51472 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6727,7 +8033,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 10300 for mainnet)</source>
+        <source>(must be 51472 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6752,13 +8058,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation type="unfinished">Allow DNS lookups for -addnode, -seednode and -connect</translation>
+        <source>Adding Wrapped Serials supply...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Already have that input.</source>
-        <translation type="unfinished">Already have that input.</translation>
+        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
+        <translation type="unfinished">Allow DNS lookups for -addnode, -seednode and -connect</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6791,22 +8097,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Can&apos;t denominate: no compatible inputs left.</source>
-        <translation type="unfinished">Can&apos;t denominate: no compatible inputs left.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Can&apos;t find random Masternode.</source>
-        <translation type="unfinished">Can&apos;t find random Masternode.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Can&apos;t mix while sync in progress.</source>
-        <translation type="unfinished">Can&apos;t mix while sync in progress.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Cannot downgrade wallet</source>
         <translation type="unfinished">Cannot downgrade wallet</translation>
     </message>
@@ -6826,14 +8117,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Cannot resolve -whitebind address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Cannot write default address</source>
-        <translation type="unfinished">Cannot write default address</translation>
-    </message>
-    <message>
         <location line="+2"/>
-        <source>Collateral not valid.</source>
-        <translation type="unfinished">Collateral not valid.</translation>
+        <source>CoinSpend: failed check</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6867,7 +8153,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) %i The KTS Core Developers</source>
+        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6879,6 +8165,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Could not parse masternode.conf</source>
         <translation type="unfinished">Could not parse masternode.conf</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Couldn&apos;t generate the accumulator witness</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6926,6 +8217,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Enable precomputation of zKTS spends and stakes (0-1, default %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+2"/>
         <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
         <translation type="unfinished"></translation>
@@ -6939,16 +8235,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+3"/>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation type="unfinished">Enable the client to act as a masternode (0-1, default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Entries are full.</source>
-        <translation type="unfinished">Entries are full.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Error connecting to Masternode.</source>
-        <translation type="unfinished">Error connecting to Masternode.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6992,11 +8278,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Error recovering public key.</source>
-        <translation type="unfinished">Error recovering public key.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Error writing zerocoinDB to disk</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7012,11 +8293,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+2"/>
-        <source>Error: Can&apos;t select current denominated inputs</source>
-        <translation type="unfinished">Error: Can&apos;t select current denominated inputs</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Error: Disk space is low!</source>
         <translation type="unfinished">Error: Disk space is low!</translation>
     </message>
@@ -7032,16 +8308,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation type="unfinished">Failed to listen on any port. Use -listen=0 if you want this.</translation>
     </message>
@@ -7051,7 +8322,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Failed to read block</source>
         <translation type="unfinished">Failed to read block</translation>
     </message>
@@ -7062,23 +8333,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Finalizing transaction.</source>
-        <translation type="unfinished">Finalizing transaction.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Force safe mode (default: %u)</source>
         <translation type="unfinished">Force safe mode (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation type="unfinished">Found enough users, signing ( waiting %s )</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Found enough users, signing ...</source>
-        <translation type="unfinished">Found enough users, signing ...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7112,16 +8368,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Incompatible mode.</source>
-        <translation type="unfinished">Incompatible mode.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Incompatible version.</source>
-        <translation type="unfinished">Incompatible version.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation type="unfinished">Incorrect or no genesis block found. Wrong datadir for network?</translation>
     </message>
@@ -7134,11 +8380,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Initialization sanity check failed. KTS Core is shutting down.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Input is not valid.</source>
-        <translation type="unfinished">Input is not valid.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7206,22 +8447,27 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Invalid port detected in masternode.conf</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid private key.</source>
-        <translation type="unfinished">Invalid private key.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Invalid script detected.</source>
-        <translation type="unfinished">Invalid script detected.</translation>
-    </message>
-    <message>
-        <location line="+49"/>
+        <location line="+32"/>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
+        <source>Recalculating KTS supply...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Recalculating minted ZKTS...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Recalculating spent ZKTS...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Reindex the KTS and zKTS money supply statistics</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7241,17 +8487,22 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+27"/>
+        <source>Support the zerocoin light node protocol (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>SwiftX options:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-274"/>
+        <location line="-247"/>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-175"/>
+        <location line="-189"/>
         <source> mints deleted
 </source>
         <translation type="unfinished"></translation>
@@ -7278,7 +8529,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+22"/>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7303,17 +8554,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+14"/>
         <source>In rare cases, a spend with 7 coins exceeds our maximum allowable transaction size, please retry spend using 6 or less coins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+37"/>
         <source>Preferred Denomination for automatically minted Zerocoin  (1/5/10/50/100/500/1000/5000), 0 for no preference. default: %u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Specify custom backup path to add a copy of any automatic zKTS backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup. If backuppath is set as well, 4 backups will happen</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7328,7 +8579,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+70"/>
         <source>&lt;category&gt; can be:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7338,12 +8589,17 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+5"/>
+        <source>Cannot create public spend input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
         <source>CoinSpend: Accumulator witness does not verify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>Display the stake modifier calculations in the debug.log file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7353,7 +8609,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+6"/>
         <source>Enable publish hash block in &lt;address&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7378,23 +8634,18 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+13"/>
         <source>Error: A fatal internal error occurred, see debug.log for details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+2"/>
         <source>Error: No valid utxo!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Failed to create mint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Failed to deserialize</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7403,7 +8654,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+3"/>
+        <source>Failed to parse public spend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Failed to select a zerocoin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7418,19 +8674,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+33"/>
+        <location line="+25"/>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation type="unfinished">Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Last Obfuscation was too recent.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7499,11 +8745,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Lock is already in place.</source>
-        <translation type="unfinished">Lock is already in place.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation type="unfinished">Lock masternodes from masternode configuration file (default: %u)</translation>
     </message>
@@ -7524,16 +8765,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Masternode queue is full.</source>
-        <translation type="unfinished">Masternode queue is full.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Masternode:</source>
-        <translation type="unfinished">Masternode:</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation type="unfinished">Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
     </message>
@@ -7548,44 +8779,9 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Missing input transaction information.</source>
-        <translation type="unfinished">Missing input transaction information.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Mixing in progress...</source>
-        <translation type="unfinished">Mixing in progress...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Need address because change is not exact</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
         <translation type="unfinished">Need to specify a port with -whitebind: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No Masternodes detected.</source>
-        <translation type="unfinished">No Masternodes detected.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No compatible Masternode found.</source>
-        <translation type="unfinished">No compatible Masternode found.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No funds detected in need of denominating.</source>
-        <translation type="unfinished">No funds detected in need of denominating.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No matching denominations found for mixing.</source>
-        <translation type="unfinished">No matching denominations found for mixing.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7594,23 +8790,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Non-standard public key detected.</source>
-        <translation type="unfinished">Non-standard public key detected.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Not compatible with existing transactions.</source>
-        <translation type="unfinished">Not compatible with existing transactions.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Not enough file descriptors available.</source>
         <translation type="unfinished">Not enough file descriptors available.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Not in the Masternode list.</source>
-        <translation type="unfinished">Not in the Masternode list.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7620,21 +8801,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <location line="+1"/>
         <source>Number of custom location backups to retain (default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Obfuscation is idle.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Obfuscation request complete:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Obfuscation request incomplete:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7658,23 +8824,53 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Password for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+122"/>
-        <source>isValid(): Invalid -proxy address or hostname: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-120"/>
-        <source>Preparing for resync...</source>
+        <location line="+80"/>
+        <source>Unable to find transaction containing mint %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Unable to find transaction containing mint, txHash: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Use block spam filter (default: %u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>could not get lock on cs_spendcache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>isValid(): Invalid -proxy address or hostname: &apos;%s&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-109"/>
+        <source>Preparing for resync...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-11"/>
+        <source>Need destination or change address because change is not exact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation type="unfinished">Prepend debug output with timestamp (default: %u)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Print version and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pubcoin not found in mint tx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7698,7 +8894,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Rebuild block chain index from current blk000??.dat files</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+4"/>
         <source>Receive and display P2P network alerts (default: %u)</source>
         <translation type="unfinished">Receive and display P2P network alerts (default: %u)</translation>
     </message>
@@ -7751,11 +8947,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+2"/>
         <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
         <translation type="unfinished">Send transactions as zero-fee transactions if possible (default: %u)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Session not complete!</source>
-        <translation type="unfinished">Session not complete!</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7816,11 +9007,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation type="unfinished">Shrink debug.log file on client startup (default: 1 when no -debug)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Signing failed.</source>
-        <translation type="unfinished">Signing failed.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -7888,22 +9074,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Stop running after importing blocks from disk (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation type="unfinished">Submitted following entries to masternode: %u / %d</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation type="unfinished">Submitted to masternode, waiting for more entries ( %u / %d ) %s</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation type="unfinished">Submitted to masternode, waiting in queue %s</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>Synchronization failed</source>
         <translation type="unfinished">Synchronization failed</translation>
     </message>
@@ -7949,16 +9120,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>The new spend coin transaction did not verify</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>The transaction did not verify</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7976,11 +9137,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>This is intended for regression testing tools and app development.</source>
         <translation type="unfinished">This is intended for regression testing tools and app development.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This is not a Masternode.</source>
-        <translation type="unfinished">This is not a Masternode.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8024,21 +9180,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Transaction created successfully.</source>
-        <translation type="unfinished">Transaction created successfully.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transaction fees are too high.</source>
-        <translation type="unfinished">Transaction fees are too high.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transaction not valid.</source>
-        <translation type="unfinished">Transaction not valid.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Transaction too large for fee policy</source>
         <translation type="unfinished">Transaction too large for fee policy</translation>
     </message>
@@ -8046,16 +9187,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Transaction too large</source>
         <translation type="unfinished">Transaction too large</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Transmitting final transaction.</source>
-        <translation type="unfinished">Transmitting final transaction.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8068,8 +9199,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished">Unable to bind to %s on this computer (bind returned error %s)</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Unable to find transaction containing mint</source>
+        <location line="+3"/>
+        <source>Unable to generate initial key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8086,11 +9217,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
         <translation type="unfinished">Unknown network specified in -onlynet: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Unknown state: id = %u</source>
-        <translation type="unfinished">Unknown state: id = %u</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8113,7 +9239,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Use the test network</source>
         <translation type="unfinished">Use the test network</translation>
     </message>
@@ -8134,11 +9260,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Verifying blocks...</source>
         <translation type="unfinished">Verifying blocks...</translation>
     </message>
@@ -8149,18 +9270,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Wallet %s resides outside data directory %s</source>
         <translation type="unfinished">Wallet %s resides outside data directory %s</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Wallet is locked.</source>
-        <translation type="unfinished">Wallet is locked.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8199,11 +9310,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <location line="+1"/>
-        <source>Will retry...</source>
-        <translation type="unfinished">Will retry...</translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>You don&apos;t have enough Zerocoins in your wallet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8211,16 +9317,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation type="unfinished">You need to rebuild the database using -reindex to change -txindex</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your entries added successfully.</source>
-        <translation type="unfinished">Your entries added successfully.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation type="unfinished">Your transaction was accepted into the pool!</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8238,7 +9334,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+3"/>
         <source>on startup</source>
         <translation type="unfinished">on startup</translation>
     </message>
@@ -8246,6 +9342,39 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <location line="+1"/>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation type="unfinished">wallet.dat corrupt, salvage failed</translation>
+    </message>
+</context>
+<context>
+    <name>send</name>
+    <message>
+        <location filename="../kts/forms/send.ui" line="+14"/>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <location line="+60"/>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <location line="+113"/>
+        <location line="+50"/>
+        <location line="+23"/>
+        <location line="+280"/>
+        <location line="+7"/>
+        <location line="+65"/>
+        <location line="+7"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-238"/>
+        <location line="+29"/>
+        <location line="+26"/>
+        <location line="+340"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

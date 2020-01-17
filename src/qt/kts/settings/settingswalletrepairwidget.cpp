@@ -1,19 +1,11 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/settings/settingswalletrepairwidget.h"
 #include "qt/kts/settings/forms/ui_settingswalletrepairwidget.h"
 #include "qt/kts/qtutils.h"
-
-// Repair parameters
-const QString SALVAGEWALLET("-salvagewallet");
-const QString RESCAN("-rescan");
-const QString ZAPTXES1("-zapwallettxes=1");
-const QString ZAPTXES2("-zapwallettxes=2");
-const QString UPGRADEWALLET("-upgradewallet");
-const QString REINDEX("-reindex");
-const QString RESYNC("-resync");
 
 SettingsWalletRepairWidget::SettingsWalletRepairWidget(KTSGUI* _window, QWidget *parent) :
     PWidget(_window, parent),

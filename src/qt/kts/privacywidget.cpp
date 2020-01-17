@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -165,9 +166,13 @@ void PrivacyWidget::loadWalletModel(){
         txModel = walletModel->getTransactionTableModel();
         // Set up transaction list
         filter = new TransactionFilterProxy();
+        filter->setDynamicSortFilter(true);
+        filter->setSortCaseSensitivity(Qt::CaseInsensitive);
+        filter->setFilterCaseSensitivity(Qt::CaseInsensitive);
+        filter->setSortRole(Qt::EditRole);
+        filter->setShowZcTxes(true);
         filter->setSourceModel(txModel);
         filter->sort(TransactionTableModel::Date, Qt::DescendingOrder);
-        filter->setShowZcTxes(true);
         txHolder->setDisplayUnit(walletModel->getOptionsModel()->getDisplayUnit());
         txHolder->setFilter(filter);
         ui->listView->setModel(filter);
@@ -230,7 +235,7 @@ void PrivacyWidget::onSendClicked(){
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    if(GetAdjustedTime() > GetSporkValue(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
+    if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE)) {
         warn(tr("Zerocoin"), tr("zKTS is currently undergoing maintenance"));
         return;
     }
@@ -305,6 +310,8 @@ void PrivacyWidget::onCoinControlClicked(){
             if (!coinControlDialog) {
                 coinControlDialog = new CoinControlDialog();
                 coinControlDialog->setModel(walletModel);
+            } else {
+                coinControlDialog->refreshDialog();
             }
             coinControlDialog->exec();
             ui->btnCoinControl->setActive(CoinControlDialog::coinControl->HasSelected());

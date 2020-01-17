@@ -1719,9 +1719,9 @@ Please check the address and try again.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</source>
+https://www.transifex.com/kts-project/kts-project-translations</source>
         <translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</translation>
+https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -4114,12 +4114,12 @@ for example: alertnotify=echo %%s | mail -s "KTS Alert" admin@foo.com
         <translation>Unable to locate enough Obfuscation denominated funds for this transaction.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
-        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
+        <translation>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -4166,8 +4166,8 @@ for example: alertnotify=echo %%s | mail -s "KTS Alert" admin@foo.com
         <translation>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</translation>
     </message>
     <message>
-        <source>(10300 could be used only on mainnet)</source>
-        <translation>(10300 could be used only on mainnet)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 could be used only on mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4178,8 +4178,8 @@ for example: alertnotify=echo %%s | mail -s "KTS Alert" admin@foo.com
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 10300 for mainnet)</source>
-        <translation>(must be 10300 for mainnet)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(must be 51472 for mainnet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -4282,8 +4282,8 @@ for example: alertnotify=echo %%s | mail -s "KTS Alert" admin@foo.com
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) %i The KTS Core Developers</source>
-        <translation>Copyright (C) %i The KTS Core Developers</translation>
+        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
+        <translation>Copyright (C) 2015-%i The KTS Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

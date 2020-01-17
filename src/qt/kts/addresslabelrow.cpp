@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +11,6 @@ AddressLabelRow::AddressLabelRow(QWidget *parent) :
     ui(new Ui::AddressLabelRow)
 {
     ui->setupUi(this);
-
     ui->lblAddress->setProperty("cssClass", "text-list-body1");
     ui->lblLabel->setProperty("cssClass", "text-list-title1");
 }

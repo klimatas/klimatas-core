@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,12 +20,16 @@
 #include <initializer_list>
 #include "qt/kts/ktsgui.h"
 
-static Qt::Modifier SHORT_KEY
-#ifdef Q_OS_MAC
-        = Qt::CTRL;
-#else
-        = Qt::ALT;
-#endif
+// Repair parameters
+const QString SALVAGEWALLET("-salvagewallet");
+const QString RESCAN("-rescan");
+const QString ZAPTXES1("-zapwallettxes=1");
+const QString ZAPTXES2("-zapwallettxes=2");
+const QString UPGRADEWALLET("-upgradewallet");
+const QString REINDEX("-reindex");
+const QString RESYNC("-resync");
+
+extern Qt::Modifier SHORT_KEY;
 
 bool openDialog(QDialog *widget, QWidget *gui);
 void closeDialog(QDialog *widget, KTSGUI *gui);

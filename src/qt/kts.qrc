@@ -1,5 +1,5 @@
 <RCC>
-<qresource prefix="/icons">
+    <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
         <file alias="quit">res/icons/quit.png</file>
@@ -86,8 +86,6 @@
         <file alias="leftArrow_small">res/images/leftArrow_small_dark.png</file>
         <file alias="rightArrow_small">res/images/rightArrow_small_dark.png</file>
         <file alias="qtreeview_selected">res/images/qtreeview_selected.png</file>
-        <file alias="walletFrame_bg">res/images/walletFrame_bg.png</file>
-        <file alias="walletFrame">res/images/walletFrame.png</file>
         <file alias="splash">res/images/splash.png</file>
         <file alias="splash_testnet">res/images/splash_testnet.png</file>
         <file alias="splash_regtest">res/images/splash_regtest.png</file>
@@ -307,5 +305,22 @@
         <file alias="ani-loading-dark">kts/res/img/ani-loading-dark.gif</file>
         <file alias="ani-loading">kts/res/img/ani-loading.gif</file>
         <file alias="ic-pending">kts/res/img/ic-pending.svg</file>
+        <file alias="ic-transaction-stake-delegated">kts/res/img/ic-transaction-stake-delegated.svg</file>
+        <file alias="ic-transaction-stake-delegated-inactive">kts/res/img/ic-transaction-stake-delegated-inactive.svg</file>
+        <file alias="ic-transaction-stake-delegated-dark">kts/res/img/dark/ic-transaction-stake-delegated.svg</file>
+        <file alias="ic-transaction-stake-delegated-dark-inactive">kts/res/img/dark/ic-transaction-stake-delegated-inactive.svg</file>
+        <file alias="ic-transaction-stake-hot">kts/res/img/ic-transaction-stake-hot.svg</file>
+        <file alias="ic-transaction-stake-hot-inactive">kts/res/img/ic-transaction-stake-hot-inactive.svg</file>
+        <file alias="ic-transaction-stake-hot-dark">kts/res/img/dark/ic-transaction-stake-hot.svg</file>
+        <file alias="ic-transaction-stake-hot-dark-inactive">kts/res/img/dark/ic-transaction-stake-hot-inactive.svg</file>
+        <file alias="ic-transaction-cs-contract">kts/res/img/ic-transaction-cs-contract.svg</file>
+        <file alias="ic-transaction-cs-contract-dark">kts/res/img/dark/ic-transaction-cs-contract.svg</file>
+        <file alias="ic-transaction-cs-contract-dark-inactive">kts/res/img/dark/ic-transaction-cs-contract-inactive.svg</file>
+        <file alias="ic-transaction-cs-contract-inactive">kts/res/img/ic-transaction-cs-contract-inactive.svg</file>
+        <file alias="ic-nav-cold-staking">kts/res/img/ic-nav-cold-staking.svg</file>
+        <file alias="ic-nav-cold-staking-active">kts/res/img/ic-nav-cold-staking-active.svg</file>
+        <file alias="ic-check-cold-staking">kts/res/img/ic-check-cold-staking.svg</file>
+        <file alias="ic-check-cold-staking-off">kts/res/img/ic-check-cold-staking-off.svg</file>
+        <file alias="ic-check-cold-staking-enabled">kts/res/img/ic-check-cold-staking-enabled.svg</file>
     </qresource>
 </RCC>

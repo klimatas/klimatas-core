@@ -1,6 +1,6 @@
 [Desktop Entry]
-Encoding=UTF-8
-Name=KTS
+Version=1.0
+Name=KTS Core
 Comment=KTS P2P Cryptocurrency
 Comment[fr]=KTS, monnaie virtuelle cryptographique pair à pair
 Comment[tr]=KTS, eşten eşe kriptografik sanal para birimi
@@ -10,3 +10,4 @@ Type=Application
 Icon=kts128
 MimeType=x-scheme-handler/kts;
 Categories=Office;Finance;
+StartupWMClass=Kts-qt

@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +19,6 @@ inline std::string ValueString(const std::vector<unsigned char>& vch)
 }
 } // anon namespace
 
-using namespace std;
 
 const char* GetOpName(opcodetype opcode)
 {
@@ -139,22 +139,25 @@ const char* GetOpName(opcodetype opcode)
     case OP_CHECKMULTISIG          : return "OP_CHECKMULTISIG";
     case OP_CHECKMULTISIGVERIFY    : return "OP_CHECKMULTISIGVERIFY";
 
-    // expanson
-    case OP_NOP1                   : return "OP_NOP1";
-    case OP_NOP2                   : return "OP_NOP2";
-    case OP_NOP3                   : return "OP_NOP3";
-    case OP_NOP4                   : return "OP_NOP4";
-    case OP_NOP5                   : return "OP_NOP5";
-    case OP_NOP6                   : return "OP_NOP6";
-    case OP_NOP7                   : return "OP_NOP7";
-    case OP_NOP8                   : return "OP_NOP8";
-    case OP_NOP9                   : return "OP_NOP9";
-    case OP_NOP10                  : return "OP_NOP10";
+    // expansion
+    case OP_NOP1                   : return "OP_NOP1";                  // OP_NOP1
+    case OP_CHECKLOCKTIMEVERIFY    : return "OP_CHECKLOCKTIMEVERIFY";   // OP_NOP2
+    case OP_NOP3                   : return "OP_NOP3";                  // OP_NOP3
+    case OP_NOP4                   : return "OP_NOP4";                  // OP_NOP4
+    case OP_NOP5                   : return "OP_NOP5";                  // OP_NOP5
+    case OP_NOP6                   : return "OP_NOP6";                  // OP_NOP6
+    case OP_NOP7                   : return "OP_NOP7";                  // OP_NOP7
+    case OP_NOP8                   : return "OP_NOP8";                  // OP_NOP8
+    case OP_NOP9                   : return "OP_NOP9";                  // OP_NOP9
+    case OP_NOP10                  : return "OP_NOP10";                 // OP_NOP10
 
     // zerocoin
     case OP_ZEROCOINMINT           : return "OP_ZEROCOINMINT";
     case OP_ZEROCOINSPEND          : return "OP_ZEROCOINSPEND";
-    case OP_ZEROCOINPUBLICSPEND          : return "OP_ZEROCOINPUBLICSPEND";
+    case OP_ZEROCOINPUBLICSPEND    : return "OP_ZEROCOINPUBLICSPEND";
+
+    // cold staking
+    case OP_CHECKCOLDSTAKEVERIFY   : return "OP_CHECKCOLDSTAKEVERIFY";
 
     case OP_INVALIDOPCODE          : return "OP_INVALIDOPCODE";
 
@@ -201,7 +204,7 @@ unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const
     // get the last item that the scriptSig
     // pushes onto the stack:
     const_iterator pc = scriptSig.begin();
-    vector<unsigned char> data;
+    std::vector<unsigned char> data;
     while (pc < scriptSig.end())
     {
         opcodetype opcode;
@@ -247,6 +250,18 @@ bool CScript::IsPayToScriptHash() const
             this->at(0) == OP_HASH160 &&
             this->at(1) == 0x14 &&
             this->at(22) == OP_EQUAL);
+}
+
+bool CScript::IsPayToColdStaking() const
+{
+    // Extra-fast test for pay-to-cold-staking CScripts:
+    return (this->size() == 51 &&
+            this->at(2) == OP_ROT &&
+            this->at(4) == OP_CHECKCOLDSTAKEVERIFY &&
+            this->at(5) == 0x14 &&
+            this->at(27) == 0x14 &&
+            this->at(49) == OP_EQUALVERIFY &&
+            this->at(50) == OP_CHECKSIG);
 }
 
 bool CScript::StartsWithOpcode(const opcodetype opcode) const

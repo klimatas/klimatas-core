@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,8 +23,8 @@
 
 #ifdef ENABLE_WALLET
 #include "masternodeconfig.h"
-#include "wallet.h"
-#include "walletdb.h"
+#include "wallet/wallet.h"
+#include "wallet/walletdb.h"
 #endif
 
 #include <QNetworkProxy>
@@ -56,7 +55,6 @@ void OptionsModel::Init()
     setWindowDefaultOptions(settings);
 
     // Display
-
     if (!settings.contains("fHideZeroBalances"))
         settings.setValue("fHideZeroBalances", true);
     fHideZeroBalances = settings.value("fHideZeroBalances").toBool();
@@ -69,16 +67,20 @@ void OptionsModel::Init()
         settings.setValue("fCoinControlFeatures", false);
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
 
+    if (!settings.contains("fShowColdStakingScreen"))
+        settings.setValue("fShowColdStakingScreen", false);
+    showColdStakingScreen = settings.value("fShowColdStakingScreen", false).toBool();
+
     if (!settings.contains("fZeromintEnable"))
-        settings.setValue("fZeromintEnable", false);
+        settings.setValue("fZeromintEnable", true);
     fEnableZeromint = settings.value("fZeromintEnable").toBool();
 
     if (!settings.contains("fEnableAutoConvert"))
-        settings.setValue("fEnableAutoConvert", false);
+        settings.setValue("fEnableAutoConvert", true);
     fEnableAutoConvert = settings.value("fEnableAutoConvert").toBool();
 
     if (!settings.contains("nZeromintPercentage"))
-        settings.setValue("nZeromintPercentage", 0);
+        settings.setValue("nZeromintPercentage", 10);
     nZeromintPercentage = settings.value("nZeromintPercentage").toLongLong();
 
     if (!settings.contains("nPreferredDenom"))
@@ -109,7 +111,6 @@ void OptionsModel::refreshDataView(){
 }
 
 void OptionsModel::setMainDefaultOptions(QSettings& settings, bool reset){
-
     // These are shared with the core or have a command-line parameter
     // and we want command-line parameters to overwrite the GUI settings.
     //
@@ -117,7 +118,6 @@ void OptionsModel::setMainDefaultOptions(QSettings& settings, bool reset){
     //
     // If SoftSetArg() or SoftSetBoolArg() return false we were overridden
     // by command-line and show this in the UI.
-
     // Main
     if (!settings.contains("nDatabaseCache") || reset)
         settings.setValue("nDatabaseCache", (qint64)nDefaultDbCache);
@@ -298,6 +298,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("language");
         case CoinControlFeatures:
             return fCoinControlFeatures;
+        case ShowColdStakingScreen:
+            return showColdStakingScreen;
         case DatabaseCache:
             return settings.value("nDatabaseCache");
         case ThreadsScriptVerif:
@@ -454,6 +456,11 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             fCoinControlFeatures = value.toBool();
             settings.setValue("fCoinControlFeatures", fCoinControlFeatures);
             emit coinControlFeaturesChanged(fCoinControlFeatures);
+            break;
+        case ShowColdStakingScreen:
+            this->showColdStakingScreen = value.toBool();
+            settings.setValue("fShowColdStakingScreen", this->showColdStakingScreen);
+            emit showHideColdStakingScreen(this->showColdStakingScreen);
             break;
         case DatabaseCache:
             if (settings.value("nDatabaseCache") != value) {

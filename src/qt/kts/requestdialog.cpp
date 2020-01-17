@@ -1,15 +1,16 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/requestdialog.h"
 #include "qt/kts/forms/ui_requestdialog.h"
 #include <QListView>
-#include <QDoubleValidator>
 
 #include "qt/kts/qtutils.h"
 #include "guiutil.h"
 #include "amount.h"
+#include "pairresult.h"
 #include "optionsmodel.h"
 
 RequestDialog::RequestDialog(QWidget *parent) :
@@ -25,16 +26,12 @@ RequestDialog::RequestDialog(QWidget *parent) :
     ui->labelTitle->setText(tr("New Request Payment"));
     setCssProperty(ui->labelTitle, "text-title-dialog");
 
-    ui->labelMessage->setText(tr("Instead of share a KTS address, you can create a Payment Request message which bundles up more information than is contained in just a KTS address."));
+    ui->labelMessage->setText(tr("Instead of only sharing a KTS address, you can create a Payment Request message which bundles up more information than is contained in just a KTS address."));
     setCssProperty(ui->labelMessage, "text-main-grey");
 
     // Combo Coins
     setCssProperty(ui->comboBoxCoin, "btn-combo-coins");
     setCssProperty(ui->comboContainer, "container-purple");
-
-    ui->comboBoxCoin->addItem("KTS", 0);
-    ui->comboBoxCoin->addItem("zKTS", 1);
-    ui->comboBoxCoin->setView(new QListView());
 
     // Label
     ui->labelSubtitleLabel->setText(tr("Label"));
@@ -47,10 +44,7 @@ RequestDialog::RequestDialog(QWidget *parent) :
     setCssProperty(ui->labelSubtitleAmount, "text-title2-dialog");
     ui->lineEditAmount->setPlaceholderText("0.00 KTS");
     setCssEditLineDialog(ui->lineEditAmount, true);
-
-    QDoubleValidator *doubleValidator = new QDoubleValidator(0, 9999999, 7, this);
-    doubleValidator->setNotation(QDoubleValidator::StandardNotation);
-    ui->lineEditAmount->setValidator(doubleValidator);
+    GUIUtil::setupAmountWidget(ui->lineEditAmount, this);
 
     // Description
     ui->labelSubtitleDescription->setText(tr("Description (optional)"));
@@ -86,26 +80,69 @@ void RequestDialog::setWalletModel(WalletModel *model){
     this->walletModel = model;
 }
 
+void RequestDialog::setPaymentRequest(bool isPaymentRequest) {
+    this->isPaymentRequest = isPaymentRequest;
+    if (!this->isPaymentRequest) {
+        ui->labelMessage->setText(tr("Creates an address to receive coin delegations and be able to stake them."));
+        ui->labelTitle->setText(tr("New Cold Staking Address"));
+        ui->labelSubtitleAmount->setText(tr("Amount (optional)"));
+    }
+}
 
 void RequestDialog::onNextClicked(){
     if(walletModel) {
-        info = new SendCoinsRecipient();
-        info->label = ui->lineEditLabel->text();
-        info->message = ui->lineEditDescription->text();
-        info->address = QString::fromStdString(walletModel->getNewAddress((info->label.isEmpty() ? "" : info->label.toStdString())).ToString());
+
+        QString labelStr = ui->lineEditLabel->text();
+
+        //Amount
         int displayUnit = walletModel->getOptionsModel()->getDisplayUnit();
         bool isValueValid = true;
-        CAmount value = GUIUtil::parseValue(
-                ui->lineEditAmount->text(),
-                displayUnit,
-                &isValueValid
-        );
-        info->amount = value;
+        CAmount value = (ui->lineEditAmount->text().isEmpty() ?
+                            0 :
+                            GUIUtil::parseValue(ui->lineEditAmount->text(), displayUnit, &isValueValid)
+                        );
 
-        if(value <= 0 || !isValueValid){
+        if (!this->isPaymentRequest) {
+            // Add specific checks for cold staking address creation
+            if (labelStr.isEmpty()) {
+                inform("Address label cannot be empty");
+                return;
+            }
+        }
+
+        if (value < 0 || !isValueValid) {
+            inform("Invalid amount");
             return;
         }
-        ui->labelTitle->setText("Request for " + BitcoinUnits::format(displayUnit, value, false, BitcoinUnits::separatorAlways) + " KTS");
+
+        info = new SendCoinsRecipient();
+        info->label = labelStr;
+        info->amount = value;
+        info->message = ui->lineEditDescription->text();
+
+        // address
+        std::string label = info->label.isEmpty() ? "" : info->label.toStdString();
+        QString title;
+
+        CBitcoinAddress address;
+        PairResult r(false);
+        if (this->isPaymentRequest) {
+            r = walletModel->getNewAddress(address, label);
+            title = "Request for " + BitcoinUnits::format(displayUnit, value, false, BitcoinUnits::separatorAlways) + " KTS";
+        } else {
+            r = walletModel->getNewStakingAddress(address, label);
+            title = "Cold Staking Address Generated";
+        }
+
+        if (!r.result) {
+            // TODO: notify user about this error
+            close();
+            return;
+        }
+
+        info->address = QString::fromStdString(address.ToString());
+        ui->labelTitle->setText(title);
+
         updateQr(info->address);
         ui->labelAddress->setText(info->address);
         ui->buttonsStack->setVisible(false);
@@ -130,6 +167,11 @@ void RequestDialog::onCopyUriClicked(){
     }
 }
 
+void RequestDialog::showEvent(QShowEvent *event)
+{
+    if (ui->lineEditAmount) ui->lineEditAmount->setFocus();
+}
+
 void RequestDialog::updateQr(QString str){
     QString uri = GUIUtil::formatBitcoinURI(*info);
     ui->labelQrImg->setText("");
@@ -141,6 +183,14 @@ void RequestDialog::updateQr(QString str){
     }else{
         ui->labelQrImg->setText(!error.isEmpty() ? error : "Error encoding address");
     }
+}
+
+void RequestDialog::inform(QString text){
+    if (!snackBar)
+        snackBar = new SnackBar(nullptr, this);
+    snackBar->setText(text);
+    snackBar->resize(this->width(), snackBar->height());
+    openDialog(snackBar, this);
 }
 
 RequestDialog::~RequestDialog(){

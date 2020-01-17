@@ -1,4 +1,5 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -58,7 +59,7 @@ namespace AccumulatorCheckpoints
                 checkpoint.insert(std::make_pair(denom, bn));
             }
 
-            mapCheckpoints.insert(make_pair(nHeight, checkpoint));
+            mapCheckpoints.insert(std::make_pair(nHeight, checkpoint));
         }
         return true;
     }

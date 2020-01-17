@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -51,7 +50,9 @@
 #include <QDateTime>
 #include <QDesktopServices>
 #include <QDesktopWidget>
-#include <QDoubleValidator>
+#include <QRegExp>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 #include <QFileDialog>
 #include <QFont>
 #include <QLineEdit>
@@ -85,6 +86,11 @@ QString dateTimeStr(const QDateTime& date)
     return date.date().toString(Qt::SystemLocaleShortDate) + QString(" ") + date.toString("hh:mm");
 }
 
+QString dateTimeStrWithSeconds(const QDateTime& date)
+{
+    return date.date().toString(Qt::SystemLocaleShortDate) + QString(" ") + date.toString("hh:mm:ss");
+}
+
 QString dateTimeStr(qint64 nTime)
 {
     return dateTimeStr(QDateTime::fromTime_t((qint32)nTime));
@@ -115,8 +121,8 @@ CAmount parseValue(const QString& text, int displayUnit, bool* valid_out)
     return valid ? val : 0;
 }
 
-QString formatBalance(CAmount amount, int nDisplayUnit, bool isZpiv){
-    return (amount == 0) ? ("0.00 " + BitcoinUnits::name(nDisplayUnit, isZpiv)) : BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, amount, false, BitcoinUnits::separatorAlways, true, isZpiv);
+QString formatBalance(CAmount amount, int nDisplayUnit, bool isZkts){
+    return (amount == 0) ? ("0.00 " + BitcoinUnits::name(nDisplayUnit, isZkts)) : BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, amount, false, BitcoinUnits::separatorAlways, true, isZkts);
 }
 
 bool requestUnlock(WalletModel* walletModel, AskPassphraseDialog::Context context, bool relock){
@@ -142,11 +148,17 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
 
 void setupAmountWidget(QLineEdit* widget, QWidget* parent)
 {
-    QDoubleValidator* amountValidator = new QDoubleValidator(parent);
-    amountValidator->setDecimals(8);
-    amountValidator->setBottom(0.0);
-    widget->setValidator(amountValidator);
-    widget->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    QRegularExpression rx("^(\\d{0,8})((\\.|,)\\d{1,8})?$");
+    QValidator *validator = new QRegularExpressionValidator(rx, widget);
+    widget->setValidator(validator);
+}
+
+void updateWidgetTextAndCursorPosition(QLineEdit* widget, const QString& str)
+{
+    const int cpos = widget->cursorPosition();
+    widget->setText(str);
+    if (cpos > str.size()) return;
+    widget->setCursorPosition(cpos);
 }
 
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)

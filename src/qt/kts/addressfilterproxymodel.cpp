@@ -1,17 +1,19 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/addressfilterproxymodel.h"
+#include <iostream>
 
 bool AddressFilterProxyModel::filterAcceptsRow(int row, const QModelIndex& parent) const
 {
     auto model = sourceModel();
     auto label = model->index(row, AddressTableModel::Label, parent);
 
-    if (model->data(label, AddressTableModel::TypeRole).toString() != m_type) {
+    auto type = model->data(label, AddressTableModel::TypeRole).toString();
+    if (!m_types.contains(type))
         return false;
-    }
 
     auto address = model->index(row, AddressTableModel::Address, parent);
 
@@ -21,6 +23,17 @@ bool AddressFilterProxyModel::filterAcceptsRow(int row, const QModelIndex& paren
     }
 
     return true;
+}
+
+void AddressFilterProxyModel::setType(const QString& type)
+{
+    setType(QStringList(type));
+}
+
+void AddressFilterProxyModel::setType(const QStringList& types)
+{
+    this->m_types = types;
+    invalidateFilter();
 }
 
 int AddressFilterProxyModel::rowCount(const QModelIndex& parent) const

@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,7 +24,7 @@ SendCustomFeeDialog::SendCustomFeeDialog(QWidget *parent) :
 
     // Text
     ui->labelTitle->setText(tr("Customize Fee"));
-    ui->labelMessage->setText(tr("Customize the transaction fee at your to your liking, depending on the fee value your transaction will be included or not in the blockchain."));
+    ui->labelMessage->setText(tr("Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain."));
     setCssProperty(ui->labelTitle, "text-title-dialog");
     setCssProperty(ui->labelMessage, "text-main-grey");
 

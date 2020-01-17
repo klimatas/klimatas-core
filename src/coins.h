@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2016-2017 The PIVX developers
+// Copyright (c) 2016-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +17,6 @@
 #include <assert.h>
 #include <stdint.h>
 
-#include <boost/foreach.hpp>
 #include <boost/unordered_map.hpp>
 
 /** 
@@ -128,7 +128,7 @@ public:
 
     void ClearUnspendable()
     {
-        BOOST_FOREACH (CTxOut& txout, vout) {
+        for (CTxOut& txout : vout) {
             if (txout.scriptPubKey.IsUnspendable())
                 txout.SetNull();
         }
@@ -279,7 +279,7 @@ public:
     //! note that only !IsPruned() CCoins can be serialized
     bool IsPruned() const
     {
-        BOOST_FOREACH (const CTxOut& out, vout)
+        for (const CTxOut& out : vout)
             if (!out.IsNull())
                 return false;
         return true;
@@ -469,6 +469,9 @@ public:
 
     //! Check whether all prevouts of the transaction are present in the UTXO set represented by this view
     bool HaveInputs(const CTransaction& tx) const;
+
+    //! Check if the specific output is available in this view
+    bool IsOutputAvailable(const uint256& txId, int index);
 
     //! Return priority of tx at height nHeight
     double GetPriority(const CTransaction& tx, int nHeight) const;

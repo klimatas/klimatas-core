@@ -9,7 +9,8 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 
 #include <sstream>
 #include <iostream>
@@ -129,11 +130,9 @@ bool AccumulatorWitness::VerifyWitness(const Accumulator& a, const PublicCoin &p
     Accumulator temp(witness);
     temp += element;
     if (!(temp == a)) {
-        std::cout << "VerifyWitness: failed verify temp does not equal a\n";
-        return false;
+        return error("%s : failed verify temp does not equal a", __func__);
     } else if (this->element != publicCoin) {
-        std::cout << "VerifyWitness: failed verify pubcoins not equal\n";
-        return false;
+        return error("%s : failed verify pubcoins not equal", __func__);
     }
 
     return true;

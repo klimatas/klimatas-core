@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -176,8 +177,6 @@ public:
         return (nValue < 3*minRelayTxFee.GetFee(nSize));
     }
 
-    bool IsZerocoinPublicSpend() const;
-
     bool IsZerocoinMint() const;
     CAmount GetZerocoinMinted() const;
 
@@ -285,6 +284,8 @@ public:
     }
 
     bool IsCoinStake() const;
+    bool CheckColdStake(const CScript& script) const;
+    bool HasP2CSOutputs() const;
 
     friend bool operator==(const CTransaction& a, const CTransaction& b)
     {
@@ -329,17 +330,6 @@ struct CMutableTransaction
     uint256 GetHash() const;
 
     std::string ToString() const;
-
-    friend bool operator==(const CMutableTransaction& a, const CMutableTransaction& b)
-    {
-        return a.GetHash() == b.GetHash();
-    }
-
-    friend bool operator!=(const CMutableTransaction& a, const CMutableTransaction& b)
-    {
-        return !(a == b);
-    }
-
 };
 
 #endif // BITCOIN_PRIMITIVES_TRANSACTION_H

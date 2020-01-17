@@ -1,8 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +15,6 @@
 #include "utilstrencodings.h"
 #include "transaction.h"
 
-#include <boost/foreach.hpp>
 
 extern bool GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &hashBlock, bool fAllowSlow);
 
@@ -191,7 +189,7 @@ bool CTransaction::HasZerocoinMintOutputs() const
 
 bool CTransaction::HasZerocoinPublicSpendInputs() const
 {
-    // The wallet only allows publicSpend inputs in the same tx and not a combination between piv and zpiv
+    // The wallet only allows publicSpend inputs in the same tx and not a combination between kts and zkts
     for(const CTxIn& txin : vin) {
         if (txin.IsZerocoinPublicSpend())
             return true;
@@ -210,6 +208,40 @@ bool CTransaction::IsCoinStake() const
         return false;
 
     return (vout.size() >= 2 && vout[0].IsEmpty());
+}
+
+bool CTransaction::CheckColdStake(const CScript& script) const
+{
+
+    // tx is a coinstake tx
+    if (!IsCoinStake())
+        return false;
+
+    // all inputs have the same scriptSig
+    CScript firstScript = vin[0].scriptSig;
+    if (vin.size() > 1) {
+        for (unsigned int i=1; i<vin.size(); i++)
+            if (vin[i].scriptSig != firstScript) return false;
+    }
+
+    // all outputs except first (coinstake marker) and last (masternode payout)
+    // have the same pubKeyScript and it matches the script we are spending
+    if (vout[1].scriptPubKey != script) return false;
+    if (vin.size() > 3) {
+        for (unsigned int i=2; i<vout.size()-1; i++)
+            if (vout[i].scriptPubKey != script) return false;
+    }
+
+    return true;
+}
+
+bool CTransaction::HasP2CSOutputs() const
+{
+    for(const CTxOut& txout : vout) {
+        if (txout.scriptPubKey.IsPayToColdStaking())
+            return true;
+    }
+    return false;
 }
 
 CAmount CTransaction::GetValueOut() const

@@ -40,7 +40,7 @@
    </property>
    <item>
     <widget class="QFrame" name="frameContainer">
-    <property name="toolTipDuration">
+     <property name="toolTipDuration">
       <number>0</number>
      </property>
      <property name="frameShape">
@@ -113,14 +113,14 @@
         </item>
         <item>
          <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
           </property>
          </spacer>
         </item>
@@ -166,7 +166,7 @@
            <item>
             <widget class="QLabel" name="labelCoinControlAmount">
              <property name="text">
-              <string>0.00 PIV</string>
+              <string>0.00 KTS</string>
              </property>
             </widget>
            </item>
@@ -174,20 +174,20 @@
          </widget>
         </item>
         <item>
-     <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
           </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item>
          <widget class="QWidget" name="layoutQuantity" native="true">
@@ -210,20 +210,20 @@
          </widget>
         </item>
         <item>
-     <spacer name="horizontalSpacer_22">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+         <spacer name="horizontalSpacer_22">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
           </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
           </property>
-     </spacer>
+         </spacer>
         </item>
         <item>
          <widget class="QWidget" name="layoutFee" native="true">
@@ -238,7 +238,7 @@
            <item>
             <widget class="QLabel" name="labelCoinControlFee">
              <property name="text">
-              <string>0.00 PIV</string>
+              <string>0.00 KTS</string>
              </property>
             </widget>
            </item>
@@ -257,8 +257,8 @@
         </property>
         <property name="styleSheet">
          <string notr="true">#frame {
-          border:0;
-          }</string>
+	border:0;
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -394,9 +394,9 @@
             <widget class="QGroupBox" name="groupBox_2">
              <property name="styleSheet">
               <string notr="true">#groupBox_2 {
-               background-color:transparent;
-               border-radius:0;
-               }</string>
+    background-color:transparent;
+    border-radius:0;
+}</string>
              </property>
              <property name="title">
               <string/>
@@ -456,9 +456,6 @@
         </property>
         <item>
          <widget class="CoinControlTreeWidget" name="treeWidget">
-          <property name="focusPolicy">
-           <enum>Qt::NoFocus</enum>
-          </property>
           <property name="contextMenuPolicy">
            <enum>Qt::CustomContextMenu</enum>
           </property>
@@ -598,7 +595,7 @@
            <item>
             <widget class="QLabel" name="labelCoinControlAfterFee">
              <property name="text">
-              <string>0.00 PIV</string>
+              <string>0.00 KTS</string>
              </property>
             </widget>
            </item>

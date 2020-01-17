@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,9 +7,11 @@
 #include "qt/kts/forms/ui_masternodewizarddialog.h"
 #include "qt/kts/qtutils.h"
 #include "optionsmodel.h"
+#include "pairresult.h"
 #include "activemasternode.h"
 #include <QFile>
 #include <QIntValidator>
+#include <QHostAddress>
 #include <QRegExpValidator>
 
 MasterNodeWizardDialog::MasterNodeWizardDialog(WalletModel *model, QWidget *parent) :
@@ -61,7 +64,7 @@ MasterNodeWizardDialog::MasterNodeWizardDialog(WalletModel *model, QWidget *pare
     initCssEditLine(ui->lineEditPort);
     ui->stackedWidget->setCurrentIndex(pos);
     ui->lineEditPort->setValidator(new QIntValidator(0, 9999999, ui->lineEditPort));
-    if(walletModel->isTestnet()){
+    if(walletModel->isTestNetwork()){
         ui->lineEditPort->setEnabled(false);
         ui->lineEditPort->setText("51474");
     } else {
@@ -88,6 +91,11 @@ MasterNodeWizardDialog::MasterNodeWizardDialog(WalletModel *model, QWidget *pare
     connect(ui->btnBack, SIGNAL(clicked()), this, SLOT(onBackClicked()));
 }
 
+void MasterNodeWizardDialog::showEvent(QShowEvent *event)
+{
+    if (ui->btnNext) ui->btnNext->setFocus();
+}
+
 void MasterNodeWizardDialog::onNextClicked(){
     switch(pos){
         case 0:{
@@ -97,8 +105,8 @@ void MasterNodeWizardDialog::onNextClicked(){
             ui->pushName1->setChecked(true);
             icConfirm1->setVisible(true);
             ui->pushNumber3->setChecked(true);
-
             ui->btnBack->setVisible(true);
+            ui->lineEditName->setFocus();
             break;
         }
         case 1:{
@@ -117,6 +125,7 @@ void MasterNodeWizardDialog::onNextClicked(){
             icConfirm3->setVisible(true);
             ui->pushNumber4->setChecked(true);
             ui->btnBack->setVisible(true);
+            ui->lineEditIpAddress->setFocus();
             break;
         }
         case 2:{
@@ -178,10 +187,17 @@ bool MasterNodeWizardDialog::createMN(){
         std::string port = portStr.toStdString();
 
         // New receive address
-        CBitcoinAddress address = walletModel->getNewAddress(alias);
+        CBitcoinAddress address;
+        PairResult r = walletModel->getNewAddress(address, alias);
+
+        if (!r.result) {
+            // generate address fail
+            inform(tr(r.status->c_str()));
+            return false;
+        }
 
         // const QString& addr, const QString& label, const CAmount& amount, const QString& message
-        SendCoinsRecipient sendCoinsRecipient(QString::fromStdString(address.ToString()), "", CAmount(10000) * COIN, "");
+        SendCoinsRecipient sendCoinsRecipient(QString::fromStdString(address.ToString()), QString::fromStdString(alias), CAmount(3000) * COIN, "");
 
         // Send the 10 tx to one of your address
         QList<SendCoinsRecipient> recipients;
@@ -266,7 +282,7 @@ bool MasterNodeWizardDialog::createMN(){
                 int indexOut = -1;
                 for (int i=0; i < (int)walletTx->vout.size(); i++){
                     CTxOut& out = walletTx->vout[i];
-                    if (out.nValue == 10000 * COIN){
+                    if (out.nValue == 3000 * COIN){
                         indexOut = i;
                     }
                 }
@@ -275,6 +291,13 @@ bool MasterNodeWizardDialog::createMN(){
                     return false;
                 }
                 std::string indexOutStr = std::to_string(indexOut);
+
+                // Check IP address type
+                QHostAddress hostAddress(addressStr);
+                QAbstractSocket::NetworkLayerProtocol layerProtocol = hostAddress.protocol();
+                if (layerProtocol == QAbstractSocket::IPv6Protocol) {
+                    ipAddress = "["+ipAddress+"]";
+                }
 
                 boost::filesystem::path pathConfigFile("masternode_temp.conf");
                 if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir() / pathConfigFile;
@@ -312,6 +335,7 @@ void MasterNodeWizardDialog::onBackClicked(){
     switch(pos){
         case 0:{
             ui->stackedWidget->setCurrentIndex(0);
+            ui->btnNext->setFocus();
             ui->pushNumber1->setChecked(true);
             ui->pushNumber4->setChecked(false);
             ui->pushNumber3->setChecked(false);
@@ -324,6 +348,7 @@ void MasterNodeWizardDialog::onBackClicked(){
         }
         case 1:{
             ui->stackedWidget->setCurrentIndex(1);
+            ui->lineEditName->setFocus();
             ui->pushNumber4->setChecked(false);
             ui->pushNumber3->setChecked(true);
             ui->pushName4->setChecked(false);

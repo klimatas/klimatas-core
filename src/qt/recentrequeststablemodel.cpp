@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +12,6 @@
 #include "optionsmodel.h"
 #include "streams.h"
 
-#include <boost/foreach.hpp>
 
 RecentRequestsTableModel::RecentRequestsTableModel(CWallet* wallet, WalletModel* parent) : walletModel(parent)
 {
@@ -21,7 +21,7 @@ RecentRequestsTableModel::RecentRequestsTableModel(CWallet* wallet, WalletModel*
     // Load entries from wallet
     std::vector<std::string> vReceiveRequests;
     parent->loadReceiveRequests(vReceiveRequests);
-    BOOST_FOREACH (const std::string& request, vReceiveRequests)
+    for (const std::string& request : vReceiveRequests)
         addNewRequest(request);
 
     /* These columns must match the indices in the ColumnIndex enumeration */

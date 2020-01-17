@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -17,8 +18,7 @@
 #include "coincontrol.h"
 #include "main.h"
 #include "obfuscation.h"
-#include "wallet.h"
-#include "multisigdialog.h"
+#include "wallet/wallet.h"
 
 #include <boost/assign/list_of.hpp> // for 'map_list_of()'
 
@@ -32,7 +32,6 @@
 #include <QString>
 #include <QTreeWidget>
 
-using namespace std;
 QList<CAmount> CoinControlDialog::payAmounts;
 int CoinControlDialog::nSplitBlockDummy;
 CCoinControl* CoinControlDialog::coinControl = new CCoinControl();
@@ -199,7 +198,6 @@ CoinControlDialog::CoinControlDialog(QWidget* parent, bool fMultisigEnabled) : Q
     ui->treeWidget->setColumnHidden(COLUMN_VOUT_INDEX, true);     // store vout index in this column, but dont show it
 
     ui->treeWidget->header()->setStretchLastSection(true);
-
     // default view is sorted by amount desc
     sortView(COLUMN_AMOUNT, Qt::DescendingOrder);
 
@@ -525,7 +523,7 @@ QString CoinControlDialog::getPriorityLabel(double dPriority, double mempoolEsti
 // shows count of locked unspent outputs
 void CoinControlDialog::updateLabelLocked()
 {
-    vector<COutPoint> vOutpts;
+    std::vector<COutPoint> vOutpts;
     model->listLockedCoins(vOutpts);
     if (vOutpts.size() > 0) {
         ui->labelLocked->setText(tr("(%1 locked)").arg(vOutpts.size()));
@@ -542,8 +540,8 @@ void CoinControlDialog::updateDialogLabels()
         return;
     }
 
-    vector<COutPoint> vCoinControl;
-    vector<COutput> vOutputs;
+    std::vector<COutPoint> vCoinControl;
+    std::vector<COutput> vOutputs;
     coinControl->ListSelected(vCoinControl);
     model->getOutputs(vCoinControl, vOutputs);
 
@@ -565,8 +563,6 @@ void CoinControlDialog::updateDialogLabels()
         // Amount
         nAmount += out.tx->vout[out.i].nValue;
     }
-    //MultisigDialog* multisigDialog = (MultisigDialog*)this->parentWidget();
-    //multisigDialog->updateCoinControl(nAmount, nQuantity);
 }
 
 void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
@@ -582,7 +578,7 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
         nPayAmount += amount;
 
         if (amount > 0) {
-            CTxOut txout(amount, (CScript)vector<unsigned char>(24, 0));
+            CTxOut txout(amount, (CScript)std::vector<unsigned char>(24, 0));
             txDummy.vout.push_back(txout);
             if (txout.IsDust(::minRelayTxFee))
                 fDust = true;
@@ -602,12 +598,12 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
     int nQuantityUncompressed = 0;
     bool fAllowFree = false;
 
-    vector<COutPoint> vCoinControl;
-    vector<COutput> vOutputs;
+    std::vector<COutPoint> vCoinControl;
+    std::vector<COutput> vOutputs;
     coinControl->ListSelected(vCoinControl);
     model->getOutputs(vCoinControl, vOutputs);
 
-    BOOST_FOREACH (const COutput& out, vOutputs) {
+    for (const COutput& out : vOutputs) {
         // unselect already spent, very unlikely scenario, this could happen
         // when selected are spent elsewhere, like rpc or another computer
         uint256 txhash = out.tx->GetHash();
@@ -644,7 +640,7 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
     // calculation
     if (nQuantity > 0) {
         // Bytes
-        nBytes = nBytesInputs + ((CoinControlDialog::payAmounts.size() > 0 ? CoinControlDialog::payAmounts.size() + max(1, CoinControlDialog::nSplitBlockDummy) : 2) * 34) + 10; // always assume +1 output for change here
+        nBytes = nBytesInputs + ((CoinControlDialog::payAmounts.size() > 0 ? CoinControlDialog::payAmounts.size() + std::max(1, CoinControlDialog::nSplitBlockDummy) : 2) * 34) + 10; // always assume +1 output for change here
 
         // Priority
         double mempoolEstimatePriority = mempool.estimatePriority(nTxConfirmTarget);
@@ -655,7 +651,7 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
         nPayFee = CWallet::GetMinimumFee(nBytes, nTxConfirmTarget, mempool);
 
         // IX Fee
-        if (coinControl->useSwiftTX) nPayFee = max(nPayFee, CENT);
+        if (coinControl->useSwiftTX) nPayFee = std::max(nPayFee, CENT);
         // Allow free?
         double dPriorityNeeded = mempoolEstimatePriority;
         if (dPriorityNeeded <= 0)
@@ -671,7 +667,7 @@ void CoinControlDialog::updateLabels(WalletModel* model, QDialog* dialog)
 
             // Never create dust outputs; if we would, just add the dust to the fee.
             if (nChange > 0 && nChange < CENT) {
-                CTxOut txout(nChange, (CScript)vector<unsigned char>(24, 0));
+                CTxOut txout(nChange, (CScript)std::vector<unsigned char>(24, 0));
                 if (txout.IsDust(::minRelayTxFee)) {
                     nPayFee += nChange;
                     nChange = 0;
@@ -781,12 +777,12 @@ void CoinControlDialog::updateView()
     QFlags<Qt::ItemFlag> flgTristate = Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
 
     int nDisplayUnit = model->getOptionsModel()->getDisplayUnit();
-    //double mempoolEstimatePriority = mempool.estimatePriority(nTxConfirmTarget);
+//    double mempoolEstimatePriority = mempool.estimatePriority(nTxConfirmTarget);
 
-    map<QString, vector<COutput>> mapCoins;
+    std::map<QString, std::vector<COutput>> mapCoins;
     model->listCoins(mapCoins);
 
-    BOOST_FOREACH (PAIRTYPE(QString, vector<COutput>) coins, mapCoins) {
+    for (PAIRTYPE(QString, std::vector<COutput>) coins : mapCoins) {
         CCoinControlWidgetItem* itemWalletAddress = new CCoinControlWidgetItem();
         itemWalletAddress->setCheckState(COLUMN_CHECKBOX, Qt::Unchecked);
         QString sWalletAddress = coins.first;
@@ -852,8 +848,8 @@ void CoinControlDialog::updateView()
                 // if listMode or change => show KTS address. In tree mode, address is not shown again for direct wallet address outputs
                 if (!treeMode || (!(sAddress == sWalletAddress)))
                     itemOutput->setText(COLUMN_ADDRESS, sAddress);
-
-                itemOutput->setToolTip(COLUMN_ADDRESS, sAddress);
+                else
+                    itemOutput->setToolTip(COLUMN_ADDRESS, sAddress);
 
                 CPubKey pubkey;
                 CKeyID* keyid = boost::get<CKeyID>(&outputAddress);
@@ -932,4 +928,12 @@ void CoinControlDialog::updateView()
     // sort view
     sortView(sortColumn, sortOrder);
     ui->treeWidget->setEnabled(true);
+}
+
+void CoinControlDialog::refreshDialog()
+{
+    updateView();
+    updateLabelLocked();
+    CoinControlDialog::updateLabels(model, this);
+    updateDialogLabels();
 }

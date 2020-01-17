@@ -1,5 +1,73 @@
 <TS language="nl" version="2.1">
 <context>
+    <name>AddNewAddressDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>My Address</source>
+        <translation>Mijn Adres</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
+    </message>
+</context>
+<context>
+    <name>AddNewContactDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
+    </message>
+    <message>
+        <source>Edit Contact</source>
+        <translation>Contactgegevens wijzigen</translation>
+    </message>
+    <message>
+        <source>Set a label for the selected address</source>
+        <translation>Stel een label in voor het geselecteerde adres</translation>
+    </message>
+    <message>
+        <source>Enter a name for the address (e.g Exchange)</source>
+        <translation>Voeg een naam toe bij het behorende adres</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Edit label for the selected address:
+%1</source>
+        <translation>Bewerk label voor het geselecteerde adres:
+%1</translation>
+    </message>
+</context>
+<context>
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
@@ -99,6 +167,21 @@
     </message>
 </context>
 <context>
+    <name>AddressLabelRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Bob Allen</source>
+        <translation>Bob Allen</translation>
+    </message>
+    <message>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
+    </message>
+</context>
+<context>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>
@@ -109,8 +192,123 @@
         <translation>Adres</translation>
     </message>
     <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(geen label)</translation>
+    </message>
+</context>
+<context>
+    <name>AddressesWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Zenden</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>No active Master Node yet</source>
+        <translation>Nog geen actieve Master Node</translation>
+    </message>
+    <message>
+        <source>Contact name</source>
+        <translation>Contactpersoon</translation>
+    </message>
+    <message>
+        <source>Enter address</source>
+        <translation>Voeg adres toe</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>Contacten</translation>
+    </message>
+    <message>
+        <source>You can add a new one in the options menu to the side.</source>
+        <translation>U kunt een nieuwe toevoegen in het optiemenu aan de zijkant.</translation>
+    </message>
+    <message>
+        <source>No contacts yet</source>
+        <translation>Nog geen contacten</translation>
+    </message>
+    <message>
+        <source>e.g. John Doe</source>
+        <translation>bv. Jan Jansen</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address</source>
+        <translation>Voeg een KTS adres toe</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Invalid Contact Address</source>
+        <translation>Ongeldig contactadres</translation>
+    </message>
+    <message>
+        <source>Cannot store your own address as contact</source>
+        <translation>Kan uw eigen adres niet als contact opslaan</translation>
+    </message>
+    <message>
+        <source>Address already stored, label: %1</source>
+        <translation>Adres al opgeslagen, label: %1</translation>
+    </message>
+    <message>
+        <source>New Contact Stored</source>
+        <translation>Nieuw contact opgeslagen</translation>
+    </message>
+    <message>
+        <source>Error Storing Contact</source>
+        <translation>Fout bij het opslaan van contact</translation>
+    </message>
+    <message>
+        <source>Contact edited</source>
+        <translation>Contact bewerkt</translation>
+    </message>
+    <message>
+        <source>Contact edit failed</source>
+        <translation>Bewerken van contact mislukt</translation>
+    </message>
+    <message>
+        <source>Delete Contact</source>
+        <translation>Verwijder contact</translation>
+    </message>
+    <message>
+        <source>You are just about to remove the contact:
+
+%1
+
+Are you sure?</source>
+        <translation>U staat op het punt het contact te verwijderen:
+
+%1
+
+Weet U het zeker?</translation>
+    </message>
+    <message>
+        <source>Contact Deleted</source>
+        <translation>Contact verwijderd</translation>
+    </message>
+    <message>
+        <source>Error deleting a contact</source>
+        <translation>Fout bij het verwijderen van een contact</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adres gekopieerd</translation>
     </message>
 </context>
 <context>
@@ -120,24 +318,12 @@
         <translation>Wachtwoordzin dialoog</translation>
     </message>
     <message>
-        <source>Enter passphrase</source>
-        <translation>Voer wachtwoordzin in</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>New passphrase</source>
-        <translation>Nieuwe wachtwoordzin</translation>
-    </message>
-    <message>
-        <source>Repeat new passphrase</source>
-        <translation>Herhaal nieuwe wachtwoordzin</translation>
-    </message>
-    <message>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Dient om de triviale sendmoney uit te schakelen wanneer het OS account in gevaar is gebracht. Geeft geen echte veiligheid.</translation>
-    </message>
-    <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Alleen voor anonimisering, automint en staking</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -150,6 +336,12 @@
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
         <translation>Deze operatie vereist uw portemonneewachtwoord om de portemonnee te openen.</translation>
+    </message>
+    <message>
+        <source>Unlock wallet
+for staking</source>
+        <translation>Portemonnee ontgrendelen
+voor bewijs van Inzet</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
@@ -176,6 +368,14 @@
         <translation>Bevestig versleuteling van de portemonnee</translation>
     </message>
     <message>
+        <source>ENCRYPT</source>
+        <translation>Versleutelen</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
         <source>KTS will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your KTSs from being stolen by malware infecting your computer.</source>
         <translation>KTS zal nu afsluiten om het versleutelingsproces te voltooien. Onthoud dat het versleutelen van uw portemonnee u niet volledig kan beschermen tegen malware infecties op uw computer die uw KTS's kunnen stelen.</translation>
     </message>
@@ -198,6 +398,10 @@
     <message>
         <source>Wallet encryption failed</source>
         <translation>Portemonneeversleuteling mislukt</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
@@ -240,632 +444,6 @@
     </message>
 </context>
 <context>
-    <name>Bip38ToolDialog</name>
-    <message>
-        <source>BIP 38 Tool</source>
-        <translation>BIP 38 Tool</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Versleuteling</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adres:</translation>
-    </message>
-    <message>
-        <source>Enter a KTS Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Voer een KTS adres in dat u wilt coderen met BIP 38. Voer een wachtwoordzin in in het middelste vak. Druk op versleutelen om de versleutelde privé sleutel te berekenen.</translation>
-    </message>
-    <message>
-        <source>The KTS address to encrypt</source>
-        <translation>Het KTS adres om te versleutelen</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Kies een eerder gebruikt adres</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Plak adres vanaf klembord</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Passphrase: </source>
-        <translation>Wachtwoord:</translation>
-    </message>
-    <message>
-        <source>Encrypted Key:</source>
-        <translation>Versleutelde sleutel:</translation>
-    </message>
-    <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
-    </message>
-    <message>
-        <source>Encrypt the private key for this KTS address</source>
-        <translation>Versleutel de privé sleutel voor dit KTS adres</translation>
-    </message>
-    <message>
-        <source>Reset all fields</source>
-        <translation>Reset alle velden</translation>
-    </message>
-    <message>
-        <source>The encrypted private key</source>
-        <translation>De versleutelde privé sleutel</translation>
-    </message>
-    <message>
-        <source>Decrypt the entered key using the passphrase</source>
-        <translation>Decodeer de ingevoerde sleutel met behulp van de wachtwoordzin</translation>
-    </message>
-    <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Versleutel &amp;Sleutel</translation>
-    </message>
-    <message>
-        <source>Clear &amp;All</source>
-        <translation>Verwijder &amp;Alles</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 ontsleuteling</translation>
-    </message>
-    <message>
-        <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Voer de BIP 38 versleutelde geheime sleutel in. Voer de wachtwoordzin in, in het middelste veld. Druk op Ontsleutel Sleutel om de privé sleutel te berekenen.  Nadat de privé sleutel is ontsleuteld, zal het klikken op 'Adres Importeren' de privé sleutel toevoegen aan de portemonnee.</translation>
-    </message>
-    <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Ontsleutelen &amp;Sleutel</translation>
-    </message>
-    <message>
-        <source>Decrypted Key:</source>
-        <translation>Ontsleutelde sleutel:</translation>
-    </message>
-    <message>
-        <source>Import Address</source>
-        <translation>Adres Importeren</translation>
-    </message>
-    <message>
-        <source>Click "Decrypt Key" to compute key</source>
-        <translation>Klik "Ontsleutelen Sleutel" om de sleutel te berekenen</translation>
-    </message>
-    <message>
-        <source>The entered passphrase is invalid. </source>
-        <translation>De ingevoerde wachtwoordzin is ongeldig.</translation>
-    </message>
-    <message>
-        <source>Allowed: 0-9,a-z,A-Z,</source>
-        <translation>Toegestaan: 0-9,a-z,A-Z</translation>
-    </message>
-    <message>
-        <source>The entered address is invalid.</source>
-        <translation>Het ingevoerde adres is ongeldig.</translation>
-    </message>
-    <message>
-        <source>Please check the address and try again.</source>
-        <translation>Controleer het adres en probeer het opnieuw.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation>Het opgegeven adres verwijst niet naar een sleutel.</translation>
-    </message>
-    <message>
-        <source>Wallet unlock was cancelled.</source>
-        <translation>Portemonnee ontsleuteling is geannuleerd.</translation>
-    </message>
-    <message>
-        <source>Private key for the entered address is not available.</source>
-        <translation>Privé sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
-    </message>
-    <message>
-        <source>Failed to decrypt.</source>
-        <translation>Ontsleutelen mislukt.</translation>
-    </message>
-    <message>
-        <source>Please check the key and passphrase and try again.</source>
-        <translation>Controleer de sleutel en de wachtwoordzin en probeer het opnieuw.</translation>
-    </message>
-    <message>
-        <source>Data Not Valid.</source>
-        <translation>Gegevens ongeldig.</translation>
-    </message>
-    <message>
-        <source>Please try again.</source>
-        <translation>Probeer het opnieuw.</translation>
-    </message>
-    <message>
-        <source>Please wait while key is imported</source>
-        <translation>Wacht tot de sleutel is geïmporteerd</translation>
-    </message>
-    <message>
-        <source>Key Already Held By Wallet</source>
-        <translation>Sleutel al aanwezig in portemonnee</translation>
-    </message>
-    <message>
-        <source>Error Adding Key To Wallet</source>
-        <translation>Fout bij het toevoegen van de sleutel</translation>
-    </message>
-    <message>
-        <source>Successfully Added Private Key To Wallet</source>
-        <translation>De privé sleutel is met succes toegevoegd aan de portemonnee</translation>
-    </message>
-</context>
-<context>
-    <name>BitcoinGUI</name>
-    <message>
-        <source>Wallet</source>
-        <translation>Portemonnee</translation>
-    </message>
-    <message>
-        <source>Node</source>
-        <translation>Node</translation>
-    </message>
-    <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Overzicht</translation>
-    </message>
-    <message>
-        <source>Show general overview of wallet</source>
-        <translation>Toon algemeen overzicht van de portemonnee</translation>
-    </message>
-    <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Verzenden</translation>
-    </message>
-    <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Ontvangen</translation>
-    </message>
-    <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transacties</translation>
-    </message>
-    <message>
-        <source>Browse transaction history</source>
-        <translation>Blader door transactiegescheidenis</translation>
-    </message>
-    <message>
-        <source>Privacy Actions for zKTS</source>
-        <translation>Privacy Acties voor zKTS</translation>
-    </message>
-    <message>
-        <source>E&amp;xit</source>
-        <translation>S&amp;luiten</translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation>Programma afsluiten</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Over &amp;Qt</translation>
-    </message>
-    <message>
-        <source>Show information about Qt</source>
-        <translation>Toon informatie over Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Opties...</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Tonen / Verbergen</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Toon of verberg het hoofdvenster</translation>
-    </message>
-    <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>$Versleutel portemonnee...</translation>
-    </message>
-    <message>
-        <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Versleutel de privé sleutels die bij uw portemonnee horen</translation>
-    </message>
-    <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Backup Portemonnee...</translation>
-    </message>
-    <message>
-        <source>Backup wallet to another location</source>
-        <translation>Backup portemonnee naar een andere locatie</translation>
-    </message>
-    <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Wijzig Wachtwoordzin...</translation>
-    </message>
-    <message>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Wijzig de wachtwoordzin die gebruikt wordt voor uw portemonnee versleuteling</translation>
-    </message>
-    <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Open portemonnee...</translation>
-    </message>
-    <message>
-        <source>Unlock wallet</source>
-        <translation>Open portemonnee</translation>
-    </message>
-    <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Sluit portemonnee</translation>
-    </message>
-    <message>
-        <source>Sign &amp;message...</source>
-        <translation>Bericht &amp;Ondertekenen...</translation>
-    </message>
-    <message>
-        <source>&amp;Verify message...</source>
-        <translation>Bericht &amp;Verifiëren... </translation>
-    </message>
-    <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Informatie</translation>
-    </message>
-    <message>
-        <source>Show diagnostic information</source>
-        <translation>Toon diagnostische informatie</translation>
-    </message>
-    <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debug console</translation>
-    </message>
-    <message>
-        <source>Open debugging console</source>
-        <translation>Open debugging console</translation>
-    </message>
-    <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Netwerk Monitor</translation>
-    </message>
-    <message>
-        <source>Show network monitor</source>
-        <translation>Toon netwerk monitor</translation>
-    </message>
-    <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Peers lijst</translation>
-    </message>
-    <message>
-        <source>Show peers info</source>
-        <translation>Toon informatie van peers</translation>
-    </message>
-    <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Portemonnee &amp;Repareren </translation>
-    </message>
-    <message>
-        <source>Show wallet repair options</source>
-        <translation>Toon portemonnee reparatie opties</translation>
-    </message>
-    <message>
-        <source>Open configuration file</source>
-        <translation>Open configuratie bestand</translation>
-    </message>
-    <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Toon Automatische &amp;Backups</translation>
-    </message>
-    <message>
-        <source>Show automatically created wallet backups</source>
-        <translation>Toon automatisch aangemaakte portemonnee backups</translation>
-    </message>
-    <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Verzendadressen...</translation>
-    </message>
-    <message>
-        <source>Show the list of used sending addresses and labels</source>
-        <translation>Toon de lijst van gebruikte verzendadressen en labels</translation>
-    </message>
-    <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Ontvangstadressen...</translation>
-    </message>
-    <message>
-        <source>Show the list of used receiving addresses and labels</source>
-        <translation>Toon de lijst van gebruikte ontvangstadressen en labels</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature creation...</source>
-        <translation>&amp;Multisignature aanmaak...</translation>
-    </message>
-    <message>
-        <source>Create a new multisignature address and add it to this wallet</source>
-        <translation>Creëer een nieuw multisignature adres en voeg het toe aan deze portemonnee</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature spending...</source>
-        <translation>&amp;Multisignature spenderen...</translation>
-    </message>
-    <message>
-        <source>Spend from a multisignature address</source>
-        <translation>Besteden vanuit een multisignature adres</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature signing...</source>
-        <translation>Ondertekenen van &amp;Multisignature...</translation>
-    </message>
-    <message>
-        <source>Sign with a multisignature address</source>
-        <translation>Onderteken met een multisignature adres</translation>
-    </message>
-    <message>
-        <source>Open &amp;URI...</source>
-        <translation>Open &amp;URI...</translation>
-    </message>
-    <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Opdrachtregelopties</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n blokken aan transactiegeschiedenis verwerkt.</numerusform><numerusform>%n blokken aan transactiegeschiedenis verwerkt.</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing additional data: %p%</source>
-        <translation>Synchroniseren aanvullende gegevens: %p%</translation>
-    </message>
-    <message>
-        <source>%1 behind. Scanning block %2</source>
-        <translation>%1 achter. Scannen van block %2</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
-        <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;geopend&lt;/b&gt;enkel voor anonimisering en staking</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Bestand</translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Instellingen</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Gereedschap</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
-    </message>
-    <message>
-        <source>Tabs toolbar</source>
-        <translation>Tabblad werkbalk</translation>
-    </message>
-    <message>
-        <source>KTS Core</source>
-        <translation>KTS Core</translation>
-    </message>
-    <message>
-        <source>Send coins to a KTS address</source>
-        <translation>Verstuur munten naar een KTS adres</translation>
-    </message>
-    <message>
-        <source>Request payments (generates QR codes and kts: URIs)</source>
-        <translation>Vraag betaling aan (genereert QR codes en KTS: URI's)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privacy</translation>
-    </message>
-    <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Masternodes</translation>
-    </message>
-    <message>
-        <source>Browse masternodes</source>
-        <translation>Bekijk masternodes</translation>
-    </message>
-    <message>
-        <source>&amp;About KTS Core</source>
-        <translation>&amp;Over KTS Core</translation>
-    </message>
-    <message>
-        <source>Show information about KTS Core</source>
-        <translation>Toon informatie over KTS Kern</translation>
-    </message>
-    <message>
-        <source>Modify configuration options for KTS</source>
-        <translation>Wijzig KTS configuratie opties</translation>
-    </message>
-    <message>
-        <source>Sign messages with your KTS addresses to prove you own them</source>
-        <translation>Onderteken berichten met uw KTS adressen om te bewijzen dat deze adressen in uw bezit zijn</translation>
-    </message>
-    <message>
-        <source>Verify messages to ensure they were signed with specified KTS addresses</source>
-        <translation>Controleer berichten om te verzekeren dat deze ondertekend zijn met de gespecificeerde KTS adressen</translation>
-    </message>
-    <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 tool</translation>
-    </message>
-    <message>
-        <source>Encrypt and decrypt private keys using a passphrase</source>
-        <translation>Versleutelen en ontsleutel privé sleutels door middel van een wachtwoordzin</translation>
-    </message>
-    <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;MultiSend</translation>
-    </message>
-    <message>
-        <source>MultiSend Settings</source>
-        <translation>MultiSend instellingen</translation>
-    </message>
-    <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Open Portemonnee &amp;Configuratiebestand</translation>
-    </message>
-    <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Open &amp;Masternode Configuratiebestand</translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Open Masternode configuratiebestand</translation>
-    </message>
-    <message>
-        <source>Open a KTS: URI or payment request</source>
-        <translation>Open een KTS: URI of betaalverzoek</translation>
-    </message>
-    <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Blockchain verkenner</translation>
-    </message>
-    <message>
-        <source>Block explorer window</source>
-        <translation>Block verkenner venster</translation>
-    </message>
-    <message>
-        <source>Show the KTS Core help message to get a list with possible KTS command-line options</source>
-        <translation>Toon het KTS Core help bericht om een ​​lijst te krijgen met mogelijke KTS command line opties</translation>
-    </message>
-    <message>
-        <source>KTS Core client</source>
-        <translation>KTS Core client</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to KTS network</source>
-        <translation><numerusform>%n actieve verbindingen met het KTS netwerk</numerusform><numerusform>%n actieve connectie(s) naar KTS netwerk</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing with network...</source>
-        <translation>Synchroniseren met het netwerk...</translation>
-    </message>
-    <message>
-        <source>Importing blocks from disk...</source>
-        <translation>Blocks aan het importeren vanaf schijf...</translation>
-    </message>
-    <message>
-        <source>Reindexing blocks on disk...</source>
-        <translation>Blocks opnieuw aan het indexeren op de schijf...</translation>
-    </message>
-    <message>
-        <source>No block source available...</source>
-        <translation>Geen block bron beschikbaar</translation>
-    </message>
-    <message>
-        <source>Up to date</source>
-        <translation>Bijgewerkt</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n uren</numerusform><numerusform>%n uren</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n day</numerusform><numerusform>%n dagen</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n weken</numerusform><numerusform>%n weken</numerusform></translation>
-    </message>
-    <message>
-        <source>%1 and %2</source>
-        <translation>%1 en %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n year</numerusform><numerusform>%n jaren</numerusform></translation>
-    </message>
-    <message>
-        <source>Catching up...</source>
-        <translation>Aan het bijwerken...</translation>
-    </message>
-    <message>
-        <source>Last received block was generated %1 ago.</source>
-        <translation>Laatst ontvangen block was %1 geleden gegenereerd.</translation>
-    </message>
-    <message>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation>Transacties hierna zullen nog niet zichtbaar zijn.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Error</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Waarschuwing</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Informatie</translation>
-    </message>
-    <message>
-        <source>Sent transaction</source>
-        <translation>Verzend transactie</translation>
-    </message>
-    <message>
-        <source>Incoming transaction</source>
-        <translation>Inkomende transactie</translation>
-    </message>
-    <message>
-        <source>Sent MultiSend transaction</source>
-        <translation>Verzonden MultiSend transactie</translation>
-    </message>
-    <message>
-        <source>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</source>
-        <translation>Datum: %1
-Hoeveelheid: %2
-Type: %3
-Adres: %4
-</translation>
-    </message>
-    <message>
-        <source>Staking is active
- MultiSend: %1</source>
-        <translation>Staking is actief
-Multisend: %1</translation>
-    </message>
-    <message>
-        <source>Active</source>
-        <translation>Actief</translation>
-    </message>
-    <message>
-        <source>Not Active</source>
-        <translation>Niet actief</translation>
-    </message>
-    <message>
-        <source>Staking is not active
- MultiSend: %1</source>
-        <translation>Staking is niet actief
-MultiSend: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint is momenteel ingeschakeld en ingesteld op</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>AutoMint is uitgeschakeld</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;geopend&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Portemonnee is versleuteld &lt;/b&gt;en momenteel &lt;b&gt; vergrendeld&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
     <name>BlockExplorer</name>
     <message>
         <source>Blockchain Explorer</source>
@@ -897,6 +475,33 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>CSRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Savings</source>
+        <translation>Besparingen</translation>
+    </message>
+    <message>
+        <source>0,00 KTS</source>
+        <translation>0,00 KTS</translation>
+    </message>
+    <message>
+        <source>address</source>
+        <translation>adres</translation>
+    </message>
+    <message>
+        <source>Not Staking</source>
+        <translation>Niet aan het Staken</translation>
+    </message>
+    <message>
+        <source>Own delegation</source>
+        <translation>Eigen delegatie</translation>
+    </message>
+</context>
+<context>
     <name>ClientModel</name>
     <message>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
@@ -918,14 +523,6 @@ MultiSend: %1</translation>
         <translation>Bytes:</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Bedrag:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioriteit:</translation>
-    </message>
-    <message>
         <source>Fee:</source>
         <translation>Fee:</translation>
     </message>
@@ -938,20 +535,8 @@ MultiSend: %1</translation>
         <translation>Dust:</translation>
     </message>
     <message>
-        <source>After Fee:</source>
-        <translation>Na de fee:</translation>
-    </message>
-    <message>
         <source>Change:</source>
         <translation>Wisselgeld:</translation>
-    </message>
-    <message>
-        <source>(un)select all</source>
-        <translation>(de)selecteer alles</translation>
-    </message>
-    <message>
-        <source>toggle lock state</source>
-        <translation>Schakel lock status</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -970,6 +555,30 @@ MultiSend: %1</translation>
         <translation>Bedrag</translation>
     </message>
     <message>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>0.00 KTS</source>
+        <translation>0.00 KTS</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Selecteer alles</translation>
+    </message>
+    <message>
+        <source>Toggle lock state</source>
+        <translation>Schakel lockstatus in</translation>
+    </message>
+    <message>
         <source>Received with label</source>
         <translation>Ontvangen met label</translation>
     </message>
@@ -978,8 +587,12 @@ MultiSend: %1</translation>
         <translation>Ontvangen met adres</translation>
     </message>
     <message>
-        <source>Type</source>
-        <translation>Type</translation>
+        <source>After Fee: </source>
+        <translation>Na kosten</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
         <source>Date</source>
@@ -992,10 +605,6 @@ MultiSend: %1</translation>
     <message>
         <source>Confirmed</source>
         <translation>Bevestigd</translation>
-    </message>
-    <message>
-        <source>Priority</source>
-        <translation>Prioriteit</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -1048,6 +657,10 @@ MultiSend: %1</translation>
     <message>
         <source>Copy change</source>
         <translation>Kopieer wisselgeld</translation>
+    </message>
+    <message>
+        <source>Unselect all</source>
+        <translation>Deselecteer alles</translation>
     </message>
     <message>
         <source>Please switch to "List mode" to use this function.</source>
@@ -1147,6 +760,577 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>CoinControlKtsWidget</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>KTS:</source>
+        <translation>KTS:</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Kwantiteit:</translation>
+    </message>
+    <message>
+        <source>Fee:</source>
+        <translation>Fee:</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Bedrag</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Bevestigingen</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Selectievakje</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Bytes:</translation>
+    </message>
+    <message>
+        <source>Dust:</source>
+        <translation>Dust:</translation>
+    </message>
+    <message>
+        <source>Change:</source>
+        <translation>Wisselgeld:</translation>
+    </message>
+    <message>
+        <source>After Fee: </source>
+        <translation>Na kosten</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
+    </message>
+</context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tietel</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>Owner Address (optional, if empty a new address will be created)</source>
+        <translation>Eigenaarsadres (optioneel, indien leeg zal er een nieuw adres aangemaakt worden)</translation>
+    </message>
+    <message>
+        <source>List of delegated balance by address</source>
+        <translation>Lijst van gedelegeerde balans gesorteerd op adres</translation>
+    </message>
+    <message>
+        <source>Total</source>
+        <translation>Totaal</translation>
+    </message>
+    <message>
+        <source>Unconfirmed balance will not be shown</source>
+        <translation>Onbevestigde saldi zal niet getoond worden</translation>
+    </message>
+    <message>
+        <source>No balance delegated</source>
+        <translation>Geen balans gedelegeerd</translation>
+    </message>
+    <message>
+        <source>Cold Staking</source>
+        <translation>Cold Staking</translation>
+    </message>
+    <message>
+        <source>Staker</source>
+        <translation>Staker</translation>
+    </message>
+    <message>
+        <source>Delegation</source>
+        <translation>Delegatie</translation>
+    </message>
+    <message>
+        <source>You can delegate your KTSs and let a hot node (24/7 online node)
+stake in your behalf, keeping the keys in a secure place offline.</source>
+        <translation>Je kan jouw KTSs delegeren en een hot node (24/7 online node)
+laten staken in jouw naam, waardoor de sleutels in een veilige offline opslag bewaard worden.</translation>
+    </message>
+    <message>
+        <source>Add owner address</source>
+        <translation>Eigenaarsadres toevoegen</translation>
+    </message>
+    <message>
+        <source>Delegate or Accept KTS delegation</source>
+        <translation>Delegeer of Accepteer KTS delegatie</translation>
+    </message>
+    <message>
+        <source>Delegate</source>
+        <translation>Delegeer</translation>
+    </message>
+    <message>
+        <source>Clear All</source>
+        <translation>Alles wissen</translation>
+    </message>
+    <message>
+        <source>Add the staking address</source>
+        <translation>Staking-adres toevoegen</translation>
+    </message>
+    <message>
+        <source>Delegated balance history</source>
+        <translation>Gedelegeerde balanshistoriek</translation>
+    </message>
+    <message>
+        <source>No delegations yet</source>
+        <translation>Nog geen delegaties</translation>
+    </message>
+    <message>
+        <source>Total Staking: %1</source>
+        <translation>Totaal Staking: %1</translation>
+    </message>
+    <message>
+        <source>Error loading delegations: %1</source>
+        <translation>Fout bij laden delegaties: %1</translation>
+    </message>
+    <message>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation>Geen beschikbare contacten, je kan naar het contactscherm gaan en daar enkele toevoegen!</translation>
+    </message>
+    <message>
+        <source>Cold staking is networkely disabled</source>
+        <translation>Cold staking is uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Invalid entry</source>
+        <translation>Ongeldige invoer</translation>
+    </message>
+    <message>
+        <source>Invalid entry, minimum delegable amount is 10 KTS</source>
+        <translation>Ongeldige invoer, de minimum gedelegeerde hoeveelheid is 10 KTS</translation>
+    </message>
+    <message>
+        <source>Owner address invalid</source>
+        <translation>Ongeldig eigenaarsadres</translation>
+    </message>
+    <message>
+        <source>ALERT!</source>
+        <translation>ALERT!</translation>
+    </message>
+    <message>
+        <source>Delegating to an external owner address!
+
+The delegated coins will NOT be spendable by this wallet.
+Spending these coins will need to be done from the wallet or
+device containing the owner address.
+
+Do you wish to proceed?</source>
+        <translation>Aan het delegeren naar een extern eigenaarsadres!
+
+De gedelegeerde munten zullen NIET besteedbaar zijn vanuit deze portemonnee.
+Het uitbesteden van deze munten zal gedaan kunnen worden vanuit de portemonnee of
+toestel welke het eigenaarsadres bevat.
+
+Wil je verdergaan?</translation>
+    </message>
+    <message>
+        <source>Staking address corresponds to this wallet, change it to an external node</source>
+        <translation>Stakingadres reageert op deze portemonnee, wijzig het in een externe node</translation>
+    </message>
+    <message>
+        <source>Cannot create transaction.</source>
+        <translation>Kan geen transactie aanmaken.</translation>
+    </message>
+    <message>
+        <source>Coins delegated</source>
+        <translation>Gedelegeerde Munten</translation>
+    </message>
+    <message>
+        <source>You don't have any KTS to select.</source>
+        <translation>Je hebt geen KTS om te selecteren</translation>
+    </message>
+    <message>
+        <source>URI copied to clipboard</source>
+        <translation>URI gekopieerd naar klembord</translation>
+    </message>
+    <message>
+        <source>Address copied to clipboard</source>
+        <translation>Adres gekopieerd naar klembord</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerk</translation>
+    </message>
+    <message>
+        <source>Stake</source>
+        <translation>Stake</translation>
+    </message>
+    <message>
+        <source>Blacklist</source>
+        <translation>Blacklist</translation>
+    </message>
+    <message>
+        <source>Edit Label</source>
+        <translation>Label wijzigen</translation>
+    </message>
+    <message>
+        <source>Copy owner
+address</source>
+        <translation>Kopieer eigenaarsadres</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adres gekopieerd</translation>
+    </message>
+    <message>
+        <source>Edit Cold Address Label</source>
+        <translation>Label Cold Adres wijzigen</translation>
+    </message>
+    <message>
+        <source>Whitelist failed, please check the logs</source>
+        <translation>Veilige lijst mislukt, controleer de logs</translation>
+    </message>
+    <message>
+        <source> staking!</source>
+        <translation>staking!</translation>
+    </message>
+    <message>
+        <source>Blacklist failed, please check the logs</source>
+        <translation>Zwarte lijst mislukt, controleer de logs</translation>
+    </message>
+    <message>
+        <source> blacklisted from staking</source>
+        <translation>staking staat op de zwarte lijst</translation>
+    </message>
+    <message>
+        <source>Owner address copied</source>
+        <translation>Eigenaarsadres gekopieerd</translation>
+    </message>
+    <message>
+        <source>Edit Owner Address Label</source>
+        <translation>Label eigenaarsadres wijzigen</translation>
+    </message>
+    <message>
+        <source>Address label saved</source>
+        <translation>Adreslabel opgeslagen</translation>
+    </message>
+    <message>
+        <source>Error storing address label</source>
+        <translation>Fout bij bewaren adreslabel</translation>
+    </message>
+</context>
+<context>
+    <name>ContactDropdownRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Bob Allen</source>
+        <translation>Bob Allen</translation>
+    </message>
+    <message>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
+    </message>
+</context>
+<context>
+    <name>DashboardWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Transactions</source>
+        <translation>Transacties</translation>
+    </message>
+    <message>
+        <source>You can see here the history of your account</source>
+        <translation>U kunt hier de geschiedenis van uw account bekijken</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Waarschuwing</translation>
+    </message>
+    <message>
+        <source>No transactions</source>
+        <translation>Geen transacties</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>Staking Rewards</source>
+        <translation>Staking Beloningen</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>Staking statistics</source>
+        <translation>Staking statistieken</translation>
+    </message>
+    <message>
+        <source>KTS</source>
+        <translation>KTS</translation>
+    </message>
+    <message>
+        <source>zKTS</source>
+        <translation>zKTS</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sorteervolgorde</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Dagen</translation>
+    </message>
+    <message>
+        <source>Months</source>
+        <translation>Maanden</translation>
+    </message>
+    <message>
+        <source>Years</source>
+        <translation>Jaren</translation>
+    </message>
+    <message>
+        <source>Filter by</source>
+        <translation>Filter volgens</translation>
+    </message>
+    <message>
+        <source>LabelText</source>
+        <translation>LabelText</translation>
+    </message>
+    <message>
+        <source>You can view your account's history</source>
+        <translation>U kunt de geschiedenis van uw account bekijken</translation>
+    </message>
+    <message>
+        <source>Amount of KTS and zKTS staked.</source>
+        <translation>Hoeveelheid aan gestaked KTS en zKTS.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Ontvangen</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Verstuurd</translation>
+    </message>
+    <message>
+        <source>Mined</source>
+        <translation>Mined</translation>
+    </message>
+    <message>
+        <source>Minted</source>
+        <translation>Minted</translation>
+    </message>
+    <message>
+        <source>MN reward</source>
+        <translation>MN beloning</translation>
+    </message>
+    <message>
+        <source>To yourself</source>
+        <translation>Naar jezelf</translation>
+    </message>
+    <message>
+        <source>Cold stakes</source>
+        <translation>Cold stakes</translation>
+    </message>
+    <message>
+        <source>Hot stakes</source>
+        <translation>Hot stakes</translation>
+    </message>
+    <message>
+        <source>Delegated</source>
+        <translation>Gedelegeerd</translation>
+    </message>
+    <message>
+        <source>Delegations</source>
+        <translation>Delegaties</translation>
+    </message>
+    <message>
+        <source>Please wait until the wallet is fully synced to see your correct balance</source>
+        <translation>Wacht tot de portemonnee volledig gesynchroniseerd is om uw juiste saldo te zien</translation>
+    </message>
+    <message>
+        <source>No transactions yet</source>
+        <translation>Nog geen transacties</translation>
+    </message>
+    <message>
+        <source>How to get KTS or zKTS</source>
+        <translation>Hoe KTS of zKTS verkrijgen</translation>
+    </message>
+    <message>
+        <source>You can verify the staking activity in the status bar at the top right of the wallet.
+It will start automatically as soon as the wallet has enough confirmations on any unspent balances, and the wallet has synced.</source>
+        <translation>U kunt de stakingactiviteit controleren in de statusbalk rechtsboven in de portemonnee.
+Het zal automatisch starten zodra de portemonnee voldoende bevestigingen heeft op ongebruikte saldo's en de portemonnee gesynchroniseerd is.</translation>
+    </message>
+    <message>
+        <source>You have no staking rewards</source>
+        <translation>Je hebt geen staking beloningen</translation>
+    </message>
+    <message>
+        <source>No charts library</source>
+        <translation>Geen grafiekbibliotheek</translation>
+    </message>
+    <message>
+        <source>Loading chart..</source>
+        <translation>Grafiek laden...</translation>
+    </message>
+    <message>
+        <source>Error loading chart, invalid show option</source>
+        <translation>Fout bij laden van grafiek, ongeldige toonoptie</translation>
+    </message>
+    <message>
+        <source>Error loading chart, invalid data</source>
+        <translation>Fout bij laden van grafiek, ongeldige gegevens</translation>
+    </message>
+    <message>
+        <source>Error loading chart: %1</source>
+        <translation>Fout bij laden grafiek: %1</translation>
+    </message>
+</context>
+<context>
+    <name>DefaultDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
+    </message>
+    <message>
+        <source>Text Label</source>
+        <translation>Text Label</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+</context>
+<context>
+    <name>DenomGenerationDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>This will unlock your wallet fully, so that anyone with access to it can spend until the wallet is closed or locked again.</source>
+        <translation>Hiermee wordt uw portemonnee volledig ontgrendeld, zodat iedereen die er toegang toe heeft, deze kan uitgeven totdat de portemonnee weer wordt gesloten of vergrendeld.</translation>
+    </message>
+    <message>
+        <source>5000</source>
+        <translation>5000</translation>
+    </message>
+    <message>
+        <source>100</source>
+        <translation>100</translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation>10</translation>
+    </message>
+    <message>
+        <source>1000</source>
+        <translation>1000</translation>
+    </message>
+    <message>
+        <source>50</source>
+        <translation>50</translation>
+    </message>
+    <message>
+        <source>500</source>
+        <translation>500</translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation>5</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Selecteer Alles</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+</context>
+<context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
@@ -1202,6 +1386,13 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
+    <name>ExpandableButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+</context>
+<context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
@@ -1222,6 +1413,49 @@ MultiSend: %1</translation>
     <message>
         <source>Cannot create data directory here.</source>
         <translation>Kan de data directory hier niet aanmaken.</translation>
+    </message>
+</context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>GOVERNANCE</source>
+        <translation>BESTUUR</translation>
+    </message>
+    <message>
+        <source>Update Proposals</source>
+        <translation>Voorstellen Bijwerken</translation>
+    </message>
+    <message>
+        <source>Next super block:</source>
+        <translation>Volgende superblok:</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
+        <source>Blocks to next super block:</source>
+        <translation>Blokken tot de volgende superblok:</translation>
+    </message>
+    <message>
+        <source>Days to budget payout (estimate):</source>
+        <translation>Dagen tot budgetuitbetaling (schatting):</translation>
+    </message>
+    <message>
+        <source>Allotted budget:</source>
+        <translation>Toegewezen budget:</translation>
+    </message>
+    <message>
+        <source>Budget left:</source>
+        <translation>Resterend budget:</translation>
+    </message>
+    <message>
+        <source>Masternodes count:</source>
+        <translation>Masternodes aantal:</translation>
     </message>
 </context>
 <context>
@@ -1278,6 +1512,10 @@ MultiSend: %1</translation>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>Stel SSL root certificaten in voor betalingsverzoek (standaard: -systeem-)</translation>
     </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
+    </message>
 </context>
 <context>
     <name>Intro</name>
@@ -1302,8 +1540,16 @@ MultiSend: %1</translation>
         <translation>Gebruik de standaard datafolder </translation>
     </message>
     <message>
-        <source>Use a custom data directory:</source>
-        <translation>Gebruik een aangepaste data directory:</translation>
+        <source>Use a custom data directory</source>
+        <translation>Gebruik een aangepaste gegevenslocatie</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
         <source>KTS Core</source>
@@ -1327,501 +1573,432 @@ MultiSend: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>LoadingDialog</name>
     <message>
         <source>Form</source>
         <translation>Formulier</translation>
     </message>
     <message>
-        <source>MASTERNODES</source>
-        <translation>MASTERNODES</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Opmerking: De status van uw masternodes in de lokale portemonnee kan mogelijk iets afwijken. &lt;br /&gt;Wacht altijd op de portemonnee om additionele data te synchroniseren en verifieer dit vanuit een andere node &lt;br /&gt;mocht de node nu aan het draaien zijn maar je ziet nog steeds 'MISSING' in het 'Status' veld.</translation>
+        <source>Loading</source>
+        <translation>Aan het laden</translation>
     </message>
     <message>
-        <source>Alias</source>
-        <translation>Alias</translation>
+        <source>.</source>
+        <translation>.</translation>
+    </message>
+</context>
+<context>
+    <name>LockUnlock</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Unlock Wallet</source>
+        <translation>Portemonnee Ontgrendelen</translation>
+    </message>
+    <message>
+        <source>Lock Wallet</source>
+        <translation>Portemonnee Vergrendelen</translation>
+    </message>
+    <message>
+        <source>Staking Only</source>
+        <translation>Alleen Staking</translation>
+    </message>
+</context>
+<context>
+    <name>MNRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>user_masternode</source>
+        <translation>user_masternode</translation>
+    </message>
+    <message>
+        <source>Address: 88.26.164.88:51474</source>
+        <translation>Adres: 88.26.164.88:51474</translation>
+    </message>
+    <message>
+        <source>Jan. 19, 2019</source>
+        <translation>Jan. 19, 2019</translation>
+    </message>
+</context>
+<context>
+    <name>MasterNodeWizardDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <source>Intro</source>
+        <translation>Intro</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>Adres</translation>
     </message>
     <message>
-        <source>Protocol</source>
-        <translation>Protocol</translation>
+        <source>Create New Master Node Controller</source>
+        <translation>Creëer een Nieuwe Masternode Controller</translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation>Status</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 10.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Om een KTS Masternode te maken moet u 10.000 KTS (de eenheid van KTS) aan het netwerk wijden (deze munten zijn echter nog steeds van u en zullen nooit uw bezit verlaten). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;U kunt de node op elk gewenst moment deactiveren en de munten ontgrendelen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation>Actief</translation>
+        <source>Make sure you have this amount of coins.</source>
+        <translation>Zorg ervoor dat je deze hoeveelheid munten hebt.</translation>
     </message>
     <message>
-        <source>Last Seen (UTC)</source>
-        <translation>Laatst gezien (UTC)</translation>
+        <source>Set Master Node’s Name</source>
+        <translation>Masternode's Naam instellen</translation>
     </message>
     <message>
-        <source>Pubkey</source>
-        <translation>Pubkey</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Een transactie van 10,000 KTS zal gemaakt worden&lt;/p&gt;&lt;p&gt;naar een nieuw leeg adres in uw portemonnee.&lt;/p&gt;&lt;p&gt;Het adres is gelabeld onder de masternode's naam.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>S&amp;tart alias</translation>
+        <source>Set Master Node’s IP and port</source>
+        <translation>Masternode's IP en poort instellen</translation>
     </message>
     <message>
-        <source>Start &amp;all</source>
-        <translation>&amp;all starten</translation>
+        <source>Address of the node that must always be online running the actual master node.</source>
+        <translation>Adres van de node dat altijd online moet zijn met het eigenlijke masternode.</translation>
     </message>
     <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Start &amp;MISSING</translation>
+        <source>Enter IP address</source>
+        <translation>Voer IP-adres in</translation>
     </message>
     <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Status bijwerken</translation>
+        <source>Enter Port</source>
+        <translation>Voer Poort In</translation>
     </message>
     <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Status wordt automatisch bijgewerkt in (sec):</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>0</source>
-        <translation>0</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Start alias</translation>
+        <source>e.g user_masternode</source>
+        <translation>e.g user_masternode</translation>
     </message>
     <message>
-        <source>Confirm masternode start</source>
-        <translation>Bevestig start masternode</translation>
+        <source>NEXT</source>
+        <translation>VOLGENDE</translation>
     </message>
     <message>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Weet je zeker dat je masternode %1 wilt starten?</translation>
+        <source>BACK</source>
+        <translation>TERUG</translation>
     </message>
     <message>
-        <source>Confirm all masternodes start</source>
-        <translation>Bevestig start alle masternodes</translation>
+        <source>address label cannot be empty</source>
+        <translation>Adreslabel kan niet leeg zijn</translation>
     </message>
     <message>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Weet je zeker dat je ALLE masternodes wilt starten?</translation>
+        <source>IP or port cannot be empty</source>
+        <translation>IP of poort kan niet leeg zijn</translation>
     </message>
     <message>
-        <source>Command is not available right now</source>
-        <translation>Commando is nu niet beschikbaar</translation>
+        <source>Invalid port number</source>
+        <translation>Ongeldige poortnummer</translation>
     </message>
     <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Je kunt dit commando niet gebruiken tot de masternode lijst is gesynchroniseerd</translation>
+        <source>Prepare master node failed..</source>
+        <translation>Voorbereiden masternode mislukt..</translation>
     </message>
     <message>
-        <source>Confirm missing masternodes start</source>
-        <translation>Bevestig start ontbrekende masternodes</translation>
+        <source>Invalid masternode.conf file</source>
+        <translation>Invalide masternode.conf file</translation>
     </message>
     <message>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Weet je zeker dat je alle ONTBREKENDE masternodes wilt starten?</translation>
+        <source>Error parsing masternode.conf file</source>
+        <translation>Fout opgelopen bij het parsen van het masternode.conf bestand</translation>
+    </message>
+    <message>
+        <source>Invalid collaterall output index</source>
+        <translation>Ongeldige Collaterale Outputindex</translation>
+    </message>
+    <message>
+        <source>Master node created!</source>
+        <translation>Masternode aangemaakt!</translation>
+    </message>
+    <message>
+        <source>masternode.conf file doesn't exists</source>
+        <translation>masternode.conf bestand bestaat niet</translation>
+    </message>
+    <message>
+        <source>The recipient address is not valid, please recheck.</source>
+        <translation>Het ontvangstadres is niet geldig, controleer deze.</translation>
+    </message>
+    <message>
+        <source>The amount to pay must be larger than 0.</source>
+        <translation>Het te betalen bedrag moet groter zijn dan 0.</translation>
+    </message>
+    <message>
+        <source>The amount exceeds your balance.</source>
+        <translation>Het bedrag overschrijdt uw saldo.</translation>
+    </message>
+    <message>
+        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
+        <translation>Het totaal overschrijdt uw saldo wanneer de transactievergoeding %1 is inbegrepen.</translation>
+    </message>
+    <message>
+        <source>Duplicate address found, can only send to each address once per send operation.</source>
+        <translation>Dubbel adres gevonden, kan alleen per keer per verzendoperatie naar elk adres versturen.</translation>
+    </message>
+    <message>
+        <source>Transaction creation failed!</source>
+        <translation>Transactie creatie mislukt!</translation>
+    </message>
+    <message>
+        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
+        <translation>De transactie is afgewezen! Dit kan gebeuren als sommige munten in je portemonnee al waren uitgegeven, zoals als je een kopie van de wallet.dat en munten in de kopie waren besteed maar niet gemarkeerd zoals hier besteed.</translation>
+    </message>
+    <message>
+        <source>Error: The wallet was unlocked only to anonymize coins.</source>
+        <translation>Fout: De portemonnee was alleen geopend om munten te anonimiseren.</translation>
+    </message>
+    <message>
+        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
+        <translation>Een vergoeding %1 keer hoger dan %2 per kB wordt beschouwd als een zwaar hoge vergoeding.</translation>
+    </message>
+    <message>
+        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
+        <translation>Fout: De portemonnee was alleen geopend om munten te anonimiseren. Ontgrendelen geannuleerd.</translation>
     </message>
 </context>
 <context>
-    <name>MultiSendDialog</name>
+    <name>MasterNodesWidget</name>
     <message>
-        <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Enter whole numbers 1 - 100</source>
-        <translation>Geef volledige cijfers in 1 - 100</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Enter % to Give (1-100)</source>
-        <translation>Voer % in om te geven (1-100)</translation>
+        <source>No active Master Node yet</source>
+        <translation>Nog geen actieve Master Node</translation>
     </message>
     <message>
-        <source>Enter Address to Send to</source>
-        <translation>Vul het adres in om naar te verzenden</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other KTS addresses after it matures.
-To Add: enter percentage to give and KTS address to add to the MultiSend vector.
-To Delete: Enter address to delete and press delete.
-MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend stelt je in staat om automatisch tot 100% van uw stake of masternode beloning automatisch te verzenden naar een lijst van andere KTS adressen nadat het volwassen is. 
-Toevoegen: voer het te geven percentage in en KTS adres om toe te voegen aan de MultiSend vector.
-Verwijderen: Voer adres in om te verwijderen en druk op delete.
-MultiSend zal niet worden geactiveerd tenzij je op Activeer hebt geklikt</translation>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
     </message>
     <message>
-        <source>Add to MultiSend Vector</source>
-        <translation>Aan MultiSend Vector toevoegen</translation>
+        <source>Full nodes that incentivize node operators to perform the core consensus functions
+and vote on the treasury system receiving a periodic reward.</source>
+        <translation>Volledige nodes die node-operators stimuleren om de belangrijkste consensusfuncties uit te voeren.
+en stemmen over het treasury systeem met een periodieke beloning.</translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation>Toevoegen</translation>
+        <source>Create Masternode Controller</source>
+        <translation>Creëer Masternode Controller</translation>
     </message>
     <message>
-        <source>Deactivate MultiSend</source>
-        <translation>Deactiveer MultiSend</translation>
+        <source>No active Masternode yet</source>
+        <translation>Geen actieve Masternode</translation>
     </message>
     <message>
-        <source>Deactivate</source>
-        <translation>Deactiveren</translation>
-    </message>
-    <message>
-        <source>Choose an address from the address book</source>
-        <translation>Kies een adres uit het adresboek</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Percentage of stake to send</source>
-        <translation>Staking percentage om te verzenden</translation>
-    </message>
-    <message>
-        <source>Percentage:</source>
-        <translation>Percentage:</translation>
-    </message>
-    <message>
-        <source>Address to send portion of stake to</source>
-        <translation>Adres om een ​​deel van de stake te verzenden naar</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adres:</translation>
-    </message>
-    <message>
-        <source>Label:</source>
-        <translation>Label:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Voer een label in voor dit adres om het toe te voegen aan jouw adresboek</translation>
-    </message>
-    <message>
-        <source>Delete Address From MultiSend Vector</source>
-        <translation>Verwijder adres van MultiSend Vector</translation>
+        <source>Start</source>
+        <translation>Start</translation>
     </message>
     <message>
         <source>Delete</source>
         <translation>Wissen</translation>
     </message>
     <message>
-        <source>Activate MultiSend</source>
-        <translation>Activeer MultiSend</translation>
+        <source>Info</source>
+        <translation>Info</translation>
     </message>
     <message>
-        <source>Activate</source>
-        <translation>Activeren</translation>
+        <source>Start Masternode</source>
+        <translation>Start Masternode</translation>
     </message>
     <message>
-        <source>View MultiSend Vector</source>
-        <translation>Bekijk MultiSend Vector</translation>
-    </message>
-    <message>
-        <source>View MultiSend</source>
-        <translation>Bekijk MultiSend</translation>
-    </message>
-    <message>
-        <source>Send For Stakes</source>
-        <translation>Verstuur voor stakes</translation>
-    </message>
-    <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Verstuur voor Masternode beloningen</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(geen label)</translation>
-    </message>
-    <message>
-        <source>The entered address:
+        <source>Are you sure you want to start masternode %1?
 </source>
-        <translation>Het ingevoerde adres:
+        <translation>Weet u zeker dat u masternode %1 wilt starten?
 </translation>
     </message>
     <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>is ongeldig.
-Controleer het adres alsjeblieft en probeer het opnieuw.</translation>
+        <source>Cannot start masternode, the collateral transaction has not been accepted by the network.
+Please wait few more minutes.</source>
+        <translation>Kan de masternode niet starten, de collaterale transactie is niet geaccepteerd door het netwerk.
+Gelieve nog enkele minuten te wachten.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
+        <source>Remote Masternode Data</source>
+        <translation>Remote Masternodegegevens</translation>
+    </message>
+    <message>
+        <source>You are just about to export the required data to run a Masternode
+on a remote server to your clipboard.
+
+
+You will only have to paste the data in the kts.conf file
+of your remote server and start it, then start the Masternode using
+this controller wallet (select the Masternode in the list and press "start").
 </source>
-        <translation>De totale hoeveelheid van je MultiSend vector is meer dan 100% van je stake beloning
-</translation>
+        <translation>U staat op het punt om de vereiste gegevens te exporteren om een Masternode uit te voeren.
+op een externe server aan uw klembord.
+
+
+U hoeft alleen de gegevens in het kts.conf bestand te plakken
+van uw externe server en start deze vervolgens de Masternode met
+deze controller portemonnee (selecteer de Masternode in de lijst en druk op "start").</translation>
     </message>
     <message>
-        <source>Please Enter 1 - 100 for percent.</source>
-        <translation>Vul alsjeblieft 1 - 100 voor procent in.</translation>
+        <source>Masternode exported!, check your clipboard</source>
+        <translation>Masternode geëxporteerd, controleer uw klembord</translation>
     </message>
     <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>De MultiSend in het geheugen opgeslagen, maar mislukt om de eigenschappen op te slaan in de database.
-</translation>
+        <source>Delete Masternode</source>
+        <translation>Verwijder Masternode</translation>
     </message>
     <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
+        <source>You are just about to delete Masternode:
+%1
+
+Are you sure?</source>
+        <translation>Je staat op het punt om volgende Masternode te verwijderen:
+%1
+
+Weet je het zeker?</translation>
     </message>
     <message>
-        <source>Removed </source>
-        <translation>Verwijderd</translation>
+        <source>Invalid masternode.conf file</source>
+        <translation>Invalide masternode.conf file</translation>
     </message>
     <message>
-        <source>Could not locate address
-</source>
-        <translation>Kan het adres niet lokaliseren
-</translation>
+        <source>Error parsing masternode.conf file</source>
+        <translation>Fout opgelopen bij het parsen van het masternode.conf bestand</translation>
+    </message>
+    <message>
+        <source>masternode.conf file doesn't exists</source>
+        <translation>masternode.conf bestand bestaat niet</translation>
+    </message>
+    <message>
+        <source>Not enough balance to create a masternode, 10,000 KTS required.</source>
+        <translation>Niet genoeg balans om een masternode te creëren, 10,000 KTS vereist.</translation>
+    </message>
+    <message>
+        <source>Error creating masternode</source>
+        <translation>Error in het aanmaken van de masternode</translation>
     </message>
 </context>
 <context>
-    <name>MultisigDialog</name>
+    <name>MnInfoDialog</name>
     <message>
-        <source>Multisignature Address Interactions</source>
-        <translation>Multisignature Adres Interacties</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Create MultiSignature &amp;Address</source>
-        <translation>Creëer MultiSignature &amp;Adres</translation>
+        <source>Master Node Information</source>
+        <translation>Masternode Informatie</translation>
     </message>
     <message>
-        <source>How many people must sign to verify a transaction</source>
-        <translation>Hoeveel mensen moeten ondertekenen om een transactie te verifiëren</translation>
+        <source>Public Key:</source>
+        <translation>Publieke Sleutel:</translation>
     </message>
     <message>
-        <source>Enter the minimum number of signatures required to sign transactions</source>
-        <translation>Voer het minimale aantal vereiste ondertekeningen in om de transacties te ondertekenen</translation>
+        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
+        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
     </message>
     <message>
-        <source>Address Label:</source>
-        <translation>Adreslabel:</translation>
+        <source>Address: </source>
+        <translation>Adres:</translation>
     </message>
     <message>
-        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
-        <translation>Voeg een ander adres toe die kan ondertekenen om een transactie vanuit het multisig adres te verifiëren.</translation>
+        <source>127.0.0.2:43223</source>
+        <translation>127.0.0.2:43223</translation>
     </message>
     <message>
-        <source>&amp;Add Address / Key</source>
-        <translation>&amp;Voeg Adres / Sleutel toe</translation>
+        <source>Collaterall tx id:</source>
+        <translation>Collaterale tx id:</translation>
     </message>
     <message>
-        <source>Local addresses or public keys that can sign:</source>
-        <translation>Lokale adressen of publieke sleutels die kunnen ondertekenen:</translation>
+        <source>Output index:</source>
+        <translation>Outputindex:</translation>
     </message>
     <message>
-        <source>Create a new multisig address</source>
-        <translation>Creëer een nieuw multisig adres</translation>
-    </message>
-    <message>
-        <source>C&amp;reate</source>
-        <translation>C&amp;reëer</translation>
+        <source>1 Inputs</source>
+        <translation>1 Invoer</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Status:</translation>
     </message>
     <message>
-        <source>Use below to quickly import an address by its redeem. Don't forget to add a label before clicking import!
-Keep in mind, the wallet will rescan the blockchain to find transactions containing the new address.
-Please be patient after clicking import.</source>
-        <translation>Gebruik onderstaande om snel een adres te importeren door in te wisselen. Vergeet niet om een label toe te voegen voordat u op importeren klikt!
-Houd er rekening mee dat de portemonnee de blockchain opnieuw doorzoekt om transacties te vinden die het nieuwe adres bevatten.
-Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
+        <source>MISSING</source>
+        <translation>ONTBREKEND</translation>
     </message>
     <message>
-        <source>&amp;Import Redeem</source>
-        <translation>&amp;Importeer Inlossen</translation>
-    </message>
-    <message>
-        <source>&amp;Create MultiSignature Tx</source>
-        <translation>&amp;Creëer MultiSignature Tx</translation>
-    </message>
-    <message>
-        <source>Inputs:</source>
-        <translation>Inputs</translation>
-    </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>Munt Controle</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Hoeveelheid geselecteerd:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Bedrag:</translation>
-    </message>
-    <message>
-        <source>Add an input to fund the outputs</source>
-        <translation>Voeg een invoer toe om de uitvoer te financieren</translation>
-    </message>
-    <message>
-        <source>Add a Raw Input</source>
-        <translation>Voer een Raw invoer in</translation>
-    </message>
-    <message>
-        <source>Address / Amount:</source>
-        <translation>Adres / Bedrag:</translation>
-    </message>
-    <message>
-        <source>Add destinations to send KTS to</source>
-        <translation>Voeg bestemmingen toe om KTS naar te verzenden</translation>
-    </message>
-    <message>
-        <source>Add &amp;Destination</source>
-        <translation>Voeg &amp;Bestemming toe</translation>
-    </message>
-    <message>
-        <source>Create a transaction object using the given inputs to the given outputs</source>
-        <translation>Maak een transactie object aan met behulp van de gegeven invoer voor de gegeven uitvoer</translation>
-    </message>
-    <message>
-        <source>Cr&amp;eate</source>
-        <translation>Cr&amp;eëer</translation>
-    </message>
-    <message>
-        <source>&amp;Sign MultiSignature Tx</source>
-        <translation>&amp;Onderteken MultiSignature Tx</translation>
-    </message>
-    <message>
-        <source>Transaction Hex:</source>
-        <translation>Transactie Hex:</translation>
-    </message>
-    <message>
-        <source>Sign the transaction from this wallet or from provided private keys</source>
-        <translation>Onderteken de transactie vanuit deze portemonnee of vanuit aangeboden privésleutels</translation>
-    </message>
-    <message>
-        <source>S&amp;ign</source>
-        <translation>O&amp;nderteken</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;UITGESCHAKELD totdat de transactie voldoende is ondertekend.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Co&amp;mmit</source>
-        <translation>&amp;Engageer</translation>
-    </message>
-    <message>
-        <source>Add private keys to sign the transaction with</source>
-        <translation>Voeg privésleutels toe om de transactie met te ondertekenen</translation>
-    </message>
-    <message>
-        <source>Add Private &amp;Key</source>
-        <translation>Voeg &amp;Privésleutel toe</translation>
-    </message>
-    <message>
-        <source>Sign with only private keys (Not Recommened)</source>
-        <translation>Onderteken met enkel privésleutels (Niet Aanbevolen)</translation>
-    </message>
-    <message>
-        <source>Invalid Tx Hash.</source>
-        <translation>Ongeldige Tx Hash.</translation>
-    </message>
-    <message>
-        <source>Vout position must be positive.</source>
-        <translation>Je positie moet positief zijn. </translation>
-    </message>
-    <message>
-        <source>Maximum possible addresses reached. (15)</source>
-        <translation>Maximale mogelijke adressen bereikt. (15)</translation>
-    </message>
-    <message>
-        <source>Vout Position: </source>
-        <translation>Jouw Positie:</translation>
-    </message>
-    <message>
-        <source>Amount: </source>
-        <translation>Hoeveelheid:</translation>
-    </message>
-    <message>
-        <source>Maximum (15)</source>
-        <translation>Maximum (15)</translation>
+        <source>Export data to run the Master Node on a remote server</source>
+        <translation>Exporteer data om de Masternode uit te voeren op een externe server</translation>
     </message>
 </context>
 <context>
-    <name>ObfuscationConfig</name>
+    <name>MyAddressRow</name>
     <message>
-        <source>Configure Obfuscation</source>
-        <translation>Configureer verduistering</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Basic Privacy</source>
-        <translation>Basis Privacy</translation>
+        <source>Savings</source>
+        <translation>Besparingen</translation>
     </message>
     <message>
-        <source>High Privacy</source>
-        <translation>Hoge Privacy</translation>
+        <source>Jan. 19, 2019</source>
+        <translation>Jan. 19, 2019</translation>
     </message>
     <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximum Privacy</translation>
+        <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
+        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
+    </message>
+</context>
+<context>
+    <name>NavMenuWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Please select a privacy level.</source>
-        <translation>Selecteer de privacy level.</translation>
+        <source>V 1.0.0</source>
+        <translation>V 1.0.0</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 KTS</source>
-        <translation>Gebruik 2 aparte masternodes om fondsen te mixen tot 10000 KTS</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 KTS</source>
-        <translation>Gebruik 8 aparte masternodes om fondsen te mixen tot 10000 KTS</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Gebruik 16 aparte masternodes</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 KTS to anonymize 10000 KTS</source>
-        <translation>Deze optie is het snelst en kost ongeveer ~0,025 KTS om 10000 KTS te anonimiseren</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 KTS to anonymize 10000 KTS</source>
-        <translation>Deze optie is gematigd snel en kost ongeveer 0,05 KTS om 10000 KTS te anonimiseren</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Dit is de langzaamste en veiligste optie. Het gebruik van maximale anonimiteit kost</translation>
-    </message>
-    <message>
-        <source>0.1 KTS per 10000 KTS you anonymize.</source>
-        <translation>je anonimiseert 0,1 KTS per 1000 KTS.</translation>
-    </message>
-    <message>
-        <source>Obfuscation Configuration</source>
-        <translation>Verduistering configuratie</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op basic (%1 en 2 rondes). Je kunt dit op elk gewenst moment wijzigen door het configuratiescherm van KTS te openen.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to high (%1 and 8 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 8 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van KTS te openen.</translation>
-    </message>
-    <message>
-        <source>Obfuscation was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening KTS's configuration screen.</source>
-        <translation>Verduistering is succesvol ingesteld op hoog (%1 en 16 rondes). U kunt dit op elk gewenst moment wijzigen door het configuratiescherm van KTS te openen.</translation>
+        <source>v%1</source>
+        <translation>v%1</translation>
     </message>
 </context>
 <context>
@@ -1835,8 +2012,16 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>Open betalingsverzoek van URL of bestand</translation>
     </message>
     <message>
-        <source>URI:</source>
-        <translation>URI:</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
         <source>Select payment request file</source>
@@ -1845,6 +2030,29 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
     <message>
         <source>Select payment request file to open</source>
         <translation>Selecteer betalingsverzoek bestand dat geopend moet worden</translation>
+    </message>
+    <message>
+        <source>File not found</source>
+        <translation>Bestand niet gevonden</translation>
+    </message>
+    <message>
+        <source>Parsed data too large</source>
+        <translation>Ingelezen data te groot</translation>
+    </message>
+    <message>
+        <source>Invalid URI, not starting with "kts" prefix</source>
+        <translation>Ongeldige URI, begint niet met de "kts" prefix</translation>
+    </message>
+</context>
+<context>
+    <name>OptionButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
@@ -1939,9 +2147,9 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</source>
+https://www.transifex.com/kts-project/kts-project-translations</source>
         <translation>Taal ontbreekt of vertaling onvolledig? Help om bij te dragen aan vertalingen:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</translation>
+https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1954,6 +2162,14 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     <message>
         <source>Enable zKTS Automint</source>
         <translation>Schakel zKTS Automint in</translation>
+    </message>
+    <message>
+        <source>Enable automatic zKTS minting from specific addresses</source>
+        <translation>Automatische zKTS munting inschakelen vanuit specifiek adres</translation>
+    </message>
+    <message>
+        <source>Enable Automint Addresses</source>
+        <translation>Automint Adressen Inschakelen</translation>
     </message>
     <message>
         <source>Percentage of incoming KTS which get automatically converted to zKTS via Zerocoin Protocol (min: 10%)</source>
@@ -2028,8 +2244,8 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
         <translation>Gebruiksinterface thema:</translation>
     </message>
     <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>Toon &amp;Unit in volgende hoeveelheden:</translation>
+        <source>Unit to show amounts in:</source>
+        <translation>Eenheid om hoeveelheid in te weergeven:</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -2042,6 +2258,14 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     <message>
         <source>Hide empty balances</source>
         <translation>Verberg lege saldi</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes in transaction lists</source>
+        <translation>Verberg orphan stakes in transactielijsten</translation>
+    </message>
+    <message>
+        <source>Hide orphan stakes</source>
+        <translation>Verberg orphan stakes</translation>
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2113,156 +2337,89 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     </message>
 </context>
 <context>
-    <name>OverviewPage</name>
+    <name>KTSGUI</name>
     <message>
-        <source>Form</source>
-        <translation>Formulier</translation>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
     </message>
     <message>
-        <source>Available:</source>
-        <translation>Beschikbaar:</translation>
+        <source>Wallet</source>
+        <translation>Portemonnee</translation>
     </message>
     <message>
-        <source>Your current spendable balance</source>
-        <translation>Uw huidige bestedingsruimte</translation>
+        <source>Node</source>
+        <translation>Node</translation>
     </message>
     <message>
-        <source>Total Balance, including all unavailable coins.</source>
-        <translation>Totaal saldo, inclusief alle niet-beschikbare munten.</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Tonen / Verbergen</translation>
     </message>
     <message>
-        <source>KTS Balance</source>
-        <translation>KTS Saldi</translation>
+        <source>Show or hide the main Window</source>
+        <translation>Toon of verberg het hoofdvenster</translation>
     </message>
     <message>
-        <source>Pending:</source>
-        <translation>In afwachting:</translation>
+        <source>E&amp;xit</source>
+        <translation>S&amp;luiten</translation>
     </message>
     <message>
-        <source>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</source>
-        <translation>Totaal aantal transacties die nog niet zijn bevestigd en nog niet meetellen in het uitgeefbare saldo</translation>
+        <source>Quit application</source>
+        <translation>Programma afsluiten</translation>
     </message>
     <message>
-        <source>Immature:</source>
-        <translation>Immatuur:</translation>
+        <source>KTS Core client</source>
+        <translation>KTS Core client</translation>
     </message>
     <message>
-        <source>Staked or masternode rewards that has not yet matured</source>
-        <translation>Staked of masternode beloningen die nog niet volwassen zijn</translation>
+        <source>Error</source>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>Current locked balance in watch-only addresses</source>
-        <translation>Huidige vergrendelde balans in alleen-lezen-adressen</translation>
+        <source>Warning</source>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>Your current KTS balance, unconfirmed and immature transactions included</source>
-        <translation>Uw huidige KTS-saldo, onbevestigde en onvolgroeide transacties inbegrepen</translation>
+        <source>Information</source>
+        <translation>Informatie</translation>
     </message>
     <message>
-        <source>zKTS Balance</source>
-        <translation>zKTS-saldo</translation>
+        <source>System Message</source>
+        <translation>Systeembericht</translation>
     </message>
     <message>
-        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
-These zKTS are spendable.</source>
-        <translation>Volwassen: meer dan 20 bevestigingen en meer dan 1 mint van dezelfde denominatie nadat het gemint was.
-Deze zPIB zijn besteedbaar.</translation>
+        <source>Sent MultiSend transaction</source>
+        <translation>Verzonden MultiSend transactie</translation>
     </message>
     <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Onbevestigd: minder dan 20 bevestigingen
-Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat het gemint was.</translation>
+        <source>Sent transaction</source>
+        <translation>Verzend transactie</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het KTS netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
+        <source>Incoming transaction</source>
+        <translation>Inkomende transactie</translation>
     </message>
     <message>
-        <source>OVERVIEW</source>
-        <translation>OVERZICHT</translation>
-    </message>
-    <message>
-        <source>Combined Balance (including unconfirmed and immature coins)</source>
-        <translation>Gecombineerde Saldi (inclusief onbevestigde en onvolwassen munten)</translation>
-    </message>
-    <message>
-        <source>Combined Balance</source>
-        <translation>Gecombineerde balans</translation>
-    </message>
-    <message>
-        <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation>Onbevestigde transacties naar watch-only adressen</translation>
-    </message>
-    <message>
-        <source>Staked or masternode rewards in watch-only addresses that has not yet matured</source>
-        <translation>Staked of masternode beloningen in watch-only adressen die nog niet volwassen zijn</translation>
-    </message>
-    <message>
-        <source>Total:</source>
-        <translation>Totaal:</translation>
-    </message>
-    <message>
-        <source>Current total balance in watch-only addresses</source>
-        <translation>Huidig ​​totaal saldo in watch-only adressen</translation>
-    </message>
-    <message>
-        <source>Watch-only:</source>
-        <translation>Watch-only:</translation>
-    </message>
-    <message>
-        <source>Your current balance in watch-only addresses</source>
-        <translation>Je huidige saldo in watch-only adressen</translation>
-    </message>
-    <message>
-        <source>Spendable:</source>
-        <translation>Uitgeefbaar:</translation>
-    </message>
-    <message>
-        <source>Locked KTS or Masternode collaterals. These are excluded from zKTS minting.</source>
-        <translation>Vergrendelde KTS of Masternode onderpanden. Deze zijn uitgesloten van de zKTS muntage.</translation>
-    </message>
-    <message>
-        <source>Locked:</source>
-        <translation>Vergrendeld:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed:</source>
-        <translation>Onbevestigd:</translation>
-    </message>
-    <message>
-        <source>Your current zKTS balance, unconfirmed and immature zKTS included.</source>
-        <translation>Uw huidige zKTS-saldo, onbevestigde en onvolgroeide zKTS inbegrepen.</translation>
-    </message>
-    <message>
-        <source>Recent transactions</source>
-        <translation>Recente transacties</translation>
-    </message>
-    <message>
-        <source>out of sync</source>
-        <translation>niet gesynchroniseerd</translation>
-    </message>
-    <message>
-        <source>Current percentage of zKTS.
-If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%).
+        <source>Date: %1
+Amount: %2
+Type: %3
+Address: %4
 </source>
-        <translation>Huidige percentage van zKTS
-Als AutoMint ingeschakeld is zal deze percentage afhangen van de geconfigureerde AutoMint percentage (standaard = 10%).
+        <translation>Datum: %1
+Hoeveelheid: %2
+Type: %3
+Adres: %4
 </translation>
     </message>
     <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint is momenteel ingeschakeld en ingesteld op</translation>
+        <source>A fatal error occurred. KTS can no longer continue safely and will quit.</source>
+        <translation>Een kritieke fout is opgelopen. KTS kan niet langer veilig uitgevoerd worden en zal afsluiten.</translation>
     </message>
+</context>
+<context>
+    <name>PWidget</name>
     <message>
-        <source>To disable AutoMint add 'enablezeromint=0' in kts.conf.</source>
-        <translation>Om AutoMint uit te schakelen, voeg je 'enablezeromint=0' toe aan kts.conf.</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently disabled.
-To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in kts.conf</source>
-        <translation>AutoMint is momenteel uitgeschakeld.
-Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint=1' in kts.conf</translation>
+        <source>Wallet locked, you need to unlock it to perform this action</source>
+        <translation>Portemonnee vergrendeld, je moet deze ontgrendelen om deze actie te kunnen uitvoeren</translation>
     </message>
 </context>
 <context>
@@ -2372,663 +2529,204 @@ Om AutoMint in te schakelend verander je 'enablezeromint=0' naar 'enablezeromint
     </message>
 </context>
 <context>
-    <name>PrivacyDialog</name>
+    <name>PrivacyWidget</name>
     <message>
-        <source>Zerocoin Actions:</source>
-        <translation>Zerocoin Acties:</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Je portemonnee synchroniseert automatisch met het KTS netwerk nadat een verbinding is opgezet, maar dit proces is nog niet afgerond.</translation>
-    </message>
-    <message>
-        <source>Mint Zerocoin</source>
-        <translation>Mint Zerocoin</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
-    </message>
-    <message>
-        <source>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</source>
-        <translation>Beschikbaar voor muntage zijn munten die bevestigd en niet vergrendeld of Masternode onderpanden zijn.</translation>
-    </message>
-    <message>
-        <source>Available for Minting:</source>
-        <translation>Beschikbaar voor minting:</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 KTS</source>
-        <translation>0.000 000 00 KTS</translation>
-    </message>
-    <message>
-        <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
-        <translation>Zerocoin Wallet DB opnieuw instellen. Verwijdert transacties die het niet in de blockchain hebben gered.</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Resetten</translation>
-    </message>
-    <message>
-        <source>Coin Control...</source>
-        <translation>Munt controle...</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kwantiteit:</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
-    </message>
-    <message>
-        <source>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</source>
-        <translation>Rescan de complete blockchain voor Zerocoin mints en hun meta-data.</translation>
-    </message>
-    <message>
-        <source>ReScan</source>
-        <translation>ReScan</translation>
-    </message>
-    <message>
-        <source>Status and/or Mesages from the last Mint Action.</source>
-        <translation>Status en/of Berichten van de laatste mint actie.</translation>
-    </message>
-    <message>
-        <source>PRIVACY</source>
-        <translation>PRIVACY</translation>
-    </message>
-    <message>
-        <source>Enter an amount of Kts to convert to zKTS</source>
-        <translation>Vul het aantal KTS in om te converteren naar zKTS</translation>
-    </message>
-    <message>
-        <source>zKTS Control</source>
-        <translation>zKTS Control</translation>
-    </message>
-    <message>
-        <source>zKTS Selected:</source>
-        <translation>zKTS geselecteerd:</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Hoeveelheid geselecteerd:</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</source>
-        <translation>Zerocoin besteden. Zonder 'Betaal aan:' adres ontstaan betalingen aan jezelf.</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin</source>
-        <translation>Besteed Zerocoin</translation>
-    </message>
-    <message>
-        <source>Available (mature and spendable) zKTS for spending</source>
-        <translation>Beschikbare (volwassen en uitgeefbaar) zKTS voor besteding</translation>
-    </message>
-    <message>
-        <source>Available Balance:</source>
-        <translation>Beschikbaar saldo:</translation>
-    </message>
-    <message>
-        <source>Available (mature and spendable) zKTS for spending
-
-zKTS are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</source>
-        <translation>Beschikbare (volwwassen en uitgeefbaar) zKTS voor besteding
-
-zKts zijn volwassen wanneer zij meer dan 20 bevestigingen hebben EN meer dan 2 muntages van dezelfde denominaties nadat zij gemunt zijn.</translation>
-    </message>
-    <message>
-        <source>0 zKTS</source>
-        <translation>0 zKTS</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Beveiligingsniveau voor Zerocoin transacties. Meer is beter, maar heeft meer tijd en middelen nodig.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Beveiligings niveau:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Beveiligingsniveau 1 - 100 (standaard: 42)</translation>
-    </message>
-    <message>
-        <source>Pay &amp;To:</source>
-        <translation>Betaal &amp;Naar:</translation>
-    </message>
-    <message>
-        <source>The KTS address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>Het KTS adres om de betaling naar te verzenden. Maakt lokale betaling aan jezelf als je leeg bent.</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Kies een eerder gebruikt adres</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Plak adres vanaf klembord</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Vul een label in voor dit adres om deze toe te voegen aan de lijst met gebruikte adressen</translation>
-    </message>
-    <message>
-        <source>A&amp;mount:</source>
-        <translation>&amp;Hoeveelheid:</translation>
-    </message>
-    <message>
-        <source>Convert Change to Zerocoin (might cost additional fees)</source>
-        <translation>Zet wisselgeld om naar Zerocoin (mogelijk extra kosten)</translation>
-    </message>
-    <message>
-        <source>If checked, the wallet tries to minimize the returning change instead of minimizing the number of spent denominations.</source>
-        <translation>Indien aangevinkt, probeert de portemonnee het terugkerende wisselgeld te minimaliseren in plaats van het aantal uitgegeven denominaties te minimaliseren.</translation>
-    </message>
-    <message>
-        <source>Minimize Change</source>
-        <translation>Minimaliseer wisselgeld</translation>
-    </message>
-    <message>
-        <source>Information about the available Zerocoin funds.</source>
-        <translation>Informatie over de beschikbare Zerocoin fondsen.</translation>
-    </message>
-    <message>
-        <source>Zerocoin Stats:</source>
-        <translation>Zerocoin Statistieken:</translation>
-    </message>
-    <message>
-        <source>Total Balance including unconfirmed and immature zKTS</source>
-        <translation>Totale Saldi, inclusief onbevestigde en onvolwassen zKTS</translation>
-    </message>
-    <message>
-        <source>Total Zerocoin  Balance:</source>
-        <translation>Totale Zerocoin Saldi:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 1:</source>
-        <translation>Denominaties met waarde 1:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 1:</source>
-        <translation>Denom. met waarde 1:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Onbevestigd: minder dan 20 bevestigingen
-Onvolwassen: bevestigd, maar minder dan 1 mint van dezelfde denominatie nadat het gemint was.</translation>
-    </message>
-    <message>
-        <source>Show the current status of automatic zKTS minting.
-
-To change the status (restart required):
-- enable: add 'enablezeromint=1' to kts.conf
-- disable: add 'enablezeromint=0' to kts.conf
-
-To change the percentage (no restart required):
-- menu Settings-&gt;Options-&gt;Percentage of autominted zKTS
-
-</source>
-        <translation>Toon de huidige status van automatische zKTS-markering.
-
-Om de status te wijzigen (opnieuw opstarten vereist): 
-- enable: voeg 'enablezeromint = 1' toe aan kts.conf
-- uitschakelen: voeg 'enablezeromint = 0' toe aan kts.conf
-
-Om het percentage te wijzigen (geen herstart vereist): 
-- menu Instellingen-&gt; Opties-&gt; Percentage van geautomatiseerde zKTS
-</translation>
-    </message>
-    <message>
-        <source>AutoMint Status</source>
-        <translation>AutoMint-status</translation>
-    </message>
-    <message>
-        <source>Global Supply:</source>
-        <translation>Wereldwijde levering:</translation>
-    </message>
-    <message>
-        <source>Denom. 1:</source>
-        <translation>Denom. 1:</translation>
-    </message>
-    <message>
-        <source>Denom. 5:</source>
-        <translation>Denom. 5:</translation>
-    </message>
-    <message>
-        <source>Denom. 10:</source>
-        <translation>Denom. 10:</translation>
-    </message>
-    <message>
-        <source>Denom. 50:</source>
-        <translation>Denom. 50:</translation>
-    </message>
-    <message>
-        <source>Denom. 100:</source>
-        <translation>Denom. 100:</translation>
-    </message>
-    <message>
-        <source>Denom. 500:</source>
-        <translation>Denom. 500:</translation>
-    </message>
-    <message>
-        <source>Denom. 1000:</source>
-        <translation>Denom. 1000:</translation>
-    </message>
-    <message>
-        <source>Denom. 5000:</source>
-        <translation>Denom. 5000:</translation>
-    </message>
-    <message>
-        <source>0 x</source>
-        <translation> 0 x</translation>
-    </message>
-    <message>
-        <source>Denominations with value 5:</source>
-        <translation>Denominaties met waarde 5:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 5:</source>
-        <translation>Denom. met waarde 5:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 10:</source>
-        <translation>Denominaties met waarde 10:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 10:</source>
-        <translation>Denom. met waarde 10:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 50:</source>
-        <translation>Denominaties met waarde 50:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 50:</source>
-        <translation>Denom. met waarde 50:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 100:</source>
-        <translation>Denominaties met waarde 100:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 100:</source>
-        <translation>Denom. met waarde 100:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 500:</source>
-        <translation>Denominaties met waarde 500:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 500:</source>
-        <translation>Denom. met waarde 500:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 1000:</source>
-        <translation>Denominaties met waarde 1000:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 1000:</source>
-        <translation>Denom. met waarde 1000:</translation>
-    </message>
-    <message>
-        <source>Denominations with value 5000:</source>
-        <translation>Denominaties met waarde 5000:</translation>
-    </message>
-    <message>
-        <source>Denom. with value 5000:</source>
-        <translation>Denom. met waarde 5000:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioriteit:</translation>
+        <source>Title</source>
+        <translation>Tietel</translation>
     </message>
     <message>
         <source>TextLabel</source>
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Kost:</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation>Stof:</translation>
+        <source>No active Master Node yet</source>
+        <translation>Nog geen actieve Master Node</translation>
     </message>
     <message>
-        <source>no</source>
-        <translation>nee</translation>
+        <source>Privacy</source>
+        <translation>Privacy</translation>
     </message>
     <message>
-        <source>Bytes:</source>
-        <translation>Bytes:</translation>
+        <source>Convert</source>
+        <translation>Converteren</translation>
     </message>
     <message>
-        <source>Insufficient funds!</source>
-        <translation>Onvoldoende saldo!</translation>
+        <source>Mint</source>
+        <translation>Munt</translation>
     </message>
     <message>
-        <source>Coins automatically selected</source>
-        <translation>Munten automatisch geselecteerd</translation>
+        <source>Minting zKTS anonymizes your KTS by removing any
+transaction history, making transactions untraceable </source>
+        <translation>Munten van zKTS anonimiseert uw KTS door het verwijderen van eender welke
+transactiegeschiedenis, waardoor transacties niet meer te traceren zijn</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>medium</translation>
+        <source>Mint new zKTS or convert back to KTS</source>
+        <translation>Munt nieuwe zKTS of converteer deze terug in KTS</translation>
     </message>
     <message>
-        <source>Coin Control Features</source>
-        <translation>Munt controle kenmerken</translation>
+        <source>Last Zerocoin Movements</source>
+        <translation>Laatste Zerocoin Bewegingen</translation>
     </message>
     <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Als dit geactiveerd is, maar het wisselgeld adres is leeg of ongeldig, wordt het wisselgeld verzonden naar een nieuw gegenereerd adres.</translation>
+        <source>No transactions yet</source>
+        <translation>Nog geen transacties</translation>
     </message>
     <message>
-        <source>Custom change address</source>
-        <translation>Aangepast wisselgeld adres</translation>
+        <source>Mint zKTS</source>
+        <translation>Munt zKTS</translation>
     </message>
     <message>
-        <source>Amount After Fee:</source>
-        <translation>Bedrag na kosten:</translation>
+        <source>Enter amount of KTS to mint into zKTS</source>
+        <translation>Vul de hoeveelheid KTS in die u omslaan in zKTS</translation>
     </message>
     <message>
-        <source>Change:</source>
-        <translation>Wijzig:</translation>
+        <source>Convert back to KTS</source>
+        <translation>Converteer terug naar KTS</translation>
     </message>
     <message>
-        <source>out of sync</source>
-        <translation>niet gesynchroniseerd</translation>
+        <source>Enter amount of zKTS to convert back into KTS</source>
+        <translation>Voer de hoeveelheed zKTS in om terug te converteren naar KTS</translation>
     </message>
     <message>
-        <source>Mint Status: Okay</source>
-        <translation>Mint status: Oké</translation>
+        <source>Zerocoin</source>
+        <translation>Zerocoin</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopieer kwanititeit</translation>
+        <source>zKTS is currently undergoing maintenance</source>
+        <translation>zKTS ondergaat momenteel onderhoud</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <source>You need to unlock the wallet to be able to %1 zKTS</source>
+        <translation>Je moet de portemonnee ontgrendelen om in staat zijn om %1 zKTS</translation>
     </message>
     <message>
-        <source>Starting ResetMintZerocoin: rescanning complete blockchain, this will need up to 30 minutes depending on your hardware.
-Please be patient...</source>
-        <translation>Start ResetMintZerocoin: rescanning complete blockchain, dit zal tot 30 minuten nodig hebben, afhankelijk van uw hardware.
-Wees alsjeblieft geduldig...</translation>
+        <source>convert</source>
+        <translation>converteer</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Zerocoin besteden.
-Computationeel duur, zou mogelijk enkele minuten nodig hebben, afhankelijk van het geselecteerde beveiligingsniveau en je hardware.
-Wees alsjeblieft geduldig...</translation>
+        <source>mint</source>
+        <translation>munt</translation>
     </message>
     <message>
-        <source>) needed.
-Maximum allowed: </source>
-        <translation>) vereist.
-Maximaal toegestaan:</translation>
+        <source>Invalid value</source>
+        <translation>Ongeldige waarde</translation>
     </message>
     <message>
-        <source>zKTS Spend #: </source>
-        <translation>zKTS besteed #:</translation>
+        <source>zKTS minted successfully</source>
+        <translation>zKTS munting succesvol</translation>
     </message>
     <message>
-        <source>zKTS Mint</source>
-        <translation>zKTS mint</translation>
+        <source>zKTS converted back to KTS</source>
+        <translation>zKTS terug geconverteerd naar KTS</translation>
     </message>
     <message>
-        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
-        <translation>&lt;b&gt;ingeschakeld&lt;/b&gt;.</translation>
+        <source>You don't have any KTS to select.</source>
+        <translation>Je hebt geen KTS om te selecteren</translation>
     </message>
     <message>
-        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
-        <translation>&lt;b&gt;invalide&lt;/b&gt;.</translation>
+        <source>Rescan Mints</source>
+        <translation>Muntingen opnieuw scannen</translation>
     </message>
     <message>
-        <source> Configured target percentage: &lt;b&gt;</source>
-        <translation>Geconfigureerd doelpercentage:&lt;b&gt;</translation>
+        <source>Your zerocoin mints are going to be scanned from the blockchain from scratch</source>
+        <translation>Uw zerocoin muntingen zullen van de blockchain vanaf nul worden gescanned</translation>
     </message>
     <message>
-        <source>zKTS is currently disabled due to maintenance.</source>
-        <translation>zKTS is momenteel uitgeschakeld vanwege onderhoud.</translation>
+        <source>Reset Spent Zerocoins</source>
+        <translation>Bestede Zerocoins Resetten</translation>
     </message>
     <message>
-        <source>zKTS is currently undergoing maintenance.</source>
-        <translation>zKTS wordt momenteel onderhouden.</translation>
+        <source>Your zerocoin spends are going to be scanned from the blockchain from scratch</source>
+        <translation>Uw zerocoin bestedingen zullen van de blockchain vanaf nul worden gescanned</translation>
     </message>
     <message>
-        <source>Denom. with value &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt; 1&lt;/b&gt;:</translation>
+        <source>Total %1</source>
+        <translation>Totaal %1</translation>
+    </message>
+</context>
+<context>
+    <name>ProposalFrame</name>
+    <message>
+        <source>Open proposal page in browser</source>
+        <translation>Voorstelpagina in browser openen</translation>
     </message>
     <message>
-        <source>Denom. with value &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt;5&lt;/b&gt;:</translation>
+        <source> remaining payment(s).</source>
+        <translation>resterende betaling(en).</translation>
     </message>
     <message>
-        <source>Denom. with value &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt;10&lt;/b&gt;:</translation>
+        <source>Yes:</source>
+        <translation>Voor:</translation>
     </message>
     <message>
-        <source>Denom. with value &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt;50&lt;/b&gt;:</translation>
+        <source>Abstain:</source>
+        <translation>Onthouden:</translation>
     </message>
     <message>
-        <source>Denom. with value &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt; 100&lt;/b&gt;:</translation>
+        <source>No:</source>
+        <translation>Tegen:</translation>
     </message>
     <message>
-        <source>Denom. with value &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt; 500&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt;1000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. with value &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation>Denom. met waarde &lt;b&gt;5000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>AutoMint Status:</source>
-        <translation>AutoMint-status</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;1&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;1&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;5&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;5&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;10&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;10&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;50&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;50&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;100&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;100&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;500&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;500&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;1000&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;1000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Denom. &lt;b&gt;5000&lt;/b&gt;:</source>
-        <translation>Denom. &lt;b&gt;5000&lt;/b&gt;:</translation>
-    </message>
-    <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Fout: Je portemonnee is vergrendeld. Voer alsjeblieft de wachtwoord zin voor de portemonnee in.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Bericht: voer een bedrag in &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Minting </source>
-        <translation>Minting </translation>
-    </message>
-    <message>
-        <source>Successfully minted </source>
-        <translation>Succesvol gemint</translation>
-    </message>
-    <message>
-        <source> zKTS in </source>
-        <translation> zKTS in </translation>
-    </message>
-    <message>
-        <source> sec. Used denominations:
+        <source>A proposal URL can be used for phishing, scams and computer viruses. Open this link only if you trust the following URL.
 </source>
-        <translation>sec. gebruikte denominaties:
+        <translation>Een voorstel-URL kan worden gebruikt voor phishing, oplichting en computervirussen. Open deze link alleen als u de volgende URL vertrouwt.
 </translation>
     </message>
     <message>
-        <source>Duration: </source>
-        <translation>Duur:</translation>
+        <source>Open link</source>
+        <translation>Link openen</translation>
     </message>
     <message>
-        <source> sec.
-</source>
-        <translation> sec.
-</translation>
+        <source>Copy link</source>
+        <translation>Link kopiëren</translation>
     </message>
     <message>
-        <source>Starting ResetSpentZerocoin: </source>
-        <translation>Starten van ResetSpentZerocoin: </translation>
+        <source>Wallet Locked</source>
+        <translation>Portemonnee Vergrendeld</translation>
     </message>
     <message>
-        <source>No 'Pay To' address provided, creating local payment</source>
-        <translation>Geen 'Betaal aan' adres verstrekt, lokale betaling wordt gemaakt</translation>
+        <source>You must unlock your wallet to vote.</source>
+        <translation>Je moet uw portemonnee ontgrendelen om te stemmen.</translation>
     </message>
     <message>
-        <source>Invalid Kts Address</source>
-        <translation>Ongeldig Kts addres</translation>
+        <source>Do you want to vote %1 on</source>
+        <translation>Wil je stemmen op %1</translation>
     </message>
     <message>
-        <source>Invalid Send Amount</source>
-        <translation>Ongeldig verzend bedrag</translation>
+        <source>using all your masternodes?</source>
+        <translation>al je masternodes gebruiken?</translation>
     </message>
     <message>
-        <source>Confirm additional Fees</source>
-        <translation>Bevestig extra kosten</translation>
+        <source>Proposal Hash:</source>
+        <translation>Voorstel Hash:</translation>
     </message>
     <message>
-        <source>Are you sure you want to send?&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>Weet je zeker dat je wilt verzenden?&lt;br /&gt;&lt;br /&gt;</translation>
+        <source>Proposal URL:</source>
+        <translation>Voorstel URL:</translation>
     </message>
     <message>
-        <source> to address </source>
-        <translation>naar adres</translation>
+        <source>Confirm Vote</source>
+        <translation>Stem bevestigen</translation>
     </message>
     <message>
-        <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
-        <translation>naar een nieuw gegenereerd (ongebruikt en dus anoniem) lokaal adres&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>with Security Level </source>
-        <translation>met beveiligingsniveau</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Bevestig verzending coins</translation>
-    </message>
-    <message>
-        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zKTS vereist een beveiligingsniveau van 100 om succesvol te besteden.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zKTS</source>
-        <translation>Mislukt om zKTS te besteden.</translation>
-    </message>
-    <message>
-        <source>Failed to fetch mint associated with serial hash</source>
-        <translation>Mislukt om de mint op te halen geassocieerd met de seriële hash</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Teveel invoer (</translation>
-    </message>
-    <message>
-        <source>
-Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
-        <translation>
-Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te besteden bedrag verminderen.</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin failed with status = </source>
-        <translation>Bestede Zerocoin mislukt met status =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of KTS to convert to zKTS</comment>
-        <translation><numerusform>PrivacyDialoog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
-    </message>
-    <message>
-        <source>denomination: </source>
-        <translation>denominatie:</translation>
-    </message>
-    <message>
-        <source>serial: </source>
-        <translation>serial: </translation>
-    </message>
-    <message>
-        <source>Spend is 1 of : </source>
-        <translation>Besteed is 1 of : </translation>
-    </message>
-    <message>
-        <source>value out: </source>
-        <translation>Waarde uit:</translation>
-    </message>
-    <message>
-        <source>address: </source>
-        <translation>adres:</translation>
-    </message>
-    <message>
-        <source>Sending successful, return code: </source>
-        <translation>Verzenden succesvol, retourcode:</translation>
-    </message>
-    <message>
-        <source>txid: </source>
-        <translation>txid: </translation>
-    </message>
-    <message>
-        <source>fee: </source>
-        <translation>kosten:</translation>
+        <source>Vote Results</source>
+        <translation>Stemresultaten</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>Enter a KTS address (e.g. %1)</source>
@@ -3059,6 +2757,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>BLOOM</translation>
     </message>
     <message>
+        <source>ZK_BLOOM</source>
+        <translation>ZK_BLOOM</translation>
+    </message>
+    <message>
         <source>UNKNOWN</source>
         <translation>ONBEKEND</translation>
     </message>
@@ -3074,24 +2776,29 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
-<context>
-    <name>QRImageWidget</name>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Afbeelding opslaan...</translation>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
     </message>
     <message>
-        <source>&amp;Copy Image</source>
-        <translation>&amp;Kopieer afbeelding</translation>
+        <source>Error: Specified data directory "%1" does not exist.</source>
+        <translation>Fout: De opgegeven gegevensmap "%1" bestaat niet.</translation>
     </message>
     <message>
-        <source>Save QR Code</source>
-        <translation>QR code opslaan</translation>
+        <source>Error: Cannot parse configuration file: %1. Only use key=value syntax.</source>
+        <translation>Fout: Kan het configuratiebestand niet parsen: %1. Gebruik alleen sleutel=waarde syntaxis.</translation>
     </message>
     <message>
-        <source>PNG Image (*.png)</source>
-        <translation>PNG Afbeelding(*.png)</translation>
+        <source>Error: Invalid combination of -regtest and -testnet.</source>
+        <translation>Fout: Ongeldige combinatie van -regtest en -testnet.</translation>
+    </message>
+    <message>
+        <source>Error reading masternode configuration file: %1</source>
+        <translation>Fout bij het lezen van het masternode configuratiebestand: %1</translation>
+    </message>
+    <message>
+        <source>KTS Core didn't yet exit safely...</source>
+        <translation>KTS Core is nog niet veilig afgesloten...</translation>
     </message>
 </context>
 <context>
@@ -3145,10 +2852,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Debug logbestand</translation>
     </message>
     <message>
-        <source>Using OpenSSL version</source>
-        <translation>Gebruikt OpenSSL versie</translation>
-    </message>
-    <message>
         <source>Build date</source>
         <translation>Bouwdatum</translation>
     </message>
@@ -3175,6 +2878,14 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Number of Masternodes</source>
         <translation>Aantal Masternodes</translation>
+    </message>
+    <message>
+        <source>Data Directory</source>
+        <translation>Gegevenslocatie</translation>
+    </message>
+    <message>
+        <source>Last block hash</source>
+        <translation>Laatste blokhash</translation>
     </message>
     <message>
         <source>&amp;Console</source>
@@ -3437,12 +3148,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Bevestig hersynchronisering van Blockchain</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Gebruik omhoog en omlaag pijlen om de geschiedenis te navigeren, en&lt;b&gt;Ctrl-L&lt;/b&gt;om scherm te wissen.</translation>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Gebruik omhoog en omlaag pijltjestoetsen om door de geschiedenis te navigeren en %1 om het scherm te wissen.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Type &lt;b&gt;help &lt;/b&gt;voor een overzicht van beschikbare commando's.</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>WAARSCHUWING: Er zijn oplichters actief geweest, die gebruikers vertellen dat ze hier commando's moeten typen waarmee ze de inhoud van hun portemonnee konden stelen. Gebruik deze console niet zonder de gevolgen van een commando volledig te begrijpen.</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3494,149 +3209,109 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>ReceiveCoinsDialog</name>
+    <name>ReceiveDialog</name>
     <message>
-        <source>Reuse one of the previously used receiving addresses.&lt;br&gt;Reusing addresses has security and privacy issues.&lt;br&gt;Do not use this unless re-generating a payment request made before.</source>
-        <translation>Hergebruik een van de eerder gebruikte ontvangstadressen.&lt;br&gt;Hergebruik van adressen heeft beveiligings- en privacyproblemen. &lt;br&gt;Gebruik dit niet tenzij u eerder een betalingsverzoek heeft aangemaakt.</translation>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
     </message>
     <message>
-        <source>R&amp;euse an existing receiving address (not recommended)</source>
-        <translation>Hergebruik een bestaand ontvangstadres (niet aanbevolen)</translation>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
     </message>
     <message>
-        <source>&amp;Message:</source>
-        <translation>&amp;Bericht:</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>An optional label to associate with the new receiving address.</source>
-        <translation>Een optioneel label om te associëren met het nieuwe ontvangstadres.</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the KTS network.</source>
-        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend. Opmerking: het bericht wordt niet verzonden met de betaling via het KTS netwerk.</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>RECEIVE</source>
-        <translation>ontvangen</translation>
-    </message>
-    <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the KTS network.</source>
-        <translation>Een optioneel bericht dat aan het betalingsverzoek wordt gehecht, dat wordt weergegeven wanneer het verzoek wordt geopend.&lt;br&gt;Opmerking: het bericht wordt niet verzonden met de betaling via het KTS netwerk.</translation>
-    </message>
-    <message>
-        <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation>Gebruik dit formulier om betalingen aan te vragen. Alle velden zijn&lt;b&gt;optioneel&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
-    </message>
-    <message>
-        <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
-        <translation>Een optioneel bedrag om te vragen. Laat dit leeg of vul een nul in om geen specifiek bedrag te vragen.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Hoeveelheid:</translation>
-    </message>
-    <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Verzoek betaling</translation>
-    </message>
-    <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Leeg alle velden van het formulier.</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Leegmaken</translation>
-    </message>
-    <message>
-        <source>Requested payments history</source>
-        <translation>Betalingsverzoeken geschiedenis</translation>
-    </message>
-    <message>
-        <source>Show the selected request (does the same as double clicking an entry)</source>
-        <translation>Toon het geselecteerde verzoek (doet hetzelfde als dubbelklik op een item)</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Toon</translation>
-    </message>
-    <message>
-        <source>Remove the selected entries from the list</source>
-        <translation>Verwijder de geselecteerde vermeldingen uit de lijst</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Verwijder</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Kopiëer label</translation>
-    </message>
-    <message>
-        <source>Copy message</source>
-        <translation>Bericht kopiëren</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
 </context>
 <context>
-    <name>ReceiveRequestDialog</name>
+    <name>ReceiveWidget</name>
     <message>
-        <source>QR Code</source>
-        <translation>QR Code</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>Kopieer &amp;URI</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Copy &amp;Address</source>
-        <translation>Kopieer &amp;Adres</translation>
+        <source>No address</source>
+        <translation>Geen adres</translation>
     </message>
     <message>
-        <source>&amp;Save Image...</source>
-        <translation>&amp;Afbeelding opslaan...</translation>
+        <source>Add Label</source>
+        <translation>Label Toevoegen</translation>
     </message>
     <message>
-        <source>Request payment to %1</source>
-        <translation>Verzoek betaling aan %1</translation>
+        <source>Generate Address</source>
+        <translation>Adres Genereren</translation>
     </message>
     <message>
-        <source>Payment information</source>
-        <translation>Betalingsinformatie</translation>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
     </message>
     <message>
-        <source>URI</source>
-        <translation>URI</translation>
+        <source>Receive</source>
+        <translation>Ontvangen</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Adres</translation>
+        <source>Scan the QR code or copy the address to receive KTS.</source>
+        <translation>Scan de QR code of kopieer het adres om KTS te ontvangen.</translation>
     </message>
     <message>
-        <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <source>No address </source>
+        <translation>Geen adres</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Label</translation>
+        <source>No available address, try unlocking the wallet</source>
+        <translation>Geen beschikbaar adres, probeer de portemonnee te ontgrendelen</translation>
     </message>
     <message>
-        <source>Message</source>
-        <translation>Bericht</translation>
+        <source>Error generating address</source>
+        <translation>Genereren van adres misgelopen</translation>
     </message>
     <message>
-        <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>Resulterende URI te lang geleden, probeer de tekst voor label/bericht te verminderen.</translation>
+        <source>Change Label</source>
+        <translation>Wijzig Label</translation>
     </message>
     <message>
-        <source>Error encoding URI into QR Code.</source>
-        <translation>Fout bij het coderen van URI in QR-code.</translation>
+        <source>Edit Address Label</source>
+        <translation>Bewerk Adreslabel</translation>
+    </message>
+    <message>
+        <source>Address label saved</source>
+        <translation>Adreslabel opgeslagen</translation>
+    </message>
+    <message>
+        <source>Error storing address label</source>
+        <translation>Fout bij bewaren adreslabel</translation>
+    </message>
+    <message>
+        <source>New address created</source>
+        <translation>Nieuw adres gecreëerd</translation>
+    </message>
+    <message>
+        <source>Address copied</source>
+        <translation>Adres gekopieerd</translation>
+    </message>
+    <message>
+        <source>URI copied to clipboard</source>
+        <translation>URI gekopieerd naar klembord</translation>
+    </message>
+    <message>
+        <source>Address copied to clipboard</source>
+        <translation>Adres gekopieerd naar klembord</translation>
     </message>
 </context>
 <context>
@@ -3654,8 +3329,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Bericht</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -3671,511 +3350,588 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>SendCoinsDialog</name>
+    <name>RequestDialog</name>
     <message>
-        <source>Send Coins</source>
-        <translation>Verzend Munten</translation>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
     </message>
     <message>
-        <source>SEND</source>
-        <translation>STUREN</translation>
+        <source>New Request Payment</source>
+        <translation>Nieuw Betalingsverzoek</translation>
     </message>
     <message>
-        <source>Coin Control Features</source>
-        <translation>Munt controle kenmerken</translation>
+        <source>Lorem ipsum dolor sit amet, consectur cling elit, sed do </source>
+        <translation>Lorem ipsum dolor sit amet, consectur cling elit, sed do </translation>
     </message>
     <message>
-        <source>Insufficient funds!</source>
-        <translation>Onvoldoende saldo!</translation>
+        <source>Amount</source>
+        <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Kwantiteit:</translation>
+        <source>KTS</source>
+        <translation>KTS</translation>
     </message>
     <message>
-        <source>Bytes:</source>
-        <translation>Bytes:</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Hoeveelheid:</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
-        <source>Priority:</source>
-        <translation>Prioriteit:</translation>
+        <source>COPY ADDRESS</source>
+        <translation>KOPIEER ADRES</translation>
     </message>
     <message>
-        <source>medium</source>
-        <translation>medium</translation>
+        <source>COPY URL</source>
+        <translation>KOPIEER URL</translation>
     </message>
     <message>
-        <source>Fee:</source>
-        <translation>Kost:</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation>Stof:</translation>
+        <source>REQUEST</source>
+        <translation>VERZOEK</translation>
     </message>
     <message>
-        <source>no</source>
-        <translation>nee</translation>
+        <source>Instead of only sharing a KTS address, you can create a Payment Request message which bundles up more information than is contained in just a KTS address.</source>
+        <translation>In plaats van een KTS-adres te delen, kunt u een bericht voor een betalingsverzoek maken dat meer informatie bundelt dan alleen in een KTS-adres.</translation>
     </message>
     <message>
-        <source>After Fee:</source>
-        <translation>Na de kost:</translation>
+        <source>Label</source>
+        <translation>Label</translation>
     </message>
     <message>
-        <source>Change:</source>
-        <translation>Wijzig:</translation>
+        <source>Enter a label to be saved within the address</source>
+        <translation>Voer een label in dat bij het adres moet worden opgeslagen</translation>
     </message>
     <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Als dit geactiveerd is, maar het wisselgeld adres is leeg of ongeldig, wordt het wisselgeld verzonden naar een nieuw gegenereerd adres.</translation>
+        <source>Description (optional)</source>
+        <translation>Omschrijving (optioneel)</translation>
     </message>
     <message>
-        <source>Custom change address</source>
-        <translation>Aangepast wisselgeld adres</translation>
+        <source>Add description </source>
+        <translation>Voeg beschrijving toe</translation>
     </message>
     <message>
-        <source>Split UTXO</source>
-        <translation>Split UTXO</translation>
+        <source>Error</source>
+        <translation>Error</translation>
     </message>
     <message>
-        <source># of outputs</source>
-        <translation># outputs</translation>
+        <source>GENERATE</source>
+        <translation>GENEREER</translation>
     </message>
     <message>
-        <source>UTXO Size:</source>
-        <translation>UTXO grootte:</translation>
+        <source>Creates an address to receive coin delegations and be able to stake them.</source>
+        <translation>Maak een adres aan om muntdelegaties te ontvangen en deze te kunnen staken.</translation>
     </message>
     <message>
-        <source>0 KTS</source>
-        <translation>0 KTS</translation>
+        <source>New Cold Staking Address</source>
+        <translation>Nieuw Cold Staking Adres</translation>
+    </message>
+</context>
+<context>
+    <name>SendChangeAddressDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
     </message>
     <message>
-        <source>Transaction Fee:</source>
-        <translation>Transactiekosten: </translation>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
     </message>
     <message>
-        <source>Choose...</source>
-        <translation>Kies...</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>collapse fee-settings</source>
-        <translation>Klap kosten instellingen in</translation>
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
+        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
     </message>
     <message>
-        <source>Minimize</source>
-        <translation>Minimaliseer</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>per kilobyte</source>
-        <translation>per kilobyte</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
-        <source>total at least</source>
-        <translation>totaal tenminste</translation>
+        <source>Custom Change Address</source>
+        <translation>Aangepast wijzigingsadres</translation>
     </message>
     <message>
-        <source>(read the tooltip)</source>
-        <translation>(lees de tooltip)</translation>
+        <source>The remainder of the value resultant from the inputs minus the outputs value goes to the "change" KTS address</source>
+        <translation>De rest van de waarde die resulteert uit de ingangen minus de waarde van de uitgangen gaat naar het "wijzig" KTS-adres</translation>
+    </message>
+</context>
+<context>
+    <name>SendCustomFeeDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Custom:</source>
-        <translation>Aangepast:</translation>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
     </message>
     <message>
-        <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>(Smart fee nog niet geïnitialiseerd. Dit duurt meestal een paar blokken ...)</translation>
+        <source>Customize the transaction fee at your to your liking, depending on the fee value your transaction will be included or not in the blockchain.</source>
+        <translation>Pas de transactiekosten naar wens aan, afhankelijk van de kostenwaarde die uw transactie wel of niet in de blockchain zal opnemen.</translation>
     </message>
     <message>
-        <source>SwiftX</source>
-        <translation>SwiftX</translation>
-    </message>
-    <message>
-        <source>Confirmation time:</source>
-        <translation>Bevestigingstijd:</translation>
-    </message>
-    <message>
-        <source>Open Coin Control...</source>
-        <translation>Open munt controle...</translation>
-    </message>
-    <message>
-        <source>Coins automatically selected</source>
-        <translation>Munten automatisch geselecteerd</translation>
-    </message>
-    <message>
-        <source>If the custom fee is set to 1000 uKTSs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKTSs in fee,&lt;br /&gt;while "at least" pays 1000 uKTSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uKTSs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uKTS's in vergoeding,&lt;br /&gt;terwijl "minstens" 1000 uKTS's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
-    </message>
-    <message>
-        <source>If the custom fee is set to 1000 uKTSs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 uKTSs in fee,&lt;br /&gt;while "total at least" pays 1000 uKTSs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>Als de aangepaste vergoeding is ingesteld op 1000 uKTSs en de transactie is slechts 250 bytes, dan betaalt per kilobyte alleen 250 uKTS's in vergoeding,&lt;br /&gt;terwijl "totaal minstens" 1000 uKTS's betaalt. Voor transacties die groter zijn dan een kilobyte, betalen beiden per kilobyte.</translation>
-    </message>
-    <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for KTS transactions than the network can process.</source>
-        <translation>Alleen de minimale vergoeding betalen is prima, zolang er minder transactie volume is dan ruimte in de blokken. &lt;br /&gt;Maar wees ervan bewust dat dit kan leiden tot een nooit bevestigende transactie wanneer er meer vraag is naar KTS transacties dan het netwerk kan verwerken.</translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>normaal</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>snel</translation>
-    </message>
-    <message>
-        <source>Recommended</source>
+        <source>Recomended</source>
         <translation>Aanbevolen</translation>
     </message>
     <message>
-        <source>Send as zero-fee transaction if possible</source>
-        <translation>Zend als zero-fee transactie indien mogelijk</translation>
+        <source>0.00 KB</source>
+        <translation>0.00 KB</translation>
     </message>
     <message>
-        <source>(confirmation may take longer)</source>
-        <translation>(bevestiging kan langer duren)</translation>
+        <source>Custom</source>
+        <translation>Aangepast</translation>
     </message>
     <message>
-        <source>Confirm the send action</source>
-        <translation>Bevestig de verzendactie</translation>
+        <source>Per kilobyte</source>
+        <translation>Per kilobyte</translation>
     </message>
     <message>
-        <source>S&amp;end</source>
-        <translation>V&amp;erzenden</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Leeg alle velden van het formulier.</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Verwijder &amp;Alles</translation>
+        <source>Customize Fee</source>
+        <translation>Kost Aanpassen</translation>
     </message>
     <message>
-        <source>Send to multiple recipients at once</source>
-        <translation>Verzend naar meerdere ontvangers tegelijk</translation>
+        <source>Customize the transaction fee, depending on the fee value your transaction will be included or not in the blockchain.</source>
+        <translation>Pas de transactiekosten aan, afhankelijk van de kostenwaarde die uw transactie wel of niet in de blockchain zal opnemen.</translation>
     </message>
     <message>
-        <source>Add &amp;Recipient</source>
-        <translation>Voeg &amp;ontvanger toe</translation>
+        <source>Normal</source>
+        <translation>Normaal</translation>
     </message>
     <message>
-        <source>Anonymized KTS</source>
-        <translation>Geanonimiseerde KTS</translation>
+        <source>Slow</source>
+        <translation>Traag</translation>
     </message>
     <message>
-        <source>Balance:</source>
-        <translation>Balans:</translation>
+        <source>Fast</source>
+        <translation>Snel</translation>
     </message>
     <message>
-        <source>Copy quantity</source>
-        <translation>Kopieer kwanititeit</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Kopiëer kost</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Kopiëer na kost</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Kopieer bytes</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Kopieer prioriteit</translation>
-    </message>
-    <message>
-        <source>Copy dust</source>
-        <translation>Kopieer dust</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Kopieer wisselgeld</translation>
-    </message>
-    <message>
-        <source>The split block tool does not work when sending to outside addresses. Try again.</source>
-        <translation>Het split block tool werkt niet bij het verzenden naar externe adressen. Probeer het nog eens.</translation>
-    </message>
-    <message>
-        <source>The split block tool does not work with multiple addresses. Try again.</source>
-        <translation>Het split block tool werkt niet met meerdere adressen. Probeer het nog eens.</translation>
-    </message>
-    <message>
-        <source>Warning: Invalid KTS address</source>
-        <translation>Waarschuwing: Ongeldig KTS adres</translation>
-    </message>
-    <message>
-        <source>%1 to %2</source>
-        <translation>%1 naar %2</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?</source>
-        <translation>Ben je zeker dat je wilt verzenden?</translation>
-    </message>
-    <message>
-        <source>are added as transaction fee</source>
-        <translation>worden toegevoegd als transactiekosten</translation>
-    </message>
-    <message>
-        <source>Total Amount = &lt;b&gt;%1&lt;/b&gt;&lt;br /&gt;= %2</source>
-        <translation>Totale hoeveelheid = &lt;b&gt;%1 &lt;/b&gt;&lt;br /&gt;= %2</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Bevestig verzending coins</translation>
-    </message>
-    <message>
-        <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
-        <translation>Een vergoeding %1 keer hoger dan %2 per kB wordt beschouwd als een zwaar hoge vergoeding.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Schatting om te beginnen met bevestiging in %n blokken.</numerusform><numerusform>Schatting om te beginnen met bevestiging in %n blokken.</numerusform></translation>
-    </message>
-    <message>
-        <source>The recipient address is not valid, please recheck.</source>
-        <translation>Het ontvangstadres is niet geldig, controleer deze.</translation>
-    </message>
-    <message>
-        <source>using SwiftX</source>
-        <translation>met SwiftX</translation>
-    </message>
-    <message>
-        <source> split into %1 outputs using the UTXO splitter.</source>
-        <translation>gesplitst in %1 outputs met behulp van de UTXO splitter.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
-        <translation>&lt;b&gt;(%1 van %2 vermeldingen weergegeven)</translation>
-    </message>
-    <message>
-        <source>The amount to pay must be larger than 0.</source>
-        <translation>Het te betalen bedrag moet groter zijn dan 0.</translation>
-    </message>
-    <message>
-        <source>The amount exceeds your balance.</source>
-        <translation>Het bedrag overschrijdt uw saldo.</translation>
-    </message>
-    <message>
-        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
-        <translation>Het totaal overschrijdt uw saldo wanneer de transactievergoeding %1 is inbegrepen.</translation>
-    </message>
-    <message>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Dubbel adres gevonden, kan alleen per keer per verzendoperatie naar elk adres versturen.</translation>
-    </message>
-    <message>
-        <source>Transaction creation failed!</source>
-        <translation>Transactie creatie mislukt!</translation>
-    </message>
-    <message>
-        <source>The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>De transactie is afgewezen! Dit kan gebeuren als sommige munten in je portemonnee al waren uitgegeven, zoals als je een kopie van de wallet.dat en munten in de kopie waren besteed maar niet gemarkeerd zoals hier besteed.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins.</source>
-        <translation>Fout: De portemonnee was alleen geopend om munten te anonimiseren.</translation>
-    </message>
-    <message>
-        <source>Error: The wallet was unlocked only to anonymize coins. Unlock canceled.</source>
-        <translation>Fout: De portemonnee was alleen geopend om munten te anonimiseren. Ontgrendelen geannuleerd.</translation>
-    </message>
-    <message>
-        <source>Pay only the minimum fee of %1</source>
-        <translation>Betaal alleen de minimumkost van %1</translation>
-    </message>
-    <message>
-        <source>Warning: Unknown change address</source>
-        <translation>Waarschuwing: Ongekend wisselgeld adres</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(geen label)</translation>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
     </message>
 </context>
 <context>
-    <name>SendCoinsEntry</name>
+    <name>SendMultiRow</name>
     <message>
-        <source>This is a normal payment.</source>
-        <translation>Dit is een normale betaling.</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Pay &amp;To:</source>
-        <translation>Betaal &amp;Naar:</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>The KTS address to send the payment to</source>
-        <translation>Het KTS adres om de betaling naar te verzenden</translation>
+        <source>Add address</source>
+        <translation>Adres toevoegen</translation>
     </message>
     <message>
-        <source>Choose previously used address</source>
-        <translation>Kies een eerder gebruikt adres</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Plak adres vanaf klembord</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Remove this entry</source>
-        <translation>Verwijder dit item</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to the list of used addresses</source>
-        <translation>Vul een label in voor dit adres om deze toe te voegen aan de lijst met gebruikte adressen</translation>
-    </message>
-    <message>
-        <source>A&amp;mount:</source>
-        <translation>&amp;Hoeveelheid:</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Bericht:</translation>
-    </message>
-    <message>
-        <source>A message that was attached to the KTS: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KTS network.</source>
-        <translation>Een bericht dat is gehecht aan de KTS: URI die bij de transactie wordt opgeslagen voor uw referentie. Opmerking: dit bericht wordt niet verzonden via het KTS netwerk.</translation>
-    </message>
-    <message>
-        <source>This is an unverified payment request.</source>
-        <translation>Dit is een ongeverifieerde betalingsverzoek.</translation>
-    </message>
-    <message>
-        <source>Pay To:</source>
-        <translation>Betaal aan:</translation>
-    </message>
-    <message>
-        <source>Memo:</source>
-        <translation>Memo:</translation>
-    </message>
-    <message>
-        <source>This is a verified payment request.</source>
-        <translation>Dit is een geverifieerd betalingsverzoek.</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Voer een label in voor dit adres om het toe te voegen aan jouw adresboek</translation>
+        <source>Add description</source>
+        <translation>Beschrijving toevoegen</translation>
     </message>
 </context>
 <context>
-    <name>ShutdownWindow</name>
+    <name>SendWidget</name>
     <message>
-        <source>KTS Core is shutting down...</source>
-        <translation>KTS Core is aan het afsluiten...</translation>
+        <source>Send</source>
+        <translation>Zenden</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
-        <translation>Sluit de computer niet af voordat dit venster verdwenen is.</translation>
+        <source>You can transfer public coins (KTS) or private coins (zKTS)</source>
+        <translation>Je kan publieke munten (KTS) of private munten (zKTS) overdragen</translation>
+    </message>
+    <message>
+        <source>Select coin type to spend</source>
+        <translation>Selecteer munttype om te spenderen</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address or contact label</source>
+        <translation>Voer een KTS-adres of contactlabel in</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Bedrag</translation>
+    </message>
+    <message>
+        <source>Customize fee</source>
+        <translation>Kosten aanpassen</translation>
+    </message>
+    <message>
+        <source>Clear all</source>
+        <translation>Alles wissen</translation>
+    </message>
+    <message>
+        <source>Add recipient</source>
+        <translation>Voeg bestemmeling toe</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Terugzetten naar standaardinstelling</translation>
+    </message>
+    <message>
+        <source>Total to send</source>
+        <translation>Totaal te versturen</translation>
+    </message>
+    <message>
+        <source>Send KTS</source>
+        <translation>KTS Versturen</translation>
+    </message>
+    <message>
+        <source>Send zKTS</source>
+        <translation>zKTS Versturen</translation>
+    </message>
+    <message>
+        <source>Total remaining from the selected UTXO</source>
+        <translation>Totaal resterende van de geselecteerde UTXO</translation>
+    </message>
+    <message>
+        <source>Total remaining</source>
+        <translation>Totaal resterende</translation>
+    </message>
+    <message>
+        <source>Customize Fee</source>
+        <translation>Kost Aanpassen</translation>
+    </message>
+    <message>
+        <source>Maximum amount of outputs reached</source>
+        <translation>Maximum aantal uitvoeren bereikt</translation>
+    </message>
+    <message>
+        <source>Invalid entry, previous entries must be valid before add a new one</source>
+        <translation>Ongeldige invoer, vorige invoeren moeten geldig zijn voordat je een nieuwe kan toevoegen</translation>
+    </message>
+    <message>
+        <source>Invalid entry</source>
+        <translation>Ongeldige invoer</translation>
+    </message>
+    <message>
+        <source>No set recipients</source>
+        <translation>Geen ontvangers ingesteld</translation>
+    </message>
+    <message>
+        <source>Cannot send, wallet locked</source>
+        <translation>Kan niet verzenden, portemonnee vergrendeld</translation>
+    </message>
+    <message>
+        <source>Cannot create transaction.</source>
+        <translation>Kan geen transactie aanmaken.</translation>
+    </message>
+    <message>
+        <source>WARNING:
+Transaction spends a cold-stake delegation, voiding it.
+These coins will no longer be cold-staked.</source>
+        <translation>WAARSCHUWING:
+Transactie besteedt een cold-stake delegatie om deze te vernietigen
+Deze munten zullen niet langer cold-staked zijn.</translation>
+    </message>
+    <message>
+        <source>Transaction sent</source>
+        <translation>Transactie verstuurd</translation>
+    </message>
+    <message>
+        <source>Spend Zerocoin</source>
+        <translation>Besteed Zerocoin</translation>
+    </message>
+    <message>
+        <source>zKTS is currently undergoing maintenance.</source>
+        <translation>zKTS wordt momenteel onderhouden.</translation>
+    </message>
+    <message>
+        <source>Coin control mint not found</source>
+        <translation>Muntcontrole munting niet gevonden</translation>
+    </message>
+    <message>
+        <source>Sending %1 to address %2
+</source>
+        <translation>Versturen van %1 naar adres %2
+</translation>
+    </message>
+    <message>
+        <source>Sending %1 to addresses:
+%2</source>
+        <translation>Versturen van %1 naar adressen:
+%2</translation>
+    </message>
+    <message>
+        <source>zKTS transaction sent!</source>
+        <translation>zKTS transactie verzonden!</translation>
+    </message>
+    <message>
+        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
+        <translation>Versie 1 zKTS vereist een beveiligingsniveau van 100 om succesvol te besteden.</translation>
+    </message>
+    <message>
+        <source>Too much inputs (</source>
+        <translation>Teveel invoer (</translation>
+    </message>
+    <message>
+        <source>) needed.
+Maximum allowed: </source>
+        <translation>) vereist.
+Maximaal toegestaan:</translation>
+    </message>
+    <message>
+        <source>
+Either mint higher denominations (so fewer inputs are needed) or reduce the amount to spend.</source>
+        <translation>
+Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te besteden bedrag verminderen.</translation>
+    </message>
+    <message>
+        <source>Address label update failed for address: %1</source>
+        <translation>Adreslabel bijwerken mislukt voor adres: %1</translation>
+    </message>
+    <message>
+        <source>Invalid change address</source>
+        <translation>Ongeldig wisseladres</translation>
+    </message>
+    <message>
+        <source>Invalid URI</source>
+        <translation>Ongeldige URI</translation>
+    </message>
+    <message>
+        <source>Invalid address in URI</source>
+        <translation>Ongeldig adres in URI</translation>
+    </message>
+    <message>
+        <source>Custom Fee %1</source>
+        <translation>Aangepaste Kost %1</translation>
+    </message>
+    <message>
+        <source>You don't have any KTS to select.</source>
+        <translation>Je hebt geen KTS om te selecteren</translation>
+    </message>
+    <message>
+        <source>You don't have any zKTS in your balance to select.</source>
+        <translation>Je hebt geen zKTS in je balans om te selecteren.</translation>
+    </message>
+    <message>
+        <source>No contacts available, you can go to the contacts screen and add some there!</source>
+        <translation>Geen beschikbare contacten, je kan naar het contactscherm gaan en daar enkele toevoegen!</translation>
+    </message>
+    <message>
+        <source>Save contact</source>
+        <translation>Contact opslaan</translation>
+    </message>
+    <message>
+        <source>Address field is empty</source>
+        <translation>Adresveld is leeg</translation>
+    </message>
+    <message>
+        <source>Invalid address</source>
+        <translation>Ongeldig adres</translation>
+    </message>
+    <message>
+        <source>Cannot store your own address as contact</source>
+        <translation>Kan uw eigen adres niet als contact opslaan</translation>
+    </message>
+    <message>
+        <source>Update Contact</source>
+        <translation>Contact bijwerken</translation>
+    </message>
+    <message>
+        <source>Create New Contact</source>
+        <translation>Creëer Nieuw Contact</translation>
+    </message>
+    <message>
+        <source>New Contact Stored</source>
+        <translation>Nieuw contact opgeslagen</translation>
+    </message>
+    <message>
+        <source>Error Storing Contact</source>
+        <translation>Fout bij het opslaan van contact</translation>
     </message>
 </context>
 <context>
-    <name>SignVerifyMessageDialog</name>
+    <name>SettingsBackupWallet</name>
     <message>
-        <source>Signatures - Sign / Verify a Message</source>
-        <translation>Handtekeningen - Onderteken / Verifieer een Bericht</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>&amp;Sign Message</source>
-        <translation>&amp;Onderteken Bericht</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Je kunt berichten met je adressen ondertekenen om te bewijzen dat je ze bezit. Wees voorzichtig om niets vaags te ondertekenen, omdat phishing aanvallen je misschien kunnen proberen om je identiteit over te geven. Teken alleen volledig gedetailleerde verklaringen aan waar je mee akkoord gaat.</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>The KTS address to sign the message with</source>
-        <translation>Het KTS adres om het bericht met te ondertekenen</translation>
+        <source>Backup Wallet </source>
+        <translation>Wallet Back-uppen</translation>
     </message>
     <message>
-        <source>Choose previously used address</source>
-        <translation>Kies een eerder gebruikt adres</translation>
+        <source>Change Wallet Passphrase</source>
+        <translation>Wijzig Portemonnee Wachtwoord</translation>
     </message>
     <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
+        <source>Keep your wallet safe doing regular backups, store your backup file externally.
+This option creates a wallet.dat file that can be used to recover your whole balance (transactions and addresses) from another device.</source>
+        <translation>Bewaar uw portemonnee veilig door middel van regelmatige back-ups, bewaar uw back-upbestand extern.
+Deze optie maakt een portemonnee.datbbestand aan dat kan worden gebruikt om uw volledige saldo (transacties en adressen) van een ander apparaat terug te krijgen.</translation>
     </message>
     <message>
-        <source>Paste address from clipboard</source>
-        <translation>Plak adres vanaf klembord</translation>
+        <source>This will decrypt the whole wallet data and encrypt it back with the new passphrase.
+Remember to write it down and store it safely, otherwise you might lose access to your funds.</source>
+        <translation>Dit zal de gehele portemonneegegevens decrypteren en zal opnieuw encrypteren met een nieuwe wachtwoordzin.
+Vergeet deze niet op te schrijven en veilig te bewaren, anders verlies je mogelijks de toegang tot uw geld.</translation>
     </message>
     <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
+        <source>Where</source>
+        <translation>Waar</translation>
     </message>
     <message>
-        <source>Enter the message you want to sign here</source>
-        <translation>Voer hier het bericht in dat u wilt ondertekenen</translation>
+        <source>Set a folder location</source>
+        <translation>Maplocatie instellen</translation>
     </message>
     <message>
-        <source>Signature</source>
-        <translation>Handtekening</translation>
+        <source>Backup</source>
+        <translation>Back-up</translation>
     </message>
     <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
+        <source>Change Passphrase</source>
+        <translation>Wijzig Wachtwoord</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this KTS address</source>
-        <translation>Onderteken het bericht om te bewijzen dat u het KTS adres bezit</translation>
+        <source>Backup Wallet</source>
+        <translation>Backup portemonnee</translation>
     </message>
     <message>
-        <source>The KTS address the message was signed with</source>
-        <translation>Het KTS adres waarmee het bericht was ondertekend</translation>
+        <source>Wallet Data (*.dat)</source>
+        <translation>Portemonneegegevens (*.dat)</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified KTS address</source>
-        <translation>Controleer een bericht om te verifiëren dat het ondertekend is door het gespecificeerde KTS adres</translation>
+        <source>Backup created</source>
+        <translation>Back-up aangemaakt</translation>
     </message>
     <message>
-        <source>Sign &amp;Message</source>
-        <translation>Onderteken &amp;Bericht</translation>
+        <source>Backup creation failed</source>
+        <translation>Aanmaak back-up mislukt</translation>
     </message>
     <message>
-        <source>Reset all sign message fields</source>
-        <translation>Maak alle ondertekenvelden leeg</translation>
+        <source>Please select a folder to export the backup first.</source>
+        <translation>Selecteer eerst een map om de back-up te exporteren.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsBitToolWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Verwijder &amp;Alles</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>&amp;Verify Message</source>
-        <translation>&amp;Verifieer Bericht</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>Voer het ondertekening adres in, verifieer het bericht (zorg ervoor dat je line breaks, spaties, tabs, enz.) en onderteken hieronder om het bericht te verifiëren. Wees voorzichtig om niet meer in de handtekening te lezen dan in het ondertekende bericht zelf, om te voorkomen dat je door een man-in-de-middle aanval wordt getroffen.</translation>
+        <source>Decrypt Address Result</source>
+        <translation>Decrypteer Adresresultaat</translation>
     </message>
     <message>
-        <source>Verify &amp;Message</source>
-        <translation>Verifeer &amp;Message</translation>
+        <source>Import Address</source>
+        <translation>Adres Importeren</translation>
     </message>
     <message>
-        <source>Reset all verify message fields</source>
-        <translation>Maak alle verifiëren van het bericht velden leeg</translation>
+        <source>Clear</source>
+        <translation>Leegmaken</translation>
     </message>
     <message>
-        <source>Click "Sign Message" to generate signature</source>
-        <translation>Klik op "Onderteken Bericht" om een handtekening te genereren</translation>
+        <source>BIP38 Tool</source>
+        <translation>BIP38 Tool</translation>
+    </message>
+    <message>
+        <source>Encrypt</source>
+        <translation>Encrypteer</translation>
+    </message>
+    <message>
+        <source>Decrypt</source>
+        <translation>Decrypteer</translation>
+    </message>
+    <message>
+        <source>Encrypted key</source>
+        <translation>Geëncrypteerde sleutel</translation>
+    </message>
+    <message>
+        <source>Enter a encrypted key</source>
+        <translation>Voer een geëncrypteerde sleutel in</translation>
+    </message>
+    <message>
+        <source>Passphrase</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Enter a passphrase </source>
+        <translation>Voer wachtwoord in</translation>
+    </message>
+    <message>
+        <source>Decrypted address result</source>
+        <translation>Gedecrypteerd Adresresultaat</translation>
+    </message>
+    <message>
+        <source>Decrypted Address</source>
+        <translation>Gedecrypteerd Adres</translation>
+    </message>
+    <message>
+        <source>DECRYPT KEY</source>
+        <translation>DECRYPTEER SLEUTEL</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address</source>
+        <translation>Voeg een KTS adres toe</translation>
+    </message>
+    <message>
+        <source>Add address</source>
+        <translation>Adres toevoegen</translation>
+    </message>
+    <message>
+        <source>Write a message</source>
+        <translation>Schrijf een bericht</translation>
+    </message>
+    <message>
+        <source>Encrypted Key</source>
+        <translation>Geëncrypteerde sleutel</translation>
+    </message>
+    <message>
+        <source>ENCRYPT</source>
+        <translation>Versleutelen</translation>
+    </message>
+    <message>
+        <source>CLEAR ALL</source>
+        <translation>WIS ALLES</translation>
+    </message>
+    <message>
+        <source>CLEAR</source>
+        <translation>WIS</translation>
+    </message>
+    <message>
+        <source>The entered passphrase is invalid. </source>
+        <translation>De ingevoerde wachtwoordzin is ongeldig.</translation>
+    </message>
+    <message>
+        <source>Allowed: 0-9,a-z,A-Z,</source>
+        <translation>Toegestaan: 0-9,a-z,A-Z</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -4191,11 +3947,1047 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Portemonnee-ontsleuteling is geannuleerd.</translation>
+        <translation>Portemonnee ontsleuteling is geannuleerd.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Geheime sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
+        <translation>Privé sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
+    </message>
+    <message>
+        <source>Address encrypted.</source>
+        <translation>Adres geëncrypteerd.</translation>
+    </message>
+    <message>
+        <source>No addresses available, you can go to the receive screen and add some there!</source>
+        <translation>Geen beschikbare adressen, je kan naar het ontvangstscherm gaan en daar enkele toevoegen!</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt.</source>
+        <translation>Ontsleutelen mislukt.</translation>
+    </message>
+    <message>
+        <source>Please check the key and passphrase and try again.</source>
+        <translation>Controleer de sleutel en de wachtwoordzin en probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Data Not Valid.</source>
+        <translation>Gegevens ongeldig.</translation>
+    </message>
+    <message>
+        <source>Please try again.</source>
+        <translation>Probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Please wait while key is imported</source>
+        <translation>Wacht tot de sleutel is geïmporteerd</translation>
+    </message>
+    <message>
+        <source>Cannot import address, key already held by the wallet</source>
+        <translation>Kan adres niet importen, sleutel alreeds in de portemonnee</translation>
+    </message>
+    <message>
+        <source>Error adding key to the wallet</source>
+        <translation>Fout bij toevoegen van sleutel aan de portemonnee</translation>
+    </message>
+    <message>
+        <source>Successfully added ktsate key to the wallet</source>
+        <translation>Geheime sleutel succesvol toegevoegd aan de portemonnee</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsConsoleWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>Console</source>
+        <translation>Console</translation>
+    </message>
+    <message>
+        <source>Console input</source>
+        <translation>Console invoer</translation>
+    </message>
+    <message>
+        <source>Command Line Options </source>
+        <translation>Command Line Opties</translation>
+    </message>
+    <message>
+        <source>Open Debug File</source>
+        <translation>Open debugbestand</translation>
+    </message>
+    <message>
+        <source>Cannot open debug file.
+Verify that you have installed a predetermined text editor.</source>
+        <translation>Kan het debugbestand niet openen.
+Controleer of u een vooraf bepaalde teksteditor hebt geïnstalleerd.</translation>
+    </message>
+    <message>
+        <source>Welcome to the KTS RPC console.</source>
+        <translation>Welkom bij de KTS RPC console.</translation>
+    </message>
+    <message>
+        <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
+        <translation>Gebruik omhoog en omlaag pijltjestoetsen om door de geschiedenis te navigeren en %1 om het scherm te wissen.</translation>
+    </message>
+    <message>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Type &lt;b&gt;help &lt;/b&gt;voor een overzicht van beschikbare commando's.</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>WAARSCHUWING: Er zijn oplichters actief geweest, die gebruikers vertellen dat ze hier commando's moeten typen waarmee ze de inhoud van hun portemonnee konden stelen. Gebruik deze console niet zonder de gevolgen van een commando volledig te begrijpen.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDisplayOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Terugzetten naar standaardinstelling</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Wijzigingen ongedaan maken</translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation>Display</translation>
+    </message>
+    <message>
+        <source>Customize the display view options</source>
+        <translation>Pas de weergaveopties aan</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Unit to show amount</source>
+        <translation>Eenheid om bedrag te tonen</translation>
+    </message>
+    <message>
+        <source>Decimal digits</source>
+        <translation>Decimale cijfers</translation>
+    </message>
+    <message>
+        <source>Third party transactions URLs</source>
+        <translation>Derde partij transactie URLs</translation>
+    </message>
+    <message>
+        <source>Hide empty balances</source>
+        <translation>Verberg lege saldi</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standaard</translation>
+    </message>
+    <message>
+        <source>Options reset succeed</source>
+        <translation>Opties succesvol gereset</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>1) What is KTS?</source>
+        <translation>1) Wat is KTS?</translation>
+    </message>
+    <message>
+        <source>2) Why are my KTS unspendable?</source>
+        <translation>2) Waarom is mijn KTS niet besteedbaar?</translation>
+    </message>
+    <message>
+        <source>3) KTS privacy? What is Zerocoin (zKTS)?</source>
+        <translation>3) KTS privacy? Wat is Zerocoin (zKTS)?</translation>
+    </message>
+    <message>
+        <source>4) Why are my zKTS unspendable?</source>
+        <translation>4) Waarom is mijn zKTS niet besteedbaar?</translation>
+    </message>
+    <message>
+        <source>5) Why did my wallet convert the balance
+    into zKTS automatically?</source>
+        <translation>5) Waarom heeft mijn portemonnee mijn balans
+    automatisch naar zKTS geconverteerd?</translation>
+    </message>
+    <message>
+        <source>6) How do I receive KTS/zKTS?</source>
+        <translation>6) Hoe ontvang ik KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>7) How do I stake KTS/zKTS?</source>
+        <translation>7) Hoe stake ik KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>8) Where I should go if I need support?</source>
+        <translation>8) Waar moet ik heen gaan als ik ondersteuning nodig heb?</translation>
+    </message>
+    <message>
+        <source>9) What is a Master Node?</source>
+        <translation>9) Wat is een Masternode?</translation>
+    </message>
+    <message>
+        <source>10) What is a Master Node Controller?</source>
+        <translation>10) Wat is een Master Node Controller?</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>What is KTS?</source>
+        <translation>Wat is KTS?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           KTS is a form of digital online money using blockchain technology
+                           that can be easily transferred globally, instantly, and with near
+                           zero fees.  KTS incorporates market leading security &amp;
+                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
+                           to implement ZeroCoin(zKTS) and Zerocoin staking.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           KTS utilizes a Proof of Stake (PoS) consensus system algorithm,
+                           allowing all owners of KTS to participate in earning block rewards
+                           while securing the network with full node wallets, as well as to
+                           run Masternodes to create and vote on proposals.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           KTS is een vorm van digitaal online geld dat gebruik maakt van blockchain technologie.
+                           die gemakkelijk wereldwijd kan worden overgebracht, onmiddellijk en met bijna
+                           geen kosten.  KTS omvat marktleidende beveiliging &amp;
+                           privacy en is ook de eerste PoS (Proof of Stake) Cryptovaluta
+                           om ZeroCoin (zKTS) en Zerocoin staking te implementeren.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           KTS gebruikt een Proof of Stake (PoS) consensussysteemalgoritme,
+                           waardoor alle eigenaren van KTS kunnen deelnemen aan het verdienen van blokbeloningen
+                           en tegelijkertijd het netwerk te beveiligen met volledige node portemonnees, en ook om
+                           Masternodes uit te voeren en om voorstellen op te stellen en daarover te stemmen.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <source>Why are my KTS unspendable?</source>
+        <translation>Waarom is mijn KTS niet besteedbaar?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Newly received KTS requires 6 confirmations on the network
+                           to become eligible for spending which can take ~6 minutes.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Your KTS wallet also needs to be completely synchronized
+                           to see and spend balances on the network.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Nieuw ontvangen KTS vereist 6 bevestigingen op het netwerk
+                           om in aanmerking te komen voor uitgaven die ongeveer 6 minuten in beslag kunnen nemen.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Uw KTS portemonnee moet ook volledig gesynchroniseerd zijn
+                           om de balans te zien en uit te geven op het netwerk.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <source>KTS privacy? What is Zerocoin (zKTS)?</source>
+        <translation>KTS privacy? Wat is Zerocoin (zKTS)?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           zKTS is an optional privacy-centric method of coin mixing on the
+                           KTS blockchain. Basically all your transactions cannot be tracked
+                           on to any block explorer. You can read more about the technicals in the
+                           &lt;a style='color: #b088ff' href='https://KTS.org/zkts/'&gt;
+                           "KTS Zerocoin (zKTS) Technical Paper"&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           zKTS is een optionele privacy-gerichte methode om munten te mengen op de
+                           KTS blockchain. In principe kunnen al uw transacties niet worden gevolgd
+                           op enige block explorer. U kunt meer lezen over de technische gegevens in de
+                           &lt;a style='color: #b088ff' href='https://KTS.org/zkts/'&gt;
+                           "KTS Zerocoin (zKTS) Technische Paper"&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation>4</translation>
+    </message>
+    <message>
+        <source>Why are my zKTS unspendable?</source>
+        <translation>Waarom is mijn zKTS niet besteedbaar?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           After minting, zKTS will require 20 confirmations as well as 1
+                           additional mint of the same denomination on the network to
+                           become eligible for spending.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Na het muntenheeft zKTS 20 bevestigingen nodig, evenals 1
+                          extra munt van dezelfde denominatie op het netwerk om
+                           in aanmerking komen voor uitgaven.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation>5</translation>
+    </message>
+    <message>
+        <source>Why did my wallet convert the balance into zKTS automatically?</source>
+        <translation>Waarom heeft mijn portemonnee mijn balans automatisch naar zKTS geconverteerd?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           By default the KTS wallet will convert 10% of your entire KTS
+                           balance to zKTS to assist the network. If you do not wish to
+                           stake zKTS or take advantage of the privacy benefit it brings,
+                           you can disable the automatic minting in your KTS wallet by
+                           going to Settings-&gt;Options and deselecting “Enable zKTS Automint”.
+                           If you are not making use of the KTS-QT or GUI you can simply open
+                           your kts.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
+                           marks and restart your wallet to disable automint.&lt;/p&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           You can read more about zKTS in the
+                           &lt;a style='color: #b088ff' href='https://KTS.org/zkts/'&gt; "KTS Zerocoin (zKTS) Technical Paper"&lt;/a&gt;.
+                           If you would like to keep and stake your zKTS, please read the "How do I stake"
+                           section of the FAQ below.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Standaard zal de KTS portemonnee 10% van uw gehele KTS-balans omzetten
+                          naar zKTS om het netwerk te helpen. Als u niet wenst om
+                           zKTS te staken of voordeel te halen uit het privacyvoordeel dat dit oplevert,
+                           kan je deze automatische omzetting uitschakelen in je KTS portemonnee door
+                           naar Instellingen &gt; Opties te gaan en dan “Schakel zKTS Automuntering in” te deselecteren.
+                           Als je geen gebruik maakt van de KTS-QT of GUI kan je simpelweg
+                           je kts.conf bestand openen en er &lt;i&gt;"enablezeromint=0" aan toevoegen&lt;/i&gt; Zonder de aanhaling
+                           en je portemonnee herstarten om automuntering uit te schakelen.&lt;/p&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Je kan meer lezen over zKTS in de
+                           &lt;a style='color: #b088ff' href='https://KTS.org/zkts/'&gt; "KTS Zerocoin (zKTS) Technische Paper"&lt;/a&gt;.
+                           Als u uw zKTS wilt behouden en staken, lees dan de "Hoe stake ik"
+                           sectie in onderstaande FAQ.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>6</source>
+        <translation>6</translation>
+    </message>
+    <message>
+        <source>How do I receive KTS/zKTS?</source>
+        <translation>Hoe ontvang ik KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           zKTS can be spent and sent to any KTS address. The receiver will
+                           receive standard KTS but the origin of the KTS is anonymized by the zKTS Protocol.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           If you want more zKTS you will need to mint your balance in the “Privacy” tab.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           zKTS kan worden uitgegeven en verzonden naar elk KTS-adres. De ontvanger zal
+                           gewone KTS ontvangen, maar de oorsprong van de KTS is geanonimiseerd door het zKTS-protocol
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Als u meer zKTS wilt, moet u uw balans op mint zetten in de "Privacy" tab.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>7</source>
+        <translation>7</translation>
+    </message>
+    <message>
+        <source>How do I stake KTS/zKTS?</source>
+        <translation>Hoe stakz ik KTS/zKTS?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           To Stake KTS:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Make sure your wallet is completely synchronized and you are using the latest release.
+                           &lt;li&gt;
+                           You must have a balance of KTS with a minimum of 101 confirmations.
+                           &lt;li&gt;
+                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
+                           &lt;li&gt;
+                           Once all those steps are followed staking should be enabled.
+                           &lt;li&gt;
+                           You can see the status of staking in the wallet by mousing over the package icon in the row on the top left of the wallet interface. There package will be lit up and will state "Staking Enabled" to indicate it is staking.  Using the command line interface (kts-cli); the command &lt;i&gt;getstakingstatus&lt;/i&gt; will confirm that staking is active.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           To Stake zKTS:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Make sure your wallet is completely synchronized and you are using the latest release.
+                           &lt;li&gt;
+                           Your newly minted or existing zKTS balance must have a minimum of 200 confirmations.
+                           &lt;li&gt;
+                           Your wallet must stay online and be unlocked for anonymization and staking purposes.
+                           Staking should now be enabled.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Om KTS te Staken:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                           Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en dat u de laatste versie gebruikt.
+                           &lt;li&gt;
+                           U moet een saldo van KTS hebben met een minimum van 101 bevestigingen.
+                           &lt;li&gt;
+                           Uw portemonnee moet online blijven en worden ontgrendeld voor anonimisering en staking-doeleinden.
+                           &lt;li&gt;
+                           Zodra al deze stappen zijn gevolgd, zal het staken worden ingeschakeld.
+                           &lt;li&gt;
+                           U kunt de status van de staking in de portemonnee zien door op het pictogram in de rij linksboven in de portemonnee-interface te bewegen. Het pakket zal oplichten en zal "Staking Ingeschakeld" aangeven om aan te geven dat het pakket in de portemonnee is geplaatst. Met behulp van de opdrachtregel-interface (kts-cli); het commando &lt;i&gt;getstakingstatus&lt;/i&gt; zal bevestigen dat de staking actief is.
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Om zKTS te Staken:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ol&gt;&lt;li&gt;
+                            Zorg ervoor dat uw portemonnee volledig gesynchroniseerd is en dat u de laatste versie gebruikt.
+                           &lt;li&gt;
+                           Uw nieuw gemunte of bestaande zKTS balans moet minimaal 200 bevestigingen hebben.
+                           &lt;li&gt;
+                           Uw portemonnee moet online blijven en worden ontgrendeld voor anonimisering en staking-doeleinden.
+                           Het Staken zou nu ingeschakeld moeten zijn
+                           &lt;/li&gt;&lt;/ol&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>8</source>
+        <translation>8</translation>
+    </message>
+    <message>
+        <source>Where I should go if I need support?</source>
+        <translation>Waar moet ik heen gaan als ik ondersteuning nodig heb?</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           We have support channels in most of our official chat groups, for example
+                           &lt;a style='color: #b088ff' href='https://Discord.KTS.com'&gt;
+                           #support in our Discord&lt;/a&gt;.
+                           If you prefer to submit a ticket, One can be
+                           &lt;a style='color: #b088ff' href='https://KTS.FreshDesk.com'&gt;
+                           our Freshdesk support site&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           We hebben ondersteuningskanalen in de meeste van onze officiële chatgroepen, bijvoorbeeld
+                           &lt;a style='color: #b088ff' href='https://Discord.KTS.com'&gt;
+                           #support in onze Discord&lt;/a&gt;.
+                           Als u liever een ticket indient, kan men dat
+                           &lt;a style='color: #b088ff' href='https://KTS.FreshDesk.com'&gt;
+                           op onze Freshdesk support site&lt;/a&gt;.
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>9</source>
+        <translation>9</translation>
+    </message>
+    <message>
+        <source>What is a Master Node?</source>
+        <translation>Wat is een Masternode</translation>
+    </message>
+    <message>
+        <source>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           A masternode is a computer running a full node KTS core wallet with a
+                           requirement of 10,000 KTS secured collateral to provide extra services
+                           to the network and in return, receive a portion of the block reward
+                           regularly.  These services include:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+
+                           &lt;ul&gt;
+                           &lt;li&gt;Instant transactions (SwiftX)&lt;/li&gt;
+                           &lt;li&gt;A decentralized governance (Proposal Voting)&lt;/li&gt;
+                           &lt;li&gt;A decentralized budgeting system (Treasury)&lt;/li&gt;
+                           &lt;li&gt;Validation of transactions within each block&lt;/li&gt;
+                           &lt;li&gt;Act as an additional full node in the network&lt;/li&gt;
+                           &lt;/ul&gt;
+
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           For providing such services, masternodes are also paid a certain portion
+                           of reward for each block. This can serve as a passive income to the
+                           masternode owners minus their running cost.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+
+                           Masternode Perks:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;Participate in KTS Governance&lt;/li&gt;
+                           &lt;li&gt;Earn Masternode Rewards&lt;/li&gt;
+                           &lt;li&gt;Commodity option for future sale&lt;/li&gt;
+                           &lt;li&gt;Help secure the KTS network&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+
+                           Requirements:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;10,000 KTS per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
+                           &lt;li&gt;Need dedicated IP address&lt;/li&gt;
+                           &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </source>
+        <translation>
+                           &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
+                           Een masternode is een computer met een volledige node KTS core portemonnee met een
+                           vereiste van 10.000 KTS onderpand om extra diensten te kunnen verlenen
+                           aan het netwerk en in ruil daarvoor ontvangt u regelmatig een deel van de blokbeloning.
+                           Deze diensten omvatten::
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+
+                           &lt;ul&gt;
+                           &lt;li&gt;Directe transacties (SwiftX)&lt;/li&gt;
+                           &lt;li&gt;Een gedecentralizeerd bestuur (Stemming Voorstel)&lt;/li&gt;
+                           &lt;li&gt;Een gedecentralizeerd budgeteringssysteem (Treasury)&lt;/li&gt;
+                           &lt;li&gt;Validatie van transacties binnen elk blok&lt;/li&gt;
+                           &lt;li&gt;Fungeert als een extra volledige node in het netwerk&lt;/li&gt;
+                           &lt;/ul&gt;
+
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           Voor het verlenen van dergelijke diensten wordt ook een bepaald deel van de masternodes betaald
+                            van beloning voor elk blok. Dit kan dienen als een passief inkomen voor de
+                           masternode eigenaars minus hun exploitatiekosten.
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+
+                           Masternode Voordelen:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;Deelnemen in het KTS Bestuur&lt;/li&gt;
+                           &lt;li&gt;Verdien Masternode Beloningen&lt;/li&gt;
+                           &lt;li&gt;Commodity-optie voor toekomstige verkoop&lt;/li&gt;
+                           &lt;li&gt;Helpt bij het beveiligen van het KTS netwerk&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+
+                           Vereisten:
+                           &lt;/p&gt;&lt;p align="justify"&gt;
+                           &lt;ul&gt;
+                           &lt;li&gt;10,000 KTS per Masternode instance&lt;/li&gt;
+                           &lt;li&gt;Moet in een kernportemonnee worden opgeborgen&lt;/li&gt;
+                           &lt;li&gt;Vereist een vast IP-adres
+                           &lt;li&gt;Masternode portemonnee moet online blijven&lt;/li&gt;
+                           &lt;/ul&gt;
+                           &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                         </translation>
+    </message>
+    <message>
+        <source>10</source>
+        <translation>10</translation>
+    </message>
+    <message>
+        <source>What is a Master Node Controller?</source>
+        <translation>Wat is een Masternode Controller?</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 10,000 KTS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;Een Masternode Controller portemonnee is waar de 10.000 KTS onderpand zich kan bevinden tijdens een Controller-Remote masternode setup. Het is een portemonnee die de remote masternode portemonnee(s) kan activeren en waarmee u uw ondergepande munten offline kunt houden terwijl de remote masternode online blijft. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Frequently Asked Questions</source>
+        <translation>Frequently Asked Questions</translation>
+    </message>
+    <message>
+        <source>You can read more here</source>
+        <translation>Je kan er hier meer over lezen</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation>Sluit</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsInformationWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>Network Monitor</source>
+        <translation>Netwerkmonitor</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informatie</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Algemeen</translation>
+    </message>
+    <message>
+        <source>Client Version: </source>
+        <translation>Client Versie:</translation>
+    </message>
+    <message>
+        <source>User Agent:</source>
+        <translation>User Agent:</translation>
+    </message>
+    <message>
+        <source>Using BerkeleyDB version:</source>
+        <translation>Gebruikt BerkeleyDB versie:</translation>
+    </message>
+    <message>
+        <source>Datadir: </source>
+        <translation>Datadir: </translation>
+    </message>
+    <message>
+        <source>Startup Time:  </source>
+        <translation>Starttijd:</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Netwerk</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Naam:</translation>
+    </message>
+    <message>
+        <source>Number Connections:</source>
+        <translation>Nummer Verbindingen:</translation>
+    </message>
+    <message>
+        <source>Blockchain</source>
+        <translation>Blockchain</translation>
+    </message>
+    <message>
+        <source>Current Number of Blocks:</source>
+        <translation>Huidige nummer van blokken:</translation>
+    </message>
+    <message>
+        <source>Last Block Time:</source>
+        <translation>Laatste Bloktijd:</translation>
+    </message>
+    <message>
+        <source>Memory Pool</source>
+        <translation>Geheugenpool</translation>
+    </message>
+    <message>
+        <source>Current Number of Transactions:</source>
+        <translation>Huidige nummer van transacties:</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hoofd</translation>
+    </message>
+    <message>
+        <source>Wallet Conf</source>
+        <translation>Portemonnee Conf</translation>
+    </message>
+    <message>
+        <source>Backups</source>
+        <translation>Back-ups</translation>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation>Geen informatie</translation>
+    </message>
+    <message>
+        <source>Unable to open backups folder</source>
+        <translation>Kan de back-upmap niet openen</translation>
+    </message>
+    <message>
+        <source>Unable to open kts.conf with default application</source>
+        <translation>Kan kts.conf niet openen met de standaard applicatie</translation>
+    </message>
+    <message>
+        <source>In:</source>
+        <translation>In:</translation>
+    </message>
+    <message>
+        <source>Out:</source>
+        <translation>Uit:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMainOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>Window</source>
+        <translation>Venster</translation>
+    </message>
+    <message>
+        <source>Customize the application window options</source>
+        <translation>De opties van het toepassingsvenster aanpassen</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Selectievakje</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Terugzetten naar standaardinstelling</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Wijzigingen ongedaan maken</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hoofd</translation>
+    </message>
+    <message>
+        <source>Size of database cache</source>
+        <translation>Grootte van database cache</translation>
+    </message>
+    <message>
+        <source>Number of script verification threads</source>
+        <translation>Aantal van script verificatiethreads</translation>
+    </message>
+    <message>
+        <source>Start KTS on system login</source>
+        <translation>Start KTS bij systeemlogin</translation>
+    </message>
+    <message>
+        <source>Minimize to the tray instead of the taskbar</source>
+        <translation>Minimaliseer naar het vak in plaats van de taakbalk</translation>
+    </message>
+    <message>
+        <source>Minimize on close</source>
+        <translation>Minimaliseer bij sluiten</translation>
+    </message>
+    <message>
+        <source>Reset Options</source>
+        <translation>Reset Opties</translation>
+    </message>
+    <message>
+        <source>You are just about to reset the app's options to the default values.
+
+Are you sure?
+</source>
+        <translation>U staat op het punt om de opties van de app terug te zetten naar de standaardwaarden.
+
+Weet u het zeker?
+</translation>
+    </message>
+    <message>
+        <source>Options reset succeed</source>
+        <translation>Opties succesvol gereset</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMultisendDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>New recipient for multisend</source>
+        <translation>Nieuwe ontvanger voor multisend</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (optioneel)</translation>
+    </message>
+    <message>
+        <source>Enter a label to add this address in your address book</source>
+        <translation>Voer een label in om dit adres toe te voegen aan uw adresboek.</translation>
+    </message>
+    <message>
+        <source>Percentage</source>
+        <translation>Percentage</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsMultisendWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>No active Master Node yet</source>
+        <translation>Nog geen actieve Master Node</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Selectievakje</translation>
+    </message>
+    <message>
+        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other KTS addresses after it matures.</source>
+        <translation>Met MultiSend kunt u automatisch tot 100% van uw inzet of masternode beloning naar een lijst met andere KTS-adressen sturen nadat deze volwaardig zijn geworden.</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Actief</translation>
+    </message>
+    <message>
+        <source>Disable</source>
+        <translation>Uitschakelen</translation>
+    </message>
+    <message>
+        <source>No active recipient yet</source>
+        <translation>Nog geen actieve ontvanger</translation>
+    </message>
+    <message>
+        <source>Send stakes</source>
+        <translation>Verstuur stakes</translation>
+    </message>
+    <message>
+        <source>Send masternode rewards</source>
+        <translation>Verstuurd masternode beloningen</translation>
+    </message>
+    <message>
+        <source>ADD RECIPIENT</source>
+        <translation>VOEG BESTEMMELING TOE</translation>
+    </message>
+    <message>
+        <source>CLEAR ALL</source>
+        <translation>WIS ALLES</translation>
+    </message>
+    <message>
+        <source>Clear succeed</source>
+        <translation>Wissen geslaagd</translation>
+    </message>
+    <message>
+        <source>Clear all failed, could not locate address in wallet file</source>
+        <translation>Alles wissen mislukt, kon geen adres terugvinden in het portemonnee bestand</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
+Please check the address and try again.</source>
+        <translation>Het ingevoerde adres: %1 is ongeldig.
+Controleer het adres en probeer opnieuw.</translation>
+    </message>
+    <message>
+        <source>Invalid percentage, please enter values from 1 to 100.</source>
+        <translation>Ongeldig percentage, voer waarden in van 1 tot 100.</translation>
+    </message>
+    <message>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>De totale hoeveelheid van je MultiSend vector is meer dan 100% van je inzet beloning</translation>
+    </message>
+    <message>
+        <source>Error saving  MultiSend, failed saving properties to the database.</source>
+        <translation>Opslaan van MultiSend mislukt, foutgelopen bij opslaan van eigenschappen naar de database.</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, no available recipients</source>
+        <translation>Kon MultiSend niet activeren, geen beschikbare ontvangers</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend
+Check one or both of the check boxes to send on stake and/or masternode rewards</source>
+        <translation>MultiSend kan niet geactiveerd worden
+Vink één of beide selectievakjes aan om beloningen op de inzet en/of masternode te sturen.</translation>
+    </message>
+    <message>
+        <source>MultiSend activated but writing settings to DB failed</source>
+        <translation>MultiSend geactiveerd maar instellingen naar DB wegschrijven mislukt</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>MultiSend geactiveerd</translation>
+    </message>
+    <message>
+        <source>First multiSend address invalid</source>
+        <translation>Eerste MultiSend-adres ongeldig</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated but writing settings to DB failed</source>
+        <translation>MultiSend gedeactiveerd maar instellingen naar DB wegschrijven mislukt</translation>
+    </message>
+    <message>
+        <source>MultiSend deactivated</source>
+        <translation>MultiSend gedeactiveerd</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSignMessageWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leegmaken</translation>
+    </message>
+    <message>
+        <source>Sign/Verify Message</source>
+        <translation>Onderteken/Verifiëer Bericht</translation>
+    </message>
+    <message>
+        <source>Enter a KTS address or contact label</source>
+        <translation>Voer een KTS-adres of contactlabel in</translation>
+    </message>
+    <message>
+        <source>Add address</source>
+        <translation>Adres toevoegen</translation>
+    </message>
+    <message>
+        <source>Sign</source>
+        <translation>Onderteken</translation>
+    </message>
+    <message>
+        <source>Verify</source>
+        <translation>Verifiëer</translation>
+    </message>
+    <message>
+        <source>Select mode</source>
+        <translation>Selecteer mode</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Bericht</translation>
+    </message>
+    <message>
+        <source>Write a message</source>
+        <translation>Schrijf een bericht</translation>
+    </message>
+    <message>
+        <source>Signature</source>
+        <translation>Handtekening</translation>
+    </message>
+    <message>
+        <source>SIGN</source>
+        <translation>SIGNEER</translation>
+    </message>
+    <message>
+        <source>CLEAR ALL</source>
+        <translation>WIS ALLES</translation>
+    </message>
+    <message>
+        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Je kunt berichten met je adressen ondertekenen om te bewijzen dat je ze bezit. Wees voorzichtig om niets vaags te ondertekenen, omdat phishing aanvallen je misschien kunnen proberen om je identiteit over te geven. Teken alleen volledig gedetailleerde verklaringen aan waar je mee akkoord gaat.</translation>
+    </message>
+    <message>
+        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
+        <translation>Voer het ondertekening adres in, verifieer het bericht (zorg ervoor dat je line breaks, spaties, tabs, enz.) en onderteken hieronder om het bericht te verifiëren. Wees voorzichtig om niet meer in de handtekening te lezen dan in het ondertekende bericht zelf, om te voorkomen dat je door een man-in-de-middle aanval wordt getroffen.</translation>
+    </message>
+    <message>
+        <source>VERIFY</source>
+        <translation>VERIFIËER</translation>
+    </message>
+    <message>
+        <source>The entered address is invalid.</source>
+        <translation>Het ingevoerde adres is ongeldig.</translation>
+    </message>
+    <message>
+        <source>Please check the address and try again.</source>
+        <translation>Controleer het adres en probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>The entered address does not refer to a key.</source>
+        <translation>Het opgegeven adres verwijst niet naar een sleutel.</translation>
+    </message>
+    <message>
+        <source>Wallet unlock was cancelled.</source>
+        <translation>Portemonnee ontsleuteling is geannuleerd.</translation>
+    </message>
+    <message>
+        <source>Private key for the entered address is not available.</source>
+        <translation>Privé sleutel voor het ingevoerde adres is niet beschikbaar.</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -4225,12 +5017,374 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <source>Message verified.</source>
         <translation>Bericht geverifieerd.</translation>
     </message>
+    <message>
+        <source>No addresses available, you can go to the receive screen and add some there!</source>
+        <translation>Geen beschikbare adressen, je kan naar het ontvangstscherm gaan en daar enkele toevoegen!</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWalletOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Selectievakje</translation>
+    </message>
+    <message>
+        <source>RadioButton</source>
+        <translation>RadioButton</translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation>Terugzetten naar standaardinstelling</translation>
+    </message>
+    <message>
+        <source>Discard changes</source>
+        <translation>Wijzigingen ongedaan maken</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Portemonnee</translation>
+    </message>
+    <message>
+        <source>Customize the internal wallet options</source>
+        <translation>Pas de interne portemonnee-opties aan</translation>
+    </message>
+    <message>
+        <source>Stake split threshold:</source>
+        <translation>Inzet splitdrempel:</translation>
+    </message>
+    <message>
+        <source>Spend unconfirmed change</source>
+        <translation>Besteed onbevestigde wijziging</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Netwerk</translation>
+    </message>
+    <message>
+        <source>Customize the node network options</source>
+        <translation>Pas de nodenetwerkopties aan</translation>
+    </message>
+    <message>
+        <source>Proxy IP:</source>
+        <translation>Proxy IP:</translation>
+    </message>
+    <message>
+        <source>Enter proxy IP</source>
+        <translation>Proxy IP invoeren</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation>Poort:</translation>
+    </message>
+    <message>
+        <source>Map port using UPnP</source>
+        <translation>Wijs poort toe met behulp van UPnP</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Sta inkomende connecties toe</translation>
+    </message>
+    <message>
+        <source>Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>Connecteer via SOCKS5 proxy (standaardproxy):</translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Options reset succeed</source>
+        <translation>Opties succesvol gereset</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWalletRepairWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>Wallet Repair</source>
+        <translation>Portemonnee Herstel</translation>
+    </message>
+    <message>
+        <source>The buttons below will restart the wallet with command-line options to repair this wallet, fix issues with corrupt blockchain files or missing/obsolete transactions.</source>
+        <translation>De knoppen hieronder herstarten de portemonnee met commandoregelopties om deze portemonnee te repareren, problemen met corrupte blockchain bestanden of ontbrekende/verouderde transacties op te lossen.</translation>
+    </message>
+    <message>
+        <source>Attempt to recover private keys from a corrupt wallet.dat.</source>
+        <translation>Poog om privé sleutels terug te halen uit een corrupte wallet.dat.</translation>
+    </message>
+    <message>
+        <source>Rescan the blockchain for missing wallet transactions.</source>
+        <translation>Scan de blockchain opnieuw voor ontbrekende portemonneetransacties.</translation>
+    </message>
+    <message>
+        <source>Recover transactions from blockchain (keep-meta-data, e.g. account owner).</source>
+        <translation>Herstel transacties uit de blockchain (keep-meta-data, bijvoorbeeld van de rekeninghouder).</translation>
+    </message>
+    <message>
+        <source>Recover transactions from blockchain (drop meta-data).</source>
+        <translation>Herstel transacties van blockchain (laat meta-data vallen).</translation>
+    </message>
+    <message>
+        <source>Upgrade wallet to latest format on startup. (Note: this is NOT an update of the wallet itself)</source>
+        <translation>Upgrade de portemonnee naar het laatste formaat bij het opstarten. (Opmerking: dit is GEEN update van de portemonnee zelf).</translation>
+    </message>
+    <message>
+        <source>Rebuild blockchain index from current blk000???.dat files.</source>
+        <translation>Bouw de blockchain index opnieuw vanuit huidige blk000???.dat bestanden.</translation>
+    </message>
+    <message>
+        <source>Deletes all local blockchain folders so the wallet synchronizes from scratch.</source>
+        <translation>Verwijder alle lokale blockchain mappen zodat de portemonnee alles opnieuw kan hersynchroniseren.</translation>
+    </message>
+    <message>
+        <source>Salvage wallet</source>
+        <translation>Red portemonnee</translation>
+    </message>
+    <message>
+        <source>Rescan blockchain file</source>
+        <translation>Blockchainbestand opnieuw scannen</translation>
+    </message>
+    <message>
+        <source>Recover transactions 1</source>
+        <translation>Herstel transacties 1</translation>
+    </message>
+    <message>
+        <source>Recover transactions 2</source>
+        <translation>Herstel transacties 2</translation>
+    </message>
+    <message>
+        <source>Upgrade wallet format</source>
+        <translation>Upgrade portemonnee format</translation>
+    </message>
+    <message>
+        <source>Rebuild index</source>
+        <translation>Herbouw index</translation>
+    </message>
+    <message>
+        <source>Delete local blockchain </source>
+        <translation>Verwijder lokale blockchain</translation>
+    </message>
+    <message>
+        <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dit zal al jouw lokale blockchain mappen verwijderen en de portemonnee zal de blockchain helemaal opnieuw synchroniseren.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>This needs quite some time and downloads a lot of data.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Dit vergt nogal wat tijd en downloadt veel data.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Your transactions and funds will be visible again after the download has completed.&lt;br /&gt;&lt;br /&gt;</source>
+        <translation>Uw transacties en tegoeden zijn opnieuw zichtbaar nadat het downloaden is voltooid.&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>Do you want to continue?.&lt;br /&gt;</source>
+        <translation>Wil je verdergaan?</translation>
+    </message>
+    <message>
+        <source>Confirm resync Blockchain</source>
+        <translation>Bevestig hersynchronisering van Blockchain</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>Wallet Data</source>
+        <translation>Portemonnee Data</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Portemonnee</translation>
+    </message>
+    <message>
+        <source>Multisend</source>
+        <translation>Multisend</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Gereedschap</translation>
+    </message>
+    <message>
+        <source>Sign/Verify Message</source>
+        <translation>Onderteken/Verifiëer Bericht</translation>
+    </message>
+    <message>
+        <source>BIP38 Tool</source>
+        <translation>BIP38 Tool</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Main</source>
+        <translation>Hoofd</translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation>Display</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Debug</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informatie</translation>
+    </message>
+    <message>
+        <source>Console</source>
+        <translation>Console</translation>
+    </message>
+    <message>
+        <source>Wallet Repair</source>
+        <translation>Portemonnee Herstellen</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <source>FAQ</source>
+        <translation>Veelgestelde vragen</translation>
+    </message>
+    <message>
+        <source>About KTS</source>
+        <translation>Over KTS</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>Confirm options reset</source>
+        <translation>Bevestig reset instellingen</translation>
+    </message>
+    <message>
+        <source>Client restart required to activate changes.</source>
+        <translation>Client herstart vereist om wijzigingen te activeren.</translation>
+    </message>
+    <message>
+        <source>Client will be shutdown, do you want to proceed?</source>
+        <translation>Client wordt uitgeschakeld, wil je doorgaan?</translation>
+    </message>
+    <message>
+        <source>Restart required</source>
+        <translation>Herstart nodig</translation>
+    </message>
+    <message>
+        <source>Your wallet needs to be restarted to apply the changes
+</source>
+        <translation>Je portemonnee moet opnieuw opgestart worden om de wijzigingen toe te passen.
+</translation>
+    </message>
+    <message>
+        <source>Restart Now</source>
+        <translation>Nu herstarten</translation>
+    </message>
+    <message>
+        <source>Restart Later</source>
+        <translation>Later herstarten</translation>
+    </message>
+    <message>
+        <source>Options will be applied on next wallet restart</source>
+        <translation>Opties zullen toegepast worden bij de volgende herstart van de portemonnee</translation>
+    </message>
+    <message>
+        <source>Options stored</source>
+        <translation>Opties bewaard</translation>
+    </message>
+    <message>
+        <source>Options store failed</source>
+        <translation>Opties opslaan mislukt</translation>
+    </message>
+    <message>
+        <source>Discard Unsaved Changes</source>
+        <translation>Niet-opgeslagen wijzigingen negeren</translation>
+    </message>
+    <message>
+        <source>You are just about to discard all of your unsaved options.
+
+Are you sure?
+</source>
+        <translation>U staat op het punt al uw niet-opgeslagen opties te verwijderen.
+
+Weet je zeker dat?
+</translation>
+    </message>
+</context>
+<context>
+    <name>ShutdownWindow</name>
+    <message>
+        <source>KTS Core is shutting down...</source>
+        <translation>KTS Core is aan het afsluiten...</translation>
+    </message>
+    <message>
+        <source>Do not shut down the computer until this window disappears.</source>
+        <translation>Sluit de computer niet af voordat dit venster verdwenen is.</translation>
+    </message>
+</context>
+<context>
+    <name>SnackBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Contact Stored</source>
+        <translation>Contact Bewaard</translation>
+    </message>
+</context>
+<context>
+    <name>Splash</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Loading…</source>
+        <translation>Laden...</translation>
+    </message>
+    <message>
+        <source>KTS Core</source>
+        <translation>KTS Core</translation>
+    </message>
 </context>
 <context>
     <name>SplashScreen</name>
     <message>
         <source>KTS Core</source>
-        <translation>KTS Kern</translation>
+        <translation>KTS Core</translation>
     </message>
     <message>
         <source>Version %1</source>
@@ -4254,6 +5408,128 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
+    <name>TooltipMenu</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerk</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Wissen</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Laatste</translation>
+    </message>
+</context>
+<context>
+    <name>TopBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>480.0685 KTS</source>
+        <translation>480.0685 KTS</translation>
+    </message>
+    <message>
+        <source>1,000 zKTS</source>
+        <translation>1,000 zKTS</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Beschikbaar</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>In afwachting</translation>
+    </message>
+    <message>
+        <source>6.943 KTS</source>
+        <translation>6.943 KTS</translation>
+    </message>
+    <message>
+        <source>Immature</source>
+        <translation>Onverwerkt</translation>
+    </message>
+    <message>
+        <source>10 KTS</source>
+        <translation>10 KTS</translation>
+    </message>
+    <message>
+        <source>60 zKTS</source>
+        <translation>60 zKTS</translation>
+    </message>
+    <message>
+        <source>10 zKTS</source>
+        <translation>10 zKTS</translation>
+    </message>
+    <message>
+        <source>Wallet Unlocked for staking</source>
+        <translation>Portemonnee Ongrendeld voor staking</translation>
+    </message>
+    <message>
+        <source>Error generating address</source>
+        <translation>Genereren van adres misgelopen</translation>
+    </message>
+    <message>
+        <source>Address Copied</source>
+        <translation>Adres Gekopieerd</translation>
+    </message>
+    <message>
+        <source>Automint enabled</source>
+        <translation>Automunt ingeschakeld</translation>
+    </message>
+    <message>
+        <source>Automint disabled</source>
+        <translation>Automunt uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Staking active</source>
+        <translation>Staking actief</translation>
+    </message>
+    <message>
+        <source>Staking not active</source>
+        <translation>Staking niet actief</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n active connection(s)</source>
+        <translation><numerusform>%n actieve verbinding</numerusform><numerusform>%n actieve verbindingen</numerusform></translation>
+    </message>
+    <message>
+        <source>Synchronized</source>
+        <translation>Gesynchroniseerd</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation><numerusform>%n uur</numerusform><numerusform>%n uren</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n day(s)</source>
+        <translation><numerusform>%n dag</numerusform><numerusform>%n dagen</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n week(s)</source>
+        <translation><numerusform>%n week</numerusform><numerusform>%n weken</numerusform></translation>
+    </message>
+    <message>
+        <source>%1 and %2</source>
+        <translation>%1 en %2</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n year(s)</source>
+        <translation><numerusform>%n jaar</numerusform><numerusform>%n jaren</numerusform></translation>
+    </message>
+</context>
+<context>
     <name>TrafficGraphWidget</name>
     <message>
         <source>KB/s</source>
@@ -4264,7 +5540,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <name>TransactionDesc</name>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Klaar voor %n meer blokken</numerusform><numerusform>Klaar voor %n meer blokken</numerusform></translation>
+        <translation><numerusform>Open voor nog %n blok</numerusform><numerusform>Open voor nog %n blokken</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4328,7 +5604,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message numerus="yes">
         <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, uitgezonden via %n nodes</numerusform><numerusform>, uitgezonden via %n nodes</numerusform></translation>
+        <translation><numerusform>, broadcast via %n node</numerusform><numerusform>, broadcast via %n nodes</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4372,7 +5648,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>maturiteit in %n meer blokken</numerusform><numerusform>maturiteit in %n meer blokken</numerusform></translation>
+        <translation><numerusform>Volgroeid in %n blok</numerusform><numerusform>volgroeid in %n blokken</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4419,10 +5695,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Winkelier</translation>
     </message>
     <message>
-        <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Gegenereerde munten moeten %1 blokken rijpen voordat ze kunnen worden uitgegeven. Wanneer je dit blok hebt gegenereerd, wordt het naar het netwerk uitgezonden om aan de blockchain toegevoegd te worden. Als het niet in de keten komt, verandert de staat in "niet geaccepteerd" en zal het niet uitgeefbaar worden. Dit kan af en toe gebeuren als een andere node binnen een paar seconden van u een blok genereert.</translation>
-    </message>
-    <message>
         <source>Debug information</source>
         <translation>Debug informatie</translation>
     </message>
@@ -4436,7 +5708,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message>
         <source>Amount</source>
-        <translation>Hoeveelheid</translation>
+        <translation>Bedrag</translation>
     </message>
     <message>
         <source>true</source>
@@ -4445,17 +5717,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>false</source>
         <translation>onwaar</translation>
-    </message>
-</context>
-<context>
-    <name>TransactionDescDialog</name>
-    <message>
-        <source>Transaction details</source>
-        <translation>Transactiedetails</translation>
-    </message>
-    <message>
-        <source>This pane shows a detailed description of the transaction</source>
-        <translation>Dit venster laat een gedetailleerde beschrijving van de transactie zien</translation>
     </message>
 </context>
 <context>
@@ -4474,7 +5735,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
     <message numerus="yes">
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Klaar voor %n meer blokken</numerusform><numerusform>Klaar voor %n meer blokken</numerusform></translation>
+        <translation><numerusform>Open voor nog %n blok</numerusform><numerusform>Open voor nog %n blokken</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4533,6 +5794,18 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>zKTS Stake</translation>
     </message>
     <message>
+        <source>KTS Cold Stake</source>
+        <translation>KTS Cold Stake</translation>
+    </message>
+    <message>
+        <source>KTS Stake in behalf of</source>
+        <translation>KTS Stake in naam van</translation>
+    </message>
+    <message>
+        <source>Stake delegation</source>
+        <translation>Stake delegatie</translation>
+    </message>
+    <message>
         <source>Obfuscation Denominate</source>
         <translation>Verduistering denominatie</translation>
     </message>
@@ -4569,14 +5842,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Geconverteerde zKTS naar KTS</translation>
     </message>
     <message>
-        <source>Anonymous (zKTS Transaction)</source>
-        <translation>Anonieme (zKTS transactie)</translation>
-    </message>
-    <message>
-        <source>Anonymous (zKTS Stake)</source>
-        <translation>Anonieme (zKTS stake)</translation>
-    </message>
-    <message>
         <source>Sent to</source>
         <translation>Verzenden naar</translation>
     </message>
@@ -4599,6 +5864,14 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>watch-only</source>
         <translation>watch-only</translation>
+    </message>
+    <message>
+        <source>Anonymous</source>
+        <translation>Anoniem</translation>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation>Geen informatie</translation>
     </message>
     <message>
         <source>(n/a)</source>
@@ -4630,192 +5903,149 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>TransactionView</name>
+    <name>TxDetailDialog</name>
     <message>
-        <source>All</source>
-        <translation>Alle</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
-        <source>Today</source>
-        <translation>Vandaag</translation>
+        <source>Transaction Details</source>
+        <translation>Transactie details</translation>
     </message>
     <message>
-        <source>This week</source>
-        <translation>Deze week</translation>
+        <source>ID:</source>
+        <translation>ID:</translation>
     </message>
     <message>
-        <source>This month</source>
-        <translation>Deze maand</translation>
+        <source>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</source>
+        <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
     </message>
     <message>
-        <source>Last month</source>
-        <translation>Afgelopen maand</translation>
+        <source>Sending to: </source>
+        <translation>Versturen naar:</translation>
     </message>
     <message>
-        <source>This year</source>
-        <translation>Dit jaar</translation>
+        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
-        <source>Range...</source>
-        <translation>Omvang...</translation>
+        <source>Total amount</source>
+        <translation>Totale hoeveelheid</translation>
     </message>
     <message>
-        <source>Most Common</source>
-        <translation>Meest voorkomend</translation>
+        <source>2 KTS</source>
+        <translation>2 KTS</translation>
     </message>
     <message>
-        <source>Received with</source>
-        <translation>Ontvangen met</translation>
+        <source>Coin inputs:</source>
+        <translation>Munt invoeren:</translation>
     </message>
     <message>
-        <source>Sent to</source>
-        <translation>Verzenden naar</translation>
+        <source>1 Inputs</source>
+        <translation>1 Invoer</translation>
     </message>
     <message>
-        <source>To yourself</source>
-        <translation>Naar jezelf</translation>
+        <source>Previous Transaction</source>
+        <translation>Vorige Transactie</translation>
     </message>
     <message>
-        <source>Mined</source>
-        <translation>Mined</translation>
+        <source>Output Index</source>
+        <translation>Outputindex</translation>
     </message>
     <message>
-        <source>Minted</source>
-        <translation>Minted</translation>
+        <source>Fee:</source>
+        <translation>Fee:</translation>
     </message>
     <message>
-        <source>Masternode Reward</source>
-        <translation>Masternode beloning</translation>
+        <source>0.0001 KTS</source>
+        <translation>0.0001 KTS</translation>
     </message>
     <message>
-        <source>Zerocoin Mint</source>
-        <translation>Zerocoin Mint</translation>
+        <source>Change address:</source>
+        <translation>Wijzig adres:</translation>
     </message>
     <message>
-        <source>Zerocoin Spend</source>
-        <translation>Zerocoin uitgegeven</translation>
+        <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
     </message>
     <message>
-        <source>Zerocoin Spend to Self</source>
-        <translation>Zerocoin uitgegeven aan jezelf</translation>
+        <source>Confirmations:</source>
+        <translation>Bevestigingen:</translation>
     </message>
     <message>
-        <source>Other</source>
-        <translation>Andere</translation>
+        <source>12</source>
+        <translation>12</translation>
     </message>
     <message>
-        <source>Enter address or label to search</source>
-        <translation>Adres of label invullen om te zoeken</translation>
+        <source>Size:</source>
+        <translation>Grootte:</translation>
     </message>
     <message>
-        <source>Min amount</source>
-        <translation>Minimale hoeveelheid</translation>
+        <source>2 kB</source>
+        <translation>2 kB</translation>
     </message>
     <message>
-        <source>Copy address</source>
-        <translation>Kopieer adres</translation>
+        <source>Date:</source>
+        <translation>Datum:</translation>
     </message>
     <message>
-        <source>Copy label</source>
-        <translation>Kopiëer label</translation>
+        <source>May 25, 2017</source>
+        <translation>25 Mei, 2017</translation>
     </message>
     <message>
-        <source>Copy amount</source>
-        <translation>Kopieer hoeveelheid</translation>
+        <source>Status:</source>
+        <translation>Status:</translation>
     </message>
     <message>
-        <source>Copy transaction ID</source>
-        <translation>Kopier transactie ID</translation>
+        <source>Spendable</source>
+        <translation>Uitgeefbaar</translation>
     </message>
     <message>
-        <source>Edit label</source>
-        <translation>Label wijzigen</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Show transaction details</source>
-        <translation>Bekijk transactiedetails</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>Export Transaction History</source>
-        <translation>Exporteer Transactiegeschiedenis</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
     </message>
     <message>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Kommagescheiden bestand (*.csv)</translation>
+        <source>Confirm Your Transaction</source>
+        <translation>Bevestig Uw Transactie</translation>
     </message>
     <message>
-        <source>Confirmed</source>
-        <translation>Bevestigd</translation>
+        <source>SEND</source>
+        <translation>STUREN</translation>
     </message>
     <message>
-        <source>Watch-only</source>
-        <translation>Watch-only</translation>
+        <source>ID copied</source>
+        <translation>ID gekopieerd</translation>
     </message>
     <message>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Type</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Label</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adres</translation>
-    </message>
-    <message>
-        <source>ID</source>
-        <translation>ID</translation>
-    </message>
-    <message>
-        <source>Exporting Failed</source>
-        <translation>Export Mislukt</translation>
-    </message>
-    <message>
-        <source>There was an error trying to save the transaction history to %1.</source>
-        <translation>Er is een fout opgetreden om de transactiegeschiedenis te bewaren naar %1.</translation>
-    </message>
-    <message>
-        <source>Exporting Successful</source>
-        <translation>Exporteren succesvol</translation>
-    </message>
-    <message>
-        <source>Received KTS from zKTS</source>
-        <translation>Ontvangen KTS van zKTS</translation>
-    </message>
-    <message>
-        <source>Zerocoin Spend, Change in zKTS</source>
-        <translation>Zerocoin besteed, wisselgeld in zKTS</translation>
-    </message>
-    <message>
-        <source>The transaction history was successfully saved to %1.</source>
-        <translation>De transactiegeschiedenis is succesvol bewaard in %1.</translation>
-    </message>
-    <message>
-        <source>Range:</source>
-        <translation>Bereik:</translation>
-    </message>
-    <message>
-        <source>to</source>
-        <translation>naar</translation>
+        <source>Unknown</source>
+        <translation>Ongekend</translation>
     </message>
 </context>
 <context>
-    <name>UnitDisplayStatusBarControl</name>
+    <name>TxRow</name>
     <message>
-        <source>Unit to show amounts in. Click to select another unit.</source>
-        <translation>Eenheid om bedragen te laten zien. Klik om een andere eenheid te selecteren.</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
-</context>
-<context>
-    <name>WalletFrame</name>
     <message>
-        <source>No wallet has been loaded.</source>
-        <translation>Er is geen portemonnee ingeladen.</translation>
+        <source>Received from Bob</source>
+        <translation>Ontvangen van Bob</translation>
+    </message>
+    <message>
+        <source>18/05/18</source>
+        <translation>18/05/18</translation>
+    </message>
+    <message>
+        <source>+0.000585 KTS</source>
+        <translation>+0.000585 KTS</translation>
     </message>
 </context>
 <context>
@@ -4830,30 +6060,103 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     </message>
 </context>
 <context>
-    <name>WalletView</name>
+    <name>WalletPasswordDialog</name>
     <message>
-        <source>HISTORY</source>
-        <translation>GESCHIEDENIS</translation>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
     </message>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Exporteren</translation>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Export the data in the current tab to a file</source>
-        <translation>Exporteer de data in de huidige tab naar een bestand</translation>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
     <message>
-        <source>Selected amount:</source>
-        <translation>Geselecteerde hoeveelheid:</translation>
+        <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</source>
+        <translation>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</translation>
     </message>
     <message>
-        <source>Backup Wallet</source>
-        <translation>Backup portemonnee</translation>
+        <source>CANCEL</source>
+        <translation>Annuleren</translation>
     </message>
     <message>
-        <source>Wallet Data (*.dat)</source>
-        <translation>Portemonneegegevens (*.dat)</translation>
+        <source>OK</source>
+        <translation>Akkoord</translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeContentWidget</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation>4</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Privacy</source>
+        <translation>Privacy</translation>
+    </message>
+    <message>
+        <source>Masternodes</source>
+        <translation>Masternodes</translation>
+    </message>
+    <message>
+        <source>Select your language</source>
+        <translation>Selecteer uw taal</translation>
+    </message>
+    <message>
+        <source>Welcome to
+KTS Core Wallet</source>
+        <translation>Welkom bij
+KTS Core Portemonnee</translation>
+    </message>
+    <message>
+        <source>KTS is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>KTS is 's werelds meest innovatieve Proof of Stake blockchain gebaseerde technologie. Ontwikkeld door een team van zeer ervaren ontwikkelaars en cryptografen.</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - KTS believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zoals ons manifest zegt: Privacy is een niet-onderhandelbaar fundamenteel mensenrecht; het geeft gebruikers de vrijheid om hun gegevens te delen wanneer en met wie ze maar willen - KTS gelooft in soevereiniteit.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>The masternode network is KTS's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</source>
+        <translation>Het masternode netwerk is KTS's tweedelaagse netwerk bovenop de blockchain die onze DAO in staat stelt om gedecentraliseerd bestuur, treasury te leveren</translation>
+    </message>
+    <message>
+        <source>How KTS respects your privacy?</source>
+        <translation>Hoe respecteert KTS uw privacy?</translation>
+    </message>
+    <message>
+        <source>What is a Masternode?</source>
+        <translation>Wat is een Masternode?</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>standaard</translation>
     </message>
 </context>
 <context>
@@ -4863,24 +6166,40 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Selecteer zKTS om te besteden</translation>
     </message>
     <message>
-        <source>Quantity</source>
-        <translation>Hoeveelheid</translation>
+        <source>Coin Control</source>
+        <translation>Munt Controle</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
+    </message>
+    <message>
+        <source>zKts</source>
+        <translation>zKts</translation>
+    </message>
+    <message>
+        <source>0.00 </source>
+        <translation>0.00 </translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Kwantiteit:</translation>
+    </message>
+    <message>
+        <source>Is Spendable</source>
+        <translation>Is Uitgeefbaar</translation>
     </message>
     <message>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
-    </message>
-    <message>
         <source>Select/Deselect All</source>
         <translation>Selecteer/Deselecteer Alles</translation>
     </message>
     <message>
-        <source>Is Spendable</source>
-        <translation>Is Uitgeefbaar</translation>
+        <source>Select zKTS Denominations to Spend</source>
+        <translation>Selecteer zKTS Denominaties om te Besteden</translation>
     </message>
 </context>
 <context>
@@ -4938,8 +6257,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Gedistribueerd onder de MIT software licentie, zie het bijgevoegde bestand COPYING of &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
+        <source>Enable automatic Zerocoin minting from specific addresses (0-1, default: %u)</source>
+        <translation>Schakel automatische Zerocoin munting vanuit specifieke adressen in (0-1, standaard %u) </translation>
+    </message>
+    <message>
         <source>Enable automatic wallet backups triggered after each zKTS minting (0-1, default: %u)</source>
         <translation>Schakel automatische portemonnee back-ups in geactiveerd na elke geminte zKTS (0-1, standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Enable cold staking functionality (0-1, default: %u). Disabled if staking=0</source>
+        <translation>Activeer cold staking functionaliteit (0-1, standaard: %u). Uitgeschakeld als staking=0</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for KTS inputs (0-1, default: %u)</source>
@@ -4994,10 +6321,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Leeg database activiteit uit geheugen pool naar schijf log elke keer&lt;n&gt;megabytes (default: %u)</translation>
     </message>
     <message>
-        <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation>Gevonden onbevestigde gedenomineerde outputs, wachten tot ze bevestigd zijn om verder te gaan.</translation>
-    </message>
-    <message>
         <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
         <translation>Als paytxfee niet is ingesteld, sluit voldoende kosten in, zodat transacties beginnen te confirmeren binnen gemiddeld n blokken (standaard: %u)</translation>
     </message>
@@ -5026,8 +6349,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Onderhoud een volledige transactie index, gebruikt door de getrawtransaction rpc call (standaard: %u)</translation>
     </message>
     <message>
+        <source>Maximum average size of an index occurrence in the block spam filter (default: %u)</source>
+        <translation>Maximale gemiddelde grootte van een index in het spamfilter van het blok (standaard: %u)</translation>
+    </message>
+    <message>
         <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
         <translation>Maximale gegevensgrootte in data carrier transacties die we relayen en minen (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum size of the list of indexes in the block spam filter (default: %u)</source>
+        <translation>Maximale grootte van de lijst met indexen in de spamfilter van het blok (standaard: %u)</translation>
     </message>
     <message>
         <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
@@ -5066,6 +6397,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Stel maximale grootte van transacties met hoge prioriteit/low-fee in bytes in (standaard: %d)</translation>
     </message>
     <message>
+        <source>Set the number of included blocks to precompute per cycle. (minimum: %d) (maximum: %d) (default: %d)</source>
+        <translation>Stel het aantal ingesloten blokken in om vooraf te berekenen per cyclus. (minimum: %d) (maximum: %d) (standaard: %d)</translation>
+    </message>
+    <message>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
         <translation>Stel het aantal script verificatie threads (%u tot %d, 0 = auto, &lt;0 = laat dat aantal kernen vrij, standaard: %d)</translation>
     </message>
@@ -5082,8 +6417,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Ondersteun filteren van blokken en transactie met bloom filters (standaard: %u)</translation>
     </message>
     <message>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
+        <translation>De blokdatabase bevat een blok dat uit de toekomst lijkt te komen. Dit kan te wijten zijn aan het feit dat de datum en tijd van uw computer verkeerd zijn ingesteld. Bouw de blokdatabase alleen opnieuw op als u er zeker van bent dat de datum en tijd van uw computer correct zijn ingesteld.</translation>
+    </message>
+    <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
         <translation>Dit product bevat software ontwikkeld door het OpenSSL Project voor gebruik in de OpenSSL Toolkit &lt;https://www.openssl.org/&gt; en cryptografische software geschreven door Eric Young en UPnP software geschreven door Thomas Bernard.</translation>
+    </message>
+    <message>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
+        <translation>De totale lengte van de netwerkversie (%i) overschrijdt de maximale lengte (%i). Verminder het aantal of de grootte van uacommentaren.</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer. KTS Core is probably already running.</source>
@@ -5094,12 +6437,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Kan niet genoeg verduistering gedenomineerde fondsen voor deze transactie vinden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
-        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 1000 KTS.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
+        <translation>Kan niet genoeg verduistering niet gedenomineerde fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 KTS.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
-        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 1000 KTS.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
+        <translation>Kan niet genoeg fondsen voor deze transactie vinden die niet gelijk zijn aan 10000 KTS.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5112,6 +6455,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
         <translation>Waarschuwing: -paytxfee is zeer hoog ingesteld! Dit zijn de transactie kosten die je betaalt als je een transactie verstuurt.</translation>
+    </message>
+    <message>
+        <source>Warning: Peers are being disconnected due time differences. Please check that your computer's date and time are correct! If your clock is wrong KTS Core will not work properly.</source>
+        <translation>Waarschuwing: Peers zijn afgesloten als gevolg van tijdsverschillen. Controleer of de datum en tijd van je computer juist zijn! Als je klok verkeerd staat, werkt KTS Core niet goed.</translation>
     </message>
     <message>
         <source>Warning: Please check that your computer's date and time are correct! If your clock is wrong KTS Core will not work properly.</source>
@@ -5146,8 +6493,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Je moet een masternodeprivkey opgeven in de configuratie. Raadpleeg de documentatie voor hulp.</translation>
     </message>
     <message>
-        <source>(10300 could be used only on mainnet)</source>
-        <translation>(10300 kan alleen op mainnet worden gebruikt)</translation>
+        <source>(51472 could be used only on mainnet)</source>
+        <translation>(51472 kan alleen op mainnet worden gebruikt)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5158,8 +6505,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>(standaard: 1)</translation>
     </message>
     <message>
-        <source>(must be 10300 for mainnet)</source>
-        <translation>(moet 10300 voor mainnet zijn)</translation>
+        <source>(must be 51472 for mainnet)</source>
+        <translation>(moet 51472 voor mainnet zijn)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -5178,16 +6525,20 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Voeg een node toe om verbinding mee te maken en probeer de verbinding open te houden</translation>
     </message>
     <message>
+        <source>Adding Wrapped Serials supply...</source>
+        <translation>Toevoegen van Wrapped Serialvoorraad...</translation>
+    </message>
+    <message>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
         <translation>DNS lookups toestaan voor -addnode, -seednode en -connect</translation>
     </message>
     <message>
-        <source>Already have that input.</source>
-        <translation>Heeft die input al.</translation>
-    </message>
-    <message>
         <source>Always query for peer addresses via DNS lookup (default: %u)</source>
         <translation>Vraag altijd naar peer adressen via DNS lookup (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Voeg opmerking toe aan de user agent string</translation>
     </message>
     <message>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
@@ -5206,18 +6557,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Calculeren van ontbrekende accumulators...</translation>
     </message>
     <message>
-        <source>Can't denominate: no compatible inputs left.</source>
-        <translation>Kan niet denomineren: er zijn geen compatibele inputs over.</translation>
-    </message>
-    <message>
-        <source>Can't find random Masternode.</source>
-        <translation>Kan geen willekeurige Masternode vinden.</translation>
-    </message>
-    <message>
-        <source>Can't mix while sync in progress.</source>
-        <translation>Kan niet mixen terwijl synchronisatie wordt uitgevoerd.</translation>
-    </message>
-    <message>
         <source>Cannot downgrade wallet</source>
         <translation>Kan de portemonnee niet downgraden</translation>
     </message>
@@ -5234,12 +6573,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Kan -whitebind adres niet oplossen: '%s'</translation>
     </message>
     <message>
-        <source>Cannot write default address</source>
-        <translation>Kan standaard adres niet schrijven</translation>
-    </message>
-    <message>
-        <source>Collateral not valid.</source>
-        <translation>Terugbetaling niet geldig.</translation>
+        <source>CoinSpend: failed check</source>
+        <translation>CoinSpend: controle mislukt</translation>
     </message>
     <message>
         <source>Connect only to the specified node(s)</source>
@@ -5266,7 +6601,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Copyright (C) 2014-%i The Dash Kernontwikkelaars</translation>
     </message>
     <message>
-        <source>Copyright (C) %i The KTS Core Developers</source>
+        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
         <translation>Copyright (C) 2015-%i The KTS Kernontwikkelaars</translation>
     </message>
     <message>
@@ -5276,6 +6611,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Could not parse masternode.conf</source>
         <translation>Kan masternode.conf niet parsen</translation>
+    </message>
+    <message>
+        <source>Couldn't generate the accumulator witness</source>
+        <translation>Kon de accumulator witness niet genereren</translation>
     </message>
     <message>
         <source>Debugging/Testing options:</source>
@@ -5314,6 +6653,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Zet automatische Zerocoin minting aan (0-1, standaard: %u)</translation>
     </message>
     <message>
+        <source>Enable precomputation of zKTS spends and stakes (0-1, default %u)</source>
+        <translation>Schakel de precomputatie van zKTS-uitgaven en stakes in (0-1, standaard %u) </translation>
+    </message>
+    <message>
         <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
         <translation>Activeer publicatie hash transactie (vergrendeld via SwiftTX) in &lt;address&gt;</translation>
     </message>
@@ -5324,14 +6667,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
         <translation>Schakel de client in als masternode (0-1, standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Entries are full.</source>
-        <translation>De entries zijn vol.</translation>
-    </message>
-    <message>
-        <source>Error connecting to Masternode.</source>
-        <translation>Fout bij verbinden met Masternode.</translation>
     </message>
     <message>
         <source>Error initializing block database</source>
@@ -5366,8 +6701,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Error tijdens het lezen van de database, aan het afsluiten.</translation>
     </message>
     <message>
-        <source>Error recovering public key.</source>
-        <translation>Fout bij het herstellen van de publieke sleutel.</translation>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fout bij het schrijven van zerocoinDB naar schijf</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5376,10 +6711,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Error: A fatal internal error occured, see debug.log for details</source>
         <translation>Fout: Er is een fatale interne fout opgetreden, zie debug.log voor details</translation>
-    </message>
-    <message>
-        <source>Error: Can't select current denominated inputs</source>
-        <translation>Fout: Kan de huidige gedenomineerde inputs niet selecteren</translation>
     </message>
     <message>
         <source>Error: Disk space is low!</source>
@@ -5394,16 +6725,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Fout: Portemonnee vergrendeld, niet in staat om transactie te creëren!</translation>
     </message>
     <message>
-        <source>Error: You already have pending entries in the Obfuscation pool</source>
-        <translation>Fout: U heeft al entries in afwachting in de verduistering pool</translation>
-    </message>
-    <message>
         <source>Failed to calculate accumulator checkpoint</source>
         <translation>Kon het controlepunt van de accumulator niet berekenen</translation>
     </message>
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Niet gelukt om te luisteren op een poort. Gebruik -listen=0 als je dit wilt.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Kan host: poortreeks niet parseren</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5414,20 +6745,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Fee (in KTS/kB) om toe te voegen aan transacties die je verzendt (standaard: %s)</translation>
     </message>
     <message>
-        <source>Finalizing transaction.</source>
-        <translation>Transactie aan het voltooien.</translation>
-    </message>
-    <message>
         <source>Force safe mode (default: %u)</source>
         <translation>Forceer safe mode (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation>Genoeg gebruikers gevonden, aan het ondertekenen (%s aan het wachten)</translation>
-    </message>
-    <message>
-        <source>Found enough users, signing ...</source>
-        <translation>Genoeg gebruikers gevonden, aan het ondertekenen ...</translation>
     </message>
     <message>
         <source>Generate coins (default: %u)</source>
@@ -5454,14 +6773,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Inclusief IP adressen in debug output (standaard: %u)</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation>Modus is niet compatibel.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation>Versie is niet compatibel.</translation>
-    </message>
-    <message>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
         <translation>Het genesis block kan niet worden gevonden of is incorrect. Klopt datadir voor het netwerk?</translation>
     </message>
@@ -5472,10 +6783,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Initialization sanity check failed. KTS Core is shutting down.</source>
         <translation>Initialisatie saniteitscontrole mislukt. KTS Core wordt afgesloten.</translation>
-    </message>
-    <message>
-        <source>Input is not valid.</source>
-        <translation>Ongeldige invoer.</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -5530,16 +6837,20 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Ongeldige poort gedetecteerd in masternode.conf</translation>
     </message>
     <message>
-        <source>Invalid private key.</source>
-        <translation>Ongeldige privésleutel.</translation>
-    </message>
-    <message>
-        <source>Invalid script detected.</source>
-        <translation>Ongeldige script gedetecteerd.</translation>
-    </message>
-    <message>
         <source>Percentage of automatically minted Zerocoin  (1-100, default: %u)</source>
         <translation>Percentage automatisch geminte Zerocoin (10-100, standaard: %u)</translation>
+    </message>
+    <message>
+        <source>Recalculating KTS supply...</source>
+        <translation>Hercalculatie van KTS aanbod...</translation>
+    </message>
+    <message>
+        <source>Recalculating minted ZKTS...</source>
+        <translation>Herberekenen van gemunte ZKTS....</translation>
+    </message>
+    <message>
+        <source>Recalculating spent ZKTS...</source>
+        <translation>Herberekenen van bestede ZKTS....</translation>
     </message>
     <message>
         <source>Reindex the KTS and zKTS money supply statistics</source>
@@ -5556,6 +6867,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Selected coins value is less than payment target</source>
         <translation>Geselecteerde munt waarde is minder dan het betalingsdoel</translation>
+    </message>
+    <message>
+        <source>Support the zerocoin light node protocol (default: %u)</source>
+        <translation>Ondersteuning van het zerocoin light node protocol (standaard: %u)</translation>
     </message>
     <message>
         <source>SwiftX options:</source>
@@ -5638,6 +6953,10 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Poging om blockchain corruptie herstel te forceren</translation>
     </message>
     <message>
+        <source>Cannot create public spend input</source>
+        <translation>Kon geen publiek besteedadres aanmaken</translation>
+    </message>
+    <message>
         <source>CoinSpend: Accumulator witness does not verify</source>
         <translation>CoinSpend: Accumulator witness controleert niet</translation>
     </message>
@@ -5682,12 +7001,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Het is niet gelukt om mint te maken</translation>
     </message>
     <message>
-        <source>Failed to deserialize</source>
-        <translation>Kan deserialiseren niet</translation>
-    </message>
-    <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
         <translation>Niet gelukt om Zerocoins in wallet.dat te vinden.</translation>
+    </message>
+    <message>
+        <source>Failed to parse public spend</source>
+        <translation>Parsen van publieke uitgaven mislukt</translation>
     </message>
     <message>
         <source>Failed to select a zerocoin</source>
@@ -5704,14 +7023,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
         <translation>Houd maximaal &lt;n&gt;niet te verbinden transacties in het geheugen (standaard: %u)</translation>
-    </message>
-    <message>
-        <source>Last Obfuscation was too recent.</source>
-        <translation>Laatste verduistering was te recent.</translation>
-    </message>
-    <message>
-        <source>Last successful Obfuscation action was too recent.</source>
-        <translation>Laatste succesvolle verduistering actie was te recent.</translation>
     </message>
     <message>
         <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
@@ -5766,10 +7077,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Locatie van de auth cookie (standaard: data dir)</translation>
     </message>
     <message>
-        <source>Lock is already in place.</source>
-        <translation>Vergrendeling is al uitgevoerd.</translation>
-    </message>
-    <message>
         <source>Lock masternodes from masternode configuration file (default: %u)</source>
         <translation>Masternodes vergrendelen van masternode configuratiebestand (standaard: %u)</translation>
     </message>
@@ -5786,14 +7093,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Masternode opties:</translation>
     </message>
     <message>
-        <source>Masternode queue is full.</source>
-        <translation>Masternode wachtrij zit vol.</translation>
-    </message>
-    <message>
-        <source>Masternode:</source>
-        <translation>Masternode:</translation>
-    </message>
-    <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
         <translation>Maximaal per connectie ontvangst buffer, &lt;n&gt;*1000 bytes (standaard: %u)</translation>
     </message>
@@ -5806,56 +7105,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Mint heeft de blockchain niet gehaald</translation>
     </message>
     <message>
-        <source>Missing input transaction information.</source>
-        <translation>Ontbrekende invoer transactie informatie ontbreekt.</translation>
-    </message>
-    <message>
-        <source>Mixing in progress...</source>
-        <translation>Bezig met mixen...</translation>
-    </message>
-    <message>
-        <source>Need address because change is not exact</source>
-        <translation>Noodzaak van adres omdat wijziging niet exact is</translation>
-    </message>
-    <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation>Moet een poort opgeven met -whitebind: '%s'</translation>
-    </message>
-    <message>
-        <source>No Masternodes detected.</source>
-        <translation>Geen Masternodes gedetecteerd.</translation>
-    </message>
-    <message>
-        <source>No compatible Masternode found.</source>
-        <translation>Geen compatibele Masternode gevonden.</translation>
-    </message>
-    <message>
-        <source>No funds detected in need of denominating.</source>
-        <translation>Geen fondsen gedetecteerd die denominatie nodig hebben.</translation>
-    </message>
-    <message>
-        <source>No matching denominations found for mixing.</source>
-        <translation>Geen passende denominaties gevonden voor mixing.</translation>
     </message>
     <message>
         <source>Node relay options:</source>
         <translation>Node relay opties:</translation>
     </message>
     <message>
-        <source>Non-standard public key detected.</source>
-        <translation>Niet standaard publieke sleutel gedetecteerd.</translation>
-    </message>
-    <message>
-        <source>Not compatible with existing transactions.</source>
-        <translation>Niet compatibel met bestaande transacties.</translation>
-    </message>
-    <message>
         <source>Not enough file descriptors available.</source>
         <translation>Niet genoeg bestandsbeschrijvingen beschikbaar.</translation>
-    </message>
-    <message>
-        <source>Not in the Masternode list.</source>
-        <translation>Niet in de Masternode lijst.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>
@@ -5864,18 +7123,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Number of custom location backups to retain (default: %d)</source>
         <translation>Aantal aangepaste locatie back-ups om te behouden (standaard: %d)</translation>
-    </message>
-    <message>
-        <source>Obfuscation is idle.</source>
-        <translation>Verduistering is inactief.</translation>
-    </message>
-    <message>
-        <source>Obfuscation request complete:</source>
-        <translation>Verduistering verzoek compleet:</translation>
-    </message>
-    <message>
-        <source>Obfuscation request incomplete:</source>
-        <translation>Verduistering verzoek incompleet:</translation>
     </message>
     <message>
         <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
@@ -5894,6 +7141,22 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Wachtwoord voor JSON-RPC connecties</translation>
     </message>
     <message>
+        <source>Unable to find transaction containing mint %s</source>
+        <translation>Kan geen transactie terugvinden die munting %s bevat</translation>
+    </message>
+    <message>
+        <source>Unable to find transaction containing mint, txHash: %s</source>
+        <translation>Kan geen transactie terugvinden die munting, txHash %s bevat</translation>
+    </message>
+    <message>
+        <source>Use block spam filter (default: %u)</source>
+        <translation>Gebruik block-spamfilter (standaard: %u)</translation>
+    </message>
+    <message>
+        <source>could not get lock on cs_spendcache</source>
+        <translation>kon niet op cs_spendcache terecht komen</translation>
+    </message>
+    <message>
         <source>isValid(): Invalid -proxy address or hostname: '%s'</source>
         <translation>isValid (): ongeldig -proxy-adres of hostnaam: '%s'</translation>
     </message>
@@ -5902,12 +7165,20 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Voorbereiden van hersynchronisatie...</translation>
     </message>
     <message>
+        <source>Need destination or change address because change is not exact</source>
+        <translation>Bestemmings- of wisseladres nodig omdat wissel niet exact is</translation>
+    </message>
+    <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Voeg debug output met timestamp toe (standaard: %u)</translation>
     </message>
     <message>
         <source>Print version and exit</source>
         <translation>Print versie en verlaat</translation>
+    </message>
+    <message>
+        <source>Pubcoin not found in mint tx</source>
+        <translation>Pubcoin niet gevonden in mint tx</translation>
     </message>
     <message>
         <source>RPC server options:</source>
@@ -5970,10 +7241,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Zend transacties als zero fee transacties indien mogelijk (standaard: %u)</translation>
     </message>
     <message>
-        <source>Session not complete!</source>
-        <translation>Sessie niet voltooid!</translation>
-    </message>
-    <message>
         <source>Session timed out.</source>
         <translation>Sessie verlopen.</translation>
     </message>
@@ -6020,10 +7287,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
         <translation>Krimp debug.log bestand bij client startup (standaard: 1 wanneer geen -debug)</translation>
-    </message>
-    <message>
-        <source>Signing failed.</source>
-        <translation>Ondertekenen mislukt.</translation>
     </message>
     <message>
         <source>Signing timed out.</source>
@@ -6078,18 +7341,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Stop na het importeren van blokken van schijf (standaard: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Ingediende volgende vermeldingen in masternode: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Ingediend naar masternode, wachten op meer inzendingen (%u / %d) %s</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation>Ingediend naar masternode, wachten in de wachtrij %s</translation>
-    </message>
-    <message>
         <source>Synchronization failed</source>
         <translation>Synchronisatie mislukt</translation>
     </message>
@@ -6126,14 +7377,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>De muntuitgaven zijn gebruikt</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>De nieuwe uitgave voor uitgavengeld heeft niet geverifieerd</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>De geselecteerde muntmunt is een ongeldige munt</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>De transactie heeft niet geverifieerd</translation>
     </message>
@@ -6148,10 +7391,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>This is intended for regression testing tools and app development.</source>
         <translation>Dit is bedoeld voor regressie test tools en app ontwikkeling.</translation>
-    </message>
-    <message>
-        <source>This is not a Masternode.</source>
-        <translation>Dit is geen Masternode.</translation>
     </message>
     <message>
         <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
@@ -6186,32 +7425,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Transactie bedragen moeten positief zijn</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transactie is succesvol gemaakt.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transactiekosten zijn te hoog.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transactie is niet geldig.</translation>
-    </message>
-    <message>
         <source>Transaction too large for fee policy</source>
         <translation>Transactie te groot voor kosten beleid</translation>
     </message>
     <message>
         <source>Transaction too large</source>
         <translation>Transactie te groot</translation>
-    </message>
-    <message>
-        <source>Transmitting final transaction.</source>
-        <translation>Verzending van de definitieve transactie.</translation>
-    </message>
-    <message>
-        <source>Try to spend with a higher security level to include more coins</source>
-        <translation>Probeer te spenderen met een hoger beveiligingsniveau om meer munten op te nemen</translation>
     </message>
     <message>
         <source>Trying to spend an already spent serial #, try again.</source>
@@ -6222,8 +7441,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Niet mogelijk te binden aan %s op deze computer (bind stuurt fout %s terug)</translation>
     </message>
     <message>
-        <source>Unable to find transaction containing mint</source>
-        <translation>Kan transactie met mint niet vinden</translation>
+        <source>Unable to generate initial key</source>
+        <translation>Niet mogelijke om de initiële sleutel te genereren.</translation>
     </message>
     <message>
         <source>Unable to sign spork message, wrong key?</source>
@@ -6236,10 +7455,6 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
         <translation>Onbekend netwerk gespecificeerd in -onlynet: '%s'</translation>
-    </message>
-    <message>
-        <source>Unknown state: id = %u</source>
-        <translation>Onbekende staat: id = %u</translation>
     </message>
     <message>
         <source>Upgrade wallet to latest format</source>
@@ -6262,16 +7477,16 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Gebruik het test netwerk</translation>
     </message>
     <message>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>User Agent opmerking (%s) bevat onveilige karakters.</translation>
+    </message>
+    <message>
         <source>Username for JSON-RPC connections</source>
         <translation>Gebruikersnaam voor JSON-RPC verbindingen</translation>
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zKTS</source>
         <translation>Waarde is minder dan de kleinst beschikbare denominatie (=1) van zKTS</translation>
-    </message>
-    <message>
-        <source>Value more than Obfuscation pool maximum allows.</source>
-        <translation>Waarde meer dan verduistering pool maximaal toestaat.</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -6282,16 +7497,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Portemonnee verifiëren...</translation>
     </message>
     <message>
-        <source>Version 1 zKTS require a security level of 100 to successfully spend.</source>
-        <translation>Versie 1 zKTS vereist een beveiligingsniveau van 100 om succesvol uit te geven.</translation>
-    </message>
-    <message>
         <source>Wallet %s resides outside data directory %s</source>
         <translation>Portemonnee %s verblijft buiten de data directory %s</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Portemonnee is vergrendeld.</translation>
     </message>
     <message>
         <source>Wallet needed to be rewritten: restart KTS Core to complete</source>
@@ -6322,24 +7529,12 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Waarschuwing: Niet ondersteunde argument -debugnet genegeerd, gebruik -debug=net.</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Zal het opnieuw proberen...</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Je hebt niet genoeg Zerocoins in je portemonnee</translation>
     </message>
     <message>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation>Je moet de database herbouwen met -reindex om -txindex te wijzigen</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Je gegevens zijn succesvol toegevoegd.</translation>
-    </message>
-    <message>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation>Je transactie is geaccepteerd in de pool!</translation>
     </message>
     <message>
         <source>Zapping all transactions from wallet...</source>
@@ -6360,6 +7555,25 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
     <message>
         <source>wallet.dat corrupt, salvage failed</source>
         <translation>wallet.dat corrupt, redding mislukt</translation>
+    </message>
+</context>
+<context>
+    <name>send</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation>Zenden</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>TextLabel</translation>
+    </message>
+    <message>
+        <source>PushButton</source>
+        <translation>Druk Knop</translation>
     </message>
 </context>
 </TS>

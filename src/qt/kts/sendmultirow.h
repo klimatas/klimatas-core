@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -41,6 +42,7 @@ public:
 
     /** Return whether the entry is still empty and unedited */
     bool isClear();
+    void setOnlyStakingAddressAccepted(bool onlyStakingAddress);
     CAmount getAmountValue(QString str);
 
     void setAddress(const QString& address);
@@ -85,6 +87,7 @@ private:
     int displayUnit;
     int number = 0;
     bool isExpanded = false;
+    bool onlyStakingAddressAccepted = false;
 
     SendCoinsRecipient recipient;
 

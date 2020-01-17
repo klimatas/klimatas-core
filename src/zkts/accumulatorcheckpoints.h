@@ -1,12 +1,13 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef KTS_ACCUMULATORCHECKPOINTS_H
 #define KTS_ACCUMULATORCHECKPOINTS_H
 
-#include "../libzerocoin/bignum.h"
-#include "../univalue/include/univalue.h"
+#include <libzerocoin/bignum.h>
+#include <univalue/include/univalue.h>
 
 namespace AccumulatorCheckpoints
 {

@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,12 +12,21 @@
 
 class AddressFilterProxyModel final : public QSortFilterProxyModel
 {
-    const QString m_type;
 
 public:
     AddressFilterProxyModel(const QString& type, QObject* parent)
             : QSortFilterProxyModel(parent)
-            , m_type(type) {
+            , m_types({type}) {
+        init();
+    }
+
+    AddressFilterProxyModel(const QStringList& types, QObject* parent)
+            : QSortFilterProxyModel(parent)
+            , m_types(types) {
+        init();
+    }
+
+    void init() {
         setDynamicSortFilter(true);
         setFilterCaseSensitivity(Qt::CaseInsensitive);
         setSortCaseSensitivity(Qt::CaseInsensitive);
@@ -24,8 +34,14 @@ public:
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
 
+    void setType(const QString& type);
+    void setType(const QStringList& types);
+
 protected:
     bool filterAcceptsRow(int row, const QModelIndex& parent) const override;
+
+private:
+    QStringList m_types;
 };
 
 

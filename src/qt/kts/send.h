@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -95,10 +96,6 @@ private:
     bool sendZkts(QList<SendCoinsRecipient> recipients);
     void updateEntryLabels(QList<SendCoinsRecipient> recipients);
 
-    // Process WalletModel::SendCoinsReturn and generate a pair consisting
-    // of a message and message flags for use in emit message().
-    // Additional parameter msgArg can be used via .arg(msgArg).
-    void processSendCoinsReturn(const WalletModel::SendCoinsReturn& sendCoinsReturn, const QString& msgArg = QString(), bool fPrepare = false);
 };
 
 #endif // SEND_H

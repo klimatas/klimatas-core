@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -55,7 +56,6 @@ public:
     AddressLabelRow* cachedRow = nullptr;
 };
 
-#include "qt/kts/moc_addresseswidget.cpp"
 
 AddressesWidget::AddressesWidget(KTSGUI* parent) :
     PWidget(parent),
@@ -154,7 +154,7 @@ void AddressesWidget::handleAddressClicked(const QModelIndex &index){
 void AddressesWidget::loadWalletModel(){
     if(walletModel) {
         addressTablemodel = walletModel->getAddressTableModel();
-        this->filter = new AddressFilterProxyModel(AddressTableModel::Send, this);
+        this->filter = new AddressFilterProxyModel(QStringList({AddressTableModel::Send, AddressTableModel::ColdStakingSend}), this);
         this->filter->setSourceModel(addressTablemodel);
         ui->listAddresses->setModel(this->filter);
         ui->listAddresses->setModelColumn(AddressTableModel::Address);
@@ -194,7 +194,9 @@ void AddressesWidget::onStoreContactClicked(){
             return;
         }
 
-        if (walletModel->updateAddressBookLabels(ktsAdd.Get(), label.toUtf8().constData(), "send")) {
+        if (walletModel->updateAddressBookLabels(ktsAdd.Get(), label.toUtf8().constData(),
+                ktsAdd.IsStakingAddress() ? AddressBook::AddressBookPurpose::COLD_STAKING_SEND : AddressBook::AddressBookPurpose::SEND)
+                ) {
             ui->lineEditAddress->setText("");
             ui->lineEditName->setText("");
             setCssEditLine(ui->lineEditAddress, true, true);
@@ -219,7 +221,7 @@ void AddressesWidget::onEditClicked(){
     dialog->setData(address, currentLabel);
     if(openDialogWithOpaqueBackground(dialog, window)){
         if(walletModel->updateAddressBookLabels(
-                CBitcoinAddress(address.toStdString()).Get(), dialog->getLabel().toStdString(), "send")){
+                CBitcoinAddress(address.toStdString()).Get(), dialog->getLabel().toStdString(), addressTablemodel->purposeForAddress(address.toStdString()))){
             inform(tr("Contact edited"));
         }else{
             inform(tr("Contact edit failed"));

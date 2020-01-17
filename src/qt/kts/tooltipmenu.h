@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,18 +35,23 @@ public:
     void setEditBtnText(QString btnText);
     void setDeleteBtnText(QString btnText);
     void setCopyBtnText(QString btnText);
+    void setLastBtnText(QString btnText, int minHeight = 30);
     void setCopyBtnVisible(bool visible);
     void setDeleteBtnVisible(bool visible);
+    void setEditBtnVisible(bool visible);
+    void setLastBtnVisible(bool visible);
 
 signals:
     void onDeleteClicked();
     void onCopyClicked();
     void onEditClicked();
+    void onLastClicked();
 
 private slots:
     void deleteClicked();
     void copyClicked();
     void editClicked();
+    void lastClicked();
 
 private:
     Ui::TooltipMenu *ui;

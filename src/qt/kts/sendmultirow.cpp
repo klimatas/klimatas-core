@@ -1,10 +1,10 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/sendmultirow.h"
 #include "qt/kts/forms/ui_sendmultirow.h"
-#include <QDoubleValidator>
 
 #include "optionsmodel.h"
 #include "addresstablemodel.h"
@@ -27,9 +27,7 @@ SendMultiRow::SendMultiRow(PWidget *parent) :
 
     ui->lineEditAmount->setPlaceholderText("0.00 KTS ");
     initCssEditLine(ui->lineEditAmount);
-    QDoubleValidator *doubleValidator = new QDoubleValidator(0, 9999999, 7, this);
-    doubleValidator->setNotation(QDoubleValidator::StandardNotation);
-    ui->lineEditAmount->setValidator(doubleValidator);
+    GUIUtil::setupAmountWidget(ui->lineEditAmount, this);
 
     /* Description */
     ui->labelSubtitleDescription->setText("Label address (optional)");
@@ -67,9 +65,10 @@ SendMultiRow::SendMultiRow(PWidget *parent) :
 
 void SendMultiRow::amountChanged(const QString& amount){
     if(!amount.isEmpty()) {
-        CAmount value = getAmountValue(amount);
+        QString amountStr = amount;
+        CAmount value = getAmountValue(amountStr);
         if (value > 0) {
-            ui->lineEditAmount->setText(amount);
+            GUIUtil::updateWidgetTextAndCursorPosition(ui->lineEditAmount, amountStr);
             setCssEditLine(ui->lineEditAmount, true, true);
         }
     }
@@ -88,7 +87,7 @@ CAmount SendMultiRow::getAmountValue(QString amount){
 bool SendMultiRow::addressChanged(const QString& str){
     if(!str.isEmpty()) {
         QString trimmedStr = str.trimmed();
-        bool valid = walletModel->validateAddress(trimmedStr);
+        bool valid = (this->onlyStakingAddressAccepted) ? walletModel->validateStakingAddress(trimmedStr) : walletModel->validateAddress(trimmedStr);
         if (!valid) {
             // check URI
             SendCoinsRecipient rcp;
@@ -141,6 +140,7 @@ void SendMultiRow::clear() {
     ui->lineEditAddress->clear();
     ui->lineEditAmount->clear();
     ui->lineEditDescription->clear();
+    setCssProperty(ui->lineEditAddress, "edit-primary-multi-book", true);
 }
 
 bool SendMultiRow::validate()
@@ -244,6 +244,10 @@ bool SendMultiRow::isClear(){
 
 void SendMultiRow::setFocus(){
     ui->lineEditAddress->setFocus();
+}
+
+void SendMultiRow::setOnlyStakingAddressAccepted(bool onlyStakingAddress) {
+    this->onlyStakingAddressAccepted = onlyStakingAddress;
 }
 
 

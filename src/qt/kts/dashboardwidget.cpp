@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,19 +24,17 @@
 #define REQUEST_LOAD_TASK 1
 #define CHART_LOAD_MIN_TIME_INTERVAL 15
 
-#include "moc_dashboardwidget.cpp"
-
 DashboardWidget::DashboardWidget(KTSGUI* parent) :
-        PWidget(parent),
-        ui(new Ui::DashboardWidget)
+    PWidget(parent),
+    ui(new Ui::DashboardWidget)
 {
     ui->setupUi(this);
 
     txHolder = new TxViewHolder(isLightTheme());
     txViewDelegate = new FurAbstractListItemDelegate(
-            DECORATION_SIZE,
-            txHolder,
-            this
+        DECORATION_SIZE,
+        txHolder,
+        this
     );
 
     this->setStyleSheet(parent->styleSheet());
@@ -59,10 +58,10 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     // Staking Information
     ui->labelMessage->setText(tr("Amount of KTS and zKTS staked."));
     setCssSubtitleScreen(ui->labelMessage);
-    setCssProperty(ui->labelSquareKts, "square-chart-piv");
-    setCssProperty(ui->labelSquarezKts, "square-chart-zpiv");
-    setCssProperty(ui->labelKts, "text-chart-piv");
-    setCssProperty(ui->labelZkts, "text-chart-zpiv");
+    setCssProperty(ui->labelSquareKts, "square-chart-kts");
+    setCssProperty(ui->labelSquarezKts, "square-chart-zkts");
+    setCssProperty(ui->labelKts, "text-chart-kts");
+    setCssProperty(ui->labelZkts, "text-chart-zkts");
 
     // Staking Amount
     QFont fontBold;
@@ -72,8 +71,8 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
 
     ui->labelAmountZkts->setText("0 zKTS");
     ui->labelAmountKts->setText("0 KTS");
-    setCssProperty(ui->labelAmountKts, "text-stake-piv-disable");
-    setCssProperty(ui->labelAmountZkts, "text-stake-zpiv-disable");
+    setCssProperty(ui->labelAmountKts, "text-stake-kts-disable");
+    setCssProperty(ui->labelAmountZkts, "text-stake-zkts-disable");
 
     setCssProperty({ui->pushButtonAll,  ui->pushButtonMonth, ui->pushButtonYear}, "btn-check-time");
     setCssProperty({ui->comboBoxMonths,  ui->comboBoxYears}, "btn-combo-chart-selected");
@@ -84,6 +83,7 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     ui->comboBoxYears->setStyleSheet("selection-background-color:transparent; selection-color:transparent;");
     ui->pushButtonYear->setChecked(true);
 
+    setCssProperty(ui->pushButtonChartArrow, "btn-chart-arrow");
     setCssProperty(ui->pushButtonChartRight, "btn-chart-arrow-right");
 
     connect(ui->comboBoxYears, SIGNAL(currentIndexChanged(const QString&)), this,SLOT(onChartYearChanged(const QString&)));
@@ -111,6 +111,10 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     ui->comboBoxSortType->addItem(tr("Minted"), TransactionFilterProxy::TYPE(TransactionRecord::StakeMint));
     ui->comboBoxSortType->addItem(tr("MN reward"), TransactionFilterProxy::TYPE(TransactionRecord::MNReward));
     ui->comboBoxSortType->addItem(tr("To yourself"), TransactionFilterProxy::TYPE(TransactionRecord::SendToSelf));
+    ui->comboBoxSortType->addItem(tr("Cold stakes"), TransactionFilterProxy::TYPE(TransactionRecord::StakeDelegated));
+    ui->comboBoxSortType->addItem(tr("Hot stakes"), TransactionFilterProxy::TYPE(TransactionRecord::StakeHot));
+    ui->comboBoxSortType->addItem(tr("Delegated"), TransactionFilterProxy::TYPE(TransactionRecord::P2CSDelegationSent));
+    ui->comboBoxSortType->addItem(tr("Delegations"), TransactionFilterProxy::TYPE(TransactionRecord::P2CSDelegation));
     ui->comboBoxSortType->setCurrentIndex(0);
     connect(ui->comboBoxSortType, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(onSortTypeChanged(const QString&)));
 
@@ -137,7 +141,7 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     setCssProperty(ui->chartContainer, "container-chart");
     setCssProperty(ui->pushImgEmptyChart, "img-empty-staking-on");
 
-    ui->btnHowTo->setText(tr("How to get KTS"));
+    ui->btnHowTo->setText(tr("How to get KTS or zKTS"));
     setCssBtnSecondary(ui->btnHowTo);
 
 
@@ -154,9 +158,10 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     if (window)
         connect(window, SIGNAL(windowResizeEvent(QResizeEvent*)), this, SLOT(windowResizeEvent(QResizeEvent*)));
 
-    bool hasCharts = false;
+bool hasCharts = false;
 #ifdef USE_QTCHARTS
     hasCharts = true;
+    isLoading = false;
     setChartShow(YEAR);
     connect(ui->pushButtonYear, &QPushButton::clicked, [this](){setChartShow(YEAR);});
     connect(ui->pushButtonMonth, &QPushButton::clicked, [this](){setChartShow(MONTH);});
@@ -178,7 +183,6 @@ void DashboardWidget::handleTransactionClicked(const QModelIndex &index){
     window->showHide(true);
     TxDetailDialog *dialog = new TxDetailDialog(window, false);
     dialog->setData(walletModel, rIndex);
-    dialog->adjustSize();
     openDialogWithOpaqueBackgroundY(dialog, window, 3, 17);
 
     // Back to regular status
@@ -220,9 +224,13 @@ void DashboardWidget::loadWalletModel(){
 #ifdef USE_QTCHARTS
         // chart filter
         stakesFilter = new TransactionFilterProxy();
+        stakesFilter->setDynamicSortFilter(true);
+        stakesFilter->setSortCaseSensitivity(Qt::CaseInsensitive);
+        stakesFilter->setFilterCaseSensitivity(Qt::CaseInsensitive);
+        stakesFilter->setSortRole(Qt::EditRole);
+        stakesFilter->setOnlyStakes(true);
         stakesFilter->setSourceModel(txModel);
         stakesFilter->sort(TransactionTableModel::Date, Qt::AscendingOrder);
-        stakesFilter->setOnlyStakes(true);
         hasStakes = stakesFilter->rowCount() > 0;
         loadChart();
 #endif
@@ -231,10 +239,10 @@ void DashboardWidget::loadWalletModel(){
     updateDisplayUnit();
 }
 
-void DashboardWidget::onTxArrived(const QString& hash) {
+void DashboardWidget::onTxArrived(const QString& hash, const bool& isCoinStake, const bool& isCSAnyType) {
     showList();
 #ifdef USE_QTCHARTS
-    if (walletModel->isCoinStakeMine(hash)) {
+    if (isCoinStake) {
         // Update value if this is our first stake
         if (!hasStakes)
             hasStakes = stakesFilter->rowCount() > 0;
@@ -244,7 +252,12 @@ void DashboardWidget::onTxArrived(const QString& hash) {
 }
 
 void DashboardWidget::showList(){
-    if (ui->emptyContainer->isVisible()) {
+    if (filter->rowCount() == 0){
+        ui->emptyContainer->setVisible(true);
+        ui->listTransactions->setVisible(false);
+        ui->comboBoxSortType->setVisible(false);
+        ui->comboBoxSort->setVisible(false);
+    } else {
         ui->emptyContainer->setVisible(false);
         ui->listTransactions->setVisible(true);
         ui->comboBoxSortType->setVisible(true);
@@ -379,11 +392,18 @@ void DashboardWidget::loadChart(){
 
 void DashboardWidget::showHideEmptyChart(bool showEmpty, bool loading, bool forceView) {
     if (stakesFilter->rowCount() > SHOW_EMPTY_CHART_VIEW_THRESHOLD || forceView) {
-        if (!ui->layoutChart->isVisible()) {
+        if (ui->emptyContainerChart->isVisible() != showEmpty) {
             ui->layoutChart->setVisible(!showEmpty);
             ui->emptyContainerChart->setVisible(showEmpty);
         }
     }
+    // Enable/Disable sort buttons
+    bool invLoading = !loading;
+    ui->comboBoxMonths->setEnabled(invLoading);
+    ui->comboBoxYears->setEnabled(invLoading);
+    ui->pushButtonMonth->setEnabled(invLoading);
+    ui->pushButtonAll->setEnabled(invLoading);
+    ui->pushButtonYear->setEnabled(invLoading);
     ui->labelEmptyChart->setText(loading ? tr("Loading chart..") : tr("You have no staking rewards"));
 }
 
@@ -441,8 +461,7 @@ void DashboardWidget::changeChartColors(){
     if (set1) set1->setBorderColor(gridLineColorX);
 }
 
-// pair PIV, zPIV
-QMap<int, std::pair<qint64, qint64>> DashboardWidget::getAmountBy() {
+void DashboardWidget::updateStakeFilter() {
     if (chartShow != ALL) {
         bool filterByMonth = false;
         if (monthFilter != 0 && chartShow == MONTH) {
@@ -475,7 +494,12 @@ QMap<int, std::pair<qint64, qint64>> DashboardWidget::getAmountBy() {
     } else {
         stakesFilter->clearDateRange();
     }
-    int size = stakesFilter->rowCount();
+}
+
+// pair KTS, zKTS
+const QMap<int, std::pair<qint64, qint64>> DashboardWidget::getAmountBy() {
+    updateStakeFilter();
+    const int size = stakesFilter->rowCount();
     QMap<int, std::pair<qint64, qint64>> amountBy;
     // Get all of the stakes
     for (int i = 0; i < size; ++i) {
@@ -527,13 +551,14 @@ bool DashboardWidget::loadChartData(bool withMonthNames) {
     }
 
     chartData = new ChartData();
+    chartData->amountsByCache = getAmountBy(); // pair KTS, zKTS
 
-    chartData->amountsByCache = getAmountBy(); // pair PIV, zPIV
     std::pair<int,int> range = getChartRange(chartData->amountsByCache);
-        if (range.first == 0 && range.second == 0) {
+    if (range.first == 0 && range.second == 0) {
         // Problem loading the chart.
         return false;
     }
+
     bool isOrderedByMonth = chartShow == MONTH;
     int daysInMonth = QDate(yearFilter, monthFilter, 1).daysInMonth();
 
@@ -559,7 +584,8 @@ bool DashboardWidget::loadChartData(bool withMonthNames) {
             chartData->maxValue = max;
         }
     }
-        return true;
+
+    return true;
 }
 
 void DashboardWidget::onChartYearChanged(const QString& yearStr) {
@@ -588,6 +614,8 @@ void DashboardWidget::onChartMonthChanged(const QString& monthStr) {
 }
 
 bool DashboardWidget::refreshChart(){
+    if (isLoading) return false;
+    isLoading = true;
     isChartMin = width() < 1300;
     isChartInitialized = false;
     showHideEmptyChart(true, true);
@@ -604,8 +632,8 @@ void DashboardWidget::onChartRefreshed() {
         axisX->clear();
     }
     // init sets
-    set0 = new QBarSet("PIV");
-    set1 = new QBarSet("zPIV");
+    set0 = new QBarSet("KTS");
+    set1 = new QBarSet("zKTS");
     set0->setColor(QColor(92,75,125));
     set1->setColor(QColor(176,136,255));
 
@@ -622,11 +650,11 @@ void DashboardWidget::onChartRefreshed() {
     // Total
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
     if (chartData->totalKts > 0 || chartData->totalZkts > 0) {
-        setCssProperty(ui->labelAmountKts, "text-stake-piv");
-        setCssProperty(ui->labelAmountZkts, "text-stake-zpiv");
+        setCssProperty(ui->labelAmountKts, "text-stake-kts");
+        setCssProperty(ui->labelAmountZkts, "text-stake-zkts");
     } else {
-        setCssProperty(ui->labelAmountKts, "text-stake-piv-disable");
-        setCssProperty(ui->labelAmountZkts, "text-stake-zpiv-disable");
+        setCssProperty(ui->labelAmountKts, "text-stake-kts-disable");
+        setCssProperty(ui->labelAmountZkts, "text-stake-zkts-disable");
     }
     forceUpdateStyle({ui->labelAmountKts, ui->labelAmountZkts});
     ui->labelAmountKts->setText(GUIUtil::formatBalance(chartData->totalKts, nDisplayUnit));
@@ -690,6 +718,7 @@ void DashboardWidget::onChartRefreshed() {
     // back to normal
     isChartInitialized = true;
     showHideEmptyChart(false, false, true);
+    isLoading = false;
 }
 
 std::pair<int, int> DashboardWidget::getChartRange(QMap<int, std::pair<qint64, qint64>> amountsBy) {
@@ -698,7 +727,7 @@ std::pair<int, int> DashboardWidget::getChartRange(QMap<int, std::pair<qint64, q
             return std::make_pair(1, 13);
         case ALL: {
             QList<int> keys = amountsBy.uniqueKeys();
-                        if (keys.isEmpty()) {
+            if (keys.isEmpty()) {
                 // This should never happen, ALL means from the beginning of time and if this is called then it must have at least one stake..
                 inform(tr("Error loading chart, invalid data"));
                 return std::make_pair(0, 0);
@@ -783,7 +812,7 @@ void DashboardWidget::run(int type) {
     }
 #endif
 }
-void DashboardWidget::onError(int type, QString error) {
+void DashboardWidget::onError(QString error, int type) {
     inform(tr("Error loading chart: %1").arg(error));
 }
 

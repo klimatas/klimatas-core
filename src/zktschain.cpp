@@ -1,4 +1,5 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,14 +8,14 @@
 #include "invalid.h"
 #include "main.h"
 #include "txdb.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 
 // 6 comes from OPCODE (1) + vch.size() (1) + BIGNUM size (4)
 #define SCRIPT_OFFSET 6
 // For Script size (BIGNUM/Uint256 size)
 #define BIGNUM_SIZE   4
 
-bool BlockToMintValueVector(const CBlock& block, const libzerocoin::CoinDenomination denom, vector<CBigNum>& vValues)
+bool BlockToMintValueVector(const CBlock& block, const libzerocoin::CoinDenomination denom, std::vector<CBigNum>& vValues)
 {
     for (const CTransaction& tx : block.vtx) {
         if(!tx.HasZerocoinMintOutputs())
@@ -289,7 +290,6 @@ std::string ReindexZerocoinDB()
                             bool isPublicSpend = in.IsZerocoinPublicSpend();
                             if (!in.IsZerocoinSpend() && !isPublicSpend)
                                 continue;
-
                             if (isPublicSpend) {
                                 libzerocoin::ZerocoinParams* params = Params().Zerocoin_Params(false);
                                 PublicCoinSpend publicSpend(params);
@@ -297,10 +297,10 @@ std::string ReindexZerocoinDB()
                                 if (!ZKTSModule::ParseZerocoinPublicSpend(in, tx, state, publicSpend)){
                                     return _("Failed to parse public spend");
                                 }
-                                vSpendInfo.push_back(make_pair(publicSpend, txid));
+                                vSpendInfo.push_back(std::make_pair(publicSpend, txid));
                             } else {
                                 libzerocoin::CoinSpend spend = TxInToZerocoinSpend(in);
-                                vSpendInfo.push_back(make_pair(spend, txid));
+                                vSpendInfo.push_back(std::make_pair(spend, txid));
                             }
                         }
                     }
@@ -314,7 +314,7 @@ std::string ReindexZerocoinDB()
                             CValidationState state;
                             libzerocoin::PublicCoin coin(Params().Zerocoin_Params(pindex->nHeight < Params().Zerocoin_Block_V2_Start()));
                             TxOutToPublicCoin(out, coin, state);
-                            vMintInfo.push_back(make_pair(coin, txid));
+                            vMintInfo.push_back(std::make_pair(coin, txid));
                         }
                     }
                 }
@@ -363,7 +363,7 @@ libzerocoin::CoinSpend TxInToZerocoinSpend(const CTxIn& txin)
 bool TxOutToPublicCoin(const CTxOut& txout, libzerocoin::PublicCoin& pubCoin, CValidationState& state)
 {
     CBigNum publicZerocoin;
-    vector<unsigned char> vchZeroMint;
+    std::vector<unsigned char> vchZeroMint;
     vchZeroMint.insert(vchZeroMint.end(), txout.scriptPubKey.begin() + SCRIPT_OFFSET,
                        txout.scriptPubKey.begin() + txout.scriptPubKey.size());
     publicZerocoin.setvch(vchZeroMint);

@@ -1,10 +1,10 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/pwidget.h"
 #include "qt/kts/qtutils.h"
-#include "qt/kts/moc_pwidget.cpp"
 #include "qt/kts/loadingdialog.h"
 #include <QRunnable>
 #include <QThreadPool>
@@ -62,29 +62,31 @@ void PWidget::emitMessage(const QString& title, const QString& body, unsigned in
 class WorkerTask : public QRunnable {
 
 public:
-    WorkerTask(Worker* worker) {
+    WorkerTask(QPointer<Worker> worker) {
         this->worker = worker;
     }
 
     ~WorkerTask() {
-        delete this->worker;
+        if (!worker.isNull()) worker.clear();
     }
 
     void run() override {
-        if (worker) worker->process();
+        if (!worker.isNull()) worker.data()->process();
     }
 
-    Worker* worker = nullptr;
+    QPointer<Worker> worker;
 };
 
 bool PWidget::execute(int type){
-    Worker* worker = new Worker(this, type);
-    connect(worker, SIGNAL (error(QString&)), this, SLOT (errorString(QString)));
-    connect(worker, SIGNAL (finished()), worker, SLOT (deleteLater()));
+    if (task.isNull()) {
+        Worker* worker = new Worker(this, type);
+        connect(worker, SIGNAL (error(QString, int)), this, SLOT (errorString(QString, int)));
 
-    WorkerTask* task = new WorkerTask(worker);
-    task->setAutoDelete(true);
-    QThreadPool::globalInstance()->start(task);
+        WorkerTask* workerTask = new WorkerTask(QPointer<Worker>(worker));
+        workerTask->setAutoDelete(false);
+        task = QSharedPointer<WorkerTask>(workerTask);
+    }
+    QThreadPool::globalInstance()->start(task.data());
     return true;
 }
 
@@ -95,6 +97,11 @@ bool PWidget::verifyWalletUnlocked(){
     }
     return true;
 }
+
+void PWidget::errorString(QString error, int type) {
+    onError(error, type);
+}
+
 
 ////////////////////////////////////////////////////////////////
 //////////////////Override methods//////////////////////////////
@@ -116,6 +123,6 @@ void PWidget::changeTheme(bool isLightTheme, QString& theme){
 void PWidget::run(int type) {
     // override
 }
-void PWidget::onError(int type, QString error) {
+void PWidget::onError(QString error, int type) {
     // override
 }

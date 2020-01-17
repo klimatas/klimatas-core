@@ -1,4 +1,5 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,12 +9,11 @@
 #include "sync.h"
 #include "main.h"
 #include "txdb.h"
-#include "walletdb.h"
+#include "wallet/walletdb.h"
 #include "zkts/accumulators.h"
 #include "zkts/zktswallet.h"
 #include "witness.h"
 
-using namespace std;
 
 CzKTSTracker::CzKTSTracker(std::string strWalletFile)
 {
@@ -136,7 +136,7 @@ bool CzKTSTracker::ClearSpendCache()
 
 std::vector<uint256> CzKTSTracker::GetSerialHashes()
 {
-    vector<uint256> vHashes;
+    std::vector<uint256> vHashes;
     for (auto it : mapSerialHashes) {
         if (it.second.isArchived)
             continue;
@@ -154,7 +154,7 @@ CAmount CzKTSTracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) con
     //! zerocoin specific fields
     std::map<libzerocoin::CoinDenomination, unsigned int> myZerocoinSupply;
     for (auto& denom : libzerocoin::zerocoinDenomList) {
-        myZerocoinSupply.insert(make_pair(denom, 0));
+        myZerocoinSupply.insert(std::make_pair(denom, 0));
     }
 
     {
@@ -187,7 +187,7 @@ CAmount CzKTSTracker::GetUnconfirmedBalance() const
 
 std::vector<CMintMeta> CzKTSTracker::GetMints(bool fConfirmedOnly) const
 {
-    vector<CMintMeta> vMints;
+    std::vector<CMintMeta> vMints;
     for (auto& it : mapSerialHashes) {
         CMintMeta mint = it.second;
         if (mint.isArchived || mint.isUsed)
@@ -353,7 +353,7 @@ void CzKTSTracker::SetPubcoinUsed(const uint256& hashPubcoin, const uint256& txi
         return;
     CMintMeta meta = GetMetaFromPubcoin(hashPubcoin);
     meta.isUsed = true;
-    mapPendingSpends.insert(make_pair(meta.hashSerial, txid));
+    mapPendingSpends.insert(std::make_pair(meta.hashSerial, txid));
     UpdateState(meta);
 }
 

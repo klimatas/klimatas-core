@@ -1,11 +1,12 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/mninfodialog.h"
 #include "qt/kts/forms/ui_mninfodialog.h"
 #include "walletmodel.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "guiutil.h"
 #include "qt/kts/qtutils.h"
 #include <QDateTime>
@@ -25,8 +26,8 @@ MnInfoDialog::MnInfoDialog(QWidget *parent) :
     setCssProperty({ui->pushCopy, ui->pushCopyId, ui->pushExport}, "ic-copy-big");
     setCssProperty(ui->btnEsc, "ic-close");
     connect(ui->btnEsc, SIGNAL(clicked()), this, SLOT(closeDialog()));
-    connect(ui->pushCopy, &QPushButton::clicked, [this](){ copyInform(txId, "Master Node public key copied"); });
-    connect(ui->pushCopyId, &QPushButton::clicked, [this](){ copyInform(pubKey, "Collateral tx id copied"); });
+    connect(ui->pushCopy, &QPushButton::clicked, [this](){ copyInform(pubKey, "Master Node public key copied"); });
+    connect(ui->pushCopyId, &QPushButton::clicked, [this](){ copyInform(txId, "Collateral tx id copied"); });
     connect(ui->pushExport, &QPushButton::clicked, [this](){ exportMN = true; accept(); });
 }
 

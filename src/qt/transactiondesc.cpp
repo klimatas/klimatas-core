@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,14 +17,13 @@
 #include "main.h"
 #include "script/script.h"
 #include "timedata.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 
 #include <stdint.h>
 #include <string>
 
-using namespace std;
 
 QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
 {
@@ -36,14 +34,19 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
         else
             return tr("Open until %1").arg(GUIUtil::dateTimeStr(wtx.nLockTime));
     } else {
-        int signatures = wtx.GetTransactionLockSignatures();
+        const int signatures = wtx.GetTransactionLockSignatures();
         QString strUsingIX = "";
+        bool fConflicted;
+        const int nDepth = wtx.GetDepthAndMempool(fConflicted);
+
+        if (nDepth < 0 || fConflicted)
+            return tr("conflicted");
+
+        const bool isOffline = (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0);
+
         if (signatures >= 0) {
             if (signatures >= SWIFTTX_SIGNATURES_REQUIRED) {
-                int nDepth = wtx.GetDepthInMainChain();
-                if (nDepth < 0)
-                    return tr("conflicted");
-                else if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0)
+                if (isOffline)
                     return tr("%1/offline (verified via SwiftX)").arg(nDepth);
                 else if (nDepth < 6)
                     return tr("%1/confirmed (verified via SwiftX)").arg(nDepth);
@@ -51,20 +54,14 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
                     return tr("%1 confirmations (verified via SwiftX)").arg(nDepth);
             } else {
                 if (!wtx.IsTransactionLockTimedOut()) {
-                    int nDepth = wtx.GetDepthInMainChain();
-                    if (nDepth < 0)
-                        return tr("conflicted");
-                    else if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0)
+                    if (isOffline)
                         return tr("%1/offline (SwiftX verification in progress - %2 of %3 signatures)").arg(nDepth).arg(signatures).arg(SWIFTTX_SIGNATURES_TOTAL);
                     else if (nDepth < 6)
                         return tr("%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )").arg(nDepth).arg(signatures).arg(SWIFTTX_SIGNATURES_TOTAL);
                     else
                         return tr("%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)").arg(nDepth).arg(signatures).arg(SWIFTTX_SIGNATURES_TOTAL);
                 } else {
-                    int nDepth = wtx.GetDepthInMainChain();
-                    if (nDepth < 0)
-                        return tr("conflicted");
-                    else if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0)
+                    if (isOffline)
                         return tr("%1/offline (SwiftX verification failed)").arg(nDepth);
                     else if (nDepth < 6)
                         return tr("%1/confirmed (SwiftX verification failed)").arg(nDepth);
@@ -73,10 +70,7 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
                 }
             }
         } else {
-            int nDepth = wtx.GetDepthInMainChain();
-            if (nDepth < 0)
-                return tr("conflicted");
-            else if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0)
+            if (isOffline)
                 return tr("%1/offline").arg(nDepth);
             else if (nDepth < 6)
                 return tr("%1/unconfirmed").arg(nDepth);
@@ -158,7 +152,7 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
         // Coinbase
         //
         CAmount nUnmatured = 0;
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout)
+        for (const CTxOut& txout : wtx.vout)
             nUnmatured += wallet->GetCredit(txout, ISMINE_ALL);
         strHTML += "<b>" + tr("Credit") + ":</b> ";
         if (wtx.IsInMainChain())
@@ -173,13 +167,13 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
         strHTML += "<b>" + tr("Credit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, nNet) + "<br>";
     } else {
         isminetype fAllFromMe = ISMINE_SPENDABLE;
-        BOOST_FOREACH (const CTxIn& txin, wtx.vin) {
+        for (const CTxIn& txin : wtx.vin) {
             isminetype mine = wallet->IsMine(txin);
             if (fAllFromMe > mine) fAllFromMe = mine;
         }
 
         isminetype fAllToMe = ISMINE_SPENDABLE;
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout) {
+        for (const CTxOut& txout : wtx.vout) {
             isminetype mine = wallet->IsMine(txout);
             if (fAllToMe > mine) fAllToMe = mine;
         }
@@ -191,7 +185,7 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
             //
             // Debit
             //
-            BOOST_FOREACH (const CTxOut& txout, wtx.vout) {
+            for (const CTxOut& txout : wtx.vout) {
                 // Ignore change
                 isminetype toSelf = wallet->IsMine(txout);
                 if ((toSelf == ISMINE_SPENDABLE) && (fAllFromMe == ISMINE_SPENDABLE))
@@ -233,10 +227,10 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
             //
             // Mixed debit transaction
             //
-            BOOST_FOREACH (const CTxIn& txin, wtx.vin)
+            for (const CTxIn& txin : wtx.vin)
                 if (wallet->IsMine(txin))
                     strHTML += "<b>" + tr("Debit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, -wallet->GetDebit(txin, ISMINE_ALL)) + "<br>";
-            BOOST_FOREACH (const CTxOut& txout, wtx.vout)
+            for (const CTxOut& txout : wtx.vout)
                 if (wallet->IsMine(txout))
                     strHTML += "<b>" + tr("Credit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, wallet->GetCredit(txout, ISMINE_ALL)) + "<br>";
         }
@@ -256,14 +250,14 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
     strHTML += "<b>" + tr("Output index") + ":</b> " + QString::number(rec->getOutputIndex()) + "<br>";
 
     // Message from normal kts:URI (kts:XyZ...?message=example)
-    foreach (const PAIRTYPE(string, string) & r, wtx.vOrderForm)
+    foreach (const PAIRTYPE(std::string, std::string) & r, wtx.vOrderForm)
         if (r.first == "Message")
             strHTML += "<br><b>" + tr("Message") + ":</b><br>" + GUIUtil::HtmlEscape(r.second, true) + "<br>";
 
     //
     // PaymentRequest info:
     //
-    foreach (const PAIRTYPE(string, string) & r, wtx.vOrderForm) {
+    foreach (const PAIRTYPE(std::string, std::string) & r, wtx.vOrderForm) {
         if (r.first == "PaymentRequest") {
             PaymentRequestPlus req;
             req.parse(QByteArray::fromRawData(r.second.data(), r.second.size()));
@@ -283,10 +277,10 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
     //
     if (fDebug) {
         strHTML += "<hr><br>" + tr("Debug information") + "<br><br>";
-        BOOST_FOREACH (const CTxIn& txin, wtx.vin)
+        for (const CTxIn& txin : wtx.vin)
             if (wallet->IsMine(txin))
                 strHTML += "<b>" + tr("Debit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, -wallet->GetDebit(txin, ISMINE_ALL)) + "<br>";
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout)
+        for (const CTxOut& txout : wtx.vout)
             if (wallet->IsMine(txout))
                 strHTML += "<b>" + tr("Credit") + ":</b> " + BitcoinUnits::formatHtmlWithUnit(unit, wallet->GetCredit(txout, ISMINE_ALL)) + "<br>";
 
@@ -296,7 +290,7 @@ QString TransactionDesc::toHTML(CWallet* wallet, CWalletTx& wtx, TransactionReco
         strHTML += "<br><b>" + tr("Inputs") + ":</b>";
         strHTML += "<ul>";
 
-        BOOST_FOREACH (const CTxIn& txin, wtx.vin) {
+        for (const CTxIn& txin : wtx.vin) {
             COutPoint prevout = txin.prevout;
 
             CCoins prev;

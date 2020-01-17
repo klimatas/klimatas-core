@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,25 +11,12 @@
 #include "obfuscation.h"
 #include "swifttx.h"
 #include "timedata.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "zktschain.h"
 #include "main.h"
 
 #include <iostream>
 #include <stdint.h>
-
-/* Return positive answer if transaction should be shown in list.
- */
-bool TransactionRecord::showTransaction(const CWalletTx& wtx)
-{
-    if (wtx.IsCoinBase()) {
-        // Ensures we show generated coins / mined transactions at depth 1
-        if (!wtx.IsInMainChain()) {
-            return false;
-        }
-    }
-    return true;
-}
 
 /*
  * Decompose CWallet transaction to model transaction records.
@@ -53,6 +39,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
 
     if (wtx.IsCoinStake()) {
         TransactionRecord sub(hash, nTime, wtx.GetTotalSize());
+
         CTxDestination address;
         if (!wtx.HasZerocoinSpendInputs() && !ExtractDestination(wtx.vout[1].scriptPubKey, address))
             return parts;
@@ -69,11 +56,21 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             }
             sub.debit -= wtx.vin[0].nSequence * COIN;
         } else if (isminetype mine = wallet->IsMine(wtx.vout[1])) {
-            // KTS stake reward
-            sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
-            sub.type = TransactionRecord::StakeMint;
-            sub.address = CBitcoinAddress(address).ToString();
-            sub.credit = nNet;
+
+            // Check for cold stakes.
+            if (wtx.HasP2CSOutputs()) {
+                sub.credit = nCredit;
+                sub.debit = -nDebit;
+                loadHotOrColdStakeOrContract(wallet, wtx, sub);
+                parts.append(sub);
+                return parts;
+            } else {
+                // KTS stake reward
+                sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
+                sub.type = TransactionRecord::StakeMint;
+                sub.address = CBitcoinAddress(address).ToString();
+                sub.credit = nNet;
+            }
         } else {
             //Masternode reward
             CTxDestination destMN;
@@ -112,7 +109,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 continue;
             }
 
-            string strAddress = "";
+            std::string strAddress = "";
             CTxDestination address;
             if (ExtractDestination(txout.scriptPubKey, address))
                 strAddress = CBitcoinAddress(address).ToString();
@@ -151,11 +148,25 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
             sub.idx = parts.size();
             parts.append(sub);
         }
+    } else if (wtx.HasP2CSOutputs()) {
+        // Delegate tx.
+        TransactionRecord sub(hash, nTime, wtx.GetTotalSize());
+        sub.credit = nCredit;
+        sub.debit = -nDebit;
+        loadHotOrColdStakeOrContract(wallet, wtx, sub, true);
+        parts.append(sub);
+        return parts;
+    } else if (wtx.HasP2CSInputs()) {
+        // Delegation unlocked
+        TransactionRecord sub(hash, nTime, wtx.GetTotalSize());
+        loadUnlockColdStake(wallet, wtx, sub);
+        parts.append(sub);
+        return parts;
     } else if (nNet > 0 || wtx.IsCoinBase()) {
         //
         // Credit
         //
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout) {
+        for (const CTxOut& txout : wtx.vout) {
             isminetype mine = wallet->IsMine(txout);
             if (mine) {
                 TransactionRecord sub(hash, nTime, wtx.GetTotalSize());
@@ -185,7 +196,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         int nFromMe = 0;
         bool involvesWatchAddress = false;
         isminetype fAllFromMe = ISMINE_SPENDABLE;
-        BOOST_FOREACH (const CTxIn& txin, wtx.vin) {
+        for (const CTxIn& txin : wtx.vin) {
             if (wallet->IsMine(txin)) {
                 fAllFromMeDenom = fAllFromMeDenom && wallet->IsDenominated(txin);
                 nFromMe++;
@@ -198,7 +209,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         isminetype fAllToMe = ISMINE_SPENDABLE;
         bool fAllToMeDenom = true;
         int nToMe = 0;
-        BOOST_FOREACH (const CTxOut& txout, wtx.vout) {
+        for (const CTxOut& txout : wtx.vout) {
             if (wallet->IsMine(txout)) {
                 fAllToMeDenom = fAllToMeDenom && wallet->IsDenominatedAmount(txout.nValue);
                 nToMe++;
@@ -317,6 +328,97 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
     return parts;
 }
 
+void TransactionRecord::loadUnlockColdStake(const CWallet* wallet, const CWalletTx& wtx, TransactionRecord& record)
+{
+    record.involvesWatchAddress = false;
+
+    // Get the p2cs
+    const CScript* p2csScript = nullptr;
+    bool isSpendable = false;
+
+    for (const auto &input : wtx.vin) {
+        const CWalletTx* tx = wallet->GetWalletTx(input.prevout.hash);
+        if (tx && tx->vout[input.prevout.n].scriptPubKey.IsPayToColdStaking()) {
+            p2csScript = &tx->vout[input.prevout.n].scriptPubKey;
+            isSpendable = wallet->IsMine(input) & ISMINE_SPENDABLE_ALL;
+            break;
+        }
+    }
+
+    if (isSpendable) {
+        // owner unlocked the cold stake
+        record.type = TransactionRecord::P2CSUnlockOwner;
+        record.debit = -(wtx.GetStakeDelegationDebit());
+        record.credit = wtx.GetCredit(ISMINE_ALL);
+    } else {
+        // hot node watching the unlock
+        record.type = TransactionRecord::P2CSUnlockStaker;
+        record.debit = -(wtx.GetColdStakingDebit());
+        record.credit = -(wtx.GetColdStakingCredit());
+    }
+
+    // Extract and set the owner address
+    ExtractAddress(*p2csScript, false, record.address);
+}
+
+void TransactionRecord::loadHotOrColdStakeOrContract(
+        const CWallet* wallet,
+        const CWalletTx& wtx,
+        TransactionRecord& record,
+        bool isContract)
+{
+    record.involvesWatchAddress = false;
+
+    // Get the p2cs
+    CTxOut p2csUtxo;
+    for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++) {
+        const CTxOut &txout = wtx.vout[nOut];
+        if (txout.scriptPubKey.IsPayToColdStaking()) {
+            p2csUtxo = txout;
+            break;
+        }
+    }
+    bool isSpendable = wallet->IsMine(p2csUtxo) & ISMINE_SPENDABLE_DELEGATED;
+
+    if (isContract) {
+        if (isSpendable) {
+            // Wallet delegating balance
+            record.type = TransactionRecord::P2CSDelegationSent;
+        } else {
+            // Wallet receiving a delegation
+            record.type = TransactionRecord::P2CSDelegation;
+        }
+    } else {
+        // Stake
+        if (isSpendable) {
+            // Offline wallet receiving an stake due a delegation
+            record.type = TransactionRecord::StakeDelegated;
+
+        } else {
+            // Online wallet receiving an stake due a received utxo delegation that won a block.
+            record.type = TransactionRecord::StakeHot;
+        }
+    }
+
+    // Extract and set the owner address
+    ExtractAddress(p2csUtxo.scriptPubKey, false, record.address);
+}
+
+bool TransactionRecord::ExtractAddress(const CScript& scriptPubKey, bool fColdStake, std::string& addressStr) {
+    CTxDestination address;
+    if (!ExtractDestination(scriptPubKey, address, fColdStake)) {
+        // this shouldn't happen..
+        addressStr = "No available address";
+        return false;
+    } else {
+        addressStr = CBitcoinAddress(
+                address,
+                (fColdStake ? CChainParams::STAKING_ADDRESS : CChainParams::PUBKEY_ADDRESS)
+        ).ToString();
+        return true;
+    }
+}
+
 bool IsZKTSType(TransactionRecord::Type type)
 {
     switch (type) {
@@ -350,7 +452,9 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
         wtx.nTimeReceived,
         idx);
     //status.countsForBalance = wtx.IsTrusted() && !(wtx.GetBlocksToMaturity() > 0);
-    status.depth = wtx.GetDepthInMainChain();
+    bool fConflicted;
+    status.depth = wtx.GetDepthAndMempool(fConflicted);
+    const bool isOffline = (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0);
 
     //Determine the depth of the block
     int nBlocksToMaturity = wtx.GetBlocksToMaturity();
@@ -376,7 +480,7 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
 
             if (pindex && chainActive.Contains(pindex)) {
                 // Check if the block was requested by anyone
-                if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0)
+                if (isOffline)
                     status.status = TransactionStatus::MaturesWarning;
             } else {
                 status.status = TransactionStatus::NotAccepted;
@@ -386,9 +490,9 @@ void TransactionRecord::updateStatus(const CWalletTx& wtx)
             status.matures_in = 0;
         }
     } else {
-        if (status.depth < 0) {
+        if (status.depth < 0 || fConflicted) {
             status.status = TransactionStatus::Conflicted;
-        } else if (GetAdjustedTime() - wtx.nTimeReceived > 2 * 60 && wtx.GetRequestCount() == 0) {
+        } else if (isOffline) {
             status.status = TransactionStatus::Offline;
         } else if (status.depth == 0) {
             status.status = TransactionStatus::Unconfirmed;
@@ -414,6 +518,23 @@ QString TransactionRecord::getTxID() const
 int TransactionRecord::getOutputIndex() const
 {
     return idx;
+}
+
+bool TransactionRecord::isCoinStake() const
+{
+    return (type == TransactionRecord::StakeMint || type == TransactionRecord::Generated || type == TransactionRecord::StakeZKTS);
+}
+
+bool TransactionRecord::isAnyColdStakingType() const
+{
+    return (type == TransactionRecord::P2CSDelegation || type == TransactionRecord::P2CSDelegationSent
+           || type == TransactionRecord::StakeDelegated || type == TransactionRecord::StakeHot
+           || type == TransactionRecord::P2CSUnlockOwner || type == TransactionRecord::P2CSUnlockStaker);
+}
+
+bool TransactionRecord::isNull() const
+{
+    return hash.IsNull() || size == 0;
 }
 
 std::string TransactionRecord::statusToString(){

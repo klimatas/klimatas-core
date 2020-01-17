@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,6 +23,7 @@ public:
     ~SettingsSignMessageWidgets();
 
     void setAddress_SM(const QString& address);
+    void showEvent(QShowEvent *event) override;
 protected:
     void resizeEvent(QResizeEvent *event) override;
 public slots:

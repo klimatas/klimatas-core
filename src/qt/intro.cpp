@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -95,7 +96,7 @@ void FreespaceChecker::check()
                 replyMessage = tr("Path already exists, and is not a directory.");
             }
         }
-    } catch (fs::filesystem_error& e) {
+    } catch (const fs::filesystem_error& e) {
         /* Parent directory does not exist or is not accessible */
         replyStatus = ST_ERROR;
         replyMessage = tr("Cannot create data directory here.");
@@ -130,6 +131,7 @@ Intro::Intro(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::W
 
     connect(ui->pushButtonOk, SIGNAL(clicked()), this, SLOT(accept()));
     connect(ui->pushButtonCancel, SIGNAL(clicked()), this, SLOT(close()));
+
     ui->sizeWarningLabel->setText(ui->sizeWarningLabel->text().arg(BLOCK_CHAIN_SIZE / GB_BYTES));
     startThread();
 }
@@ -181,6 +183,7 @@ bool Intro::pickDataDirectory()
     /* 2) Allow QSettings to override default dir */
     dataDir = settings.value("strDataDir", dataDir).toString();
 
+
     if (!fs::exists(GUIUtil::qstringToBoostPath(dataDir)) || GetBoolArg("-choosedatadir", false)) {
         // If current default data directory does not exist, let the user choose one
         Intro intro;
@@ -196,19 +199,21 @@ bool Intro::pickDataDirectory()
             try {
                 TryCreateDirectory(GUIUtil::qstringToBoostPath(dataDir));
                 break;
-            } catch (fs::filesystem_error& e) {
+            } catch (const fs::filesystem_error& e) {
                 QMessageBox::critical(0, tr("KTS Core"),
                     tr("Error: Specified data directory \"%1\" cannot be created.").arg(dataDir));
-                /* fall through, back to choosing screen */
+                // fall through, back to choosing screen
             }
         }
 
         settings.setValue("strDataDir", dataDir);
     }
+
     /* Only override -datadir if different from the default, to make it possible to
      * override -datadir in the kts.conf file in the default data directory
      * (to be consistent with ktsd behavior)
      */
+
     if (dataDir != getDefaultDataDirectory())
         SoftSetArg("-datadir", GUIUtil::qstringToBoostPath(dataDir).string()); // use OS locale for path setting
     return true;

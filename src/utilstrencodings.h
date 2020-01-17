@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -40,6 +41,7 @@ enum SafeChars
 * @return           A new string without unsafe chars
 */
 std::string SanitizeString(const std::string& str, int rule = SAFE_CHARS_DEFAULT);
+
 /**
 * Check URL format for conformance for validity to a defined pattern
 * @param[in] strURL   The string to be processed for validity
@@ -48,6 +50,7 @@ std::string SanitizeString(const std::string& str, int rule = SAFE_CHARS_DEFAULT
 * @return             A bool, true if valid, false if not (reason in stdErr)
 */
 bool validateURL(std::string strURL, std::string& strErr, unsigned int maxSize = 64);
+
 std::vector<unsigned char> ParseHex(const char* psz);
 std::vector<unsigned char> ParseHex(const std::string& str);
 signed char HexDigit(char c);

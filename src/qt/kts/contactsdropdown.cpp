@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -81,12 +82,21 @@ ContactsDropdown::ContactsDropdown(int minWidth, int minHeight, PWidget *parent)
     connect(list, SIGNAL(clicked(QModelIndex)), this, SLOT(handleClick(QModelIndex)));
 }
 
-void ContactsDropdown::setWalletModel(WalletModel* _model, QString type){
-    model = _model->getAddressTableModel();
-    this->filter = new AddressFilterProxyModel(type, this);
-    this->filter->setSourceModel(model);
-    list->setModel(this->filter);
-    list->setModelColumn(AddressTableModel::Address);
+void ContactsDropdown::setWalletModel(WalletModel* _model, const QString& type){
+    if (!model) {
+        model = _model->getAddressTableModel();
+        this->filter = new AddressFilterProxyModel(type, this);
+        this->filter->setSourceModel(model);
+        list->setModel(this->filter);
+        list->setModelColumn(AddressTableModel::Address);
+    } else {
+        setType(type);
+    }
+}
+
+void ContactsDropdown::setType(const QString& type) {
+    if (filter)
+        filter->setType(type);
 }
 
 void ContactsDropdown::resizeList(int minWidth, int mintHeight){

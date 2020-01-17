@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,7 +22,7 @@ TransactionFilterProxy::TransactionFilterProxy(QObject* parent) : QSortFilterPro
                                                                   dateFrom(MIN_DATE),
                                                                   dateTo(MAX_DATE),
                                                                   addrPrefix(),
-                                                                  typeFilter(COMMON_TYPES),
+                                                                  typeFilter(ALL_TYPES),
                                                                   watchOnlyFilter(WatchOnlyFilter_All),
                                                                   minAmount(0),
                                                                   limitRows(-1),
@@ -54,8 +55,10 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& 
         return false;
     if (datetime < dateFrom || datetime > dateTo)
         return false;
-    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && !label.contains(addrPrefix, Qt::CaseInsensitive))
-        return false;
+    if (!addrPrefix.isEmpty()) {
+        if (!address.contains(addrPrefix, Qt::CaseInsensitive) && !label.contains(addrPrefix, Qt::CaseInsensitive))
+            return false;
+    }
     if (amount < minAmount)
         return false;
     if (fOnlyZc && !isZcTx(type)){
@@ -64,11 +67,16 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex& 
     if (fOnlyStakes && !isStakeTx(type))
         return false;
 
+    if (fOnlyColdStaking && !isColdStake(type))
+        return false;
+
     return true;
 }
 
 void TransactionFilterProxy::setDateRange(const QDateTime& from, const QDateTime& to)
 {
+    if (from == this->dateFrom && to == this->dateTo)
+        return; // No need to set the range.
     this->dateFrom = from;
     this->dateTo = to;
     invalidateFilter();
@@ -115,13 +123,21 @@ void TransactionFilterProxy::setHideOrphans(bool fHide)
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setShowZcTxes(bool fOnlyZc){
+void TransactionFilterProxy::setShowZcTxes(bool fOnlyZc)
+{
     this->fOnlyZc = fOnlyZc;
     invalidateFilter();
 }
 
-void TransactionFilterProxy::setOnlyStakes(bool fOnlyStakes){
+void TransactionFilterProxy::setOnlyStakes(bool fOnlyStakes)
+{
     this->fOnlyStakes = fOnlyStakes;
+    invalidateFilter();
+}
+
+void TransactionFilterProxy::setOnlyColdStakes(bool fOnlyColdStakes)
+{
+    this->fOnlyColdStaking = fOnlyColdStakes;
     invalidateFilter();
 }
 
@@ -148,6 +164,10 @@ bool TransactionFilterProxy::isZcTx(int type) const {
 
 bool TransactionFilterProxy::isStakeTx(int type) const {
     return (type == TransactionRecord::StakeMint || type == TransactionRecord::Generated || type == TransactionRecord::StakeZKTS);
+}
+
+bool TransactionFilterProxy::isColdStake(int type) const {
+    return (type == TransactionRecord::P2CSDelegation || type == TransactionRecord::P2CSDelegationSent || type == TransactionRecord::StakeDelegated || type == TransactionRecord::StakeHot);
 }
 
 /*QVariant TransactionFilterProxy::dataFromSourcePos(int sourceRow, int role) const {

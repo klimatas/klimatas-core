@@ -1,18 +1,19 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "qt/kts/settings/settingssignmessagewidgets.h"
 #include "qt/kts/settings/forms/ui_settingssignmessagewidgets.h"
 #include "qt/kts/qtutils.h"
-#include "addressbookpage.h"
 #include "guiutil.h"
 #include "walletmodel.h"
 
 #include "base58.h"
 #include "init.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "askpassphrasedialog.h"
+#include "addressbookpage.h"
 
 #include <string>
 #include <vector>
@@ -61,9 +62,9 @@ SettingsSignMessageWidgets::SettingsSignMessageWidgets(KTSGUI* _window, QWidget 
     ui->labelSubtitleMessage->setText(tr("Message"));
     ui->labelSubtitleMessage->setProperty("cssClass", "text-title");
 
-    #if QT_VERSION >= 0x050300
-        ui->messageIn_SM->setPlaceholderText(tr("Write a message"));
-    #endif
+#if QT_VERSION >= 0x050300
+    ui->messageIn_SM->setPlaceholderText(tr("Write a message"));
+#endif
     ui->messageIn_SM->setProperty("cssClass","edit-primary");
     setShadow(ui->messageIn_SM);
     ui->messageIn_SM->setAttribute(Qt::WA_MacShowFocusRect, 0);
@@ -95,6 +96,11 @@ SettingsSignMessageWidgets::SettingsSignMessageWidgets(KTSGUI* _window, QWidget 
 
 SettingsSignMessageWidgets::~SettingsSignMessageWidgets(){
     delete ui;
+}
+
+void SettingsSignMessageWidgets::showEvent(QShowEvent *event)
+{
+    if (ui->addressIn_SM) ui->addressIn_SM->setFocus();
 }
 
 void SettingsSignMessageWidgets::onModeSelected(bool isSign){

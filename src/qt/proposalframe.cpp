@@ -1,4 +1,5 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,6 +7,8 @@
 
 #include "masternode-budget.h"
 #include "masternodeconfig.h"
+#include "main.h"
+#include "messagesigner.h"
 #include "utilmoneystr.h"
 
 #include <QLayout>
@@ -17,6 +20,7 @@
 #include <QClipboard>
 #include <QUrl>
 #include <QSpacerItem>
+#include <QMouseEvent>
 
 ProposalFrame::ProposalFrame(QWidget* parent) : QFrame(parent)
 {
@@ -215,6 +219,8 @@ void ProposalFrame::mouseReleaseEvent(QMouseEvent* event)
 {
     if (!governancePage) //TODO implement an error
         return;
+    if (event->button() == Qt::RightButton)
+        return;
     extended = !extended;
     if (extended)
         governancePage->setExtendedProposal(proposal);
@@ -273,8 +279,8 @@ void ProposalFrame::SendVote(std::string strHash, int nVote)
         CPubKey pubKeyMasternode;
         CKey keyMasternode;
 
-        if (!obfuScationSigner.SetKey(mne.getPrivKey(), errorMessage, keyMasternode, pubKeyMasternode)) {
-            mnresult += mne.getAlias() + ": " + "Masternode signing error, could not set key correctly: " + errorMessage + "<br />";
+        if (!CMessageSigner::GetKeysFromSecret(mne.getPrivKey(), keyMasternode, pubKeyMasternode)) {
+            mnresult += mne.getAlias() + ": " + "Masternode signing error, could not set key correctly.<br />";
             failed++;
             continue;
         }
@@ -286,8 +292,13 @@ void ProposalFrame::SendVote(std::string strHash, int nVote)
             continue;
         }
 
+        bool fNewSigs = false;
+        {
+            LOCK(cs_main);
+            fNewSigs = chainActive.NewSigsActive();
+        }
         CBudgetVote vote(pmn->vin, hash, nVote);
-        if (!vote.Sign(keyMasternode, pubKeyMasternode)) {
+        if (!vote.Sign(keyMasternode, pubKeyMasternode, fNewSigs)) {
             mnresult += mne.getAlias() + ": " + "Failure to sign" + "<br />";
             failed++;
             continue;
@@ -295,7 +306,7 @@ void ProposalFrame::SendVote(std::string strHash, int nVote)
 
         std::string strError = "";
         if (budget.UpdateProposal(vote, NULL, strError)) {
-            budget.mapSeenMasternodeBudgetVotes.insert(make_pair(vote.GetHash(), vote));
+            budget.mapSeenMasternodeBudgetVotes.insert(std::make_pair(vote.GetHash(), vote));
             vote.Relay();
             mnresult += mne.getAlias() + ": " + "Success!" + "<br />";
             success++;

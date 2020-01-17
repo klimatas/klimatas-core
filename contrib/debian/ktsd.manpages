@@ -1,2 +1,2 @@
-debian/manpages/ktsd.1
-debian/manpages/kts.conf.5
+doc/man/ktsd.1
+doc/man/kts-cli.1

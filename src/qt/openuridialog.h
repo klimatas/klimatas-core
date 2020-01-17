@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,6 +7,7 @@
 #define BITCOIN_QT_OPENURIDIALOG_H
 
 #include <QDialog>
+#include "qt/kts/snackbar.h"
 
 namespace Ui
 {
@@ -31,6 +33,8 @@ private slots:
 
 private:
     Ui::OpenURIDialog* ui;
+    SnackBar *snackBar = nullptr;
+    void inform(const QString& str);
 };
 
 #endif // BITCOIN_QT_OPENURIDIALOG_H

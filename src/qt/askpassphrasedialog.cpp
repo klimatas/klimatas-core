@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +12,6 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 #include "walletmodel.h"
-
 #include "qt/kts/qtutils.h"
 #include "qt/kts/loadingdialog.h"
 #include "qt/kts/defaultdialog.h"
@@ -31,7 +29,8 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
                                                                                                             model(model),
                                                                                                             context(context),
                                                                                                             fCapsLock(false),
-                                                                                                            btnWatch(new QCheckBox()) {
+                                                                                                            btnWatch(new QCheckBox())
+{
     ui->setupUi(this);
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
@@ -83,50 +82,49 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
 
     QString title;
     switch (mode) {
-        case Mode::Encrypt: // Ask passphrase x2
-            ui->warningLabel->setText(
-                    tr("Enter the new passphrase to the wallet.<br/>Please use a passphrase of <b>ten or more random characters</b>, or <b>eight or more words</b>."));
-            ui->passLabel1->hide();
-            ui->passEdit1->hide();
-            ui->layoutEdit->hide();
-            title = tr("Encrypt wallet");
-            initWatch(ui->layoutEdit2);
-            break;
-        case Mode::UnlockAnonymize:
-            ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
-            ui->passLabel2->hide();
-            ui->passEdit2->hide();
-            ui->layoutEdit2->hide();
-            ui->passLabel3->hide();
-            ui->passEdit3->hide();
-            title = tr("Unlock wallet\nfor staking");
-            initWatch(ui->layoutEdit);
-            break;
-        case Mode::Unlock: // Ask passphrase
-            ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
-            ui->passLabel2->hide();
-            ui->passEdit2->hide();
-            ui->layoutEdit2->hide();
-            ui->passLabel3->hide();
-            ui->passEdit3->hide();
-            title = tr("Unlock wallet");
-            initWatch(ui->layoutEdit);
-            break;
-        case Mode::Decrypt: // Ask passphrase
-            ui->warningLabel->setText(tr("This operation needs your wallet passphrase to decrypt the wallet."));
-            ui->passLabel2->hide();
-            ui->passEdit2->hide();
-            ui->layoutEdit2->hide();
-            ui->passLabel3->hide();
-            ui->passEdit3->hide();
-            title = tr("Decrypt wallet");
-            initWatch(ui->layoutEdit);
-            break;
-        case Mode::ChangePass: // Ask old passphrase + new passphrase x2
-            title = (tr("Change passphrase"));
-            ui->warningLabel->setText(tr("Enter the old and new passphrase to the wallet."));
-            initWatch(ui->layoutEdit);
-            break;
+    case Mode::Encrypt: // Ask passphrase x2
+        ui->warningLabel->setText(tr("Enter the new passphrase to the wallet.<br/>Please use a passphrase of <b>ten or more random characters</b>, or <b>eight or more words</b>."));
+        ui->passLabel1->hide();
+        ui->passEdit1->hide();
+        ui->layoutEdit->hide();
+        title = tr("Encrypt wallet");
+        initWatch(ui->layoutEdit2);
+        break;
+    case Mode::UnlockAnonymize:
+        ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
+        ui->passLabel2->hide();
+        ui->passEdit2->hide();
+        ui->layoutEdit2->hide();
+        ui->passLabel3->hide();
+        ui->passEdit3->hide();
+        title = tr("Unlock wallet\nfor staking");
+        initWatch(ui->layoutEdit);
+        break;
+    case Mode::Unlock: // Ask passphrase
+        ui->warningLabel->setText(tr("This operation needs your wallet passphrase to unlock the wallet."));
+        ui->passLabel2->hide();
+        ui->passEdit2->hide();
+        ui->layoutEdit2->hide();
+        ui->passLabel3->hide();
+        ui->passEdit3->hide();
+        title = tr("Unlock wallet");
+        initWatch(ui->layoutEdit);
+        break;
+    case Mode::Decrypt: // Ask passphrase
+        ui->warningLabel->setText(tr("This operation needs your wallet passphrase to decrypt the wallet."));
+        ui->passLabel2->hide();
+        ui->passEdit2->hide();
+        ui->layoutEdit2->hide();
+        ui->passLabel3->hide();
+        ui->passEdit3->hide();
+        title = tr("Decrypt wallet");
+        initWatch(ui->layoutEdit);
+        break;
+    case Mode::ChangePass: // Ask old passphrase + new passphrase x2
+        title = tr("Change passphrase");
+        ui->warningLabel->setText(tr("Enter the old and new passphrase to the wallet."));
+        initWatch(ui->layoutEdit);
+        break;
     }
 
     ui->labelTitle->setText(title);
@@ -140,7 +138,8 @@ AskPassphraseDialog::AskPassphraseDialog(Mode mode, QWidget* parent, WalletModel
     connect(ui->btnEsc, SIGNAL(clicked()), this, SLOT(close()));
 }
 
-void AskPassphraseDialog::onWatchClicked(){
+void AskPassphraseDialog::onWatchClicked()
+{
     int state = btnWatch->checkState();
     ui->passEdit3->setEchoMode(state == Qt::Checked ? QLineEdit::Normal : QLineEdit::Password );
     ui->passEdit2->setEchoMode(state== Qt::Checked ? QLineEdit::Normal : QLineEdit::Password );
@@ -158,7 +157,8 @@ AskPassphraseDialog::~AskPassphraseDialog()
 
 void AskPassphraseDialog::showEvent(QShowEvent *event)
 {
-    if (ui->passEdit1) ui->passEdit1->setFocus();
+    if (mode == Mode::Encrypt && ui->passEdit2) ui->passEdit2->setFocus();
+    else if (ui->passEdit1) ui->passEdit1->setFocus();
 }
 
 void AskPassphraseDialog::accept()
@@ -184,7 +184,7 @@ void AskPassphraseDialog::accept()
         hide();
         bool ret = openStandardDialog(
                 tr("Confirm wallet encryption"),
-                tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR PIV</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
+                tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR KTS</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
                 tr("ENCRYPT"), tr("CANCEL")
         );
         if (ret) {
@@ -266,21 +266,20 @@ void AskPassphraseDialog::textChanged()
 
 bool AskPassphraseDialog::event(QEvent* event)
 {
-    // Detect Caps Lock key press.
     if (event->type() == QEvent::KeyPress) {
         QKeyEvent* ke = static_cast<QKeyEvent*>(event);
+        // Detect Caps Lock key press.
         if (ke->key() == Qt::Key_CapsLock) {
             fCapsLock = !fCapsLock;
+            ui->capsLabel->setVisible(fCapsLock);
+            fCapsLock ? ui->capsLabel->setText(tr("Warning: The Caps Lock key is on!")) : ui->capsLabel->clear();
         }
-        if (fCapsLock) {
-            ui->capsLabel->setText(tr("Warning: The Caps Lock key is on!"));
-            ui->capsLabel->setVisible(true);
-        } else {
-            ui->capsLabel->clear();
-            ui->capsLabel->setVisible(false);
+        // Detect Enter key press
+        if ((ke->key() == Qt::Key_Enter || ke->key() == Qt::Key_Return) && ui->pushButtonOk->isEnabled()) {
+            accept();
         }
     }
-    return QWidget::event(event);
+    return QDialog::event(event);
 }
 
 bool AskPassphraseDialog::eventFilter(QObject* object, QEvent* event)
@@ -311,7 +310,8 @@ bool AskPassphraseDialog::eventFilter(QObject* object, QEvent* event)
     return QDialog::eventFilter(object, event);
 }
 
-bool AskPassphraseDialog::openStandardDialog(QString title, QString body, QString okBtn, QString cancelBtn){
+bool AskPassphraseDialog::openStandardDialog(QString title, QString body, QString okBtn, QString cancelBtn)
+{
     KTSGUI* gui = static_cast<KTSGUI*>(parentWidget());
     DefaultDialog *confirmDialog = new DefaultDialog(gui);
     confirmDialog->setText(title, body, okBtn, cancelBtn);
@@ -322,7 +322,8 @@ bool AskPassphraseDialog::openStandardDialog(QString title, QString body, QStrin
     return ret;
 }
 
-void AskPassphraseDialog::warningMessage() {
+void AskPassphraseDialog::warningMessage()
+{
     hide();
     static_cast<KTSGUI*>(parentWidget())->showHide(true);
     openStandardDialog(
@@ -338,16 +339,18 @@ void AskPassphraseDialog::warningMessage() {
                "will become useless as soon as you start using the new, encrypted wallet.") +
             "</b></qt>",
             tr("OK")
-    );
+            );
     QApplication::quit();
 }
 
-void AskPassphraseDialog::errorEncryptingWallet() {
+void AskPassphraseDialog::errorEncryptingWallet()
+{
     QMessageBox::critical(this, tr("Wallet encryption failed"),
                           tr("Wallet encryption failed due to an internal error. Your wallet was not encrypted."));
 }
 
-void AskPassphraseDialog::run(int type){
+void AskPassphraseDialog::run(int type)
+{
     if (type == 1) {
         if (!newpassCache.empty()) {
             QMetaObject::invokeMethod(this, "hide", Qt::QueuedConnection);
@@ -361,11 +364,13 @@ void AskPassphraseDialog::run(int type){
         }
     }
 }
-void AskPassphraseDialog::onError(int type, QString error){
+void AskPassphraseDialog::onError(QString error, int type)
+{
     newpassCache = "";
 }
 
-void AskPassphraseDialog::initWatch(QWidget *parent) {
+void AskPassphraseDialog::initWatch(QWidget *parent)
+{
     btnWatch = new QCheckBox(parent);
     setCssProperty(btnWatch, "btn-watch-password");
     btnWatch->setChecked(false);

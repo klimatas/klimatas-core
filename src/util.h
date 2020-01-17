@@ -1,9 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -70,6 +69,9 @@ int LogPrintStr(const std::string& str);
 
 #define LogPrintf(...) LogPrint(NULL, __VA_ARGS__)
 
+/** Get format string from VA_ARGS for error reporting */
+template<typename... Args> std::string FormatStringFromLogArgs(const char *fmt, const Args&... args) { return fmt; }
+
 /**
  * When we switch to C++11, this can be switched to variadic templates instead
  * of this macro-based construction (see tinyformat.h).
@@ -80,13 +82,25 @@ int LogPrintStr(const std::string& str);
     static inline int LogPrint(const char* category, const char* format, TINYFORMAT_VARARGS(n)) \
     {                                                                                           \
         if (!LogAcceptCategory(category)) return 0;                                             \
-        return LogPrintStr(tfm::format(format, TINYFORMAT_PASSARGS(n)));                        \
+        std::string _log_msg_; /* Unlikely name to avoid shadowing variables */                 \
+        try {                                                                                   \
+            _log_msg_ = tfm::format(format, TINYFORMAT_PASSARGS(n));                            \
+        } catch (std::runtime_error &e) {                                                       \
+            _log_msg_ = "Error \"" + std::string(e.what()) + "\" while formatting log message: " + FormatStringFromLogArgs(format, TINYFORMAT_PASSARGS(n));\
+        }                                                                                       \
+        return LogPrintStr(_log_msg_);                                                          \
     }                                                                                           \
     /**   Log error and return false */                                                         \
     template <TINYFORMAT_ARGTYPES(n)>                                                           \
     static inline bool error(const char* format, TINYFORMAT_VARARGS(n))                         \
     {                                                                                           \
-        LogPrintStr(std::string("ERROR: ") + tfm::format(format, TINYFORMAT_PASSARGS(n)) + "\n");            \
+        std::string _log_msg_; /* Unlikely name to avoid shadowing variables */                 \
+        try {                                                                                   \
+            _log_msg_ = tfm::format(format, TINYFORMAT_PASSARGS(n));                            \
+        } catch (std::runtime_error &e) {                                                       \
+            _log_msg_ = "Error \"" + std::string(e.what()) + "\" while formatting log message: " + FormatStringFromLogArgs(format, TINYFORMAT_PASSARGS(n));\
+        }                                                                                       \
+        LogPrintStr(std::string("ERROR: ") + _log_msg_ + "\n");                                 \
         return false;                                                                           \
     }
 
@@ -109,7 +123,7 @@ static inline bool error(const char* format)
 
 double double_safe_addition(double fValue, double fIncrement);
 double double_safe_multiplication(double fValue, double fmultiplicator);
-void PrintExceptionContinue(std::exception* pex, const char* pszThread);
+void PrintExceptionContinue(const std::exception* pex, const char* pszThread);
 void ParseParameters(int argc, const char* const argv[]);
 void FileCommit(FILE* fileout);
 bool TruncateFile(FILE* file, unsigned int length);
@@ -118,7 +132,8 @@ void AllocateFileRange(FILE* file, unsigned int offset, unsigned int length);
 bool RenameOver(boost::filesystem::path src, boost::filesystem::path dest);
 bool TryCreateDirectory(const boost::filesystem::path& p);
 boost::filesystem::path GetDefaultDataDir();
-const boost::filesystem::path& GetDataDir(bool fNetSpecific = true);
+const boost::filesystem::path &GetDataDir(bool fNetSpecific = true);
+void ClearDatadirCache();
 boost::filesystem::path GetConfigFile();
 boost::filesystem::path GetMasternodeConfigFile();
 #ifndef WIN32

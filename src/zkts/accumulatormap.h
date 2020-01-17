@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2018 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +8,7 @@
 
 #include "libzerocoin/Accumulator.h"
 #include "libzerocoin/Coin.h"
-#include "zkts/accumulatorcheckpoints.h"
+#include "accumulatorcheckpoints.h"
 
 //A map with an accumulator for each denomination
 class AccumulatorMap

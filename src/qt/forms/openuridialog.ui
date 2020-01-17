@@ -95,9 +95,9 @@
          <widget class="QValidatedLineEdit" name="uriEdit">
           <property name="styleSheet">
            <string notr="true">#uriEdit{
-            border-top-right-radius:0px;
-            border-bottom-right-radius:0px;
-            }</string>
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+}</string>
           </property>
          </widget>
         </item>
@@ -114,9 +114,9 @@
           </property>
           <property name="styleSheet">
            <string notr="true">#selectFileButton{
-            border-top-left-radius:0px;
-            border-bottom-left-radius:0px;
-            }</string>
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px;
+}</string>
           </property>
           <property name="text">
            <string notr="true">...</string>

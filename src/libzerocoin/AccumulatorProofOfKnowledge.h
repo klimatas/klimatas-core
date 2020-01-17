@@ -9,7 +9,8 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 
 #ifndef ACCUMULATEPROOF_H_
 #define ACCUMULATEPROOF_H_
@@ -25,7 +26,7 @@ namespace libzerocoin {
 class AccumulatorProofOfKnowledge {
 public:
     AccumulatorProofOfKnowledge(){};
-    AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p);
+	AccumulatorProofOfKnowledge(const AccumulatorAndProofParams* p);
 
 	/** Generates a proof that a commitment to a coin c was accumulated
 	 * @param p  Cryptographic parameters

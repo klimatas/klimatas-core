@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -77,7 +78,7 @@ QString BitcoinUnits::name(int unit, bool isZkts)
         case uKTS:
             return z + QString::fromUtf8("μtKTS");
         default:
-            return z + QString("???");
+            return QString("???");
         }
     }
 }
@@ -141,7 +142,7 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
-    if (!valid(unit)) {
+    if (!valid(unit)){
         return QString(); // Refuse to format invalid unit
     }
     qint64 n = (qint64)nIn;
@@ -212,7 +213,7 @@ QString BitcoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool p
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-QString BitcoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators, bool cleanRemainderZeros, bool ISZKTS)
+QString BitcoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators, bool cleanRemainderZeros, bool isZKTS)
 {
     QSettings settings;
     int digits = settings.value("digits").toInt();
@@ -229,12 +230,12 @@ QString BitcoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussi
         }
     }
 
-    return result + QString(" ") + name(unit, ISZKTS);
+    return result + QString(" ") + name(unit, isZKTS);
 }
 
-QString BitcoinUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators, bool cleanRemainderZeros, bool isKTS)
+QString BitcoinUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators, bool cleanRemainderZeros, bool isZKTS)
 {
-    QString str(floorWithUnit(unit, amount, plussign, separators, cleanRemainderZeros, isKTS));
+    QString str(floorWithUnit(unit, amount, plussign, separators, cleanRemainderZeros, isZKTS));
     str.replace(QChar(THIN_SP_CP), QString(COMMA_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
@@ -246,7 +247,7 @@ bool BitcoinUnits::parse(int unit, const QString& value, CAmount* val_out)
     int num_decimals = decimals(unit);
 
     // Ignore spaces and thin spaces when parsing
-    QStringList parts = removeSpaces(value).split(".");
+    QStringList parts = removeSpaces(value).replace(",", ".").split(".");
 
     if (parts.size() > 2) {
         return false; // More than one dot

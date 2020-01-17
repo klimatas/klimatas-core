@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,13 +9,13 @@
 #include "walletmodel.h"
 #include "transactiontablemodel.h"
 #include "transactionrecord.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "guiutil.h"
 #include "qt/kts/qtutils.h"
 #include <QList>
 #include <QDateTime>
 
-TxDetailDialog::TxDetailDialog(QWidget *parent, bool isConfirmDialog) :
+TxDetailDialog::TxDetailDialog(QWidget *parent, bool isConfirmDialog, QString warningStr) :
     QDialog(parent),
     ui(new Ui::TxDetailDialog)
 {
@@ -27,6 +28,7 @@ TxDetailDialog::TxDetailDialog(QWidget *parent, bool isConfirmDialog) :
     setCssProperty(ui->labelTitle, "text-title-dialog");
 
     // Labels
+    setCssProperty(ui->labelWarning, "text-title2-dialog");
     setCssTextBodyDialog({ui->labelAmount, ui->labelSend, ui->labelInputs, ui->labelFee, ui->labelChange, ui->labelId, ui->labelSize, ui->labelStatus, ui->labelConfirmations, ui->labelDate});
     setCssProperty({ui->labelDivider1, ui->labelDivider2, ui->labelDivider3, ui->labelDivider4, ui->labelDivider5, ui->labelDivider6, ui->labelDivider7, ui->labelDivider8, ui->labelDivider9}, "container-divider");
     setCssTextBodyDialog({ui->textAmount, ui->textSend, ui->textInputs, ui->textFee, ui->textChange, ui->textId, ui->textSize, ui->textStatus, ui->textConfirmations, ui->textDate});
@@ -35,6 +37,7 @@ TxDetailDialog::TxDetailDialog(QWidget *parent, bool isConfirmDialog) :
     setCssProperty({ui->pushInputs, ui->pushOutputs}, "ic-arrow-down");
     setCssProperty(ui->btnEsc, "ic-close");
 
+    ui->labelWarning->setVisible(false);
     ui->gridInputs->setVisible(false);
     ui->outputsScrollArea->setVisible(false);
     ui->contentChangeAddress->setVisible(false);
@@ -47,6 +50,12 @@ TxDetailDialog::TxDetailDialog(QWidget *parent, bool isConfirmDialog) :
         setCssProperty(ui->btnCancel, "btn-dialog-cancel");
         ui->btnSave->setText(tr("SEND"));
         setCssBtnPrimary(ui->btnSave);
+        if (!warningStr.isEmpty()) {
+            ui->labelWarning->setVisible(true);
+            ui->labelWarning->setText(warningStr);
+        } else {
+            ui->labelWarning->setVisible(false);
+        }
 
         // hide change address for now
         ui->contentConfirmations->setVisible(false);
@@ -72,7 +81,7 @@ TxDetailDialog::TxDetailDialog(QWidget *parent, bool isConfirmDialog) :
     connect(ui->pushOutputs, SIGNAL(clicked()), this, SLOT(onOutputsClicked()));
 }
 
-void TxDetailDialog::setData(WalletModel *model, QModelIndex &index){
+void TxDetailDialog::setData(WalletModel *model, const QModelIndex &index){
     this->model = model;
     TransactionRecord *rec = static_cast<TransactionRecord*>(index.internalPointer());
     QDateTime date = index.data(TransactionTableModel::DateRole).toDateTime();
@@ -92,9 +101,10 @@ void TxDetailDialog::setData(WalletModel *model, QModelIndex &index){
         } else {
             ui->textSend->setText(QString::number(tx->vout.size()) + " recipients");
         }
+
         ui->textInputs->setText(QString::number(tx->vin.size()));
-        ui->textConfirmations->setText(QString::number(tx->GetDepthInMainChain()));
-        ui->textDate->setText(GUIUtil::dateTimeStr(date));
+        ui->textConfirmations->setText(QString::number(rec->status.depth));
+        ui->textDate->setText(GUIUtil::dateTimeStrWithSeconds(date));
         ui->textStatus->setText(QString::fromStdString(rec->statusToString()));
         ui->textSize->setText(QString::number(rec->size) + " bytes");
 
@@ -173,7 +183,7 @@ void TxDetailDialog::onOutputsClicked() {
             layoutVertical->setSpacing(6);
             ui->container_outputs_base->setLayout(layoutVertical);
 
-            const CWalletTx* tx = model->getTx(this->txHash);
+            const CWalletTx* tx = (this->tx) ? this->tx->getTransaction() : model->getTx(this->txHash);
             if(tx) {
                 for (const CTxOut &out : tx->vout) {
                     QFrame *frame = new QFrame(ui->container_outputs_base);
@@ -186,8 +196,9 @@ void TxDetailDialog::onOutputsClicked() {
                     QLabel *label = nullptr;
                     QString labelRes;
                     CTxDestination dest;
-                    if (ExtractDestination(out.scriptPubKey, dest)) {
-                        std::string address = CBitcoinAddress(dest).ToString();
+                    bool isCsAddress = out.scriptPubKey.IsPayToColdStaking();
+                    if (ExtractDestination(out.scriptPubKey, dest, isCsAddress)) {
+                        std::string address = ((isCsAddress) ? CBitcoinAddress::newCSInstance(dest) : CBitcoinAddress::newInstance(dest)).ToString();
                         labelRes = QString::fromStdString(address);
                         labelRes = labelRes.left(16) + "..." + labelRes.right(16);
                     } else {

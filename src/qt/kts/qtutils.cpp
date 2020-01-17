@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,6 +13,13 @@
 #include <QStyle>
 #include <QListView>
 #include <QGraphicsDropShadowEffect>
+
+Qt::Modifier SHORT_KEY
+#ifdef Q_OS_MAC
+        = Qt::CTRL;
+#else
+        = Qt::ALT;
+#endif
 
 // Open dialog at the bottom
 bool openDialog(QDialog *widget, QWidget *gui){

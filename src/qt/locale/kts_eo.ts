@@ -1,5 +1,19 @@
 <TS language="eo" version="2.1">
 <context>
+    <name>AddNewAddressDialog</name>
+    <message>
+        <source>Address</source>
+        <translation>Adreso</translation>
+    </message>
+    </context>
+<context>
+    <name>AddNewContactDialog</name>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
@@ -99,6 +113,13 @@
     </message>
 </context>
 <context>
+    <name>AddressLabelRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>
@@ -109,10 +130,25 @@
         <translation>Adreso</translation>
     </message>
     <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
         <source>(no label)</source>
         <translation>(neniu etikedo)</translation>
     </message>
 </context>
+<context>
+    <name>AddressesWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
 <context>
     <name>AskPassphraseDialog</name>
     <message>
@@ -120,24 +156,8 @@
         <translation>Pasfrazon dialogo</translation>
     </message>
     <message>
-        <source>Enter passphrase</source>
-        <translation>Skribu pasfrazon</translation>
-    </message>
-    <message>
-        <source>New passphrase</source>
-        <translation>Novan pasfrazon</translation>
-    </message>
-    <message>
-        <source>Repeat new passphrase</source>
-        <translation>Ripeti novan pasfrazon</translation>
-    </message>
-    <message>
-        <source>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</source>
-        <translation>Servas por malŝalti la banalan sendmoney kiam la operaciumo konto estas kompromiti. Ĝi ne donas veran sekurecon.</translation>
-    </message>
-    <message>
-        <source>For anonymization, automint, and staking only</source>
-        <translation>Por anonimigo, automintii kaj stakado nur</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     <message>
         <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
@@ -240,632 +260,6 @@
     </message>
 </context>
 <context>
-    <name>Bip38ToolDialog</name>
-    <message>
-        <source>BIP 38 Tool</source>
-        <translation>BIP 38 Ilo</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Encrypt</source>
-        <translation>&amp;BIP 38 Ĉifri</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adreso:</translation>
-    </message>
-    <message>
-        <source>Enter a KTS Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Eniri unu KTS adreso ke vi volus ĉifri per BIP 38. Eniri unu pasfrazon meze skatolo. Klaku ĉifri por komputi la ĉifrita privata ŝlosilo.</translation>
-    </message>
-    <message>
-        <source>The KTS address to encrypt</source>
-        <translation>Adreson por ĉifri</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Elektu antaŭe uzatan adreson</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Almetu adreson el poŝo</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>Passphrase: </source>
-        <translation>Pasfrazon</translation>
-    </message>
-    <message>
-        <source>Encrypted Key:</source>
-        <translation>Ĉifrita ŝlosilo:</translation>
-    </message>
-    <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopiu la aktualan subskribo al la sistemo-poŝo</translation>
-    </message>
-    <message>
-        <source>Encrypt the private key for this KTS address</source>
-        <translation>Ĉifri la privata ŝlosilo por ĉi tiu KTS adreso</translation>
-    </message>
-    <message>
-        <source>Reset all fields</source>
-        <translation>Restarigu ĉiujn kampojn</translation>
-    </message>
-    <message>
-        <source>The encrypted private key</source>
-        <translation>La ĉifrita privata ŝlosilo</translation>
-    </message>
-    <message>
-        <source>Decrypt the entered key using the passphrase</source>
-        <translation>Malĉifri la enirita ŝlosilo per la pasfrazo</translation>
-    </message>
-    <message>
-        <source>Encrypt &amp;Key</source>
-        <translation>Ĉifri&amp;ŝlosilo</translation>
-    </message>
-    <message>
-        <source>Clear &amp;All</source>
-        <translation>Malplenigi &amp;Ĉiu</translation>
-    </message>
-    <message>
-        <source>&amp;BIP 38 Decrypt</source>
-        <translation>&amp;BIP 38 Malĉifri</translation>
-    </message>
-    <message>
-        <source>Enter the BIP 38 encrypted private key. Enter the passphrase in the middle box. Click Decrypt Key to compute the private key. After the key is decrypted, clicking 'Import Address' will add this private key to the wallet.</source>
-        <translation>Eniru la BIP 38 ĉifrita privata ŝlosilo. Eniru la pasfrazon meze skatolon. Klaku malĉifri ŝlosilo por komputi la privata ŝlosilo. Post la ŝlosilo estas ĉifrita, klaki "Importi adreson" adicios tiun privatan ŝlosilon al monujo.</translation>
-    </message>
-    <message>
-        <source>Decrypt &amp;Key</source>
-        <translation>Malĉifri&amp;ŝlosilo</translation>
-    </message>
-    <message>
-        <source>Decrypted Key:</source>
-        <translation>Malĉifrita ŝlosilo:</translation>
-    </message>
-    <message>
-        <source>Import Address</source>
-        <translation>Importu adreson</translation>
-    </message>
-    <message>
-        <source>Click "Decrypt Key" to compute key</source>
-        <translation>Klaku "Malĉifri ŝlosilo" por komputi la ŝlosilon</translation>
-    </message>
-    <message>
-        <source>The entered passphrase is invalid. </source>
-        <translation>La skribita pasfrazo estas nevalida.</translation>
-    </message>
-    <message>
-        <source>Allowed: 0-9,a-z,A-Z,</source>
-        <translation>Permesita: 0-9,a-z,A-Z,</translation>
-    </message>
-    <message>
-        <source>The entered address is invalid.</source>
-        <translation>La skribita adreso estas nevalida.</translation>
-    </message>
-    <message>
-        <source>Please check the address and try again.</source>
-        <translation>Bonvolu kontroli la adreson kaj riprovi.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation>La enirita adreso ne rilatas al ŝlosilo.</translation>
-    </message>
-    <message>
-        <source>Wallet unlock was cancelled.</source>
-        <translation>Monujo malĉifri estis nuligita.</translation>
-    </message>
-    <message>
-        <source>Private key for the entered address is not available.</source>
-        <translation>Privatan ŝlosilon por la enirita adreson estas ne disponebla</translation>
-    </message>
-    <message>
-        <source>Failed to decrypt.</source>
-        <translation>Malsukcesis maĉifri</translation>
-    </message>
-    <message>
-        <source>Please check the key and passphrase and try again.</source>
-        <translation>Bonvolu kontroli la ŝlosilo kaj la pasfrazo kaj riprovi.</translation>
-    </message>
-    <message>
-        <source>Data Not Valid.</source>
-        <translation>Nevalidaj datumoj</translation>
-    </message>
-    <message>
-        <source>Please try again.</source>
-        <translation>Bonvolu reprovi.</translation>
-    </message>
-    <message>
-        <source>Please wait while key is imported</source>
-        <translation>Bonvolu atendi dum la ŝlosilo estas importita</translation>
-    </message>
-    <message>
-        <source>Key Already Held By Wallet</source>
-        <translation>Ŝlosilo jam tenata per monujo</translation>
-    </message>
-    <message>
-        <source>Error Adding Key To Wallet</source>
-        <translation>Eraro aldonante ŝlosilon al monujo</translation>
-    </message>
-    <message>
-        <source>Successfully Added Private Key To Wallet</source>
-        <translation>Sukcsese aldonita privata ŝlosilo al monujo</translation>
-    </message>
-</context>
-<context>
-    <name>BitcoinGUI</name>
-    <message>
-        <source>Wallet</source>
-        <translation>Monujo</translation>
-    </message>
-    <message>
-        <source>Node</source>
-        <translation>Nodo</translation>
-    </message>
-    <message>
-        <source>&amp;Overview</source>
-        <translation>&amp;Superrigardo</translation>
-    </message>
-    <message>
-        <source>Show general overview of wallet</source>
-        <translation>Montri ĝeneralan superrigardon de la monujo</translation>
-    </message>
-    <message>
-        <source>&amp;Send</source>
-        <translation>&amp;Sendu</translation>
-    </message>
-    <message>
-        <source>&amp;Receive</source>
-        <translation>&amp;Ricevi</translation>
-    </message>
-    <message>
-        <source>&amp;Transactions</source>
-        <translation>&amp;Transakcioj</translation>
-    </message>
-    <message>
-        <source>Browse transaction history</source>
-        <translation>&amp;Foliumi transakcio historio</translation>
-    </message>
-    <message>
-        <source>Privacy Actions for zKTS</source>
-        <translation>Privataj agoj por zKTS</translation>
-    </message>
-    <message>
-        <source>E&amp;xit</source>
-        <translation>&amp;Eliri</translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation>Eliri</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation>Pri&amp;Qt</translation>
-    </message>
-    <message>
-        <source>Show information about Qt</source>
-        <translation>Montri informon pri Qt</translation>
-    </message>
-    <message>
-        <source>&amp;Options...</source>
-        <translation>&amp;Ebloj</translation>
-    </message>
-    <message>
-        <source>&amp;Show / Hide</source>
-        <translation>&amp;Montri/Kaŝi</translation>
-    </message>
-    <message>
-        <source>Show or hide the main Window</source>
-        <translation>Montri aŭ kaŝi la ĉefan fenestron</translation>
-    </message>
-    <message>
-        <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;Ĉifri monujon...</translation>
-    </message>
-    <message>
-        <source>Encrypt the private keys that belong to your wallet</source>
-        <translation>Ĉifri la privatajn ŝlosilojn kiu apartenas al la via monujo</translation>
-    </message>
-    <message>
-        <source>&amp;Backup Wallet...</source>
-        <translation>&amp;Restaŭrkopio monujon...</translation>
-    </message>
-    <message>
-        <source>Backup wallet to another location</source>
-        <translation>Restaŭrkopiu monujon al alia loko</translation>
-    </message>
-    <message>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Ŝanĝi pasfrazon</translation>
-    </message>
-    <message>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Ŝanĝi la uzata pasfrazon per la monujon ĉifrado</translation>
-    </message>
-    <message>
-        <source>&amp;Unlock Wallet...</source>
-        <translation>&amp;Malŝlosi monujon</translation>
-    </message>
-    <message>
-        <source>Unlock wallet</source>
-        <translation>Malŝlosi monujon</translation>
-    </message>
-    <message>
-        <source>&amp;Lock Wallet</source>
-        <translation>&amp;Ŝlosi monujon</translation>
-    </message>
-    <message>
-        <source>Sign &amp;message...</source>
-        <translation>Sibskribu &amp;mesaĝon...</translation>
-    </message>
-    <message>
-        <source>&amp;Verify message...</source>
-        <translation>&amp;Kontrolu messaĝon...</translation>
-    </message>
-    <message>
-        <source>&amp;Information</source>
-        <translation>&amp;Informoj</translation>
-    </message>
-    <message>
-        <source>Show diagnostic information</source>
-        <translation>Montri diagnozo informon</translation>
-    </message>
-    <message>
-        <source>&amp;Debug console</source>
-        <translation>&amp;Debug konzolo</translation>
-    </message>
-    <message>
-        <source>Open debugging console</source>
-        <translation>Malfermi debug konzolon</translation>
-    </message>
-    <message>
-        <source>&amp;Network Monitor</source>
-        <translation>&amp;Reto monitoro</translation>
-    </message>
-    <message>
-        <source>Show network monitor</source>
-        <translation>Montri reton monitoron</translation>
-    </message>
-    <message>
-        <source>&amp;Peers list</source>
-        <translation>&amp;Samuloj listo</translation>
-    </message>
-    <message>
-        <source>Show peers info</source>
-        <translation>Montri samuloj info</translation>
-    </message>
-    <message>
-        <source>Wallet &amp;Repair</source>
-        <translation>Monujo &amp;Riparo</translation>
-    </message>
-    <message>
-        <source>Show wallet repair options</source>
-        <translation>Montri monujon ripari opcio</translation>
-    </message>
-    <message>
-        <source>Open configuration file</source>
-        <translation>Malfermi agordi dosiero</translation>
-    </message>
-    <message>
-        <source>Show Automatic &amp;Backups</source>
-        <translation>Montri aŭtomate &amp;restaŭrkopioj</translation>
-    </message>
-    <message>
-        <source>Show automatically created wallet backups</source>
-        <translation>Montri aŭtomate kreita monujo restaŭrkopio</translation>
-    </message>
-    <message>
-        <source>&amp;Sending addresses...</source>
-        <translation>&amp;Sendante adresojn</translation>
-    </message>
-    <message>
-        <source>Show the list of used sending addresses and labels</source>
-        <translation>Montri la uzinta sendanta adreso  kaj etikedo listo </translation>
-    </message>
-    <message>
-        <source>&amp;Receiving addresses...</source>
-        <translation>&amp;Ricevanta adreso</translation>
-    </message>
-    <message>
-        <source>Show the list of used receiving addresses and labels</source>
-        <translation>Montri la uzinta ricevanta adresoj kaj etikedoj listo</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature creation...</source>
-        <translation>&amp;Multisubskribo kreitajo</translation>
-    </message>
-    <message>
-        <source>Create a new multisignature address and add it to this wallet</source>
-        <translation>Krei novan multisubskribon adreson kaj aldoni ĝin al ĉi tiu monujo</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature spending...</source>
-        <translation>&amp;Multisubskribo elspezado...</translation>
-    </message>
-    <message>
-        <source>Spend from a multisignature address</source>
-        <translation>Elspezi el multisubskribo adreso</translation>
-    </message>
-    <message>
-        <source>&amp;Multisignature signing...</source>
-        <translation>&amp;Multisubskribo subskribii...</translation>
-    </message>
-    <message>
-        <source>Sign with a multisignature address</source>
-        <translation>Signu per multisubskribo adreso</translation>
-    </message>
-    <message>
-        <source>Open &amp;URI...</source>
-        <translation>Malfermi &amp;URI</translation>
-    </message>
-    <message>
-        <source>&amp;Command-line options</source>
-        <translation>&amp;Komando-linio opcioj</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n bloko de tansakcio historo procesita</numerusform><numerusform>%n blokoj de tansakcio historo procesita</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing additional data: %p%</source>
-        <translation>Ĝisdatiĝante pliaj datumo: %p%</translation>
-    </message>
-    <message>
-        <source>%1 behind. Scanning block %2</source>
-        <translation>%1 malantaŭe. Skanado %2</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
-        <translation>Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj nuntempe &lt;b&gt;malfermita&lt;/b&gt; por anonimigi kaj staki nun</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation>&amp;Dosiero</translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation>&amp;Agordoj</translation>
-    </message>
-    <message>
-        <source>&amp;Tools</source>
-        <translation>&amp;Iloj</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation>&amp;Helpo</translation>
-    </message>
-    <message>
-        <source>Tabs toolbar</source>
-        <translation>Iloj langeto</translation>
-    </message>
-    <message>
-        <source>KTS Core</source>
-        <translation>KTS kerno</translation>
-    </message>
-    <message>
-        <source>Send coins to a KTS address</source>
-        <translation>Sendu mono al KTS addreso</translation>
-    </message>
-    <message>
-        <source>Request payments (generates QR codes and kts: URIs)</source>
-        <translation>Peto pagojn (generas QR kodojn kaj kts: URIs)</translation>
-    </message>
-    <message>
-        <source>&amp;Privacy</source>
-        <translation>&amp;Privateco</translation>
-    </message>
-    <message>
-        <source>&amp;Masternodes</source>
-        <translation>&amp;Mastronodoj</translation>
-    </message>
-    <message>
-        <source>Browse masternodes</source>
-        <translation>Foliumi mastro-nodo</translation>
-    </message>
-    <message>
-        <source>&amp;About KTS Core</source>
-        <translation>&amp;Pri KTS Kerno</translation>
-    </message>
-    <message>
-        <source>Show information about KTS Core</source>
-        <translation>Montri informon pri KTS Kerno</translation>
-    </message>
-    <message>
-        <source>Modify configuration options for KTS</source>
-        <translation>Modifi agordajn opciojn por KTS</translation>
-    </message>
-    <message>
-        <source>Sign messages with your KTS addresses to prove you own them</source>
-        <translation>Subskribu mesaĝo per via KTS adreso por pruvi vi posedas ĝin</translation>
-    </message>
-    <message>
-        <source>Verify messages to ensure they were signed with specified KTS addresses</source>
-        <translation>Kontrolu mesaĝojn por certigi ke ili estas subskribita kun specifita KTS adreso</translation>
-    </message>
-    <message>
-        <source>&amp;BIP38 tool</source>
-        <translation>&amp;BIP38 ilo</translation>
-    </message>
-    <message>
-        <source>Encrypt and decrypt private keys using a passphrase</source>
-        <translation>Ĉifri kaj malĉifri privataj ŝlosiloj per pasfrazo</translation>
-    </message>
-    <message>
-        <source>&amp;MultiSend</source>
-        <translation>&amp;Multisendi</translation>
-    </message>
-    <message>
-        <source>MultiSend Settings</source>
-        <translation>Multisendi agordoj</translation>
-    </message>
-    <message>
-        <source>Open Wallet &amp;Configuration File</source>
-        <translation>Malfermi monujon &amp;Agordo-dosieron</translation>
-    </message>
-    <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Malfermi &amp;Mastro-nodo Algord-dosieron</translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Malfermi mastro-nodo agord-dosieron</translation>
-    </message>
-    <message>
-        <source>Open a KTS: URI or payment request</source>
-        <translation>Malfermi unu KTS: URI aŭ pago peto</translation>
-    </message>
-    <message>
-        <source>&amp;Blockchain explorer</source>
-        <translation>&amp;Bloko esplorilo</translation>
-    </message>
-    <message>
-        <source>Block explorer window</source>
-        <translation>Bloko esplorilo fenestro</translation>
-    </message>
-    <message>
-        <source>Show the KTS Core help message to get a list with possible KTS command-line options</source>
-        <translation>Montri la KTS Kore help-mesaĝo por havi liston de havebla KTS komandlinion opciojn</translation>
-    </message>
-    <message>
-        <source>KTS Core client</source>
-        <translation>KTS Kerno kliento</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to KTS network</source>
-        <translation><numerusform>%n aktiva ligo(j) al la KTS reto</numerusform><numerusform>%n aktiva ligo(j) al la KTS reto</numerusform></translation>
-    </message>
-    <message>
-        <source>Synchronizing with network...</source>
-        <translation>Ĝisdatiĝante kun reto...</translation>
-    </message>
-    <message>
-        <source>Importing blocks from disk...</source>
-        <translation>Importante blokojn el disco...</translation>
-    </message>
-    <message>
-        <source>Reindexing blocks on disk...</source>
-        <translation>Reindeksante blokojn en disko...</translation>
-    </message>
-    <message>
-        <source>No block source available...</source>
-        <translation>Neniu bloko fonto disponebla...</translation>
-    </message>
-    <message>
-        <source>Up to date</source>
-        <translation>Ĝisdata</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n horo</numerusform><numerusform>%n horoj</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n tago</numerusform><numerusform>%n tagoj</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n semajno</numerusform><numerusform>%n semajnoj</numerusform></translation>
-    </message>
-    <message>
-        <source>%1 and %2</source>
-        <translation>%1 kaj %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n jaro</numerusform><numerusform>%n jaroj</numerusform></translation>
-    </message>
-    <message>
-        <source>Catching up...</source>
-        <translation>Kaptante...</translation>
-    </message>
-    <message>
-        <source>Last received block was generated %1 ago.</source>
-        <translation>Lasta ricevita bloko estis generita %1 antaŭe.</translation>
-    </message>
-    <message>
-        <source>Transactions after this will not yet be visible.</source>
-        <translation>Transakcio post tio estos ankoraŭ nevidebla.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Eraro</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>Averto</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>Informoj</translation>
-    </message>
-    <message>
-        <source>Sent transaction</source>
-        <translation>Sendita transakcio</translation>
-    </message>
-    <message>
-        <source>Incoming transaction</source>
-        <translation>Venonta transakcio</translation>
-    </message>
-    <message>
-        <source>Sent MultiSend transaction</source>
-        <translation>Sendita multisend transakcio</translation>
-    </message>
-    <message>
-        <source>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</source>
-        <translation>Dato: %1
-Kvanto: %2
-Tipo: %3
-Adreso: %4
-</translation>
-    </message>
-    <message>
-        <source>Staking is active
- MultiSend: %1</source>
-        <translation>Staki estas aktiva
-Multisendi: %1</translation>
-    </message>
-    <message>
-        <source>Active</source>
-        <translation>Aktiva</translation>
-    </message>
-    <message>
-        <source>Not Active</source>
-        <translation>Ne aktiva</translation>
-    </message>
-    <message>
-        <source>Staking is not active
- MultiSend: %1</source>
-        <translation>Staki ne estas aktiva
-Muktisendi: %1</translation>
-    </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Autominti estas nuntempe ebligita kaj agordita a</translation>
-    </message>
-    <message>
-        <source>AutoMint is disabled</source>
-        <translation>Autominti estas neebligita</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation>Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj nuntempe &lt;b&gt;malŝlosita&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation>Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj nuntempe &lt;b&gt;ŝlosita&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
     <name>BlockExplorer</name>
     <message>
         <source>Blockchain Explorer</source>
@@ -897,6 +291,13 @@ Muktisendi: %1</translation>
     </message>
 </context>
 <context>
+    <name>CSRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
     <name>ClientModel</name>
     <message>
         <source>Total: %1 (IPv4: %2 / IPv6: %3 / Tor: %4 / Unknown: %5)</source>
@@ -918,14 +319,6 @@ Muktisendi: %1</translation>
         <translation>Bajtoj</translation>
     </message>
     <message>
-        <source>Amount:</source>
-        <translation>Kvanto:</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioritato:</translation>
-    </message>
-    <message>
         <source>Fee:</source>
         <translation>Krompago</translation>
     </message>
@@ -934,20 +327,8 @@ Muktisendi: %1</translation>
         <translation>Mono selektado</translation>
     </message>
     <message>
-        <source>After Fee:</source>
-        <translation>Post krompago</translation>
-    </message>
-    <message>
         <source>Change:</source>
         <translation>Ŝanĝu:</translation>
-    </message>
-    <message>
-        <source>(un)select all</source>
-        <translation>(mal)elekti ĉion</translation>
-    </message>
-    <message>
-        <source>toggle lock state</source>
-        <translation>Baskuligu seruron ŝtato</translation>
     </message>
     <message>
         <source>Tree mode</source>
@@ -966,16 +347,16 @@ Muktisendi: %1</translation>
         <translation>Sumo:</translation>
     </message>
     <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    <message>
         <source>Received with label</source>
         <translation>Ricevita kun etikedo</translation>
     </message>
     <message>
         <source>Received with address</source>
         <translation>Ricevita kun adreso</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tajpu</translation>
     </message>
     <message>
         <source>Date</source>
@@ -988,10 +369,6 @@ Muktisendi: %1</translation>
     <message>
         <source>Confirmed</source>
         <translation>Konfirmita</translation>
-    </message>
-    <message>
-        <source>Priority</source>
-        <translation>Prioritato</translation>
     </message>
     <message>
         <source>Copy address</source>
@@ -1139,6 +516,112 @@ Muktisendi: %1</translation>
     </message>
 </context>
 <context>
+    <name>CoinControlKtsWidget</name>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Kvanto</translation>
+    </message>
+    <message>
+        <source>Fee:</source>
+        <translation>Krompago</translation>
+    </message>
+    <message>
+        <source>Amount</source>
+        <translation>Sumo:</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etikedo</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreso</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tajpu</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>Confirmations</source>
+        <translation>Konfirmoj</translation>
+    </message>
+    <message>
+        <source>Bytes:</source>
+        <translation>Bajtoj</translation>
+    </message>
+    <message>
+        <source>Change:</source>
+        <translation>Ŝanĝu:</translation>
+    </message>
+    </context>
+<context>
+    <name>ColdStakingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
+    <name>ContactDropdownRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
+    <name>DashboardWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Averto</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>zKTS</source>
+        <translation>zKTS</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Ricevita</translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation>Sendita</translation>
+    </message>
+    </context>
+<context>
+    <name>DefaultDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
+    <name>DenomGenerationDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
@@ -1194,6 +677,13 @@ Muktisendi: %1</translation>
     </message>
 </context>
 <context>
+    <name>ExpandableButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+</context>
+<context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
@@ -1216,6 +706,17 @@ Muktisendi: %1</translation>
         <translation>Ne povas krei datumoj dosierujo ĉi tie.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1290,10 +791,6 @@ Muktisendi: %1</translation>
         <translation>Uzi defaŭltan dosierujon</translation>
     </message>
     <message>
-        <source>Use a custom data directory:</source>
-        <translation>Uzi kutimon datumojn dosierujo:</translation>
-    </message>
-    <message>
         <source>KTS Core</source>
         <translation>KTS kerno</translation>
     </message>
@@ -1315,329 +812,79 @@ Muktisendi: %1</translation>
     </message>
 </context>
 <context>
-    <name>MasternodeList</name>
+    <name>LoadingDialog</name>
     <message>
         <source>Form</source>
         <translation>Formo</translation>
     </message>
     <message>
-        <source>MASTERNODES</source>
-        <translation>MASTRONODOJ</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
+    </context>
+<context>
+    <name>LockUnlock</name>
     <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your node should be running but you still see "MISSING" in "Status" field.</source>
-        <translation>Notu: mastro-nodo stato en lokalo monujo povas eble esti iomete malkorekta.&lt;br /&gt;Ĉiam atendi la monujo sinkronigo pliaj datumoj kaj poste kontrolu denove el alia nodo&lt;br /&gt;Se vian nodo devus esti sed vi ankoraŭ vidas "MANKAS" en "Stato" kampo.</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
+    </context>
+<context>
+    <name>MNRow</name>
     <message>
-        <source>Alias</source>
-        <translation>Alias</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
+    <name>MasterNodeWizardDialog</name>
+    <message>
+        <source>Name</source>
+        <translation>Nomo</translation>
     </message>
     <message>
         <source>Address</source>
         <translation>Adreso</translation>
     </message>
-    <message>
-        <source>Protocol</source>
-        <translation>Protokolo</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation>Statuso</translation>
-    </message>
-    <message>
-        <source>Active</source>
-        <translation>Aktiva</translation>
-    </message>
-    <message>
-        <source>Last Seen (UTC)</source>
-        <translation>Lasta vidita (UTC)</translation>
-    </message>
-    <message>
-        <source>Pubkey</source>
-        <translation>Pubŝlosilo</translation>
-    </message>
-    <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Ĝisdatigo statuso</translation>
-    </message>
-    <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Ŝtatuso estos ĝisdatĝita automate en (sek):</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Confirm masternode start</source>
-        <translation>Konfirmu mastronodo komenco</translation>
-    </message>
-    <message>
-        <source>Command is not available right now</source>
-        <translation>Komando ne disponebla nun</translation>
-    </message>
-    <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Ne povas uzi tion komandon ĝis mastronodo listo estas sinkronigita</translation>
-    </message>
     </context>
 <context>
-    <name>MultiSendDialog</name>
+    <name>MasterNodesWidget</name>
     <message>
-        <source>MultiSend</source>
-        <translation>Multisendi</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
-        <source>Enter Address to Send to</source>
-        <translation>Tajpu adreson por sendi al</translation>
-    </message>
-    <message>
-        <source>Add to MultiSend Vector</source>
-        <translation>Aldoni al multisendo vektoro</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation>Aldonu</translation>
-    </message>
-    <message>
-        <source>Deactivate</source>
-        <translation>Malaktivigi</translation>
-    </message>
-    <message>
-        <source>Choose an address from the address book</source>
-        <translation>Elektu adreson el adresaron</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Adreso:</translation>
-    </message>
-    <message>
-        <source>Label:</source>
-        <translation>Etikedo:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Eniru etikedo por ĉi tiun adreso por aldoni ĝin en vian adreson livro</translation>
-    </message>
-    <message>
-        <source>Delete Address From MultiSend Vector</source>
-        <translation>Forigi adreson el multisendo vektoro</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     <message>
         <source>Delete</source>
         <translation>Forigi</translation>
     </message>
-    <message>
-        <source>Activate MultiSend</source>
-        <translation>Aktivigi multisendon</translation>
-    </message>
-    <message>
-        <source>Activate</source>
-        <translation>Aktivi</translation>
-    </message>
-    <message>
-        <source>View MultiSend Vector</source>
-        <translation>Vidi multisendon vektoron</translation>
-    </message>
-    <message>
-        <source>View MultiSend</source>
-        <translation>Vidi multisendo</translation>
-    </message>
-    <message>
-        <source>Send For Stakes</source>
-        <translation>Sendi por stakoj</translation>
-    </message>
-    <message>
-        <source>Send For Masternode Rewards</source>
-        <translation>Sendi por mastronodo rekompenco</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(neniu etikedo)</translation>
-    </message>
-    <message>
-        <source>The entered address:
-</source>
-        <translation>La enirita adreson:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>estas nevalida
-Bonvolu kontroku la adreson kaj riprovu</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Totala sumo de via multisendo vektoro estas super 100% de via stako rekompenco
-</translation>
-    </message>
-    <message>
-        <source>Please Enter 1 - 100 for percent.</source>
-        <translation>Bonvolu eniru 1 - 100 por porcento.</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Multisendo vektoro
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Forigita</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Ne eblis loki adreson
-</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>MultisigDialog</name>
+    <name>MnInfoDialog</name>
     <message>
-        <source>Create MultiSignature &amp;Address</source>
-        <translation>Kreu Multisubskriboj &amp;Adreson</translation>
-    </message>
-    <message>
-        <source>How many people must sign to verify a transaction</source>
-        <translation>Kiom da homoj devas subsktibi por konfirmi transakcio </translation>
-    </message>
-    <message>
-        <source>Enter the minimum number of signatures required to sign transactions</source>
-        <translation>Eniri minimuman subskribojn nombron por subskribi transakcion.</translation>
-    </message>
-    <message>
-        <source>Address Label:</source>
-        <translation>Adreso etikedo:</translation>
-    </message>
-    <message>
-        <source>Add another address that could sign to verify a transaction from the multisig address.</source>
-        <translation>Aldoni alian adreson kio povus subskribi por konfirmi transakcio el multisigno adreso.</translation>
-    </message>
-    <message>
-        <source>&amp;Add Address / Key</source>
-        <translation>&amp;Aldoni adreson /Ŝlosilon</translation>
-    </message>
-    <message>
-        <source>Local addresses or public keys that can sign:</source>
-        <translation>Lokala adresoj aŭ privataj ŝlosiloj ke povas subskribi:</translation>
-    </message>
-    <message>
-        <source>C&amp;reate</source>
-        <translation>&amp;Krei</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
         <source>Status:</source>
         <translation>Ŝtato:</translation>
     </message>
-    <message>
-        <source>Coin Control</source>
-        <translation>Mono kontrolo</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Elektita kvanto:</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Kvanto</translation>
-    </message>
-    <message>
-        <source>Add an input to fund the outputs</source>
-        <translation>Aldoni eniron por fundi elirojn</translation>
-    </message>
-    <message>
-        <source>Address / Amount:</source>
-        <translation>Adreso / Kvanto:</translation>
-    </message>
-    <message>
-        <source>Add destinations to send KTS to</source>
-        <translation>Aldonu destinoj por sendi KTS al</translation>
-    </message>
-    <message>
-        <source>Add &amp;Destination</source>
-        <translation>Aldoni &amp;Destino</translation>
-    </message>
-    <message>
-        <source>Create a transaction object using the given inputs to the given outputs</source>
-        <translation>Krei trasakcion objekcton uzante donataj eniroj al la donata eliroj</translation>
-    </message>
-    <message>
-        <source>Cr&amp;eate</source>
-        <translation>&amp;Krei</translation>
-    </message>
-    <message>
-        <source>Sign the transaction from this wallet or from provided private keys</source>
-        <translation>Subskibu la transakcion de ĉi tiu monujo aŭ provizu privataj ŝlosiloj</translation>
-    </message>
-    <message>
-        <source>S&amp;ign</source>
-        <translation>&amp;Subskribi</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DISABLED until transaction has been signed enough times.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;MALŜALTITA ĝis transakcio estas subskribita sufican fojon.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Add private keys to sign the transaction with</source>
-        <translation>Aldoni privatajn ŝlosilojn por kunsubskribi transakcion</translation>
-    </message>
-    <message>
-        <source>Add Private &amp;Key</source>
-        <translation>Aldoni privata &amp;ŝlosilo</translation>
-    </message>
-    <message>
-        <source>Sign with only private keys (Not Recommened)</source>
-        <translation>Subskribu nun kun privataj ŝlosiloj (Ne rekomendita)</translation>
-    </message>
-    <message>
-        <source>Maximum possible addresses reached. (15)</source>
-        <translation>Maximuman eblajn adreson antigita. (15)</translation>
-    </message>
-    <message>
-        <source>Maximum (15)</source>
-        <translation>Maximuma (15)</translation>
-    </message>
-</context>
+    </context>
 <context>
-    <name>ObfuscationConfig</name>
+    <name>MyAddressRow</name>
     <message>
-        <source>Basic Privacy</source>
-        <translation>Baza privateco</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
+    </context>
+<context>
+    <name>NavMenuWidget</name>
     <message>
-        <source>High Privacy</source>
-        <translation>Alta privateco</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Maximuma privateco</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Bonvolu elekti privata nivelo.</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 KTS to anonymize 10000 KTS</source>
-        <translation>Tion opcion estas la plej rapida kaji kostos ~0.025 KTS por anonimigi 10000 KTS</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 KTS to anonymize 10000 KTS</source>
-        <translation>Tion opcion estas moderebla rapide kaj kostos ĉirkaŭ 0.05 KTS por anonimigi 10000 KTS</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Ĉi tio estas plej malrapida kaj plej sekura opcio. Uzante maximuma anonimeco kostos</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     </context>
 <context>
@@ -1651,8 +898,8 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
         <translation>Malfermi pago peto el URI aŭ dosiero</translation>
     </message>
     <message>
-        <source>URI:</source>
-        <translation>URI:</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     <message>
         <source>Select payment request file</source>
@@ -1661,6 +908,17 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
     <message>
         <source>Select payment request file to open</source>
         <translation>Elektu pago peto dosieron por malfermi</translation>
+    </message>
+    </context>
+<context>
+    <name>OptionButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
 </context>
 <context>
@@ -1711,9 +969,9 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</source>
+https://www.transifex.com/kts-project/kts-project-translations</source>
         <translation>Ĉu mankas lingvon aŭ nekompleta tradukado? Helpu la  tradukcio ĉi tie:
-https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</translation>
+https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Connect to the KTS network through a SOCKS5 proxy.</source>
@@ -1738,10 +996,6 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     <message>
         <source>User Interface Theme:</source>
         <translation>Usanto interfaco temo:</translation>
-    </message>
-    <message>
-        <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;Uneco per montri kvantojn:</translation>
     </message>
     <message>
         <source>Hide empty balances</source>
@@ -1773,73 +1027,78 @@ https://www.transifex.com/CryptoDev-Project/CryptoDev-Project-translations</tran
     </message>
 </context>
 <context>
-    <name>OverviewPage</name>
+    <name>KTSGUI</name>
     <message>
-        <source>Form</source>
-        <translation>Formo</translation>
+        <source>KTS Core</source>
+        <translation>KTS kerno</translation>
     </message>
     <message>
-        <source>Available:</source>
-        <translation>Disponebla:</translation>
+        <source>Wallet</source>
+        <translation>Monujo</translation>
     </message>
     <message>
-        <source>Your current spendable balance</source>
-        <translation>Via aktuala elspezebla saldo</translation>
+        <source>Node</source>
+        <translation>Nodo</translation>
     </message>
     <message>
-        <source>KTS Balance</source>
-        <translation>KTS kvanto</translation>
+        <source>&amp;Show / Hide</source>
+        <translation>&amp;Montri/Kaŝi</translation>
     </message>
     <message>
-        <source>Immature:</source>
-        <translation>Nematura:</translation>
+        <source>Show or hide the main Window</source>
+        <translation>Montri aŭ kaŝi la ĉefan fenestron</translation>
     </message>
     <message>
-        <source>Your current KTS balance, unconfirmed and immature transactions included</source>
-        <translation>Via aktuala KTS totalo, nekonformita kaj nematurita transakcioj inkluzivita</translation>
+        <source>E&amp;xit</source>
+        <translation>&amp;Eliri</translation>
     </message>
     <message>
-        <source>zKTS Balance</source>
-        <translation>zKTS kvanto</translation>
+        <source>Quit application</source>
+        <translation>Eliri</translation>
     </message>
     <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Malkonfirmita: malpli ol 20 konfirmacioj
-Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mintita</translation>
+        <source>KTS Core client</source>
+        <translation>KTS Kerno kliento</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la KTS reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
+        <source>Error</source>
+        <translation>Eraro</translation>
     </message>
     <message>
-        <source>OVERVIEW</source>
-        <translation>SUPERRIGARDO</translation>
+        <source>Warning</source>
+        <translation>Averto</translation>
     </message>
     <message>
-        <source>Total:</source>
-        <translation>Sumo:</translation>
+        <source>Information</source>
+        <translation>Informoj</translation>
     </message>
     <message>
-        <source>Watch-only:</source>
-        <translation>Rigardu-nur</translation>
+        <source>Sent MultiSend transaction</source>
+        <translation>Sendita multisend transakcio</translation>
     </message>
     <message>
-        <source>Spendable:</source>
-        <translation>Elspezebla:</translation>
+        <source>Sent transaction</source>
+        <translation>Sendita transakcio</translation>
     </message>
     <message>
-        <source>Locked:</source>
-        <translation>Malfermita:</translation>
+        <source>Incoming transaction</source>
+        <translation>Venonta transakcio</translation>
     </message>
     <message>
-        <source>Unconfirmed:</source>
-        <translation>Nekonfirmita:</translation>
+        <source>Date: %1
+Amount: %2
+Type: %3
+Address: %4
+</source>
+        <translation>Dato: %1
+Kvanto: %2
+Tipo: %3
+Adreso: %4
+</translation>
     </message>
-    <message>
-        <source>AutoMint is currently enabled and set to </source>
-        <translation>Autominti estas nuntempe ebligita kaj agordita a</translation>
-    </message>
+    </context>
+<context>
+    <name>PWidget</name>
     </context>
 <context>
     <name>PaymentServer</name>
@@ -1860,165 +1119,18 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <name>PeerTableModel</name>
     </context>
 <context>
-    <name>PrivacyDialog</name>
+    <name>PrivacyWidget</name>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KTS network after a connection is established, but this process has not completed yet.</source>
-        <translation>Montrata informon povas esti malmoderna. Via monujo automate sinkronigis kun la KTS reto post konekcio establas, sed ĉi tio procezo ankoraŭ ne kompletigis.</translation>
-    </message>
-    <message>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
-    </message>
-    <message>
-        <source>0.000 000 00 KTS</source>
-        <translation>0.000 000 00 KTS</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Restarigi</translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation>Kvanto</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Kvanto</translation>
-    </message>
-    <message>
-        <source>zKTS Control</source>
-        <translation>zKTS kontrolu</translation>
-    </message>
-    <message>
-        <source>zKTS Selected:</source>
-        <translation>Elektita zKTS</translation>
-    </message>
-    <message>
-        <source>Quantity Selected:</source>
-        <translation>Elektita kvanto:</translation>
-    </message>
-    <message>
-        <source>Spend Zerocoin</source>
-        <translation>Elspezi zerocoin</translation>
-    </message>
-    <message>
-        <source>Available (mature and spendable) zKTS for spending</source>
-        <translation>Havebla (matura kaj elspezebla) zKTS por elspezi</translation>
-    </message>
-    <message>
-        <source>0 zKTS</source>
-        <translation>0 zKTS</translation>
-    </message>
-    <message>
-        <source>Pay &amp;To:</source>
-        <translation>Pagu &amp;Al:</translation>
-    </message>
-    <message>
-        <source>The KTS address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>KTS adreso por alsendi la pago. Kreas lokala pago al vi mem kiam malplenija.</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Elektu antaŭan uzatan adreson</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Almetu adreson el poŝo</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etikedo:</translation>
-    </message>
-    <message>
-        <source>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
-        <translation>Malkonfirmita: malpli ol 20 konfirmacioj
-Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mintita</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioritato</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
         <source>TextLabel</source>
         <translation>Tekstetikedo</translation>
     </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Krompago</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation>no</translation>
-    </message>
-    <message>
-        <source>Bytes:</source>
-        <translation>Bajtoj</translation>
-    </message>
-    <message>
-        <source>medium</source>
-        <translation>meza</translation>
-    </message>
-    <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Se estas aktiva sed ŝanĝo-adreso estas malpleniĝa au nevalida, ŝanĝo sendos al nova generita adreson.</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Ŝanĝo:</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopi kvanto</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopii kvanto</translation>
-    </message>
-    <message>
-        <source> &lt;b&gt;enabled&lt;/b&gt;.</source>
-        <translation>&lt;b&gt;ebligita&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source> &lt;b&gt;disabled&lt;/b&gt;.</source>
-        <translation>&lt;b&gt;malebligita&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>Error: Your wallet is locked. Please enter the wallet passphrase first.</source>
-        <translation>Eraro: vian monujo estas fermita. Bonvolu eniri monujon pasfrazon unue.</translation>
-    </message>
-    <message>
-        <source>Message: Enter an amount &gt; 0.</source>
-        <translation>Mesaĝo: eniri kvanto &gt; 0.</translation>
-    </message>
-    <message>
-        <source>Invalid Kts Address</source>
-        <translation>Nevalida Kts adreso</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Konfirmu sendi monojn</translation>
-    </message>
-    <message>
-        <source>Too much inputs (</source>
-        <translation>Tro eniroj (</translation>
-    </message>
-    <message>
-        <source>address: </source>
-        <translation>adreso:</translation>
-    </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -2038,9 +1150,10 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <source>UNKNOWN</source>
         <translation>NEKONATA</translation>
     </message>
-    </context>
-<context>
-    <name>QRImageWidget</name>
+    <message>
+        <source>KTS Core</source>
+        <translation>KTS kerno</translation>
+    </message>
     </context>
 <context>
     <name>RPCConsole</name>
@@ -2117,10 +1230,6 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>1&amp;semajno</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Uzi la sagojn supran kaj malsupran por esplori la historion, kaj &lt;b&gt;Ctr-L&lt;/b&gt; por malplenigi la ekraron.</translation>
-    </message>
-    <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Tajpu &lt;b&gt;helpo&lt;/b&gt; por superrigardi la disponeblajn komandojn.</translation>
     </message>
@@ -2138,85 +1247,17 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>ReceiveCoinsDialog</name>
-    <message>
-        <source>&amp;Message:</source>
-        <translation>&amp;Mesaĝo:</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etikedo:</translation>
-    </message>
-    <message>
-        <source>&amp;Request payment</source>
-        <translation>&amp;Pago peto</translation>
-    </message>
-    <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Malpleniĝi ĉiuj kampojn el la formo.</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation>Malplenigi</translation>
-    </message>
-    <message>
-        <source>Requested payments history</source>
-        <translation>Pago peto historjo</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Montri</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Forigi</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Kopi etikedo</translation>
-    </message>
-    <message>
-        <source>Copy message</source>
-        <translation>Kopii mesaĝo</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopii kvanto</translation>
-    </message>
-</context>
+    <name>ReceiveDialog</name>
+    </context>
 <context>
-    <name>ReceiveRequestDialog</name>
+    <name>ReceiveWidget</name>
     <message>
-        <source>QR Code</source>
-        <translation>QR kodo</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
-        <source>Copy &amp;URI</source>
-        <translation>Kopi &amp;URI</translation>
-    </message>
-    <message>
-        <source>Copy &amp;Address</source>
-        <translation>Kopii &amp;Adreso</translation>
-    </message>
-    <message>
-        <source>URI</source>
-        <translation>URI</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adreso</translation>
-    </message>
-    <message>
-        <source>Amount</source>
-        <translation>Sumo:</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Etikedo</translation>
-    </message>
-    <message>
-        <source>Message</source>
-        <translation>Mesaĝo</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     </context>
 <context>
@@ -2234,6 +1275,10 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Mesaĝo</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Adreso</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Sumo:</translation>
     </message>
@@ -2247,195 +1292,96 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>SendCoinsDialog</name>
+    <name>RequestDialog</name>
     <message>
-        <source>Send Coins</source>
-        <translation>Sendu monojn</translation>
+        <source>Amount</source>
+        <translation>Sumo:</translation>
     </message>
     <message>
-        <source>SEND</source>
-        <translation>SENDU</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     <message>
-        <source>Quantity:</source>
-        <translation>Kvanto</translation>
+        <source>Label</source>
+        <translation>Etikedo</translation>
     </message>
     <message>
-        <source>Bytes:</source>
-        <translation>Bajtoj</translation>
-    </message>
-    <message>
-        <source>Amount:</source>
-        <translation>Kvanto</translation>
-    </message>
-    <message>
-        <source>Priority:</source>
-        <translation>Prioritato</translation>
-    </message>
-    <message>
-        <source>medium</source>
-        <translation>meza</translation>
-    </message>
-    <message>
-        <source>Fee:</source>
-        <translation>Krompago</translation>
-    </message>
-    <message>
-        <source>no</source>
-        <translation>no</translation>
-    </message>
-    <message>
-        <source>After Fee:</source>
-        <translation>Post krompago</translation>
-    </message>
-    <message>
-        <source>Change:</source>
-        <translation>Ŝanĝo:</translation>
-    </message>
-    <message>
-        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Se estas aktiva sed ŝanĝo-adreso estas malpleniĝa au nevalida, ŝanĝo sendos al nova generita adreson.</translation>
-    </message>
-    <message>
-        <source>0 KTS</source>
-        <translation>0 KTS</translation>
-    </message>
-    <message>
-        <source>Open Coin Control...</source>
-        <translation>Malfermi mono kontrolo...</translation>
-    </message>
-    <message>
-        <source>Recommended</source>
-        <translation>Rekomendita</translation>
-    </message>
-    <message>
-        <source>Clear all fields of the form.</source>
-        <translation>Malpleniĝi ĉiuj kampojn el la formo.</translation>
-    </message>
-    <message>
-        <source>Clear &amp;All</source>
-        <translation>Malplenigi &amp;Ĉiu</translation>
-    </message>
-    <message>
-        <source>Copy quantity</source>
-        <translation>Kopi kvanto</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopii kvanto</translation>
-    </message>
-    <message>
-        <source>Copy fee</source>
-        <translation>Kopiu krompago</translation>
-    </message>
-    <message>
-        <source>Copy after fee</source>
-        <translation>Kopiu post krompago</translation>
-    </message>
-    <message>
-        <source>Copy bytes</source>
-        <translation>Kopiu bajtoj</translation>
-    </message>
-    <message>
-        <source>Copy priority</source>
-        <translation>Kopiu prioritato</translation>
-    </message>
-    <message>
-        <source>Copy change</source>
-        <translation>Kopi ŝanĝo</translation>
-    </message>
-    <message>
-        <source>Warning: Invalid KTS address</source>
-        <translation>Averto: nevalida KTS adreson</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to send?</source>
-        <translation>Ĉu vi estas ĉerta vi volus sendi?</translation>
-    </message>
-    <message>
-        <source>Confirm send coins</source>
-        <translation>Konfirmu sendi monon</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(neniu etikedo)</translation>
-    </message>
-</context>
-<context>
-    <name>SendCoinsEntry</name>
-    <message>
-        <source>This is a normal payment.</source>
-        <translation>.Tio estas normala pago</translation>
-    </message>
-    <message>
-        <source>Pay &amp;To:</source>
-        <translation>Pagu &amp;Al:</translation>
-    </message>
-    <message>
-        <source>The KTS address to send the payment to</source>
-        <translation>KTSC adreso por sendi la pago al</translation>
-    </message>
-    <message>
-        <source>Choose previously used address</source>
-        <translation>Elektu antaŭan uzatan adreson</translation>
-    </message>
-    <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
-    </message>
-    <message>
-        <source>Paste address from clipboard</source>
-        <translation>Almetu adreson el poŝo</translation>
-    </message>
-    <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
-    </message>
-    <message>
-        <source>&amp;Label:</source>
-        <translation>&amp;Etikedo:</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Mesaĝo:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Eniru etikedo por ĉi tiun adreso por aldoni ĝin en vian adreson livro</translation>
-    </message>
-</context>
-<context>
-    <name>ShutdownWindow</name>
-    <message>
-        <source>KTS Core is shutting down...</source>
-        <translation>KTS kerno fermanta...</translation>
+        <source>Error</source>
+        <translation>Eraro</translation>
     </message>
     </context>
 <context>
-    <name>SignVerifyMessageDialog</name>
+    <name>SendChangeAddressDialog</name>
+    </context>
+<context>
+    <name>SendCustomFeeDialog</name>
     <message>
-        <source>Choose previously used address</source>
-        <translation>Elektu antaŭan uzatan adreson</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
+    <name>SendMultiRow</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
-        <source>Alt+A</source>
-        <translation>Alt+A</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
+    <name>SendWidget</name>
+    <message>
+        <source>Amount</source>
+        <translation>Sumo:</translation>
     </message>
     <message>
-        <source>Paste address from clipboard</source>
-        <translation>Almetu adreson el poŝo</translation>
+        <source>Spend Zerocoin</source>
+        <translation>Elspezi zerocoin</translation>
     </message>
     <message>
-        <source>Alt+P</source>
-        <translation>Alt+P</translation>
+        <source>Too much inputs (</source>
+        <translation>Tro eniroj (</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsBackupWallet</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
-        <source>Copy the current signature to the system clipboard</source>
-        <translation>Kopiu la aktualan subskribo al la sistemo-poŝo</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsBitToolWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
-        <source>Clear &amp;All</source>
-        <translation>Malplenigi &amp;Ĉiu</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Import Address</source>
+        <translation>Importu adreson</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Malplenigi</translation>
+    </message>
+    <message>
+        <source>The entered passphrase is invalid. </source>
+        <translation>La skribita pasfrazo estas nevalida.</translation>
+    </message>
+    <message>
+        <source>Allowed: 0-9,a-z,A-Z,</source>
+        <translation>Permesita: 0-9,a-z,A-Z,</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
@@ -2447,7 +1393,171 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>La enirita adreso ne rilatas al ŝlosilo</translation>
+        <translation>La enirita adreso ne rilatas al ŝlosilo.</translation>
+    </message>
+    <message>
+        <source>Wallet unlock was cancelled.</source>
+        <translation>Monujo malĉifri estis nuligita.</translation>
+    </message>
+    <message>
+        <source>Private key for the entered address is not available.</source>
+        <translation>Privatan ŝlosilon por la enirita adreson estas ne disponebla</translation>
+    </message>
+    <message>
+        <source>Failed to decrypt.</source>
+        <translation>Malsukcesis maĉifri</translation>
+    </message>
+    <message>
+        <source>Please check the key and passphrase and try again.</source>
+        <translation>Bonvolu kontroli la ŝlosilo kaj la pasfrazo kaj riprovi.</translation>
+    </message>
+    <message>
+        <source>Data Not Valid.</source>
+        <translation>Nevalidaj datumoj</translation>
+    </message>
+    <message>
+        <source>Please try again.</source>
+        <translation>Bonvolu reprovi.</translation>
+    </message>
+    <message>
+        <source>Please wait while key is imported</source>
+        <translation>Bonvolu atendi dum la ŝlosilo estas importita</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsConsoleWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Welcome to the KTS RPC console.</source>
+        <translation>Bonvenon al la KTS RPC konzolo.</translation>
+    </message>
+    <message>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Tajpu &lt;b&gt;helpo&lt;/b&gt; por superrigardi la disponeblajn komandojn.</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsDisplayOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Hide empty balances</source>
+        <translation>Kaŝi malplenajn ekvilibrojn</translation>
+    </message>
+    <message>
+        <source>default</source>
+        <translation>defaŭlte</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsFaqWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsInformationWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informoj</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Reto</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMainOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMultisendDialog</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsMultisendWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Aktiva</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsSignMessageWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Malplenigi</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesaĝo</translation>
+    </message>
+    <message>
+        <source>The entered address is invalid.</source>
+        <translation>La skribita adreso estas nevalida.</translation>
+    </message>
+    <message>
+        <source>Please check the address and try again.</source>
+        <translation>Bonvolu kontroli la adreson kaj riprovi.</translation>
+    </message>
+    <message>
+        <source>The entered address does not refer to a key.</source>
+        <translation>La enirita adreso ne rilatas al ŝlosilo.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -2458,6 +1568,92 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Privatan ŝlosilon por la enirita adreson estas ne disponebla</translation>
     </message>
     </context>
+<context>
+    <name>SettingsWalletOptionsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Monujo</translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation>Reto</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsWalletRepairWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Rebuild index</source>
+        <translation>Rekonstrui indekson</translation>
+    </message>
+    </context>
+<context>
+    <name>SettingsWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Monujo</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Agordoj</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informoj</translation>
+    </message>
+    <message>
+        <source>Confirm options reset</source>
+        <translation>Konfirmu restarigi opiojn</translation>
+    </message>
+    </context>
+<context>
+    <name>ShutdownWindow</name>
+    <message>
+        <source>KTS Core is shutting down...</source>
+        <translation>KTS kerno fermanta...</translation>
+    </message>
+    </context>
+<context>
+    <name>SnackBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    </context>
+<context>
+    <name>Splash</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>KTS Core</source>
+        <translation>KTS kerno</translation>
+    </message>
+</context>
 <context>
     <name>SplashScreen</name>
     <message>
@@ -2475,6 +1671,28 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source>The KTS Core developers</source>
         <translation>La KTS kerno programistoj</translation>
+    </message>
+    </context>
+<context>
+    <name>TooltipMenu</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Forigi</translation>
+    </message>
+    </context>
+<context>
+    <name>TopBar</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>%1 and %2</source>
+        <translation>%1 kaj %2</translation>
     </message>
     </context>
 <context>
@@ -2516,9 +1734,6 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>TransactionDescDialog</name>
-    </context>
-<context>
     <name>TransactionTableModel</name>
     <message>
         <source>Date</source>
@@ -2546,90 +1761,35 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>TransactionView</name>
+    <name>TxDetailDialog</name>
     <message>
-        <source>Today</source>
-        <translation>Hodiaŭ</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
     <message>
-        <source>This week</source>
-        <translation>Ĉi semajno</translation>
+        <source>Fee:</source>
+        <translation>Krompago</translation>
     </message>
     <message>
-        <source>This month</source>
-        <translation>Ĉi monato</translation>
+        <source>Status:</source>
+        <translation>Ŝtato:</translation>
     </message>
     <message>
-        <source>Last month</source>
-        <translation>Pasinmonate</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     <message>
-        <source>This year</source>
-        <translation>Ĉijaro</translation>
-    </message>
-    <message>
-        <source>Received with</source>
-        <translation>Ricevita kun</translation>
-    </message>
-    <message>
-        <source>Sent to</source>
-        <translation>Sendita al</translation>
-    </message>
-    <message>
-        <source>Copy address</source>
-        <translation>Kopi adreson</translation>
-    </message>
-    <message>
-        <source>Copy label</source>
-        <translation>Kopi etikedo</translation>
-    </message>
-    <message>
-        <source>Copy amount</source>
-        <translation>Kopii kvanto</translation>
-    </message>
-    <message>
-        <source>Copy transaction ID</source>
-        <translation>Kopiu transakcion ID</translation>
-    </message>
-    <message>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Koma disgito dosiero (*.csv)</translation>
-    </message>
-    <message>
-        <source>Confirmed</source>
-        <translation>Konfirmita</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation>Dato</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation>Tajpu</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Etikedo</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Adreso</translation>
-    </message>
-    <message>
-        <source>Exporting Failed</source>
-        <translation>Eksporti malsukcesis</translation>
+        <source>SEND</source>
+        <translation>SENDU</translation>
     </message>
     </context>
 <context>
-    <name>UnitDisplayStatusBarControl</name>
-    </context>
-<context>
-    <name>WalletFrame</name>
+    <name>TxRow</name>
     <message>
-        <source>No wallet has been loaded.</source>
-        <translation>Neniam monujo ŝarĝitas.</translation>
+        <source>Form</source>
+        <translation>Formo</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>WalletModel</name>
     <message>
@@ -2638,31 +1798,42 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>WalletView</name>
+    <name>WalletPasswordDialog</name>
     <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Eksporti</translation>
-    </message>
-    <message>
-        <source>Export the data in the current tab to a file</source>
-        <translation>Eksporti la datumojn sur la nuna pestajo al dosiero</translation>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     </context>
 <context>
-    <name>ZKtsControlDialog</name>
+    <name>WelcomeContentWidget</name>
     <message>
-        <source>0</source>
-        <translation>0</translation>
+        <source>Welcome</source>
+        <translation>Bonvenon</translation>
     </message>
     <message>
-        <source>zKTS</source>
-        <translation>zKTS</translation>
+        <source>default</source>
+        <translation>defaŭlte</translation>
+    </message>
+</context>
+<context>
+    <name>ZKtsControlDialog</name>
+    <message>
+        <source>Coin Control</source>
+        <translation>Mono kontrolo</translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation>Kvanto</translation>
     </message>
     <message>
         <source>Is Spendable</source>
         <translation>Estas elspezebla</translation>
     </message>
-</context>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>kts-core</name>
     <message>
@@ -2676,10 +1847,6 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source>Information</source>
         <translation>Informoj</translation>
-    </message>
-    <message>
-        <source>Invalid private key.</source>
-        <translation>Privata ŝlosilo nevalida.</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -2698,24 +1865,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Ĉi tio estas eksperimenta programaro.</translation>
     </message>
     <message>
-        <source>Transaction created successfully.</source>
-        <translation>Transakcio verkita sukcese.</translation>
-    </message>
-    <message>
-        <source>Transaction fees are too high.</source>
-        <translation>Transakcio krompago estas tro alta.</translation>
-    </message>
-    <message>
-        <source>Transaction not valid.</source>
-        <translation>Transakcio nevalida.</translation>
-    </message>
-    <message>
         <source>Transaction too large</source>
         <translation>Tro longa transakcio</translation>
-    </message>
-    <message>
-        <source>Wallet is locked.</source>
-        <translation>Monujo estas ŝlosita.</translation>
     </message>
     <message>
         <source>Wallet options:</source>
@@ -2726,16 +1877,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Averto</translation>
     </message>
     <message>
-        <source>Will retry...</source>
-        <translation>Reprovos</translation>
-    </message>
-    <message>
         <source>You don't have enough Zerocoins in your wallet</source>
         <translation>Vi ne havas sufiĉan Zeromonojn en vian monujon</translation>
-    </message>
-    <message>
-        <source>Your entries added successfully.</source>
-        <translation>Vian enirojn aldonis sukcese.</translation>
     </message>
     <message>
         <source>Zerocoin options:</source>
@@ -2744,6 +1887,17 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source>on startup</source>
         <translation>je startigo</translation>
+    </message>
+    </context>
+<context>
+    <name>send</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation>Tekstetikedo</translation>
     </message>
     </context>
 </TS>

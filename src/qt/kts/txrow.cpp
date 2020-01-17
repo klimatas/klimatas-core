@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -84,6 +85,19 @@ void TxRow::setType(bool isLightTheme, int type, bool isConfirmed){
             path = "://ic-transaction-mint";
             css = "text-list-amount-send";
             break;
+        case TransactionRecord::StakeDelegated:
+            path = "://ic-transaction-stake-delegated";
+            css = "text-list-amount-receive";
+            break;
+        case TransactionRecord::StakeHot:
+            path = "://ic-transaction-stake-hot";
+            css = "text-list-amount-unconfirmed";
+            break;
+        case TransactionRecord::P2CSDelegationSent:
+        case TransactionRecord::P2CSDelegation:
+            path = "://ic-transaction-cs-contract";
+            css = "text-list-amount-unconfirmed";
+            break;
         default:
             path = "://ic-pending";
             sameIcon = true;
@@ -102,7 +116,7 @@ void TxRow::setType(bool isLightTheme, int type, bool isConfirmed){
     }else{
         setConfirmStatus(true);
     }
-    setCssProperty(ui->lblAmount, css);
+    setCssProperty(ui->lblAmount, css, true);
     ui->icon->setIcon(QIcon(path));
 }
 

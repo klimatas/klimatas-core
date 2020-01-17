@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,6 +13,7 @@
 #include "qt/kts/txviewholder.h"
 #include "transactionfilterproxy.h"
 
+#include <atomic>
 #include <cstdlib>
 #include <QWidget>
 #include <QLineEdit>
@@ -102,7 +104,7 @@ public:
     void loadChart();
 
     void run(int type) override;
-    void onError(int type, QString error) override;
+    void onError(QString error, int type) override;
 
 public slots:
     void walletSynced(bool isSync);
@@ -121,7 +123,7 @@ private slots:
     void onSortTypeChanged(const QString& value);
     void updateDisplayUnit();
     void showList();
-    void onTxArrived(const QString& hash);
+    void onTxArrived(const QString& hash, const bool& isCoinStake, const bool& isCSAnyType);
 
 #ifdef USE_QTCHARTS
     void windowResizeEvent(QResizeEvent *event);
@@ -143,6 +145,7 @@ private:
 #ifdef USE_QTCHARTS
 
     int64_t lastRefreshTime = 0;
+    std::atomic<bool> isLoading;
 
     // Chart
     TransactionFilterProxy* stakesFilter = nullptr;
@@ -170,7 +173,8 @@ private:
     void showHideEmptyChart(bool show, bool loading, bool forceView = false);
     bool refreshChart();
     void tryChartRefresh();
-    QMap<int, std::pair<qint64, qint64>> getAmountBy();
+    void updateStakeFilter();
+    const QMap<int, std::pair<qint64, qint64>> getAmountBy();
     bool loadChartData(bool withMonthNames);
     void updateAxisX(const QStringList *arg = nullptr);
     void setChartShow(ChartShowType type);

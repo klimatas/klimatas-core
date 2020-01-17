@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +19,12 @@ SettingsFaqWidget::SettingsFaqWidget(QWidget *parent) :
 
     ui->labelTitle->setText(tr("Frequently Asked Questions"));
     ui->labelWebLink->setText(tr("You can read more here"));
+#ifdef Q_OS_MAC
+    ui->container->load("://bg-welcome");
+    setCssProperty(ui->container, "container-welcome-no-image");
+#else
     setCssProperty(ui->container, "container-welcome");
+#endif
     setCssProperty(ui->labelTitle, "text-title-faq");
     setCssProperty(ui->labelWebLink, "text-content-white");
 

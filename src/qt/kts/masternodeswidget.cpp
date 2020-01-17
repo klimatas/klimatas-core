@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,7 +19,7 @@
 #include "masternodeconfig.h"
 #include "masternodeman.h"
 #include "sync.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "walletmodel.h"
 #include "askpassphrasedialog.h"
 #include "util.h"
@@ -60,8 +61,6 @@ public:
     bool isLightTheme;
     MNRow* cachedRow = nullptr;
 };
-
-#include "qt/kts/moc_masternodeswidget.cpp"
 
 MasterNodesWidget::MasterNodesWidget(KTSGUI *parent) :
     PWidget(parent),
@@ -242,7 +241,7 @@ void MasterNodesWidget::onInfoMNClicked(){
                 ))) {
             // export data
             QString exportedMN = "masternode=1\n"
-                                 "externalip=" + address.split(":")[0] + "\n" +
+                                 "externalip=" + address.left(address.lastIndexOf(":")) + "\n" +
                                  "masternodeaddr=" + address + + "\n" +
                                  "masternodeprivkey=" + index.sibling(index.row(), MNModel::PRIV_KEY).data(Qt::DisplayRole).toString() + "\n";
             GUIUtil::setClipboard(exportedMN);
@@ -348,7 +347,7 @@ void MasterNodesWidget::onDeleteMNClicked(){
 void MasterNodesWidget::onCreateMNClicked(){
     if(verifyWalletUnlocked()) {
         if(walletModel->getBalance() <= (COIN * 3000)){
-            inform(tr("No enough balance to create a masternode, 3,000 KTS required."));
+            inform(tr("Not enough balance to create a masternode, 3,000 KTS required."));
             return;
         }
         showHideOp(true);

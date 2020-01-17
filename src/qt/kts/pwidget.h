@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,6 +14,7 @@
 class KTSGUI;
 class ClientModel;
 class WalletModel;
+class WorkerTask;
 
 namespace Ui {
 class PWidget;
@@ -31,7 +33,14 @@ public:
     KTSGUI* getWindow() { return this->window; }
 
     void run(int type) override;
-    void onError(int type, QString error) override;
+    void onError(QString error, int type) override;
+
+    void inform(const QString& message);
+    void emitMessage(const QString& title, const QString& message, unsigned int style, bool* ret = nullptr);
+
+    QString translate(const char *msg) {
+        return tr(msg);
+    }
 
 signals:
     void message(const QString& title, const QString& body, unsigned int style, bool* ret = nullptr);
@@ -52,16 +61,19 @@ protected:
 
     void showHideOp(bool show);
     bool execute(int type);
-    void inform(const QString& message);
     void warn(const QString& title, const QString& message);
     bool ask(const QString& title, const QString& message);
     void showDialog(QDialog *dialog, int xDiv = 3, int yDiv = 5);
-    void emitMessage(const QString& title, const QString& message, unsigned int style, bool* ret = nullptr);
 
     bool verifyWalletUnlocked();
 
 private:
+    QSharedPointer<WorkerTask> task;
+
     void init();
+private slots:
+    void errorString(QString, int);
+
 };
 
 #endif // PWIDGET_H

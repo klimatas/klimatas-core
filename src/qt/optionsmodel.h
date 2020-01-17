@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -55,6 +56,7 @@ public:
         ShowMasternodesTab,  // bool
         Listen,              // bool
         StakeSplitThreshold, // int
+        ShowColdStakingScreen, // bool
         OptionIDRowCount,
     };
 
@@ -84,6 +86,16 @@ public:
     bool isRestartRequired();
     bool resetSettings;
 
+    bool isColdStakingScreenEnabled() { return showColdStakingScreen; }
+    bool invertColdStakingScreenStatus() {
+        setData(
+                createIndex(ShowColdStakingScreen, 0),
+                !isColdStakingScreenEnabled(),
+                Qt::EditRole
+        );
+        return showColdStakingScreen;
+    }
+
     // Reset
     void setMainDefaultOptions(QSettings& settings, bool reset = false);
     void setWalletDefaultOptions(QSettings& settings, bool reset = false);
@@ -99,6 +111,7 @@ private:
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
+    bool showColdStakingScreen;
     bool fHideZeroBalances;
     bool fHideOrphans;
     /* settings that were overriden by command-line */
@@ -115,6 +128,7 @@ signals:
     void preferredDenomChanged(int);
     void anonymizeKtsAmountChanged(int);
     void coinControlFeaturesChanged(bool);
+    void showHideColdStakingScreen(bool);
     void hideZeroBalancesChanged(bool);
     void hideOrphansChanged(bool);
 };

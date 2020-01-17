@@ -1,8 +1,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2019 The CryptoDev developers
-// Copyright (c) 2019 The Klimatas developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -33,11 +32,11 @@
 #include "init.h"
 #include "main.h"
 #include "rpc/server.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
 
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif
 
 #include <stdint.h>
@@ -174,7 +173,7 @@ private:
     bool execute_restart;
 
     /// Pass fatal exception message to UI thread
-    void handleRunawayException(std::exception* e);
+    void handleRunawayException(const std::exception* e);
 };
 
 /** Main KTS application object */
@@ -207,7 +206,7 @@ public:
     /// Get process return value
     int getReturnValue() { return returnValue; }
 
-    /// Get window identifier of QMainWindow (KtsGUI)
+    /// Get window identifier of QMainWindow (KTSGUI)
     WId getMainWinId() const;
 
 public slots:
@@ -217,7 +216,7 @@ public slots:
     void handleRunawayException(const QString& message);
     void updateTranslation();
 
-    signals:
+signals:
     void requestedInitialize();
     void requestedRestart(QStringList args);
     void requestedShutdown();
@@ -246,7 +245,7 @@ BitcoinCore::BitcoinCore() : QObject()
 {
 }
 
-void BitcoinCore::handleRunawayException(std::exception* e)
+void BitcoinCore::handleRunawayException(const std::exception* e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     emit runawayException(QString::fromStdString(strMiscWarning));
@@ -260,7 +259,7 @@ void BitcoinCore::initialize()
         qDebug() << __func__ << ": Running AppInit2 in thread";
         int rv = AppInit2();
         emit initializeResult(rv);
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
         handleRunawayException(&e);
     } catch (...) {
         handleRunawayException(NULL);
@@ -281,7 +280,7 @@ void BitcoinCore::restart(QStringList args)
             QProcess::startDetached(QApplication::applicationFilePath(), args);
             qDebug() << __func__ << ": Restart initiated...";
             QApplication::quit();
-        } catch (std::exception& e) {
+        } catch (const std::exception& e) {
             handleRunawayException(&e);
         } catch (...) {
             handleRunawayException(NULL);
@@ -297,7 +296,7 @@ void BitcoinCore::shutdown()
         Shutdown();
         qDebug() << __func__ << ": Shutdown finished";
         emit shutdownResult(1);
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
         handleRunawayException(&e);
     } catch (...) {
         handleRunawayException(NULL);
@@ -378,10 +377,8 @@ void BitcoinApplication::createSplashScreen(const NetworkStyle* networkStyle)
 bool BitcoinApplication::createTutorialScreen()
 {
     WelcomeContentWidget* widget = new WelcomeContentWidget();
-    //widget->setOptionsModel(optionsModel);
 
     connect(widget, &WelcomeContentWidget::onLanguageSelected, [this](){
-        std::cout << "updating translations.." << std::endl;
         updateTranslation();
     });
 
@@ -533,7 +530,6 @@ int main(int argc, char* argv[])
     Q_INIT_RESOURCE(kts_locale);
     Q_INIT_RESOURCE(kts);
 
-    BitcoinApplication app(argc, argv);
 #if QT_VERSION > 0x050100
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -544,6 +540,7 @@ int main(int argc, char* argv[])
 #ifdef Q_OS_MAC
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
+    BitcoinApplication app(argc, argv);
 
     // Register meta types used for QMetaObject::invokeMethod
     qRegisterMetaType<bool*>();
@@ -587,7 +584,7 @@ int main(int argc, char* argv[])
     }
     try {
         ReadConfigFile(mapArgs, mapMultiArgs);
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
         QMessageBox::critical(0, QObject::tr("KTS Core"),
             QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
         return 0;
@@ -618,7 +615,7 @@ int main(int argc, char* argv[])
 
 #ifdef ENABLE_WALLET
     /// 7a. parse masternode.conf
-    string strErr;
+    std::string strErr;
     if (!masternodeConfig.read(strErr)) {
         QMessageBox::critical(0, QObject::tr("KTS Core"),
             QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
@@ -687,7 +684,7 @@ int main(int argc, char* argv[])
         app.exec();
         app.requestShutdown();
         app.exec();
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
         PrintExceptionContinue(&e, "Runaway exception");
         app.handleRunawayException(QString::fromStdString(strMiscWarning));
     } catch (...) {

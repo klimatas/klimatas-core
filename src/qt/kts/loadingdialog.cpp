@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,14 +8,22 @@
 #include <QMovie>
 
 void Worker::process(){
-    try {
-        if (runnable)
+    if (runnable) {
+        try {
             runnable->run(type);
-        emit finished();
-    } catch (std::exception& e) {
-        std::cout << e.what() << std::endl;
-        emit error(QString::fromStdString(e.what()));
+        } catch (std::exception &e) {
+            QString errorStr = QString::fromStdString(e.what());
+            runnable->onError(errorStr, type);
+            emit error(errorStr, type);
+        } catch (...) {
+            QString errorStr = QString::fromStdString("Unknown error running background task");
+            runnable->onError(errorStr, type);
+            emit error(errorStr, type);
+        }
+    } else {
+        emit error("Null runnable", type);
     }
+    emit finished();
 };
 
 LoadingDialog::LoadingDialog(QWidget *parent) :
@@ -45,7 +54,6 @@ void LoadingDialog::execute(Runnable *runnable, int type){
     QThread* thread = new QThread;
     Worker* worker = new Worker(runnable, type);
     worker->moveToThread(thread);
-    connect(worker, SIGNAL (error(QString)), this, SLOT (errorString(QString)));
     connect(thread, SIGNAL (started()), worker, SLOT (process()));
     connect(worker, SIGNAL (finished()), thread, SLOT (quit()));
     connect(worker, SIGNAL (finished()), worker, SLOT (deleteLater()));

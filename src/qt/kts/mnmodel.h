@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -15,7 +16,10 @@ class MNModel : public QAbstractTableModel
 
 public:
     explicit MNModel(QObject *parent = nullptr);
-    ~MNModel() override{}
+    ~MNModel() override {
+        nodes.clear();
+        collateralTxAccepted.clear();
+    }
 
     enum ColumnIndex {
         ALIAS = 0,  /**< User specified MN alias */

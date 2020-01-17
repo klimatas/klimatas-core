@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,80 +14,80 @@
 #include "chainparams.h"
 #include "coincontrol.h"
 #include "main.h"
-#include "wallet.h"
-#include "walletdb.h"
+#include "wallet/wallet.h"
+#include "wallet/walletdb.h"
 #include "txdb.h"
+#include "test/test_kts.h"
 #include <boost/test/unit_test.hpp>
 #include <iostream>
 
-using namespace libzerocoin;
 
 class CDeterministicMint;
 
-BOOST_AUTO_TEST_SUITE(zerocoin_coinspend_tests)
+BOOST_FIXTURE_TEST_SUITE(zerocoin_coinspend_tests, TestingSetup)
 
 /**
  * Check that wrapped serials pass and not pass using the new validation.
  */
 BOOST_AUTO_TEST_CASE(zerocoin_wrapped_serial_spend_test)
-        {
-                unsigned int TESTS_COINS_TO_ACCUMULATE = 5;
+{
+    unsigned int TESTS_COINS_TO_ACCUMULATE = 5;
 
-        SelectParams(CBaseChainParams::MAIN);
-        ZerocoinParams *ZCParams = Params().Zerocoin_Params(false);
-        (void)ZCParams;
+    SelectParams(CBaseChainParams::MAIN);
+    libzerocoin::ZerocoinParams *ZCParams = Params().Zerocoin_Params(false);
+    (void)ZCParams;
 
-        // Seed + Mints
-        string strWalletFile = "unittestwallet.dat";
-        CWalletDB walletdb(strWalletFile, "cr+");
-        CWallet wallet(strWalletFile);
-        CzKTSWallet *czKTSWallet = new CzKTSWallet(wallet.strWalletFile);
+    // Seed + Mints
+    std::string strWalletFile = "unittestwallet.dat";
+    CWalletDB walletdb(strWalletFile, "cr+");
+    CWallet wallet(strWalletFile);
+    CzKTSWallet *czKTSWallet = new CzKTSWallet(wallet.strWalletFile);
 
-        // Get the 5 created mints.
-        CoinDenomination denom = CoinDenomination::ZQ_FIFTY;
-        std::vector<PrivateCoin> vCoins;
-        for (unsigned int i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-            PrivateCoin coin(ZCParams, denom, false);
-            CDeterministicMint dMint;
-            czKTSWallet->GenerateDeterministicZKTS(denom, coin, dMint, true);
-            czKTSWallet->UpdateCount();
-            vCoins.emplace_back(coin);
+    // Get the 5 created mints.
+    libzerocoin::CoinDenomination denom = libzerocoin::CoinDenomination::ZQ_FIFTY;
+    std::vector<libzerocoin::PrivateCoin> vCoins;
+    for (unsigned int i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+        libzerocoin::PrivateCoin coin(ZCParams, denom, false);
+        CDeterministicMint dMint;
+        czKTSWallet->GenerateDeterministicZKTS(denom, coin, dMint, true);
+        czKTSWallet->UpdateCount();
+        vCoins.emplace_back(coin);
+    }
+
+    // Selected coin
+    libzerocoin::PrivateCoin coinToSpend = vCoins[0];
+
+    // Accumulate coins
+    libzerocoin::Accumulator acc(&ZCParams->accumulatorParams, denom);
+    libzerocoin::AccumulatorWitness accWitness(ZCParams, acc, coinToSpend.getPublicCoin());
+
+    for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
+        acc += vCoins[i].getPublicCoin();
+        if(i != 0) {
+            accWitness += vCoins[i].getPublicCoin();
         }
+    }
 
-        // Selected coin
-        PrivateCoin coinToSpend = vCoins[0];
+    // Wrapped serial
+    Bignum wrappedSerial = coinToSpend.getSerialNumber() + ZCParams->coinCommitmentGroup.groupOrder * CBigNum(2).pow(256) * 2;
+    coinToSpend.setSerialNumber(wrappedSerial);
 
-        // Accumulate coins
-        Accumulator acc(&ZCParams->accumulatorParams, denom);
-        AccumulatorWitness accWitness(ZCParams, acc, coinToSpend.getPublicCoin());
+    libzerocoin::CoinSpend wrappedSerialSpend(
+            ZCParams,
+            ZCParams,
+            coinToSpend,
+            acc,
+            0,
+            accWitness,
+            0,
+            libzerocoin::SpendType::SPEND
+    );
 
-        for (uint32_t i = 0; i < TESTS_COINS_TO_ACCUMULATE; i++) {
-            acc += vCoins[i].getPublicCoin();
-            if(i != 0) {
-                accWitness += vCoins[i].getPublicCoin();
-            }
-        }
+    // first check that the Verify pass without do the invalid range check
+    BOOST_CHECK_MESSAGE(wrappedSerialSpend.Verify(acc, false), "ERROR, Invalid coinSpend not passed without range verification");
+    // Now must fail..
+    BOOST_CHECK_MESSAGE(!wrappedSerialSpend.Verify(acc, true), "ERROR, Invalid coinSpend passed with range verification");
 
-        // Wrapped serial
-        Bignum wrappedSerial = coinToSpend.getSerialNumber() + ZCParams->coinCommitmentGroup.groupOrder * CBigNum(2).pow(256) * 2;
-        coinToSpend.setSerialNumber(wrappedSerial);
-
-        CoinSpend wrappedSerialSpend(
-        ZCParams,
-        ZCParams,
-        coinToSpend,
-        acc,
-        0,
-        accWitness,
-        0,
-        SpendType::SPEND
-        );
-
-        // first check that the Verify pass without do the invalid range check
-        BOOST_CHECK_MESSAGE(wrappedSerialSpend.Verify(acc, false), "ERROR, Invalid coinSpend not passed without range verification");
-        // Now must fail..
-        BOOST_CHECK_MESSAGE(!wrappedSerialSpend.Verify(acc, true), "ERROR, Invalid coinSpend passed with range verification");
-
-        }
+}
 
 BOOST_AUTO_TEST_SUITE_END()

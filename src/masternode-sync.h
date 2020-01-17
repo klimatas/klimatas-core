@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -39,6 +40,9 @@ public:
     int64_t lastFailure;
     int nCountFailures;
 
+    std::atomic<int64_t> lastProcess;
+    std::atomic<bool> fBlockchainSynced;
+
     // sum of all counts
     int sumMasternodeList;
     int sumMasternodeWinner;
@@ -71,8 +75,10 @@ public:
     void Reset();
     void Process();
     bool IsSynced();
+    bool NotCompleted();
+    bool IsSporkListSynced();
+    bool IsMasternodeListSynced();
     bool IsBlockchainSynced();
-    bool IsMasternodeListSynced() { return RequestedMasternodeAssets > MASTERNODE_SYNC_LIST; }
     void ClearFulfilledRequest();
 };
 

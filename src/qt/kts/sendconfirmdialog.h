@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,14 +26,14 @@ class TxDetailDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit TxDetailDialog(QWidget *parent = nullptr, bool isConfirmDialog = true);
+    explicit TxDetailDialog(QWidget *parent = nullptr, bool isConfirmDialog = true, QString warningStr = QString());
     ~TxDetailDialog();
 
     bool isConfirm() { return this->confirm;}
     WalletModel::SendCoinsReturn getStatus() { return this->sendStatus;}
 
     void setData(WalletModel *model, WalletModelTransaction &tx);
-    void setData(WalletModel *model, QModelIndex &index);
+    void setData(WalletModel *model, const QModelIndex &index);
     void setDisplayUnit(int unit){this->nDisplayUnit = unit;};
 
 public slots:

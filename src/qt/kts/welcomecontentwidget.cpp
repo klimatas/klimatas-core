@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The KTS developers
+// Copyright (c) 2019 The KTSX developers
+// Copyright (c) 2019-2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +28,12 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
     ui->frame->setProperty("cssClass", "container-welcome-stack");
+#ifdef Q_OS_MAC
+    ui->frame_2->load("://bg-welcome");
+    ui->frame_2->setProperty("cssClass", "container-welcome-no-image");
+#else
     ui->frame_2->setProperty("cssClass", "container-welcome");
+#endif
 
     backButton = new QPushButton(ui->container);
     nextButton = new QPushButton(ui->container);
