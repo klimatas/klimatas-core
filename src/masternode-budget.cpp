@@ -916,7 +916,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     CAmount nSubsidy = 60;
 
     // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-    if (nHeight <= 500000) {
+    if (nHeight <= 525000) {
         return nSubsidy * COIN;
     } else {
         return 100000 * COIN;
