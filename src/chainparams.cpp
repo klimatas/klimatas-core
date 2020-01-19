@@ -193,7 +193,7 @@ public:
         nBlockDoubleAccumulated = 10;
         nEnforceNewSporkKey = 1551387401; //!> Sporks signed after Monday, August 26, 2019 11:00:00 PM GMT must use the new spork key
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after Thursday, September 26, 2019 11:00:00 PM GMT
-        nBlockStakeModifierlV2 = 525000;
+        nBlockStakeModifierlV2 = 535000;
         nBIP65ActivationHeight = 1808634;
         // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
         nBlockTimeProtocolV2 = INT_MAX;
@@ -342,7 +342,7 @@ public:
         nBlockZerocoinV2 = 220; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1551387401; //!> Sporks signed after Monday, August 26, 2019 11:00:00 PM GMT must use the new spork key
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Thursday, September 26, 2019 11:00:00 PM GMT
-        nBlockStakeModifierlV2 = 525000;
+        nBlockStakeModifierlV2 = 535000;
         nBIP65ActivationHeight = 851019;
         // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
         nBlockTimeProtocolV2 = 1347000;
