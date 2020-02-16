@@ -4397,9 +4397,10 @@ bool CheckColdStakeFreeOutput(const CTransaction& tx, const int nHeight)
     const CTxOut& lastOut = tx.vout[outs-1];
     if (outs >=3 && lastOut.scriptPubKey != tx.vout[outs-2].scriptPubKey) {
         // last output can either be a mn reward or a budget payment
-        // cold staking is active much after nPublicZCSpends so GetMasternodePayment is always 3 KTS.
-        // TODO: double check this if/when MN rewards change
-        if (lastOut.nValue == 3 * COIN)
+        if (lastOut.nValue == GetMasternodePayment(nHeight, GetBlockValue(nHeight), 0, false))
+            return true;
+
+        if (lastOut.nValue == GetMasternodePayment(nHeight-1, GetBlockValue(nHeight-1), 0, false))
             return true;
 
         if (budget.IsBudgetPaymentBlock(nHeight) &
