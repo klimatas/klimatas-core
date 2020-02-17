@@ -4397,11 +4397,21 @@ bool CheckColdStakeFreeOutput(const CTransaction& tx, const int nHeight)
     const CTxOut& lastOut = tx.vout[outs-1];
     if (outs >=3 && lastOut.scriptPubKey != tx.vout[outs-2].scriptPubKey) {
         // last output can either be a mn reward or a budget payment
-        if (lastOut.nValue == GetMasternodePayment(nHeight, GetBlockValue(nHeight), 0, false))
-            return true;
 
-        if (lastOut.nValue == GetMasternodePayment(nHeight-1, GetBlockValue(nHeight-1), 0, false))
-            return true;
+        if(nHeight < 599200) {
+
+            if (lastOut.nValue == 3 * COIN)
+                return true;
+
+        } else {
+
+            if (lastOut.nValue == GetMasternodePayment(nHeight, GetBlockValue(nHeight), 0, false))
+                return true;
+
+            if (lastOut.nValue == GetMasternodePayment(nHeight - 1, GetBlockValue(nHeight - 1), 0, false))
+                return true;
+
+        }
 
         if (budget.IsBudgetPaymentBlock(nHeight) &
                 sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) &&
@@ -7195,12 +7205,12 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
 int ActiveProtocol()
 {
     // SPORK_14 was used for 70917 (v3.4), commented out now.
-    if (sporkManager.IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-            return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+    //if (sporkManager.IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     // SPORK_15 is used for 70918 (v4.0+)
-    //if (sporkManager.IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    if (sporkManager.IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
