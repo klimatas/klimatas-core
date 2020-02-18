@@ -177,7 +177,7 @@ UniValue mnsync(const UniValue& params, bool fHelp)
     if (params.size() == 1)
         strMode = params[0].get_str();
 
-    if (fHelp || params.size() != 1 || (strMode != "status" && strMode != "reset" && strMode != "next")) {
+    if (fHelp || params.size() != 1 || (strMode != "status" && strMode != "reset")) {
         throw std::runtime_error(
             "mnsync \"status|next|reset\"\n"
             "\nReturns the sync status or resets sync.\n"
@@ -210,12 +210,6 @@ UniValue mnsync(const UniValue& params, bool fHelp)
 
             "\nExamples:\n" +
             HelpExampleCli("mnsync", "\"status\"") + HelpExampleRpc("mnsync", "\"status\""));
-    }
-
-    if(strMode == "next")
-    {
-        masternodeSync.GetNextAsset();
-        return "sync updated";
     }
 
     if (strMode == "status") {
