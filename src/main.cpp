@@ -3399,27 +3399,36 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         nExpectedMint += nFees;
 
     // Sync fix
-    if(pindex->nHeight > 141600) {
-        if (!IsBlockValueValid(block, nExpectedMint, pindex->pprev->nMint)) {
-            if (pindex->nHeight >= 58800 && pindex->nHeight <= 141600) {
-                return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
-                                            FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
-                                 REJECT_INVALID, "bad-cb-amount");
-            }
-            if (pindex->nHeight > 141600) {
-                return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
-                                            FormatMoney(pindex->pprev->nMint), FormatMoney(nExpectedMint)),
-                                 REJECT_INVALID, "bad-cb-amount");
-            }
-        }
-    } else {
+    if(pindex->nHeight > 561600) {
         //Check that the block does not overmint
         if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
-            // Do not require verification of block coinbase value amount before this block
-            if (pindex->nHeight >= 58800)
-                return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
-                                            FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
-                                 REJECT_INVALID, "bad-cb-amount");
+            return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                                        FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
+                             REJECT_INVALID, "bad-cb-amount");
+        }
+    } else {
+        if (pindex->nHeight > 141600) {
+            if (!IsBlockValueValid(block, nExpectedMint, pindex->pprev->nMint)) {
+                if (pindex->nHeight >= 58800 && pindex->nHeight <= 141600) {
+                    return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                                                FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
+                                     REJECT_INVALID, "bad-cb-amount");
+                }
+                if (pindex->nHeight > 141600) {
+                    return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                                                FormatMoney(pindex->pprev->nMint), FormatMoney(nExpectedMint)),
+                                     REJECT_INVALID, "bad-cb-amount");
+                }
+            }
+        } else {
+            //Check that the block does not overmint
+            if (!IsBlockValueValid(block, nExpectedMint, pindex->nMint)) {
+                // Do not require verification of block coinbase value amount before this block
+                if (pindex->nHeight >= 58800)
+                    return state.DoS(100, error("ConnectBlock() : reward pays too much (actual=%s vs limit=%s)",
+                                                FormatMoney(pindex->nMint), FormatMoney(nExpectedMint)),
+                                     REJECT_INVALID, "bad-cb-amount");
+            }
         }
     }
 
@@ -4397,10 +4406,21 @@ bool CheckColdStakeFreeOutput(const CTransaction& tx, const int nHeight)
     const CTxOut& lastOut = tx.vout[outs-1];
     if (outs >=3 && lastOut.scriptPubKey != tx.vout[outs-2].scriptPubKey) {
         // last output can either be a mn reward or a budget payment
-        // cold staking is active much after nPublicZCSpends so GetMasternodePayment is always 3 KTS.
-        // TODO: double check this if/when MN rewards change
-        if (lastOut.nValue == 3 * COIN)
-            return true;
+
+        if(nHeight < 561600) {
+
+            if (lastOut.nValue == 3 * COIN)
+                return true;
+
+        } else {
+
+            if (lastOut.nValue == GetMasternodePayment(nHeight, GetBlockValue(nHeight), 0, false))
+                return true;
+
+            if (lastOut.nValue == GetMasternodePayment(nHeight - 1, GetBlockValue(nHeight - 1), 0, false))
+                return true;
+
+        }
 
         if (budget.IsBudgetPaymentBlock(nHeight) &
                 sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) &&
@@ -7194,12 +7214,12 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
 int ActiveProtocol()
 {
     // SPORK_14 was used for 70917 (v3.4), commented out now.
-    if (sporkManager.IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-            return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+    //if (sporkManager.IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     // SPORK_15 is used for 70918 (v4.0+)
-    //if (sporkManager.IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    if (sporkManager.IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
