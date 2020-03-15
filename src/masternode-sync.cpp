@@ -51,7 +51,7 @@ bool CMasternodeSync::NotCompleted()
 
 bool CMasternodeSync::IsBlockchainSynced()
 {
-    int64_t now = GetTime();
+    /*int64_t now = GetTime();
 
     // if the last call to this function was more than 60 minutes ago (client was in sleep mode) reset the sync process
     if (now > lastProcess + 60 * 60) {
@@ -76,7 +76,7 @@ bool CMasternodeSync::IsBlockchainSynced()
     if (blockTime + 60 * 60 < lastProcess)
         return false;
 
-    fBlockchainSynced = true;
+    fBlockchainSynced = true;*/
 
     return true;
 }
