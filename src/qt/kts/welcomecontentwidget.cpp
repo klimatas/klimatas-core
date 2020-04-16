@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,11 +16,11 @@
 WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
     QDialog(parent, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint),
     ui(new Ui::WelcomeContentWidget),
-    backButton(new QPushButton()),
     icConfirm1(new QPushButton()),
     icConfirm2(new QPushButton()),
     icConfirm3(new QPushButton()),
     icConfirm4(new QPushButton()),
+    backButton(new QPushButton()),
     nextButton(new QPushButton())
 {
     ui->setupUi(this);
@@ -60,9 +60,9 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
 
     // position
     backButton->move(backX, backY);
-    backButton->setStyleSheet("background: url(://ic-arrow-white-left); background-repeat:no-repeat;background-position:center;border:  0;background-color:#5c4b7d;color: #5c4b7d; border-radius:2px;");
+    backButton->setStyleSheet("background: url(://ic-arrow-white-left); background-repeat:no-repeat;background-position:center;border:  0;background-color:#706543;color: #706543; border-radius:2px;");
     nextButton->move(nextX, nextY);
-    nextButton->setStyleSheet("background: url(://ic-arrow-white-right);background-repeat:no-repeat;background-position:center;border:  0;background-color:#5c4b7d;color: #5c4b7d; border-radius:2px;");
+    nextButton->setStyleSheet("background: url(://ic-arrow-white-right);background-repeat:no-repeat;background-position:center;border:  0;background-color:#706543;color: #706543; border-radius:2px;");
 
     if (pos == 0) {
         backButton->setVisible(false);

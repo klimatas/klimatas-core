@@ -1,5 +1,5 @@
-// Copyright (c) 2017-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -275,6 +275,8 @@ bool CalculateAccumulatorCheckpoint(int nHeight, uint256& nCheckpoint, Accumulat
 
     //Accumulate all coins over the last ten blocks that havent been accumulated (height - 20 through height - 11)
     int nTotalMintsFound = 0;
+     if (nHeightCheckpoint < 20)
+          nHeightCheckpoint = 20;
     CBlockIndex *pindex = chainActive[nHeightCheckpoint - 20];
 
     while (pindex && pindex->nHeight < nHeight - 10) {
@@ -656,8 +658,8 @@ bool calculateAccumulatedBlocksFor(
         nMintsAdded += AddBlockMintsToAccumulator(den, filter, pindex, &witnessAccumulator, true, ret);
 
         // 10 blocks were accumulated twice when zKTS v2 was activated
-        if (pindex->nHeight == 1050010 && !fDoubleCounted) {
-            pindex = chainActive[1050000];
+        if (pindex->nHeight == 10 && !fDoubleCounted) {
+            pindex = chainActive[0];
             fDoubleCounted = true;
             continue;
         }
@@ -715,8 +717,8 @@ bool calculateAccumulatedBlocksFor(
         nMintsAdded += AddBlockMintsToAccumulator(coin, nHeightMintAdded, pindex, &witnessAccumulator, true);
 
         // 10 blocks were accumulated twice when zKTS v2 was activated
-        if (pindex->nHeight == 1050010 && !fDoubleCounted) {
-            pindex = chainActive[1050000];
+        if (pindex->nHeight == 10 && !fDoubleCounted) {
+            pindex = chainActive[0];
             fDoubleCounted = true;
             continue;
         }

@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -67,7 +67,7 @@ public slots:
     void goToSend();
     void goToReceive();
     void goToAddresses();
-    void goToPrivacy();
+    //void goToPrivacy();
     void goToMasterNodes();
     void goToColdStaking();
     void goToSettings();
@@ -131,7 +131,7 @@ private:
     SendWidget *sendWidget = nullptr;
     ReceiveWidget *receiveWidget = nullptr;
     AddressesWidget *addressesWidget = nullptr;
-    PrivacyWidget *privacyWidget = nullptr;
+    //PrivacyWidget *privacyWidget = nullptr;
     MasterNodesWidget *masterNodesWidget = nullptr;
     ColdStakingWidget *coldStakingWidget = nullptr;
     SettingsWidget* settingsWidget = nullptr;
@@ -176,6 +176,9 @@ private slots:
 #ifndef Q_OS_MAC
     /** Handle tray icon clicked */
     void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
+#else
+    /** Handle macOS Dock icon clicked */
+     void macosDockIconActivated();
 #endif
 
 signals:

@@ -1,8 +1,9 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2020 The CryptoDev developers
+// Copyright (c) 2020 The klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -104,20 +105,19 @@ UniValue getnewaddress(const UniValue& params, bool fHelp)
         throw std::runtime_error(
             "getnewaddress ( \"account\" )\n"
             "\nReturns a new KTS address for receiving payments.\n"
-            "If 'account' is specified (recommended), it is added to the address book \n"
+            "If 'account' is specified (DEPRECATED), it is added to the address book \n"
             "so payments received with the address will be credited to 'account'.\n"
 
             "\nArguments:\n"
-            "1. \"account\"        (string, optional) The account name for the address to be linked to. if not provided, the default account \"\" is used. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.\n"
+            "1. \"account\"        (string, optional) DEPRECATED. The account name for the address to be linked to. if not provided, the default account \"\" is used. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.\n"
 
             "\nResult:\n"
             "\"ktsaddress\"    (string) The new kts address\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("getnewaddress", "") + HelpExampleRpc("getnewaddress", "\"\"") +
-            HelpExampleCli("getnewaddress", "\"myaccount\"") + HelpExampleRpc("getnewaddress", "\"myaccount\""));
+            HelpExampleCli("getnewaddress", "") + HelpExampleRpc("getnewaddress", ""));
 
-    return GetNewAddressFromAccount("receive", params).ToString();
+    return GetNewAddressFromAccount(AddressBook::AddressBookPurpose::RECEIVE, params).ToString();
 }
 
 UniValue getnewstakingaddress(const UniValue& params, bool fHelp)
@@ -129,46 +129,49 @@ UniValue getnewstakingaddress(const UniValue& params, bool fHelp)
             "\nReturns a new KTS cold staking address for receiving delegated cold stakes.\n"
 
             "\nArguments:\n"
-            "1. \"account\"        (string, optional) The account name for the address to be linked to. if not provided, the default account \"\" is used. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.\n"
+            "1. \"account\"        (string, optional) DEPRECATED. The account name for the address to be linked to. if not provided, the default account \"\" is used. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created if there is no account by the given name.\n"
 
 
             "\nResult:\n"
             "\"ktsaddress\"    (string) The new kts address\n"
 
             "\nExamples:\n" +
-            HelpExampleCli("getnewstakingaddress", "") + HelpExampleRpc("getnewstakingaddress", "\"\"") +
-            HelpExampleCli("getnewstakingaddress", "\"myaccount\"") + HelpExampleRpc("getnewstakingaddress", "\"myaccount\""));
+            HelpExampleCli("getnewstakingaddress", "") + HelpExampleRpc("getnewstakingaddress", ""));
 
     return GetNewAddressFromAccount("coldstaking", params, CChainParams::STAKING_ADDRESS).ToString();
 }
 
 UniValue delegatoradd(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() != 1)
+    if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
-            "delegatoradd \"addr\"\n"
+            "delegatoradd \"addr\" ( \"label\" )\n"
             "\nAdd the provided address <addr> into the allowed delegators AddressBook.\n"
             "This enables the staking of coins delegated to this wallet, owned by <addr>\n"
 
             "\nArguments:\n"
             "1. \"addr\"        (string, required) The address to whitelist\n"
+            "2. \"label\"       (string, optional) A label for the address to whitelist\n"
 
             "\nResult:\n"
             "true|false           (boolean) true if successful.\n"
 
             "\nExamples:\n" +
             HelpExampleCli("delegatoradd", "DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6") +
-            HelpExampleRpc("delegatoradd", "\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\""));
+            HelpExampleRpc("delegatoradd", "\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\"") +
+            HelpExampleRpc("delegatoradd", "\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\" \"myPaperWallet\""));
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid() || address.IsStakingAddress())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid KTS address");
 
+    const std::string strLabel = (params.size() > 1 ? params[1].get_str() : "");
+
     CKeyID keyID;
     if (!address.GetKeyID(keyID))
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Unable to get KeyID from KTS address");
 
-    return pwalletMain->SetAddressBook(keyID, "", AddressBook::AddressBookPurpose::DELEGATOR);
+    return pwalletMain->SetAddressBook(keyID, strLabel, AddressBook::AddressBookPurpose::DELEGATOR);
 }
 
 UniValue delegatorremove(const UniValue& params, bool fHelp)
@@ -180,7 +183,7 @@ UniValue delegatorremove(const UniValue& params, bool fHelp)
             "This disables the staking of coins delegated to this wallet, owned by <addr>\n"
 
             "\nArguments:\n"
-            "1. \"addr\"        (string, required) The address to whitelist\n"
+            "1. \"addr\"        (string, required) The address to blacklist\n"
 
             "\nResult:\n"
             "true|false           (boolean) true if successful.\n"
@@ -214,9 +217,10 @@ UniValue delegatorremove(const UniValue& params, bool fHelp)
 
 UniValue ListaddressesForPurpose(const std::string strPurpose)
 {
-    const CChainParams::Base58Type addrType =
-            strPurpose == "coldstaking" ?
-            CChainParams::STAKING_ADDRESS : CChainParams::PUBKEY_ADDRESS;
+    const CChainParams::Base58Type addrType = (
+            AddressBook::IsColdStakingPurpose(strPurpose) ?
+                    CChainParams::STAKING_ADDRESS :
+                    CChainParams::PUBKEY_ADDRESS);
     UniValue ret(UniValue::VARR);
     {
         LOCK(pwalletMain->cs_wallet);
@@ -234,15 +238,19 @@ UniValue ListaddressesForPurpose(const std::string strPurpose)
 
 UniValue listdelegators(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() != 0)
+    if (fHelp || params.size() > 1)
         throw std::runtime_error(
-            "listdelegators \"addr\"\n"
+            "listdelegators ( fBlacklist )\n"
             "\nShows the list of allowed delegator addresses for cold staking.\n"
+
+            "\nArguments:\n"
+            "1. fBlacklist             (boolean, optional, default = false) Show addresses removed\n"
+            "                          from the delegators whitelist\n"
 
             "\nResult:\n"
             "[\n"
             "   {\n"
-            "   \"label\": \"yyy\",  (string) account label\n"
+            "   \"label\": \"yyy\",    (string) account label\n"
             "   \"address\": \"xxx\",  (string) KTS address string\n"
             "   }\n"
             "  ...\n"
@@ -252,7 +260,10 @@ UniValue listdelegators(const UniValue& params, bool fHelp)
             HelpExampleCli("listdelegators" , "") +
             HelpExampleRpc("listdelegators", ""));
 
-    return ListaddressesForPurpose("delegator");
+    const bool fBlacklist = (params.size() > 0 ? params[0].get_bool() : false);
+    return (fBlacklist ?
+            ListaddressesForPurpose(AddressBook::AddressBookPurpose::DELEGABLE) :
+            ListaddressesForPurpose(AddressBook::AddressBookPurpose::DELEGATOR));
 }
 
 UniValue liststakingaddresses(const UniValue& params, bool fHelp)
@@ -275,7 +286,7 @@ UniValue liststakingaddresses(const UniValue& params, bool fHelp)
             HelpExampleCli("liststakingaddresses" , "") +
             HelpExampleRpc("liststakingaddresses", ""));
 
-    return ListaddressesForPurpose("coldstaking");
+    return ListaddressesForPurpose(AddressBook::AddressBookPurpose::COLD_STAKING);
 }
 
 CBitcoinAddress GetAccountAddress(std::string strAccount, bool bForceNew = false)
@@ -305,7 +316,7 @@ CBitcoinAddress GetAccountAddress(std::string strAccount, bool bForceNew = false
         if (!pwalletMain->GetKeyFromPool(account.vchPubKey))
             throw JSONRPCError(RPC_WALLET_KEYPOOL_RAN_OUT, "Error: Keypool ran out, please call keypoolrefill first");
 
-        pwalletMain->SetAddressBook(account.vchPubKey.GetID(), strAccount, "receive");
+        pwalletMain->SetAddressBook(account.vchPubKey.GetID(), strAccount, AddressBook::AddressBookPurpose::RECEIVE);
         walletdb.WriteAccount(strAccount, account);
     }
 
@@ -317,7 +328,7 @@ UniValue getaccountaddress(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw std::runtime_error(
             "getaccountaddress \"account\"\n"
-            "\nReturns the current KTS address for receiving payments to this account.\n"
+            "\nDEPRECATED. Returns the current KTS address for receiving payments to this account.\n"
 
             "\nArguments:\n"
             "1. \"account\"       (string, required) The account name for the address. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.\n"
@@ -378,7 +389,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
             "setaccount \"ktsaddress\" \"account\"\n"
-            "\nSets the account associated with the given address.\n"
+            "\nDEPRECATED. Sets the account associated with the given address.\n"
 
             "\nArguments:\n"
             "1. \"ktsaddress\"  (string, required) The kts address to be associated with an account.\n"
@@ -406,7 +417,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
             if (address == GetAccountAddress(strOldAccount))
                 GetAccountAddress(strOldAccount, true);
         }
-        pwalletMain->SetAddressBook(address.Get(), strAccount, "receive");
+        pwalletMain->SetAddressBook(address.Get(), strAccount, AddressBook::AddressBookPurpose::RECEIVE);
     } else
         throw JSONRPCError(RPC_MISC_ERROR, "setaccount can only be used with own address");
 
@@ -419,7 +430,7 @@ UniValue getaccount(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw std::runtime_error(
             "getaccount \"ktsaddress\"\n"
-            "\nReturns the account associated with the given address.\n"
+            "\nDEPRECATED. Returns the account associated with the given address.\n"
 
             "\nArguments:\n"
             "1. \"ktsaddress\"  (string, required) The kts address for account lookup.\n"
@@ -449,7 +460,7 @@ UniValue getaddressesbyaccount(const UniValue& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw std::runtime_error(
             "getaddressesbyaccount \"account\"\n"
-            "\nReturns the list of addresses for the given account.\n"
+            "\nDEPRECATED. Returns the list of addresses for the given account.\n"
 
             "\nArguments:\n"
             "1. \"account\"  (string, required) The account name.\n"
@@ -826,7 +837,7 @@ UniValue listaddressgroupings(const UniValue& params, bool fHelp)
             "    [\n"
             "      \"ktsaddress\",     (string) The kts address\n"
             "      amount,                 (numeric) The amount in KTS\n"
-            "      \"account\"             (string, optional) The account\n"
+            "      \"account\"             (string, optional) The account (DEPRECATED)\n"
             "    ]\n"
             "    ,...\n"
             "  ]\n"
@@ -973,7 +984,7 @@ UniValue getreceivedbyaccount(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw std::runtime_error(
             "getreceivedbyaccount \"account\" ( minconf )\n"
-            "\nReturns the total amount received by addresses with <account> in transactions with at least [minconf] confirmations.\n"
+            "\nDEPRECATED. Returns the total amount received by addresses with <account> in transactions with at least [minconf] confirmations.\n"
 
             "\nArguments:\n"
             "1. \"account\"      (string, required) The selected account, may be the default account using \"\".\n"
@@ -1082,12 +1093,12 @@ UniValue getbalance(const UniValue& params, bool fHelp)
         throw std::runtime_error(
             "getbalance ( \"account\" minconf includeWatchonly includeDelegated )\n"
             "\nIf account is not specified, returns the server's total available balance (excluding zerocoins).\n"
-            "If account is specified, returns the balance in the account.\n"
+            "If account is specified (DEPRECATED), returns the balance in the account.\n"
             "Note that the account \"\" is not the same as leaving the parameter out.\n"
             "The server total may be different to the balance in the default \"\" account.\n"
 
             "\nArguments:\n"
-            "1. \"account\"      (string, optional) The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
+            "1. \"account\"      (string, optional) DEPRECATED. The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
             "3. includeWatchonly (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
             "4. includeDelegated (bool, optional, default=true) Also include balance delegated to cold stakers\n"
@@ -1096,16 +1107,12 @@ UniValue getbalance(const UniValue& params, bool fHelp)
             "amount              (numeric) The total amount in KTS received for this account.\n"
 
             "\nExamples:\n"
-            "\nThe total amount in the server across all accounts\n" +
+            "\nThe total amount in the wallet\n" +
             HelpExampleCli("getbalance", "") +
-            "\nThe total amount in the server across all accounts, with at least 5 confirmations\n" +
+            "\nThe total amount in the wallet, with at least 5 confirmations\n" +
             HelpExampleCli("getbalance", "\"*\" 6") +
-            "\nThe total amount in the default account with at least 1 confirmation\n" +
-            HelpExampleCli("getbalance", "\"\"") +
-            "\nThe total amount in the account named tabby with at least 6 confirmations\n" +
-            HelpExampleCli("getbalance", "\"tabby\" 6") +
             "\nAs a json rpc call\n" +
-            HelpExampleRpc("getbalance", "\"tabby\", 6"));
+            HelpExampleRpc("getbalance", "\"*\", 6"));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -1131,23 +1138,21 @@ UniValue getcoldstakingbalance(const UniValue& params, bool fHelp)
         throw std::runtime_error(
             "getcoldstakingbalance ( \"account\" )\n"
             "\nIf account is not specified, returns the server's total available cold balance.\n"
-            "If account is specified, returns the cold balance in the account.\n"
+            "If account is specified (DEPRECATED), returns the cold balance in the account.\n"
             "Note that the account \"\" is not the same as leaving the parameter out.\n"
             "The server total may be different to the balance in the default \"\" account.\n"
 
             "\nArguments:\n"
-            "1. \"account\"      (string, optional) The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
+            "1. \"account\"      (string, optional) DEPRECATED. The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
 
             "\nResult:\n"
             "amount              (numeric) The total amount in KTS received for this account in P2CS contracts.\n"
 
             "\nExamples:\n"
-            "\nThe total amount in the server across all accounts\n" +
+            "\nThe total amount in the wallet\n" +
             HelpExampleCli("getcoldstakingbalance", "") +
-            "\nThe total amount in the account named tabby\n" +
-            HelpExampleCli("getcoldstakingbalance", "\"tabby\"") +
             "\nAs a json rpc call\n" +
-            HelpExampleRpc("getcoldstakingbalance", "\"tabby\""));
+            HelpExampleRpc("getcoldstakingbalance", "\"*\""));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -1165,23 +1170,21 @@ UniValue getdelegatedbalance(const UniValue& params, bool fHelp)
             "getdelegatedbalance ( \"account\" )\n"
             "\nIf account is not specified, returns the server's total available delegated balance (sum of all utxos delegated\n"
             "to a cold staking address to stake on behalf of addresses of this wallet).\n"
-            "If account is specified, returns the cold balance in the account.\n"
+            "If account is specified (DEPRECATED), returns the cold balance in the account.\n"
             "Note that the account \"\" is not the same as leaving the parameter out.\n"
             "The server total may be different to the balance in the default \"\" account.\n"
 
             "\nArguments:\n"
-            "1. \"account\"      (string, optional) The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
+            "1. \"account\"      (string, optional) DEPRECATED. The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
 
             "\nResult:\n"
             "amount              (numeric) The total amount in KTS received for this account in P2CS contracts.\n"
 
             "\nExamples:\n"
-            "\nThe total amount in the server across all accounts\n" +
+            "\nThe total amount in the wallet\n" +
             HelpExampleCli("getdelegatedbalance", "") +
-            "\nThe total amount in the account named tabby\n" +
-            HelpExampleCli("getdelegatedbalance", "\"tabby\"") +
             "\nAs a json rpc call\n" +
-            HelpExampleRpc("getdelegatedbalance", "\"tabby\""));
+            HelpExampleRpc("getdelegatedbalance", "\"*\""));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -1210,7 +1213,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 3 || params.size() > 5)
         throw std::runtime_error(
             "move \"fromaccount\" \"toaccount\" amount ( minconf \"comment\" )\n"
-            "\nMove a specified amount from one account in your wallet to another.\n"
+            "\nDEPRECATED. Move a specified amount from one account in your wallet to another.\n"
 
             "\nArguments:\n"
             "1. \"fromaccount\"   (string, required) The name of the account to move funds from. May be the default account using \"\".\n"
@@ -1280,7 +1283,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 3 || params.size() > 7)
         throw std::runtime_error(
             "sendfrom \"fromaccount\" \"toktsaddress\" amount ( minconf \"comment\" \"comment-to\" includeDelegated)\n"
-            "\nSent an amount from an account to a kts address.\n"
+            "\nDEPRECATED (use sendtoaddress). Send an amount from an account to a kts address.\n"
             "The amount is a real and is rounded to the nearest 0.00000001." +
             HelpRequiringPassphrase() + "\n"
 
@@ -1351,7 +1354,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
-            "1. \"fromaccount\"         (string, required) The account to send the funds from, can be \"\" for the default account\n"
+            "1. \"fromaccount\"         (string, required) DEPRECATED. The account to send the funds from. Should be \"\" for the default account\n"
             "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
             "    {\n"
             "      \"address\":amount   (numeric) The kts address is the key, the numeric amount in KTS is the value\n"
@@ -1367,11 +1370,11 @@ UniValue sendmany(const UniValue& params, bool fHelp)
 
             "\nExamples:\n"
             "\nSend two amounts to two different addresses:\n" +
-            HelpExampleCli("sendmany", "\"tabby\" \"{\\\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\\\":0.01,\\\"DAD3Y6ivr8nPQLT1NEPX84DxGCw9jz9Jvg\\\":0.02}\"") +
+            HelpExampleCli("sendmany", "\"\" \"{\\\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\\\":0.01,\\\"DAD3Y6ivr8nPQLT1NEPX84DxGCw9jz9Jvg\\\":0.02}\"") +
             "\nSend two amounts to two different addresses setting the confirmation and comment:\n" +
-            HelpExampleCli("sendmany", "\"tabby\" \"{\\\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\\\":0.01,\\\"DAD3Y6ivr8nPQLT1NEPX84DxGCw9jz9Jvg\\\":0.02}\" 6 \"testing\"") +
+            HelpExampleCli("sendmany", "\"\" \"{\\\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\\\":0.01,\\\"DAD3Y6ivr8nPQLT1NEPX84DxGCw9jz9Jvg\\\":0.02}\" 6 \"testing\"") +
             "\nAs a json rpc call\n" +
-            HelpExampleRpc("sendmany", "\"tabby\", \"{\\\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\\\":0.01,\\\"DAD3Y6ivr8nPQLT1NEPX84DxGCw9jz9Jvg\\\":0.02}\", 6, \"testing\""));
+            HelpExampleRpc("sendmany", "\"\", \"{\\\"DMJRSsuU9zfyrvxVaAEFQqK4MxZg6vgeS6\\\":0.01,\\\"DAD3Y6ivr8nPQLT1NEPX84DxGCw9jz9Jvg\\\":0.02}\", 6, \"testing\""));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -1441,7 +1444,7 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
             "addmultisigaddress nrequired [\"key\",...] ( \"account\" )\n"
             "\nAdd a nrequired-to-sign multisignature address to the wallet.\n"
             "Each key is a KTS address or hex-encoded public key.\n"
-            "If 'account' is specified, assign address to that account.\n"
+            "If 'account' is specified (DEPRECATED), assign address to that account.\n"
 
             "\nArguments:\n"
             "1. nrequired        (numeric, required) The number of required signatures out of the n keys or addresses.\n"
@@ -1450,7 +1453,7 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
             "       \"address\"  (string) kts address or hex-encoded public key\n"
             "       ...,\n"
             "     ]\n"
-            "3. \"account\"      (string, optional) An account to assign the addresses to.\n"
+            "3. \"account\"      (string, optional) DEPRECATED. An account to assign the addresses to.\n"
 
             "\nResult:\n"
             "\"ktsaddress\"  (string) A kts address associated with the keys.\n"
@@ -1472,7 +1475,7 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
     CScriptID innerID(inner);
     pwalletMain->AddCScript(inner);
 
-    pwalletMain->SetAddressBook(innerID, strAccount, "send");
+    pwalletMain->SetAddressBook(innerID, strAccount, AddressBook::AddressBookPurpose::SEND);
     return CBitcoinAddress(innerID).ToString();
 }
 
@@ -1624,7 +1627,7 @@ UniValue listreceivedbyaddress(const UniValue& params, bool fHelp)
             "  {\n"
             "    \"involvesWatchonly\" : \"true\",    (bool) Only returned if imported addresses were involved in transaction\n"
             "    \"address\" : \"receivingaddress\",  (string) The receiving address\n"
-            "    \"account\" : \"accountname\",       (string) The account of the receiving address. The default account is \"\".\n"
+            "    \"account\" : \"accountname\",       (string) DEPRECATED. The account of the receiving address. The default account is \"\".\n"
             "    \"amount\" : x.xxx,                  (numeric) The total amount in KTS received by the address\n"
             "    \"confirmations\" : n                (numeric) The number of confirmations of the most recent transaction included\n"
             "    \"bcconfirmations\" : n              (numeric) The number of blockchain confirmations of the most recent transaction included\n"
@@ -1645,7 +1648,7 @@ UniValue listreceivedbyaccount(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 3)
         throw std::runtime_error(
             "listreceivedbyaccount ( minconf includeempty includeWatchonly)\n"
-            "\nList balances by account.\n"
+            "\nDEPRECATED. List balances by account.\n"
 
             "\nArguments:\n"
             "1. minconf      (numeric, optional, default=1) The minimum number of confirmations before payments are included.\n"
@@ -1840,8 +1843,7 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
             "\nReturns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.\n"
 
             "\nArguments:\n"
-            "1. \"account\"    (string, optional) The account name. If not included, it will list all transactions for all accounts.\n"
-            "                                     If \"\" is set, it will list transactions for the default account.\n"
+            "1. \"account\"    (string, optional) DEPRECATED. The account name. Should be \"*\".\n"
             "2. count          (numeric, optional, default=10) The number of transactions to return\n"
             "3. from           (numeric, optional, default=0) The number of transactions to skip\n"
             "4. includeWatchonly (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
@@ -1851,7 +1853,7 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "[\n"
             "  {\n"
-            "    \"account\":\"accountname\",       (string) The account name associated with the transaction. \n"
+            "    \"account\":\"accountname\",       (string) DEPRECATED. The account name associated with the transaction. \n"
             "                                                It will be \"\" for the default account.\n"
             "    \"address\":\"ktsaddress\",    (string) The kts address of the transaction. Not present for \n"
             "                                                move transactions (category = move).\n"
@@ -1890,12 +1892,10 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
             "\nExamples:\n"
             "\nList the most recent 10 transactions in the systems\n" +
             HelpExampleCli("listtransactions", "") +
-            "\nList the most recent 10 transactions for the tabby account\n" +
-            HelpExampleCli("listtransactions", "\"tabby\"") +
-            "\nList transactions 100 to 120 from the tabby account\n" +
-            HelpExampleCli("listtransactions", "\"tabby\" 20 100") +
+            "\nList transactions 100 to 120\n" +
+            HelpExampleCli("listtransactions", "\"*\" 20 100") +
             "\nAs a json rpc call\n" +
-            HelpExampleRpc("listtransactions", "\"tabby\", 20, 100"));
+            HelpExampleRpc("listtransactions", "\"*\", 20, 100"));
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -1967,7 +1967,7 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 2)
         throw std::runtime_error(
             "listaccounts ( minconf includeWatchonly)\n"
-            "\nReturns Object that has account names as keys, account balances as values.\n"
+            "\nDEPRECATED. Returns Object that has account names as keys, account balances as values.\n"
 
             "\nArguments:\n"
             "1. minconf          (numeric, optional, default=1) Only include transactions with at least this many confirmations\n"
@@ -2054,7 +2054,7 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"transactions\": [\n"
-            "    \"account\":\"accountname\",       (string) The account name associated with the transaction. Will be \"\" for the default account.\n"
+            "    \"account\":\"accountname\",       (string) DEPRECATED. The account name associated with the transaction. Will be \"\" for the default account.\n"
             "    \"address\":\"ktsaddress\",    (string) The kts address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
             "    \"amount\": x.xxx,          (numeric) The amount in KTS. This is negative for the 'send' category, and for the 'move' category for moves \n"
@@ -2151,7 +2151,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
             "  \"timereceived\" : ttt,    (numeric) The time received in seconds since epoch (1 Jan 1970 GMT)\n"
             "  \"details\" : [\n"
             "    {\n"
-            "      \"account\" : \"accountname\",  (string) The account name involved in the transaction, can be \"\" for the default account.\n"
+            "      \"account\" : \"accountname\",  (string) DEPRECATED. The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"address\" : \"ktsaddress\",   (string) The kts address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
             "      \"amount\" : x.xxx                  (numeric) The amount in KTS\n"
@@ -2322,7 +2322,7 @@ UniValue walletpassphrase(const UniValue& params, bool fHelp)
             "\nExamples:\n"
             "\nUnlock the wallet for 60 seconds\n" +
             HelpExampleCli("walletpassphrase", "\"my pass phrase\" 60") +
-            "\nUnlock the wallet for 60 seconds but allow anonymization, automint, and staking only\n" +
+            "\nUnlock the wallet for 60 seconds but allow staking only\n" +
             HelpExampleCli("walletpassphrase", "\"my pass phrase\" 60 true") +
             "\nLock the wallet again (before 60 seconds)\n" +
             HelpExampleCli("walletlock", "") +
@@ -2720,8 +2720,7 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
             "  \"keypoololdest\": xxxxxx,                 (numeric) the timestamp (seconds since GMT epoch) of the oldest pre-generated key in the key pool\n"
             "  \"keypoolsize\": xxxx,                     (numeric) how many new keys are pre-generated\n"
             "  \"unlocked_until\": ttt,                   (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked\n"
-            "  \"paytxfee\": x.xxxx,                      (numeric) the transaction fee configuration, set in KTS/kB\n"
-            "  \"automintaddresses\": status              (boolean) the status of automint addresses (true if enabled, false if disabled)\n"
+            "  \"paytxfee\": x.xxxx                       (numeric) the transaction fee configuration, set in KTS/kB\n"
             "}\n"
 
             "\nExamples:\n" +
@@ -2744,7 +2743,6 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
     if (pwalletMain->IsCrypted())
         obj.push_back(Pair("unlocked_until", nWalletUnlockTime));
     obj.push_back(Pair("paytxfee",      ValueFromAmount(payTxFee.GetFeePerK())));
-    obj.push_back(Pair("automintaddresses", fEnableAutoConvert));
     return obj;
 }
 
@@ -3171,7 +3169,8 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
 
             "\nArguments:\n"
             "1. fVerbose      (boolean, optional, default=false) Output mints metadata.\n"
-            "2. fMatureOnly      (boolean, optional, default=false) List only mature mints. (Set only if fVerbose is specified)\n"
+            "2. fMatureOnly   (boolean, optional, default=false) List only mature mints.\n"
+            "                 Set only if fVerbose is specified\n"
 
             "\nResult (with fVerbose=false):\n"
             "[\n"
@@ -3223,7 +3222,6 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
             objMint.push_back(Pair("mint height", m.nHeight));              // Mint Height
             int nConfirmations = (m.nHeight && nBestHeight > m.nHeight) ? nBestHeight - m.nHeight : 0;
             objMint.push_back(Pair("confirmations", nConfirmations));       // Confirmations
-            // hashStake
             if (m.hashStake == 0) {
                 CZerocoinMint mint;
                 if (pwalletMain->GetMint(m.hashSerial, mint)) {
@@ -3233,7 +3231,7 @@ UniValue listmintedzerocoins(const UniValue& params, bool fHelp)
                     pwalletMain->zktsTracker->UpdateState(m);
                 }
             }
-            objMint.push_back(Pair("hash stake", m.hashStake.GetHex()));       // Confirmations
+            objMint.push_back(Pair("hash stake", m.hashStake.GetHex()));    // hashStake
             // Push back mint object
             jsonList.push_back(objMint);
         }
@@ -3343,17 +3341,20 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
             "  ]\n"
 
             "\nResult:\n"
-            "[\n"
-            "  {\n"
-            "    \"txid\": \"xxx\",         (string) Transaction ID.\n"
-            "    \"value\": amount,       (numeric) Minted amount.\n"
-            "    \"pubcoin\": \"xxx\",      (string) Pubcoin in hex format.\n"
-            "    \"randomness\": \"xxx\",   (string) Hex encoded randomness.\n"
-            "    \"serial\": \"xxx\",       (string) Serial in hex format.\n"
-            "    \"time\": nnn            (numeric) Time to mint this transaction.\n"
-            "  }\n"
-            "  ,...\n"
-            "]\n"
+            "{\n"
+            "   \"txid\": \"xxx\",       (string) Transaction ID.\n"
+            "   \"time\": nnn            (numeric) Time to mint this transaction.\n"
+            "   \"mints\":\n"
+            "   [\n"
+            "      {\n"
+            "         \"denomination\": nnn,     (numeric) Minted denomination.\n"
+            "         \"pubcoin\": \"xxx\",      (string) Pubcoin in hex format.\n"
+            "         \"randomness\": \"xxx\",   (string) Hex encoded randomness.\n"
+            "         \"serial\": \"xxx\",       (string) Serial in hex format.\n"
+            "      },\n"
+            "      ...\n"
+            "   ]\n"
+            "}\n"
 
             "\nExamples:\n"
             "\nMint 50 from anywhere\n" +
@@ -3421,27 +3422,29 @@ UniValue mintzerocoin(const UniValue& params, bool fHelp)
     if (strError != "")
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
 
+    UniValue retObj(UniValue::VOBJ);
+    retObj.push_back(Pair("txid", wtx.GetHash().ToString()));
+    retObj.push_back(Pair("time", GetTimeMillis() - nTime));
     UniValue arrMints(UniValue::VARR);
     for (CDeterministicMint dMint : vDMints) {
         UniValue m(UniValue::VOBJ);
-        m.push_back(Pair("txid", wtx.GetHash().ToString()));
-        m.push_back(Pair("value", ValueFromAmount(libzerocoin::ZerocoinDenominationToAmount(dMint.GetDenomination()))));
+        m.push_back(Pair("denomination", ValueFromAmount(libzerocoin::ZerocoinDenominationToAmount(dMint.GetDenomination()))));
         m.push_back(Pair("pubcoinhash", dMint.GetPubcoinHash().GetHex()));
         m.push_back(Pair("serialhash", dMint.GetSerialHash().GetHex()));
         m.push_back(Pair("seedhash", dMint.GetSeedHash().GetHex()));
         m.push_back(Pair("count", (int64_t)dMint.GetCount()));
-        m.push_back(Pair("time", GetTimeMillis() - nTime));
         arrMints.push_back(m);
     }
+    retObj.push_back(Pair("mints", arrMints));
 
-    return arrMints;
+    return retObj;
 }
 
 UniValue spendzerocoin(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() > 5 || params.size() < 3)
         throw std::runtime_error(
-            "spendzerocoin amount mintchange minimizechange ( \"address\" ispublicspend)\n"
+            "spendzerocoin amount mintchange minimizechange ( \"address\" isPublicSpend)\n"
             "\nSpend zKTS to a KTS address.\n" +
             HelpRequiringPassphrase() + "\n"
 
@@ -3451,7 +3454,8 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
             "3. minimizechange  (boolean, required) Try to minimize the returning change  [false]\n"
             "4. \"address\"     (string, optional, default=change) Send to specified address or to a new change address.\n"
             "                       If there is change then an address is required\n"
-            "5. ispublicspend (boolean, optional, default=true) create a public zc spend instead of use the old code (only for regression tests)"
+            "5. isPublicSpend   (boolean, optional, default=true) create a public zc spend."
+            "                       If false, instead create spend version 2 (only for regression tests)"
 
             "\nResult:\n"
             "{\n"
@@ -3485,37 +3489,38 @@ UniValue spendzerocoin(const UniValue& params, bool fHelp)
     if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
         throw JSONRPCError(RPC_WALLET_ERROR, "zKTS is currently disabled due to maintenance.");
 
-    EnsureWalletIsUnlocked();
+    CAmount nAmount = AmountFromValue(params[0]);        // Spending amount
+    const bool fMintChange = params[1].get_bool();       // Mint change to zKTS
+    const bool fMinimizeChange = params[2].get_bool();    // Minimize change
+    const std::string address_str = (params.size() > 3 ? params[3].get_str() : "");
+    const bool isPublicSpend = (params.size() > 4 ? params[4].get_bool() : true);
 
-    CAmount nAmount = AmountFromValue(params[0]);   // Spending amount
-    bool fMintChange = params[1].get_bool();        // Mint change to zKTS
-    if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
-        throw JSONRPCError(RPC_WALLET_ERROR, "zKTS minting is DISABLED, cannot mint change");
-    bool fMinimizeChange = params[2].get_bool();    // Minimize change
-    std::string address_str = params.size() > 3 ? params[3].get_str() : "";
-    bool ispublicspend = params.size() > 4 ? params[4].get_bool() : true;
+    if (Params().NetworkID() != CBaseChainParams::REGTEST) {
+        if (fMintChange)
+            throw JSONRPCError(RPC_WALLET_ERROR, "zKTS minting is DISABLED (except for regtest), cannot mint change");
 
-    std::vector<CZerocoinMint> vMintsSelected;
-
-    if (!ispublicspend && Params().NetworkID() != CBaseChainParams::REGTEST) {
-        throw JSONRPCError(RPC_WALLET_ERROR, "zKTS old spend only available in regtest for tests purposes");
+        if (!isPublicSpend)
+            throw JSONRPCError(RPC_WALLET_ERROR, "zKTS old spend only available in regtest for tests purposes");
     }
 
-    return DoZktsSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str, ispublicspend);
+    std::vector<CZerocoinMint> vMintsSelected;
+    return DoZktsSpend(nAmount, fMintChange, fMinimizeChange, vMintsSelected, address_str, isPublicSpend);
 }
 
 
 UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() < 1 || params.size() > 2)
+    if (fHelp || params.size() < 1 || params.size() > 3)
         throw std::runtime_error(
-            "spendzerocoinmints mints_list (\"address\") \n"
+            "spendzerocoinmints mints_list (\"address\" isPublicSpend) \n"
             "\nSpend zKTS mints to a KTS address.\n" +
             HelpRequiringPassphrase() + "\n"
 
             "\nArguments:\n"
             "1. mints_list     (string, required) A json array of zerocoin mints serial hashes\n"
             "2. \"address\"     (string, optional, default=change) Send to specified address or to a new change address.\n"
+            "3. isPublicSpend  (boolean, optional, default=true) create a public zc spend."
+            "                       If false, instead create spend version 2 (only for regression tests)"
 
             "\nResult:\n"
             "{\n"
@@ -3549,61 +3554,53 @@ UniValue spendzerocoinmints(const UniValue& params, bool fHelp)
     if(sporkManager.IsSporkActive(SPORK_16_ZEROCOIN_MAINTENANCE_MODE))
         throw JSONRPCError(RPC_WALLET_ERROR, "zKTS is currently disabled due to maintenance.");
 
-    std::string address_str = "";
-    if (params.size() > 1) {
-        RPCTypeCheck(params, boost::assign::list_of(UniValue::VARR)(UniValue::VSTR));
-        address_str = params[1].get_str();
-    } else
-        RPCTypeCheck(params, boost::assign::list_of(UniValue::VARR));
-
-    EnsureWalletIsUnlocked();
-
     UniValue arrMints = params[0].get_array();
+    const std::string address_str = (params.size() > 1 ? params[1].get_str() : "");
+    const bool isPublicSpend = (params.size() > 2 ? params[2].get_bool() : true);
+
     if (arrMints.size() == 0)
         throw JSONRPCError(RPC_WALLET_ERROR, "No zerocoin selected");
-    if (arrMints.size() > 7)
-        throw JSONRPCError(RPC_WALLET_ERROR, "Too many mints included. Maximum zerocoins per spend: 7");
 
-    CAmount nAmount(0);   // Spending amount
+    if (!isPublicSpend && Params().NetworkID() != CBaseChainParams::REGTEST) {
+        throw JSONRPCError(RPC_WALLET_ERROR, "zKTS old spend only available in regtest for tests purposes");
+    }
+
+    // check mints supplied and save serial hash (do this here so we don't fetch if any is wrong)
+    std::vector<uint256> vSerialHashes;
+    for(unsigned int i = 0; i < arrMints.size(); i++) {
+        std::string serialHashStr = arrMints[i].get_str();
+        if (!IsHex(serialHashStr))
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected hex serial hash");
+        vSerialHashes.push_back(uint256(serialHashStr));
+    }
 
     // fetch mints and update nAmount
+    CAmount nAmount(0);
     std::vector<CZerocoinMint> vMintsSelected;
-    for(unsigned int i=0; i < arrMints.size(); i++) {
-
+    for(const uint256& serialHash : vSerialHashes) {
         CZerocoinMint mint;
-        std::string serialHash = arrMints[i].get_str();
-
-        if (!IsHex(serialHash))
-            throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, expected hex serial hash");
-
-        uint256 hashSerial(serialHash);
-        if (!pwalletMain->GetMint(hashSerial, mint)) {
-            std::string strErr = "Failed to fetch mint associated with serial hash " + serialHash;
+        if (!pwalletMain->GetMint(serialHash, mint)) {
+            std::string strErr = "Failed to fetch mint associated with serial hash " + serialHash.GetHex();
             throw JSONRPCError(RPC_WALLET_ERROR, strErr);
         }
-
         vMintsSelected.emplace_back(mint);
         nAmount += mint.GetDenominationAsAmount();
     }
 
-    CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
-    if (params.size() == 4) {
-        // Destination address was supplied as params[4]. Optional parameters MUST be at the end
-        // to avoid type confusion from the JSON interpreter
-        address = CBitcoinAddress(params[3].get_str());
-        if(!address.IsValid() || address.IsStakingAddress())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid KTS address");
-    }
-
-    return DoZktsSpend(nAmount, false, true, vMintsSelected, address_str);
+    return DoZktsSpend(nAmount, false, true, vMintsSelected, address_str, isPublicSpend);
 }
 
 
-extern UniValue DoZktsSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool ispublicspend)
+extern UniValue DoZktsSpend(const CAmount nAmount, bool fMintChange, bool fMinimizeChange, std::vector<CZerocoinMint>& vMintsSelected, std::string address_str, bool isPublicSpend)
 {
-    // zerocoin MINT is disabled. fMintChange should be false here. Double check
-    if (fMintChange && Params().NetworkID() != CBaseChainParams::REGTEST)
-        throw JSONRPCError(RPC_WALLET_ERROR, "zKTS minting is DISABLED, cannot mint change");
+    // zerocoin mint / v2 spend is disabled. fMintChange/isPublicSpend should be false here. Double check
+    if (Params().NetworkID() != CBaseChainParams::REGTEST) {
+        if (fMintChange)
+            throw JSONRPCError(RPC_WALLET_ERROR, "zKTS minting is DISABLED (except for regtest), cannot mint change");
+
+        if (!isPublicSpend)
+            throw JSONRPCError(RPC_WALLET_ERROR, "zKTS old spend only available in regtest for tests purposes");
+    }
 
     int64_t nTimeStart = GetTimeMillis();
     CBitcoinAddress address = CBitcoinAddress(); // Optional sending address. Dummy initialization here.
@@ -3619,7 +3616,8 @@ extern UniValue DoZktsSpend(const CAmount nAmount, bool fMintChange, bool fMinim
         outputs.push_back(std::pair<CBitcoinAddress*, CAmount>(&address, nAmount));
     }
 
-    fSuccess = pwalletMain->SpendZerocoin(nAmount, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, outputs, nullptr, ispublicspend);
+    EnsureWalletIsUnlocked();
+    fSuccess = pwalletMain->SpendZerocoin(nAmount, wtx, receipt, vMintsSelected, fMintChange, fMinimizeChange, outputs, nullptr, isPublicSpend);
 
     if (!fSuccess)
         throw JSONRPCError(RPC_WALLET_ERROR, receipt.GetStatusMessage());
@@ -4275,48 +4273,11 @@ UniValue searchdzkts(const UniValue& params, bool fHelp)
     return "done";
 }
 
-UniValue enableautomintaddress(const UniValue& params, bool fHelp)
-{
-    if (fHelp || params.size() != 1)
-        throw std::runtime_error(
-                "enableautomintaddress enable\n"
-                "\nEnables or disables automint address functionality\n"
-
-                "\nArguments\n"
-                "1. enable     (boolean, required) Enable or disable automint address functionality\n"
-
-                "\nExamples\n" +
-                HelpExampleCli("enableautomintaddress", "true") + HelpExampleRpc("enableautomintaddress", "false"));
-
-    fEnableAutoConvert = params[0].get_bool();
-
-    return NullUniValue;
-}
-
-UniValue createautomintaddress(const UniValue& params, bool fHelp)
-{
-    if (fHelp || params.size() != 0)
-        throw std::runtime_error(
-                "createautomintaddress\n"
-                "\nGenerates new auto mint address\n" +
-                HelpRequiringPassphrase() + "\n"
-
-                "\nResult\n"
-                "\"address\"     (string) KTS address for auto minting\n" +
-                HelpExampleCli("createautomintaddress", "") +
-                HelpExampleRpc("createautomintaddress", ""));
-
-    EnsureWalletIsUnlocked();
-    LOCK(pwalletMain->cs_wallet);
-    CBitcoinAddress address = pwalletMain->GenerateNewAutoMintKey();
-    return address.ToString();
-}
-
 UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() < 4 || params.size() > 5)
+    if (fHelp || params.size() < 4 || params.size() > 7)
         throw std::runtime_error(
-            "spendrawzerocoin \"serialHex\" denom \"randomnessHex\" [\"address\"]\n"
+            "spendrawzerocoin \"serialHex\" denom \"randomnessHex\" \"priv key\" ( \"address\" \"mintTxId\" isPublicSpend)\n"
             "\nCreate and broadcast a TX spending the provided zericoin.\n"
 
             "\nArguments:\n"
@@ -4324,7 +4285,12 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
             "2. \"randomnessHex\"    (string, required) A zerocoin randomness value (hex)\n"
             "3. denom                (numeric, required) A zerocoin denomination (decimal)\n"
             "4. \"priv key\"         (string, required) The private key associated with this coin (hex)\n"
-            "5. \"address\"          (string, optional) KTS address to spend to. If not specified, spend to change add.\n"
+            "5. \"address\"          (string, optional) KTS address to spend to. If not specified, "
+            "                        or empty string, spend to change address.\n"
+            "6. \"mintTxId\"         (string, optional) txid of the transaction containing the mint. If not"
+            "                        specified, or empty string, the blockchain will be scanned (could take a while)"
+            "7. isPublicSpend        (boolean, optional, default=true) create a public zc spend."
+            "                        If false, instead create spend version 2 (only for regression tests)"
 
             "\nResult:\n"
                 "\"txid\"             (string) The transaction txid in hex\n"
@@ -4332,6 +4298,10 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
             "\nExamples\n" +
             HelpExampleCli("spendrawzerocoin", "\"f80892e78c30a393ef4ab4d5a9d5a2989de6ebc7b976b241948c7f489ad716a2\" \"a4fd4d7248e6a51f1d877ddd2a4965996154acc6b8de5aa6c83d4775b283b600\" 100 \"xxx\"") +
             HelpExampleRpc("spendrawzerocoin", "\"f80892e78c30a393ef4ab4d5a9d5a2989de6ebc7b976b241948c7f489ad716a2\", \"a4fd4d7248e6a51f1d877ddd2a4965996154acc6b8de5aa6c83d4775b283b600\", 100, \"xxx\""));
+
+    const bool isPublicSpend = (params.size() > 6 ? params[6].get_bool() : true);
+    if (Params().NetworkID() != CBaseChainParams::REGTEST && !isPublicSpend)
+        throw JSONRPCError(RPC_WALLET_ERROR, "zKTS old spend only available in regtest for tests purposes");
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -4353,12 +4323,8 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
     bool fGood = vchSecret.SetString(priv_key_str);
     CKey key = vchSecret.GetKey();
     if (!key.IsValid() && fGood)
-        return JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "privkey is not valid");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "privkey is not valid");
     privkey = key.GetPrivKey();
-
-    std::string address_str = "";
-    if (params.size() == 5)
-        address_str = params[4].get_str();
 
     // Create the coin associated with these secrets
     libzerocoin::PrivateCoin coin(Params().Zerocoin_Params(false), denom, serial, randomness);
@@ -4367,44 +4333,45 @@ UniValue spendrawzerocoin(const UniValue& params, bool fHelp)
 
     // Create the mint associated with this coin
     CZerocoinMint mint(denom, coin.getPublicCoin().getValue(), randomness, serial, false, CZerocoinMint::CURRENT_VERSION, &privkey);
-    std::vector<CZerocoinMint> vMintsSelected = {mint};
-    CAmount nAmount = mint.GetDenominationAsAmount();
 
-    return DoZktsSpend(nAmount, false, true, vMintsSelected, address_str);
-}
+    std::string address_str = "";
+    if (params.size() > 4)
+        address_str = params[4].get_str();
 
-UniValue clearspendcache(const UniValue& params, bool fHelp)
-{
-    if(fHelp || params.size() != 0)
-        throw std::runtime_error(
-            "clearspendcache\n"
-            "\nClear the pre-computed zKTS spend cache, and database.\n" +
-            HelpRequiringPassphrase() + "\n"
-
-            "\nExamples\n" +
-            HelpExampleCli("clearspendcache", "") + HelpExampleRpc("clearspendcache", ""));
-
-    EnsureWalletIsUnlocked();
-
-    CzKTSTracker* zktsTracker = pwalletMain->zktsTracker.get();
-
-    {
-        int nTries = 0;
-        while (nTries < 100) {
-            TRY_LOCK(zktsTracker->cs_spendcache, fLocked);
-            if (fLocked) {
-                if (zktsTracker->ClearSpendCache()) {
-                    fClearSpendCache = true;
-                    CWalletDB walletdb("precomputes.dat", "cr+");
-                    walletdb.EraseAllPrecomputes();
-                    return "Successfully Cleared the Precompute Spend Cache and Database";
+    if (params.size() > 5) {
+        // update mint txid
+        mint.SetTxHash(ParseHashV(params[5], "parameter 5"));
+    } else {
+        // If the mint tx is not provided, look for it
+        const CBigNum& mintValue = mint.GetValue();
+        bool found = false;
+        {
+            CBlockIndex* pindex = chainActive.Tip();
+            while (!found && pindex && pindex->nHeight >= Params().Zerocoin_StartHeight()) {
+                LogPrintf("%s : Checking block %d...\n", __func__, pindex->nHeight);
+                if (pindex->MintedDenomination(denom)) {
+                    CBlock block;
+                    if (!ReadBlockFromDisk(block, pindex))
+                        throw JSONRPCError(RPC_INTERNAL_ERROR, "Unable to read block from disk");
+                    std::list<CZerocoinMint> listMints;
+                    BlockToZerocoinMintList(block, listMints, true);
+                    for (const CZerocoinMint& m : listMints) {
+                        if (m.GetValue() == mintValue && m.GetDenomination() == denom) {
+                            // mint found. update txid
+                            mint.SetTxHash(m.GetTxHash());
+                            found = true;
+                            break;
+                        }
+                    }
                 }
-            } else {
-                fGlobalUnlockSpendCache = true;
-                nTries++;
-                MilliSleep(100);
+                pindex = pindex->pprev;
             }
         }
+        if (!found)
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "Mint tx not found");
     }
-    throw JSONRPCError(RPC_WALLET_ERROR, "Error: Spend cache not cleared!");
+
+    std::vector<CZerocoinMint> vMintsSelected = {mint};
+    return DoZktsSpend(mint.GetDenominationAsAmount(), false, true, vMintsSelected, address_str, isPublicSpend);
 }
+

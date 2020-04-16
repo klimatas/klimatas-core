@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -289,7 +289,8 @@ void SettingsMultisendWidget::addMultiSend(QString address, int percentage, QStr
         // update the address book with the label given or no label if none was given.
         CBitcoinAddress address(strAddress);
         std::string userInputLabel = addressLabel.toStdString();
-        walletModel->updateAddressBookLabels(address.Get(), (userInputLabel.empty()) ? "(no label)" : userInputLabel, "send");
+        walletModel->updateAddressBookLabels(address.Get(), (userInputLabel.empty()) ? "(no label)" : userInputLabel,
+                AddressBook::AddressBookPurpose::SEND);
     }
 
     CWalletDB walletdb(pwalletMain->strWalletFile);

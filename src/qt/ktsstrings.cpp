@@ -256,10 +256,10 @@ QT_TRANSLATE_NOOP("kts-core", ""
 QT_TRANSLATE_NOOP("kts-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("kts-core", "(51472 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("kts-core", "(10300 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("kts-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("kts-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("kts-core", "(must be 51472 for mainnet)"),
+QT_TRANSLATE_NOOP("kts-core", "(must be 10300 for mainnet)"),
 QT_TRANSLATE_NOOP("kts-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("kts-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("kts-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
@@ -287,7 +287,7 @@ QT_TRANSLATE_NOOP("kts-core", "Connect to a node to retrieve peer addresses, and
 QT_TRANSLATE_NOOP("kts-core", "Connection options:"),
 QT_TRANSLATE_NOOP("kts-core", "Copyright (C) 2009-%i The Bitcoin Core Developers"),
 QT_TRANSLATE_NOOP("kts-core", "Copyright (C) 2014-%i The Dash Core Developers"),
-QT_TRANSLATE_NOOP("kts-core", "Copyright (C) 2015-%i The KTS Core Developers"),
+QT_TRANSLATE_NOOP("kts-core", "Copyright (C) 2015-%i The PIVX Core Developers"),
 QT_TRANSLATE_NOOP("kts-core", "Corrupted block database detected"),
 QT_TRANSLATE_NOOP("kts-core", "Could not parse masternode.conf"),
 QT_TRANSLATE_NOOP("kts-core", "Couldn't generate the accumulator witness"),

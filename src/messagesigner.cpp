@@ -1,6 +1,7 @@
 // Copyright (c) 2014-2018 The Dash Core developers
-// Copyright (c) 2018-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2018-2020 The PIVX developers
+// Copyright (c) 2020 The CryptoDev developers
+// Copyright (c) 2020 The klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -141,15 +142,15 @@ bool CSignedMessage::CheckSignature(const CPubKey& pubKey) const
     return true;
 }
 
-bool CSignedMessage::CheckSignature(const bool fSignatureCheck) const
+bool CSignedMessage::CheckSignature() const
 {
     std::string strError = "";
 
     const CPubKey pubkey = GetPublicKey(strError);
     if (pubkey == CPubKey())
-        return error("%s : ERROR: %s", __func__, strError);
+        return error("%s : %s", __func__, strError);
 
-    return !fSignatureCheck || CheckSignature(pubkey);
+    return CheckSignature(pubkey);
 }
 
 const CPubKey CSignedMessage::GetPublicKey(std::string& strErrorRet) const

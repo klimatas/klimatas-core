@@ -1,8 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -138,8 +138,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
     if (hash > bnTarget) {
         if (Params().MineBlocksOnDemand())
             return false;
-        else
-            return error("CheckProofOfWork() : hash doesn't match nBits");
+    //    else
+    //        return error("CheckProofOfWork() : hash doesn't match nBits");
     }
 
     return true;

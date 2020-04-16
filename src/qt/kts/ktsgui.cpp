@@ -1,5 +1,4 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,6 +18,7 @@
 #include "qt/kts/defaultdialog.h"
 #include "qt/kts/settings/settingsfaqwidget.h"
 
+#include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QApplication>
@@ -31,6 +31,8 @@
 
 #define BASE_WINDOW_WIDTH 1200
 #define BASE_WINDOW_HEIGHT 740
+#define BASE_WINDOW_MIN_HEIGHT 620
+#define BASE_WINDOW_MIN_WIDTH 1100
 
 
 const QString KTSGUI::DEFAULT_WALLET = "~Default";
@@ -41,8 +43,18 @@ KTSGUI::KTSGUI(const NetworkStyle* networkStyle, QWidget* parent) :
 
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
-    this->setMinimumSize(BASE_WINDOW_WIDTH, BASE_WINDOW_HEIGHT);
-    GUIUtil::restoreWindowGeometry("nWindow", QSize(BASE_WINDOW_WIDTH, BASE_WINDOW_HEIGHT), this);
+    this->setMinimumSize(BASE_WINDOW_MIN_WIDTH, BASE_WINDOW_MIN_HEIGHT);
+
+
+    // Adapt screen size
+    QRect rec = QApplication::desktop()->screenGeometry();
+    int adaptedHeight = (rec.height() < BASE_WINDOW_HEIGHT) ?  BASE_WINDOW_MIN_HEIGHT : BASE_WINDOW_HEIGHT;
+    int adaptedWidth = (rec.width() < BASE_WINDOW_WIDTH) ?  BASE_WINDOW_MIN_WIDTH : BASE_WINDOW_WIDTH;
+    GUIUtil::restoreWindowGeometry(
+            "nWindow",
+            QSize(adaptedWidth, adaptedHeight),
+            this
+    );
 
 #ifdef ENABLE_WALLET
     /* if compiled with wallet support, -disablewallet can still disable the wallet */
@@ -56,23 +68,16 @@ KTSGUI::KTSGUI(const NetworkStyle* networkStyle, QWidget* parent) :
     windowTitle += " " + networkStyle->getTitleAddText();
     setWindowTitle(windowTitle);
 
-#ifndef Q_OS_MAC
     QApplication::setWindowIcon(networkStyle->getAppIcon());
     setWindowIcon(networkStyle->getAppIcon());
-#else
-    MacDockIconHandler::instance()->setIcon(networkStyle->getAppIcon());
-#endif
-
-
-
 
 #ifdef ENABLE_WALLET
     // Create wallet frame
     if(enableWallet){
 
         QFrame* centralWidget = new QFrame(this);
-        this->setMinimumWidth(BASE_WINDOW_WIDTH);
-        this->setMinimumHeight(BASE_WINDOW_HEIGHT);
+        this->setMinimumWidth(BASE_WINDOW_MIN_WIDTH);
+        this->setMinimumHeight(BASE_WINDOW_MIN_HEIGHT);
         QHBoxLayout* centralWidgetLayouot = new QHBoxLayout();
         centralWidget->setLayout(centralWidgetLayouot);
         centralWidgetLayouot->setContentsMargins(0,0,0,0);
@@ -116,7 +121,7 @@ KTSGUI::KTSGUI(const NetworkStyle* networkStyle, QWidget* parent) :
         sendWidget = new SendWidget(this);
         receiveWidget = new ReceiveWidget(this);
         addressesWidget = new AddressesWidget(this);
-        privacyWidget = new PrivacyWidget(this);
+        //privacyWidget = new PrivacyWidget(this);
         masterNodesWidget = new MasterNodesWidget(this);
         coldStakingWidget = new ColdStakingWidget(this);
         settingsWidget = new SettingsWidget(this);
@@ -126,7 +131,7 @@ KTSGUI::KTSGUI(const NetworkStyle* networkStyle, QWidget* parent) :
         stackedContainer->addWidget(sendWidget);
         stackedContainer->addWidget(receiveWidget);
         stackedContainer->addWidget(addressesWidget);
-        stackedContainer->addWidget(privacyWidget);
+        //stackedContainer->addWidget(privacyWidget);
         stackedContainer->addWidget(masterNodesWidget);
         stackedContainer->addWidget(coldStakingWidget);
         stackedContainer->addWidget(settingsWidget);
@@ -190,7 +195,7 @@ void KTSGUI::connectActions() {
     connect(sendWidget, &SendWidget::showHide, this, &KTSGUI::showHide);
     connect(receiveWidget, &ReceiveWidget::showHide, this, &KTSGUI::showHide);
     connect(addressesWidget, &AddressesWidget::showHide, this, &KTSGUI::showHide);
-    connect(privacyWidget, &PrivacyWidget::showHide, this, &KTSGUI::showHide);
+    //connect(privacyWidget, &PrivacyWidget::showHide, this, &KTSGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::showHide, this, &KTSGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::execDialog, this, &KTSGUI::execDialog);
     connect(coldStakingWidget, &ColdStakingWidget::showHide, this, &KTSGUI::showHide);
@@ -283,8 +288,9 @@ void KTSGUI::createTrayIconMenu() {
 #else
     // Note: On Mac, the dock icon is used to provide the tray's functionality.
     MacDockIconHandler* dockIconHandler = MacDockIconHandler::instance();
-    dockIconHandler->setMainWindow((QMainWindow*)this);
-    trayIconMenu = dockIconHandler->dockMenu();
+    connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, this, &KTSGUI::macosDockIconActivated);
+    trayIconMenu = new QMenu(this);
+    trayIconMenu->setAsDockMenu();
 #endif
 
     // Configuration of the tray icon (or dock icon) icon menu
@@ -305,6 +311,12 @@ void KTSGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
         toggleHidden();
     }
 }
+#else
+void KTSGUI::macosDockIconActivated()
+ {
+     show();
+     activateWindow();
+ }
 #endif
 
 void KTSGUI::changeEvent(QEvent* e)
@@ -427,18 +439,11 @@ bool KTSGUI::openStandardDialog(QString title, QString body, QString okBtn, QStr
 void KTSGUI::showNormalIfMinimized(bool fToggleHidden) {
     if (!clientModel)
         return;
-    // activateWindow() (sometimes) helps with keyboard focus on Windows
-    if (isHidden()) {
-        show();
-        activateWindow();
-    } else if (isMinimized()) {
-        showNormal();
-        activateWindow();
-    } else if (GUIUtil::isObscured(this)) {
-        raise();
-        activateWindow();
-    } else if (fToggleHidden)
+    if (!isHidden() && !isMinimized() && !GUIUtil::isObscured(this) && fToggleHidden) {
         hide();
+    } else {
+        GUIUtil::bringToFront(this);
+    }
 }
 
 void KTSGUI::toggleHidden() {
@@ -468,9 +473,9 @@ void KTSGUI::goToAddresses(){
     showTop(addressesWidget);
 }
 
-void KTSGUI::goToPrivacy(){
-    showTop(privacyWidget);
-}
+//void KTSGUI::goToPrivacy(){
+//    showTop(privacyWidget);
+//}
 
 void KTSGUI::goToMasterNodes(){
     showTop(masterNodesWidget);
@@ -574,13 +579,13 @@ bool KTSGUI::addWallet(const QString& name, WalletModel* walletModel)
     receiveWidget->setWalletModel(walletModel);
     sendWidget->setWalletModel(walletModel);
     addressesWidget->setWalletModel(walletModel);
-    privacyWidget->setWalletModel(walletModel);
+    //privacyWidget->setWalletModel(walletModel);
     masterNodesWidget->setWalletModel(walletModel);
     coldStakingWidget->setWalletModel(walletModel);
     settingsWidget->setWalletModel(walletModel);
 
     // Connect actions..
-    connect(privacyWidget, &PrivacyWidget::message, this, &KTSGUI::message);
+    //connect(privacyWidget, &PrivacyWidget::message, this, &KTSGUI::message);
     connect(masterNodesWidget, &MasterNodesWidget::message, this, &KTSGUI::message);
     connect(coldStakingWidget, &MasterNodesWidget::message, this, &KTSGUI::message);
     connect(topBar, &TopBar::message, this, &KTSGUI::message);

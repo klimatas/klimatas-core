@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2016-2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,7 +24,7 @@ std::vector<CSporkDef> sporkDefs = {
     MAKE_SPORK_DEF(SPORK_13_ENABLE_SUPERBLOCKS,             4070908800ULL), // OFF
     MAKE_SPORK_DEF(SPORK_14_NEW_PROTOCOL_ENFORCEMENT,       4070908800ULL), // OFF
     MAKE_SPORK_DEF(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2,     4070908800ULL), // OFF
-    MAKE_SPORK_DEF(SPORK_16_ZEROCOIN_MAINTENANCE_MODE,      4070908800ULL), // OFF
+    MAKE_SPORK_DEF(SPORK_16_ZEROCOIN_MAINTENANCE_MODE,      1556042710ULL), // OFF
     MAKE_SPORK_DEF(SPORK_17_COLDSTAKING_ENFORCEMENT,        4070908800ULL), // OFF
     MAKE_SPORK_DEF(SPORK_18_ZEROCOIN_PUBLICSPEND_V4,        4070908800ULL), // OFF
 };
@@ -113,25 +113,28 @@ void CSporkManager::ProcessSpork(CNode* pfrom, std::string& strCommand, CDataStr
 
 
         uint256 hash = spork.GetHash();
+        std::string sporkName = sporkManager.GetSporkNameByID(spork.nSporkID);
         {
             LOCK(cs);
             if (mapSporksActive.count(spork.nSporkID)) {
                 // spork is active
                 if (mapSporksActive[spork.nSporkID].nTimeSigned >= spork.nTimeSigned) {
                     // spork in memory has been signed more recently
-                    if (fDebug) LogPrintf("%s : seen %s block %d \n", __func__, hash.ToString(), nChainHeight);
+                    LogPrintf("%s : spork %d (%s) in memory is more recent: %d >= %d\n", __func__,
+                            spork.nSporkID, sporkName,
+                            mapSporksActive[spork.nSporkID].nTimeSigned, spork.nTimeSigned);
                     return;
                 } else {
                     // update active spork
-                    if (fDebug) LogPrintf("%s : got updated spork %s block %d \n", __func__, hash.ToString(), nChainHeight);
+                    LogPrintf("%s : got updated spork %d (%s) with value %d (signed at %d) - block %d \n", __func__,
+                            spork.nSporkID, sporkName, spork.nValue, spork.nTimeSigned, nChainHeight);
                 }
             } else {
                 // spork is not active
-                if (fDebug) LogPrintf("%s : got new spork %s block %d \n", __func__, hash.ToString(), nChainHeight);
+                LogPrintf("%s : got new spork %d (%s) with value %d (signed at %d) - block %d \n", __func__,
+                        spork.nSporkID, sporkName, spork.nValue, spork.nTimeSigned, nChainHeight);
             }
         }
-
-        LogPrintf("%s : new %s ID %d Time %d bestHeight %d\n", __func__, hash.ToString(), spork.nSporkID, spork.nValue, nChainHeight);
 
         const bool fRequireNew = spork.nTimeSigned >= Params().NewSporkStart();
         bool fValidSig = spork.CheckSignature();
@@ -274,6 +277,7 @@ std::string CSporkManager::ToString() const
 uint256 CSporkMessage::GetSignatureHash() const
 {
     CHashWriter ss(SER_GETHASH, PROTOCOL_VERSION);
+    ss << nMessVersion;
     ss << nSporkID;
     ss << nValue;
     ss << nTimeSigned;

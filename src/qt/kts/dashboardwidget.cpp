@@ -1,5 +1,4 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -56,7 +55,7 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     setCssSubtitleScreen(ui->labelSubtitle);
 
     // Staking Information
-    ui->labelMessage->setText(tr("Amount of KTS and zKTS staked."));
+    ui->labelMessage->setText(tr("Amount of KTS staked."));
     setCssSubtitleScreen(ui->labelMessage);
     setCssProperty(ui->labelSquareKts, "square-chart-kts");
     setCssProperty(ui->labelSquarezKts, "square-chart-zkts");
@@ -113,7 +112,7 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     ui->comboBoxSortType->addItem(tr("To yourself"), TransactionFilterProxy::TYPE(TransactionRecord::SendToSelf));
     ui->comboBoxSortType->addItem(tr("Cold stakes"), TransactionFilterProxy::TYPE(TransactionRecord::StakeDelegated));
     ui->comboBoxSortType->addItem(tr("Hot stakes"), TransactionFilterProxy::TYPE(TransactionRecord::StakeHot));
-    ui->comboBoxSortType->addItem(tr("Delegated"), TransactionFilterProxy::TYPE(TransactionRecord::P2CSDelegationSent));
+    ui->comboBoxSortType->addItem(tr("Delegated"), TransactionFilterProxy::TYPE(TransactionRecord::P2CSDelegationSent) | TransactionFilterProxy::TYPE(TransactionRecord::P2CSDelegationSentOwner));
     ui->comboBoxSortType->addItem(tr("Delegations"), TransactionFilterProxy::TYPE(TransactionRecord::P2CSDelegation));
     ui->comboBoxSortType->setCurrentIndex(0);
     connect(ui->comboBoxSortType, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(onSortTypeChanged(const QString&)));
@@ -125,6 +124,9 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     ui->listTransactions->setMinimumHeight(NUM_ITEMS * (DECORATION_SIZE + 2));
     ui->listTransactions->setAttribute(Qt::WA_MacShowFocusRect, false);
     ui->listTransactions->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->listTransactions->setLayoutMode(QListView::LayoutMode::Batched);
+    ui->listTransactions->setBatchSize(50);
+    ui->listTransactions->setUniformItemSizes(true);
 
     // Sync Warning
     ui->layoutWarning->setVisible(true);
@@ -141,7 +143,7 @@ DashboardWidget::DashboardWidget(KTSGUI* parent) :
     setCssProperty(ui->chartContainer, "container-chart");
     setCssProperty(ui->pushImgEmptyChart, "img-empty-staking-on");
 
-    ui->btnHowTo->setText(tr("How to get KTS or zKTS"));
+    ui->btnHowTo->setText(tr("How to get KTS"));
     setCssBtnSecondary(ui->btnHowTo);
 
 
@@ -449,7 +451,7 @@ void DashboardWidget::changeChartColors(){
     }else{
         gridY = QColor("#40ffffff");
         axisY->setGridLineColor(gridY);
-        gridLineColorX = QColor(15,11,22);
+        gridLineColorX = QColor(16,14,10);
         linePenColorY =  gridLineColorX;
         backgroundColor = linePenColorY;
     }

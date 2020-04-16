@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -82,10 +82,10 @@ SettingsBitToolWidget::SettingsBitToolWidget(KTSGUI* _window, QWidget *parent) :
     // Encrypt
 
     // Address
-    ui->labelSubtitleAddress->setText(tr("Enter a KTS address"));
+    ui->labelSubtitleAddress->setText(tr("KTS address"));
     setCssProperty(ui->labelSubtitleAddress, "text-title");
 
-    ui->addressIn_ENC->setPlaceholderText(tr("Add address"));
+    ui->addressIn_ENC->setPlaceholderText(tr("Enter address"));
     setCssProperty(ui->addressIn_ENC, "edit-primary-multi-book");
     ui->addressIn_ENC->setAttribute(Qt::WA_MacShowFocusRect, 0);
     setShadow(ui->addressIn_ENC);
@@ -95,7 +95,7 @@ SettingsBitToolWidget::SettingsBitToolWidget(KTSGUI* _window, QWidget *parent) :
     setCssProperty(ui->labelSubtitleMessage, "text-title");
 
     setCssProperty(ui->passphraseIn_ENC, "edit-primary");
-    ui->passphraseIn_ENC->setPlaceholderText(tr("Write a message"));
+    ui->passphraseIn_ENC->setPlaceholderText(tr("Enter passphrase"));
     setCssProperty(ui->passphraseIn_ENC,"edit-primary");
     setShadow(ui->passphraseIn_ENC);
     ui->passphraseIn_ENC->setAttribute(Qt::WA_MacShowFocusRect, 0);
@@ -308,7 +308,7 @@ void SettingsBitToolWidget::importAddressFromDecKey(){
         ui->statusLabel_DEC->setText(tr("Please wait while key is imported"));
 
         pwalletMain->MarkDirty();
-        pwalletMain->SetAddressBook(vchAddress, "", "receive");
+        pwalletMain->SetAddressBook(vchAddress, "", AddressBook::AddressBookPurpose::RECEIVE);
 
         // Don't throw error in case a key is already there
         if (pwalletMain->HaveKey(vchAddress)) {

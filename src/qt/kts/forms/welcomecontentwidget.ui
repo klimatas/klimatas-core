@@ -698,7 +698,7 @@
                      <enum>Qt::NoFocus</enum>
                     </property>
                     <property name="text">
-                     <string>Privacy</string>
+                     <string>About</string>
                     </property>
                     <property name="checkable">
                      <bool>true</bool>
@@ -963,7 +963,7 @@ KTS Core Wallet</string>
                    <item alignment="Qt::AlignHCenter">
                     <widget class="QLabel" name="labelMessage2">
                      <property name="text">
-                      <string>KTS is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</string>
+                      <string>KTS is based upon the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -1036,7 +1036,7 @@ KTS Core Wallet</string>
                    </size>
                   </property>
                   <property name="text">
-                   <string>How KTS respects your privacy?</string>
+                   <string>How KTS aims to be unique</string>
                   </property>
                  </widget>
                 </item>
@@ -1056,7 +1056,7 @@ KTS Core Wallet</string>
                 <item>
                  <widget class="QLabel" name="labelMessage3">
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - KTS believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Klimatas aim to be one of the top E-commerce coins used in the upcoming cryptocurrency peer-to-peer transaction revolution.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -1139,7 +1139,7 @@ KTS Core Wallet</string>
                 <item>
                  <widget class="QLabel" name="labelMessage4">
                   <property name="text">
-                   <string>The masternode network is KTS's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury.</string>
+                   <string>The masternode network is KTS's second layer network on top of the blockchain that enables our DAO to provide decentralized governance and a treasury. </string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>

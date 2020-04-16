@@ -8,10 +8,10 @@
 - Test that it is not possible to mine to an invalid address.
 """
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import KtsTestFramework
 from test_framework.util import *
 
-class DisableWalletTest (BitcoinTestFramework):
+class DisableWalletTest (KtsTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

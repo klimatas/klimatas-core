@@ -1,5 +1,5 @@
-// Copyright (c) 2017-2018 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -83,21 +83,21 @@ int GetWrapppedSerialInflation(libzerocoin::CoinDenomination denom){
     if(Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (denom) {
             case libzerocoin::CoinDenomination::ZQ_ONE:
-                return 7;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_FIVE:
-                return 6;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_TEN:
-                return 36;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_FIFTY:
-                return 22;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_ONE_HUNDRED:
-                return 244;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_FIVE_HUNDRED:
-                return 22;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_ONE_THOUSAND:
-                return 42;
+                return 0;
             case libzerocoin::CoinDenomination::ZQ_FIVE_THOUSAND:
-                return 98;
+                return 0;
             default:
                 throw std::runtime_error("GetWrapSerialInflation :: Invalid denom");
         }

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -120,6 +120,9 @@ QString getOpenFileName(QWidget* parent, const QString& caption, const QString& 
                 If called from another thread, return a Qt::BlockingQueuedConnection.
     */
 Qt::ConnectionType blockingGUIThreadConnection();
+
+// Activate, show and raise the widget
+void bringToFront(QWidget* w);
 
 // Determine whether a widget is hidden behind other windows
 bool isObscured(QWidget* w);

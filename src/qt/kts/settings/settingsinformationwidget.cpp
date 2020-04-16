@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -33,12 +33,12 @@ SettingsInformationWidget::SettingsInformationWidget(KTSGUI* _window,QWidget *pa
     ui->labelTitleGeneral->setText(tr("General"));
     ui->labelTitleClient->setText(tr("Client Version: "));
     ui->labelTitleAgent->setText(tr("User Agent:"));
-    ui->labelTitleBerkeley->setText(tr("Using BerkeleyDB version:"));
+    ui->labelTitleBerkeley->setText(tr("BerkeleyDB version:"));
     ui->labelTitleDataDir->setText(tr("Datadir: "));
-    ui->labelTitleTime->setText(tr("Startup Time:  "));
+    ui->labelTitleTime->setText(tr("Startup time:  "));
     ui->labelTitleNetwork->setText(tr("Network"));
     ui->labelTitleName->setText(tr("Name:"));
-    ui->labelTitleConnections->setText(tr("Number Connections:"));
+    ui->labelTitleConnections->setText(tr("Connections:"));
 
     setCssProperty({
         ui->labelTitleDataDir,
@@ -70,13 +70,13 @@ SettingsInformationWidget::SettingsInformationWidget(KTSGUI* _window,QWidget *pa
     },"text-title");
 
     ui->labelTitleBlockchain->setText(tr("Blockchain"));
-    ui->labelTitleBlockNumber->setText(tr("Current Number of Blocks:"));
-    ui->labelTitleBlockTime->setText(tr("Last Block Time:"));
+    ui->labelTitleBlockNumber->setText(tr("Current number of blocks:"));
+    ui->labelTitleBlockTime->setText(tr("Last block time:"));
 
     ui->labelTitleMemory->setText(tr("Memory Pool"));
     ui->labelTitleMemory->setVisible(false);
 
-    ui->labelTitleNumberTransactions->setText(tr("Current Number of Transactions:"));
+    ui->labelTitleNumberTransactions->setText(tr("Current number of transactions:"));
     ui->labelTitleNumberTransactions->setVisible(false);
 
     ui->labelInfoNumberTransactions->setText("0");

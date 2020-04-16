@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2020 The CryptoDev developers
+// Copyright (c) 2020 The klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,6 +9,7 @@
 #define BITCOIN_QT_COINCONTROLDIALOG_H
 
 #include "amount.h"
+#include "qt/kts/snackbar.h"
 
 #include <QAbstractButton>
 #include <QAction>
@@ -62,6 +64,7 @@ public:
 
 private:
     Ui::CoinControlDialog* ui;
+    SnackBar *snackBar = nullptr;
     WalletModel* model;
     int sortColumn;
     Qt::SortOrder sortOrder;
@@ -74,6 +77,7 @@ private:
     QAction* unlockAction;
 
     void sortView(int, Qt::SortOrder);
+    void inform(const QString& text);
 
     enum {
         COLUMN_CHECKBOX,

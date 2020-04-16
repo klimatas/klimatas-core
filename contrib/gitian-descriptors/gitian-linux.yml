@@ -1,5 +1,5 @@
 ---
-name: "kts-linux-4.0"
+name: "kts-linux-3.0.2"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -33,8 +33,8 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/kts-project/kts.git"
-  "dir": "kts"
+- "url": "https://github.com/KlimatasTeam/klimatas.git"
+  "dir": "klimatas"
 files: []
 script: |
   set -e -o pipefail
@@ -123,7 +123,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd kts
+  cd klimatas
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

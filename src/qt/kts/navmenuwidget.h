@@ -1,5 +1,4 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,6 +23,7 @@ public:
     ~NavMenuWidget();
 
     void loadWalletModel() override;
+    virtual void showEvent(QShowEvent *event) override;
 
 public slots:
     void selectSettings();
@@ -32,6 +32,7 @@ public slots:
 private slots:
     void onSendClicked();
     void onDashboardClicked();
+    //void onPrivacyClicked();
     void onAddressClicked();
     void onMasterNodesClicked();
     void onColdStakingClicked();
@@ -44,6 +45,8 @@ private:
 
     void connectActions();
     void onNavSelected(QWidget* active, bool startup = false);
+
+    bool init = false;
 };
 
 #endif // NAVMENUWIDGET_H

@@ -1,5 +1,6 @@
-// Copyright (c) 2018-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2018-2020 The PIVX developers
+// Copyright (c) 2020 The CryptoDev developers
+// Copyright (c) 2020 The klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -106,29 +107,6 @@ bool CzKTSTracker::GetMetaFromStakeHash(const uint256& hashStake, CMintMeta& met
             meta = it.second;
             return true;
         }
-    }
-
-    return false;
-}
-
-CoinWitnessData* CzKTSTracker::GetSpendCache(const uint256& hashStake)
-{
-    AssertLockHeld(cs_spendcache);
-    if (!mapStakeCache.count(hashStake)) {
-        std::unique_ptr<CoinWitnessData> uptr(new CoinWitnessData());
-        mapStakeCache.insert(std::make_pair(hashStake, std::move(uptr)));
-        return mapStakeCache.at(hashStake).get();
-    }
-
-    return mapStakeCache.at(hashStake).get();
-}
-
-bool CzKTSTracker::ClearSpendCache()
-{
-    AssertLockHeld(cs_spendcache);
-    if (!mapStakeCache.empty()) {
-        mapStakeCache.clear();
-        return true;
     }
 
     return false;
