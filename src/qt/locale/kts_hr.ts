@@ -829,7 +829,7 @@
         <translation>Još nema transakcija</translation>
     </message>
     <message>
-        <source>How to get KTS or zKTS</source>
+        <source>How to get KTS</source>
         <translation>Kako dobiti KTS ili zKTS</translation>
     </message>
     <message>
@@ -1082,8 +1082,8 @@
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>Address: 88.26.164.88:51474</source>
-        <translation>Adresa: 88.26.164.88:51474</translation>
+        <source>Address: 88.26.164.88:41121</source>
+        <translation>Adresa: 88.26.164.88:41121</translation>
     </message>
     </context>
 <context>
@@ -1521,8 +1521,8 @@
         <translation>PritisniTipku</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>CANCEL</source>
@@ -1646,8 +1646,8 @@
         <translation>TekstualnaOznaka</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>COPY ADDRESS</source>
@@ -2491,8 +2491,8 @@
         <translation>492526e7fa3c810b35016...40a5df85ee227ab00b1156994</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>Fee:</source>

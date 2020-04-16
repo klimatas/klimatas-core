@@ -890,7 +890,7 @@ For Staking</translation>
         <translation>Du kan se din konto historik</translation>
     </message>
     <message>
-        <source>Amount of KTS and zKTS staked.</source>
+        <source>Amount of KTS staked.</source>
         <translation>Mængden af KTS og zKTS opbevaret</translation>
     </message>
     <message>
@@ -930,7 +930,7 @@ For Staking</translation>
         <translation>Ingen transaktioner endnu</translation>
     </message>
     <message>
-        <source>How to get KTS or zKTS</source>
+        <source>How to get KTS</source>
         <translation>Hvordan man får KTS eller zKTS</translation>
     </message>
     <message>
@@ -1184,8 +1184,8 @@ Den vil starte automatisk så snart at pungen har nok bekræftelser på nogen af
         <translation>Da det er første gang programmet startes, kan De vælge hvor KTS kernen skal lagre sine data</translation>
     </message>
     <message>
-        <source>KTS Core will download and store a copy of the KTS block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>KTS kernen vil nu hente og gemme en kopi af KTS blockchain. Der skal være mindst %1GB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
+        <source>KTS Core will download and store a copy of the KTS block chain. At least %20MB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <translation>KTS kernen vil nu hente og gemme en kopi af KTS blockchain. Der skal være mindst %20MB ledigt på lagermediet, og behovet vil stige efterhånden som tiden går. Selve tegnebogen vil også blive gemt her.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1213,7 +1213,7 @@ Den vil starte automatisk så snart at pungen har nok bekræftelser på nogen af
     </message>
     <message>
         <source>%1 GB of free space available</source>
-        <translation>%1GB fri dataplads tilgængelig</translation>
+        <translation>%20MB fri dataplads tilgængelig</translation>
     </message>
     <message>
         <source>(of %1 GB needed)</source>
@@ -1494,9 +1494,9 @@ Den vil starte automatisk så snart at pungen har nok bekræftelser på nogen af
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/kts-project/kts-project-translations</source>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations</source>
         <translation>Det valgte sprog mangler, eller oversættelsen er mangelfuld. Hjælp ved at bidrage med oversættelser her:
-https://www.transifex.com/kts-project/kts-project-translations</translation>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -3772,12 +3772,12 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret designeret indestående for at gennemføre denne transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
-        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 10000 KTS.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
+        <translation>Det er ikke muligt at allokere tilstrækkeligt med tilsløret  ikke-designeret indestående for at gennemføre denne transaktion, der ikke ækvivalerer 1000 KTS.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
-        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 10000 KTS.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
+        <translation>Det var ikke muligt at allokere tilstrækkelige midler til denne transaktion som er forskellig fra 1000 KTS.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -3824,8 +3824,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Der skal angives en masternodeprivkey i konfigurationen. For mere information, se i dokumentationen.</translation>
     </message>
     <message>
-        <source>(51472 could be used only on mainnet)</source>
-        <translation>(51472 kunne kun bruges på hovednettet)</translation>
+        <source>(10300 could be used only on mainnet)</source>
+        <translation>(10300 kunne kun bruges på hovednettet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -3836,8 +3836,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>(default: 1)</translation>
     </message>
     <message>
-        <source>(must be 51472 for mainnet)</source>
-        <translation>(skal være 51472 for hovednettet)</translation>
+        <source>(must be 10300 for mainnet)</source>
+        <translation>(skal være 10300 for hovednettet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -3920,8 +3920,8 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Copyright (C) 2014-%i The Dash Core Developers </translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
-        <translation>Copyright (C) 2015-%i The KTS Core Developers</translation>
+        <source>Copyright (C) %i The KTS Core Developers</source>
+        <translation>Copyright (C) %i The KTS Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,7 +28,7 @@ ReceiveDialog::ReceiveDialog(QWidget *parent) :
 
     // Address
 
-    ui->labelAddress->setText("D7VFR83SQbiezrW72hjcWJtcfip5krte2Z");
+    ui->labelAddress->setText("P7VFR83SQbiezrW72hjcWJtcfip5krte2Z");
     ui->labelAddress->setProperty("cssClass", "label-address-box");
 
     // QR image

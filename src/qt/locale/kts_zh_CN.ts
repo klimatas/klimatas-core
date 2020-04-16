@@ -895,7 +895,7 @@ for staking</source>
     <message>
         <source>You can delegate your KTSs and let a hot node (24/7 online node)
 stake in your behalf, keeping the keys in a secure place offline.</source>
-        <translation>您可以委派您的KTS并让热节点（24/7在线节点）
+        <translation>您可以委派您的PIV并让热节点（24/7在线节点）
 代表您进行放样并将密钥离线保存在安全的位置。</translation>
     </message>
     <message>
@@ -904,7 +904,7 @@ stake in your behalf, keeping the keys in a secure place offline.</source>
     </message>
     <message>
         <source>Delegate or Accept KTS delegation</source>
-        <translation>授予权限或接受KTS权限</translation>
+        <translation>授予权限或接受PIV权限</translation>
     </message>
     <message>
         <source>Delegate</source>
@@ -988,7 +988,7 @@ Do you wish to proceed?</source>
     </message>
     <message>
         <source>You don't have any KTS to select.</source>
-        <translation>您没有任何KTS可选择。</translation>
+        <translation>您没有任何PIV可选择。</translation>
     </message>
     <message>
         <source>URI copied to clipboard</source>
@@ -1155,7 +1155,7 @@ address</source>
         <translation>您可以查看您的帐户的历史</translation>
     </message>
     <message>
-        <source>Amount of KTS and zKTS staked.</source>
+        <source>Amount of KTS staked.</source>
         <translation>已加注的KTS 和 zKTS 金额</translation>
     </message>
     <message>
@@ -1211,7 +1211,7 @@ address</source>
         <translation>暂无交易</translation>
     </message>
     <message>
-        <source>How to get KTS or zKTS</source>
+        <source>How to get KTS</source>
         <translation>如何获取KTS 或 zKTS</translation>
     </message>
     <message>
@@ -1533,7 +1533,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>由于这是该程序第一次启动，您可以选择存储KTS Core 数据的位置。</translation>
     </message>
     <message>
-        <source>KTS Core will download and store a copy of the KTS block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>KTS Core will download and store a copy of the KTS block chain. At least %20MB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>KTS Core将下载并存储KTS区块链副本。 至少 %1 GB的数据将存储在此目录中，并且会随着时间的推移而增长。 钱包也将存储在此目录中。</translation>
     </message>
     <message>
@@ -1622,8 +1622,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>用户_主节点</translation>
     </message>
     <message>
-        <source>Address: 88.26.164.88:51474</source>
-        <translation>地址: 88.26.164.88:51474</translation>
+        <source>Address: 88.26.164.88:41121</source>
+        <translation>地址: 88.26.164.88:41121</translation>
     </message>
     <message>
         <source>Jan. 19, 2019</source>
@@ -1665,8 +1665,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>创建新的主节点控制器</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 10.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建一个KTS 主节点，你必须奉献给网络10.000 KTS (KTS的单位)(但是，这些币仍属于你，永远都是属于你的财产)。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 3.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;创建一个KTS 主节点，你必须奉献给网络3.000 KTS (KTS的单位)(但是，这些币仍属于你，永远都是属于你的财产)。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;你可以在任何时候关闭该节点并解锁币。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Make sure you have this amount of coins.</source>
@@ -1677,8 +1677,8 @@ It will start automatically as soon as the wallet has enough confirmations on an
         <translation>设置主节点名称</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行10,000 KTS的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 3,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node's name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将进行3,000 KTS的交易&lt;/p&gt;&lt;p&gt;到您的钱包空地址&lt;/p&gt;&lt;p&gt;地址被标记在主节点的名称之下&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Set Master Node’s IP and port</source>
@@ -1910,8 +1910,8 @@ Are you sure?</source>
         <translation>主节点配置文件不存在</translation>
     </message>
     <message>
-        <source>Not enough balance to create a masternode, 10,000 KTS required.</source>
-        <translation>没有足够的余额创建主节点，需要10,000 KTS。</translation>
+        <source>Not enough balance to create a masternode, 3,000 KTS required.</source>
+        <translation>没有足够的余额创建主节点，需要3,000 KTS。</translation>
     </message>
     <message>
         <source>Error creating masternode</source>
@@ -2149,9 +2149,9 @@ Are you sure?</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/kts-project/kts-project-translations</source>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations</source>
         <translation>语言缺失或翻译不完整?帮助贡献翻译在这里:
-https://www.transifex.com/kts-project/kts-project-translations</translation>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2159,7 +2159,7 @@ https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Enable automatic minting of KTS units to zKTS</source>
-        <translation>启动自动铸造KTS到zKTS</translation>
+        <translation>启动自动铸造PIV到zKTS</translation>
     </message>
     <message>
         <source>Enable zKTS Automint</source>
@@ -2175,7 +2175,7 @@ https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Percentage of incoming KTS which get automatically converted to zKTS via Zerocoin Protocol (min: 10%)</source>
-        <translation>通过零币协议自动转换为zKTS的传入KTS的百分比(最小:10%)</translation>
+        <translation>通过零币协议自动转换为zKTS的传入PIV的百分比(最小:10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zKTS</source>
@@ -2183,7 +2183,7 @@ https://www.transifex.com/kts-project/kts-project-translations</translation>
     </message>
     <message>
         <source>Wait with automatic conversion to Zerocoin until enough KTS for this denomination is available</source>
-        <translation>等待自动转换为零币，直到足够的KTS为这种面额可用</translation>
+        <translation>等待自动转换为零币，直到足够的PIV为这种面额可用</translation>
     </message>
     <message>
         <source>Preferred Automint zKTS Denomination</source>
@@ -2568,11 +2568,11 @@ Address: %4
         <source>Minting zKTS anonymizes your KTS by removing any
 transaction history, making transactions untraceable </source>
         <translation>铸造zKTS会通过删除任何
-交易历史匿名化您的KTS，使交易无法被跟踪</translation>
+交易历史匿名化您的PIV，使交易无法被跟踪</translation>
     </message>
     <message>
         <source>Mint new zKTS or convert back to KTS</source>
-        <translation>铸造新的zKTS或转换回KTS</translation>
+        <translation>铸造新的zKTS或转换回PIV</translation>
     </message>
     <message>
         <source>Last Zerocoin Movements</source>
@@ -2588,15 +2588,15 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Enter amount of KTS to mint into zKTS</source>
-        <translation>输入一定量的KTS铸造成zKTS</translation>
+        <translation>输入一定量的PIV铸造成zKTS</translation>
     </message>
     <message>
         <source>Convert back to KTS</source>
-        <translation>转换回KTS</translation>
+        <translation>转换回PIV</translation>
     </message>
     <message>
         <source>Enter amount of zKTS to convert back into KTS</source>
-        <translation>输入一定量的zKTS转换回KTS</translation>
+        <translation>输入一定量的zKTS转换回PIV</translation>
     </message>
     <message>
         <source>Zerocoin</source>
@@ -2628,11 +2628,11 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>zKTS converted back to KTS</source>
-        <translation>zKTS 转换回KTS</translation>
+        <translation>zKTS 转换回PIV</translation>
     </message>
     <message>
         <source>You don't have any KTS to select.</source>
-        <translation>您没有任何KTS可选择。</translation>
+        <translation>您没有任何PIV可选择。</translation>
     </message>
     <message>
         <source>Rescan Mints</source>
@@ -3225,8 +3225,8 @@ transaction history, making transactions untraceable </source>
         <translation>按钮</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>CANCEL</source>
@@ -3269,7 +3269,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <source>Scan the QR code or copy the address to receive KTS.</source>
-        <translation>扫描二维码或复制地址接收KTS</translation>
+        <translation>扫描二维码或复制地址接收PIV</translation>
     </message>
     <message>
         <source>No address </source>
@@ -3378,8 +3378,8 @@ transaction history, making transactions untraceable </source>
         <translation>文本标签</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>COPY ADDRESS</source>
@@ -3596,7 +3596,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </message>
     <message>
         <source>Send KTS</source>
-        <translation>花费KTS</translation>
+        <translation>花费PIV</translation>
     </message>
     <message>
         <source>Send zKTS</source>
@@ -3720,7 +3720,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>You don't have any KTS to select.</source>
-        <translation>您没有任何KTS可供选择。</translation>
+        <translation>您没有任何PIV可供选择。</translation>
     </message>
     <message>
         <source>You don't have any zKTS in your balance to select.</source>
@@ -4129,7 +4129,7 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <source>2) Why are my KTS unspendable?</source>
-        <translation>2) 我的KTS为什么不能用？</translation>
+        <translation>2) 我的PIV为什么不能用？</translation>
     </message>
     <message>
         <source>3) KTS privacy? What is Zerocoin (zKTS)?</source>
@@ -4147,11 +4147,11 @@ zKTS了?</translation>
     </message>
     <message>
         <source>6) How do I receive KTS/zKTS?</source>
-        <translation>6）如何接收KTS/zKTS?</translation>
+        <translation>6）如何接收PIV/zKTS?</translation>
     </message>
     <message>
         <source>7) How do I stake KTS/zKTS?</source>
-        <translation>7）如何加注KTS/zKTS?</translation>
+        <translation>7）如何加注PIV/zKTS?</translation>
     </message>
     <message>
         <source>8) Where I should go if I need support?</source>
@@ -4207,7 +4207,7 @@ KTS使用了一个股权证明(PoS)一致系统算法，
     </message>
     <message>
         <source>Why are my KTS unspendable?</source>
-        <translation>我的KTS为什么不能用？</translation>
+        <translation>我的PIV为什么不能用？</translation>
     </message>
     <message>
         <source>
@@ -4243,7 +4243,7 @@ KTS使用了一个股权证明(PoS)一致系统算法，
                            zKTS is an optional privacy-centric method of coin mixing on the
                            KTS blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style='color: #b088ff' href='https://KTS.org/zkts/'&gt;
+                           &lt;a style='color: #cfc8af' href='https://klimatas.com/zkts/'&gt;
                            "KTS Zerocoin (zKTS) Technical Paper"&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -4251,7 +4251,7 @@ KTS使用了一个股权证明(PoS)一致系统算法，
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 zKTS是一种可选的以隐私为中心的隐私币
 它是KTS区块链的一员，基本上在任何块资源管理器
-所有的交易都不能被跟踪&lt;a style='color: #b088ff' href='https://KTS.org/zkts/'&gt;
+所有的交易都不能被跟踪&lt;a style='color: #cfc8af' href='https://klimatas.com/zkts/'&gt;
 
 你可以阅读更多关于技术方面的文章&lt;/a&gt;
 
@@ -4265,7 +4265,7 @@ KTS零币(zKTS)技术文件
     </message>
     <message>
         <source>Why are my zKTS unspendable?</source>
-        <translation>我的KTS为什么不能用？</translation>
+        <translation>我的PIV为什么不能用？</translation>
     </message>
     <message>
         <source>
@@ -4296,7 +4296,7 @@ KTS零币(zKTS)技术文件
     </message>
     <message>
         <source>How do I receive KTS/zKTS?</source>
-        <translation>我怎么接收KTS/zKTS?</translation>
+        <translation>我怎么接收PIV/zKTS?</translation>
     </message>
     <message>
         <source>
@@ -4321,7 +4321,7 @@ KTS零币(zKTS)技术文件
     </message>
     <message>
         <source>How do I stake KTS/zKTS?</source>
-        <translation>我怎么加注KTS/zKTS?</translation>
+        <translation>我怎么加注PIV/zKTS?</translation>
     </message>
     <message>
         <source>
@@ -4391,19 +4391,19 @@ KTS零币(zKTS)技术文件
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://Discord.KTS.com'&gt;
+                           &lt;a style='color: #cfc8af' href='https://Discord.KTS.com'&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
-                           &lt;a style='color: #b088ff' href='https://KTS.FreshDesk.com'&gt;
+                           &lt;a style='color: #cfc8af' href='https://KTS.FreshDesk.com'&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 例如，我们在大多数官方聊天组中都有支持频道
-&lt;a style='color: #b088ff' href='https://Discord.KTS.com'&gt;
+&lt;a style='color: #cfc8af' href='https://Discord.KTS.com'&gt;
 #在&lt;/a&gt;Discord支持我们
-如果您想订票&lt;a style='color: #b088ff' href='https://KTS.FreshDesk.com'&gt;，我们可以为您提供前台支持&lt;/a&gt;
+如果您想订票&lt;a style='color: #cfc8af' href='https://KTS.FreshDesk.com'&gt;，我们可以为您提供前台支持&lt;/a&gt;
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -4418,7 +4418,7 @@ KTS零币(zKTS)技术文件
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            A masternode is a computer running a full node KTS core wallet with a
-                           requirement of 10,000 KTS secured collateral to provide extra services
+                           requirement of 3,000 KTS secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align="justify"&gt;
@@ -4450,7 +4450,7 @@ KTS零币(zKTS)技术文件
                            Requirements:
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;10,000 KTS per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;3,000 KTS per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
@@ -4460,7 +4460,7 @@ KTS零币(zKTS)技术文件
         <translation>
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 主节点是运行完整节点KTS核心钱包的计算机
-需要10,000个KTS作抵押以提供额外服务
+需要10,000个PIV作抵押以提供额外服务
 到网络，会收到一部分的区块奖励作为定期
 回报
 这些服务包括:
@@ -4492,7 +4492,7 @@ KTS零币(zKTS)技术文件
 要求：
 &lt;/p&gt;&lt;p align="justify"&gt;
 &lt;ul&gt;
-&lt;li&gt;每个主节点实例有10,000 KTS&lt;/li&gt;
+&lt;li&gt;每个主节点实例有3,000 KTS&lt;/li&gt;
 &lt;li&gt;必须存储在核心钱包&lt;/li&gt;
 &lt;li&gt;需要专用IP地址&lt;/li&gt;
 主节点钱包保持在线&lt;li&gt;
@@ -4510,8 +4510,8 @@ KTS零币(zKTS)技术文件
         <translation>什么是主节点控制器？</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 10,000 KTS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;主节点控制器钱包是在控制器-远程主节点设置期间10,000 KTS附属品可以驻留的地方。这是一个可以激活远程主节点钱包的钱包/s，远程主节点保持在线的时候，可以让你的抵押品硬币离线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;A Masternode Controller wallet is where the 3,000 KTS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;主节点控制器钱包是在控制器-远程主节点设置期间3,000 KTS附属品可以驻留的地方。这是一个可以激活远程主节点钱包的钱包/s，远程主节点保持在线的时候，可以让你的抵押品硬币离线。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Frequently Asked Questions</source>
@@ -5780,7 +5780,7 @@ Are you sure?
     </message>
     <message>
         <source>Converted KTS to zKTS</source>
-        <translation>转换KTS为zKTS</translation>
+        <translation>转换PIV为zKTS</translation>
     </message>
     <message>
         <source>Spent zKTS</source>
@@ -5788,7 +5788,7 @@ Are you sure?
     </message>
     <message>
         <source>Received KTS from zKTS</source>
-        <translation>从zKTS接收KTS</translation>
+        <translation>从zKTS接收PIV</translation>
     </message>
     <message>
         <source>Minted Change as zKTS from zKTS Spend</source>
@@ -5796,7 +5796,7 @@ Are you sure?
     </message>
     <message>
         <source>Converted zKTS to KTS</source>
-        <translation>转换KTS为zKTS</translation>
+        <translation>转换PIV为zKTS</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -5882,8 +5882,8 @@ Are you sure?
         <translation>正在发送到：</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>Total amount</source>
@@ -5922,8 +5922,8 @@ Are you sure?
         <translation>更改地址：</translation>
     </message>
     <message>
-        <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
+        <source>P7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>Confirmations:</source>
@@ -6227,7 +6227,7 @@ KTS核心钱包</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for KTS inputs (0-1, default: %u)</source>
-        <translation>启用或禁用KTS输入标记功能(0-1，默认值:%u)</translation>
+        <translation>启用或禁用PIV输入标记功能(0-1，默认值:%u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zKTS inputs (0-1, default: %u)</source>
@@ -6267,11 +6267,11 @@ KTS核心钱包</translation>
     </message>
     <message>
         <source>Fees (in KTS/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>小于此值的费用(以KTS/Kb为单位)视为零中继费用(默认值:%s)</translation>
+        <translation>小于此值的费用(以PIV/Kb为单位)视为零中继费用(默认值:%s)</translation>
     </message>
     <message>
         <source>Fees (in KTS/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>小于此值的费用(以KTS/Kb为单位)被认为是交易创建的零费用(默认值:%s)</translation>
+        <translation>小于此值的费用(以PIV/Kb为单位)被认为是交易创建的零费用(默认值:%s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -6394,12 +6394,12 @@ KTS核心钱包</translation>
         <translation>无法为这笔交易找到足够的模糊基金。</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
-        <translation>无法找到不等于10000 KTS的模糊非计价基金来进行这笔交易。</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
+        <translation>无法找到不等于1000 KTS的模糊非计价基金来进行这笔交易。</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
-        <translation>无法为这次交易找到不等于10000 KTS的足够资金。</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
+        <translation>无法为这次交易找到不等于1000 KTS的足够资金。</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -6450,8 +6450,8 @@ KTS核心钱包</translation>
         <translation>您必须在配置中指定一个主节点privkey。有关帮助，请参阅文档。</translation>
     </message>
     <message>
-        <source>(51472 could be used only on mainnet)</source>
-        <translation>(51472只可在网上使用)</translation>
+        <source>(10300 could be used only on mainnet)</source>
+        <translation>(10300只可在网上使用)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -6462,8 +6462,8 @@ KTS核心钱包</translation>
         <translation>(默认: 1)</translation>
     </message>
     <message>
-        <source>(must be 51472 for mainnet)</source>
-        <translation>(主网必须为51472)</translation>
+        <source>(must be 10300 for mainnet)</source>
+        <translation>(主网必须为10300)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -6558,7 +6558,7 @@ KTS核心钱包</translation>
         <translation>版权所有(C) 2014-%i的达世核心开发者</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
+        <source>Copyright (C) %i The KTS Core Developers</source>
         <translation>版权所有(C) 2015-%i KTS核心开发者</translation>
     </message>
     <message>
@@ -6699,7 +6699,7 @@ KTS核心钱包</translation>
     </message>
     <message>
         <source>Fee (in KTS/kB) to add to transactions you send (default: %s)</source>
-        <translation>将费用(以KTS/kB为单位)添加到您发送的交易中(默认:%s)</translation>
+        <translation>将费用(以PIV/kB为单位)添加到您发送的交易中(默认:%s)</translation>
     </message>
     <message>
         <source>Force safe mode (default: %u)</source>
@@ -6799,7 +6799,7 @@ KTS核心钱包</translation>
     </message>
     <message>
         <source>Recalculating KTS supply...</source>
-        <translation>重新计算KTS供应量……</translation>
+        <translation>重新计算PIV供应量……</translation>
     </message>
     <message>
         <source>Recalculating minted ZKTS...</source>
@@ -6811,7 +6811,7 @@ KTS核心钱包</translation>
     </message>
     <message>
         <source>Reindex the KTS and zKTS money supply statistics</source>
-        <translation>重新索引KTS和zKTS货币供应统计数据</translation>
+        <translation>重新索引PIV和zKTS货币供应统计数据</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

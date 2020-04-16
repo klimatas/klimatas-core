@@ -1,5 +1,5 @@
 ---
-name: "kts-osx-4.0"
+name: "kts-osx-3.0.2"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -29,8 +29,8 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/kts-project/kts.git"
-  "dir": "kts"
+- "url": "https://github.com/KlimatasTeam/klimatas.git"
+  "dir": "klimatas"
 files:
 - "MacOSX10.11.sdk.tar.gz"
 script: |
@@ -87,7 +87,7 @@ script: |
   create_per-host_faketime_wrappers "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd kts
+  cd klimatas
   BASEPREFIX=`pwd`/depends
 
   mkdir -p ${BASEPREFIX}/SDKs

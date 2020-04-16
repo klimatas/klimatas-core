@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -150,4 +150,24 @@ bool MNModel::addMn(CMasternodeConfig::CMasternodeEntry* mne){
     nodes.insert(QString::fromStdString(mne->getAlias()), std::make_pair(QString::fromStdString(mne->getIp()), pmn));
     endInsertRows();
     return true;
+}
+
+int MNModel::getMNState(QString mnAlias) {
+    QMap<QString, std::pair<QString, CMasternode*>>::const_iterator it = nodes.find(mnAlias);
+    if (it != nodes.end()) return it.value().second->activeState;
+    throw std::runtime_error(std::string("Masternode alias not found"));
+}
+
+bool MNModel::isMNInactive(QString mnAlias) {
+    int activeState = getMNState(mnAlias);
+    return activeState == CMasternode::MASTERNODE_MISSING || activeState == CMasternode::MASTERNODE_EXPIRED || activeState == CMasternode::MASTERNODE_REMOVE;
+}
+
+bool MNModel::isMNActive(QString mnAlias) {
+    int activeState = getMNState(mnAlias);
+    return activeState == CMasternode::MASTERNODE_PRE_ENABLED || activeState == CMasternode::MASTERNODE_ENABLED;
+}
+
+bool MNModel::isMNsNetworkSynced() {
+    return masternodeSync.IsSynced();
 }

@@ -29,8 +29,8 @@ Build-Depends: debhelper,
  dh-systemd
 Standards-Version: 3.9.2
 Homepage: http://www.kts.org
-Vcs-Git: git://github.com/KTS-Project/KTS.git
-Vcs-Browser: http://github.com/KTS-Project/KTS
+Vcs-Git: git://github.com/KlimatasTeam/KTS.git
+Vcs-Browser: http://github.com/KlimatasTeam/KTS
 
 Package: ktsd
 Architecture: any

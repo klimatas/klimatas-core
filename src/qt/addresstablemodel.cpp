@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -364,7 +364,9 @@ bool AddressTableModel::setData(const QModelIndex& index, const QVariant& value,
     if (!index.isValid())
         return false;
     AddressTableEntry* rec = static_cast<AddressTableEntry*>(index.internalPointer());
-    std::string strPurpose = (rec->type == AddressTableEntry::Sending ? "send" : "receive");
+    std::string strPurpose = (rec->type == AddressTableEntry::Sending ?
+                                AddressBook::AddressBookPurpose::SEND :
+                                AddressBook::AddressBookPurpose::RECEIVE);
     editStatus = OK;
 
     if (role == Qt::EditRole) {
@@ -508,7 +510,7 @@ QString AddressTableModel::addRow(const QString& type, const QString& label, con
     {
         LOCK(wallet->cs_wallet);
         wallet->SetAddressBook(CBitcoinAddress(strAddress).Get(), strLabel,
-            (type == Send ? "send" : "receive"));
+            (type == Send ? AddressBook::AddressBookPurpose::SEND : AddressBook::AddressBookPurpose::RECEIVE));
     }
     return QString::fromStdString(strAddress);
 }

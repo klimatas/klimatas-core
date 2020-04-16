@@ -1,8 +1,0 @@
-/usr/bin/kts-cli		--	gen_context(system_u:object_r:kts_exec_t,s0)
-/usr/sbin/ktsd		--	gen_context(system_u:object_r:kts_exec_t,s0)
-/usr/lib(64)?/kts/ktsd		--	gen_context(system_u:object_r:kts_exec_t,s0)
-
-/etc/kts(/.*)?		gen_context(system_u:object_r:kts_conf_t,s0)
-/var/lib/kts(/.*)?		gen_context(system_u:object_r:kts_var_lib_t,s0)
-
-(/var)?/run/ktsd(/.*)?   gen_context(system_u:object_r:kts_var_run_t,s0)

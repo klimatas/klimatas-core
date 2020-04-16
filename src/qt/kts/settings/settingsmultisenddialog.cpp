@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,16 +26,16 @@ SettingsMultisendDialog::SettingsMultisendDialog(QWidget *parent) :
     setCssProperty(ui->labelTitle, "text-title-dialog");
 
     // Label
-    ui->labelSubtitleLabel->setText(tr("Label (optional)"));
+    ui->labelSubtitleLabel->setText(tr("Address Label (optional)"));
     setCssProperty(ui->labelSubtitleLabel, "text-title2-dialog");
 
-    ui->lineEditLabel->setPlaceholderText(tr("Enter a label to add this address in your address book"));
+    ui->lineEditLabel->setPlaceholderText(tr("Enter label to be saved with this address"));
     initCssEditLine(ui->lineEditLabel, true);
 
     // Address
-    ui->labelSubtitleAddress->setText("Enter a KTS address or contact label");
+    ui->labelSubtitleAddress->setText("KTS address or contact label");
     setCssProperty(ui->labelSubtitleAddress, "text-title2-dialog");
-    ui->lineEditAddress->setPlaceholderText("e.g D7VFR83SQbiezrW72hjc… ");
+    ui->lineEditAddress->setPlaceholderText("Enter address");
     initCssEditLine(ui->lineEditAddress, true);
     ui->lineEditAddress->setValidator(new QRegExpValidator(QRegExp("^[A-Za-z0-9]+"), ui->lineEditAddress));
 

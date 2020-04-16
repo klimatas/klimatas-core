@@ -1443,7 +1443,7 @@ address</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Amount of KTS and zKTS staked.</source>
+        <source>Amount of KTS staked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1513,7 +1513,7 @@ address</source>
     </message>
     <message>
         <location line="+5"/>
-        <source>How to get KTS or zKTS</source>
+        <source>How to get KTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1912,7 +1912,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+18"/>
-        <source>KTS Core will download and store a copy of the KTS block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>KTS Core will download and store a copy of the KTS block chain. At least %20MB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2022,7 +2022,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+7"/>
-        <source>Address: 88.26.164.88:51474</source>
+        <source>Address: 88.26.164.88:41121</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2075,7 +2075,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+23"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 10.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To create a KTS Masternode you must dedicate 3.000 KTS (the unit of KTS) to the network (however, these coins are still yours and will never leave your possession). &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;You can deactivate the node and unlock the coins at any time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2090,7 +2090,7 @@ It will start automatically as soon as the wallet has enough confirmations on an
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 10,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node&apos;s name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A transaction of 3,000 KTS will be made&lt;/p&gt;&lt;p&gt;to a new empty address in your wallet.&lt;/p&gt;&lt;p&gt;The Address is labeled under the master node&apos;s name.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2357,7 +2357,7 @@ Are you sure?</source>
     </message>
     <message>
         <location line="+7"/>
-        <source>Not enough balance to create a masternode, 10,000 KTS required.</source>
+        <source>Not enough balance to create a masternode, 3,000 KTS required.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2654,7 +2654,7 @@ Are you sure?</source>
     <message>
         <location line="+21"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/kts-project/kts-project-translations</source>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4060,7 +4060,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <location line="+104"/>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4261,7 +4261,7 @@ transaction history, making transactions untraceable </source>
     </message>
     <message>
         <location line="+99"/>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5307,7 +5307,7 @@ Verify that you have installed a predetermined text editor.</source>
                            zKTS is an optional privacy-centric method of coin mixing on the
                            KTS blockchain. Basically all your transactions cannot be tracked
                            on to any block explorer. You can read more about the technicals in the
-                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://KTS.org/zkts/&apos;&gt;
+                           &lt;a style=&apos;color: #cfc8af&apos; href=&apos;https://klimatas.com/zkts/&apos;&gt;
                            &quot;KTS Zerocoin (zKTS) Technical Paper&quot;&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -5358,7 +5358,7 @@ Verify that you have installed a predetermined text editor.</source>
                            marks and restart your wallet to disable automint.&lt;/p&gt;
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
                            You can read more about zKTS in the
-                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://KTS.org/zkts/&apos;&gt; &quot;KTS Zerocoin (zKTS) Technical Paper&quot;&lt;/a&gt;.
+                           &lt;a style=&apos;color: #cfc8af&apos; href=&apos;https://klimatas.com/zkts/&apos;&gt; &quot;KTS Zerocoin (zKTS) Technical Paper&quot;&lt;/a&gt;.
                            If you would like to keep and stake your zKTS, please read the &quot;How do I stake&quot;
                            section of the FAQ below.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
@@ -5444,10 +5444,10 @@ Verify that you have installed a predetermined text editor.</source>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://discord.KTS.org&apos;&gt;
+                           &lt;a style=&apos;color: #cfc8af&apos; href=&apos;https://discord.klimatas.com&apos;&gt;
                            #support in our Discord&lt;/a&gt;.
                            If you prefer to submit a ticket, One can be
-                           &lt;a style=&apos;color: #b088ff&apos; href=&apos;https://KTS.freshdesk.com&apos;&gt;
+                           &lt;a style=&apos;color: #cfc8af&apos; href=&apos;https://KTS.freshdesk.com&apos;&gt;
                            our Freshdesk support site&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
@@ -5468,7 +5468,7 @@ Verify that you have installed a predetermined text editor.</source>
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
                            A masternode is a computer running a full node KTS core wallet with a
-                           requirement of 10,000 KTS secured collateral to provide extra services
+                           requirement of 3,000 KTS secured collateral to provide extra services
                            to the network and in return, receive a portion of the block reward
                            regularly.  These services include:
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
@@ -5500,7 +5500,7 @@ Verify that you have installed a predetermined text editor.</source>
                            Requirements:
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
                            &lt;ul&gt;
-                           &lt;li&gt;10,000 KTS per single Masternode instance&lt;/li&gt;
+                           &lt;li&gt;3,000 KTS per single Masternode instance&lt;/li&gt;
                            &lt;li&gt;Must be stored in a core wallet&lt;/li&gt;
                            &lt;li&gt;Need dedicated IP address&lt;/li&gt;
                            &lt;li&gt;Masternode wallet to remain online&lt;/li&gt;
@@ -5521,7 +5521,7 @@ Verify that you have installed a predetermined text editor.</source>
     </message>
     <message>
         <location line="+26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the 10,000 KTS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;A Masternode Controller wallet is where the 3,000 KTS collateral can reside during a Controller-Remote masternode setup. It is a wallet that can activate the remote masternode wallet/s and allows you to keep your collateral coins offline while the remote masternode remains online. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7314,7 +7314,7 @@ Are you sure?
     </message>
     <message>
         <location line="+7"/>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7364,7 +7364,7 @@ Are you sure?
     </message>
     <message>
         <location line="+7"/>
-        <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
+        <source>P7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7948,12 +7948,12 @@ KTS Core Wallet</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8018,8 +8018,8 @@ KTS Core Wallet</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>(51472 could be used only on mainnet)</source>
-        <translation type="unfinished">(51472 could be used only on mainnet)</translation>
+        <source>(10300 could be used only on mainnet)</source>
+        <translation type="unfinished">(10300 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -8033,7 +8033,7 @@ KTS Core Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 51472 for mainnet)</source>
+        <source>(must be 10300 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8153,7 +8153,7 @@ KTS Core Wallet</source>
     </message>
     <message>
         <location line="+1"/>
-        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
+        <source>Copyright (C) %i The KTS Core Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -3,7 +3,7 @@
 
 The core wallet of the Klimatas project. Klimatas is a project aiming to improve global sustainability with an investment platform and on-chain governance.
 
-Current stable version: 1.3.2
+Current stable version: 1.3.3
 
 ## Installation
 
@@ -16,8 +16,8 @@ You can also build Klimatas core from source yourself. Please use the source cod
 ### Build instructions
 
 ```bash
-wget https://github.com/klimatas/klimatas-core/archive/1.3.2.tar.gz
-tar xzvf 1.3.2.tar.gz && cd 1.3.2
+wget https://github.com/klimatas/klimatas-core/archive/1.3.3.tar.gz
+tar xzvf 1.3.3.tar.gz && cd 1.3.3
 ./autogen.sh
 ./configure
 make -j2

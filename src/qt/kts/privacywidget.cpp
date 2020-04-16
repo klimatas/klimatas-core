@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -103,7 +103,7 @@ PrivacyWidget::PrivacyWidget(KTSGUI* parent) :
     ui->layoutDenom->setVisible(false);
 
     // List
-    ui->labelListHistory->setText(tr("Last Zerocoin Movements"));
+    ui->labelListHistory->setText(tr("Last zKTS Movements"));
     setCssProperty(ui->labelListHistory, "text-title");
 
     //ui->emptyContainer->setVisible(false);
@@ -132,7 +132,7 @@ PrivacyWidget::PrivacyWidget(KTSGUI* parent) :
     ui->btnRescanMints->setTitleClassAndText("btn-title-grey", "Rescan Mints");
     ui->btnRescanMints->setSubTitleClassAndText("text-subtitle", "Find mints in the blockchain.");
 
-    ui->btnResetZerocoin->setTitleClassAndText("btn-title-grey", "Reset Zerocoin");
+    ui->btnResetZerocoin->setTitleClassAndText("btn-title-grey", "Reset Spent zKTS");
     ui->btnResetZerocoin->setSubTitleClassAndText("text-subtitle", "Reset zerocoin database.");
 
     connect(ui->btnTotalzKTS, SIGNAL(clicked()), this, SLOT(onTotalZktsClicked()));
@@ -159,6 +159,9 @@ PrivacyWidget::PrivacyWidget(KTSGUI* parent) :
     ui->listView->setMinimumHeight(NUM_ITEMS * (DECORATION_SIZE + 2));
     ui->listView->setAttribute(Qt::WA_MacShowFocusRect, false);
     ui->listView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->listView->setLayoutMode(QListView::LayoutMode::Batched);
+    ui->listView->setBatchSize(30);
+    ui->listView->setUniformItemSizes(true);
 }
 
 void PrivacyWidget::loadWalletModel(){
@@ -337,7 +340,7 @@ void PrivacyWidget::onRescanMintsClicked(){
 }
 
 void PrivacyWidget::onResetZeroClicked(){
-    if (ask(tr("Reset Spent Zerocoins"),
+    if (ask(tr("Reset Spent zKTS"),
         tr("Your zerocoin spends are going to be scanned from the blockchain from scratch"))
     ){
         std::string strResetMintResult = walletModel->resetSpentZerocoin();

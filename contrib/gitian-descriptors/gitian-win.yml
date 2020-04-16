@@ -1,5 +1,5 @@
 ---
-name: "kts-win-4.0"
+name: "kts-win-3.0.2"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -24,8 +24,8 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/kts-project/kts.git"
-  "dir": "kts"
+- "url": "https://github.com/KlimatasTeam/klimatas.git"
+  "dir": "klimatas"
 files: []
 script: |
   set -e -o pipefail
@@ -106,7 +106,7 @@ script: |
   create_per-host_linker_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd kts
+  cd klimatas
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

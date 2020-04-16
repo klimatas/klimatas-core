@@ -945,7 +945,7 @@ Użyj hasła składającego się z dziesięciu lub więcej losowych znaków lub 
     </message>
     <message>
         <source>Next super block:</source>
-        <translation>Następny super blok:</translation>
+        <translation>Nastękts super blok:</translation>
     </message>
     <message>
         <source>0</source>
@@ -1046,7 +1046,7 @@ Użyj hasła składającego się z dziesięciu lub więcej losowych znaków lub 
         <translation>Ponieważ program jest uruchamiany po raz pierwszy, możesz wybrać miejsce, w którym KTS Core będzie przechowywać swoje dane.</translation>
     </message>
     <message>
-        <source>KTS Core will download and store a copy of the KTS block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>KTS Core will download and store a copy of the KTS block chain. At least %20MB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation>KTS Core pobierze i zapisze kopię łańcucha bloków KTS. Przynajmniej %1 GB danych zostanie zapisanych w tym katalogu, a jego liczba będzie rosnąć z czasem. Portfel zostanie również zapisany w tym katalogu.</translation>
     </message>
     <message>
@@ -1356,9 +1356,9 @@ Użyj hasła składającego się z dziesięciu lub więcej losowych znaków lub 
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/kts-project/kts-project-translations</source>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations</source>
         <translation>Brakuje języka bądź nieukończona pełnego tłumaczenia? Pomóż w tłumaczeniu tutaj:
-https://www.transifex.com/kts-project/kts-project-translations </translation>
+https://www.transifex.com/KlimatasTeam/KlimatasTeam-translations </translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2240,7 +2240,7 @@ Adres: %4
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Wpisz &lt;b&gt;help&lt;/b&gt;, aby uzyskać przegląd dostępnych poleceń.</translation>
+        <translation>Wpisz &lt;b&gt;help&lt;/b&gt;, aby uzyskać przegląd dostęktsch poleceń.</translation>
     </message>
     <message>
         <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
@@ -2306,8 +2306,8 @@ Adres: %4
         <translation>Naciśnij przycisk</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
         <source>CANCEL</source>
@@ -2379,8 +2379,8 @@ Adres: %4
         <translation>TekstZakładka</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
         <source>CANCEL</source>
@@ -2566,7 +2566,7 @@ Albo wybierz wyższe nominały (potrzeba mniej wejść) albo zmniejsz kwotę do 
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Prywatny klucz do podanego adresu nie jest dostępny</translation>
+        <translation>Prywatny klucz do podanego adresu nie jest dostękts</translation>
     </message>
     <message>
         <source>Failed to decrypt.</source>
@@ -2609,7 +2609,7 @@ Albo wybierz wyższe nominały (potrzeba mniej wejść) albo zmniejsz kwotę do 
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
-        <translation>Wpisz &lt;b&gt;help&lt;/b&gt;, aby uzyskać przegląd dostępnych poleceń.</translation>
+        <translation>Wpisz &lt;b&gt;help&lt;/b&gt;, aby uzyskać przegląd dostęktsch poleceń.</translation>
     </message>
     <message>
         <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
@@ -2824,7 +2824,7 @@ Sprawdź adres i spróbuj ponownie.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
-        <translation>Prywatny klucz do podanego adresu nie jest dostępny</translation>
+        <translation>Prywatny klucz do podanego adresu nie jest dostękts</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -3414,8 +3414,8 @@ Sprawdź adres i spróbuj ponownie.</translation>
         <translation>Forma</translation>
     </message>
     <message>
-        <source>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
+        <source>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z </source>
+        <translation>P7VFR83SQbiezrW72hjcWJtcfip5krte2Z</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -3756,12 +3756,12 @@ Sprawdź adres i spróbuj ponownie.</translation>
         <translation>Nie można znaleźć wystarczającej liczby funduszy ukrytych dla tej transakcji.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 KTS.</source>
-        <translation>Nie można zlokalizować wystarczająco dużo zaciemnionych Środków. Ta transakcja nie jest równa 10000 KTS.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 1000 KTS.</source>
+        <translation>Nie można zlokalizować wystarczająco dużo zaciemnionych Środków. Ta transakcja nie jest równa 1000 KTS.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 KTS.</source>
-        <translation>Nie można zlokalizować wystarczająco dużo Środków. Ta transakcja nie jest równa 10000 KTS.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 KTS.</source>
+        <translation>Nie można zlokalizować wystarczająco dużo Środków. Ta transakcja nie jest równa 1000 KTS.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -3808,8 +3808,8 @@ Sprawdź adres i spróbuj ponownie.</translation>
         <translation>Musisz określić masternodeprivkey w konfiguracji. Aby uzyskać pomoc, zapoznaj się z dokumentacją.</translation>
     </message>
     <message>
-        <source>(51472 could be used only on mainnet)</source>
-        <translation>(51472 może być używany tylko w sieci mainnet)</translation>
+        <source>(10300 could be used only on mainnet)</source>
+        <translation>(10300 może być używany tylko w sieci mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -3820,8 +3820,8 @@ Sprawdź adres i spróbuj ponownie.</translation>
         <translation>(domyślnie: 1)</translation>
     </message>
     <message>
-        <source>(must be 51472 for mainnet)</source>
-        <translation>(musi być 51472 dla mainnetu)</translation>
+        <source>(must be 10300 for mainnet)</source>
+        <translation>(musi być 10300 dla mainnetu)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>
@@ -3916,8 +3916,8 @@ Sprawdź adres i spróbuj ponownie.</translation>
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The KTS Core Developers</source>
-        <translation>Copyright (C) 2015-%i The KTS Core Developers</translation>
+        <source>Copyright (C) %i The KTS Core Developers</source>
+        <translation>Copyright (C) %i The KTS Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4405,7 +4405,7 @@ Sprawdź adres i spróbuj ponownie.</translation>
     </message>
     <message>
         <source>Not enough file descriptors available.</source>
-        <translation>Za mało dostępnych deskryptorów plików.</translation>
+        <translation>Za mało dostęktsch deskryptorów plików.</translation>
     </message>
     <message>
         <source>Number of automatic wallet backups (default: 10)</source>

@@ -1,6 +1,7 @@
 // Copyright (c) 2014-2018 The Dash Core developers
-// Copyright (c) 2018-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2018-2020 The PIVX developers
+// Copyright (c) 2020 The CryptoDev developers
+// Copyright (c) 2020 The klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -71,7 +72,7 @@ public:
     bool Sign(const CKey& key, const CPubKey& pubKey, const bool fNewSigs);
     bool Sign(const std::string strSignKey, const bool fNewSigs);
     bool CheckSignature(const CPubKey& pubKey) const;
-    bool CheckSignature(const bool fSignatureCheck = true) const;
+    bool CheckSignature() const;
 
     // Pure virtual functions (used in Sign-Verify functions)
     // Must be implemented in child classes

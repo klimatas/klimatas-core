@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -164,7 +164,7 @@ void updateStyle(QWidget* widget){
 QColor getRowColor(bool isLightTheme, bool isHovered, bool isSelected){
     if(isLightTheme){
         if (isSelected) {
-            return QColor("#25b088ff");
+            return QColor("#25cfc8af");
         }else if(isHovered){
             return QColor("#25bababa");
         } else{
@@ -172,11 +172,11 @@ QColor getRowColor(bool isLightTheme, bool isHovered, bool isSelected){
         }
     }else{
         if (isSelected) {
-            return QColor("#25b088ff");
+            return QColor("#25cfc8af");
         }else if(isHovered){
             return QColor("#25bababa");
         } else{
-            return QColor("#0f0b16");
+            return QColor("#100e0a");
         }
     }
 }

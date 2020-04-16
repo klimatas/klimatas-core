@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -54,18 +54,31 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("000005311094a6ffb1c6a91783723875e62a7dc44f3256c02e2c2f1a7bdca254"))
-    (21350, uint256("9772e87bb7a13726f7f7f4819b4eefa0d5f1a223cf82fc781819eab0cc56c520"))
-    (52472, uint256("a5f7fb79b12058e3901c869faf33ccf6ddc3d08dc4f7626e182d41c26caade75"))
-    (59300, uint256("b383f93b37c5a05c7a37014af75e73d68334de842cae7334283cd9ed284fba57"))
-    (134864, uint256("1a0c4d27a87d47dea1a224322103bf81487ff66d0310d9f6de1b93ecdf35cc4f"))
-    (141598, uint256("8b324cf371e368172048a04fd75806ce7f992062445583ba0d33664fa4b809d3"))
-    (161747, uint256("7c76b86a6b0692d41b19bcedfcdf950dbcdb1563d463b5bfc6beb75226131fe8"))
-    (492584, uint256("84b27d142f1ef1b4f1d0e6be9790ab17ebdf898ac8556518961f2e214397a281"));
+        (0, uint256("000005311094a6ffb1c6a91783723875e62a7dc44f3256c02e2c2f1a7bdca254"))
+        (21350, uint256("9772e87bb7a13726f7f7f4819b4eefa0d5f1a223cf82fc781819eab0cc56c520"))
+        (52472, uint256("a5f7fb79b12058e3901c869faf33ccf6ddc3d08dc4f7626e182d41c26caade75"))
+        (59300, uint256("b383f93b37c5a05c7a37014af75e73d68334de842cae7334283cd9ed284fba57"))
+        (134864, uint256("1a0c4d27a87d47dea1a224322103bf81487ff66d0310d9f6de1b93ecdf35cc4f"))
+        (141598, uint256("8b324cf371e368172048a04fd75806ce7f992062445583ba0d33664fa4b809d3"))
+        (161747, uint256("7c76b86a6b0692d41b19bcedfcdf950dbcdb1563d463b5bfc6beb75226131fe8"))
+        (492584, uint256("84b27d142f1ef1b4f1d0e6be9790ab17ebdf898ac8556518961f2e214397a281"))
+        (500000, uint256("9b136abc8f7a6265ae2b3ebc052637f8fc33dc9919c53005e317971f10518b8b"))
+        (520000, uint256("894d8684eea692eb88d5ae815510bf92d95859e3bc4f1061a75e7371ec100e42"))
+        (550000, uint256("6582cff6bb771a306d9cd4ef11ae8e889f63f5807236df748fc4e2e6504dedcc"))
+        (575000, uint256("d0cbd5f0b7476fb7fd01f48b80dbc767b5600914e0d7bf3a4474e5b867e4d50a"))
+        (590000, uint256("7defeaba54211a2587e7a622273e62247ab5ef086e1bd329149375f1a9b187f7"))
+        (600000, uint256("8912cc2b783c7aec529e00826e32016ad2fe1d4d83048e0eef3de6644f64423a"))
+        (610000, uint256("477d2b6da27365ebf7c771eafed124fde9697539666bf2a6c69c810ced762de5"))
+        (620000, uint256("d5e082ceb4ece2c4b06e32147965f5307812cba60ccdd4105e0d1137969766cb"))
+        (630000, uint256("e23749562bc95434724ee19f3d716961819d10c329f60050e3b3175793508f20"))
+        (640000, uint256("2fb2e3e813f9bc8174bb8a8f33c7f9aa9f4cd07ed10e0a4f0196cb0424de023a"))
+        (650000, uint256("bd91d1b3dba223689f5f686116a37cf3d69c9837b912ae1c4b5b044757cd9f3b"))
+        (655000, uint256("5ec3dd7f9be42c797f49f36f62d93856c9e846fde3a665f1a024fbea6ffaf42f"))
+        (658844, uint256("fef6a0f575e75ebcd2d5c8f240c08ab2cc04bb00de86c0decda4d0bc917af69e"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1578399869, // * UNIX timestamp of last checkpoint block
-    1318982,    // * total number of transactions between genesis and last checkpoint
+    1586972314, // * UNIX timestamp of last checkpoint block
+    1703357,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -159,12 +172,12 @@ public:
         bnProofOfStakeLimit_V2 = ~uint256(0) >> 20; // 60/4 = 15 ==> use 2**4 higher limit
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 750; // 75%
-        nRejectBlockOutdatedMajority = 950; // 95%
-        nToCheckBlockUpgradeMajority = 1000; // Approximate expected amount of blocks in 7 days (1440*7.5)
+        nEnforceBlockUpgradeMajority = 750; //8100; // 75%
+        nRejectBlockOutdatedMajority = 950; //10260; // 95%
+        nToCheckBlockUpgradeMajority = 1000; //10800; // Approximate expected amount of blocks in 7 days (1440*7.5)
         nMinerThreads = 0;
         nTargetSpacing = 1 * 60;                        // 1 minute
-        nTargetTimespan =  60 * 40;                      // 40 minutes
+        nTargetTimespan = 40 * 60;                      // 40 minutes
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
         nMaturity = 30;
@@ -184,15 +197,15 @@ public:
         nZerocoinStartHeight = 999999999;
         nZerocoinStartTime = 1551646601; // October 17, 2017 4:30:00 AM
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
+        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 1; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999; //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
         nBlockDoubleAccumulated = 10;
-        nEnforceNewSporkKey = 1551387401; //!> Sporks signed after Monday, August 26, 2019 11:00:00 PM GMT must use the new spork key
-        nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after Thursday, September 26, 2019 11:00:00 PM GMT
+        nEnforceNewSporkKey = 1551387401; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
         nBlockStakeModifierlV2 = 535000;
         nBIP65ActivationHeight = 1808634;
         // Activation height for TimeProtocolV2, Blocks V7 and newMessageSignatures
@@ -259,12 +272,12 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = false;
+        fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
-        fSkipProofOfWorkCheck = true;
+        fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
 
@@ -377,6 +390,7 @@ public:
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 73);  // Testnet kts script addresses start with '8' or '9'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 5);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
+
         // Testnet kts BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         // Testnet kts BIP32 prvkeys start with 'DRKP'
@@ -449,6 +463,9 @@ public:
         nBlockStakeModifierlV2 = 255;
         nBlockTimeProtocolV2 = 999999999;
 
+        nMintRequiredConfirmations = 10;
+        nZerocoinRequiredStakeDepth = nMintRequiredConfirmations;
+
         // Public coin spend enforcement
         nPublicZCSpends = 350;
 
@@ -468,8 +485,6 @@ public:
         genesis.nNonce = 1383794;
 
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
-        //assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.

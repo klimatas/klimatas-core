@@ -1,5 +1,5 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -70,7 +70,8 @@ private:
 
 ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
     PWidget(parent),
-    ui(new Ui::ColdStakingWidget)
+    ui(new Ui::ColdStakingWidget),
+    isLoading(false)
 {
     ui->setupUi(this);
     this->setStyleSheet(parent->styleSheet());
@@ -97,18 +98,18 @@ ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
     setCssProperty(ui->pushRight, "btn-check-right");
 
     /* Subtitle */
-    ui->labelSubtitle1->setText(tr("You can delegate your KTSs and let a hot node (24/7 online node)\nstake in your behalf, keeping the keys in a secure place offline."));
+    ui->labelSubtitle1->setText(tr("You can delegate your KTSs, letting a hot node (24/7 online node)\nstake on your behalf, while you keep the keys securely offline."));
     setCssSubtitleScreen(ui->labelSubtitle1);
     spacerDiv = new QSpacerItem(40, 20, QSizePolicy::Maximum, QSizePolicy::Expanding);
 
     setCssProperty(ui->labelSubtitleDescription, "text-title");
-    ui->lineEditOwnerAddress->setPlaceholderText(tr("Add owner address"));
+    ui->lineEditOwnerAddress->setPlaceholderText(tr("Enter owner address"));
     btnOwnerContact = ui->lineEditOwnerAddress->addAction(QIcon("://ic-contact-arrow-down"), QLineEdit::TrailingPosition);
     setCssProperty(ui->lineEditOwnerAddress, "edit-primary-multi-book");
     ui->lineEditOwnerAddress->setAttribute(Qt::WA_MacShowFocusRect, 0);
     setShadow(ui->lineEditOwnerAddress);
 
-    ui->labelSubtitle2->setText(tr("Delegate or Accept KTS delegation"));
+    ui->labelSubtitle2->setText(tr("Accept KTS delegation / Delegate KTS"));
     setCssSubtitleScreen(ui->labelSubtitle2);
     ui->labelSubtitle2->setContentsMargins(0,2,0,0);
 
@@ -119,7 +120,7 @@ ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
 
     connect(ui->pushButtonClear, SIGNAL(clicked()), this, SLOT(clearAll()));
 
-    ui->labelEditTitle->setText(tr("Add the staking address"));
+    ui->labelEditTitle->setText(tr("Cold Staking address"));
     setCssProperty(ui->labelEditTitle, "text-title");
     sendMultiRow = new SendMultiRow(this);
     sendMultiRow->setOnlyStakingAddressAccepted(true);
@@ -137,8 +138,8 @@ ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
     ui->btnCoinControl->setTitleClassAndText("btn-title-grey", "Coin Control");
     ui->btnCoinControl->setSubTitleClassAndText("text-subtitle", "Select KTS outputs to delegate.");
 
-    ui->btnColdStaking->setTitleClassAndText("btn-title-grey", "Create Cold Stake Address");
-    ui->btnColdStaking->setSubTitleClassAndText("text-subtitle", "Creates an address to receive coin\ndelegations and be able to stake them.");
+    ui->btnColdStaking->setTitleClassAndText("btn-title-grey", "Create Cold Staking Address");
+    ui->btnColdStaking->setSubTitleClassAndText("text-subtitle", "Creates an address to receive delegated coins\nand stake them on their owner's behalf.");
     ui->btnColdStaking->layout()->setMargin(0);
 
     connect(ui->btnCoinControl, SIGNAL(clicked()), this, SLOT(onCoinControlClicked()));
@@ -174,8 +175,8 @@ ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
     ui->btnMyStakingAddresses->setChecked(true);
     ui->listViewStakingAddress->setVisible(false);
 
-    ui->btnMyStakingAddresses->setTitleClassAndText("btn-title-grey", "My staking addresses");
-    ui->btnMyStakingAddresses->setSubTitleClassAndText("text-subtitle", "List your own staking addresses.");
+    ui->btnMyStakingAddresses->setTitleClassAndText("btn-title-grey", "My Cold Staking Addresses");
+    ui->btnMyStakingAddresses->setSubTitleClassAndText("text-subtitle", "List your own cold staking addresses.");
     ui->btnMyStakingAddresses->layout()->setMargin(0);
     ui->btnMyStakingAddresses->setRightIconClass("ic-arrow");
 
@@ -186,6 +187,7 @@ ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
     ui->listViewStakingAddress->setMinimumHeight(NUM_ITEMS * (DECORATION_SIZE + 2));
     ui->listViewStakingAddress->setAttribute(Qt::WA_MacShowFocusRect, false);
     ui->listViewStakingAddress->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->listViewStakingAddress->setUniformItemSizes(true);
 
     connect(ui->pushButtonSend, &QPushButton::clicked, this, &ColdStakingWidget::onSendClicked);
     connect(btnOwnerContact, &QAction::triggered, [this](){ onContactsClicked(true); });
@@ -451,7 +453,7 @@ void ColdStakingWidget::onSendClicked(){
     WalletModel::SendCoinsReturn prepareStatus = walletModel->prepareTransaction(currentTransaction, CoinControlDialog::coinControl);
 
     // process prepareStatus and on error generate message shown to user
-    GuiTransactionsUtils::ProcessSendCoinsReturn(
+    GuiTransactionsUtils::ProcessSendCoinsReturnAndInform(
             this,
             prepareStatus,
             walletModel,
@@ -475,7 +477,7 @@ void ColdStakingWidget::onSendClicked(){
         // now send the prepared transaction
         WalletModel::SendCoinsReturn sendStatus = dialog->getStatus();
         // process sendStatus and on error generate message shown to user
-        GuiTransactionsUtils::ProcessSendCoinsReturn(
+        GuiTransactionsUtils::ProcessSendCoinsReturnAndInform(
                 this,
                 sendStatus,
                 walletModel

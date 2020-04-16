@@ -44,37 +44,31 @@ Specifying `verbose` will list the full filenames of files of each category.
 
 copyright\_header.py update \<base\_directory\> [verbose]
 ---------------------------------------------------------
-Updates all the copyright headers of `The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers` which were
+Updates all the copyright headers of `The PIVX developers` which were
 changed in a year more recent than is listed. For example:
 ```
-// Copyright (c) <firstYear>-<lastYear> The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) <firstYear>-<lastYear> The PIVX developers
 ```
 will be updated to:
 ```
-// Copyright (c) <firstYear>-<lastModifiedYear> The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) <firstYear>-<lastModifiedYear> The PIVX developers
 ```
 where `<lastModifiedYear>` is obtained from the `git log` history.
 
 This subcommand also handles copyright headers that have only a single year. In
 those cases:
 ```
-// Copyright (c) <year> The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) <year> The PIVX developers
 ```
 will be updated to:
 ```
-// Copyright (c) <year>-<lastModifiedYear> The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) <year>-<lastModifiedYear> The PIVX developers
 ```
 where the update is appropriate.
 
 copyright\_header.py insert \<file\>
 ------------------------------------
-Inserts a copyright header for `The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers` at the top of the
+Inserts a copyright header for `The PIVX developers` at the top of the
 file in either Python or C++ style as determined by the file extension. If the
 file is a Python file and it has  `#!` starting the first line, the header is
 inserted in the line below it.
@@ -84,8 +78,7 @@ The copyright dates will be set to be `<year_introduced>-<current_year>` where
 `<year_introduced>` is equal to `<current_year>`, it will be set as a single
 year rather than two hyphenated years.
 
-If the file already has a copyright for `The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers`, the
+If the file already has a copyright for `The PIVX developers`, the
 script will exit.
 
 gen-manpages.sh
@@ -112,7 +105,7 @@ For example:
   ./github-merge.py 3077
 
 (in any git repository) will help you merge pull request #3077 for the
-KTS-Project/KTS repository.
+KlimatasTeam/KTS repository.
 
 What it does:
 * Fetch master and the pull request.
@@ -132,7 +125,7 @@ Setup
 ---------
 Configuring the github-merge tool for the KTS repository is done in the following way:
 
-    git config githubmerge.repository KTS-Project/KTS
+    git config githubmerge.repository KlimatasTeam/KTS
     git config githubmerge.testcmd "make -j4 check" (adapt to whatever you want to use for testing)
     git config --global user.signingkey mykeyid
 

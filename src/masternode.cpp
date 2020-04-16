@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2020 The Klimatas developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -224,7 +224,7 @@ void CMasternode::Check(bool forceCheck)
     if (!unitTest) {
         CValidationState state;
         CMutableTransaction tx = CMutableTransaction();
-        CTxOut vout = CTxOut(2999.99 * COIN, obfuScationPool.collateralPubKey);
+        CTxOut vout = CTxOut((GetMNCollateral(chainActive.Height()) - 0.01) * COIN, obfuScationPool.collateralPubKey);
         tx.vin.push_back(vin);
         tx.vout.push_back(vout);
 
@@ -349,7 +349,7 @@ bool CMasternode::IsInputAssociatedWithPubkey() const
     uint256 hash;
     if(GetTransaction(vin.prevout.hash, txVin, hash, true)) {
         for (CTxOut out : txVin.vout) {
-            if (out.nValue == 3000 * COIN && out.scriptPubKey == payee) return true;
+            if (out.nValue == GetMNCollateral(chainActive.Height()) * COIN && out.scriptPubKey == payee) return true;
         }
     }
 
@@ -492,10 +492,10 @@ bool CMasternodeBroadcast::CheckSignature() const
 {
     std::string strError = "";
     std::string strMessage = (
-            nMessVersion == MessageVersion::MESS_VER_HASH ?
-            GetSignatureHash().GetHex() :
-            GetStrMessage()
-    );
+                            nMessVersion == MessageVersion::MESS_VER_HASH ?
+                            GetSignatureHash().GetHex() :
+                            GetStrMessage()
+                            );
     std::string oldStrMessage = (
             nMessVersion == MessageVersion::MESS_VER_HASH ?
             GetSignatureHash().GetHex() :
@@ -632,7 +632,7 @@ bool CMasternodeBroadcast::CheckInputsAndAdd(int& nDoS)
 
     CValidationState state;
     CMutableTransaction tx = CMutableTransaction();
-    CTxOut vout = CTxOut(2999.99 * COIN, obfuScationPool.collateralPubKey);
+    CTxOut vout = CTxOut((GetMNCollateral(chainActive.Height()) - 0.01) * COIN, obfuScationPool.collateralPubKey);
     tx.vin.push_back(vin);
     tx.vout.push_back(vout);
 

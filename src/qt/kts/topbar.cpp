@@ -1,5 +1,4 @@
-// Copyright (c) 2019 The KTSX developers
-// Copyright (c) 2019-2020 The Klimatas developers
+// Copyright (c) 2019-2020 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -40,7 +39,7 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
     ui->containerTop->setProperty("cssClass", "container-top");
 #endif
 
-    std::initializer_list<QWidget*> lblTitles = {ui->labelTitle1, ui->labelTitle3, ui->labelTitle4};
+    std::initializer_list<QWidget*> lblTitles = {ui->labelTitle1, ui->labelTitle2, ui->labelTitle3, ui->labelTitle4, ui->labelTitle5, ui->labelTitle6};
     setCssProperty(lblTitles, "text-title-topbar");
     QFont font;
     font.setWeight(QFont::Light);
@@ -48,9 +47,9 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
 
     // Amount information top
     ui->widgetTopAmount->setVisible(false);
-    setCssProperty({ui->labelAmountTopKts}, "amount-small-topbar");
-    setCssProperty({ui->labelAmountKts}, "amount-topbar");
-    setCssProperty({ui->labelPendingKts, ui->labelImmatureKts}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountTopKts, ui->labelAmountTopzKts}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountKts, ui->labelAmountzKts}, "amount-topbar");
+    setCssProperty({ui->labelPendingKts, ui->labelPendingzKts, ui->labelImmatureKts, ui->labelImmaturezKts}, "amount-small-topbar");
 
     // Progress Sync
     progressBar = new QProgressBar(ui->layoutSync);
@@ -76,10 +75,6 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
 
     ui->pushButtonColdStaking->setButtonClassStyle("cssClass", "btn-check-cold-staking-inactive");
     ui->pushButtonColdStaking->setButtonText("Cold Staking Disabled");
-
-    ui->pushButtonMint->setButtonClassStyle("cssClass", "btn-check-mint-inactive");
-    ui->pushButtonMint->setButtonText("Automint Enabled");
-    ui->pushButtonMint->setVisible(false);
 
     ui->pushButtonSync->setButtonClassStyle("cssClass", "btn-check-sync");
     ui->pushButtonSync->setButtonText(" %54 Synchronizing..");
@@ -208,6 +203,9 @@ void TopBar::lockDropdownClicked(const StateClicked& state){
                 walletModel->setWalletLocked(true);
                 ui->pushButtonLock->setButtonText("Wallet Locked");
                 ui->pushButtonLock->setButtonClassStyle("cssClass", "btn-check-status-lock", true);
+                // Directly update the staking status icon when the wallet is manually locked here
+                // so the feedback is instant (no need to wait for the polling timeout)
+                setStakingStatusActive(false);
                 break;
             }
             case 1: {
@@ -349,25 +347,20 @@ void TopBar::loadClientModel(){
     }
 }
 
-void TopBar::updateAutoMintStatus(){
-    ui->pushButtonMint->setButtonText(fEnableZeromint ? tr("Automint enabled") : tr("Automint disabled"));
-    ui->pushButtonMint->setChecked(fEnableZeromint);
-}
-
-void TopBar::updateStakingStatus(){
-    if (nLastCoinStakeSearchInterval) {
-        if (!ui->pushButtonStack->isChecked()) {
-            ui->pushButtonStack->setButtonText(tr("Staking active"));
-            ui->pushButtonStack->setChecked(true);
-            ui->pushButtonStack->setButtonClassStyle("cssClass", "btn-check-stack", true);
-        }
-    }else{
-        if (ui->pushButtonStack->isChecked()) {
-            ui->pushButtonStack->setButtonText(tr("Staking not active"));
-            ui->pushButtonStack->setChecked(false);
-            ui->pushButtonStack->setButtonClassStyle("cssClass", "btn-check-stack-inactive", true);
-        }
+void TopBar::setStakingStatusActive(bool fActive)
+{
+    if (ui->pushButtonStack->isChecked() != fActive) {
+        ui->pushButtonStack->setButtonText(fActive ? tr("Staking active") : tr("Staking not active"));
+        ui->pushButtonStack->setChecked(fActive);
+        ui->pushButtonStack->setButtonClassStyle("cssClass", (fActive ?
+                                                                "btn-check-stack" :
+                                                                "btn-check-stack-inactive"), true);
     }
+}
+void TopBar::updateStakingStatus(){
+    setStakingStatusActive(walletModel &&
+                           !walletModel->isWalletLocked() &&
+                           walletModel->isStakingStatusActive());
 }
 
 void TopBar::setNumConnections(int count) {
@@ -416,12 +409,11 @@ void TopBar::setNumBlocks(int count) {
         emit walletSynced(true);
         if (masternodeSync.IsSynced()) {
             // Node synced
-            // TODO: Set synced icon to pushButtonSync here..
-            ui->pushButtonSync->setButtonText(tr("Synchronized"));
+            ui->pushButtonSync->setButtonText(tr("Synchronized - Block: %1").arg(QString::number(count)));
             progressBar->setRange(0,100);
             progressBar->setValue(100);
             return;
-        }else{
+        } else {
 
             // TODO: Show out of sync warning
             int nAttempt = masternodeSync.RequestedMasternodeAttempt < MASTERNODE_SYNC_THRESHOLD ?
@@ -430,7 +422,7 @@ void TopBar::setNumBlocks(int count) {
             int progress = nAttempt + (masternodeSync.RequestedMasternodeAssets - 1) * MASTERNODE_SYNC_THRESHOLD;
             if(progress >= 0){
                 // todo: MN progress..
-                text = std::string("Synchronizing additional data..");//: %p%", progress);
+                text = strprintf("Synchronizing masternodes data... - Block: %d", count);
                 //progressBar->setMaximum(4 * MASTERNODE_SYNC_THRESHOLD);
                 //progressBar->setValue(progress);
                 needState = false;
@@ -538,26 +530,37 @@ void TopBar::updateBalances(const CAmount& balance, const CAmount& unconfirmedBa
                             const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance,
                             const CAmount& delegatedBalance, const CAmount& coldStakedBalance){
 
+    // Locked balance. //TODO move this to the signal properly in the future..
     CAmount nLockedBalance = 0;
     if (walletModel) {
         nLockedBalance = walletModel->getLockedBalance();
     }
+    ui->labelTitle1->setText(nLockedBalance > 0 ? tr("Available (Locked included)") : tr("Available"));
 
-    // KTS Balance
-    //CAmount nTotalBalance = balance + unconfirmedBalance + immatureBalance;
-    CAmount ktsAvailableBalance = balance + delegatedBalance - nLockedBalance;
+    // KTS Total
+    CAmount ktsAvailableBalance = balance;
+    // zKTS Balance
+    CAmount matureZerocoinBalance = zerocoinBalance - unconfirmedZerocoinBalance - immatureZerocoinBalance;
 
     // Set
     QString totalKts = GUIUtil::formatBalance(ktsAvailableBalance, nDisplayUnit);
+    QString totalzKts = GUIUtil::formatBalance(matureZerocoinBalance, nDisplayUnit, true);
     // Top
     ui->labelAmountTopKts->setText(totalKts);
+    ui->labelAmountTopzKts->setVisible(false);
 
     // Expanded
     ui->labelAmountKts->setText(totalKts);
+    ui->labelAmountzKts->setVisible(false);
 
     ui->labelPendingKts->setText(GUIUtil::formatBalance(unconfirmedBalance, nDisplayUnit));
+    ui->labelPendingzKts->setVisible(false);
 
     ui->labelImmatureKts->setText(GUIUtil::formatBalance(immatureBalance, nDisplayUnit));
+    ui->labelImmaturezKts->setVisible(false);
+    ui->labelTitle2->setVisible(false);
+    ui->labelTitle5->setVisible(false);
+    ui->labelTitle6->setVisible(false);
 }
 
 void TopBar::resizeEvent(QResizeEvent *event){
