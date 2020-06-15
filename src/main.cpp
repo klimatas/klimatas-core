@@ -2056,7 +2056,6 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight >= 700001 && nHeight <= 800000) {
         nSubsidy = 10.5* COIN;
     } else if (nHeight >= 800001 && nHeight <= 900000) {
-        // Ecofund starts from here
         nSubsidy = 11.5* COIN;
     } else if (nHeight >= 900001 && nHeight <= 1000000) {
         nSubsidy = 12.5* COIN;
@@ -2081,7 +2080,9 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if(nHeight >= 800001 && !IsEcoFundBlock(nHeight)) {
-        nSubsidy = nSubsidy / 100 * 80;
+        // Ecofund starts from here, and are
+        // paid once a day, so we lower the rewards
+        nSubsidy = (nSubsidy / 100) * 80;
     }
 
     if(IsEcoFundBlock(nHeight)) {
@@ -2340,8 +2341,8 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     if (nHeight <= 2880) {
         ret = blockValue  / 100 * 0;
     } else if (nHeight > 2880) {
-        if(nHeight > 800001) {
-            ret = blockValue / 100 * 75; //80%
+        if(nHeight >= 800001) {
+            ret = blockValue / 100 * 75; //75%
         } else {
             ret = blockValue / 100 * 80; //80%
         }
