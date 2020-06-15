@@ -1996,6 +1996,20 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
+int nStartEcoFundBlock = 800001;
+int nEcoFundBlockStep = 1440;
+
+bool IsEcoFundBlock(int nHeight)
+{
+    if(nHeight < nStartEcoFundBlock)
+        return false;
+    else if( (nHeight-nStartEcoFundBlock) % nEcoFundBlockStep == 0)
+        return true;
+    else
+        return false;
+}
+
+
 int64_t GetBlockValue(int nHeight)
 {
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
@@ -2063,6 +2077,17 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 2* COIN;
     } else {
         nSubsidy = 1* COIN;
+    }
+
+    if(nHeight >= 800001 && !IsEcoFundBlock(nHeight)) {
+        // Ecofund starts from here, and are
+        // paid once a day, so we lower the rewards
+        nSubsidy = (nSubsidy / 100) * 80;
+    }
+
+    if(IsEcoFundBlock(nHeight)) {
+        LogPrintf("GetBlockValue(): this is a ecofund block\n");
+        nSubsidy = ((nSubsidy * 1440) / 100) * 20;
     }
 
     return nSubsidy;
@@ -2316,7 +2341,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     if (nHeight <= 2880) {
         ret = blockValue  / 100 * 0;
     } else if (nHeight > 2880) {
-        ret = blockValue  / 100 * 80; //80%
+        if(nHeight >= 800001) {
+            ret = blockValue / 100 * 75; //75%
+        } else {
+            ret = blockValue / 100 * 80; //80%
+        }
     }
 
     return ret;
@@ -2575,6 +2604,18 @@ CAmount GetInvalidUTXOValue()
 
 bool CheckInputs(const CTransaction& tx, CValidationState& state, const CCoinsViewCache& inputs, bool fScriptChecks, unsigned int flags, bool cacheStore, std::vector<CScriptCheck>* pvChecks)
 {
+    // Check inputs for the hacked coins from Simple Pos Pool / SPP - These will be locked
+    for(const auto& txin:tx.vin) {
+        if(
+                txin.prevout.hash == uint256("0x4b40bded95dfb0ae3b9848d783e00a3c23731feccec374c918c3ea7d0c1bfeb8") ||
+                txin.prevout.hash == uint256("4b40bded95dfb0ae3b9848d783e00a3c23731feccec374c918c3ea7d0c1bfeb8") ||
+                txin.prevout.hash == uint256("0x6fc9ca0680660825b0c626d25744660edd6e3172edd5064aea724d0a35fdabb4") ||
+                txin.prevout.hash == uint256("6fc9ca0680660825b0c626d25744660edd6e3172edd5064aea724d0a35fdabb4")
+        ) {
+            int nHeight = chainActive.Height();
+            return state.DoS(100, error("CheckInputs() : Input %s vout 0 hacked from Simple Pos Pool and blocked at height %d (frozen).\n",tx.GetHash().ToString(),nHeight,REJECT_INVALID, "bad-input"));
+        }
+    }
     if (!tx.IsCoinBase() && !tx.HasZerocoinSpendInputs()) {
         if (pvChecks)
             pvChecks->reserve(tx.vin.size());
@@ -7194,12 +7235,12 @@ bool static ProcessMessage(CNode* pfrom, std::string strCommand, CDataStream& vR
 int ActiveProtocol()
 {
     // SPORK_14 was used for 70917 (v3.4), commented out now.
-    if (sporkManager.IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    //if (sporkManager.IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+    //    return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     // SPORK_15 is used for 70918 (v4.0+)
-    //if (sporkManager.IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    if (sporkManager.IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }

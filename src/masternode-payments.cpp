@@ -310,15 +310,42 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     // votes (status = TrxValidationStatus::VoteThreshold) for a finalized budget were found
     // In all cases a masternode will get the payment for this block
 
-    //check for masternode payee
-    if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
-        return true;
-    LogPrint("masternode","Invalid mn payment detected %s\n", txNew.ToString().c_str());
+    if(IsEcoFundBlock(nBlockHeight-1) || IsEcoFundBlock(nBlockHeight) || IsEcoFundBlock(nBlockHeight+1)) {
+        CScript treasuryPayee = Params().GetEcoFundScriptAtHeight(nBlockHeight);
+        CAmount treasuryAmount = GetBlockValue(nBlockHeight);
 
-    if (sporkManager.IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
-        return false;
-    LogPrint("masternode","Masternode payment enforcement is disabled, accepting block\n");
-    return true;
+        bool bFound = false;
+
+        for (CTxOut out : txNew.vout) {
+            if(out.nValue == treasuryAmount) {
+                bFound = true;  //correct treasury payment has been found
+                break;
+            }
+        }
+
+        if(!bFound) {
+            LogPrint("masternode","Invalid ecofund payment detected %s\n", txNew.ToString().c_str());
+            if(sporkManager.IsSporkActive(SPORK_19_ECOFUND_PAYMENT_ENFORCEMENT))
+                return false;
+            else {
+                LogPrint("masternode","SPORK_19_ECOFUND_PAYMENT_ENFORCEMENT is not enabled, accept anyway\n");
+                return true;
+            }
+        } else {
+            LogPrint("masternode","Valid ecofund payment detected %s\n", txNew.ToString().c_str());
+            return true;
+        }
+    } else {
+        //check for masternode payee
+        if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
+            return true;
+        LogPrint("masternode", "Invalid mn payment detected %s\n", txNew.ToString().c_str());
+
+        if (sporkManager.IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
+            return false;
+        LogPrint("masternode", "Masternode payment enforcement is disabled, accepting block\n");
+        return true;
+    }
 }
 
 
@@ -329,6 +356,8 @@ void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStak
 
     if (sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(pindexPrev->nHeight + 1)) {
         budget.FillBlockPayee(txNew, nFees, fProofOfStake);
+    } else if(IsEcoFundBlock(pindexPrev->nHeight)) {
+        budget.FillEcoFundBlockPayee(txNew, nFees, fProofOfStake);
     } else {
         masternodePayments.FillBlockPayee(txNew, nFees, fProofOfStake, fZKTSStake);
     }
