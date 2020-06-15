@@ -150,6 +150,10 @@ public:
     int Block_Enforce_Invalid() const { return nBlockEnforceInvalidUTXO; }
     int Zerocoin_Block_V2_Start() const { return nBlockZerocoinV2; }
     bool IsStakeModifierV2(const int nHeight) const { return nHeight >= nBlockStakeModifierlV2; }
+
+    std::string GetEcoFundAddressAtHeight(int height) const;
+    CScript GetEcoFundScriptAtHeight(int height) const;
+
     int NewSigsActive(const int nHeight) const { return nHeight >= nBlockEnforceNewMessageSignatures; }
     int BIP65ActivationHeight() const { return nBIP65ActivationHeight; }
     int Block_V7_StartHeight() const { return nBlockV7StartHeight; }
@@ -200,6 +204,7 @@ protected:
     std::vector<CDNSSeedData> vSeeds;
     std::vector<unsigned char> base58Prefixes[MAX_BASE58_TYPES];
     CBaseChainParams::Network networkID;
+    std::string vEcoFundAddress;
     std::string strNetworkID;
     CBlock genesis;
     std::vector<CAddress> vFixedSeeds;

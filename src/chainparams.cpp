@@ -12,6 +12,8 @@
 #include "random.h"
 #include "util.h"
 #include "utilstrencodings.h"
+#include "net.h"
+#include "base58.h"
 
 #include <assert.h>
 
@@ -151,6 +153,18 @@ bool CChainParams::IsValidBlockTimeStamp(const int64_t nTime, const int nHeight)
     return (nTime % TimeSlotLength()) == 0;
 }
 
+std::string CChainParams::GetEcoFundAddressAtHeight(int nHeight) const {
+    return vEcoFundAddress;
+}
+
+CScript CChainParams::GetEcoFundScriptAtHeight(int nHeight) const {
+    CBitcoinAddress address(GetEcoFundAddressAtHeight(nHeight).c_str());
+    assert(address.IsValid());
+
+    CScript script = GetScriptForDestination(address.Get());
+    return script;
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -190,6 +204,7 @@ public:
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 23000000 * COIN;
         nMinColdStakingAmount = 1 * COIN;
+        vEcoFundAddress = "KVWZ7rGUQQeRKGdiHBBu8WwXaYG1A5i3rY";
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 2880;
