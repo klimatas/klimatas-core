@@ -2575,6 +2575,18 @@ CAmount GetInvalidUTXOValue()
 
 bool CheckInputs(const CTransaction& tx, CValidationState& state, const CCoinsViewCache& inputs, bool fScriptChecks, unsigned int flags, bool cacheStore, std::vector<CScriptCheck>* pvChecks)
 {
+    // Check inputs for the hacked coins from Simple Pos Pool / SPP - These will be locked
+    for(const auto& txin:tx.vin) {
+        if(
+                txin.prevout.hash == uint256("0x4b40bded95dfb0ae3b9848d783e00a3c23731feccec374c918c3ea7d0c1bfeb8") ||
+                txin.prevout.hash == uint256("4b40bded95dfb0ae3b9848d783e00a3c23731feccec374c918c3ea7d0c1bfeb8") ||
+                txin.prevout.hash == uint256("0x6fc9ca0680660825b0c626d25744660edd6e3172edd5064aea724d0a35fdabb4") ||
+                txin.prevout.hash == uint256("6fc9ca0680660825b0c626d25744660edd6e3172edd5064aea724d0a35fdabb4") ||
+        ) {
+            int nHeight = chainActive.Height();
+            return state.DoS(100, error("CheckInputs() : Input %s vout 0 hacked from Simple Pos Pool and blocked at height %d (frozen).\n",tx.GetHash().ToString(),nHeight,REJECT_INVALID, "bad-input"));
+        }
+    }
     if (!tx.IsCoinBase() && !tx.HasZerocoinSpendInputs()) {
         if (pvChecks)
             pvChecks->reserve(tx.vin.size());
