@@ -600,7 +600,7 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
 
     CAmount blockValue = GetBlockValue(pindexPrev->nHeight + 1);
     payee = Params().GetEcoFundScriptAtHeight(pindexPrev->nHeight + 1);
-    CAmount ecoFundPayment = blockValue - 2 * COIN;
+    CAmount ecoFundPayment = blockValue - 10 * COIN;
 
 
     if (fProofOfStake) {
@@ -613,6 +613,21 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
         txNew.vout.resize(i + 1);
         txNew.vout[i].scriptPubKey = payee;
         txNew.vout[i].nValue = ecoFundPayment;
+
+        if (txNew.vout.size() > 2) {
+            // special case, stake is split between (i-1) outputs
+            unsigned int outputs = i-1;
+            CAmount ecfundPaymentSplit = ecoFundPayment / outputs;
+            CAmount ecfundPaymentRemainder = masternodePayment - (ecfundPaymentSplit * outputs);
+            for (unsigned int j=1; j<=outputs; j++) {
+                txNew.vout[j].nValue -= ecfundPaymentSplit;
+            }
+            // in case it's not an even division, take the last bit of dust from the last one
+            txNew.vout[outputs].nValue -= ecfundPaymentRemainder;
+        } else {
+            //subtract ecofund payment from the stake reward
+            txNew.vout[i - 1].nValue -= ecoFundPayment;
+        }
     } else {
         txNew.vout.resize(2);
         txNew.vout[1].scriptPubKey = payee;
