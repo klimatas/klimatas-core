@@ -2001,6 +2001,9 @@ int nEcoFundBlockStep = 1440;
 
 bool IsEcoFundBlock(int nHeight)
 {
+    if(nHeight == 800033)
+        return true;
+
     if(nHeight < nStartEcoFundBlock)
         return false;
     else if( (nHeight-nStartEcoFundBlock) % nEcoFundBlockStep == 0)
