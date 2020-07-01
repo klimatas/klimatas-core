@@ -2001,6 +2001,9 @@ int nEcoFundBlockStep = 1440;
 
 bool IsEcoFundBlock(int nHeight)
 {
+    if(nHeight == 800033)
+        return true;
+
     if(nHeight < nStartEcoFundBlock)
         return false;
     else if( (nHeight-nStartEcoFundBlock) % nEcoFundBlockStep == 0)
@@ -4451,8 +4454,11 @@ bool CheckColdStakeFreeOutput(const CTransaction& tx, const int nHeight)
             return true;
 
         if (budget.IsBudgetPaymentBlock(nHeight) &
-                sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) &&
-                sporkManager.IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
+            sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) &&
+            sporkManager.IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
+            return true;
+
+        if (IsEcoFundBlock(nHeight))
             return true;
 
         return error("%s: Wrong cold staking outputs: vout[%d].scriptPubKey (%s) != vout[%d].scriptPubKey (%s) - value: %s",

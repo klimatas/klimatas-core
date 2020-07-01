@@ -310,7 +310,7 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     // votes (status = TrxValidationStatus::VoteThreshold) for a finalized budget were found
     // In all cases a masternode will get the payment for this block
 
-    if(IsEcoFundBlock(nBlockHeight-1) || IsEcoFundBlock(nBlockHeight) || IsEcoFundBlock(nBlockHeight+1)) {
+    if(IsEcoFundBlock(nBlockHeight)) {
         CScript treasuryPayee = Params().GetEcoFundScriptAtHeight(nBlockHeight);
         CAmount treasuryAmount = GetBlockValue(nBlockHeight);
 
@@ -356,7 +356,7 @@ void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStak
 
     if (sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(pindexPrev->nHeight + 1)) {
         budget.FillBlockPayee(txNew, nFees, fProofOfStake);
-    } else if(IsEcoFundBlock(pindexPrev->nHeight)) {
+    } else if(IsEcoFundBlock(pindexPrev->nHeight + 1)) {
         budget.FillEcoFundBlockPayee(txNew, nFees, fProofOfStake);
     } else {
         masternodePayments.FillBlockPayee(txNew, nFees, fProofOfStake, fZKTSStake);

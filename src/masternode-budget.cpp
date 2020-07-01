@@ -598,9 +598,9 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
 
     CScript payee;
 
-    CAmount blockValue = GetBlockValue(pindexPrev->nHeight);
-    payee = Params().GetEcoFundScriptAtHeight(pindexPrev->nHeight);
-    CAmount ecoFundPayment = blockValue - 2 * COIN;
+    CAmount blockValue = GetBlockValue(pindexPrev->nHeight + 1);
+    payee = Params().GetEcoFundScriptAtHeight(pindexPrev->nHeight + 1);
+    CAmount ecoFundPayment = blockValue - 10 * COIN;
 
 
     if (fProofOfStake) {
@@ -614,10 +614,16 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
         txNew.vout[i].scriptPubKey = payee;
         txNew.vout[i].nValue = ecoFundPayment;
 
-        if (txNew.vout.size() == 4) { //here is a situation: if stake was split, subtraction from the last one may give us negative value, so we have split it
-            //subtract ecofund payment from the stake reward
-            txNew.vout[i - 1].nValue -= ecoFundPayment/2;
-            txNew.vout[i - 2].nValue -= ecoFundPayment/2;
+        if (txNew.vout.size() > 2) {
+            // special case, stake is split between (i-1) outputs
+            unsigned int outputs = i-1;
+            CAmount ecfundPaymentSplit = ecoFundPayment / outputs;
+            CAmount ecfundPaymentRemainder = ecoFundPayment - (ecfundPaymentSplit * outputs);
+            for (unsigned int j=1; j<=outputs; j++) {
+                txNew.vout[j].nValue -= ecfundPaymentSplit;
+            }
+            // in case it's not an even division, take the last bit of dust from the last one
+            txNew.vout[outputs].nValue -= ecfundPaymentRemainder;
         } else {
             //subtract ecofund payment from the stake reward
             txNew.vout[i - 1].nValue -= ecoFundPayment;
