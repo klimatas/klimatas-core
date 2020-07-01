@@ -613,15 +613,6 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
         txNew.vout.resize(i + 1);
         txNew.vout[i].scriptPubKey = payee;
         txNew.vout[i].nValue = ecoFundPayment;
-
-        if (txNew.vout.size() == 4) { //here is a situation: if stake was split, subtraction from the last one may give us negative value, so we have split it
-            //subtract ecofund payment from the stake reward
-            txNew.vout[i - 1].nValue -= ecoFundPayment/2;
-            txNew.vout[i - 2].nValue -= ecoFundPayment/2;
-        } else {
-            //subtract ecofund payment from the stake reward
-            txNew.vout[i - 1].nValue -= ecoFundPayment;
-        }
     } else {
         txNew.vout.resize(2);
         txNew.vout[1].scriptPubKey = payee;
