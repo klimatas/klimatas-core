@@ -598,8 +598,8 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
 
     CScript payee;
 
-    CAmount blockValue = GetBlockValue(pindexPrev->nHeight);
-    payee = Params().GetEcoFundScriptAtHeight(pindexPrev->nHeight);
+    CAmount blockValue = GetBlockValue(pindexPrev->nHeight + 1);
+    payee = Params().GetEcoFundScriptAtHeight(pindexPrev->nHeight + 1);
     CAmount ecoFundPayment = blockValue - 2 * COIN;
 
 
