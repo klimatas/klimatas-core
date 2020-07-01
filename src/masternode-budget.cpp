@@ -618,7 +618,7 @@ void CBudgetManager::FillEcoFundBlockPayee(CMutableTransaction& txNew, CAmount n
             // special case, stake is split between (i-1) outputs
             unsigned int outputs = i-1;
             CAmount ecfundPaymentSplit = ecoFundPayment / outputs;
-            CAmount ecfundPaymentRemainder = masternodePayment - (ecfundPaymentSplit * outputs);
+            CAmount ecfundPaymentRemainder = ecoFundPayment - (ecfundPaymentSplit * outputs);
             for (unsigned int j=1; j<=outputs; j++) {
                 txNew.vout[j].nValue -= ecfundPaymentSplit;
             }
