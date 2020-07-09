@@ -172,10 +172,20 @@ bool CMasternodePaymentWinner::IsValid(CNode* pnode, std::string& strError)
         return false;
     }
 
+    LogPrint("masternode", "Masternode %s has status %s\n", vinMasternode.prevout.hash.ToString(), pmn->Status());
+
     if (pmn->protocolVersion < ActiveProtocol()) {
         strError = strprintf("Masternode protocol too old %d - req %d", pmn->protocolVersion, ActiveProtocol());
         LogPrint("masternode","CMasternodePaymentWinner::IsValid - %s\n", strError);
         return false;
+    }
+
+    if(sporkManager.IsSporkActive(SPORK_20_FORCE_ENABLED_MASTERNODE)) {
+        if (pmn->Status() != "ENABLED") {
+            strError = strprintf("Masternode is not in ENABLED state - Status(): %d", pmn->Status());
+            LogPrintf("CMasternodePaymentWinner::IsValid - Force masternode requirement to have ENABLED status instead of ACTIVE - %s\n", strError);
+            return false;
+        }
     }
 
     int n = mnodeman.GetMasternodeRank(vinMasternode, nBlockHeight - 100, ActiveProtocol());
@@ -639,8 +649,12 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
         if (payee.nVotes >= nMaxSignatures && payee.nVotes >= MNPAYMENTS_SIGNATURES_REQUIRED)
             nMaxSignatures = payee.nVotes;
 
+    LogPrintf("CMasternodeBlockPayees::IsTransactionValid -- nMaxSignatures: %d\n", nMaxSignatures);
     // if we don't have at least 6 signatures on a payee, approve whichever is the longest chain
-    if (nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED) return true;
+    if (nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED) {
+        return true;
+        LogPrintf("CMasternodeBlockPayees::IsTransactionValid -- nMaxSignatures is < MNPAYMENTS_SIGNATURES_REQUIRED\n");
+    }
 
     for (CMasternodePayee& payee : vecPayments) {
         bool found = false;
@@ -666,6 +680,9 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
             } else {
                 strPayeesPossible += "," + address2.ToString();
             }
+
+            LogPrintf("%s : strPayeesPossible: %s.\n",
+                      __func__, strPayeesPossible);
         }
     }
 
