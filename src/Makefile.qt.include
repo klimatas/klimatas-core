@@ -94,6 +94,7 @@ QT_FORMS_UI = \
   qt/kts/settings/forms/settingsbittoolwidget.ui \
   qt/kts/settings/forms/settingsconsolewidget.ui \
   qt/kts/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/kts/settings/forms/settingsexportcsv.ui \
   qt/kts/settings/forms/settingsfaqwidget.ui \
   qt/kts/settings/forms/settingsinformationwidget.ui \
   qt/kts/settings/forms/settingsmainoptionswidget.ui \
@@ -191,6 +192,7 @@ QT_MOC_CPP = \
   qt/kts/settings/moc_settingsbittoolwidget.cpp \
   qt/kts/settings/moc_settingsconsolewidget.cpp \
   qt/kts/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/kts/settings/moc_settingsexportcsv.cpp \
   qt/kts/settings/moc_settingsfaqwidget.cpp \
   qt/kts/settings/moc_settingsinformationwidget.cpp \
   qt/kts/settings/moc_settingsmainoptionswidget.cpp \
@@ -322,6 +324,7 @@ BITCOIN_QT_H = \
   qt/kts/settings/settingsbittoolwidget.h \
   qt/kts/settings/settingsconsolewidget.h \
   qt/kts/settings/settingsdisplayoptionswidget.h \
+  qt/kts/settings/settingsexportcsv.h \
   qt/kts/settings/settingsfaqwidget.h \
   qt/kts/settings/settingsinformationwidget.h \
   qt/kts/settings/settingsmainoptionswidget.h \
@@ -708,6 +711,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/kts/settings/settingsbittoolwidget.cpp \
   qt/kts/settings/settingsconsolewidget.cpp \
   qt/kts/settings/settingsdisplayoptionswidget.cpp \
+  qt/kts/settings/settingsexportcsv.cpp \
   qt/kts/settings/settingsfaqwidget.cpp \
   qt/kts/settings/settingsinformationwidget.cpp \
   qt/kts/settings/settingsmainoptionswidget.cpp \

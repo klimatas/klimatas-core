@@ -52,6 +52,7 @@ SettingsWidget::SettingsWidget(KTSGUI* parent) :
     setCssProperty(ui->pushButtonFile, "btn-settings-check");
     setCssProperty(ui->pushButtonFile2, "btn-settings-options");
     setCssProperty(ui->pushButtonFile3, "btn-settings-options");
+    setCssProperty(ui->pushButtonExportCsv, "btn-settings-options");
 
     setCssProperty(ui->pushButtonConfiguration, "btn-settings-check");
     setCssProperty(ui->pushButtonConfiguration3, "btn-settings-options");
@@ -74,6 +75,7 @@ SettingsWidget::SettingsWidget(KTSGUI* parent) :
     options = {
         ui->pushButtonFile2,
         ui->pushButtonFile3,
+        ui->pushButtonExportCsv,
         ui->pushButtonOptions1,
         ui->pushButtonOptions2,
         ui->pushButtonOptions5,
@@ -95,6 +97,7 @@ SettingsWidget::SettingsWidget(KTSGUI* parent) :
     ui->pushButtonFile2->setChecked(true);
 
     settingsBackupWallet = new SettingsBackupWallet(window, this);
+    settingsExportCsvWidget = new SettingsExportCSV(window, this);
     settingsBitToolWidget = new SettingsBitToolWidget(window, this);
     settingsSingMessageWidgets = new SettingsSignMessageWidgets(window, this);
     settingsWalletRepairWidget = new SettingsWalletRepairWidget(window, this);
@@ -106,6 +109,7 @@ SettingsWidget::SettingsWidget(KTSGUI* parent) :
     settingsConsoleWidget = new SettingsConsoleWidget(window, this);
 
     ui->stackedWidgetContainer->addWidget(settingsBackupWallet);
+    ui->stackedWidgetContainer->addWidget(settingsExportCsvWidget);
     ui->stackedWidgetContainer->addWidget(settingsBitToolWidget);
     ui->stackedWidgetContainer->addWidget(settingsSingMessageWidgets);
     ui->stackedWidgetContainer->addWidget(settingsWalletRepairWidget);
@@ -121,6 +125,7 @@ SettingsWidget::SettingsWidget(KTSGUI* parent) :
     connect(ui->pushButtonFile, SIGNAL(clicked()), this, SLOT(onFileClicked()));
     connect(ui->pushButtonFile2, SIGNAL(clicked()), this, SLOT(onBackupWalletClicked()));
     connect(ui->pushButtonFile3, SIGNAL(clicked()), this, SLOT(onMultisendClicked()));
+    connect(ui->pushButtonExportCsv, SIGNAL(clicked()), this, SLOT(onExportCSVClicked()));
 
     // Options
     connect(ui->pushButtonOptions, SIGNAL(clicked()), this, SLOT(onOptionsClicked()));
@@ -148,9 +153,12 @@ SettingsWidget::SettingsWidget(KTSGUI* parent) :
     // Get restart command-line parameters and handle restart
     connect(settingsWalletRepairWidget, &SettingsWalletRepairWidget::handleRestart, [this](QStringList arg){emit handleRestart(arg);});
 
-    connect(settingsBackupWallet,&SettingsBackupWallet::message,this, &SettingsWidget::message);
+    connect(settingsBackupWallet, &SettingsBackupWallet::message,this, &SettingsWidget::message);
     connect(settingsBackupWallet, &SettingsBackupWallet::showHide, this, &SettingsWidget::showHide);
     connect(settingsBackupWallet, &SettingsBackupWallet::execDialog, this, &SettingsWidget::execDialog);
+    connect(settingsExportCsvWidget, &SettingsExportCSV::message,this, &SettingsWidget::message);
+    connect(settingsExportCsvWidget, &SettingsExportCSV::showHide, this, &SettingsWidget::showHide);
+    connect(settingsExportCsvWidget, &SettingsExportCSV::execDialog, this, &SettingsWidget::execDialog);
     connect(settingsMultisendWidget, &SettingsMultisendWidget::showHide, this, &SettingsWidget::showHide);
     connect(settingsMultisendWidget, &SettingsMultisendWidget::message, this, &SettingsWidget::message);
     connect(settingsMainOptionsWidget, &SettingsMainOptionsWidget::message, this, &SettingsWidget::message);
@@ -187,6 +195,7 @@ void SettingsWidget::loadClientModel(){
 
 void SettingsWidget::loadWalletModel(){
     this->settingsBackupWallet->setWalletModel(this->walletModel);
+    this->settingsExportCsvWidget->setWalletModel(this->walletModel);
     this->settingsSingMessageWidgets->setWalletModel(this->walletModel);
     this->settingsBitToolWidget->setWalletModel(this->walletModel);
     this->settingsMultisendWidget->setWalletModel(this->walletModel);
@@ -290,6 +299,11 @@ void SettingsWidget::onBipToolClicked() {
 void SettingsWidget::onMultisendClicked() {
     ui->stackedWidgetContainer->setCurrentWidget(settingsMultisendWidget);
     selectOption(ui->pushButtonFile3);
+}
+
+void SettingsWidget::onExportCSVClicked() {
+    ui->stackedWidgetContainer->setCurrentWidget(settingsExportCsvWidget);
+    selectOption(ui->pushButtonExportCsv);
 }
 
 void SettingsWidget::onOptionsClicked() {
