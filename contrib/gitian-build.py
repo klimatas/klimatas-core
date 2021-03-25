@@ -104,13 +104,13 @@ def setup_darwin():
 
 def setup_repos():
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/KlimatasTeam/gitian.sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/dogecash/gitian.sigs.git'])
     if not os.path.isdir('kts-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/KlimatasTeam/kts-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/dogecash/dogecash-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
     if not os.path.isdir('kts'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/KlimatasTeam/kts.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/klimatas/klimatas-core.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     if args.docker:
@@ -145,7 +145,6 @@ def build():
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz'])
     subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch'])
     subprocess.check_call(["echo 'a8c4e9cafba922f89de0df1f2152e7be286aba73f78505169bc351a7938dd911 inputs/osslsigncode-Backports-to-1.7.1.patch' | sha256sum -c"], shell=True)
-    subprocess.check_call(["echo 'f9a8cdb38b9c309326764ebc937cba1523a3a751a7ab05df3ecc99d18ae466c9 inputs/osslsigncode-1.7.1.tar.gz' | sha256sum -c"], shell=True)
     subprocess.check_call(['make', '-C', '../kts/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:

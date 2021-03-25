@@ -24,8 +24,8 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/KlimatasTeam/klimatas.git"
-  "dir": "klimatas"
+- "url": "https://github.com/klimatas/klimatas-core.git"
+  "dir": "klimatas-core"
 files: []
 script: |
   set -e -o pipefail
