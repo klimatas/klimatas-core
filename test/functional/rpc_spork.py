@@ -61,7 +61,8 @@ class KTS_RPCSporkTest(KtsTestFramework):
         
         # 4 - Set cold staking removal spork and check value
         newSporkName = "SPORK_21_COLDSTAKING_REMOVAL"
-        assert_equal("success", self.activate_spork(1, newSporkName, 1644796801))
+        assert_equal("success", self.activate_spork(0, newSporkName, 1644796801))
+        sleep(1)
         assert_equal(1644796801, self.get_spork(1, newSporkName))
 
         # 5 - Stop nodes and check value again after restart

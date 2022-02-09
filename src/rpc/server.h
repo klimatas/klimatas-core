@@ -219,7 +219,7 @@ extern UniValue estimatepriority(const UniValue& params, bool fHelp);
 extern UniValue delegatoradd(const UniValue& params, bool fHelp);
 extern UniValue delegatorremove(const UniValue& params, bool fHelp);
 extern UniValue getnewaddress(const UniValue& params, bool fHelp);
-//extern UniValue getnewstakingaddress(const UniValue& params, bool fHelp);
+extern UniValue getnewstakingaddress(const UniValue& params, bool fHelp);
 extern UniValue getaccountaddress(const UniValue& params, bool fHelp);
 extern UniValue getrawchangeaddress(const UniValue& params, bool fHelp);
 extern UniValue setaccount(const UniValue& params, bool fHelp);
