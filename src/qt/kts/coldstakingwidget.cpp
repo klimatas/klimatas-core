@@ -210,7 +210,7 @@ void ColdStakingWidget::loadWalletModel(){
         ui->listViewStakingAddress->setModel(addressesFilter);
         ui->listViewStakingAddress->setModelColumn(AddressTableModel::Address);
 
-        connect(txModel, &TransactionTableModel::txArrived, this, &ColdStakingWidget::onTxArrived);
+        //connect(txModel, &TransactionTableModel::txArrived, this, &ColdStakingWidget::onTxArrived);
 
         updateDisplayUnit();
 
