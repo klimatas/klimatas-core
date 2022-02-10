@@ -138,12 +138,12 @@ ColdStakingWidget::ColdStakingWidget(KTSGUI* parent) :
     ui->btnCoinControl->setTitleClassAndText("btn-title-grey", "Coin Control");
     ui->btnCoinControl->setSubTitleClassAndText("text-subtitle", "Select KTS outputs to delegate.");
 
-    ui->btnColdStaking->setTitleClassAndText("btn-title-grey", "Create Cold Staking Address");
-    ui->btnColdStaking->setSubTitleClassAndText("text-subtitle", "Creates an address to receive delegated coins\nand stake them on their owner's behalf.");
-    ui->btnColdStaking->layout()->setMargin(0);
+    //ui->btnColdStaking->setTitleClassAndText("btn-title-grey", "Create Cold Staking Address");
+    //ui->btnColdStaking->setSubTitleClassAndText("text-subtitle", "Creates an address to receive delegated coins\nand stake them on their owner's behalf.");
+    //ui->btnColdStaking->layout()->setMargin(0);
 
     connect(ui->btnCoinControl, SIGNAL(clicked()), this, SLOT(onCoinControlClicked()));
-    connect(ui->btnColdStaking, SIGNAL(clicked()), this, SLOT(onColdStakeClicked()));
+    //connect(ui->btnColdStaking, SIGNAL(clicked()), this, SLOT(onColdStakeClicked()));
 
     onDelegateSelected(true);
     ui->pushRight->setChecked(true);
@@ -360,7 +360,7 @@ void ColdStakingWidget::onDelegateSelected(bool delegate){
         ui->emptyContainer->setVisible(false);
         ui->listView->setVisible(false);
         ui->containerHistoryLabel->setVisible(false);
-        ui->btnColdStaking->setVisible(false);
+        //ui->btnColdStaking->setVisible(false);
         ui->btnMyStakingAddresses->setVisible(false);
         ui->listViewStakingAddress->setVisible(false);
         if (ui->rightContainer->count() == 2)
@@ -369,7 +369,7 @@ void ColdStakingWidget::onDelegateSelected(bool delegate){
         ui->btnCoinControl->setVisible(false);
         ui->containerSend->setVisible(false);
         ui->containerBtn->setVisible(false);
-        ui->btnColdStaking->setVisible(true);
+        //ui->btnColdStaking->setVisible(true);
         showList(csModel->rowCount() > 0);
         ui->btnMyStakingAddresses->setVisible(true);
         ui->listViewStakingAddress->setVisible(false);

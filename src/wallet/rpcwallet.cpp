@@ -578,9 +578,7 @@ UniValue CreateColdStakeDelegation(const UniValue& params, CWalletTx& wtxNew, CR
     if (params.size() > 5 && !params[5].isNull())
         fForceNotEnabled = params[5].get_bool();
 
-    int nBestHeight = chainActive.Height();
-    const bool coldStakeDisabled = nBestHeight >= sporkManager.GetSporkValue(SPORK_21_COLDSTAKING_REMOVAL);
-    if (coldStakeDisabled) {
+    if (sporkManager.IsSporkActive(SPORK_21_COLDSTAKING_REMOVAL)) {
         std::string errMsg = "Cold Staking disabled with SPORK 21.\n";
         throw JSONRPCError(RPC_WALLET_ERROR, errMsg);
     }

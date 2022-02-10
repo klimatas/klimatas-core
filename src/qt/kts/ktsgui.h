@@ -69,7 +69,7 @@ public slots:
     void goToAddresses();
     //void goToPrivacy();
     void goToMasterNodes();
-    void goToColdStaking();
+    //void goToColdStaking();
     void goToSettings();
 
     void connectActions();

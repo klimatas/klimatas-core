@@ -57,7 +57,7 @@ NavMenuWidget::NavMenuWidget(KTSGUI *mainWindow, QWidget *parent) :
     ui->btnReceive->setText("RECEIVE\n");
     ui->btnReceive->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
-    btns = {ui->btnDashboard, ui->btnSend, ui->btnReceive, ui->btnAddress, ui->btnMaster, /*ui->btnColdStaking,*/ ui->btnSettings, /*ui->btnColdStaking*/};
+    btns = {ui->btnDashboard, ui->btnSend, ui->btnReceive, ui->btnAddress, ui->btnMaster, /*ui->btnColdStaking,*/ ui->btnSettings /*,ui->btnColdStaking*/};
     onNavSelected(ui->btnDashboard, true);
 
     ui->scrollAreaNav->setWidgetResizable(true);
