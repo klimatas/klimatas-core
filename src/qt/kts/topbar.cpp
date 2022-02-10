@@ -73,8 +73,8 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
     ui->pushButtonStack->setButtonClassStyle("cssClass", "btn-check-stack-inactive");
     ui->pushButtonStack->setButtonText("Staking Disabled");
 
-    ui->pushButtonColdStaking->setButtonClassStyle("cssClass", "btn-check-cold-staking-inactive");
-    ui->pushButtonColdStaking->setButtonText("Cold Staking Disabled");
+    //ui->pushButtonColdStaking->setButtonClassStyle("cssClass", "btn-check-cold-staking-inactive");
+    //ui->pushButtonColdStaking->setButtonText("Cold Staking Disabled");
 
     ui->pushButtonSync->setButtonClassStyle("cssClass", "btn-check-sync");
     ui->pushButtonSync->setButtonText(" %54 Synchronizing..");
@@ -110,7 +110,7 @@ TopBar::TopBar(KTSGUI* _mainWindow, QWidget *parent) :
     connect(ui->pushButtonLock, SIGNAL(Mouse_Pressed()), this, SLOT(onBtnLockClicked()));
     connect(ui->pushButtonTheme, SIGNAL(Mouse_Pressed()), this, SLOT(onThemeClicked()));
     connect(ui->pushButtonFAQ, SIGNAL(Mouse_Pressed()), _mainWindow, SLOT(openFAQ()));
-    connect(ui->pushButtonColdStaking, SIGNAL(Mouse_Pressed()), this, SLOT(onColdStakingClicked()));
+    //connect(ui->pushButtonColdStaking, SIGNAL(Mouse_Pressed()), this, SLOT(onColdStakingClicked()));
     connect(ui->pushButtonSync, &ExpandableButton::Mouse_HoverLeave, this, &TopBar::refreshProgressBarSize);
     connect(ui->pushButtonSync, &ExpandableButton::Mouse_Hover, this, &TopBar::refreshProgressBarSize);
 }
@@ -296,7 +296,7 @@ void TopBar::showBottom(){
     this->adjustSize();
 }
 
-void TopBar::onColdStakingClicked() {
+/*void TopBar::onColdStakingClicked() {
 
     bool isColdStakingEnabled = walletModel->isColdStaking();
     ui->pushButtonColdStaking->setChecked(isColdStakingEnabled);
@@ -322,7 +322,7 @@ void TopBar::onColdStakingClicked() {
     updateStyle(ui->pushButtonColdStaking);
 
     emit onShowHideColdStakingChanged(show);
-}
+}*/
 
 TopBar::~TopBar(){
     if(timerStakingIcon){
@@ -479,7 +479,7 @@ void TopBar::loadWalletModel(){
     updateDisplayUnit();
 
     refreshStatus();
-    onColdStakingClicked();
+    //onColdStakingClicked();
 
     isInitializing = false;
 }
