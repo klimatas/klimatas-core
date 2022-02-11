@@ -277,6 +277,14 @@ public:
         vSeeds.push_back(CDNSSeedData("seed4.klimatas.com", "seed4.klimatas.com"));         // Single node address
         vSeeds.push_back(CDNSSeedData("seed5.klimatas.com", "seed5.klimatas.com"));         // Single node address
         vSeeds.push_back(CDNSSeedData("seed6.klimatas.com", "seed6.klimatas.com"));         // Single node address
+        vSeeds.push_back(CDNSSeedData("65.21.125.243", "65.21.125.243"));
+        vSeeds.push_back(CDNSSeedData("165.21.32.236", "65.21.32.236"));
+        vSeeds.push_back(CDNSSeedData("65.21.206.185", "65.21.206.185"));
+        vSeeds.push_back(CDNSSeedData("65.21.203.50", "165.21.203.50"));
+        vSeeds.push_back(CDNSSeedData("135.181.5.146", "135.181.5.146"));
+        vSeeds.push_back(CDNSSeedData("135.181.208.187", "135.181.208.187"));
+        vSeeds.push_back(CDNSSeedData("135.181.17.220", "135.181.17.220"));
+        vSeeds.push_back(CDNSSeedData("135.181.18.41", "135.181.18.41"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 45);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 15);
