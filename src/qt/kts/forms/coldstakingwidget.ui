@@ -774,9 +774,6 @@
           </widget>
          </item>
          <item>
-          <widget class="OptionButton" name="btnColdStaking" native="true"/>
-         </item>
-         <item>
           <widget class="OptionButton" name="btnMyStakingAddresses" native="true">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">

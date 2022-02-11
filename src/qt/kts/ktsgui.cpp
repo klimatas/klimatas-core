@@ -123,7 +123,7 @@ KTSGUI::KTSGUI(const NetworkStyle* networkStyle, QWidget* parent) :
         addressesWidget = new AddressesWidget(this);
         //privacyWidget = new PrivacyWidget(this);
         masterNodesWidget = new MasterNodesWidget(this);
-        coldStakingWidget = new ColdStakingWidget(this);
+        //coldStakingWidget = new ColdStakingWidget(this);
         settingsWidget = new SettingsWidget(this);
 
         // Add to parent
@@ -133,7 +133,7 @@ KTSGUI::KTSGUI(const NetworkStyle* networkStyle, QWidget* parent) :
         stackedContainer->addWidget(addressesWidget);
         //stackedContainer->addWidget(privacyWidget);
         stackedContainer->addWidget(masterNodesWidget);
-        stackedContainer->addWidget(coldStakingWidget);
+        //stackedContainer->addWidget(coldStakingWidget);
         stackedContainer->addWidget(settingsWidget);
         stackedContainer->setCurrentWidget(dashboard);
 
@@ -190,7 +190,7 @@ void KTSGUI::connectActions() {
     });
     connect(topBar, &TopBar::showHide, this, &KTSGUI::showHide);
     connect(topBar, &TopBar::themeChanged, this, &KTSGUI::changeTheme);
-    connect(topBar, &TopBar::onShowHideColdStakingChanged, navMenu, &NavMenuWidget::onShowHideColdStakingChanged);
+    //connect(topBar, &TopBar::onShowHideColdStakingChanged, navMenu, &NavMenuWidget::onShowHideColdStakingChanged);
     connect(settingsWidget, &SettingsWidget::showHide, this, &KTSGUI::showHide);
     connect(sendWidget, &SendWidget::showHide, this, &KTSGUI::showHide);
     connect(receiveWidget, &ReceiveWidget::showHide, this, &KTSGUI::showHide);
@@ -198,8 +198,8 @@ void KTSGUI::connectActions() {
     //connect(privacyWidget, &PrivacyWidget::showHide, this, &KTSGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::showHide, this, &KTSGUI::showHide);
     connect(masterNodesWidget, &MasterNodesWidget::execDialog, this, &KTSGUI::execDialog);
-    connect(coldStakingWidget, &ColdStakingWidget::showHide, this, &KTSGUI::showHide);
-    connect(coldStakingWidget, &ColdStakingWidget::execDialog, this, &KTSGUI::execDialog);
+    //connect(coldStakingWidget, &ColdStakingWidget::showHide, this, &KTSGUI::showHide);
+    //connect(coldStakingWidget, &ColdStakingWidget::execDialog, this, &KTSGUI::execDialog);
     connect(settingsWidget, &SettingsWidget::execDialog, this, &KTSGUI::execDialog);
 }
 
@@ -252,7 +252,7 @@ void KTSGUI::setClientModel(ClientModel* clientModel) {
         // Receive and report messages from client model
         connect(clientModel, SIGNAL(message(QString, QString, unsigned int)), this, SLOT(message(QString, QString, unsigned int)));
         connect(topBar, SIGNAL(walletSynced(bool)), dashboard, SLOT(walletSynced(bool)));
-        connect(topBar, SIGNAL(walletSynced(bool)), coldStakingWidget, SLOT(walletSynced(bool)));
+        //connect(topBar, SIGNAL(walletSynced(bool)), coldStakingWidget, SLOT(walletSynced(bool)));
 
         // Get restart command-line parameters and handle restart
         connect(settingsWidget, &SettingsWidget::handleRestart, [this](QStringList arg){handleRestart(arg);});
@@ -481,9 +481,9 @@ void KTSGUI::goToMasterNodes(){
     showTop(masterNodesWidget);
 }
 
-void KTSGUI::goToColdStaking(){
-    showTop(coldStakingWidget);
-}
+//void KTSGUI::goToColdStaking(){
+//    showTop(coldStakingWidget);
+//}
 
 void KTSGUI::goToSettings(){
     showTop(settingsWidget);
@@ -581,13 +581,13 @@ bool KTSGUI::addWallet(const QString& name, WalletModel* walletModel)
     addressesWidget->setWalletModel(walletModel);
     //privacyWidget->setWalletModel(walletModel);
     masterNodesWidget->setWalletModel(walletModel);
-    coldStakingWidget->setWalletModel(walletModel);
+    //coldStakingWidget->setWalletModel(walletModel);
     settingsWidget->setWalletModel(walletModel);
 
     // Connect actions..
     //connect(privacyWidget, &PrivacyWidget::message, this, &KTSGUI::message);
     connect(masterNodesWidget, &MasterNodesWidget::message, this, &KTSGUI::message);
-    connect(coldStakingWidget, &MasterNodesWidget::message, this, &KTSGUI::message);
+    //connect(coldStakingWidget, &MasterNodesWidget::message, this, &KTSGUI::message);
     connect(topBar, &TopBar::message, this, &KTSGUI::message);
     connect(sendWidget, &SendWidget::message,this, &KTSGUI::message);
     connect(receiveWidget, &ReceiveWidget::message,this, &KTSGUI::message);

@@ -1064,8 +1064,8 @@ class KtsTestFramework():
         return self.nodes[node_id].spork("show")[sporkName]
 
 
-    def activate_spork(self, node_id, sporkName):
-        return self.set_spork(node_id, sporkName, SPORK_ACTIVATION_TIME)
+    def activate_spork(self, node_id, sporkName, value=SPORK_ACTIVATION_TIME):
+        return self.set_spork(node_id, sporkName, value)
 
 
     def deactivate_spork(self, node_id, sporkName):

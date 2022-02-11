@@ -204,7 +204,7 @@ public:
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 23000000 * COIN;
         nMinColdStakingAmount = 1 * COIN;
-        vEcoFundAddress = "KJbUDa4JHKo59UWTfzKJFAVCsSVnrP8t8j";
+        vEcoFundAddress = "KMdL6ZY8dX7CyyZCh1RBhYuqA56jtzw5zC";
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 2880;
