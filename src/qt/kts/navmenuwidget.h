@@ -27,7 +27,7 @@ public:
 
 public slots:
     void selectSettings();
-    void onShowHideColdStakingChanged(bool show);
+    //void onShowHideColdStakingChanged(bool show);
 
 private slots:
     void onSendClicked();
@@ -35,7 +35,7 @@ private slots:
     //void onPrivacyClicked();
     void onAddressClicked();
     void onMasterNodesClicked();
-    void onColdStakingClicked();
+    //void onColdStakingClicked();
     void onSettingsClicked();
     void onReceiveClicked();
     void updateButtonStyles();

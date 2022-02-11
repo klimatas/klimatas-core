@@ -214,8 +214,8 @@ extern UniValue submitblock(const UniValue& params, bool fHelp);
 extern UniValue estimatefee(const UniValue& params, bool fHelp);
 extern UniValue estimatepriority(const UniValue& params, bool fHelp);
 
-extern UniValue delegatestake(const UniValue& params, bool fHelp); // in rpcwallet.cpp
-extern UniValue rawdelegatestake(const UniValue& params, bool fHelp);
+//extern UniValue delegatestake(const UniValue& params, bool fHelp); // in rpcwallet.cpp
+//extern UniValue rawdelegatestake(const UniValue& params, bool fHelp);
 extern UniValue delegatoradd(const UniValue& params, bool fHelp);
 extern UniValue delegatorremove(const UniValue& params, bool fHelp);
 extern UniValue getnewaddress(const UniValue& params, bool fHelp);
