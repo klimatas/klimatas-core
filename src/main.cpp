@@ -4600,7 +4600,10 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         }
     }
 
-    fColdStakingActive = sporkManager.IsSporkActive(SPORK_21_COLDSTAKING_REMOVAL) ? false : true;
+    // disable cold stake in a safe way
+    if (nHeight >= sporkManager.GetSporkValue(SPORK_21_COLDSTAKING_DISABLING)) {
+        fColdStakingActive = false;
+    }
 
     // Check transactions
     std::vector<CBigNum> vBlockSerials;

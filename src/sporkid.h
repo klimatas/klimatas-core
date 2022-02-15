@@ -28,6 +28,7 @@ enum SporkId : int32_t {
     SPORK_19_ECOFUND_PAYMENT_ENFORCEMENT        = 10019,
     SPORK_20_FORCE_ENABLED_MASTERNODE           = 10020,
     SPORK_21_COLDSTAKING_REMOVAL                = 10021,
+    SPORK_21_COLDSTAKING_DISABLING              = 10022,
 
     SPORK_INVALID                               = -1
 };
