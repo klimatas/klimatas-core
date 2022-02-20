@@ -177,10 +177,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x4f;
-        pchMessageStart[1] = 0xc1;
-        pchMessageStart[2] = 0x99;
-        pchMessageStart[3] = 0x7d;
+        pchMessageStart[0] = 0x50;
+        pchMessageStart[1] = 0x45;
+        pchMessageStart[2] = 0x4e;
+        pchMessageStart[3] = 0x59;
         vAlertPubKey = ParseHex("045f7f85ddbc09b807f0d41256333e5be4849c43df16febdb8e0f158b5f743cb552c956cf9232d6dcf7da9ee841517bfbb129d02f83d9c6b61616725d77382a2b6");
         nDefaultPort = 10300;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // KTS starting difficulty is 1 / 2^12
